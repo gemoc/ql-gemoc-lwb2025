@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<groupId>org.gemoc.ql</groupId>
+	<artifactId>root</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License v2.0</name>
+		</license>
+	</licenses>
+
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>releng</module>
+		<module>plugins</module>
+	</modules>
+
+	<properties>
+		<tycho-version>2.2.0</tycho-version>
+		<xtend-version>2.24.0</xtend-version>
+		<eclipse-version>2022-06</eclipse-version>
+		<sirius-p2-url>http://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06</sirius-p2-url>
+		<!-- <gemoc-p2-url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-p2-url> -->
+		<gemoc-p2-url>http://download.eclipse.org/gemoc/updates/releases/3.6.0</gemoc-p2-url>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tycho.scmUrl>scm:git:https://github.com/gemoc/ql-gemoc-lwb2025.git</tycho.scmUrl>
+
+
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
+	<repositories>
+		<!-- configure p2 repository to resolve against -->
+		<repository>
+			<id>eclipse</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/${eclipse-version}</url>
+		</repository>
+		<repository>
+			<id>Sirius</id>
+			<layout>p2</layout>
+			<url>${sirius-p2-url}</url>
+		</repository>
+		<repository>
+			<id>AcceleoLegacy</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/sirius/updates/legacy/</url>
+		</repository>
+		<repository>
+			<id>gemoc-repo</id>
+			<url>${gemoc-p2-url}</url>
+			<layout>p2</layout>
+		</repository>
+
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<!-- enable source bundle and feature generation -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-feature-sources</id>
+						<goals>
+							<goal>plugin-source</goal>
+							<goal>feature-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- enable source feature generation -->
+			<plugin>
+		      <groupId>org.eclipse.tycho.extras</groupId>
+		      <artifactId>tycho-source-feature-plugin</artifactId>
+		      <version>${tycho-version}</version>
+		      <executions>
+		        <execution>
+		          <id>source-feature</id>
+		          <phase>package</phase>
+		          <goals>
+		            <goal>source-feature</goal>
+		          </goals>
+		        </execution>
+		      </executions>
+		    </plugin>
+			<plugin>
+		     <groupId>org.eclipse.tycho</groupId>
+		     <artifactId>tycho-p2-plugin</artifactId>
+		     <version>${tycho-version}</version>
+		     <executions>
+		       <execution>
+		         <id>attach-p2-metadata</id>
+		         <phase>package</phase>
+		         <goals>
+		           <goal>p2-metadata</goal>
+		         </goals>
+		       </execution>
+		     </executions>
+		    </plugin>
+		</plugins>
+	</build>
+</project>
