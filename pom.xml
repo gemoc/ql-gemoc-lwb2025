@@ -26,9 +26,9 @@
 	</modules>
 
 	<properties>
-		<tycho-version>2.2.0</tycho-version>
-		<xtend-version>2.24.0</xtend-version>
-		<eclipse-version>2022-06</eclipse-version>
+		<tycho-version>3.0.4</tycho-version>
+		<xtend-version>2.31.0</xtend-version>
+		<eclipse-version>2023-06</eclipse-version>
 		<sirius-p2-url>http://download.eclipse.org/sirius/updates/releases/7.1.0/2021-06</sirius-p2-url>
 		<!-- <gemoc-p2-url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-p2-url> -->
 		<gemoc-p2-url>http://download.eclipse.org/gemoc/updates/releases/3.6.0</gemoc-p2-url>
@@ -91,7 +91,7 @@
 				</executions>
 			</plugin>
 			<!-- enable source feature generation -->
-			<plugin>
+			<!--<plugin>
 		      <groupId>org.eclipse.tycho.extras</groupId>
 		      <artifactId>tycho-source-feature-plugin</artifactId>
 		      <version>${tycho-version}</version>
@@ -104,7 +104,7 @@
 		          </goals>
 		        </execution>
 		      </executions>
-		    </plugin>
+		    </plugin>-->
 			<plugin>
 		     <groupId>org.eclipse.tycho</groupId>
 		     <artifactId>tycho-p2-plugin</artifactId>
