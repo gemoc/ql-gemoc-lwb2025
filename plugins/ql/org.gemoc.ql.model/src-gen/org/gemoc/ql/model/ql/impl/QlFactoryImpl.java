@@ -98,6 +98,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createTypeGroup();
 		case QlPackage.QUESTION_CALL:
 			return createQuestionCall();
+		case QlPackage.STRING_VALUE_TYPE:
+			return createStringValueType();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -366,6 +368,17 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public QuestionCall createQuestionCall() {
 		QuestionCallImpl questionCall = new QuestionCallImpl();
 		return questionCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StringValueType createStringValueType() {
+		StringValueTypeImpl stringValueType = new StringValueTypeImpl();
+		return stringValueType;
 	}
 
 	/**

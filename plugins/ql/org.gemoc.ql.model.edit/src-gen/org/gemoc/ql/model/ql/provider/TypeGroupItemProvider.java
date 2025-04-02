@@ -167,6 +167,9 @@ public class TypeGroupItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.TYPE_GROUP__DATA_TYPES,
 				QlFactory.eINSTANCE.createEnumerationValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.TYPE_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createStringValueType()));
 	}
 
 	/**

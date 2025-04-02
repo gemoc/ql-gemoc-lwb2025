@@ -556,6 +556,29 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.StringValueType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StringValueTypeItemProvider stringValueTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.StringValueType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStringValueTypeAdapter() {
+		if (stringValueTypeItemProvider == null) {
+			stringValueTypeItemProvider = new StringValueTypeItemProvider(this);
+		}
+
+		return stringValueTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -702,6 +725,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			typeGroupItemProvider.dispose();
 		if (questionCallItemProvider != null)
 			questionCallItemProvider.dispose();
+		if (stringValueTypeItemProvider != null)
+			stringValueTypeItemProvider.dispose();
 	}
 
 }

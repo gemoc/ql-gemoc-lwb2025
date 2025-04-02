@@ -38,6 +38,7 @@ import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionCall;
 import org.gemoc.ql.model.ql.QuestionGroup;
 import org.gemoc.ql.model.ql.StringValue;
+import org.gemoc.ql.model.ql.StringValueType;
 import org.gemoc.ql.model.ql.TypeGroup;
 import org.gemoc.ql.model.ql.UnaryExpression;
 import org.gemoc.ql.model.ql.UnaryOperatorKind;
@@ -253,6 +254,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass questionCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringValueTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -907,6 +915,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getStringValueType() {
+		return stringValueTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBinaryOperatorKind() {
 		return binaryOperatorKindEEnum;
 	}
@@ -1037,6 +1055,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		questionCallEClass = createEClass(QUESTION_CALL);
 		createEReference(questionCallEClass, QUESTION_CALL__QUESTION);
 
+		stringValueTypeEClass = createEClass(STRING_VALUE_TYPE);
+
 		// Create enums
 		binaryOperatorKindEEnum = createEEnum(BINARY_OPERATOR_KIND);
 		unaryOperatorKindEEnum = createEEnum(UNARY_OPERATOR_KIND);
@@ -1095,6 +1115,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedElement());
 		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
 		questionCallEClass.getESuperTypes().add(this.getCall());
+		stringValueTypeEClass.getESuperTypes().add(this.getValueType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlModelEClass, QLModel.class, "QLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1255,6 +1276,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getQuestionCall_Question(), this.getQuestion(), null, "question", null, 1, 1, QuestionCall.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stringValueTypeEClass, StringValueType.class, "StringValueType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(binaryOperatorKindEEnum, BinaryOperatorKind.class, "BinaryOperatorKind");

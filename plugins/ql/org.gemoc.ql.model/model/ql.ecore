@@ -114,4 +114,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" lowerBound="1"
         eType="#//Question"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValueType" eSuperTypes="#//ValueType"/>
 </ecore:EPackage>

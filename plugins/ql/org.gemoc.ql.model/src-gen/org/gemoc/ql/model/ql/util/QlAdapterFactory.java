@@ -212,6 +212,11 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseStringValueType(StringValueType object) {
+			return createStringValueTypeAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -633,6 +638,20 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQuestionCallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.StringValueType <em>String Value Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.StringValueType
+	 * @generated
+	 */
+	public Adapter createStringValueTypeAdapter() {
 		return null;
 	}
 

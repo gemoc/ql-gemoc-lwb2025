@@ -1365,6 +1365,52 @@ public interface QlPackage extends EPackage {
 	int QUESTION_CALL_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.StringValueTypeImpl <em>String Value Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.StringValueTypeImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getStringValueType()
+	 * @generated
+	 */
+	int STRING_VALUE_TYPE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_TYPE__NAME = VALUE_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_TYPE__UNIT = VALUE_TYPE__UNIT;
+
+	/**
+	 * The number of structural features of the '<em>String Value Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_TYPE_FEATURE_COUNT = VALUE_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>String Value Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_TYPE_OPERATION_COUNT = VALUE_TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1372,7 +1418,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryOperatorKind()
 	 * @generated
 	 */
-	int BINARY_OPERATOR_KIND = 29;
+	int BINARY_OPERATOR_KIND = 30;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.UnaryOperatorKind <em>Unary Operator Kind</em>}' enum.
@@ -1382,7 +1428,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryOperatorKind()
 	 * @generated
 	 */
-	int UNARY_OPERATOR_KIND = 30;
+	int UNARY_OPERATOR_KIND = 31;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QLModel <em>QL Model</em>}'.
@@ -1983,6 +2029,16 @@ public interface QlPackage extends EPackage {
 	EReference getQuestionCall_Question();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.StringValueType <em>String Value Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Value Type</em>'.
+	 * @see org.gemoc.ql.model.ql.StringValueType
+	 * @generated
+	 */
+	EClass getStringValueType();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2539,6 +2595,16 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUESTION_CALL__QUESTION = eINSTANCE.getQuestionCall_Question();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.StringValueTypeImpl <em>String Value Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.StringValueTypeImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getStringValueType()
+		 * @generated
+		 */
+		EClass STRING_VALUE_TYPE = eINSTANCE.getStringValueType();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.

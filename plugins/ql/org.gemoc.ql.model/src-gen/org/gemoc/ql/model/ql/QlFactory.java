@@ -211,6 +211,15 @@ public interface QlFactory extends EFactory {
 	QuestionCall createQuestionCall();
 
 	/**
+	 * Returns a new object of class '<em>String Value Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Value Type</em>'.
+	 * @generated
+	 */
+	StringValueType createStringValueType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
