@@ -7,49 +7,22 @@
   <forms name=" Box1HouseOwning">
     <questionGroup>
       <questionGroups>
-        <guard
-            xsi:type="ql:QuestionCall"
-            question="//@forms.0/@questionGroup/@questions.0"/>
         <questions
-            name="sellingPrice"
-            label="Price the house was sold for:"
-            datatype="//@typegroup.0/@dataTypes.1"/>
+            questionDefinition="#//@definitionGroup.0/@questionDefinitions.3"/>
         <questions
-            name="privateDebt"
-            label="Private debts for the sold house:"
-            datatype="//@typegroup.0/@dataTypes.1"/>
+            questionDefinition="#//@definitionGroup.0/@questionDefinitions.4"/>
         <questions
-            name="valueResidue"
-            label="Value residue:"
-            datatype="//@typegroup.0/@dataTypes.1">
-          <guard
-              xsi:type="ql:BasicBinaryExpression"
-              resultType="//@typegroup.0/@dataTypes.1"
-              operator="MINUS">
-            <lhsOperand
-                xsi:type="ql:QuestionCall"
-                question="//@forms.0/@questionGroup/@questionGroups.0/@questions.0"/>
-            <rhsOperand
-                xsi:type="ql:QuestionCall"
-                question="//@forms.0/@questionGroup/@questionGroups.0/@questions.1"/>
-          </guard>
-        </questions>
+            questionDefinition="#//@definitionGroup.0/@questionDefinitions.5"/>
       </questionGroups>
       <questions
-          name="hasSoldHouse"
-          label="Did you sell a house in 2010?"
-          datatype="//@typegroup.0/@dataTypes.0"/>
+          questionDefinition="#//@definitionGroup.0/@questionDefinitions.0"/>
       <questions
-          name="hasBoughtHouse"
-          label="Did you by a house in 2010?"
-          datatype="//@typegroup.0/@dataTypes.0"/>
+          questionDefinition="#//@definitionGroup.0/@questionDefinitions.1"/>
       <questions
-          name="hasMaintLoan"
-          label="Did you enter a loan for maintenance/reconstruction?"
-          datatype="//@typegroup.0/@dataTypes.0"/>
+          questionDefinition="#//@definitionGroup.0/@questionDefinitions.2"/>
     </questionGroup>
   </forms>
-  <typegroup>
+  <definitionGroup>
     <dataTypes
         xsi:type="ql:BooleanValueType"
         name="boolean"/>
@@ -57,5 +30,41 @@
         xsi:type="ql:DecimalValueType"
         name="money"
         unit="Euro"/>
-  </typegroup>
+    <questionDefinitions
+        name="hasSoldHouse"
+        label="Did you sell a house in 2010?"
+        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+    <questionDefinitions
+        name="hasBoughtHouse"
+        label="Did you by a house in 2010?"
+        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+    <questionDefinitions
+        name="hasMaintLoan"
+        label="Did you enter a loan for maintenance/reconstruction?"
+        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+    <questionDefinitions
+        name="sellingPrice"
+        label="Price the house was sold for:"
+        datatype="#//@definitionGroup.0/@dataTypes.1"/>
+    <questionDefinitions
+        name="privateDebt"
+        label="Private debts for the sold house:"
+        datatype="#//@definitionGroup.0/@dataTypes.1"/>
+    <questionDefinitions
+        name="valueResidue"
+        label="Value residue:"
+        datatype="#//@definitionGroup.0/@dataTypes.1">
+      <computedExpression
+          xsi:type="ql:BasicBinaryExpression"
+          resultType="#//@definitionGroup.0/@dataTypes.1"
+          operator="MINUS">
+        <lhsOperand
+            xsi:type="ql:QuestionCall"
+            question="#//@definitionGroup.0/@questionDefinitions.3"/>
+        <rhsOperand
+            xsi:type="ql:QuestionCall"
+            question="#//@definitionGroup.0/@questionDefinitions.4"/>
+      </computedExpression>
+    </questionDefinitions>
+  </definitionGroup>
 </ql:QLModel>
