@@ -5,5 +5,5 @@ import org.gemoc.ql.model.ql.Question;
 
 @Aspect(className = Question.class)
 @SuppressWarnings("all")
-public class QuestionAspect extends NamedElementAspect {
+public class QuestionAspect {
 }

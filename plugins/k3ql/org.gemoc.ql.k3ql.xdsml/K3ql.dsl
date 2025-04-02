@@ -3,6 +3,7 @@ ecore = platform:/resource/org.gemoc.ql.model/model/ql.ecore
 k3 = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.FormAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionAspect,    \
+	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.BinaryExpressionAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.UnaryExpressionAspect,    \
@@ -27,6 +28,6 @@ k3 = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.NamedElementAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.ConditionnalElementAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect,    \
-	 org.gemoc.ql.k3ql.k3dsa.ql.TypeGroupAspect,    \
+	 org.gemoc.ql.k3ql.k3dsa.ql.DefinitionGroupAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
 metaprog = org.eclipse.gemoc.metaprog.kermeta3

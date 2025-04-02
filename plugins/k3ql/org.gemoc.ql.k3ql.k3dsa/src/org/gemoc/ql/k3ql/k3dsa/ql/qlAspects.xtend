@@ -4,6 +4,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.gemoc.ql.model.ql.QLModel
 import org.gemoc.ql.model.ql.Form
 import org.gemoc.ql.model.ql.Question
+import org.gemoc.ql.model.ql.QuestionDefinition
 import org.gemoc.ql.model.ql.DataType
 import org.gemoc.ql.model.ql.Expression
 import org.gemoc.ql.model.ql.BinaryExpression
@@ -28,12 +29,13 @@ import org.gemoc.ql.model.ql.EnumerationLiteral
 import org.gemoc.ql.model.ql.NamedElement
 import org.gemoc.ql.model.ql.ConditionnalElement
 import org.gemoc.ql.model.ql.QuestionGroup
-import org.gemoc.ql.model.ql.TypeGroup
+import org.gemoc.ql.model.ql.DefinitionGroup
 import org.gemoc.ql.model.ql.QuestionCall
 
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.FormAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.DataTypeAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.BinaryExpressionAspect.*
@@ -59,7 +61,7 @@ import static extension org.gemoc.ql.k3ql.k3dsa.ql.EnumerationLiteralAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.NamedElementAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ConditionnalElementAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.ql.TypeGroupAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.DefinitionGroupAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect.*
 
 import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
@@ -105,15 +107,12 @@ class FormAspect extends NamedElementAspect {
 }
 
 @Aspect(className=Question)
-class QuestionAspect extends NamedElementAspect {
-	/*
-	* BE CAREFUL :
-	*
-	* This class has more than one superclass
-	* please specify which parent you want with the 'super' expected calling
-	*
-	*/
+class QuestionAspect {
 
+}
+
+@Aspect(className=QuestionDefinition)
+class QuestionDefinitionAspect extends NamedElementAspect {
 
 }
 
@@ -500,8 +499,8 @@ class QuestionGroupAspect extends ConditionnalElementAspect {
 
 }
 
-@Aspect(className=TypeGroup)
-class TypeGroupAspect {
+@Aspect(className=DefinitionGroup)
+class DefinitionGroupAspect {
 
 }
 
