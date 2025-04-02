@@ -6,6 +6,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.emf.common.util.EList;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
+import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 
 @Aspect(className = QLModel.class)
@@ -51,6 +52,10 @@ public class QLModelAspect {
   protected static void _privk3_main(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
     EObjectAspect.devInfo(_self, "-> main() ");
     while (true) {
+      EList<Form> _forms = _self.getForms();
+      for (final Form f : _forms) {
+        FormAspect.render(f);
+      }
     }
   }
 }

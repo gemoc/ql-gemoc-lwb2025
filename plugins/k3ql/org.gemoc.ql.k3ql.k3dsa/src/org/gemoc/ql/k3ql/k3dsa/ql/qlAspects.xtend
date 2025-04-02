@@ -90,6 +90,10 @@ class QLModelAspect {
 		
 		while(true) {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
+			for( f : _self.forms) {
+				f.render();
+			}
+			// TODO reevaluate only on data change
 		}
 //		// while not on a final mode
 //		while(! _self.modeAutomata.currentMode.final){ 
@@ -103,7 +107,9 @@ class QLModelAspect {
 
 @Aspect(className=Form)
 class FormAspect extends NamedElementAspect {
-
+	def void render() {
+		_self.questionGroup.render();
+	}
 }
 
 @Aspect(className=Question)
@@ -497,6 +503,12 @@ abstract class ConditionnalElementAspect {
 @Aspect(className=QuestionGroup)
 class QuestionGroupAspect extends ConditionnalElementAspect {
 
+	def void render() {
+		// TODO evaluate guard
+		for(subGroup : _self.questionGroups) {
+			subGroup.render();	
+		}
+	}
 }
 
 @Aspect(className=DefinitionGroup)
