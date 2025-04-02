@@ -15,7 +15,7 @@
 
 
 		<module>ql</module>
-		<!--<module>k3ql</module>-->
+		<module>k3ql</module>
 	</modules>
 
 </project>
