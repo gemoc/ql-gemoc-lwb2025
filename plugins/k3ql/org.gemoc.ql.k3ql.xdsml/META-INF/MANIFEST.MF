@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.gemoc.ql.k3ql.xdsml
 Bundle-SymbolicName: org.gemoc.ql.k3ql.xdsml; singleton:=true
 Automatic-Module-Name: org.gemoc.ql.k3ql.xdsml
-Bundle-Version: 1.0.0
+Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.21.0";visibility:="private",

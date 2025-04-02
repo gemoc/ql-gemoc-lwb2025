@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Automatic-Module-Name: org.gemoc.ql.k3ql.k3dsa
 Bundle-Name: org.gemoc.ql.k3ql.k3dsa
 Bundle-SymbolicName: org.gemoc.ql.k3ql.k3dsa; singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 0.1.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="4.0.0";visibility:=reexport,
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,
  org.eclipse.xtext.xbase.lib;bundle-version="2.6.0";visibility:=private,
