@@ -12,13 +12,10 @@
 	</parent>
 
 	<modules>
-
-
 		<module>org.gemoc.ql.model</module>
-		<!--<module>org.gemoc.ql.model.edit</module>
-		<module>org.gemoc.ql.model.editor</module>-->
+		<module>org.gemoc.ql.model.edit</module>
+		<module>org.gemoc.ql.model.editor</module>
 	</modules>
-
 
 	<properties>
 	</properties>
