@@ -30,9 +30,10 @@
     </genEnums>
     <genClasses ecoreClass="ql.ecore#//QLModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/forms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/typegroup"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//Form">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//Form/questions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//Form/questionGroup"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//Question">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//Question/label"/>
@@ -76,9 +77,6 @@
     <genClasses ecoreClass="ql.ecore#//DecimalValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//DecimalValue/decimalValue"/>
     </genClasses>
-    <genClasses ecoreClass="ql.ecore#//MoneyValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//MoneyValue/moneyValue"/>
-    </genClasses>
     <genClasses ecoreClass="ql.ecore#//ValueType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//ValueType/unit"/>
     </genClasses>
@@ -98,6 +96,13 @@
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//ConditionnalElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//ConditionnalElement/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="ql.ecore#//QuestionGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionGroup/questionGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionGroup/questions"/>
+    </genClasses>
+    <genClasses ecoreClass="ql.ecore#//TypeGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//TypeGroup/dataTypes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

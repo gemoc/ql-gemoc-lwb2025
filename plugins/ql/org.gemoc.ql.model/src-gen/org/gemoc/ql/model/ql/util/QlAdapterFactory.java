@@ -202,6 +202,16 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseQuestionGroup(QuestionGroup object) {
+			return createQuestionGroupAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeGroup(TypeGroup object) {
+			return createTypeGroupAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -595,6 +605,34 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConditionnalElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.QuestionGroup <em>Question Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.QuestionGroup
+	 * @generated
+	 */
+	public Adapter createQuestionGroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.TypeGroup <em>Type Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.TypeGroup
+	 * @generated
+	 */
+	public Adapter createTypeGroupAdapter() {
 		return null;
 	}
 

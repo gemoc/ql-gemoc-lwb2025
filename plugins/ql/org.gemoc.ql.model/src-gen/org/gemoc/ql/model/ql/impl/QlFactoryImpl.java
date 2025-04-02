@@ -94,6 +94,10 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createEnumerationValueType();
 		case QlPackage.ENUMERATION_LITERAL:
 			return createEnumerationLiteral();
+		case QlPackage.QUESTION_GROUP:
+			return createQuestionGroup();
+		case QlPackage.TYPE_GROUP:
+			return createTypeGroup();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -340,6 +344,28 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QuestionGroup createQuestionGroup() {
+		QuestionGroupImpl questionGroup = new QuestionGroupImpl();
+		return questionGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TypeGroup createTypeGroup() {
+		TypeGroupImpl typeGroup = new TypeGroupImpl();
+		return typeGroup;
 	}
 
 	/**

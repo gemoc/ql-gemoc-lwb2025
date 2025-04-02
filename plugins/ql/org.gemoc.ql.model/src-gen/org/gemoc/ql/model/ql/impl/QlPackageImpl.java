@@ -36,7 +36,9 @@ import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionGroup;
 import org.gemoc.ql.model.ql.StringValue;
+import org.gemoc.ql.model.ql.TypeGroup;
 import org.gemoc.ql.model.ql.UnaryExpression;
 import org.gemoc.ql.model.ql.UnaryOperatorKind;
 import org.gemoc.ql.model.ql.Value;
@@ -243,6 +245,20 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass questionGroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass typeGroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum binaryOperatorKindEEnum = null;
 
 	/**
@@ -341,6 +357,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getQLModel_Typegroup() {
+		return (EReference) qlModelEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getForm() {
 		return formEClass;
 	}
@@ -351,7 +377,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getForm_Questions() {
+	public EReference getForm_QuestionGroup() {
 		return (EReference) formEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -831,6 +857,56 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getQuestionGroup() {
+		return questionGroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionGroup_QuestionGroups() {
+		return (EReference) questionGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionGroup_Questions() {
+		return (EReference) questionGroupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTypeGroup() {
+		return typeGroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTypeGroup_DataTypes() {
+		return (EReference) typeGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBinaryOperatorKind() {
 		return binaryOperatorKindEEnum;
 	}
@@ -877,9 +953,10 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		// Create classes and their features
 		qlModelEClass = createEClass(QL_MODEL);
 		createEReference(qlModelEClass, QL_MODEL__FORMS);
+		createEReference(qlModelEClass, QL_MODEL__TYPEGROUP);
 
 		formEClass = createEClass(FORM);
-		createEReference(formEClass, FORM__QUESTIONS);
+		createEReference(formEClass, FORM__QUESTION_GROUP);
 
 		questionEClass = createEClass(QUESTION);
 		createEAttribute(questionEClass, QUESTION__LABEL);
@@ -953,6 +1030,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		conditionnalElementEClass = createEClass(CONDITIONNAL_ELEMENT);
 		createEReference(conditionnalElementEClass, CONDITIONNAL_ELEMENT__GUARD);
 
+		questionGroupEClass = createEClass(QUESTION_GROUP);
+		createEReference(questionGroupEClass, QUESTION_GROUP__QUESTION_GROUPS);
+		createEReference(questionGroupEClass, QUESTION_GROUP__QUESTIONS);
+
+		typeGroupEClass = createEClass(TYPE_GROUP);
+		createEReference(typeGroupEClass, TYPE_GROUP__DATA_TYPES);
+
 		// Create enums
 		binaryOperatorKindEEnum = createEEnum(BINARY_OPERATOR_KIND);
 		unaryOperatorKindEEnum = createEEnum(UNARY_OPERATOR_KIND);
@@ -988,7 +1072,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		// Add supertypes to classes
 		formEClass.getESuperTypes().add(this.getNamedElement());
-		formEClass.getESuperTypes().add(this.getConditionnalElement());
 		questionEClass.getESuperTypes().add(this.getNamedElement());
 		questionEClass.getESuperTypes().add(this.getConditionnalElement());
 		dataTypeEClass.getESuperTypes().add(this.getNamedElement());
@@ -1011,15 +1094,19 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		dateValueTypeEClass.getESuperTypes().add(this.getValueType());
 		enumerationValueTypeEClass.getESuperTypes().add(this.getValueType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedElement());
+		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlModelEClass, QLModel.class, "QLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQLModel_Forms(), this.getForm(), null, "forms", null, 0, -1, QLModel.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getQLModel_Typegroup(), this.getTypeGroup(), null, "typegroup", null, 0, -1, QLModel.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getForm_Questions(), this.getQuestion(), null, "questions", null, 0, -1, Form.class,
+		initEReference(getForm_QuestionGroup(), this.getQuestionGroup(), null, "questionGroup", null, 1, 1, Form.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1152,6 +1239,21 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getConditionnalElement_Guard(), this.getExpression(), null, "guard", null, 1, 1,
 				ConditionnalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(questionGroupEClass, QuestionGroup.class, "QuestionGroup", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuestionGroup_QuestionGroups(), this.getQuestionGroup(), null, "questionGroups", null, 0, -1,
+				QuestionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionGroup_Questions(), this.getQuestion(), null, "questions", null, 0, -1,
+				QuestionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(typeGroupEClass, TypeGroup.class, "TypeGroup", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTypeGroup_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1, TypeGroup.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(binaryOperatorKindEEnum, BinaryOperatorKind.class, "BinaryOperatorKind");

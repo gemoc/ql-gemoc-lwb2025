@@ -4,10 +4,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="QLModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
         eType="#//Form" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typegroup" upperBound="-1"
+        eType="#//TypeGroup" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//NamedElement #//ConditionnalElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="questions" upperBound="-1"
-        eType="#//Question" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionGroup" lowerBound="1"
+        eType="#//QuestionGroup" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//NamedElement #//ConditionnalElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -76,9 +78,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="DecimalValue" eSuperTypes="#//Value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MoneyValue" eSuperTypes="#//Value">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moneyValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValueType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -100,5 +99,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConditionnalElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="guard" lowerBound="1" eType="#//Expression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QuestionGroup" eSuperTypes="#//ConditionnalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionGroups" upperBound="-1"
+        eType="#//QuestionGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questions" upperBound="-1"
+        eType="#//Question" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeGroup">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
+        eType="#//DataType" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

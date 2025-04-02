@@ -79,8 +79,6 @@ public class QlSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseNamedElement(form);
 			if (result == null)
-				result = caseConditionnalElement(form);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -327,6 +325,22 @@ public class QlSwitch<T> extends Switch<T> {
 		case QlPackage.CONDITIONNAL_ELEMENT: {
 			ConditionnalElement conditionnalElement = (ConditionnalElement) theEObject;
 			T result = caseConditionnalElement(conditionnalElement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlPackage.QUESTION_GROUP: {
+			QuestionGroup questionGroup = (QuestionGroup) theEObject;
+			T result = caseQuestionGroup(questionGroup);
+			if (result == null)
+				result = caseConditionnalElement(questionGroup);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlPackage.TYPE_GROUP: {
+			TypeGroup typeGroup = (TypeGroup) theEObject;
+			T result = caseTypeGroup(typeGroup);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -738,6 +752,36 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConditionnalElement(ConditionnalElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Question Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Question Group</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuestionGroup(QuestionGroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Type Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Type Group</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTypeGroup(TypeGroup object) {
 		return null;
 	}
 

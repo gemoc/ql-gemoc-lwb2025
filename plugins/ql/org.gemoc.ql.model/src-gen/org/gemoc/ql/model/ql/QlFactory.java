@@ -193,6 +193,24 @@ public interface QlFactory extends EFactory {
 	EnumerationLiteral createEnumerationLiteral();
 
 	/**
+	 * Returns a new object of class '<em>Question Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Question Group</em>'.
+	 * @generated
+	 */
+	QuestionGroup createQuestionGroup();
+
+	/**
+	 * Returns a new object of class '<em>Type Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Type Group</em>'.
+	 * @generated
+	 */
+	TypeGroup createTypeGroup();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ql:QLModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ql="http://www.gemoc.org/ql">
+  <forms name=" Box1HouseOwning">
+    <questionGroup>
+      <questionGroups>
+        <questions
+            name="sellingPrice"
+            label="Price the house was sold for:"
+            datatype="//@typegroup.0/@dataTypes.1"/>
+        <questions
+            name="privateDebt"
+            label="Private debts for the sold house:"
+            datatype="//@typegroup.0/@dataTypes.1"/>
+        <questions
+            name="valueResidue"
+            label="Value residue:"
+            datatype="//@typegroup.0/@dataTypes.1">
+          <guard
+              xsi:type="ql:BasicBinaryExpression"
+              resultType="//@typegroup.0/@dataTypes.1"
+              operator="MINUS"/>
+        </questions>
+      </questionGroups>
+      <questions
+          name="hasSoldHouse"
+          label="Did you sell a house in 2010?"
+          datatype="//@typegroup.0/@dataTypes.0"/>
+      <questions
+          name="hasBoughtHouse"
+          label="Did you by a house in 2010?"
+          datatype="//@typegroup.0/@dataTypes.0"/>
+      <questions
+          name="hasMaintLoan"
+          label="Did you enter a loan for maintenance/reconstruction?"
+          datatype="//@typegroup.0/@dataTypes.0"/>
+    </questionGroup>
+  </forms>
+  <typegroup>
+    <dataTypes
+        xsi:type="ql:BooleanValueType"
+        name="boolean"/>
+    <dataTypes
+        xsi:type="ql:DecimalValueType"
+        name="money"
+        unit="Euro"/>
+  </typegroup>
+</ql:QLModel>

@@ -77,13 +77,22 @@ public interface QlPackage extends EPackage {
 	int QL_MODEL__FORMS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Typegroup</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL__TYPEGROUP = 1;
+
+	/**
 	 * The number of structural features of the '<em>QL Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QL_MODEL_FEATURE_COUNT = 1;
+	int QL_MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>QL Model</em>' class.
@@ -151,22 +160,13 @@ public interface QlPackage extends EPackage {
 	int FORM__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
+	 * The feature id for the '<em><b>Question Group</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM__GUARD = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Questions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORM__QUESTIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FORM__QUESTION_GROUP = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Form</em>' class.
@@ -175,7 +175,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FORM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Form</em>' class.
@@ -1264,6 +1264,98 @@ public interface QlPackage extends EPackage {
 	int CONDITIONNAL_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionGroupImpl <em>Question Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.QuestionGroupImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionGroup()
+	 * @generated
+	 */
+	int QUESTION_GROUP = 27;
+
+	/**
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_GROUP__GUARD = CONDITIONNAL_ELEMENT__GUARD;
+
+	/**
+	 * The feature id for the '<em><b>Question Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_GROUP__QUESTION_GROUPS = CONDITIONNAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Questions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_GROUP__QUESTIONS = CONDITIONNAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Question Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_GROUP_FEATURE_COUNT = CONDITIONNAL_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Question Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_GROUP_OPERATION_COUNT = CONDITIONNAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.TypeGroupImpl <em>Type Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.TypeGroupImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getTypeGroup()
+	 * @generated
+	 */
+	int TYPE_GROUP = 28;
+
+	/**
+	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GROUP__DATA_TYPES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Type Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GROUP_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Type Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE_GROUP_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1271,7 +1363,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryOperatorKind()
 	 * @generated
 	 */
-	int BINARY_OPERATOR_KIND = 27;
+	int BINARY_OPERATOR_KIND = 29;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.UnaryOperatorKind <em>Unary Operator Kind</em>}' enum.
@@ -1281,7 +1373,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryOperatorKind()
 	 * @generated
 	 */
-	int UNARY_OPERATOR_KIND = 28;
+	int UNARY_OPERATOR_KIND = 30;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QLModel <em>QL Model</em>}'.
@@ -1305,6 +1397,17 @@ public interface QlPackage extends EPackage {
 	EReference getQLModel_Forms();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getTypegroup <em>Typegroup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Typegroup</em>'.
+	 * @see org.gemoc.ql.model.ql.QLModel#getTypegroup()
+	 * @see #getQLModel()
+	 * @generated
+	 */
+	EReference getQLModel_Typegroup();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1315,15 +1418,15 @@ public interface QlPackage extends EPackage {
 	EClass getForm();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.Form#getQuestions <em>Questions</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.Form#getQuestionGroup <em>Question Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Questions</em>'.
-	 * @see org.gemoc.ql.model.ql.Form#getQuestions()
+	 * @return the meta object for the containment reference '<em>Question Group</em>'.
+	 * @see org.gemoc.ql.model.ql.Form#getQuestionGroup()
 	 * @see #getForm()
 	 * @generated
 	 */
-	EReference getForm_Questions();
+	EReference getForm_QuestionGroup();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Question <em>Question</em>}'.
@@ -1818,6 +1921,59 @@ public interface QlPackage extends EPackage {
 	EReference getConditionnalElement_Guard();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QuestionGroup <em>Question Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Question Group</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionGroup
+	 * @generated
+	 */
+	EClass getQuestionGroup();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QuestionGroup#getQuestionGroups <em>Question Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Question Groups</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionGroup#getQuestionGroups()
+	 * @see #getQuestionGroup()
+	 * @generated
+	 */
+	EReference getQuestionGroup_QuestionGroups();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QuestionGroup#getQuestions <em>Questions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Questions</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionGroup#getQuestions()
+	 * @see #getQuestionGroup()
+	 * @generated
+	 */
+	EReference getQuestionGroup_Questions();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.TypeGroup <em>Type Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type Group</em>'.
+	 * @see org.gemoc.ql.model.ql.TypeGroup
+	 * @generated
+	 */
+	EClass getTypeGroup();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.TypeGroup#getDataTypes <em>Data Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Data Types</em>'.
+	 * @see org.gemoc.ql.model.ql.TypeGroup#getDataTypes()
+	 * @see #getTypeGroup()
+	 * @generated
+	 */
+	EReference getTypeGroup_DataTypes();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1879,6 +2035,14 @@ public interface QlPackage extends EPackage {
 		EReference QL_MODEL__FORMS = eINSTANCE.getQLModel_Forms();
 
 		/**
+		 * The meta object literal for the '<em><b>Typegroup</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QL_MODEL__TYPEGROUP = eINSTANCE.getQLModel_Typegroup();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1889,12 +2053,12 @@ public interface QlPackage extends EPackage {
 		EClass FORM = eINSTANCE.getForm();
 
 		/**
-		 * The meta object literal for the '<em><b>Questions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Question Group</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORM__QUESTIONS = eINSTANCE.getForm_Questions();
+		EReference FORM__QUESTION_GROUP = eINSTANCE.getForm_QuestionGroup();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionImpl <em>Question</em>}' class.
@@ -2322,6 +2486,50 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONDITIONNAL_ELEMENT__GUARD = eINSTANCE.getConditionnalElement_Guard();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionGroupImpl <em>Question Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.QuestionGroupImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionGroup()
+		 * @generated
+		 */
+		EClass QUESTION_GROUP = eINSTANCE.getQuestionGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Question Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION_GROUP__QUESTION_GROUPS = eINSTANCE.getQuestionGroup_QuestionGroups();
+
+		/**
+		 * The meta object literal for the '<em><b>Questions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION_GROUP__QUESTIONS = eINSTANCE.getQuestionGroup_Questions();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.TypeGroupImpl <em>Type Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.TypeGroupImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getTypeGroup()
+		 * @generated
+		 */
+		EClass TYPE_GROUP = eINSTANCE.getTypeGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TYPE_GROUP__DATA_TYPES = eINSTANCE.getTypeGroup_DataTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
