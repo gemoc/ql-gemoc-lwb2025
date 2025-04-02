@@ -14,6 +14,7 @@ import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.Value;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +27,7 @@ import org.gemoc.ql.model.ql.QuestionDefinition;
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getComputedExpression <em>Computed Expression</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getCurrentValue <em>Current Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +72,16 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @ordered
 	 */
 	protected Expression computedExpression;
+
+	/**
+	 * The cached value of the '{@link #getCurrentValue() <em>Current Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrentValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected Value currentValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -214,10 +226,64 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @generated
 	 */
 	@Override
+	public Value getCurrentValue() {
+		return currentValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCurrentValue(Value newCurrentValue, NotificationChain msgs) {
+		Value oldCurrentValue = currentValue;
+		currentValue = newCurrentValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					QlPackage.QUESTION_DEFINITION__CURRENT_VALUE, oldCurrentValue, newCurrentValue);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCurrentValue(Value newCurrentValue) {
+		if (newCurrentValue != currentValue) {
+			NotificationChain msgs = null;
+			if (currentValue != null)
+				msgs = ((InternalEObject) currentValue).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION_DEFINITION__CURRENT_VALUE, null, msgs);
+			if (newCurrentValue != null)
+				msgs = ((InternalEObject) newCurrentValue).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION_DEFINITION__CURRENT_VALUE, null, msgs);
+			msgs = basicSetCurrentValue(newCurrentValue, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_DEFINITION__CURRENT_VALUE,
+					newCurrentValue, newCurrentValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			return basicSetComputedExpression(null, msgs);
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
+			return basicSetCurrentValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -238,6 +304,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return basicGetDatatype();
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			return getComputedExpression();
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
+			return getCurrentValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,6 +326,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			setComputedExpression((Expression) newValue);
+			return;
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
+			setCurrentValue((Value) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,6 +351,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			setComputedExpression((Expression) null);
 			return;
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
+			setCurrentValue((Value) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -298,6 +372,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return datatype != null;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			return computedExpression != null;
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
+			return currentValue != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -233,13 +233,22 @@ public interface QlPackage extends EPackage {
 	int QUESTION_DEFINITION__COMPUTED_EXPRESSION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Current Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_DEFINITION__CURRENT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Question Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Question Definition</em>' class.
@@ -1564,6 +1573,17 @@ public interface QlPackage extends EPackage {
 	EReference getQuestionDefinition_ComputedExpression();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.QuestionDefinition#getCurrentValue <em>Current Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Current Value</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#getCurrentValue()
+	 * @see #getQuestionDefinition()
+	 * @generated
+	 */
+	EReference getQuestionDefinition_CurrentValue();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2227,6 +2247,14 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUESTION_DEFINITION__COMPUTED_EXPRESSION = eINSTANCE.getQuestionDefinition_ComputedExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Current Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION_DEFINITION__CURRENT_VALUE = eINSTANCE.getQuestionDefinition_CurrentValue();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.DataTypeImpl <em>Data Type</em>}' class.

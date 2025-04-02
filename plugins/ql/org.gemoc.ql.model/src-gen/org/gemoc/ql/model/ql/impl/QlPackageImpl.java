@@ -443,6 +443,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getQuestionDefinition_CurrentValue() {
+		return (EReference) questionDefinitionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -1018,6 +1028,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__LABEL);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__DATATYPE);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__COMPUTED_EXPRESSION);
+		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__CURRENT_VALUE);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -1183,6 +1194,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getQuestionDefinition_ComputedExpression(), this.getExpression(), null, "computedExpression",
 				null, 0, 1, QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionDefinition_CurrentValue(), this.getValue(), null, "currentValue", null, 0, 1,
+				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1352,6 +1366,21 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// aspect
+		createAspectAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>aspect</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createAspectAnnotations() {
+		String source = "aspect";
+		addAnnotation(getQuestionDefinition_CurrentValue(), source, new String[] {});
 	}
 
 } //QlPackageImpl

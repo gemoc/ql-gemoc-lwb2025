@@ -97,6 +97,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION);
+			childrenFeatures.add(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -164,6 +165,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
+		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -192,6 +194,21 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION,
 				QlFactory.eINSTANCE.createQuestionCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createIntegerValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createStringValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createBooleanValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createDateValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createDecimalValue()));
 	}
 
 }

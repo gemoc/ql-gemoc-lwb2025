@@ -17,6 +17,10 @@
         eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="computedExpression" eType="#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentValue" eType="#//Value"
+        containment="true">
+      <eAnnotations source="aspect"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">

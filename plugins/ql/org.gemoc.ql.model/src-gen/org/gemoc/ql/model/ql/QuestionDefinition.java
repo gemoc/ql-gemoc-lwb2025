@@ -14,6 +14,7 @@ package org.gemoc.ql.model.ql;
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getLabel <em>Label</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getComputedExpression <em>Computed Expression</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getCurrentValue <em>Current Value</em>}</li>
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getQuestionDefinition()
@@ -86,5 +87,28 @@ public interface QuestionDefinition extends NamedElement {
 	 * @generated
 	 */
 	void setComputedExpression(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Value</em>' containment reference.
+	 * @see #setCurrentValue(Value)
+	 * @see org.gemoc.ql.model.ql.QlPackage#getQuestionDefinition_CurrentValue()
+	 * @model containment="true"
+	 *        annotation="aspect"
+	 * @generated
+	 */
+	Value getCurrentValue();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.ql.model.ql.QuestionDefinition#getCurrentValue <em>Current Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Value</em>' containment reference.
+	 * @see #getCurrentValue()
+	 * @generated
+	 */
+	void setCurrentValue(Value value);
 
 } // QuestionDefinition
