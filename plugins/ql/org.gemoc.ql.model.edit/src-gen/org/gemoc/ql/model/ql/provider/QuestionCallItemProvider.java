@@ -10,26 +10,23 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.gemoc.ql.model.ql.MoneyValue;
 import org.gemoc.ql.model.ql.QlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.MoneyValue} object.
+ * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.QuestionCall} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class MoneyValueItemProvider extends ValueItemProvider {
+public class QuestionCallItemProvider extends CallItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoneyValueItemProvider(AdapterFactory adapterFactory) {
+	public QuestionCallItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,36 +41,35 @@ public class MoneyValueItemProvider extends ValueItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMoneyValuePropertyDescriptor(object);
+			addQuestionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Money Value feature.
+	 * This adds a property descriptor for the Question feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMoneyValuePropertyDescriptor(Object object) {
+	protected void addQuestionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_MoneyValue_moneyValue_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_MoneyValue_moneyValue_feature",
-								"_UI_MoneyValue_type"),
-						QlPackage.Literals.MONEY_VALUE__MONEY_VALUE, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_QuestionCall_question_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QuestionCall_question_feature",
+								"_UI_QuestionCall_type"),
+						QlPackage.Literals.QUESTION_CALL__QUESTION, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns MoneyValue.gif.
+	 * This returns QuestionCall.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/MoneyValue"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/QuestionCall"));
 	}
 
 	/**
@@ -94,8 +90,7 @@ public class MoneyValueItemProvider extends ValueItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		MoneyValue moneyValue = (MoneyValue) object;
-		return getString("_UI_MoneyValue_type") + " " + moneyValue.getMoneyValue();
+		return getString("_UI_QuestionCall_type");
 	}
 
 	/**
@@ -108,12 +103,6 @@ public class MoneyValueItemProvider extends ValueItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(MoneyValue.class)) {
-		case QlPackage.MONEY_VALUE__MONEY_VALUE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

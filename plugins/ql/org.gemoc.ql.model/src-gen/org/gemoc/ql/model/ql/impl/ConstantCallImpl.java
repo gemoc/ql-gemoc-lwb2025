@@ -10,24 +10,24 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.ql.model.ql.CallConstant;
+import org.gemoc.ql.model.ql.ConstantCall;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.Value;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Call Constant</b></em>'.
+ * An implementation of the model object '<em><b>Constant Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.ql.model.ql.impl.CallConstantImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.ConstantCallImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CallConstantImpl extends CallImpl implements CallConstant {
+public class ConstantCallImpl extends CallImpl implements ConstantCall {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallConstantImpl() {
+	protected ConstantCallImpl() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return QlPackage.Literals.CALL_CONSTANT;
+		return QlPackage.Literals.CONSTANT_CALL;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					QlPackage.CALL_CONSTANT__VALUE, oldValue, newValue);
+					QlPackage.CONSTANT_CALL__VALUE, oldValue, newValue);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -97,15 +97,15 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 			NotificationChain msgs = null;
 			if (value != null)
 				msgs = ((InternalEObject) value).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.CALL_CONSTANT__VALUE, null, msgs);
+						EOPPOSITE_FEATURE_BASE - QlPackage.CONSTANT_CALL__VALUE, null, msgs);
 			if (newValue != null)
 				msgs = ((InternalEObject) newValue).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.CALL_CONSTANT__VALUE, null, msgs);
+						EOPPOSITE_FEATURE_BASE - QlPackage.CONSTANT_CALL__VALUE, null, msgs);
 			msgs = basicSetValue(newValue, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.CALL_CONSTANT__VALUE, newValue, newValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.CONSTANT_CALL__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		case QlPackage.CONSTANT_CALL__VALUE:
 			return basicSetValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -130,7 +130,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		case QlPackage.CONSTANT_CALL__VALUE:
 			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -144,7 +144,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		case QlPackage.CONSTANT_CALL__VALUE:
 			setValue((Value) newValue);
 			return;
 		}
@@ -159,7 +159,7 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		case QlPackage.CONSTANT_CALL__VALUE:
 			setValue((Value) null);
 			return;
 		}
@@ -174,10 +174,10 @@ public class CallConstantImpl extends CallImpl implements CallConstant {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		case QlPackage.CONSTANT_CALL__VALUE:
 			return value != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CallConstantImpl
+} //ConstantCallImpl

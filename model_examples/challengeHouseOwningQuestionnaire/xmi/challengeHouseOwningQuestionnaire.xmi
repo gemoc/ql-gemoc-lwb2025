@@ -7,6 +7,9 @@
   <forms name=" Box1HouseOwning">
     <questionGroup>
       <questionGroups>
+        <guard
+            xsi:type="ql:QuestionCall"
+            question="//@forms.0/@questionGroup/@questions.0"/>
         <questions
             name="sellingPrice"
             label="Price the house was sold for:"
@@ -22,7 +25,14 @@
           <guard
               xsi:type="ql:BasicBinaryExpression"
               resultType="//@typegroup.0/@dataTypes.1"
-              operator="MINUS"/>
+              operator="MINUS">
+            <lhsOperand
+                xsi:type="ql:QuestionCall"
+                question="//@forms.0/@questionGroup/@questionGroups.0/@questions.0"/>
+            <rhsOperand
+                xsi:type="ql:QuestionCall"
+                question="//@forms.0/@questionGroup/@questionGroups.0/@questions.1"/>
+          </guard>
         </questions>
       </questionGroups>
       <questions

@@ -64,8 +64,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createQuestion();
 		case QlPackage.BASIC_BINARY_EXPRESSION:
 			return createBasicBinaryExpression();
-		case QlPackage.CALL_CONSTANT:
-			return createCallConstant();
+		case QlPackage.CONSTANT_CALL:
+			return createConstantCall();
 		case QlPackage.INTEGER_VALUE:
 			return createIntegerValue();
 		case QlPackage.STRING_VALUE:
@@ -78,8 +78,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createDateValue();
 		case QlPackage.DECIMAL_VALUE:
 			return createDecimalValue();
-		case QlPackage.MONEY_VALUE:
-			return createMoneyValue();
 		case QlPackage.VALUE_TYPE:
 			return createValueType();
 		case QlPackage.BOOLEAN_VALUE_TYPE:
@@ -98,6 +96,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createQuestionGroup();
 		case QlPackage.TYPE_GROUP:
 			return createTypeGroup();
+		case QlPackage.QUESTION_CALL:
+			return createQuestionCall();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -187,9 +187,9 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	 * @generated
 	 */
 	@Override
-	public CallConstant createCallConstant() {
-		CallConstantImpl callConstant = new CallConstantImpl();
-		return callConstant;
+	public ConstantCall createConstantCall() {
+		ConstantCallImpl constantCall = new ConstantCallImpl();
+		return constantCall;
 	}
 
 	/**
@@ -256,17 +256,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public DecimalValue createDecimalValue() {
 		DecimalValueImpl decimalValue = new DecimalValueImpl();
 		return decimalValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MoneyValue createMoneyValue() {
-		MoneyValueImpl moneyValue = new MoneyValueImpl();
-		return moneyValue;
 	}
 
 	/**
@@ -366,6 +355,17 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public TypeGroup createTypeGroup() {
 		TypeGroupImpl typeGroup = new TypeGroupImpl();
 		return typeGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QuestionCall createQuestionCall() {
+		QuestionCallImpl questionCall = new QuestionCallImpl();
+		return questionCall;
 	}
 
 	/**

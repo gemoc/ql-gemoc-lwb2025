@@ -180,19 +180,25 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__LHS_OPERAND,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__LHS_OPERAND,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__LHS_OPERAND,
+				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
+				QlFactory.eINSTANCE.createQuestionCall()));
 	}
 
 	/**

@@ -112,8 +112,8 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCallConstant(CallConstant object) {
-			return createCallConstantAdapter();
+		public Adapter caseConstantCall(ConstantCall object) {
+			return createConstantCallAdapter();
 		}
 
 		@Override
@@ -149,11 +149,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDecimalValue(DecimalValue object) {
 			return createDecimalValueAdapter();
-		}
-
-		@Override
-		public Adapter caseMoneyValue(MoneyValue object) {
-			return createMoneyValueAdapter();
 		}
 
 		@Override
@@ -209,6 +204,11 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseTypeGroup(TypeGroup object) {
 			return createTypeGroupAdapter();
+		}
+
+		@Override
+		public Adapter caseQuestionCall(QuestionCall object) {
+			return createQuestionCallAdapter();
 		}
 
 		@Override
@@ -357,16 +357,16 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.CallConstant <em>Call Constant</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.ConstantCall <em>Constant Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.CallConstant
+	 * @see org.gemoc.ql.model.ql.ConstantCall
 	 * @generated
 	 */
-	public Adapter createCallConstantAdapter() {
+	public Adapter createConstantCallAdapter() {
 		return null;
 	}
 
@@ -465,20 +465,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDecimalValueAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.MoneyValue <em>Money Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.MoneyValue
-	 * @generated
-	 */
-	public Adapter createMoneyValueAdapter() {
 		return null;
 	}
 
@@ -633,6 +619,20 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeGroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.QuestionCall <em>Question Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.QuestionCall
+	 * @generated
+	 */
+	public Adapter createQuestionCallAdapter() {
 		return null;
 	}
 

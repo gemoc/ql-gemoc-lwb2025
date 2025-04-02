@@ -111,7 +111,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 25;
+	int NAMED_ELEMENT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -536,14 +536,14 @@ public interface QlPackage extends EPackage {
 	int CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.CallConstantImpl <em>Call Constant</em>}' class.
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.ConstantCallImpl <em>Constant Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.CallConstantImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getCallConstant()
+	 * @see org.gemoc.ql.model.ql.impl.ConstantCallImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getConstantCall()
 	 * @generated
 	 */
-	int CALL_CONSTANT = 9;
+	int CONSTANT_CALL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -552,7 +552,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_CONSTANT__RESULT_TYPE = CALL__RESULT_TYPE;
+	int CONSTANT_CALL__RESULT_TYPE = CALL__RESULT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -561,25 +561,25 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_CONSTANT__VALUE = CALL_FEATURE_COUNT + 0;
+	int CONSTANT_CALL__VALUE = CALL_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Call Constant</em>' class.
+	 * The number of structural features of the '<em>Constant Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_CONSTANT_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
+	int CONSTANT_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Call Constant</em>' class.
+	 * The number of operations of the '<em>Constant Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALL_CONSTANT_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
+	int CONSTANT_CALL_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.ValueImpl <em>Value</em>}' class.
@@ -850,43 +850,6 @@ public interface QlPackage extends EPackage {
 	int DECIMAL_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.MoneyValueImpl <em>Money Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.MoneyValueImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getMoneyValue()
-	 * @generated
-	 */
-	int MONEY_VALUE = 17;
-
-	/**
-	 * The feature id for the '<em><b>Money Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONEY_VALUE__MONEY_VALUE = VALUE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Money Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONEY_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Money Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONEY_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.ValueTypeImpl <em>Value Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -894,7 +857,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getValueType()
 	 * @generated
 	 */
-	int VALUE_TYPE = 18;
+	int VALUE_TYPE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -940,7 +903,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBooleanValueType()
 	 * @generated
 	 */
-	int BOOLEAN_VALUE_TYPE = 19;
+	int BOOLEAN_VALUE_TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -986,7 +949,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIntegerValueType()
 	 * @generated
 	 */
-	int INTEGER_VALUE_TYPE = 20;
+	int INTEGER_VALUE_TYPE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1050,7 +1013,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDecimalValueType()
 	 * @generated
 	 */
-	int DECIMAL_VALUE_TYPE = 21;
+	int DECIMAL_VALUE_TYPE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1096,7 +1059,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDateValueType()
 	 * @generated
 	 */
-	int DATE_VALUE_TYPE = 22;
+	int DATE_VALUE_TYPE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1142,7 +1105,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationValueType()
 	 * @generated
 	 */
-	int ENUMERATION_VALUE_TYPE = 23;
+	int ENUMERATION_VALUE_TYPE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1197,7 +1160,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 24;
+	int ENUMERATION_LITERAL = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1234,7 +1197,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getConditionnalElement()
 	 * @generated
 	 */
-	int CONDITIONNAL_ELEMENT = 26;
+	int CONDITIONNAL_ELEMENT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1271,7 +1234,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionGroup()
 	 * @generated
 	 */
-	int QUESTION_GROUP = 27;
+	int QUESTION_GROUP = 26;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1326,7 +1289,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getTypeGroup()
 	 * @generated
 	 */
-	int TYPE_GROUP = 28;
+	int TYPE_GROUP = 27;
 
 	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -1354,6 +1317,52 @@ public interface QlPackage extends EPackage {
 	 * @ordered
 	 */
 	int TYPE_GROUP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionCallImpl <em>Question Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.QuestionCallImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionCall()
+	 * @generated
+	 */
+	int QUESTION_CALL = 28;
+
+	/**
+	 * The feature id for the '<em><b>Result Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_CALL__RESULT_TYPE = CALL__RESULT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_CALL__QUESTION = CALL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Question Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Question Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_CALL_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
@@ -1587,25 +1596,25 @@ public interface QlPackage extends EPackage {
 	EClass getCall();
 
 	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.CallConstant <em>Call Constant</em>}'.
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.ConstantCall <em>Constant Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call Constant</em>'.
-	 * @see org.gemoc.ql.model.ql.CallConstant
+	 * @return the meta object for class '<em>Constant Call</em>'.
+	 * @see org.gemoc.ql.model.ql.ConstantCall
 	 * @generated
 	 */
-	EClass getCallConstant();
+	EClass getConstantCall();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.CallConstant#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.ConstantCall#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see org.gemoc.ql.model.ql.CallConstant#getValue()
-	 * @see #getCallConstant()
+	 * @see org.gemoc.ql.model.ql.ConstantCall#getValue()
+	 * @see #getConstantCall()
 	 * @generated
 	 */
-	EReference getCallConstant_Value();
+	EReference getConstantCall_Value();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Value <em>Value</em>}'.
@@ -1742,27 +1751,6 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDecimalValue_DecimalValue();
-
-	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.MoneyValue <em>Money Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Money Value</em>'.
-	 * @see org.gemoc.ql.model.ql.MoneyValue
-	 * @generated
-	 */
-	EClass getMoneyValue();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.MoneyValue#getMoneyValue <em>Money Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Money Value</em>'.
-	 * @see org.gemoc.ql.model.ql.MoneyValue#getMoneyValue()
-	 * @see #getMoneyValue()
-	 * @generated
-	 */
-	EAttribute getMoneyValue_MoneyValue();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.ValueType <em>Value Type</em>}'.
@@ -1972,6 +1960,27 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTypeGroup_DataTypes();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QuestionCall <em>Question Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Question Call</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionCall
+	 * @generated
+	 */
+	EClass getQuestionCall();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.QuestionCall#getQuestion <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Question</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionCall#getQuestion()
+	 * @see #getQuestionCall()
+	 * @generated
+	 */
+	EReference getQuestionCall_Question();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}'.
@@ -2195,14 +2204,14 @@ public interface QlPackage extends EPackage {
 		EClass CALL = eINSTANCE.getCall();
 
 		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.CallConstantImpl <em>Call Constant</em>}' class.
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.ConstantCallImpl <em>Constant Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.CallConstantImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getCallConstant()
+		 * @see org.gemoc.ql.model.ql.impl.ConstantCallImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getConstantCall()
 		 * @generated
 		 */
-		EClass CALL_CONSTANT = eINSTANCE.getCallConstant();
+		EClass CONSTANT_CALL = eINSTANCE.getConstantCall();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -2210,7 +2219,7 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALL_CONSTANT__VALUE = eINSTANCE.getCallConstant_Value();
+		EReference CONSTANT_CALL__VALUE = eINSTANCE.getConstantCall_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.ValueImpl <em>Value</em>}' class.
@@ -2329,24 +2338,6 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DECIMAL_VALUE__DECIMAL_VALUE = eINSTANCE.getDecimalValue_DecimalValue();
-
-		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.MoneyValueImpl <em>Money Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.MoneyValueImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getMoneyValue()
-		 * @generated
-		 */
-		EClass MONEY_VALUE = eINSTANCE.getMoneyValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Money Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MONEY_VALUE__MONEY_VALUE = eINSTANCE.getMoneyValue_MoneyValue();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.ValueTypeImpl <em>Value Type</em>}' class.
@@ -2530,6 +2521,24 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TYPE_GROUP__DATA_TYPES = eINSTANCE.getTypeGroup_DataTypes();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionCallImpl <em>Question Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.QuestionCallImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionCall()
+		 * @generated
+		 */
+		EClass QUESTION_CALL = eINSTANCE.getQuestionCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Question</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION_CALL__QUESTION = eINSTANCE.getQuestionCall_Question();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.

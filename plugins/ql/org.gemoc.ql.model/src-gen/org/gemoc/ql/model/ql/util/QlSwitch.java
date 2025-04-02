@@ -147,13 +147,13 @@ public class QlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlPackage.CALL_CONSTANT: {
-			CallConstant callConstant = (CallConstant) theEObject;
-			T result = caseCallConstant(callConstant);
+		case QlPackage.CONSTANT_CALL: {
+			ConstantCall constantCall = (ConstantCall) theEObject;
+			T result = caseConstantCall(constantCall);
 			if (result == null)
-				result = caseCall(callConstant);
+				result = caseCall(constantCall);
 			if (result == null)
-				result = caseExpression(callConstant);
+				result = caseExpression(constantCall);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -217,15 +217,6 @@ public class QlSwitch<T> extends Switch<T> {
 			T result = caseDecimalValue(decimalValue);
 			if (result == null)
 				result = caseValue(decimalValue);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case QlPackage.MONEY_VALUE: {
-			MoneyValue moneyValue = (MoneyValue) theEObject;
-			T result = caseMoneyValue(moneyValue);
-			if (result == null)
-				result = caseValue(moneyValue);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -341,6 +332,17 @@ public class QlSwitch<T> extends Switch<T> {
 		case QlPackage.TYPE_GROUP: {
 			TypeGroup typeGroup = (TypeGroup) theEObject;
 			T result = caseTypeGroup(typeGroup);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlPackage.QUESTION_CALL: {
+			QuestionCall questionCall = (QuestionCall) theEObject;
+			T result = caseQuestionCall(questionCall);
+			if (result == null)
+				result = caseCall(questionCall);
+			if (result == null)
+				result = caseExpression(questionCall);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -486,17 +488,17 @@ public class QlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Call Constant</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Constant Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call Constant</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Constant Call</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCallConstant(CallConstant object) {
+	public T caseConstantCall(ConstantCall object) {
 		return null;
 	}
 
@@ -602,21 +604,6 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDecimalValue(DecimalValue object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Money Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Money Value</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMoneyValue(MoneyValue object) {
 		return null;
 	}
 
@@ -782,6 +769,21 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTypeGroup(TypeGroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Question Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Question Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuestionCall(QuestionCall object) {
 		return null;
 	}
 

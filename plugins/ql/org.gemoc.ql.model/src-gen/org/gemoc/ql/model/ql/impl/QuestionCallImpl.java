@@ -5,52 +5,44 @@ package org.gemoc.ql.model.ql.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.ql.model.ql.MoneyValue;
 import org.gemoc.ql.model.ql.QlPackage;
+import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionCall;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Money Value</b></em>'.
+ * An implementation of the model object '<em><b>Question Call</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.ql.model.ql.impl.MoneyValueImpl#getMoneyValue <em>Money Value</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionCallImpl#getQuestion <em>Question</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MoneyValueImpl extends ValueImpl implements MoneyValue {
+public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	/**
-	 * The default value of the '{@link #getMoneyValue() <em>Money Value</em>}' attribute.
+	 * The cached value of the '{@link #getQuestion() <em>Question</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMoneyValue()
+	 * @see #getQuestion()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MONEY_VALUE_EDEFAULT = 0.0F;
-
-	/**
-	 * The cached value of the '{@link #getMoneyValue() <em>Money Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMoneyValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected float moneyValue = MONEY_VALUE_EDEFAULT;
+	protected Question question;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoneyValueImpl() {
+	protected QuestionCallImpl() {
 		super();
 	}
 
@@ -61,7 +53,7 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return QlPackage.Literals.MONEY_VALUE;
+		return QlPackage.Literals.QUESTION_CALL;
 	}
 
 	/**
@@ -70,8 +62,26 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	 * @generated
 	 */
 	@Override
-	public float getMoneyValue() {
-		return moneyValue;
+	public Question getQuestion() {
+		if (question != null && question.eIsProxy()) {
+			InternalEObject oldQuestion = (InternalEObject) question;
+			question = (Question) eResolveProxy(oldQuestion);
+			if (question != oldQuestion) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION_CALL__QUESTION,
+							oldQuestion, question));
+			}
+		}
+		return question;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Question basicGetQuestion() {
+		return question;
 	}
 
 	/**
@@ -80,12 +90,12 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	 * @generated
 	 */
 	@Override
-	public void setMoneyValue(float newMoneyValue) {
-		float oldMoneyValue = moneyValue;
-		moneyValue = newMoneyValue;
+	public void setQuestion(Question newQuestion) {
+		Question oldQuestion = question;
+		question = newQuestion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.MONEY_VALUE__MONEY_VALUE, oldMoneyValue,
-					moneyValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_CALL__QUESTION, oldQuestion,
+					question));
 	}
 
 	/**
@@ -96,8 +106,10 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case QlPackage.MONEY_VALUE__MONEY_VALUE:
-			return getMoneyValue();
+		case QlPackage.QUESTION_CALL__QUESTION:
+			if (resolve)
+				return getQuestion();
+			return basicGetQuestion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +122,8 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case QlPackage.MONEY_VALUE__MONEY_VALUE:
-			setMoneyValue((Float) newValue);
+		case QlPackage.QUESTION_CALL__QUESTION:
+			setQuestion((Question) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +137,8 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case QlPackage.MONEY_VALUE__MONEY_VALUE:
-			setMoneyValue(MONEY_VALUE_EDEFAULT);
+		case QlPackage.QUESTION_CALL__QUESTION:
+			setQuestion((Question) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -140,27 +152,10 @@ public class MoneyValueImpl extends ValueImpl implements MoneyValue {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case QlPackage.MONEY_VALUE__MONEY_VALUE:
-			return moneyValue != MONEY_VALUE_EDEFAULT;
+		case QlPackage.QUESTION_CALL__QUESTION:
+			return question != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (moneyValue: ");
-		result.append(moneyValue);
-		result.append(')');
-		return result.toString();
-	}
-
-} //MoneyValueImpl
+} //QuestionCallImpl

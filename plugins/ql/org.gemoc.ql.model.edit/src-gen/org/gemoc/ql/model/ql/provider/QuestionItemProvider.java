@@ -187,19 +187,25 @@ public class QuestionItemProvider extends NamedElementItemProvider {
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
+				QlFactory.eINSTANCE.createQuestionCall()));
 	}
 
 	/**

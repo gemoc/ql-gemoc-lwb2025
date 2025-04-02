@@ -162,10 +162,13 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.UNARY_EXPRESSION__OPERAND,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.UNARY_EXPRESSION__OPERAND,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.UNARY_EXPRESSION__OPERAND,
+				QlFactory.eINSTANCE.createQuestionCall()));
 	}
 
 }

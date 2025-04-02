@@ -154,10 +154,13 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createCallConstant()));
+				QlFactory.eINSTANCE.createConstantCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+				QlFactory.eINSTANCE.createQuestionCall()));
 	}
 
 	/**

@@ -58,13 +58,13 @@ public interface QlFactory extends EFactory {
 	BasicBinaryExpression createBasicBinaryExpression();
 
 	/**
-	 * Returns a new object of class '<em>Call Constant</em>'.
+	 * Returns a new object of class '<em>Constant Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Call Constant</em>'.
+	 * @return a new object of class '<em>Constant Call</em>'.
 	 * @generated
 	 */
-	CallConstant createCallConstant();
+	ConstantCall createConstantCall();
 
 	/**
 	 * Returns a new object of class '<em>Integer Value</em>'.
@@ -119,15 +119,6 @@ public interface QlFactory extends EFactory {
 	 * @generated
 	 */
 	DecimalValue createDecimalValue();
-
-	/**
-	 * Returns a new object of class '<em>Money Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Money Value</em>'.
-	 * @generated
-	 */
-	MoneyValue createMoneyValue();
 
 	/**
 	 * Returns a new object of class '<em>Value Type</em>'.
@@ -209,6 +200,15 @@ public interface QlFactory extends EFactory {
 	 * @generated
 	 */
 	TypeGroup createTypeGroup();
+
+	/**
+	 * Returns a new object of class '<em>Question Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Question Call</em>'.
+	 * @generated
+	 */
+	QuestionCall createQuestionCall();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -165,26 +165,26 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.CallConstant} instances.
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.ConstantCall} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CallConstantItemProvider callConstantItemProvider;
+	protected ConstantCallItemProvider constantCallItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.CallConstant}.
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.ConstantCall}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCallConstantAdapter() {
-		if (callConstantItemProvider == null) {
-			callConstantItemProvider = new CallConstantItemProvider(this);
+	public Adapter createConstantCallAdapter() {
+		if (constantCallItemProvider == null) {
+			constantCallItemProvider = new ConstantCallItemProvider(this);
 		}
 
-		return callConstantItemProvider;
+		return constantCallItemProvider;
 	}
 
 	/**
@@ -323,29 +323,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 		}
 
 		return decimalValueItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.MoneyValue} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MoneyValueItemProvider moneyValueItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.MoneyValue}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMoneyValueAdapter() {
-		if (moneyValueItemProvider == null) {
-			moneyValueItemProvider = new MoneyValueItemProvider(this);
-		}
-
-		return moneyValueItemProvider;
 	}
 
 	/**
@@ -556,6 +533,29 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.QuestionCall} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QuestionCallItemProvider questionCallItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.QuestionCall}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQuestionCallAdapter() {
+		if (questionCallItemProvider == null) {
+			questionCallItemProvider = new QuestionCallItemProvider(this);
+		}
+
+		return questionCallItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -668,8 +668,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			questionItemProvider.dispose();
 		if (basicBinaryExpressionItemProvider != null)
 			basicBinaryExpressionItemProvider.dispose();
-		if (callConstantItemProvider != null)
-			callConstantItemProvider.dispose();
+		if (constantCallItemProvider != null)
+			constantCallItemProvider.dispose();
 		if (integerValueItemProvider != null)
 			integerValueItemProvider.dispose();
 		if (stringValueItemProvider != null)
@@ -682,8 +682,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			dateValueItemProvider.dispose();
 		if (decimalValueItemProvider != null)
 			decimalValueItemProvider.dispose();
-		if (moneyValueItemProvider != null)
-			moneyValueItemProvider.dispose();
 		if (valueTypeItemProvider != null)
 			valueTypeItemProvider.dispose();
 		if (booleanValueTypeItemProvider != null)
@@ -702,6 +700,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			questionGroupItemProvider.dispose();
 		if (typeGroupItemProvider != null)
 			typeGroupItemProvider.dispose();
+		if (questionCallItemProvider != null)
+			questionCallItemProvider.dispose();
 	}
 
 }

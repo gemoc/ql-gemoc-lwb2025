@@ -55,8 +55,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//BasicBinaryExpression/operator"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ql.ecore#//Call"/>
-    <genClasses ecoreClass="ql.ecore#//CallConstant">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//CallConstant/value"/>
+    <genClasses ecoreClass="ql.ecore#//ConstantCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//ConstantCall/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ql.ecore#//Value"/>
     <genClasses ecoreClass="ql.ecore#//IntegerValue">
@@ -103,6 +103,9 @@
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//TypeGroup">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//TypeGroup/dataTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="ql.ecore#//QuestionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionCall/question"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

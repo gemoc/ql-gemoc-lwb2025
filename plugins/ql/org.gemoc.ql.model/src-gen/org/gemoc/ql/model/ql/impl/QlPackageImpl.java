@@ -17,8 +17,8 @@ import org.gemoc.ql.model.ql.BinaryOperatorKind;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.Call;
-import org.gemoc.ql.model.ql.CallConstant;
 import org.gemoc.ql.model.ql.ConditionnalElement;
+import org.gemoc.ql.model.ql.ConstantCall;
 import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.DateValue;
 import org.gemoc.ql.model.ql.DateValueType;
@@ -30,12 +30,12 @@ import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
-import org.gemoc.ql.model.ql.MoneyValue;
 import org.gemoc.ql.model.ql.NamedElement;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionCall;
 import org.gemoc.ql.model.ql.QuestionGroup;
 import org.gemoc.ql.model.ql.StringValue;
 import org.gemoc.ql.model.ql.TypeGroup;
@@ -119,7 +119,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass callConstantEClass = null;
+	private EClass constantCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,13 +169,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass decimalValueEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass moneyValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,6 +246,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass typeGroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass questionCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -537,8 +537,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getCallConstant() {
-		return callConstantEClass;
+	public EClass getConstantCall() {
+		return constantCallEClass;
 	}
 
 	/**
@@ -547,8 +547,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCallConstant_Value() {
-		return (EReference) callConstantEClass.getEStructuralFeatures().get(0);
+	public EReference getConstantCall_Value() {
+		return (EReference) constantCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -679,26 +679,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	@Override
 	public EAttribute getDecimalValue_DecimalValue() {
 		return (EAttribute) decimalValueEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMoneyValue() {
-		return moneyValueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMoneyValue_MoneyValue() {
-		return (EAttribute) moneyValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -907,6 +887,26 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getQuestionCall() {
+		return questionCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionCall_Question() {
+		return (EReference) questionCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBinaryOperatorKind() {
 		return binaryOperatorKindEEnum;
 	}
@@ -980,8 +980,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		callEClass = createEClass(CALL);
 
-		callConstantEClass = createEClass(CALL_CONSTANT);
-		createEReference(callConstantEClass, CALL_CONSTANT__VALUE);
+		constantCallEClass = createEClass(CONSTANT_CALL);
+		createEReference(constantCallEClass, CONSTANT_CALL__VALUE);
 
 		valueEClass = createEClass(VALUE);
 
@@ -1002,9 +1002,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		decimalValueEClass = createEClass(DECIMAL_VALUE);
 		createEAttribute(decimalValueEClass, DECIMAL_VALUE__DECIMAL_VALUE);
-
-		moneyValueEClass = createEClass(MONEY_VALUE);
-		createEAttribute(moneyValueEClass, MONEY_VALUE__MONEY_VALUE);
 
 		valueTypeEClass = createEClass(VALUE_TYPE);
 		createEAttribute(valueTypeEClass, VALUE_TYPE__UNIT);
@@ -1036,6 +1033,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		typeGroupEClass = createEClass(TYPE_GROUP);
 		createEReference(typeGroupEClass, TYPE_GROUP__DATA_TYPES);
+
+		questionCallEClass = createEClass(QUESTION_CALL);
+		createEReference(questionCallEClass, QUESTION_CALL__QUESTION);
 
 		// Create enums
 		binaryOperatorKindEEnum = createEEnum(BINARY_OPERATOR_KIND);
@@ -1079,14 +1079,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		basicBinaryExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
 		callEClass.getESuperTypes().add(this.getExpression());
-		callConstantEClass.getESuperTypes().add(this.getCall());
+		constantCallEClass.getESuperTypes().add(this.getCall());
 		integerValueEClass.getESuperTypes().add(this.getValue());
 		stringValueEClass.getESuperTypes().add(this.getValue());
 		booleanValueEClass.getESuperTypes().add(this.getValue());
 		basicUnaryExpressionEClass.getESuperTypes().add(this.getUnaryExpression());
 		dateValueEClass.getESuperTypes().add(this.getValue());
 		decimalValueEClass.getESuperTypes().add(this.getValue());
-		moneyValueEClass.getESuperTypes().add(this.getValue());
 		valueTypeEClass.getESuperTypes().add(this.getDataType());
 		booleanValueTypeEClass.getESuperTypes().add(this.getValueType());
 		integerValueTypeEClass.getESuperTypes().add(this.getValueType());
@@ -1095,6 +1094,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		enumerationValueTypeEClass.getESuperTypes().add(this.getValueType());
 		enumerationLiteralEClass.getESuperTypes().add(this.getNamedElement());
 		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
+		questionCallEClass.getESuperTypes().add(this.getCall());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlModelEClass, QLModel.class, "QLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1152,9 +1152,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		initEClass(callEClass, Call.class, "Call", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(callConstantEClass, CallConstant.class, "CallConstant", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(constantCallEClass, ConstantCall.class, "ConstantCall", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCallConstant_Value(), this.getValue(), null, "value", null, 0, 1, CallConstant.class,
+		initEReference(getConstantCall_Value(), this.getValue(), null, "value", null, 0, 1, ConstantCall.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1193,11 +1193,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEAttribute(getDecimalValue_DecimalValue(), ecorePackage.getEFloat(), "decimalValue", null, 0, 1,
 				DecimalValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(moneyValueEClass, MoneyValue.class, "MoneyValue", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMoneyValue_MoneyValue(), ecorePackage.getEFloat(), "moneyValue", null, 0, 1, MoneyValue.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(valueTypeEClass, ValueType.class, "ValueType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1253,6 +1248,12 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypeGroup_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1, TypeGroup.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(questionCallEClass, QuestionCall.class, "QuestionCall", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuestionCall_Question(), this.getQuestion(), null, "question", null, 1, 1, QuestionCall.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

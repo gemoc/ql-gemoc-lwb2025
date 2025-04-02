@@ -13,24 +13,24 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.gemoc.ql.model.ql.CallConstant;
+import org.gemoc.ql.model.ql.ConstantCall;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.CallConstant} object.
+ * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.ConstantCall} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CallConstantItemProvider extends CallItemProvider {
+public class ConstantCallItemProvider extends CallItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CallConstantItemProvider(AdapterFactory adapterFactory) {
+	public ConstantCallItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,7 @@ public class CallConstantItemProvider extends CallItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlPackage.Literals.CALL_CONSTANT__VALUE);
+			childrenFeatures.add(QlPackage.Literals.CONSTANT_CALL__VALUE);
 		}
 		return childrenFeatures;
 	}
@@ -80,14 +80,14 @@ public class CallConstantItemProvider extends CallItemProvider {
 	}
 
 	/**
-	 * This returns CallConstant.gif.
+	 * This returns ConstantCall.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CallConstant"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConstantCall"));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class CallConstantItemProvider extends CallItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CallConstant_type");
+		return getString("_UI_ConstantCall_type");
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class CallConstantItemProvider extends CallItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CallConstant.class)) {
-		case QlPackage.CALL_CONSTANT__VALUE:
+		switch (notification.getFeatureID(ConstantCall.class)) {
+		case QlPackage.CONSTANT_CALL__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -141,23 +141,20 @@ public class CallConstantItemProvider extends CallItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE,
 				QlFactory.eINSTANCE.createIntegerValue()));
 
 		newChildDescriptors.add(
-				createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE, QlFactory.eINSTANCE.createStringValue()));
+				createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE, QlFactory.eINSTANCE.createStringValue()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE,
 				QlFactory.eINSTANCE.createBooleanValue()));
 
 		newChildDescriptors.add(
-				createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE, QlFactory.eINSTANCE.createDateValue()));
+				createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE, QlFactory.eINSTANCE.createDateValue()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE,
 				QlFactory.eINSTANCE.createDecimalValue()));
-
-		newChildDescriptors.add(
-				createChildParameter(QlPackage.Literals.CALL_CONSTANT__VALUE, QlFactory.eINSTANCE.createMoneyValue()));
 	}
 
 }
