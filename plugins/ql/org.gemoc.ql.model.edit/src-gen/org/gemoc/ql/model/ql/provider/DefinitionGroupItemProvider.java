@@ -21,17 +21,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.gemoc.ql.model.ql.QLModel;
+import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.QLModel} object.
+ * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.DefinitionGroup} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QLModelItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class DefinitionGroupItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -39,7 +39,7 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QLModelItemProvider(AdapterFactory adapterFactory) {
+	public DefinitionGroupItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,8 +70,8 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlPackage.Literals.QL_MODEL__FORMS);
-			childrenFeatures.add(QlPackage.Literals.QL_MODEL__DEFINITION_GROUP);
+			childrenFeatures.add(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES);
+			childrenFeatures.add(QlPackage.Literals.DEFINITION_GROUP__QUESTION_DEFINITIONS);
 		}
 		return childrenFeatures;
 	}
@@ -90,14 +90,14 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	}
 
 	/**
-	 * This returns QLModel.gif.
+	 * This returns DefinitionGroup.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/QLModel"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DefinitionGroup"));
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_QLModel_type");
+		return getString("_UI_DefinitionGroup_type");
 	}
 
 	/**
@@ -132,9 +132,9 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QLModel.class)) {
-		case QlPackage.QL_MODEL__FORMS:
-		case QlPackage.QL_MODEL__DEFINITION_GROUP:
+		switch (notification.getFeatureID(DefinitionGroup.class)) {
+		case QlPackage.DEFINITION_GROUP__DATA_TYPES:
+		case QlPackage.DEFINITION_GROUP__QUESTION_DEFINITIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -152,11 +152,29 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(QlPackage.Literals.QL_MODEL__FORMS, QlFactory.eINSTANCE.createForm()));
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createValueType()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QL_MODEL__DEFINITION_GROUP,
-				QlFactory.eINSTANCE.createDefinitionGroup()));
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createBooleanValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createIntegerValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createDecimalValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createDateValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createEnumerationValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
+				QlFactory.eINSTANCE.createStringValueType()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__QUESTION_DEFINITIONS,
+				QlFactory.eINSTANCE.createQuestionDefinition()));
 	}
 
 	/**

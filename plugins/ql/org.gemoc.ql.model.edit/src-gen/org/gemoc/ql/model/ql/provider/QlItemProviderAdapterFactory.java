@@ -119,26 +119,26 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.Question} instances.
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.QuestionDefinition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected QuestionItemProvider questionItemProvider;
+	protected QuestionDefinitionItemProvider questionDefinitionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.Question}.
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.QuestionDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createQuestionAdapter() {
-		if (questionItemProvider == null) {
-			questionItemProvider = new QuestionItemProvider(this);
+	public Adapter createQuestionDefinitionAdapter() {
+		if (questionDefinitionItemProvider == null) {
+			questionDefinitionItemProvider = new QuestionDefinitionItemProvider(this);
 		}
 
-		return questionItemProvider;
+		return questionDefinitionItemProvider;
 	}
 
 	/**
@@ -510,26 +510,26 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.TypeGroup} instances.
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.DefinitionGroup} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TypeGroupItemProvider typeGroupItemProvider;
+	protected DefinitionGroupItemProvider definitionGroupItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.TypeGroup}.
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.DefinitionGroup}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTypeGroupAdapter() {
-		if (typeGroupItemProvider == null) {
-			typeGroupItemProvider = new TypeGroupItemProvider(this);
+	public Adapter createDefinitionGroupAdapter() {
+		if (definitionGroupItemProvider == null) {
+			definitionGroupItemProvider = new DefinitionGroupItemProvider(this);
 		}
 
-		return typeGroupItemProvider;
+		return definitionGroupItemProvider;
 	}
 
 	/**
@@ -576,6 +576,29 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 		}
 
 		return stringValueTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.Question} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QuestionItemProvider questionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.Question}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQuestionAdapter() {
+		if (questionItemProvider == null) {
+			questionItemProvider = new QuestionItemProvider(this);
+		}
+
+		return questionItemProvider;
 	}
 
 	/**
@@ -687,8 +710,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			qlModelItemProvider.dispose();
 		if (formItemProvider != null)
 			formItemProvider.dispose();
-		if (questionItemProvider != null)
-			questionItemProvider.dispose();
+		if (questionDefinitionItemProvider != null)
+			questionDefinitionItemProvider.dispose();
 		if (basicBinaryExpressionItemProvider != null)
 			basicBinaryExpressionItemProvider.dispose();
 		if (constantCallItemProvider != null)
@@ -721,12 +744,14 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			enumerationLiteralItemProvider.dispose();
 		if (questionGroupItemProvider != null)
 			questionGroupItemProvider.dispose();
-		if (typeGroupItemProvider != null)
-			typeGroupItemProvider.dispose();
+		if (definitionGroupItemProvider != null)
+			definitionGroupItemProvider.dispose();
 		if (questionCallItemProvider != null)
 			questionCallItemProvider.dispose();
 		if (stringValueTypeItemProvider != null)
 			stringValueTypeItemProvider.dispose();
+		if (questionItemProvider != null)
+			questionItemProvider.dispose();
 	}
 
 }

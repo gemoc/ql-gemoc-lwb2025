@@ -82,13 +82,11 @@ public class QlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlPackage.QUESTION: {
-			Question question = (Question) theEObject;
-			T result = caseQuestion(question);
+		case QlPackage.QUESTION_DEFINITION: {
+			QuestionDefinition questionDefinition = (QuestionDefinition) theEObject;
+			T result = caseQuestionDefinition(questionDefinition);
 			if (result == null)
-				result = caseNamedElement(question);
-			if (result == null)
-				result = caseConditionnalElement(question);
+				result = caseNamedElement(questionDefinition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -329,9 +327,9 @@ public class QlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlPackage.TYPE_GROUP: {
-			TypeGroup typeGroup = (TypeGroup) theEObject;
-			T result = caseTypeGroup(typeGroup);
+		case QlPackage.DEFINITION_GROUP: {
+			DefinitionGroup definitionGroup = (DefinitionGroup) theEObject;
+			T result = caseDefinitionGroup(definitionGroup);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -356,6 +354,13 @@ public class QlSwitch<T> extends Switch<T> {
 				result = caseDataType(stringValueType);
 			if (result == null)
 				result = caseNamedElement(stringValueType);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlPackage.QUESTION: {
+			Question question = (Question) theEObject;
+			T result = caseQuestion(question);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -392,6 +397,21 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseForm(Form object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Question Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Question Definition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuestionDefinition(QuestionDefinition object) {
 		return null;
 	}
 
@@ -771,17 +791,17 @@ public class QlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Type Group</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Definition Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Type Group</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Definition Group</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTypeGroup(TypeGroup object) {
+	public T caseDefinitionGroup(DefinitionGroup object) {
 		return null;
 	}
 

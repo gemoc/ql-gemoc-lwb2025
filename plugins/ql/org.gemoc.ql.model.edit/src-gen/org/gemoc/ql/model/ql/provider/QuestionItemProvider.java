@@ -8,16 +8,18 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
-import org.gemoc.ql.model.ql.Question;
 
 /**
  * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.Question} object.
@@ -25,7 +27,8 @@ import org.gemoc.ql.model.ql.Question;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QuestionItemProvider extends NamedElementItemProvider {
+public class QuestionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,72 +50,24 @@ public class QuestionItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLabelPropertyDescriptor(object);
-			addDatatypePropertyDescriptor(object);
+			addQuestionDefinitionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Label feature.
+	 * This adds a property descriptor for the Question Definition feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLabelPropertyDescriptor(Object object) {
+	protected void addQuestionDefinitionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Question_label_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Question_label_feature",
+						getResourceLocator(), getString("_UI_Question_questionDefinition_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Question_questionDefinition_feature",
 								"_UI_Question_type"),
-						QlPackage.Literals.QUESTION__LABEL, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datatype feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatatypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Question_datatype_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Question_datatype_feature",
-								"_UI_Question_type"),
-						QlPackage.Literals.QUESTION__DATATYPE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD);
-			childrenFeatures.add(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+						QlPackage.Literals.QUESTION__QUESTION_DEFINITION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -144,9 +99,7 @@ public class QuestionItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Question) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Question_type")
-				: getString("_UI_Question_type") + " " + label;
+		return getString("_UI_Question_type");
 	}
 
 	/**
@@ -159,16 +112,6 @@ public class QuestionItemProvider extends NamedElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Question.class)) {
-		case QlPackage.QUESTION__LABEL:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case QlPackage.QUESTION__GUARD:
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -182,51 +125,17 @@ public class QuestionItemProvider extends NamedElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createBasicBinaryExpression()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createConstantCall()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createBasicUnaryExpression()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
-				QlFactory.eINSTANCE.createQuestionCall()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createBasicBinaryExpression()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createConstantCall()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createBasicUnaryExpression()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createQuestionCall()));
 	}
 
 	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD
-				|| childFeature == QlPackage.Literals.QUESTION__COMPUTED_EXPRESSION;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+	public ResourceLocator getResourceLocator() {
+		return QlEditPlugin.INSTANCE;
 	}
 
 }

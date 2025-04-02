@@ -77,8 +77,8 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseQuestion(Question object) {
-			return createQuestionAdapter();
+		public Adapter caseQuestionDefinition(QuestionDefinition object) {
+			return createQuestionDefinitionAdapter();
 		}
 
 		@Override
@@ -202,8 +202,8 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTypeGroup(TypeGroup object) {
-			return createTypeGroupAdapter();
+		public Adapter caseDefinitionGroup(DefinitionGroup object) {
+			return createDefinitionGroupAdapter();
 		}
 
 		@Override
@@ -214,6 +214,11 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseStringValueType(StringValueType object) {
 			return createStringValueTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseQuestion(Question object) {
+			return createQuestionAdapter();
 		}
 
 		@Override
@@ -260,6 +265,20 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFormAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.QuestionDefinition <em>Question Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition
+	 * @generated
+	 */
+	public Adapter createQuestionDefinitionAdapter() {
 		return null;
 	}
 
@@ -614,16 +633,16 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.TypeGroup <em>Type Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.DefinitionGroup <em>Definition Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.TypeGroup
+	 * @see org.gemoc.ql.model.ql.DefinitionGroup
 	 * @generated
 	 */
-	public Adapter createTypeGroupAdapter() {
+	public Adapter createDefinitionGroupAdapter() {
 		return null;
 	}
 

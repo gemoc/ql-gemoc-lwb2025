@@ -60,8 +60,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createQLModel();
 		case QlPackage.FORM:
 			return createForm();
-		case QlPackage.QUESTION:
-			return createQuestion();
+		case QlPackage.QUESTION_DEFINITION:
+			return createQuestionDefinition();
 		case QlPackage.BASIC_BINARY_EXPRESSION:
 			return createBasicBinaryExpression();
 		case QlPackage.CONSTANT_CALL:
@@ -94,12 +94,14 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createEnumerationLiteral();
 		case QlPackage.QUESTION_GROUP:
 			return createQuestionGroup();
-		case QlPackage.TYPE_GROUP:
-			return createTypeGroup();
+		case QlPackage.DEFINITION_GROUP:
+			return createDefinitionGroup();
 		case QlPackage.QUESTION_CALL:
 			return createQuestionCall();
 		case QlPackage.STRING_VALUE_TYPE:
 			return createStringValueType();
+		case QlPackage.QUESTION:
+			return createQuestion();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,9 +169,9 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	 * @generated
 	 */
 	@Override
-	public Question createQuestion() {
-		QuestionImpl question = new QuestionImpl();
-		return question;
+	public QuestionDefinition createQuestionDefinition() {
+		QuestionDefinitionImpl questionDefinition = new QuestionDefinitionImpl();
+		return questionDefinition;
 	}
 
 	/**
@@ -354,9 +356,9 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	 * @generated
 	 */
 	@Override
-	public TypeGroup createTypeGroup() {
-		TypeGroupImpl typeGroup = new TypeGroupImpl();
-		return typeGroup;
+	public DefinitionGroup createDefinitionGroup() {
+		DefinitionGroupImpl definitionGroup = new DefinitionGroupImpl();
+		return definitionGroup;
 	}
 
 	/**
@@ -379,6 +381,17 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public StringValueType createStringValueType() {
 		StringValueTypeImpl stringValueType = new StringValueTypeImpl();
 		return stringValueType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Question createQuestion() {
+		QuestionImpl question = new QuestionImpl();
+		return question;
 	}
 
 	/**

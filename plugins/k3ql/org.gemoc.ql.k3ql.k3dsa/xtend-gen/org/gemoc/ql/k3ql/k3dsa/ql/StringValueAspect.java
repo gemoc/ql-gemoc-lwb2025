@@ -1,7 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
-import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import java.util.Objects;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.QlFactory;
@@ -87,7 +87,7 @@ public class StringValueAspect extends ValueAspect {
     if ((rhs instanceof StringValue)) {
       String _stringValue = _self.getStringValue();
       String _stringValue_1 = ((StringValue) rhs).getStringValue();
-      boolean _equals = Objects.equal(_stringValue, _stringValue_1);
+      boolean _equals = Objects.equals(_stringValue, _stringValue_1);
       bValue.setBooleanValue(_equals);
     } else {
       bValue.setBooleanValue(false);

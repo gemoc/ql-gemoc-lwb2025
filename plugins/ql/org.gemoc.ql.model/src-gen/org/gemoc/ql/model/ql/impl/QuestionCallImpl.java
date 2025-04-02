@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.ql.model.ql.QlPackage;
-import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionCall;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	 * @generated
 	 * @ordered
 	 */
-	protected Question question;
+	protected QuestionDefinition question;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,10 +62,10 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	 * @generated
 	 */
 	@Override
-	public Question getQuestion() {
+	public QuestionDefinition getQuestion() {
 		if (question != null && question.eIsProxy()) {
 			InternalEObject oldQuestion = (InternalEObject) question;
-			question = (Question) eResolveProxy(oldQuestion);
+			question = (QuestionDefinition) eResolveProxy(oldQuestion);
 			if (question != oldQuestion) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION_CALL__QUESTION,
@@ -80,7 +80,7 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Question basicGetQuestion() {
+	public QuestionDefinition basicGetQuestion() {
 		return question;
 	}
 
@@ -90,8 +90,8 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	 * @generated
 	 */
 	@Override
-	public void setQuestion(Question newQuestion) {
-		Question oldQuestion = question;
+	public void setQuestion(QuestionDefinition newQuestion) {
+		QuestionDefinition oldQuestion = question;
 		question = newQuestion;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_CALL__QUESTION, oldQuestion,
@@ -123,7 +123,7 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case QlPackage.QUESTION_CALL__QUESTION:
-			setQuestion((Question) newValue);
+			setQuestion((QuestionDefinition) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,7 +138,7 @@ public class QuestionCallImpl extends CallImpl implements QuestionCall {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case QlPackage.QUESTION_CALL__QUESTION:
-			setQuestion((Question) null);
+			setQuestion((QuestionDefinition) null);
 			return;
 		}
 		super.eUnset(featureID);

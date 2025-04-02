@@ -24,12 +24,12 @@ public interface QuestionCall extends Call {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Question</em>' reference.
-	 * @see #setQuestion(Question)
+	 * @see #setQuestion(QuestionDefinition)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getQuestionCall_Question()
 	 * @model required="true"
 	 * @generated
 	 */
-	Question getQuestion();
+	QuestionDefinition getQuestion();
 
 	/**
 	 * Sets the value of the '{@link org.gemoc.ql.model.ql.QuestionCall#getQuestion <em>Question</em>}' reference.
@@ -39,6 +39,6 @@ public interface QuestionCall extends Call {
 	 * @see #getQuestion()
 	 * @generated
 	 */
-	void setQuestion(Question value);
+	void setQuestion(QuestionDefinition value);
 
 } // QuestionCall

@@ -77,13 +77,13 @@ public interface QlPackage extends EPackage {
 	int QL_MODEL__FORMS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Typegroup</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Definition Group</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QL_MODEL__TYPEGROUP = 1;
+	int QL_MODEL__DEFINITION_GROUP = 1;
 
 	/**
 	 * The number of structural features of the '<em>QL Model</em>' class.
@@ -187,14 +187,14 @@ public interface QlPackage extends EPackage {
 	int FORM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionImpl <em>Question</em>}' class.
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl <em>Question Definition</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.QuestionImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestion()
+	 * @see org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionDefinition()
 	 * @generated
 	 */
-	int QUESTION = 2;
+	int QUESTION_DEFINITION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -203,16 +203,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QUESTION__GUARD = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int QUESTION_DEFINITION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -221,7 +212,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__LABEL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int QUESTION_DEFINITION__LABEL = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Datatype</b></em>' reference.
@@ -230,7 +221,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int QUESTION_DEFINITION__DATATYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Computed Expression</b></em>' containment reference.
@@ -239,25 +230,25 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION__COMPUTED_EXPRESSION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int QUESTION_DEFINITION__COMPUTED_EXPRESSION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Question</em>' class.
+	 * The number of structural features of the '<em>Question Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Question</em>' class.
+	 * The number of operations of the '<em>Question Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int QUESTION_DEFINITION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -1282,14 +1273,14 @@ public interface QlPackage extends EPackage {
 	int QUESTION_GROUP_OPERATION_COUNT = CONDITIONNAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.TypeGroupImpl <em>Type Group</em>}' class.
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.DefinitionGroupImpl <em>Definition Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.TypeGroupImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getTypeGroup()
+	 * @see org.gemoc.ql.model.ql.impl.DefinitionGroupImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDefinitionGroup()
 	 * @generated
 	 */
-	int TYPE_GROUP = 27;
+	int DEFINITION_GROUP = 27;
 
 	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -1298,25 +1289,34 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GROUP__DATA_TYPES = 0;
+	int DEFINITION_GROUP__DATA_TYPES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Type Group</em>' class.
+	 * The feature id for the '<em><b>Question Definitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GROUP_FEATURE_COUNT = 1;
+	int DEFINITION_GROUP__QUESTION_DEFINITIONS = 1;
 
 	/**
-	 * The number of operations of the '<em>Type Group</em>' class.
+	 * The number of structural features of the '<em>Definition Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_GROUP_OPERATION_COUNT = 0;
+	int DEFINITION_GROUP_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Definition Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFINITION_GROUP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionCallImpl <em>Question Call</em>}' class.
@@ -1411,6 +1411,43 @@ public interface QlPackage extends EPackage {
 	int STRING_VALUE_TYPE_OPERATION_COUNT = VALUE_TYPE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionImpl <em>Question</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.QuestionImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestion()
+	 * @generated
+	 */
+	int QUESTION = 30;
+
+	/**
+	 * The feature id for the '<em><b>Question Definition</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION__QUESTION_DEFINITION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Question</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1418,7 +1455,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryOperatorKind()
 	 * @generated
 	 */
-	int BINARY_OPERATOR_KIND = 30;
+	int BINARY_OPERATOR_KIND = 31;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.UnaryOperatorKind <em>Unary Operator Kind</em>}' enum.
@@ -1428,7 +1465,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryOperatorKind()
 	 * @generated
 	 */
-	int UNARY_OPERATOR_KIND = 31;
+	int UNARY_OPERATOR_KIND = 32;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QLModel <em>QL Model</em>}'.
@@ -1452,15 +1489,15 @@ public interface QlPackage extends EPackage {
 	EReference getQLModel_Forms();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getTypegroup <em>Typegroup</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getDefinitionGroup <em>Definition Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Typegroup</em>'.
-	 * @see org.gemoc.ql.model.ql.QLModel#getTypegroup()
+	 * @return the meta object for the containment reference list '<em>Definition Group</em>'.
+	 * @see org.gemoc.ql.model.ql.QLModel#getDefinitionGroup()
 	 * @see #getQLModel()
 	 * @generated
 	 */
-	EReference getQLModel_Typegroup();
+	EReference getQLModel_DefinitionGroup();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
@@ -1484,47 +1521,47 @@ public interface QlPackage extends EPackage {
 	EReference getForm_QuestionGroup();
 
 	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Question <em>Question</em>}'.
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QuestionDefinition <em>Question Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Question</em>'.
-	 * @see org.gemoc.ql.model.ql.Question
+	 * @return the meta object for class '<em>Question Definition</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition
 	 * @generated
 	 */
-	EClass getQuestion();
+	EClass getQuestionDefinition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.Question#getLabel <em>Label</em>}'.
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.QuestionDefinition#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Label</em>'.
-	 * @see org.gemoc.ql.model.ql.Question#getLabel()
-	 * @see #getQuestion()
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#getLabel()
+	 * @see #getQuestionDefinition()
 	 * @generated
 	 */
-	EAttribute getQuestion_Label();
+	EAttribute getQuestionDefinition_Label();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.Question#getDatatype <em>Datatype</em>}'.
+	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.QuestionDefinition#getDatatype <em>Datatype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Datatype</em>'.
-	 * @see org.gemoc.ql.model.ql.Question#getDatatype()
-	 * @see #getQuestion()
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#getDatatype()
+	 * @see #getQuestionDefinition()
 	 * @generated
 	 */
-	EReference getQuestion_Datatype();
+	EReference getQuestionDefinition_Datatype();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.Question#getComputedExpression <em>Computed Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.QuestionDefinition#getComputedExpression <em>Computed Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Computed Expression</em>'.
-	 * @see org.gemoc.ql.model.ql.Question#getComputedExpression()
-	 * @see #getQuestion()
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#getComputedExpression()
+	 * @see #getQuestionDefinition()
 	 * @generated
 	 */
-	EReference getQuestion_ComputedExpression();
+	EReference getQuestionDefinition_ComputedExpression();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.DataType <em>Data Type</em>}'.
@@ -1987,25 +2024,36 @@ public interface QlPackage extends EPackage {
 	EReference getQuestionGroup_Questions();
 
 	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.TypeGroup <em>Type Group</em>}'.
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.DefinitionGroup <em>Definition Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Type Group</em>'.
-	 * @see org.gemoc.ql.model.ql.TypeGroup
+	 * @return the meta object for class '<em>Definition Group</em>'.
+	 * @see org.gemoc.ql.model.ql.DefinitionGroup
 	 * @generated
 	 */
-	EClass getTypeGroup();
+	EClass getDefinitionGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.TypeGroup#getDataTypes <em>Data Types</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.DefinitionGroup#getDataTypes <em>Data Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Data Types</em>'.
-	 * @see org.gemoc.ql.model.ql.TypeGroup#getDataTypes()
-	 * @see #getTypeGroup()
+	 * @see org.gemoc.ql.model.ql.DefinitionGroup#getDataTypes()
+	 * @see #getDefinitionGroup()
 	 * @generated
 	 */
-	EReference getTypeGroup_DataTypes();
+	EReference getDefinitionGroup_DataTypes();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.DefinitionGroup#getQuestionDefinitions <em>Question Definitions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Question Definitions</em>'.
+	 * @see org.gemoc.ql.model.ql.DefinitionGroup#getQuestionDefinitions()
+	 * @see #getDefinitionGroup()
+	 * @generated
+	 */
+	EReference getDefinitionGroup_QuestionDefinitions();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QuestionCall <em>Question Call</em>}'.
@@ -2037,6 +2085,27 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStringValueType();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Question <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Question</em>'.
+	 * @see org.gemoc.ql.model.ql.Question
+	 * @generated
+	 */
+	EClass getQuestion();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.Question#getQuestionDefinition <em>Question Definition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Question Definition</em>'.
+	 * @see org.gemoc.ql.model.ql.Question#getQuestionDefinition()
+	 * @see #getQuestion()
+	 * @generated
+	 */
+	EReference getQuestion_QuestionDefinition();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}'.
@@ -2100,12 +2169,12 @@ public interface QlPackage extends EPackage {
 		EReference QL_MODEL__FORMS = eINSTANCE.getQLModel_Forms();
 
 		/**
-		 * The meta object literal for the '<em><b>Typegroup</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Definition Group</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QL_MODEL__TYPEGROUP = eINSTANCE.getQLModel_Typegroup();
+		EReference QL_MODEL__DEFINITION_GROUP = eINSTANCE.getQLModel_DefinitionGroup();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.
@@ -2126,14 +2195,14 @@ public interface QlPackage extends EPackage {
 		EReference FORM__QUESTION_GROUP = eINSTANCE.getForm_QuestionGroup();
 
 		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionImpl <em>Question</em>}' class.
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl <em>Question Definition</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.QuestionImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestion()
+		 * @see org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionDefinition()
 		 * @generated
 		 */
-		EClass QUESTION = eINSTANCE.getQuestion();
+		EClass QUESTION_DEFINITION = eINSTANCE.getQuestionDefinition();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
@@ -2141,7 +2210,7 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute QUESTION__LABEL = eINSTANCE.getQuestion_Label();
+		EAttribute QUESTION_DEFINITION__LABEL = eINSTANCE.getQuestionDefinition_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.
@@ -2149,7 +2218,7 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUESTION__DATATYPE = eINSTANCE.getQuestion_Datatype();
+		EReference QUESTION_DEFINITION__DATATYPE = eINSTANCE.getQuestionDefinition_Datatype();
 
 		/**
 		 * The meta object literal for the '<em><b>Computed Expression</b></em>' containment reference feature.
@@ -2157,7 +2226,7 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUESTION__COMPUTED_EXPRESSION = eINSTANCE.getQuestion_ComputedExpression();
+		EReference QUESTION_DEFINITION__COMPUTED_EXPRESSION = eINSTANCE.getQuestionDefinition_ComputedExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.DataTypeImpl <em>Data Type</em>}' class.
@@ -2561,14 +2630,14 @@ public interface QlPackage extends EPackage {
 		EReference QUESTION_GROUP__QUESTIONS = eINSTANCE.getQuestionGroup_Questions();
 
 		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.TypeGroupImpl <em>Type Group</em>}' class.
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.DefinitionGroupImpl <em>Definition Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.TypeGroupImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getTypeGroup()
+		 * @see org.gemoc.ql.model.ql.impl.DefinitionGroupImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDefinitionGroup()
 		 * @generated
 		 */
-		EClass TYPE_GROUP = eINSTANCE.getTypeGroup();
+		EClass DEFINITION_GROUP = eINSTANCE.getDefinitionGroup();
 
 		/**
 		 * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
@@ -2576,7 +2645,15 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPE_GROUP__DATA_TYPES = eINSTANCE.getTypeGroup_DataTypes();
+		EReference DEFINITION_GROUP__DATA_TYPES = eINSTANCE.getDefinitionGroup_DataTypes();
+
+		/**
+		 * The meta object literal for the '<em><b>Question Definitions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEFINITION_GROUP__QUESTION_DEFINITIONS = eINSTANCE.getDefinitionGroup_QuestionDefinitions();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionCallImpl <em>Question Call</em>}' class.
@@ -2605,6 +2682,24 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STRING_VALUE_TYPE = eINSTANCE.getStringValueType();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionImpl <em>Question</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.QuestionImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestion()
+		 * @generated
+		 */
+		EClass QUESTION = eINSTANCE.getQuestion();
+
+		/**
+		 * The meta object literal for the '<em><b>Question Definition</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION__QUESTION_DEFINITION = eINSTANCE.getQuestion_QuestionDefinition();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.

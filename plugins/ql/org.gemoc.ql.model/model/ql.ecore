@@ -4,14 +4,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="QLModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="forms" upperBound="-1"
         eType="#//Form" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typegroup" upperBound="-1"
-        eType="#//TypeGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitionGroup" upperBound="-1"
+        eType="#//DefinitionGroup" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="questionGroup" lowerBound="1"
         eType="#//QuestionGroup" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Question" eSuperTypes="#//NamedElement #//ConditionnalElement">
+  <eClassifiers xsi:type="ecore:EClass" name="QuestionDefinition" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" lowerBound="1"
         eType="#//DataType"/>
@@ -106,13 +106,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="questions" upperBound="-1"
         eType="#//Question" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeGroup">
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
         eType="#//DataType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionDefinitions" upperBound="-1"
+        eType="#//QuestionDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuestionCall" eSuperTypes="#//Call">
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" lowerBound="1"
-        eType="#//Question"/>
+        eType="#//QuestionDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringValueType" eSuperTypes="#//ValueType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Question">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Question represents the application of a QuestionDefinition in a given form"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="questionDefinition" lowerBound="1"
+        eType="#//QuestionDefinition"/>
+  </eClassifiers>
 </ecore:EPackage>

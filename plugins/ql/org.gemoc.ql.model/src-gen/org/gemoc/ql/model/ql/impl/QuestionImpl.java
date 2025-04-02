@@ -3,18 +3,16 @@
 package org.gemoc.ql.model.ql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.gemoc.ql.model.ql.ConditionnalElement;
-import org.gemoc.ql.model.ql.DataType;
-import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,64 +22,21 @@ import org.gemoc.ql.model.ql.Question;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionImpl#getGuard <em>Guard</em>}</li>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionImpl#getComputedExpression <em>Computed Expression</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionImpl#getQuestionDefinition <em>Question Definition</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class QuestionImpl extends NamedElementImpl implements Question {
+public class QuestionImpl extends MinimalEObjectImpl.Container implements Question {
 	/**
-	 * The cached value of the '{@link #getGuard() <em>Guard</em>}' containment reference.
+	 * The cached value of the '{@link #getQuestionDefinition() <em>Question Definition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGuard()
+	 * @see #getQuestionDefinition()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression guard;
-
-	/**
-	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String label = LABEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDatatype()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataType datatype;
-
-	/**
-	 * The cached value of the '{@link #getComputedExpression() <em>Computed Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComputedExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression computedExpression;
+	protected QuestionDefinition questionDefinition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,91 +63,17 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	 * @generated
 	 */
 	@Override
-	public Expression getGuard() {
-		return guard;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGuard(Expression newGuard, NotificationChain msgs) {
-		Expression oldGuard = guard;
-		guard = newGuard;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__GUARD,
-					oldGuard, newGuard);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setGuard(Expression newGuard) {
-		if (newGuard != guard) {
-			NotificationChain msgs = null;
-			if (guard != null)
-				msgs = ((InternalEObject) guard).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION__GUARD, null, msgs);
-			if (newGuard != null)
-				msgs = ((InternalEObject) newGuard).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION__GUARD, null, msgs);
-			msgs = basicSetGuard(newGuard, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__GUARD, newGuard, newGuard));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getLabel() {
-		return label;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLabel(String newLabel) {
-		String oldLabel = label;
-		label = newLabel;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__LABEL, oldLabel, label));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DataType getDatatype() {
-		if (datatype != null && datatype.eIsProxy()) {
-			InternalEObject oldDatatype = (InternalEObject) datatype;
-			datatype = (DataType) eResolveProxy(oldDatatype);
-			if (datatype != oldDatatype) {
+	public QuestionDefinition getQuestionDefinition() {
+		if (questionDefinition != null && questionDefinition.eIsProxy()) {
+			InternalEObject oldQuestionDefinition = (InternalEObject) questionDefinition;
+			questionDefinition = (QuestionDefinition) eResolveProxy(oldQuestionDefinition);
+			if (questionDefinition != oldQuestionDefinition) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION__DATATYPE, oldDatatype,
-							datatype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION__QUESTION_DEFINITION,
+							oldQuestionDefinition, questionDefinition));
 			}
 		}
-		return datatype;
+		return questionDefinition;
 	}
 
 	/**
@@ -200,8 +81,8 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDatatype() {
-		return datatype;
+	public QuestionDefinition basicGetQuestionDefinition() {
+		return questionDefinition;
 	}
 
 	/**
@@ -210,79 +91,12 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	 * @generated
 	 */
 	@Override
-	public void setDatatype(DataType newDatatype) {
-		DataType oldDatatype = datatype;
-		datatype = newDatatype;
+	public void setQuestionDefinition(QuestionDefinition newQuestionDefinition) {
+		QuestionDefinition oldQuestionDefinition = questionDefinition;
+		questionDefinition = newQuestionDefinition;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__DATATYPE, oldDatatype, datatype));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Expression getComputedExpression() {
-		return computedExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetComputedExpression(Expression newComputedExpression, NotificationChain msgs) {
-		Expression oldComputedExpression = computedExpression;
-		computedExpression = newComputedExpression;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					QlPackage.QUESTION__COMPUTED_EXPRESSION, oldComputedExpression, newComputedExpression);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setComputedExpression(Expression newComputedExpression) {
-		if (newComputedExpression != computedExpression) {
-			NotificationChain msgs = null;
-			if (computedExpression != null)
-				msgs = ((InternalEObject) computedExpression).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION__COMPUTED_EXPRESSION, null, msgs);
-			if (newComputedExpression != null)
-				msgs = ((InternalEObject) newComputedExpression).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - QlPackage.QUESTION__COMPUTED_EXPRESSION, null, msgs);
-			msgs = basicSetComputedExpression(newComputedExpression, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__COMPUTED_EXPRESSION,
-					newComputedExpression, newComputedExpression));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case QlPackage.QUESTION__GUARD:
-			return basicSetGuard(null, msgs);
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			return basicSetComputedExpression(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION__QUESTION_DEFINITION,
+					oldQuestionDefinition, questionDefinition));
 	}
 
 	/**
@@ -293,16 +107,10 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case QlPackage.QUESTION__GUARD:
-			return getGuard();
-		case QlPackage.QUESTION__LABEL:
-			return getLabel();
-		case QlPackage.QUESTION__DATATYPE:
+		case QlPackage.QUESTION__QUESTION_DEFINITION:
 			if (resolve)
-				return getDatatype();
-			return basicGetDatatype();
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			return getComputedExpression();
+				return getQuestionDefinition();
+			return basicGetQuestionDefinition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,17 +123,8 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case QlPackage.QUESTION__GUARD:
-			setGuard((Expression) newValue);
-			return;
-		case QlPackage.QUESTION__LABEL:
-			setLabel((String) newValue);
-			return;
-		case QlPackage.QUESTION__DATATYPE:
-			setDatatype((DataType) newValue);
-			return;
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			setComputedExpression((Expression) newValue);
+		case QlPackage.QUESTION__QUESTION_DEFINITION:
+			setQuestionDefinition((QuestionDefinition) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -339,17 +138,8 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case QlPackage.QUESTION__GUARD:
-			setGuard((Expression) null);
-			return;
-		case QlPackage.QUESTION__LABEL:
-			setLabel(LABEL_EDEFAULT);
-			return;
-		case QlPackage.QUESTION__DATATYPE:
-			setDatatype((DataType) null);
-			return;
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			setComputedExpression((Expression) null);
+		case QlPackage.QUESTION__QUESTION_DEFINITION:
+			setQuestionDefinition((QuestionDefinition) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -363,69 +153,10 @@ public class QuestionImpl extends NamedElementImpl implements Question {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case QlPackage.QUESTION__GUARD:
-			return guard != null;
-		case QlPackage.QUESTION__LABEL:
-			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-		case QlPackage.QUESTION__DATATYPE:
-			return datatype != null;
-		case QlPackage.QUESTION__COMPUTED_EXPRESSION:
-			return computedExpression != null;
+		case QlPackage.QUESTION__QUESTION_DEFINITION:
+			return questionDefinition != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ConditionnalElement.class) {
-			switch (derivedFeatureID) {
-			case QlPackage.QUESTION__GUARD:
-				return QlPackage.CONDITIONNAL_ELEMENT__GUARD;
-			default:
-				return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ConditionnalElement.class) {
-			switch (baseFeatureID) {
-			case QlPackage.CONDITIONNAL_ELEMENT__GUARD:
-				return QlPackage.QUESTION__GUARD;
-			default:
-				return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (label: ");
-		result.append(label);
-		result.append(')');
-		return result.toString();
 	}
 
 } //QuestionImpl

@@ -24,6 +24,7 @@ import org.gemoc.ql.model.ql.DateValue;
 import org.gemoc.ql.model.ql.DateValueType;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.DecimalValueType;
+import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Expression;
@@ -36,10 +37,10 @@ import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionCall;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.QuestionGroup;
 import org.gemoc.ql.model.ql.StringValue;
 import org.gemoc.ql.model.ql.StringValueType;
-import org.gemoc.ql.model.ql.TypeGroup;
 import org.gemoc.ql.model.ql.UnaryExpression;
 import org.gemoc.ql.model.ql.UnaryOperatorKind;
 import org.gemoc.ql.model.ql.Value;
@@ -71,7 +72,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass questionEClass = null;
+	private EClass questionDefinitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,7 +247,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass typeGroupEClass = null;
+	private EClass definitionGroupEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,6 +262,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass stringValueTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass questionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -365,7 +373,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQLModel_Typegroup() {
+	public EReference getQLModel_DefinitionGroup() {
 		return (EReference) qlModelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -395,8 +403,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getQuestion() {
-		return questionEClass;
+	public EClass getQuestionDefinition() {
+		return questionDefinitionEClass;
 	}
 
 	/**
@@ -405,8 +413,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getQuestion_Label() {
-		return (EAttribute) questionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getQuestionDefinition_Label() {
+		return (EAttribute) questionDefinitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -415,8 +423,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuestion_Datatype() {
-		return (EReference) questionEClass.getEStructuralFeatures().get(1);
+	public EReference getQuestionDefinition_Datatype() {
+		return (EReference) questionDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -425,8 +433,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuestion_ComputedExpression() {
-		return (EReference) questionEClass.getEStructuralFeatures().get(2);
+	public EReference getQuestionDefinition_ComputedExpression() {
+		return (EReference) questionDefinitionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -875,8 +883,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getTypeGroup() {
-		return typeGroupEClass;
+	public EClass getDefinitionGroup() {
+		return definitionGroupEClass;
 	}
 
 	/**
@@ -885,8 +893,18 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTypeGroup_DataTypes() {
-		return (EReference) typeGroupEClass.getEStructuralFeatures().get(0);
+	public EReference getDefinitionGroup_DataTypes() {
+		return (EReference) definitionGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDefinitionGroup_QuestionDefinitions() {
+		return (EReference) definitionGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -917,6 +935,26 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	@Override
 	public EClass getStringValueType() {
 		return stringValueTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQuestion() {
+		return questionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestion_QuestionDefinition() {
+		return (EReference) questionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -971,15 +1009,15 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		// Create classes and their features
 		qlModelEClass = createEClass(QL_MODEL);
 		createEReference(qlModelEClass, QL_MODEL__FORMS);
-		createEReference(qlModelEClass, QL_MODEL__TYPEGROUP);
+		createEReference(qlModelEClass, QL_MODEL__DEFINITION_GROUP);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__QUESTION_GROUP);
 
-		questionEClass = createEClass(QUESTION);
-		createEAttribute(questionEClass, QUESTION__LABEL);
-		createEReference(questionEClass, QUESTION__DATATYPE);
-		createEReference(questionEClass, QUESTION__COMPUTED_EXPRESSION);
+		questionDefinitionEClass = createEClass(QUESTION_DEFINITION);
+		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__LABEL);
+		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__DATATYPE);
+		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__COMPUTED_EXPRESSION);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -1049,13 +1087,17 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEReference(questionGroupEClass, QUESTION_GROUP__QUESTION_GROUPS);
 		createEReference(questionGroupEClass, QUESTION_GROUP__QUESTIONS);
 
-		typeGroupEClass = createEClass(TYPE_GROUP);
-		createEReference(typeGroupEClass, TYPE_GROUP__DATA_TYPES);
+		definitionGroupEClass = createEClass(DEFINITION_GROUP);
+		createEReference(definitionGroupEClass, DEFINITION_GROUP__DATA_TYPES);
+		createEReference(definitionGroupEClass, DEFINITION_GROUP__QUESTION_DEFINITIONS);
 
 		questionCallEClass = createEClass(QUESTION_CALL);
 		createEReference(questionCallEClass, QUESTION_CALL__QUESTION);
 
 		stringValueTypeEClass = createEClass(STRING_VALUE_TYPE);
+
+		questionEClass = createEClass(QUESTION);
+		createEReference(questionEClass, QUESTION__QUESTION_DEFINITION);
 
 		// Create enums
 		binaryOperatorKindEEnum = createEEnum(BINARY_OPERATOR_KIND);
@@ -1092,8 +1134,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		// Add supertypes to classes
 		formEClass.getESuperTypes().add(this.getNamedElement());
-		questionEClass.getESuperTypes().add(this.getNamedElement());
-		questionEClass.getESuperTypes().add(this.getConditionnalElement());
+		questionDefinitionEClass.getESuperTypes().add(this.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(this.getNamedElement());
 		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -1122,25 +1163,26 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getQLModel_Forms(), this.getForm(), null, "forms", null, 0, -1, QLModel.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getQLModel_Typegroup(), this.getTypeGroup(), null, "typegroup", null, 0, -1, QLModel.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQLModel_DefinitionGroup(), this.getDefinitionGroup(), null, "definitionGroup", null, 0, -1,
+				QLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForm_QuestionGroup(), this.getQuestionGroup(), null, "questionGroup", null, 1, 1, Form.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getQuestion_Label(), ecorePackage.getEString(), "label", null, 0, 1, Question.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuestion_Datatype(), this.getDataType(), null, "datatype", null, 1, 1, Question.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuestion_ComputedExpression(), this.getExpression(), null, "computedExpression", null, 0, 1,
-				Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEClass(questionDefinitionEClass, QuestionDefinition.class, "QuestionDefinition", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getQuestionDefinition_Label(), ecorePackage.getEString(), "label", null, 0, 1,
+				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionDefinition_Datatype(), this.getDataType(), null, "datatype", null, 1, 1,
+				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionDefinition_ComputedExpression(), this.getExpression(), null, "computedExpression",
+				null, 0, 1, QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1265,20 +1307,29 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				QuestionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeGroupEClass, TypeGroup.class, "TypeGroup", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(definitionGroupEClass, DefinitionGroup.class, "DefinitionGroup", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTypeGroup_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1, TypeGroup.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDefinitionGroup_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1,
+				DefinitionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDefinitionGroup_QuestionDefinitions(), this.getQuestionDefinition(), null,
+				"questionDefinitions", null, 0, -1, DefinitionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionCallEClass, QuestionCall.class, "QuestionCall", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQuestionCall_Question(), this.getQuestion(), null, "question", null, 1, 1, QuestionCall.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQuestionCall_Question(), this.getQuestionDefinition(), null, "question", null, 1, 1,
+				QuestionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringValueTypeEClass, StringValueType.class, "StringValueType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(questionEClass, Question.class, "Question", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuestion_QuestionDefinition(), this.getQuestionDefinition(), null, "questionDefinition", null,
+				1, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(binaryOperatorKindEEnum, BinaryOperatorKind.class, "BinaryOperatorKind");

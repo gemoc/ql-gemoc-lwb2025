@@ -40,13 +40,13 @@ public interface QlFactory extends EFactory {
 	Form createForm();
 
 	/**
-	 * Returns a new object of class '<em>Question</em>'.
+	 * Returns a new object of class '<em>Question Definition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Question</em>'.
+	 * @return a new object of class '<em>Question Definition</em>'.
 	 * @generated
 	 */
-	Question createQuestion();
+	QuestionDefinition createQuestionDefinition();
 
 	/**
 	 * Returns a new object of class '<em>Basic Binary Expression</em>'.
@@ -193,13 +193,13 @@ public interface QlFactory extends EFactory {
 	QuestionGroup createQuestionGroup();
 
 	/**
-	 * Returns a new object of class '<em>Type Group</em>'.
+	 * Returns a new object of class '<em>Definition Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Group</em>'.
+	 * @return a new object of class '<em>Definition Group</em>'.
 	 * @generated
 	 */
-	TypeGroup createTypeGroup();
+	DefinitionGroup createDefinitionGroup();
 
 	/**
 	 * Returns a new object of class '<em>Question Call</em>'.
@@ -218,6 +218,15 @@ public interface QlFactory extends EFactory {
 	 * @generated
 	 */
 	StringValueType createStringValueType();
+
+	/**
+	 * Returns a new object of class '<em>Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Question</em>'.
+	 * @generated
+	 */
+	Question createQuestion();
 
 	/**
 	 * Returns the package supported by this factory.
