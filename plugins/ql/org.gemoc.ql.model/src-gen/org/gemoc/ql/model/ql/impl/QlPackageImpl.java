@@ -1294,7 +1294,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		initEClass(conditionnalElementEClass, ConditionnalElement.class, "ConditionnalElement", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionnalElement_Guard(), this.getExpression(), null, "guard", null, 1, 1,
+		initEReference(getConditionnalElement_Guard(), this.getExpression(), null, "guard", null, 0, 1,
 				ConditionnalElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

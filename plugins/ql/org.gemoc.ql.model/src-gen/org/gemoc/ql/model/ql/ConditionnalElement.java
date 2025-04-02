@@ -28,7 +28,7 @@ public interface ConditionnalElement extends EObject {
 	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Expression)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getConditionnalElement_Guard()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Expression getGuard();
