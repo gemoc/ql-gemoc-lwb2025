@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Automatic-Module-Name: org.gemoc.ql.k3ql.k3dsa
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: org.gemoc.ql.k3ql.k3dsa.Activator
 Bundle-Name: org.gemoc.ql.k3ql.k3dsa
 Bundle-SymbolicName: org.gemoc.ql.k3ql.k3dsa; singleton:=true
 Bundle-Version: 0.1.0.qualifier
