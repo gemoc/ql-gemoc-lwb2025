@@ -43,6 +43,31 @@ public class QLModelAspect {
     };
   }
 
+  /**
+   * step captured by the Engine Addon to feed the model forms with input from the user UI
+   * it waits for change
+   */
+  @Step
+  public static void readUserInput(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void readUserInput()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_readUserInput(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "readUserInput");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+
   protected static void _privk3_initializeModel(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self, final EList<String> input) {
     String _get = input.get(0);
     String _plus = ("-> initializeModel() input=" + _get);
@@ -51,11 +76,19 @@ public class QLModelAspect {
 
   protected static void _privk3_main(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
     EObjectAspect.devInfo(_self, "-> main() ");
-    while (true) {
-      EList<Form> _forms = _self.getForms();
-      for (final Form f : _forms) {
-        FormAspect.render(f);
+    int i = 5;
+    while ((i > 0)) {
+      {
+        EList<Form> _forms = _self.getForms();
+        for (final Form f : _forms) {
+          FormAspect.render(f);
+        }
+        QLModelAspect.readUserInput(_self);
+        i--;
       }
     }
+  }
+
+  protected static void _privk3_readUserInput(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
   }
 }

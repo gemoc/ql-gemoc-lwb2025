@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="ql"
+            name="Questionnaire Language">
+      </category>
+      <view
+            category="ql"
+            class="org.gemoc.ql.k3based.addons.views.QLFormBrowserView"
+            icon="icons/sample.png"
+            id="org.gemoc.ql.k3based.addons.views.QLFormBrowserView"
+            inject="true"
+            name="QL Form Browser View">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="org.gemoc.ql.k3based.addons.views.QLFormBrowserView"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

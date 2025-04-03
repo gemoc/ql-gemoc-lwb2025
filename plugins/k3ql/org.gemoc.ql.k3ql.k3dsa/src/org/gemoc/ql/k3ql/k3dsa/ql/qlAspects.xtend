@@ -88,11 +88,15 @@ class QLModelAspect {
 	def void main() {
 		_self.devInfo('-> main() ');
 		
-		while(true) {
+		var int i = 5;
+		while(i > 0) {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
 			for( f : _self.forms) {
 				f.render();
 			}
+			// wait for input in the forms
+			_self.readUserInput();
+			i--;
 			// TODO reevaluate only on data change
 		}
 //		// while not on a final mode
@@ -102,11 +106,20 @@ class QLModelAspect {
 //			_self.evaluateDataflow();
 //		}
 	}
+	
+	/** step captured by the Engine Addon to feed the model forms with input from the user UI
+	 * it waits for change
+	 */
+	@Step 
+	def void readUserInput() {
+		
+	}
 
 }
 
 @Aspect(className=Form)
 class FormAspect extends NamedElementAspect {
+	@Step
 	def void render() {
 		_self.questionGroup.render();
 	}
@@ -114,7 +127,11 @@ class FormAspect extends NamedElementAspect {
 
 @Aspect(className=Question)
 class QuestionAspect {
-
+	/** this step is captured by the EngineAddons to concretely add the question in the form */
+	@Step
+	def void show(){
+		
+	}
 }
 
 @Aspect(className=QuestionDefinition)
@@ -502,8 +519,13 @@ abstract class ConditionnalElementAspect {
 
 @Aspect(className=QuestionGroup)
 class QuestionGroupAspect extends ConditionnalElementAspect {
-
+	@Step
 	def void render() {
+		if(_self.guard === null /* || guard evaluates to True */) {
+			for( question : _self.questions) {
+				question.show();
+			}
+		}
 		// TODO evaluate guard
 		for(subGroup : _self.questionGroups) {
 			subGroup.render();	
