@@ -5,6 +5,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.emf.common.util.EList;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.QuestionGroup;
 
 @Aspect(className = QuestionGroup.class)
@@ -37,7 +38,11 @@ public class QuestionGroupAspect extends ConditionnalElementAspect {
     if (_tripleEquals) {
       EList<Question> _questions = _self.getQuestions();
       for (final Question question : _questions) {
-        QuestionAspect.show(question);
+        {
+          QuestionDefinition _questionDefinition = question.getQuestionDefinition();
+          _questionDefinition.setIsDisplayed(true);
+          QuestionAspect.show(question);
+        }
       }
     }
     EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();

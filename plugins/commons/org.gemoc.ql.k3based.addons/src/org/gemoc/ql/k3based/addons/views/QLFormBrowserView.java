@@ -3,6 +3,7 @@ package org.gemoc.ql.k3based.addons.views;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 
 import javax.inject.Inject;
 
@@ -202,6 +203,16 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		fBrowser.execute("appendQLForm(\"" + qlFormContent.replaceAll("\"", "\\\"") + "\");");
 	}
 
+	public String getFieldValueAsString(String fieldId) {
+		Object result = fBrowser.evaluate("return getFieldValueAsString(\""+fieldId+"\");");
+		if (result instanceof String) {
+            String stringResult = (String) result;
+            return stringResult;
+        } else {
+            return null;
+        }
+	}
+	
 	/**
 	 * Append an integer field to the QLForm
 	 * @param id

@@ -6,8 +6,10 @@ import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.emf.common.util.EList;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
+import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 
 @Aspect(className = QLModel.class)
 @SuppressWarnings("all")
@@ -48,19 +50,19 @@ public class QLModelAspect {
    * it waits for change
    */
   @Step
-  public static void readUserInput(final QLModel _self) {
+  public static void waitUserInput(final QLModel _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
-    // #DispatchPointCut_before# void readUserInput()
+    // #DispatchPointCut_before# void waitUserInput()
     if (_self instanceof org.gemoc.ql.model.ql.QLModel){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
     		@Override
     		public void execute() {
-    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_readUserInput(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_waitUserInput(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
     		}
     	};
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     	if (stepManager != null) {
-    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "readUserInput");
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "waitUserInput");
     	} else {
     		command.execute();
     	}
@@ -79,16 +81,33 @@ public class QLModelAspect {
     int i = 5;
     while ((i > 0)) {
       {
+        EList<DefinitionGroup> _definitionGroup = _self.getDefinitionGroup();
+        for (final DefinitionGroup g : _definitionGroup) {
+          EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
+          for (final QuestionDefinition qd : _questionDefinitions) {
+            qd.setIsDisplayed(false);
+          }
+        }
         EList<Form> _forms = _self.getForms();
         for (final Form f : _forms) {
           FormAspect.render(f);
         }
-        QLModelAspect.readUserInput(_self);
+        QLModelAspect.waitUserInput(_self);
+        EList<DefinitionGroup> _definitionGroup_1 = _self.getDefinitionGroup();
+        for (final DefinitionGroup g_1 : _definitionGroup_1) {
+          EList<QuestionDefinition> _questionDefinitions_1 = g_1.getQuestionDefinitions();
+          for (final QuestionDefinition qd_1 : _questionDefinitions_1) {
+            boolean _isIsDisplayed = qd_1.isIsDisplayed();
+            if (_isIsDisplayed) {
+              QuestionDefinitionAspect.updateCurrentValueFromUI(qd_1);
+            }
+          }
+        }
         i--;
       }
     }
   }
 
-  protected static void _privk3_readUserInput(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+  protected static void _privk3_waitUserInput(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
   }
 }

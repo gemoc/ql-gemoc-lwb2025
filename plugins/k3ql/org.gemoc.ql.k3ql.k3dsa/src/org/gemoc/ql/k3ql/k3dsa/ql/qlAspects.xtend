@@ -91,13 +91,28 @@ class QLModelAspect {
 		var int i = 5;
 		while(i > 0) {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
+			
+			// recompute which question must be displayed
+			for( g : _self.definitionGroup) {
+				for (qd : g.questionDefinitions) {
+					qd.isDisplayed = false
+				}
+			}
 			for( f : _self.forms) {
 				f.render();
 			}
-			// wait for input in the forms
-			_self.readUserInput();
+			// wait for an input
+			_self.waitUserInput();
+			// for all rendered questions, update the model with the value in the UI  
+			for( g : _self.definitionGroup) {
+				for (qd : g.questionDefinitions) {
+					if(qd.isDisplayed) {
+						qd.updateCurrentValueFromUI();
+					}
+				}
+			}
+			
 			i--;
-			// TODO reevaluate only on data change
 		}
 //		// while not on a final mode
 //		while(! _self.modeAutomata.currentMode.final){ 
@@ -111,7 +126,7 @@ class QLModelAspect {
 	 * it waits for change
 	 */
 	@Step 
-	def void readUserInput() {
+	def void waitUserInput() {
 		
 	}
 
@@ -136,7 +151,11 @@ class QuestionAspect {
 
 @Aspect(className=QuestionDefinition)
 class QuestionDefinitionAspect extends NamedElementAspect {
-
+	
+	/** this step is captured by the EngineAddons to concretely update the currentValue from the value in the UI form */
+	def void updateCurrentValueFromUI(){
+		
+	}
 }
 
 @Aspect(className=DataType)
@@ -523,6 +542,7 @@ class QuestionGroupAspect extends ConditionnalElementAspect {
 	def void render() {
 		if(_self.guard === null /* || guard evaluates to True */) {
 			for( question : _self.questions) {
+				question.questionDefinition.isDisplayed = true;
 				question.show();
 			}
 		}

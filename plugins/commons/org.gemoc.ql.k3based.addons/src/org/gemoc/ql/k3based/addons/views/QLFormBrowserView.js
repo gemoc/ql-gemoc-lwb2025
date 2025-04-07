@@ -50,6 +50,21 @@ function onInputChange() {
 	}
 }
 
+function getFieldValueAsString(fieldId) {
+  const element = document.getElementById(fieldId);
+  if (!element) {
+    return null; // Or throw an error, depending on your needs
+  }
+
+  if (element.type === 'checkbox') {
+    return element.checked.toString();
+  } else if (element.type === 'select-one') {
+    return element.options[element.selectedIndex].value;
+  } else {
+    return element.value;
+  }
+}
+
 // Call from java to say something
 function say(something) {
 	alert("Java says: " + something);

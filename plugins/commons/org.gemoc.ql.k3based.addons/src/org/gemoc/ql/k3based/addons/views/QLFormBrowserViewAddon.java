@@ -13,6 +13,7 @@ import org.gemoc.ql.k3based.addons.utils.UserInputChangeNotifier;
 import org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionHtmlAspect;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 
 public class QLFormBrowserViewAddon implements IEngineAddon {
 
@@ -61,9 +62,8 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 										Question question = (Question) stepToExecute.getMseoccurrence().getMse()
 												.getCaller();
 										String html = QuestionDefinitionHtmlAspect.htmlField(question.getQuestionDefinition()).replace("\"", "\\\"").replace("\n", "\\\n");
-										Activator.error("injecting "+html);
+										//Activator.error("injecting "+html);
 										((QLFormBrowserView) viewPart).appendQLForm(html);
-										//((QLFormBrowserView) viewPart).appendQLForm("<label for='hasMaintLoan'>Did you enter a loan for maintenance/reconstruction?</label>\n<input type='checkbox' id='hasMaintLoan' name='hasMaintLoan' value='false' onchange='onUserChange(this)'></input>");
 									}
 								} catch (Exception e) {
 									Activator.error(e.getMessage(), e);
@@ -78,6 +78,32 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
 						// TODO read all input from UI and feed them into the model
 						Activator.warn("TODO read all input from UI and feed them into the model");
+					}
+					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QuestionDefinition
+							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateCurrentValueFromUI")) {
+						// only when the readUserInput() function is executed on a QuestionDefintion
+						Display.getDefault().syncExec(new Runnable() {
+							@Override
+							public void run() {
+								try {
+									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+											.getActivePage();
+									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+									if (viewPart instanceof QLFormBrowserView) {
+										QuestionDefinition qd = (QuestionDefinition) stepToExecute.getMseoccurrence().getMse().getCaller();
+										String fieldValue =((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
+										if(fieldValue != null) {
+											qd.setCurrentValue(fieldValue); // TODO add a factory from string value in K3
+										} else {
+											Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
+										}
+									}
+								} catch (Exception e) {
+									Activator.error(e.getMessage(), e);
+								}
+							}
+
+						});
 					}
 				}
 			}
