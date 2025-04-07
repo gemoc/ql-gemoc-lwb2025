@@ -25,6 +25,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.*;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.eclipse.ui.part.ViewPart;
+import org.gemoc.ql.k3based.addons.utils.UserInputChangeNotifier;
 import org.gemoc.ql.model.ql.QLModel;
 
 /**
@@ -48,7 +49,7 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 
 	private Browser fBrowser;
 	
-	private Boolean hasChanges = false;
+	public UserInputChangeNotifier userInputChangeNotifier =  new UserInputChangeNotifier();
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -58,11 +59,12 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 			PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, null, null, null);
 			dialog.open();
 		});
+		fBrowser.addDisposeListener(e -> prefs.dispose());
 
 		BrowserFunction onInputChanges = new OnInputChanges(fBrowser, "onInputChanges", () -> {
-			this.hasChanges = true;
+			userInputChangeNotifier.onUserInputChanges();
 		});
-		fBrowser.addDisposeListener(e -> prefs.dispose());
+		fBrowser.addDisposeListener(e -> onInputChanges.dispose());
 		makeActions();
 		contributeToActionBars(getViewSite());
 		getSite().getPage().addSelectionListener(this);
@@ -197,7 +199,107 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 	 * @param qlFormContent
 	 */
 	public void appendQLForm(String qlFormContent) {
-		fBrowser.execute("appendQLForm(\"" + qlFormContent + "\");");
+		fBrowser.execute("appendQLForm(\"" + qlFormContent.replaceAll("\"", "\\\"") + "\");");
+	}
+
+	/**
+	 * Append an integer field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addIntegerField(String id, String label) {
+		String htmlField = """
+    <div>
+      <label for="%s">%s</label>
+      <input type="number" id="%s" name="%s" min="0" step="1" onchange="onUserChange(this)">
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
+		
+	}
+	
+	/**
+	 * Append a boolean field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addBooleanField(String id, String label) {
+		String htmlField = """
+    <div>
+      <label for="%s">%s</label>
+      <input type="checkbox" id="%s" name="is_member" value="false" onchange="onUserChange(this)">
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
+	}	
+	
+
+	/**
+	 * Append a string field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addStringField(String id, String label) {
+		String htmlField = """
+    <div>
+      <label for="%s">%s</label>
+      <input type="text" id="%s" name="%s" oninput="onUserChange(this)">
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
+	}
+
+	/**
+	 * Append a decimal field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addDecimalField(String id, String label) {
+		String htmlField = """
+    <div>
+        <label for="%s">%s</label>
+        <input type="number" id="%s" name="%s" min="0" step="0.1" onchange="onUserChange(this)">
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
+	}	
+	
+	/**
+	 * Append a date field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addDateField(String id, String label) {
+		String htmlField = """
+    <div>
+      <label for="%s">%s</label>
+      <input type="date" id="%s" name="%s" onchange="onUserChange(this)">
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
+	}
+	
+	
+	
+	
+	/**
+	 * Append a enum field to the QLForm
+	 * @param id
+	 * @param label
+	 */
+	public void addEnumField(String id, String label) {
+		// TODO add list of enum values
+		String htmlField = """
+    <div>
+      <label for="%s">%s</label>
+      <select id="%s" name="%s" onchange="onUserChange(this)">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+	        """.formatted(id, label, id, id);
+		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
 	}
 	
 	@Override
@@ -234,7 +336,5 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		
 	}
 
-	public void resetHasChanges() {
-		this.hasChanges =  false;
-	}
+
 }

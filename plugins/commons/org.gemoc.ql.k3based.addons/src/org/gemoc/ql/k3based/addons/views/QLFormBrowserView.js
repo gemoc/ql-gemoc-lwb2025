@@ -18,16 +18,17 @@ function setSelection(text) {
 function setQLForm(text) {
 	const qlFormElement = document.getElementById("qlForm");
  	if (qlFormElement) {
-    	qlFormElement.innerText = text; // replace the text
+    	qlFormElement.innerHTML = text; // replace the text
  	}
 }
 // Call from Java to append to the current qlForm
 function appendQLForm(text) {
 	const qlFormElement = document.getElementById("qlForm");
  	if (qlFormElement) {
-    	qlFormElement.innerText += text; // Append the text
+    	qlFormElement.innerHTML += text; // Append the text
  	}
 }
+
 
 // Call to Java to open the preferences
 function openPreferences() {

@@ -1,0 +1,30 @@
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.DecimalValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.IntegerValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.DateValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DateValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DateValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.DateValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.DateValueTypeHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.BooleanValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspect
+		if (_self instanceof org.gemoc.ql.model.ql.StringValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspect.htmlField((org.gemoc.ql.model.ql.StringValueType)_self,id,label);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect#String htmlField(String,String) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspect

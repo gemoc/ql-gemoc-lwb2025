@@ -9,6 +9,8 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.gemoc.ql.k3based.addons.Activator;
+import org.gemoc.ql.k3based.addons.utils.UserInputChangeNotifier;
+import org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionHtmlAspect;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
 
@@ -58,8 +60,10 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 									if (viewPart instanceof QLFormBrowserView) {
 										Question question = (Question) stepToExecute.getMseoccurrence().getMse()
 												.getCaller();
-										((QLFormBrowserView) viewPart)
-												.appendQLForm(question.getQuestionDefinition().getLabel()); // TODO
+										String html = QuestionDefinitionHtmlAspect.htmlField(question.getQuestionDefinition()).replace("\"", "\\\"").replace("\n", "\\\n");
+										Activator.error("injecting "+html);
+										((QLFormBrowserView) viewPart).appendQLForm(html);
+										//((QLFormBrowserView) viewPart).appendQLForm("<label for='hasMaintLoan'>Did you enter a loan for maintenance/reconstruction?</label>\n<input type='checkbox' id='hasMaintLoan' name='hasMaintLoan' value='false' onchange='onUserChange(this)'></input>");
 									}
 								} catch (Exception e) {
 									Activator.error(e.getMessage(), e);
@@ -71,31 +75,40 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("readUserInput")) {
 						// only when the readUserInput() function is executed on a QLModel
-						Display.getDefault().syncExec(new Runnable() {
-							@Override
-							public void run() {
-								try {
-									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-											.getActivePage();
-									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-									if (viewPart instanceof QLFormBrowserView) {
-										QLModel qlModel = (QLModel) stepToExecute.getMseoccurrence().getMse()
-												.getCaller();
-										// TODO for all questions, read the input from the UI if it exists
-										((QLFormBrowserView) viewPart).resetHasChanges();
-											
-									}
-								} catch (Exception e) {
-									Activator.error(e.getMessage(), e);
-								}
-							}
-
-						});
+						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
+						// TODO read all input from UI and feed them into the model
+						Activator.warn("TODO read all input from UI and feed them into the model");
 					}
 				}
 			}
 		} catch (Exception e) {
 			Activator.error(e.getMessage(), e);
 		}
+	}
+	
+	/**
+	 * Get the UserInputChangeNotifier
+	 * it uses the UI thread for a short time
+	 * @return
+	 */
+	private UserInputChangeNotifier getUserInputChangeNotifier() {
+		final UserInputChangeNotifier[] notifier = {null}; // Use an array to hold the result
+
+		Display.getDefault().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+					IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+					if (viewPart instanceof QLFormBrowserView) {
+						notifier[0] = ((QLFormBrowserView) viewPart).userInputChangeNotifier;
+					}
+
+				} catch (Exception e) {
+					Activator.error(e.getMessage(), e);
+				}
+			}
+		});
+		return notifier[0]; // Return the result from the array
 	}
 }
