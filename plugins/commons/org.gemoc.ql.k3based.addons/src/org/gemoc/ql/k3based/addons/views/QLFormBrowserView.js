@@ -41,10 +41,10 @@ function openPreferences() {
 }
 
 // Call to Java to signal user input changes
-function onInputChanges() {
+function onInputChange() {
 	try {
-		var result = onInputChanges(); // Java callback
-		document.getElementById("lastAction").innerText = "onInputChanges was called. Return value was: " + result;
+		var result = onInputChange(); // Java callback
+		document.getElementById("lastAction").innerText = "onInputChange was called. Return value was: " + result;
 	} catch (e) {
 		document.getElementById("lastAction").innerText = "A Java error occured: " + e.message;
 	}

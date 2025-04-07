@@ -39,7 +39,7 @@ class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label){
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="checkbox" id="«id»" name="«id»" value="false" onchange="onUserChange(this)">
+		      <input type="checkbox" id="«id»" name="«id»" value="false" onchange="onInputChange()">
 		    </div>''';
 	}
 }
@@ -50,7 +50,7 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		return '''
 		    <div>
 		      <label for="«id»">«label»</label>
-		      <input type="number" id="«id»" name="«id»" min="0" step="1" onchange="onUserChange(this)">
+		      <input type="number" id="«id»" name="«id»" min="0" step="1" onchange="onInputChange()">
 		    </div>''';
 	}
 }
@@ -60,7 +60,7 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label){
 		return '''<div>
 		        <label for="«id»">«label»</label>
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" onchange="onUserChange(this)">
+		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" onchange="onInputChange()">
 		    </div>''';
 	}
 }
@@ -70,7 +70,7 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="text" id="«id»" name="«id»" oninput="onUserChange(this)">
+		      <input type="text" id="«id»" name="«id»" oninput="onInputChange()">
 		    </div>''';
 	}
 }
@@ -80,7 +80,7 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label){
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="date" id="«id»" name="«id»" onchange="onUserChange(this)">
+		      <input type="date" id="«id»" name="«id»" onchange="onInputChange()">
 		    </div>''';
 	}
 
@@ -91,7 +91,7 @@ class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label){
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <select id="«id»" name="«id»" onchange="onUserChange(this)">
+		      <select id="«id»" name="«id»" onchange="onInputChange()">
 		      «FOR lit : _self.enumerationLiterals»
 		        <option value="«lit.name»">«lit.name»</option>
 		       «ENDFOR»

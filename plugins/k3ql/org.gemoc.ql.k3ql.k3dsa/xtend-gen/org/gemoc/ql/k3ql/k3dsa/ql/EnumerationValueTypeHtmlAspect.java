@@ -35,7 +35,7 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\" name=\"");
     _builder.append(id, "\t\t      ");
-    _builder.append("\" onchange=\"onUserChange(this)\">");
+    _builder.append("\" onchange=\"onInputChange()\">");
     _builder.newLineIfNotEmpty();
     {
       EList<EnumerationLiteral> _enumerationLiterals = _self.getEnumerationLiterals();

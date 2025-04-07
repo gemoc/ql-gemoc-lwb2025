@@ -10,7 +10,7 @@ public class UserInputChangeNotifier {
     private final Condition changeReceived = lock.newCondition();
     private volatile boolean inputChanged = false;
 
-    public void onUserInputChanges() {
+    public void onUserInputChange() {
         lock.lock();
         try {
             inputChanged = true;

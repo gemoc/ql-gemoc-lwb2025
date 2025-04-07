@@ -33,7 +33,7 @@ public class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "  ");
     _builder.append("\" name=\"");
     _builder.append(id, "  ");
-    _builder.append("\" min=\"0\" step=\"1\" onchange=\"onUserChange(this)\">");
+    _builder.append("\" min=\"0\" step=\"1\" onchange=\"onInputChange()\">");
     _builder.newLineIfNotEmpty();
     _builder.append("</div>");
     return _builder.toString();

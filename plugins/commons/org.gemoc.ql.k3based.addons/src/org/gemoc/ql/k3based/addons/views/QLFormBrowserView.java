@@ -61,10 +61,10 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		});
 		fBrowser.addDisposeListener(e -> prefs.dispose());
 
-		BrowserFunction onInputChanges = new OnInputChanges(fBrowser, "onInputChanges", () -> {
-			userInputChangeNotifier.onUserInputChanges();
+		BrowserFunction onInputChange = new OnInputChange(fBrowser, "onInputChange", () -> {
+			userInputChangeNotifier.onUserInputChange();
 		});
-		fBrowser.addDisposeListener(e -> onInputChanges.dispose());
+		fBrowser.addDisposeListener(e -> onInputChange.dispose());
 		makeActions();
 		contributeToActionBars(getViewSite());
 		getSite().getPage().addSelectionListener(this);
@@ -140,10 +140,10 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 			return getName() + " executed!";
 		}
 	}
-	private class OnInputChanges extends BrowserFunction {
+	private class OnInputChange extends BrowserFunction {
 		private Runnable function;
 
-		OnInputChanges(Browser browser, String name, Runnable function) {
+		OnInputChange(Browser browser, String name, Runnable function) {
 			super(browser, name);
 			this.function = function;
 		}

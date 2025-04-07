@@ -33,7 +33,7 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\" name=\"");
     _builder.append(id, "\t\t      ");
-    _builder.append("\" oninput=\"onUserChange(this)\">");
+    _builder.append("\" oninput=\"onInputChange()\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");
