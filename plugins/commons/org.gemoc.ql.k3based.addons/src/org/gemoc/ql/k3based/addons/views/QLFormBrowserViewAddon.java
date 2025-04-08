@@ -1,6 +1,10 @@
 package org.gemoc.ql.k3based.addons.views;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gemoc.executionframework.engine.core.CommandExecution;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
@@ -11,9 +15,13 @@ import org.eclipse.ui.PlatformUI;
 import org.gemoc.ql.k3based.addons.Activator;
 import org.gemoc.ql.k3based.addons.utils.UserInputChangeNotifier;
 import org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionHtmlAspect;
+import org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect;
+import org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 public class QLFormBrowserViewAddon implements IEngineAddon {
 
@@ -73,7 +81,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 						});
 					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
-							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("readUserInput")) {
+							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("waitUserInput")) {
 						// only when the readUserInput() function is executed on a QLModel
 						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
 						// TODO read all input from UI and feed them into the model
@@ -81,7 +89,9 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QuestionDefinition
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateCurrentValueFromUI")) {
-						// only when the readUserInput() function is executed on a QuestionDefintion
+						// only when the readUserInput() function is executed on a QuestionDefinition
+						QuestionDefinition qd = (QuestionDefinition) stepToExecute.getMseoccurrence().getMse().getCaller();
+						
 						Display.getDefault().syncExec(new Runnable() {
 							@Override
 							public void run() {
@@ -90,12 +100,36 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 											.getActivePage();
 									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
 									if (viewPart instanceof QLFormBrowserView) {
-										QuestionDefinition qd = (QuestionDefinition) stepToExecute.getMseoccurrence().getMse().getCaller();
-										String fieldValue =((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
-										if(fieldValue != null) {
-											qd.setCurrentValue(fieldValue); // TODO add a factory from string value in K3
+										
+										String newValue=((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
+										boolean mustSetNewValue = false;
+										if(newValue != null && qd.getDatatype() instanceof ValueType) {
+											if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
+												// same value, do not change it
+											} else {
+												mustSetNewValue = true;
+											}
 										} else {
 											Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
+										}
+										if(mustSetNewValue) {
+											TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(qd.eResource());
+											if (ed != null) {
+												RecordingCommand command = new RecordingCommand(ed, "") {
+													protected void doExecute() {
+														try {
+															Value value = ValueTypeAspect.createValue((ValueType)qd.getDatatype(), newValue);
+															qd.setCurrentValue(value);
+														} catch (Exception t) {
+															Activator.error(t.getMessage(), t);
+														}
+													}
+												};
+												CommandExecution.execute(ed, command);
+											} else {
+												Value value = ValueTypeAspect.createValue((ValueType)qd.getDatatype(), newValue);
+												qd.setCurrentValue(value);
+											}
 										}
 									}
 								} catch (Exception e) {
@@ -104,6 +138,8 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 							}
 
 						});
+						
+						
 					}
 				}
 			}
