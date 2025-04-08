@@ -88,7 +88,7 @@ class QLModelAspect {
 	def void main() {
 		_self.devInfo('-> main() ');
 		
-		var int i = 5;
+		var int i = 100;
 		while(i > 0) {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
 			
@@ -126,6 +126,9 @@ class QLModelAspect {
 		
 	}
 	
+		/** step captured by the Engine Addon to flush the display, so we can add the field again according to their newly isDisplayed status
+	 * it waits for change
+	 */
 	@Step
 	def void resetIsDisplayed() {
 		for( g : _self.definitionGroup) {

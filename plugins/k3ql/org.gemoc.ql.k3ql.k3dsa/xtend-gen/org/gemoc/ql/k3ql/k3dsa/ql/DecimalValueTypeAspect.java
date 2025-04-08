@@ -1,6 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.QlFactory;
@@ -21,7 +22,15 @@ public class DecimalValueTypeAspect extends ValueTypeAspect {
 
   protected static Value _privk3_createValue(final DecimalValueTypeAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String internalValue) {
     final DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
-    aValue.setDecimalValue(Float.parseFloat(internalValue));
+    try {
+      aValue.setDecimalValue(Float.parseFloat(internalValue));
+    } catch (final Throwable _t) {
+      if (_t instanceof NumberFormatException) {
+        return null;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
     return aValue;
   }
 }

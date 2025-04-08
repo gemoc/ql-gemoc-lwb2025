@@ -5,21 +5,22 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
+import org.gemoc.ql.model.ql.Value;
 
 @Aspect(className = EnumerationValueType.class)
 @SuppressWarnings("all")
 public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final EnumerationValueType _self, final String id, final String label) {
+  public static String htmlField(final EnumerationValueType _self, final String id, final String label, final Value currentValue) {
     final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String)
+    // #DispatchPointCut_before# String htmlField(String,String,Value)
     if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label,currentValue);
     };
     return (java.lang.String)result;
   }
 
-  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label) {
+  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
     _builder.newLine();

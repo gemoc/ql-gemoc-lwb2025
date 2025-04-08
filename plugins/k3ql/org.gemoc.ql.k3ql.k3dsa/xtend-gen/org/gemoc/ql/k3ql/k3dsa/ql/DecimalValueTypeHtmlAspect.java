@@ -3,21 +3,22 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.DecimalValueType;
+import org.gemoc.ql.model.ql.Value;
 
 @Aspect(className = DecimalValueType.class)
 @SuppressWarnings("all")
 public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final DecimalValueType _self, final String id, final String label) {
+  public static String htmlField(final DecimalValueType _self, final String id, final String label, final Value currentValue) {
     final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String)
+    // #DispatchPointCut_before# String htmlField(String,String,Value)
     if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label,currentValue);
     };
     return (java.lang.String)result;
   }
 
-  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label) {
+  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label, final Value currentValue) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
     _builder.newLine();

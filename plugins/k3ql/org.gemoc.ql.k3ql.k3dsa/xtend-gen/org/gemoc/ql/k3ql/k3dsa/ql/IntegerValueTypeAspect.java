@@ -1,6 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.QlFactory;
@@ -21,7 +22,15 @@ public class IntegerValueTypeAspect extends ValueTypeAspect {
 
   protected static Value _privk3_createValue(final IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self, final String internalValue) {
     final IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
-    aValue.setIntValue(Integer.parseInt(internalValue));
+    try {
+      aValue.setIntValue(Integer.parseInt(internalValue));
+    } catch (final Throwable _t) {
+      if (_t instanceof NumberFormatException) {
+        return null;
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
     return aValue;
   }
 }

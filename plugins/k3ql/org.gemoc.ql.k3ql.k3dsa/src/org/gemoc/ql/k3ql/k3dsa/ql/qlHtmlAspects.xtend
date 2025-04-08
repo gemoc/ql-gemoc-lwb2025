@@ -4,8 +4,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.gemoc.ql.model.ql.QuestionDefinition
 import org.gemoc.ql.model.ql.DataType
 
-
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect.*
 import org.gemoc.ql.model.ql.ValueType
 import org.gemoc.ql.model.ql.BooleanValueType
 import org.gemoc.ql.model.ql.IntegerValueType
@@ -13,6 +13,8 @@ import org.gemoc.ql.model.ql.DecimalValueType
 import org.gemoc.ql.model.ql.StringValueType
 import org.gemoc.ql.model.ql.DateValueType
 import org.gemoc.ql.model.ql.EnumerationValueType
+import org.gemoc.ql.model.ql.Value
+import org.gemoc.ql.model.ql.BooleanValue
 
 /* Aspects used by HTML Form presentation */
 
@@ -20,14 +22,15 @@ import org.gemoc.ql.model.ql.EnumerationValueType
 class QuestionDefinitionHtmlAspect extends NamedElementAspect {
 
 	def  String htmlField() {
-		return _self.datatype.htmlField(_self.name, _self.label) + " debug "+_self.name;
+		
+		return _self.datatype.htmlField(_self.name, _self.label, _self.currentValue);
 	}
 }
 
 @Aspect(className=DataType)
 abstract class DataTypeHtmlAspect extends NamedElementAspect {
 
-	abstract def String htmlField(String id, String label);
+	abstract def String htmlField(String id, String label, Value currentValue);
 }
 
 @Aspect(className=ValueType)
@@ -36,17 +39,21 @@ class ValueTypeHtmlAspect extends DataTypeHtmlAspect {
 
 @Aspect(className=BooleanValueType)
 class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
+		var String checked = ""
+		if(currentValue !== null) {
+			if((currentValue as BooleanValue).isBooleanValue) checked = "checked";
+		}
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="checkbox" id="«id»" name="«id»" value="false" onchange="onInputChange()">
+		      <input type="checkbox" id="«id»" name="«id»" «checked» onchange="onInputChange()">
 		    </div>''';
 	}
 }
 
 @Aspect(className=IntegerValueType)
 class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
 		return '''
 		    <div>
 		      <label for="«id»">«label»</label>
@@ -57,7 +64,7 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=DecimalValueType)
 class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
 		return '''<div>
 		        <label for="«id»">«label»</label>
 		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" onchange="onInputChange()">
@@ -66,7 +73,7 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 }
 @Aspect(className=StringValueType)
 class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
 		
 		return '''<div>
 		      <label for="«id»">«label»</label>
@@ -77,7 +84,7 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=DateValueType)
 class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
 		return '''<div>
 		      <label for="«id»">«label»</label>
 		      <input type="date" id="«id»" name="«id»" onchange="onInputChange()">
@@ -88,7 +95,7 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=EnumerationValueType)
 class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label){
+	def String htmlField(String id, String label, Value currentValue){
 		return '''<div>
 		      <label for="«id»">«label»</label>
 		      <select id="«id»" name="«id»" onchange="onInputChange()">

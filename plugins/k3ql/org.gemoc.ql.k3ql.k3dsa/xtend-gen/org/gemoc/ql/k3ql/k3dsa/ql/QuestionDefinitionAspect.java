@@ -1,6 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 
 @Aspect(className = QuestionDefinition.class)
@@ -9,11 +10,24 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
   /**
    * this step is captured by the EngineAddons to concretely update the currentValue from the value in the UI form
    */
+  @Step
   public static void updateCurrentValueFromUI(final QuestionDefinition _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspectQuestionDefinitionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspectQuestionDefinitionAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void updateCurrentValueFromUI()
     if (_self instanceof org.gemoc.ql.model.ql.QuestionDefinition){
-    	org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect._privk3_updateCurrentValueFromUI(_self_, (org.gemoc.ql.model.ql.QuestionDefinition)_self);
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect._privk3_updateCurrentValueFromUI(_self_, (org.gemoc.ql.model.ql.QuestionDefinition)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QuestionDefinition", "updateCurrentValueFromUI");
+    	} else {
+    		command.execute();
+    	}
+    	;
     };
   }
 
