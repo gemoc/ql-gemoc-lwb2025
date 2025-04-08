@@ -35,7 +35,7 @@ import org.gemoc.ql.model.ql.QLModel;
  * shows how data can be exchanged between Java and JavaScript.
  */
 
-public class QLFormBrowserView extends ViewPart implements ISelectionListener, IEngineSelectionListener {
+public class QLFormBrowserView extends ViewPart implements IEngineSelectionListener {
 
 	/**
 	 * The ID of the view as specified by the extension.
@@ -56,19 +56,13 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 	public void createPartControl(Composite parent) {
 		fBrowser = new Browser(parent, SWT.WEBKIT);
 		fBrowser.setText(getContent());
-		BrowserFunction prefs = new OpenPreferenceFunction(fBrowser, "openEclipsePreferences", () -> {
-			PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, null, null, null);
-			dialog.open();
-		});
-		fBrowser.addDisposeListener(e -> prefs.dispose());
-
+		
 		BrowserFunction onInputChange = new OnInputChange(fBrowser, "onInputChange", () -> {
 			userInputChangeNotifier.onUserInputChange();
 		});
 		fBrowser.addDisposeListener(e -> onInputChange.dispose());
 		makeActions();
 		contributeToActionBars(getViewSite());
-		getSite().getPage().addSelectionListener(this);
 		org.eclipse.gemoc.executionframework.ui.Activator.getDefault().getEngineSelectionManager().addEngineSelectionListener(this);
 	}
 
@@ -127,20 +121,6 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		fBrowser.setFocus();
 	}
 
-	private class OpenPreferenceFunction extends BrowserFunction {
-		private Runnable function;
-
-		OpenPreferenceFunction(Browser browser, String name, Runnable function) {
-			super(browser, name);
-			this.function = function;
-		}
-
-		@Override
-		public Object function(Object[] arguments) {
-			function.run();
-			return getName() + " executed!";
-		}
-	}
 	private class OnInputChange extends BrowserFunction {
 		private Runnable function;
 
@@ -179,8 +159,6 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		buffer.append("<div id=\"selection\"></div>");
 		buffer.append("<h3>Last Action</h3>");
 		buffer.append("<div id=\"lastAction\"></div>");
-		buffer.append("<h3>Call to Java</h3>");
-		buffer.append("<input id=button type=\"button\" value=\"Open Preferences\" onclick=\"openPreferences();\">");
 		buffer.append("</body>");
 		buffer.append("</html>");
 		return buffer.toString();
@@ -211,124 +189,11 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
         } else {
             return null;
         }
-	}
-	
-	/**
-	 * Append an integer field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addIntegerField(String id, String label) {
-		String htmlField = """
-    <div>
-      <label for="%s">%s</label>
-      <input type="number" id="%s" name="%s" min="0" step="1" onchange="onUserChange(this)">
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
-		
-	}
-	
-	/**
-	 * Append a boolean field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addBooleanField(String id, String label) {
-		String htmlField = """
-    <div>
-      <label for="%s">%s</label>
-      <input type="checkbox" id="%s" name="is_member" value="false" onchange="onUserChange(this)">
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
 	}	
-	
 
-	/**
-	 * Append a string field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addStringField(String id, String label) {
-		String htmlField = """
-    <div>
-      <label for="%s">%s</label>
-      <input type="text" id="%s" name="%s" oninput="onUserChange(this)">
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
-	}
-
-	/**
-	 * Append a decimal field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addDecimalField(String id, String label) {
-		String htmlField = """
-    <div>
-        <label for="%s">%s</label>
-        <input type="number" id="%s" name="%s" min="0" step="0.1" onchange="onUserChange(this)">
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
-	}	
-	
-	/**
-	 * Append a date field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addDateField(String id, String label) {
-		String htmlField = """
-    <div>
-      <label for="%s">%s</label>
-      <input type="date" id="%s" name="%s" onchange="onUserChange(this)">
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
-	}
-	
-	
-	
-	
-	/**
-	 * Append a enum field to the QLForm
-	 * @param id
-	 * @param label
-	 */
-	public void addEnumField(String id, String label) {
-		// TODO add list of enum values
-		String htmlField = """
-    <div>
-      <label for="%s">%s</label>
-      <select id="%s" name="%s" onchange="onUserChange(this)">
-        <option value="active">Active</option>
-        <option value="inactive">Inactive</option>
-        <option value="pending">Pending</option>
-      </select>
-    </div>
-	        """.formatted(id, label, id, id);
-		fBrowser.execute("appendQLForm(\"" + htmlField + "\");");
-	}
-	
-	@Override
-	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if (selection.isEmpty()) {
-			return;
-		}
-		if (selection instanceof IStructuredSelection) {
-			fBrowser.execute("setSelection(\"" + part.getTitle() + "::"
-					+ ((IStructuredSelection) selection).getFirstElement().getClass().getSimpleName() + "\");");
-		} else {
-			fBrowser.execute("setSelection(\"Something was selected in part " + part.getTitle() + "\");");
-		}
-	}
 
 	@Override
 	public void dispose() {
-		getSite().getPage().removeSelectionListener(this);
 		org.eclipse.gemoc.executionframework.ui.Activator.getDefault().getEngineSelectionManager().removeEngineSelectionListener(this);
 		super.dispose();
 	}
@@ -340,8 +205,7 @@ public class QLFormBrowserView extends ViewPart implements ISelectionListener, I
 		if(engine.getExecutionContext() != null) {
 			Resource res = engine.getExecutionContext().getResourceModel();
 			if(res.getContents().get(0) instanceof QLModel) {
-
-				fBrowser.execute("setSelection(\"Engine "+ engine.getName() + " was selected and contains a QLModel\");");
+				fBrowser.execute("setSelection(\"Engine "+ engine.getName() + "("+ engine.getRunningStatus() +") was selected and contains a QLModel\");");
 			}
 		}
 		

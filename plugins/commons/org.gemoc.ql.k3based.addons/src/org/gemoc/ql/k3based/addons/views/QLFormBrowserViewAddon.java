@@ -81,8 +81,29 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 						});
 					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
+							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("resetIsDisplayed")) {
+						// only when the resetIsDisplayed() function is executed on a QLModel
+						Display.getDefault().syncExec(new Runnable() {
+							@Override
+							public void run() {
+								try {
+									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+											.getActivePage();
+									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+									if (viewPart instanceof QLFormBrowserView) {
+										// reset the QLForm so we can add the field according to their new isDisplayed status
+										((QLFormBrowserView) viewPart).setQLForm("");
+									}
+								} catch (Exception e) {
+									Activator.error(e.getMessage(), e);
+								}
+							}
+
+						});
+					}
+					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("waitUserInput")) {
-						// only when the readUserInput() function is executed on a QLModel
+						// only when the waitUserInput() function is executed on a QLModel
 						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
 						// TODO read all input from UI and feed them into the model
 						Activator.warn("TODO read all input from UI and feed them into the model");
