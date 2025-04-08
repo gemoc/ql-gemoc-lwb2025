@@ -93,11 +93,7 @@ class QLModelAspect {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
 			
 			// recompute which question must be displayed
-			for( g : _self.definitionGroup) {
-				for (qd : g.questionDefinitions) {
-					qd.isDisplayed = false
-				}
-			}
+			_self.resetIsDisplayed();
 			for( f : _self.forms) {
 				f.render();
 			}
@@ -129,6 +125,15 @@ class QLModelAspect {
 	def void waitUserInput() {
 		
 	}
+	
+	@Step
+	def void resetIsDisplayed() {
+		for( g : _self.definitionGroup) {
+			for (qd : g.questionDefinitions) {
+				qd.isDisplayed = false
+			}
+		}	
+	}
 
 }
 
@@ -153,6 +158,7 @@ class QuestionAspect {
 class QuestionDefinitionAspect extends NamedElementAspect {
 	
 	/** this step is captured by the EngineAddons to concretely update the currentValue from the value in the UI form */
+	@Step
 	def void updateCurrentValueFromUI(){
 		
 	}
@@ -489,7 +495,13 @@ class BooleanValueTypeAspect extends ValueTypeAspect {
 class IntegerValueTypeAspect extends ValueTypeAspect {
 	def Value createValue(String internalValue) {
 		val IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
-		aValue.intValue = Integer.parseInt(internalValue);
+		try {
+			aValue.intValue = Integer.parseInt(internalValue);
+		}
+		catch (NumberFormatException e) { 
+			// do not create value if it is invalid
+			return null;
+		}
 		return aValue;
 	}
 }
@@ -498,7 +510,13 @@ class IntegerValueTypeAspect extends ValueTypeAspect {
 class DecimalValueTypeAspect extends ValueTypeAspect {
 	def Value createValue(String internalValue) {
 		val DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
-		aValue.decimalValue = Float.parseFloat(internalValue);
+		try {
+			aValue.decimalValue = Float.parseFloat(internalValue);
+		}
+		catch (NumberFormatException e) { 
+			// do not create value if it is invalid
+			return null;
+		}
 		return aValue;
 	}
 }
