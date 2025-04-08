@@ -474,6 +474,36 @@ class DateValueAspect extends ValueAspect {
 
 @Aspect(className=DecimalValue)
 class DecimalValueAspect extends ValueAspect {
+	def Value evaluate() {
+//		_self.devInfo(' -> BooleanValue.evaluate '+_self);
+		return _self;
+	}
+	def Value copy() {
+		val DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
+		aValue.decimalValue = _self.decimalValue;
+		return aValue;
+	}
+	def BooleanValue bEquals(Value rhs) {
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		if(rhs instanceof DecimalValue) {
+			bValue.booleanValue = _self.decimalValue == (rhs as DecimalValue).decimalValue;
+		} else {
+			bValue.booleanValue = false;
+		}
+		return bValue;
+	}
+
+	def String valueToString(){
+		return _self.decimalValue.toString();
+	}
+	def Object rawValue(){
+		return _self.decimalValue;
+	}
+	
+	
+	def Boolean isKindOf(DataType type){
+		return type instanceof BooleanValueType;
+	}
 
 }
 

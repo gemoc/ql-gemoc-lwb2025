@@ -19,6 +19,10 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlField(final StringValueTypeHtmlAspectStringValueTypeAspectProperties _self_, final StringValueType _self, final String id, final String label, final Value currentValue) {
+    String value = "";
+    if ((currentValue != null)) {
+      value = ValueAspect.valueToString(currentValue);
+    }
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
     _builder.newLine();
@@ -34,6 +38,8 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\" name=\"");
     _builder.append(id, "\t\t      ");
+    _builder.append("\"  value=\"");
+    _builder.append(value, "\t\t      ");
     _builder.append("\" oninput=\"onInputChange()\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");

@@ -54,10 +54,14 @@ class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=IntegerValueType)
 class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
+		var String value = ""
+		if(currentValue !== null) {
+			value = currentValue.valueToString
+		}
 		return '''
 		    <div>
 		      <label for="«id»">«label»</label>
-		      <input type="number" id="«id»" name="«id»" min="0" step="1" onchange="onInputChange()">
+		      <input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" onchange="onInputChange()">
 		    </div>''';
 	}
 }
@@ -65,19 +69,26 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=DecimalValueType)
 class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
+		var String value = ""
+		if(currentValue !== null) {
+			value = currentValue.valueToString
+		}
 		return '''<div>
 		        <label for="«id»">«label»</label>
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" onchange="onInputChange()">
+		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»"  onchange="onInputChange()">
 		    </div>''';
 	}
 }
 @Aspect(className=StringValueType)
 class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
-		
+		var String value = ""
+		if(currentValue !== null) {
+			value = currentValue.valueToString
+		}
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="text" id="«id»" name="«id»" oninput="onInputChange()">
+		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInputChange()">
 		    </div>''';
 	}
 }
@@ -85,6 +96,7 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=DateValueType)
 class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
+		// TODO set currentValue
 		return '''<div>
 		      <label for="«id»">«label»</label>
 		      <input type="date" id="«id»" name="«id»" onchange="onInputChange()">
@@ -96,6 +108,7 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=EnumerationValueType)
 class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
+		// TODO set currentValue
 		return '''<div>
 		      <label for="«id»">«label»</label>
 		      <select id="«id»" name="«id»" onchange="onInputChange()">

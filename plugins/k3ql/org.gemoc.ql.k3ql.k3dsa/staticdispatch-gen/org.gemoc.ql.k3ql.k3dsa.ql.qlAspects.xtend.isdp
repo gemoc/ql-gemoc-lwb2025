@@ -3,6 +3,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.copy((org.gemoc.ql.model.ql.StringValue)_self);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.evaluate((org.gemoc.ql.model.ql.DecimalValue)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greater(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.greater((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
@@ -13,6 +18,16 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.isKindOf((org.gemoc.ql.model.ql.StringValue)_self,type);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.bEquals((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.isKindOf((org.gemoc.ql.model.ql.DecimalValue)_self,type);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.rawValue((org.gemoc.ql.model.ql.BooleanValue)_self);
@@ -93,6 +108,16 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.bEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.valueToString((org.gemoc.ql.model.ql.DecimalValue)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.rawValue((org.gemoc.ql.model.ql.DecimalValue)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
 		if (_self instanceof org.gemoc.ql.model.ql.StringValueType){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.createValue((org.gemoc.ql.model.ql.StringValueType)_self,internalValue);
@@ -118,6 +143,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.valueToString((org.gemoc.ql.model.ql.BooleanValue)_self);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.copy((org.gemoc.ql.model.ql.DecimalValue)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#IntegerValue toIntegerValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.toIntegerValue((org.gemoc.ql.model.ql.IntegerValue)_self);
