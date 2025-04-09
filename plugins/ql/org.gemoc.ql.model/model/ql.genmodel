@@ -1,242 +1,118 @@
 <?xml version="1.0" encoding="ASCII"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.ql.model/src-gen" creationIcons="false" editDirectory="/org.gemoc.ql.model.edit/src-gen" editorDirectory="/org.gemoc.ql.model.editor/src-gen" modelPluginID="org.gemoc.ql.model" modelName="Ql" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.gemoc.ql.model/src-gen" creationIcons="false"
+    editDirectory="/org.gemoc.ql.model.edit/src-gen" editorDirectory="/org.gemoc.ql.model.editor/src-gen"
+    modelPluginID="org.gemoc.ql.model" modelName="Ql" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>ql.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Ql" basePackage="org.gemoc.ql.model" disposableProviderFactory="true">
-    <ecorePackage href="ql.ecore#/"/>
-    <genEnums typeSafeEnumCompatible="false">
-      <ecoreEnum href="ql.ecore#//BinaryOperatorKind"/>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/PLUS"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/MINUS"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/MULT"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/DIV"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/EQUAL"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/NOTEQUAL"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/GREATER"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/LOWER"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/GREATEROREQUAL"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/LOWEROREQUAL"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/AND"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//BinaryOperatorKind/OR"/>
-      </genEnumLiterals>
+  <genPackages prefix="Ql" basePackage="org.gemoc.ql.model" disposableProviderFactory="true"
+      ecorePackage="ql.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ql.ecore#//BinaryOperatorKind">
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/MULT"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/NOTEQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/GREATER"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/LOWER"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/GREATEROREQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/LOWEROREQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//BinaryOperatorKind/OR"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false">
-      <ecoreEnum href="ql.ecore#//UnaryOperatorKind"/>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//UnaryOperatorKind/UNARYMINUS"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="ql.ecore#//UnaryOperatorKind/NOT"/>
-      </genEnumLiterals>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ql.ecore#//UnaryOperatorKind">
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//UnaryOperatorKind/UNARYMINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ql.ecore#//UnaryOperatorKind/NOT"/>
     </genEnums>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//QLModel"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QLModel/forms"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QLModel/definitionGroup"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//QLModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/forms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/definitionGroup"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//Form"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//Form/questionGroup"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//Form">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//Form/questionGroup"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//QuestionDefinition"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//QuestionDefinition/label"/>
-      </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionDefinition/datatype"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionDefinition/computedExpression"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionDefinition/currentValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//QuestionDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QuestionDefinition/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionDefinition/datatype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionDefinition/computedExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionDefinition/currentValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QuestionDefinition/isDisplayed"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DataType"/>
+    <genClasses ecoreClass="ql.ecore#//DataType"/>
+    <genClasses ecoreClass="ql.ecore#//Expression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//Expression/resultType"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//Expression"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//Expression/resultType"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//BinaryExpression">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//BinaryExpression/lhsOperand"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//BinaryExpression/rhsOperand"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//BinaryExpression"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//BinaryExpression/lhsOperand"/>
-      </genFeatures>
-      <genFeatures children="true" createChild="true" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//BinaryExpression/rhsOperand"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//UnaryExpression">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//UnaryExpression/operand"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//UnaryExpression"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//UnaryExpression/operand"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//BasicBinaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//BasicBinaryExpression/operator"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//BasicBinaryExpression"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//BasicBinaryExpression/operator"/>
-      </genFeatures>
+    <genClasses image="false" ecoreClass="ql.ecore#//Call"/>
+    <genClasses ecoreClass="ql.ecore#//ConstantCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//ConstantCall/value"/>
     </genClasses>
-    <genClasses image="false">
-      <ecoreClass href="ql.ecore#//Call"/>
+    <genClasses image="false" ecoreClass="ql.ecore#//Value"/>
+    <genClasses ecoreClass="ql.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//IntegerValue/intValue"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//ConstantCall"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//ConstantCall/value"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//StringValue/stringValue"/>
     </genClasses>
-    <genClasses image="false">
-      <ecoreClass href="ql.ecore#//Value"/>
+    <genClasses ecoreClass="ql.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//BooleanValue/booleanValue"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//IntegerValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//IntegerValue/intValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//BasicUnaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//BasicUnaryExpression/operator"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//StringValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//StringValue/stringValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//DateValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//DateValue/dateValue"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//BooleanValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//BooleanValue/booleanValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//DecimalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//DecimalValue/decimalValue"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//BasicUnaryExpression"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//BasicUnaryExpression/operator"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//ValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//ValueType/unit"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DateValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//DateValue/dateValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//BooleanValueType"/>
+    <genClasses ecoreClass="ql.ecore#//IntegerValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//IntegerValueType/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//IntegerValueType/max"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DecimalValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//DecimalValue/decimalValue"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//DecimalValueType"/>
+    <genClasses ecoreClass="ql.ecore#//DateValueType"/>
+    <genClasses ecoreClass="ql.ecore#//EnumerationValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//EnumerationValueType/enumerationLiterals"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//ValueType"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//ValueType/unit"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//EnumerationLiteral"/>
+    <genClasses ecoreClass="ql.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//NamedElement/name"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//BooleanValueType"/>
+    <genClasses ecoreClass="ql.ecore#//ConditionnalElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//ConditionnalElement/guard"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//IntegerValueType"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//IntegerValueType/min"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//IntegerValueType/max"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//QuestionGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionGroup/questionGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionGroup/questions"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DecimalValueType"/>
+    <genClasses ecoreClass="ql.ecore#//DefinitionGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//DefinitionGroup/dataTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//DefinitionGroup/questionDefinitions"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DateValueType"/>
+    <genClasses ecoreClass="ql.ecore#//QuestionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionCall/question"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//EnumerationValueType"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//EnumerationValueType/enumerationLiterals"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//EnumerationLiteral"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//NamedElement"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="ql.ecore#//NamedElement/name"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//ConditionnalElement"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//ConditionnalElement/guard"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//QuestionGroup"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionGroup/questionGroups"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionGroup/questions"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//DefinitionGroup"/>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//DefinitionGroup/dataTypes"/>
-      </genFeatures>
-      <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//DefinitionGroup/questionDefinitions"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//QuestionCall"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//QuestionCall/question"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//StringValueType"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="ql.ecore#//Question"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="ql.ecore#//Question/questionDefinition"/>
-      </genFeatures>
+    <genClasses ecoreClass="ql.ecore#//StringValueType"/>
+    <genClasses ecoreClass="ql.ecore#//Question">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//Question/questionDefinition"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

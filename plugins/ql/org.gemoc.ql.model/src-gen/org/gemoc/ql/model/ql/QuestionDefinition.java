@@ -15,6 +15,7 @@ package org.gemoc.ql.model.ql;
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getComputedExpression <em>Computed Expression</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#getCurrentValue <em>Current Value</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.QuestionDefinition#isIsDisplayed <em>Is Displayed</em>}</li>
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getQuestionDefinition()
@@ -110,5 +111,27 @@ public interface QuestionDefinition extends NamedElement {
 	 * @generated
 	 */
 	void setCurrentValue(Value value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Displayed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Displayed</em>' attribute.
+	 * @see #setIsDisplayed(boolean)
+	 * @see org.gemoc.ql.model.ql.QlPackage#getQuestionDefinition_IsDisplayed()
+	 * @model annotation="aspect"
+	 * @generated
+	 */
+	boolean isIsDisplayed();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.ql.model.ql.QuestionDefinition#isIsDisplayed <em>Is Displayed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Displayed</em>' attribute.
+	 * @see #isIsDisplayed()
+	 * @generated
+	 */
+	void setIsDisplayed(boolean value);
 
 } // QuestionDefinition

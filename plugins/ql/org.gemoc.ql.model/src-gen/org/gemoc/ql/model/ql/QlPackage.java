@@ -242,13 +242,22 @@ public interface QlPackage extends EPackage {
 	int QUESTION_DEFINITION__CURRENT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Displayed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_DEFINITION__IS_DISPLAYED = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Question Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Question Definition</em>' class.
@@ -1584,6 +1593,17 @@ public interface QlPackage extends EPackage {
 	EReference getQuestionDefinition_CurrentValue();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.QuestionDefinition#isIsDisplayed <em>Is Displayed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Displayed</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#isIsDisplayed()
+	 * @see #getQuestionDefinition()
+	 * @generated
+	 */
+	EAttribute getQuestionDefinition_IsDisplayed();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2255,6 +2275,14 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUESTION_DEFINITION__CURRENT_VALUE = eINSTANCE.getQuestionDefinition_CurrentValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Displayed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION_DEFINITION__IS_DISPLAYED = eINSTANCE.getQuestionDefinition_IsDisplayed();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.DataTypeImpl <em>Data Type</em>}' class.

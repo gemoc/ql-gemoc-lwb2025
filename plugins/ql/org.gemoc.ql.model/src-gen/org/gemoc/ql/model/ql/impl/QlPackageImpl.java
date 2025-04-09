@@ -453,6 +453,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getQuestionDefinition_IsDisplayed() {
+		return (EAttribute) questionDefinitionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -1029,6 +1039,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__DATATYPE);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__COMPUTED_EXPRESSION);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__CURRENT_VALUE);
+		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__IS_DISPLAYED);
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
@@ -1197,6 +1208,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getQuestionDefinition_CurrentValue(), this.getValue(), null, "currentValue", null, 0, 1,
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestionDefinition_IsDisplayed(), ecorePackage.getEBoolean(), "isDisplayed", null, 0, 1,
+				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1381,6 +1395,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	protected void createAspectAnnotations() {
 		String source = "aspect";
 		addAnnotation(getQuestionDefinition_CurrentValue(), source, new String[] {});
+		addAnnotation(getQuestionDefinition_IsDisplayed(), source, new String[] {});
 	}
 
 } //QlPackageImpl

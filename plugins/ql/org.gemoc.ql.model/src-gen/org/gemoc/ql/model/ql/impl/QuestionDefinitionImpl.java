@@ -28,6 +28,7 @@ import org.gemoc.ql.model.ql.Value;
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getComputedExpression <em>Computed Expression</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getCurrentValue <em>Current Value</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#isIsDisplayed <em>Is Displayed</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,6 +83,26 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @ordered
 	 */
 	protected Value currentValue;
+
+	/**
+	 * The default value of the '{@link #isIsDisplayed() <em>Is Displayed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDisplayed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_DISPLAYED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsDisplayed() <em>Is Displayed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsDisplayed()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isDisplayed = IS_DISPLAYED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,6 +299,30 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @generated
 	 */
 	@Override
+	public boolean isIsDisplayed() {
+		return isDisplayed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsDisplayed(boolean newIsDisplayed) {
+		boolean oldIsDisplayed = isDisplayed;
+		isDisplayed = newIsDisplayed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_DEFINITION__IS_DISPLAYED,
+					oldIsDisplayed, isDisplayed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
@@ -306,6 +351,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return getComputedExpression();
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
 			return getCurrentValue();
+		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
+			return isIsDisplayed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -329,6 +376,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return;
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
 			setCurrentValue((Value) newValue);
+			return;
+		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
+			setIsDisplayed((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,6 +404,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
 			setCurrentValue((Value) null);
 			return;
+		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
+			setIsDisplayed(IS_DISPLAYED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -374,6 +427,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return computedExpression != null;
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
 			return currentValue != null;
+		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
+			return isDisplayed != IS_DISPLAYED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,6 +446,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (label: ");
 		result.append(label);
+		result.append(", isDisplayed: ");
+		result.append(isDisplayed);
 		result.append(')');
 		return result.toString();
 	}

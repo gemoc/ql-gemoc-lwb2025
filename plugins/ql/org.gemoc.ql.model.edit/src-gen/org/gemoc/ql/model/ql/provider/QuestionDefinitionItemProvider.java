@@ -49,6 +49,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 
 			addLabelPropertyDescriptor(object);
 			addDatatypePropertyDescriptor(object);
+			addIsDisplayedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,22 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_datatype_feature",
 								"_UI_QuestionDefinition_type"),
 						QlPackage.Literals.QUESTION_DEFINITION__DATATYPE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Displayed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsDisplayedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_QuestionDefinition_isDisplayed_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_isDisplayed_feature",
+								"_UI_QuestionDefinition_type"),
+						QlPackage.Literals.QUESTION_DEFINITION__IS_DISPLAYED, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -162,6 +179,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(QuestionDefinition.class)) {
 		case QlPackage.QUESTION_DEFINITION__LABEL:
+		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
