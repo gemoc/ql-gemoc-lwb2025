@@ -50,6 +50,16 @@ function onInputChange() {
 	}
 }
 
+// Call to Java to signal user input changes
+function onSubmit() {
+	try {
+		var result = onSubmit(); // Java callback
+		document.getElementById("lastAction").innerText = "onSubmit was called. Return value was: " + result;
+	} catch (e) {
+		document.getElementById("lastAction").innerText = "A Java error occured: " + e.message;
+	}
+}
+
 function getFieldValueAsString(fieldId) {
   const element = document.getElementById(fieldId);
   if (!element) {

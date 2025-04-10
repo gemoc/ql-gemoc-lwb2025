@@ -91,27 +91,27 @@ class QLModelAspect {
 	def void main() {
 		_self.devInfo('-> main() ');
 		
-		var int i = 100;
-		while(i > 0) {
+		while(_self.submitDate === null) {
 			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
 			
-			// recompute which question must be displayed
+			// recompute which questions must be displayed
 			_self.resetIsDisplayed();
 			for( f : _self.forms) {
 				f.render();
 			}
+			// refresh canSubmit
+			val allDisplayedMandatory = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed].filter[qd | qd.isIsMandatory]
+			_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
 			_self.updateSubmitButtonStatus();
 			// wait for an input
 			_self.waitUserInput();
 			// for all rendered questions, update the model with the value in the UI
 			var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
 			allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
-			// refresh canSubmit
-			val allDisplayedMandatory = allDisplayedQuestion.filter[qd | qd.isIsMandatory]
-			_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
-			
-			i--;
+			_self.readSubmitButtonStatus();
 		}
+		// received submitAction
+		// TODO serialize answers
 	}
 	
 	/** step captured by the Engine Addon to feed the model forms with input from the user UI
@@ -134,11 +134,18 @@ class QLModelAspect {
 		}	
 	}
 	
-	/** step captured by the Engine Addon to update ths submit button according to the model status
-	 * it waits for change
+	/** step captured by the Engine Addon to update the submit button according to the model status
 	 */
 	@Step
 	def void updateSubmitButtonStatus() {
+		
+	}
+	
+	/**
+	 * step captured by the Engine Addon to Read the submitButtonStatus, it sets the submitDate attribute 
+	 */
+	@Step
+	def void readSubmitButtonStatus() {
 		
 	}
 	

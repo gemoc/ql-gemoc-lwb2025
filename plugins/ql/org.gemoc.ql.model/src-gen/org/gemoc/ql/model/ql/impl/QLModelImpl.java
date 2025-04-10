@@ -4,6 +4,7 @@ package org.gemoc.ql.model.ql.impl;
 
 import java.util.Collection;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -34,6 +35,7 @@ import org.gemoc.ql.model.ql.QlPackage;
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getForms <em>Forms</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getDefinitionGroup <em>Definition Group</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#isCanSubmit <em>Can Submit</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getSubmitDate <em>Submit Date</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +80,26 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	 * @ordered
 	 */
 	protected boolean canSubmit = CAN_SUBMIT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSubmitDate() <em>Submit Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubmitDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date SUBMIT_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getSubmitDate() <em>Submit Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubmitDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date submitDate = SUBMIT_DATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,6 +177,30 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	 * @generated
 	 */
 	@Override
+	public Date getSubmitDate() {
+		return submitDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSubmitDate(Date newSubmitDate) {
+		Date oldSubmitDate = submitDate;
+		submitDate = newSubmitDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QL_MODEL__SUBMIT_DATE, oldSubmitDate,
+					submitDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlPackage.QL_MODEL__FORMS:
@@ -179,6 +225,8 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return getDefinitionGroup();
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			return isCanSubmit();
+		case QlPackage.QL_MODEL__SUBMIT_DATE:
+			return getSubmitDate();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +251,9 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			setCanSubmit((Boolean) newValue);
 			return;
+		case QlPackage.QL_MODEL__SUBMIT_DATE:
+			setSubmitDate((Date) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,6 +275,9 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			setCanSubmit(CAN_SUBMIT_EDEFAULT);
 			return;
+		case QlPackage.QL_MODEL__SUBMIT_DATE:
+			setSubmitDate(SUBMIT_DATE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,6 +296,8 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return definitionGroup != null && !definitionGroup.isEmpty();
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			return canSubmit != CAN_SUBMIT_EDEFAULT;
+		case QlPackage.QL_MODEL__SUBMIT_DATE:
+			return SUBMIT_DATE_EDEFAULT == null ? submitDate != null : !SUBMIT_DATE_EDEFAULT.equals(submitDate);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -259,6 +315,8 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (canSubmit: ");
 		result.append(canSubmit);
+		result.append(", submitDate: ");
+		result.append(submitDate);
 		result.append(')');
 		return result.toString();
 	}

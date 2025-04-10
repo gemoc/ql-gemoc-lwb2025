@@ -3,6 +3,7 @@ package org.gemoc.ql.k3based.addons.views;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.inject.Inject;
@@ -51,6 +52,10 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 	private Browser fBrowser;
 	
 	public UserInputChangeNotifier userInputChangeNotifier =  new UserInputChangeNotifier();
+	/** 
+	 * date when the SubmitButton was called for the current  engine
+	 */
+	public Date lastSubmitButtonCall = null;
 
 	@Override
 	public void createPartControl(Composite parent) {
@@ -61,6 +66,14 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 			userInputChangeNotifier.onUserInputChange();
 		});
 		fBrowser.addDisposeListener(e -> onInputChange.dispose());
+
+		BrowserFunction onSubmit = new OnInputChange(fBrowser, "onSubmit", () -> {
+			// it save the current date so when the QL interpreter will require the value it can reads it
+			this.lastSubmitButtonCall = new java.util.Date();
+			userInputChangeNotifier.onUserInputChange();
+		});
+		fBrowser.addDisposeListener(e -> onSubmit.dispose());
+		
 		makeActions();
 		contributeToActionBars(getViewSite());
 		org.eclipse.gemoc.executionframework.ui.Activator.getDefault().getEngineSelectionManager().addEngineSelectionListener(this);
@@ -155,7 +168,7 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 		buffer.append("<body>");
 		buffer.append("<h3>QL Form</h3>");
 		buffer.append("<div id=\"qlForm\"></div>");
-		buffer.append("<button type=\"button\" id=\"submitButton\">Finish</button>");
+		buffer.append("<button type=\"button\" id=\"submitButton\" onclick=\"onSubmit()\">Finish</button>");
 		buffer.append("<h3>Selection</h3>");
 		buffer.append("<div id=\"selection\"></div>");
 		buffer.append("<h3>Last Action</h3>");
@@ -217,6 +230,9 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 				fBrowser.execute("setSelection(\"Engine "+ engine.getName() + "("+ engine.getRunningStatus() +") was selected and contains a QLModel\");");
 			}
 		}
+		// reset the date when submit was pressed when changing engine
+		// TODO maybe keep a hashmap in case we need to support multiple executions and switch between running engines
+		this.lastSubmitButtonCall =  null;
 		
 	}
 

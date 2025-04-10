@@ -95,13 +95,22 @@ public interface QlPackage extends EPackage {
 	int QL_MODEL__CAN_SUBMIT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Submit Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL__SUBMIT_DATE = 3;
+
+	/**
 	 * The number of structural features of the '<em>QL Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QL_MODEL_FEATURE_COUNT = 3;
+	int QL_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>QL Model</em>' class.
@@ -1510,6 +1519,17 @@ public interface QlPackage extends EPackage {
 	EAttribute getQLModel_CanSubmit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.QLModel#getSubmitDate <em>Submit Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Submit Date</em>'.
+	 * @see org.gemoc.ql.model.ql.QLModel#getSubmitDate()
+	 * @see #getQLModel()
+	 * @generated
+	 */
+	EAttribute getQLModel_SubmitDate();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2216,6 +2236,14 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QL_MODEL__CAN_SUBMIT = eINSTANCE.getQLModel_CanSubmit();
+
+		/**
+		 * The meta object literal for the '<em><b>Submit Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QL_MODEL__SUBMIT_DATE = eINSTANCE.getQLModel_SubmitDate();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.

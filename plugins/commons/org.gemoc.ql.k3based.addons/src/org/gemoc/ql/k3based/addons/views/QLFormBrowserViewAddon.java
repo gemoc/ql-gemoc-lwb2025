@@ -1,5 +1,9 @@
 package org.gemoc.ql.k3based.addons.views;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -52,7 +56,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 		try {
 			Resource res = engine.getExecutionContext().getResourceModel();
 			if (res.getContents().get(0) instanceof QLModel) {
-				QLModel qlModel = (QLModel) res.getContents().get(0);
+				QLModel rooQLModel = (QLModel) res.getContents().get(0);
 				
 				if (stepToExecute.getMseoccurrence() != null && stepToExecute.getMseoccurrence().getMse() != null) {
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof Question
@@ -79,61 +83,78 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 
 						});
 					}
-					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
-							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("resetIsDisplayed")) {
-						// only when the resetIsDisplayed() function is executed on a QLModel
-						Display.getDefault().syncExec(new Runnable() {
-							@Override
-							public void run() {
-								try {
-									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-											.getActivePage();
-									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-									if (viewPart instanceof QLFormBrowserView) {
-										// reset the QLForm so we can add the field according to their new isDisplayed status
-										((QLFormBrowserView) viewPart).setQLForm("");
+					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel) {
+						QLModel qlModel = (QLModel)stepToExecute.getMseoccurrence().getMse().getCaller();
+						if(stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("resetIsDisplayed")) {
+							// only when the resetIsDisplayed() function is executed on a QLModel
+							Display.getDefault().syncExec(new Runnable() {
+								@Override
+								public void run() {
+									try {
+										IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+												.getActivePage();
+										IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+										if (viewPart instanceof QLFormBrowserView) {
+											// reset the QLForm so we can add the field according to their new isDisplayed status
+											((QLFormBrowserView) viewPart).setQLForm("");
+										}
+									} catch (Exception e) {
+										Activator.error(e.getMessage(), e);
 									}
-								} catch (Exception e) {
-									Activator.error(e.getMessage(), e);
 								}
-							}
 
-						});
-					}
-					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
-							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateSubmitButtonStatus")) {
-						// only when the resetIsDisplayed() function is executed on a QLModel
-						Display.getDefault().syncExec(new Runnable() {
-							@Override
-							public void run() {
-								try {
-									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-											.getActivePage();
-									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-									if (viewPart instanceof QLFormBrowserView) {
-										// enable/disable submitbutton as required by current
-										QLModel ql = (QLModel) stepToExecute.getMseoccurrence().getMse()
-												.getCaller();
-										if(ql.isCanSubmit())
-											((QLFormBrowserView) viewPart).enableSubmitButton();
-										else
-											((QLFormBrowserView) viewPart).disableSubmitButton();
+							});
+						}
+						if(stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateSubmitButtonStatus")) {
+							// only when the resetIsDisplayed() function is executed on a QLModel
+							Display.getDefault().syncExec(new Runnable() {
+								@Override
+								public void run() {
+									try {
+										IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+												.getActivePage();
+										IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+										if (viewPart instanceof QLFormBrowserView) {
+											// enable/disable submitbutton as required by current
+											if(qlModel.isCanSubmit())
+												((QLFormBrowserView) viewPart).enableSubmitButton();
+											else
+												((QLFormBrowserView) viewPart).disableSubmitButton();
+										}
+									} catch (Exception e) {
+										Activator.error(e.getMessage(), e);
 									}
-								} catch (Exception e) {
-									Activator.error(e.getMessage(), e);
 								}
-							}
+							});
+						}
+						if (stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("waitUserInput")) {
+							// only when the waitUserInput() function is executed on a QLModel
+							getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
+							Activator.debug("UI input changed or submit Button pressed");
+						}
 
-						});
+						if (stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("readSubmitButtonStatus")) {
+							// only when the readSubmitButtonStatus() function is executed on a QLModel
+							Display.getDefault().syncExec(new Runnable() {
+								@Override
+								public void run() {
+									try {
+										IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+												.getActivePage();
+										IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+										if (viewPart instanceof QLFormBrowserView) {
+											QLFormBrowserViewAddon.this.applyInModel(rooQLModel, () -> {
+												qlModel.setSubmitDate(((QLFormBrowserView) viewPart).lastSubmitButtonCall);
+											});
+										}
+									} catch (Exception e) {
+										Activator.error(e.getMessage(), e);
+									}
+								}
+							});
+						} 
 					}
 					
-					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
-							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("waitUserInput")) {
-						// only when the waitUserInput() function is executed on a QLModel
-						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread
-						// TODO read all input from UI and feed them into the model
-						Activator.warn("TODO read all input from UI and feed them into the model");
-					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QuestionDefinition
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateCurrentValueFromUI")) {
 						// only when the readUserInput() function is executed on a QuestionDefinition
@@ -147,37 +168,19 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 											.getActivePage();
 									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
 									if (viewPart instanceof QLFormBrowserView) {
-										
 										String newValue=((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
-										boolean mustSetNewValue = false;
-										if(newValue != null ) {
-											if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
-												// same value, do not change it
+										QLFormBrowserViewAddon.this.applyInModel(rooQLModel, () -> {
+											if(newValue != null ) {
+												if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
+													// same value, do not change it
+												} else {
+													Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
+													qd.setCurrentValue(value);
+												}
 											} else {
-												mustSetNewValue = true;
+												Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
 											}
-										} else {
-											Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
-										}
-										if(mustSetNewValue) {
-											TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(qd.eResource());
-											if (ed != null) {
-												RecordingCommand command = new RecordingCommand(ed, "") {
-													protected void doExecute() {
-														try {
-															Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
-															qd.setCurrentValue(value);
-														} catch (Exception t) {
-															Activator.error(t.getMessage(), t);
-														}
-													}
-												};
-												CommandExecution.execute(ed, command);
-											} else {
-												Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
-												qd.setCurrentValue(value);
-											}
-										}
+										});
 									}
 								} catch (Exception e) {
 									Activator.error(e.getMessage(), e);
@@ -185,8 +188,6 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 							}
 
 						});
-						
-						
 					}
 				}
 			}
@@ -195,6 +196,29 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 		}
 	}
 	
+	/**
+	 * Apply the runnable in a TransactionalEditingDomain if required by the QLModel resource
+	 * @param qlModel
+	 * @param runnable
+	 */
+	protected void applyInModel(QLModel qlModel, Runnable runnable) {
+        TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(qlModel.eResource());
+		if (ed != null) {
+			RecordingCommand command = new RecordingCommand(ed, "") {
+				protected void doExecute() {
+					try {
+						runnable.run();
+					} catch (Exception t) {
+						Activator.error(t.getMessage(), t);
+					}
+				}
+			};
+			CommandExecution.execute(ed, command);
+		} else {
+			runnable.run();
+		}
+    }
+    
 	/**
 	 * Get the UserInputChangeNotifier
 	 * it uses the UI thread for a short time

@@ -385,6 +385,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getQLModel_SubmitDate() {
+		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getForm() {
 		return formEClass;
 	}
@@ -1033,6 +1043,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEReference(qlModelEClass, QL_MODEL__FORMS);
 		createEReference(qlModelEClass, QL_MODEL__DEFINITION_GROUP);
 		createEAttribute(qlModelEClass, QL_MODEL__CAN_SUBMIT);
+		createEAttribute(qlModelEClass, QL_MODEL__SUBMIT_DATE);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__QUESTION_GROUP);
@@ -1190,6 +1201,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				QLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQLModel_CanSubmit(), ecorePackage.getEBoolean(), "canSubmit", null, 0, 1, QLModel.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQLModel_SubmitDate(), ecorePackage.getEDate(), "submitDate", null, 0, 1, QLModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

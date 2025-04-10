@@ -2,6 +2,7 @@
  */
 package org.gemoc.ql.model.ql;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#getForms <em>Forms</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#getDefinitionGroup <em>Definition Group</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#isCanSubmit <em>Can Submit</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.QLModel#getSubmitDate <em>Submit Date</em>}</li>
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getQLModel()
@@ -70,5 +72,27 @@ public interface QLModel extends EObject {
 	 * @generated
 	 */
 	void setCanSubmit(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Submit Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Submit Date</em>' attribute.
+	 * @see #setSubmitDate(Date)
+	 * @see org.gemoc.ql.model.ql.QlPackage#getQLModel_SubmitDate()
+	 * @model
+	 * @generated
+	 */
+	Date getSubmitDate();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.ql.model.ql.QLModel#getSubmitDate <em>Submit Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Submit Date</em>' attribute.
+	 * @see #getSubmitDate()
+	 * @generated
+	 */
+	void setSubmitDate(Date value);
 
 } // QLModel

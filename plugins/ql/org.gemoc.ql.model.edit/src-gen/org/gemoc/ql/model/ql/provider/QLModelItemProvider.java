@@ -57,6 +57,7 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 			super.getPropertyDescriptors(object);
 
 			addCanSubmitPropertyDescriptor(object);
+			addSubmitDatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,6 +76,22 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 								"_UI_QLModel_type"),
 						QlPackage.Literals.QL_MODEL__CAN_SUBMIT, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Submit Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubmitDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_QLModel_submitDate_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QLModel_submitDate_feature",
+								"_UI_QLModel_type"),
+						QlPackage.Literals.QL_MODEL__SUBMIT_DATE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -154,6 +171,7 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 
 		switch (notification.getFeatureID(QLModel.class)) {
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
+		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case QlPackage.QL_MODEL__FORMS:

@@ -32,6 +32,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/forms"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/definitionGroup"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QLModel/canSubmit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QLModel/submitDate"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//Form">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//Form/questionGroup"/>
