@@ -2,16 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
   <extension point="org.eclipse.gemoc.gemoc_language_workbench.xdsml">
-    <XDSML_Definition
-          modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader"
-          name="org.gemoc.ql.k3ql.K3ql"
-          xdsmlFilePath="/org.gemoc.ql.k3ql.xdsml/K3ql.dsl">
-       <engineAddon_Definition
-             class="org.gemoc.ql.k3based.addons.views.QLFormBrowserViewAddon"
-             id="org.gemoc.ql.k3ql.xdsml.qlformbrowserview.engineAddon_Definition"
-             name="QL Form Browser View"
-             shortDescription="Web view showing the Questionnaire for the running QL model">
-       </engineAddon_Definition>
+    <XDSML_Definition modelLoader_class="org.eclipse.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.ql.k3ql.K3ql" xdsmlFilePath="/org.gemoc.ql.k3ql.xdsml/K3ql.dsl">
+      <engineAddon_Definition class="org.gemoc.ql.k3based.addons.views.QLFormBrowserViewAddon" id="org.gemoc.ql.k3ql.xdsml.qlformbrowserview.engineAddon_Definition" name="QL Form Browser View" shortDescription="Web view showing the Questionnaire for the running QL model" />
     </XDSML_Definition>
   </extension>
 </plugin>

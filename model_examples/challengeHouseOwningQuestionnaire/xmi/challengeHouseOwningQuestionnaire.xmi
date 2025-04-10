@@ -7,19 +7,22 @@
   <forms name=" Box1HouseOwning">
     <questionGroup>
       <questionGroups>
+        <guard
+            xsi:type="ql:QuestionCall"
+            question="//@definitionGroup.0/@questionDefinitions.0"/>
         <questions
-            questionDefinition="#//@definitionGroup.0/@questionDefinitions.3"/>
+            questionDefinition="//@definitionGroup.0/@questionDefinitions.3"/>
         <questions
-            questionDefinition="#//@definitionGroup.0/@questionDefinitions.4"/>
+            questionDefinition="//@definitionGroup.0/@questionDefinitions.4"/>
         <questions
-            questionDefinition="#//@definitionGroup.0/@questionDefinitions.5"/>
+            questionDefinition="//@definitionGroup.0/@questionDefinitions.5"/>
       </questionGroups>
       <questions
-          questionDefinition="#//@definitionGroup.0/@questionDefinitions.0"/>
+          questionDefinition="//@definitionGroup.0/@questionDefinitions.0"/>
       <questions
-          questionDefinition="#//@definitionGroup.0/@questionDefinitions.1"/>
+          questionDefinition="//@definitionGroup.0/@questionDefinitions.1"/>
       <questions
-          questionDefinition="#//@definitionGroup.0/@questionDefinitions.2"/>
+          questionDefinition="//@definitionGroup.0/@questionDefinitions.2"/>
     </questionGroup>
   </forms>
   <definitionGroup>
@@ -33,37 +36,37 @@
     <questionDefinitions
         name="hasSoldHouse"
         label="Did you sell a house in 2010?"
-        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+        dataType="//@definitionGroup.0/@dataTypes.0"/>
     <questionDefinitions
         name="hasBoughtHouse"
         label="Did you by a house in 2010?"
-        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+        dataType="//@definitionGroup.0/@dataTypes.0"/>
     <questionDefinitions
         name="hasMaintLoan"
         label="Did you enter a loan for maintenance/reconstruction?"
-        datatype="#//@definitionGroup.0/@dataTypes.0"/>
+        dataType="//@definitionGroup.0/@dataTypes.0"/>
     <questionDefinitions
         name="sellingPrice"
         label="Price the house was sold for:"
-        datatype="#//@definitionGroup.0/@dataTypes.1"/>
+        dataType="//@definitionGroup.0/@dataTypes.1"/>
     <questionDefinitions
         name="privateDebt"
         label="Private debts for the sold house:"
-        datatype="#//@definitionGroup.0/@dataTypes.1"/>
+        dataType="//@definitionGroup.0/@dataTypes.1"/>
     <questionDefinitions
         name="valueResidue"
         label="Value residue:"
-        datatype="#//@definitionGroup.0/@dataTypes.1">
+        dataType="//@definitionGroup.0/@dataTypes.1">
       <computedExpression
           xsi:type="ql:BasicBinaryExpression"
-          resultType="#//@definitionGroup.0/@dataTypes.1"
+          resultType="//@definitionGroup.0/@dataTypes.1"
           operator="MINUS">
         <lhsOperand
             xsi:type="ql:QuestionCall"
-            question="#//@definitionGroup.0/@questionDefinitions.3"/>
+            question="//@definitionGroup.0/@questionDefinitions.3"/>
         <rhsOperand
             xsi:type="ql:QuestionCall"
-            question="#//@definitionGroup.0/@questionDefinitions.4"/>
+            question="//@definitionGroup.0/@questionDefinitions.4"/>
       </computedExpression>
     </questionDefinitions>
   </definitionGroup>
