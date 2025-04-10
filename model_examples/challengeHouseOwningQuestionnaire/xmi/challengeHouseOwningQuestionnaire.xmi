@@ -39,7 +39,7 @@
         dataType="//@definitionGroup.0/@dataTypes.0"/>
     <questionDefinitions
         name="hasBoughtHouse"
-        label="Did you by a house in 2010?"
+        label="Did you buy a house in 2010?"
         dataType="//@definitionGroup.0/@dataTypes.0"/>
     <questionDefinitions
         name="hasMaintLoan"
@@ -48,11 +48,13 @@
     <questionDefinitions
         name="sellingPrice"
         label="Price the house was sold for:"
-        dataType="//@definitionGroup.0/@dataTypes.1"/>
+        dataType="//@definitionGroup.0/@dataTypes.1"
+        isMandatory="true"/>
     <questionDefinitions
         name="privateDebt"
         label="Private debts for the sold house:"
-        dataType="//@definitionGroup.0/@dataTypes.1"/>
+        dataType="//@definitionGroup.0/@dataTypes.1"
+        isMandatory="true"/>
     <questionDefinitions
         name="valueResidue"
         label="Value residue:"

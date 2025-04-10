@@ -92,8 +92,6 @@ class QLModelAspect {
 		_self.devInfo('-> main() ');
 		
 		while(_self.submitDate === null) {
-			// TODO find/define what is a end condition for the evaluation of the questionnaire/form (maybe a "submit button" ?)
-			
 			// recompute which questions must be displayed
 			_self.resetIsDisplayed();
 			for( f : _self.forms) {
@@ -103,8 +101,10 @@ class QLModelAspect {
 			val allDisplayedMandatory = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed].filter[qd | qd.isIsMandatory]
 			_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
 			_self.updateSubmitButtonStatus();
+			
 			// wait for an input
 			_self.waitUserInput();
+			
 			// for all rendered questions, update the model with the value in the UI
 			var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
 			allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
@@ -112,6 +112,7 @@ class QLModelAspect {
 		}
 		// received submitAction
 		// TODO serialize answers
+		_self.devWarn("TODO implement serialization of the answers");
 	}
 	
 	/** step captured by the Engine Addon to feed the model forms with input from the user UI
