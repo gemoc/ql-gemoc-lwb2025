@@ -9,12 +9,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +24,7 @@ import org.gemoc.ql.model.ql.Value;
  * </p>
  * <ul>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getDatatype <em>Datatype</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getDataType <em>Data Type</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getComputedExpression <em>Computed Expression</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getCurrentValue <em>Current Value</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#isIsDisplayed <em>Is Displayed</em>}</li>
@@ -55,14 +54,14 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	protected String label = LABEL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDatatype()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType datatype;
+	protected ValueType dataType;
 
 	/**
 	 * The cached value of the '{@link #getComputedExpression() <em>Computed Expression</em>}' containment reference.
@@ -153,17 +152,17 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @generated
 	 */
 	@Override
-	public DataType getDatatype() {
-		if (datatype != null && datatype.eIsProxy()) {
-			InternalEObject oldDatatype = (InternalEObject) datatype;
-			datatype = (DataType) eResolveProxy(oldDatatype);
-			if (datatype != oldDatatype) {
+	public ValueType getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject) dataType;
+			dataType = (ValueType) eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION_DEFINITION__DATATYPE,
-							oldDatatype, datatype));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.QUESTION_DEFINITION__DATA_TYPE,
+							oldDataType, dataType));
 			}
 		}
-		return datatype;
+		return dataType;
 	}
 
 	/**
@@ -171,8 +170,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetDatatype() {
-		return datatype;
+	public ValueType basicGetDataType() {
+		return dataType;
 	}
 
 	/**
@@ -181,12 +180,12 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @generated
 	 */
 	@Override
-	public void setDatatype(DataType newDatatype) {
-		DataType oldDatatype = datatype;
-		datatype = newDatatype;
+	public void setDataType(ValueType newDataType) {
+		ValueType oldDataType = dataType;
+		dataType = newDataType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_DEFINITION__DATATYPE, oldDatatype,
-					datatype));
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_DEFINITION__DATA_TYPE, oldDataType,
+					dataType));
 	}
 
 	/**
@@ -343,10 +342,10 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		switch (featureID) {
 		case QlPackage.QUESTION_DEFINITION__LABEL:
 			return getLabel();
-		case QlPackage.QUESTION_DEFINITION__DATATYPE:
+		case QlPackage.QUESTION_DEFINITION__DATA_TYPE:
 			if (resolve)
-				return getDatatype();
-			return basicGetDatatype();
+				return getDataType();
+			return basicGetDataType();
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			return getComputedExpression();
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:
@@ -368,8 +367,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		case QlPackage.QUESTION_DEFINITION__LABEL:
 			setLabel((String) newValue);
 			return;
-		case QlPackage.QUESTION_DEFINITION__DATATYPE:
-			setDatatype((DataType) newValue);
+		case QlPackage.QUESTION_DEFINITION__DATA_TYPE:
+			setDataType((ValueType) newValue);
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			setComputedExpression((Expression) newValue);
@@ -395,8 +394,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		case QlPackage.QUESTION_DEFINITION__LABEL:
 			setLabel(LABEL_EDEFAULT);
 			return;
-		case QlPackage.QUESTION_DEFINITION__DATATYPE:
-			setDatatype((DataType) null);
+		case QlPackage.QUESTION_DEFINITION__DATA_TYPE:
+			setDataType((ValueType) null);
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			setComputedExpression((Expression) null);
@@ -421,8 +420,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		switch (featureID) {
 		case QlPackage.QUESTION_DEFINITION__LABEL:
 			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-		case QlPackage.QUESTION_DEFINITION__DATATYPE:
-			return datatype != null;
+		case QlPackage.QUESTION_DEFINITION__DATA_TYPE:
+			return dataType != null;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
 			return computedExpression != null;
 		case QlPackage.QUESTION_DEFINITION__CURRENT_VALUE:

@@ -9,10 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QlPackage;
+import org.gemoc.ql.model.ql.ValueType;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +35,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType resultType;
+	protected ValueType resultType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,10 +62,10 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public DataType getResultType() {
+	public ValueType getResultType() {
 		if (resultType != null && resultType.eIsProxy()) {
 			InternalEObject oldResultType = (InternalEObject) resultType;
-			resultType = (DataType) eResolveProxy(oldResultType);
+			resultType = (ValueType) eResolveProxy(oldResultType);
 			if (resultType != oldResultType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlPackage.EXPRESSION__RESULT_TYPE,
@@ -81,7 +80,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType basicGetResultType() {
+	public ValueType basicGetResultType() {
 		return resultType;
 	}
 
@@ -91,8 +90,8 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public void setResultType(DataType newResultType) {
-		DataType oldResultType = resultType;
+	public void setResultType(ValueType newResultType) {
+		ValueType oldResultType = resultType;
 		resultType = newResultType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.EXPRESSION__RESULT_TYPE, oldResultType,
@@ -124,7 +123,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case QlPackage.EXPRESSION__RESULT_TYPE:
-			setResultType((DataType) newValue);
+			setResultType((ValueType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,7 +138,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case QlPackage.EXPRESSION__RESULT_TYPE:
-			setResultType((DataType) null);
+			setResultType((ValueType) null);
 			return;
 		}
 		super.eUnset(featureID);

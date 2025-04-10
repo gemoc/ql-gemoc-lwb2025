@@ -15,11 +15,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.ValueType;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,7 +43,7 @@ public class DefinitionGroupImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataType> dataTypes;
+	protected EList<ValueType> dataTypes;
 
 	/**
 	 * The cached value of the '{@link #getQuestionDefinitions() <em>Question Definitions</em>}' containment reference list.
@@ -81,9 +80,9 @@ public class DefinitionGroupImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public EList<DataType> getDataTypes() {
+	public EList<ValueType> getDataTypes() {
 		if (dataTypes == null) {
-			dataTypes = new EObjectContainmentEList<DataType>(DataType.class, this,
+			dataTypes = new EObjectContainmentEList<ValueType>(ValueType.class, this,
 					QlPackage.DEFINITION_GROUP__DATA_TYPES);
 		}
 		return dataTypes;
@@ -146,7 +145,7 @@ public class DefinitionGroupImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case QlPackage.DEFINITION_GROUP__DATA_TYPES:
 			getDataTypes().clear();
-			getDataTypes().addAll((Collection<? extends DataType>) newValue);
+			getDataTypes().addAll((Collection<? extends ValueType>) newValue);
 			return;
 		case QlPackage.DEFINITION_GROUP__QUESTION_DEFINITIONS:
 			getQuestionDefinitions().clear();

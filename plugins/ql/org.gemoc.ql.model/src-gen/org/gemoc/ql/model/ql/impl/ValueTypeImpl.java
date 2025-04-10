@@ -24,7 +24,7 @@ import org.gemoc.ql.model.ql.ValueType;
  *
  * @generated
  */
-public class ValueTypeImpl extends DataTypeImpl implements ValueType {
+public class ValueTypeImpl extends NamedElementImpl implements ValueType {
 	/**
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -19,7 +19,6 @@ import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.Call;
 import org.gemoc.ql.model.ql.ConditionnalElement;
 import org.gemoc.ql.model.ql.ConstantCall;
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.DateValue;
 import org.gemoc.ql.model.ql.DateValueType;
 import org.gemoc.ql.model.ql.DecimalValue;
@@ -73,13 +72,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass questionDefinitionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -423,7 +415,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQuestionDefinition_Datatype() {
+	public EReference getQuestionDefinition_DataType() {
 		return (EReference) questionDefinitionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -455,16 +447,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	@Override
 	public EAttribute getQuestionDefinition_IsDisplayed() {
 		return (EAttribute) questionDefinitionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDataType() {
-		return dataTypeEClass;
 	}
 
 	/**
@@ -1036,12 +1018,10 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		questionDefinitionEClass = createEClass(QUESTION_DEFINITION);
 		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__LABEL);
-		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__DATATYPE);
+		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__DATA_TYPE);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__COMPUTED_EXPRESSION);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__CURRENT_VALUE);
 		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__IS_DISPLAYED);
-
-		dataTypeEClass = createEClass(DATA_TYPE);
 
 		expressionEClass = createEClass(EXPRESSION);
 		createEReference(expressionEClass, EXPRESSION__RESULT_TYPE);
@@ -1157,7 +1137,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		// Add supertypes to classes
 		formEClass.getESuperTypes().add(this.getNamedElement());
 		questionDefinitionEClass.getESuperTypes().add(this.getNamedElement());
-		dataTypeEClass.getESuperTypes().add(this.getNamedElement());
 		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		basicBinaryExpressionEClass.getESuperTypes().add(this.getBinaryExpression());
@@ -1169,7 +1148,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		basicUnaryExpressionEClass.getESuperTypes().add(this.getUnaryExpression());
 		dateValueEClass.getESuperTypes().add(this.getValue());
 		decimalValueEClass.getESuperTypes().add(this.getValue());
-		valueTypeEClass.getESuperTypes().add(this.getDataType());
+		valueTypeEClass.getESuperTypes().add(this.getNamedElement());
 		booleanValueTypeEClass.getESuperTypes().add(this.getValueType());
 		integerValueTypeEClass.getESuperTypes().add(this.getValueType());
 		decimalValueTypeEClass.getESuperTypes().add(this.getValueType());
@@ -1199,7 +1178,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEAttribute(getQuestionDefinition_Label(), ecorePackage.getEString(), "label", null, 0, 1,
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getQuestionDefinition_Datatype(), this.getDataType(), null, "datatype", null, 1, 1,
+		initEReference(getQuestionDefinition_DataType(), this.getValueType(), null, "dataType", null, 1, 1,
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuestionDefinition_ComputedExpression(), this.getExpression(), null, "computedExpression",
@@ -1212,13 +1191,11 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExpression_ResultType(), this.getDataType(), null, "resultType", null, 0, 1, Expression.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExpression_ResultType(), this.getValueType(), null, "resultType", null, 0, 1,
+				Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1337,7 +1314,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		initEClass(definitionGroupEClass, DefinitionGroup.class, "DefinitionGroup", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDefinitionGroup_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1,
+		initEReference(getDefinitionGroup_DataTypes(), this.getValueType(), null, "dataTypes", null, 0, -1,
 				DefinitionGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDefinitionGroup_QuestionDefinitions(), this.getQuestionDefinition(), null,

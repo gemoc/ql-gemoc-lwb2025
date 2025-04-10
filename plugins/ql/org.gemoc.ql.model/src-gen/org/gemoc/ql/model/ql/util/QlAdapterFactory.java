@@ -82,11 +82,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseDataType(DataType object) {
-			return createDataTypeAdapter();
-		}
-
-		@Override
 		public Adapter caseExpression(Expression object) {
 			return createExpressionAdapter();
 		}
@@ -293,20 +288,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQuestionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.DataType <em>Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.DataType
-	 * @generated
-	 */
-	public Adapter createDataTypeAdapter() {
 		return null;
 	}
 

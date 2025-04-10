@@ -18,7 +18,7 @@ package org.gemoc.ql.model.ql;
  * @model
  * @generated
  */
-public interface ValueType extends DataType {
+public interface ValueType extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->

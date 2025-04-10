@@ -48,7 +48,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addLabelPropertyDescriptor(object);
-			addDatatypePropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
 			addIsDisplayedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -71,18 +71,18 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Datatype feature.
+	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDatatypePropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_QuestionDefinition_datatype_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_datatype_feature",
+						getResourceLocator(), getString("_UI_QuestionDefinition_dataType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_dataType_feature",
 								"_UI_QuestionDefinition_type"),
-						QlPackage.Literals.QUESTION_DEFINITION__DATATYPE, true, false, true, null, null, null));
+						QlPackage.Literals.QUESTION_DEFINITION__DATA_TYPE, true, false, true, null, null, null));
 	}
 
 	/**

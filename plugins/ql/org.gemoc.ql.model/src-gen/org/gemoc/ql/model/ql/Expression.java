@@ -26,12 +26,12 @@ public interface Expression extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Result Type</em>' reference.
-	 * @see #setResultType(DataType)
+	 * @see #setResultType(ValueType)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getExpression_ResultType()
 	 * @model
 	 * @generated
 	 */
-	DataType getResultType();
+	ValueType getResultType();
 
 	/**
 	 * Sets the value of the '{@link org.gemoc.ql.model.ql.Expression#getResultType <em>Result Type</em>}' reference.
@@ -41,6 +41,6 @@ public interface Expression extends EObject {
 	 * @see #getResultType()
 	 * @generated
 	 */
-	void setResultType(DataType value);
+	void setResultType(ValueType value);
 
 } // Expression

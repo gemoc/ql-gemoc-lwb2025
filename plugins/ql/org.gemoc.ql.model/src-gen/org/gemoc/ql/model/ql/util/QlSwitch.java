@@ -91,15 +91,6 @@ public class QlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlPackage.DATA_TYPE: {
-			DataType dataType = (DataType) theEObject;
-			T result = caseDataType(dataType);
-			if (result == null)
-				result = caseNamedElement(dataType);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case QlPackage.EXPRESSION: {
 			Expression expression = (Expression) theEObject;
 			T result = caseExpression(expression);
@@ -223,8 +214,6 @@ public class QlSwitch<T> extends Switch<T> {
 			ValueType valueType = (ValueType) theEObject;
 			T result = caseValueType(valueType);
 			if (result == null)
-				result = caseDataType(valueType);
-			if (result == null)
 				result = caseNamedElement(valueType);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -235,8 +224,6 @@ public class QlSwitch<T> extends Switch<T> {
 			T result = caseBooleanValueType(booleanValueType);
 			if (result == null)
 				result = caseValueType(booleanValueType);
-			if (result == null)
-				result = caseDataType(booleanValueType);
 			if (result == null)
 				result = caseNamedElement(booleanValueType);
 			if (result == null)
@@ -249,8 +236,6 @@ public class QlSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseValueType(integerValueType);
 			if (result == null)
-				result = caseDataType(integerValueType);
-			if (result == null)
 				result = caseNamedElement(integerValueType);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -261,8 +246,6 @@ public class QlSwitch<T> extends Switch<T> {
 			T result = caseDecimalValueType(decimalValueType);
 			if (result == null)
 				result = caseValueType(decimalValueType);
-			if (result == null)
-				result = caseDataType(decimalValueType);
 			if (result == null)
 				result = caseNamedElement(decimalValueType);
 			if (result == null)
@@ -275,8 +258,6 @@ public class QlSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseValueType(dateValueType);
 			if (result == null)
-				result = caseDataType(dateValueType);
-			if (result == null)
 				result = caseNamedElement(dateValueType);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -287,8 +268,6 @@ public class QlSwitch<T> extends Switch<T> {
 			T result = caseEnumerationValueType(enumerationValueType);
 			if (result == null)
 				result = caseValueType(enumerationValueType);
-			if (result == null)
-				result = caseDataType(enumerationValueType);
 			if (result == null)
 				result = caseNamedElement(enumerationValueType);
 			if (result == null)
@@ -350,8 +329,6 @@ public class QlSwitch<T> extends Switch<T> {
 			T result = caseStringValueType(stringValueType);
 			if (result == null)
 				result = caseValueType(stringValueType);
-			if (result == null)
-				result = caseDataType(stringValueType);
 			if (result == null)
 				result = caseNamedElement(stringValueType);
 			if (result == null)
@@ -427,21 +404,6 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQuestion(Question object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataType(DataType object) {
 		return null;
 	}
 

@@ -22,7 +22,7 @@ import org.gemoc.ql.model.ql.ValueType;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ValueTypeItemProvider extends DataTypeItemProvider {
+public class ValueTypeItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

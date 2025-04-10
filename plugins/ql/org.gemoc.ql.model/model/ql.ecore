@@ -13,8 +13,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuestionDefinition" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" lowerBound="1"
-        eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+        eType="#//ValueType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="computedExpression" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="currentValue" eType="#//Value"
@@ -25,9 +25,8 @@
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultType" eType="#//ValueType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" abstract="true" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhsOperand" lowerBound="1"
@@ -85,7 +84,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DecimalValue" eSuperTypes="#//Value">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ValueType" eSuperTypes="#//DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="ValueType" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValueType" eSuperTypes="#//ValueType"/>
@@ -115,7 +114,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DefinitionGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
-        eType="#//DataType" containment="true"/>
+        eType="#//ValueType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="questionDefinitions" upperBound="-1"
         eType="#//QuestionDefinition" containment="true"/>
   </eClassifiers>

@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface DefinitionGroup extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
-	 * The list contents are of type {@link org.gemoc.ql.model.ql.DataType}.
+	 * The list contents are of type {@link org.gemoc.ql.model.ql.ValueType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Types</em>' containment reference list.
@@ -34,7 +34,7 @@ public interface DefinitionGroup extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DataType> getDataTypes();
+	EList<ValueType> getDataTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Question Definitions</b></em>' containment reference list.
