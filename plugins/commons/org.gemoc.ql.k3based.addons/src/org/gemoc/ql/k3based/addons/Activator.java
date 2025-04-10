@@ -29,10 +29,10 @@ public class Activator implements BundleActivator {
 		if (messaggingSystem == null) {
 			MessagingSystemManager msm = new MessagingSystemManager();
 			// reuse messaging system from the Modeling Workbench Engine
-			// messaggingSystem = msm.createBestPlatformMessagingSystem(
-			//		org.eclipse.gemoc.executionframework.engine.Activator.PLUGIN_ID,
-			//		org.eclipse.gemoc.executionframework.engine.Activator.CONSOLE_NAME);
-			messaggingSystem = msm.getBestPlatformSharedMessaggingSystem();
+			 messaggingSystem = msm.createBestPlatformMessagingSystem(
+					org.eclipse.gemoc.executionframework.engine.Activator.PLUGIN_ID,
+					org.eclipse.gemoc.executionframework.engine.Activator.CONSOLE_NAME);
+			//messaggingSystem = msm.getBestPlatformSharedMessaggingSystem();
 		}
 		return messaggingSystem;
 	}
