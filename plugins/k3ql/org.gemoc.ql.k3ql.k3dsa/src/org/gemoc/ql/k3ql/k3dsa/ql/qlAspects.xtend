@@ -86,6 +86,7 @@ class QLModelAspect {
 		
 	}
 	
+	@Step
 	@Main
 	def void main() {
 		_self.devInfo('-> main() ');
@@ -99,25 +100,18 @@ class QLModelAspect {
 			for( f : _self.forms) {
 				f.render();
 			}
+			_self.updateSubmitButtonStatus();
 			// wait for an input
 			_self.waitUserInput();
-			// for all rendered questions, update the model with the value in the UI  
-			for( g : _self.definitionGroup) {
-				for (qd : g.questionDefinitions) {
-					if(qd.isDisplayed) {
-						qd.updateCurrentValueFromUI();
-					}
-				}
-			}
+			// for all rendered questions, update the model with the value in the UI
+			var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
+			allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
+			// refresh canSubmit
+			val allDisplayedMandatory = allDisplayedQuestion.filter[qd | qd.isIsMandatory]
+			_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
 			
 			i--;
 		}
-//		// while not on a final mode
-//		while(! _self.modeAutomata.currentMode.final){ 
-//			_self.manageInputScenario();
-//			_self.evaluateModeAutomata();
-//			_self.evaluateDataflow();
-//		}
 	}
 	
 	/** step captured by the Engine Addon to feed the model forms with input from the user UI
@@ -128,7 +122,7 @@ class QLModelAspect {
 		
 	}
 	
-		/** step captured by the Engine Addon to flush the display, so we can add the field again according to their newly isDisplayed status
+	/** step captured by the Engine Addon to flush the display, so we can add the field again according to their newly isDisplayed status
 	 * it waits for change
 	 */
 	@Step
@@ -140,10 +134,27 @@ class QLModelAspect {
 		}	
 	}
 	
+	/** step captured by the Engine Addon to update ths submit button according to the model status
+	 * it waits for change
+	 */
+	@Step
+	def void updateSubmitButtonStatus() {
+		
+	}
+	
 	def void setInitialValues() {
 		for( g : _self.definitionGroup) {
 			for (qd : g.questionDefinitions) {
-				qd.currentValue = qd.dataType.createDefaultValue()
+				val dataType = qd.dataType;
+				switch dataType {
+					BooleanValueType,
+					StringValueType :
+						// boolean and String cannot be null in the UI, so we must set their value
+						qd.currentValue = qd.dataType.createDefaultValue()
+					default:
+						// other valueType are nullable in the UI
+						qd.currentValue = null
+				};
 			}
 		}
 	}

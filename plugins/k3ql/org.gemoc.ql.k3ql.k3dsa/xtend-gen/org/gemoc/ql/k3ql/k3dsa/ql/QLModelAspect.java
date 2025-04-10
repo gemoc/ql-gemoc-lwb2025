@@ -4,12 +4,19 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
+import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.StringValueType;
+import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = QLModel.class)
 @SuppressWarnings("all")
@@ -36,12 +43,25 @@ public class QLModelAspect {
     };
   }
 
+  @Step
   @Main
   public static void main(final QLModel _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void main()
     if (_self instanceof org.gemoc.ql.model.ql.QLModel){
-    	org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_main(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_main(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "main");
+    	} else {
+    		command.execute();
+    	}
+    	;
     };
   }
 
@@ -95,6 +115,31 @@ public class QLModelAspect {
     };
   }
 
+  /**
+   * step captured by the Engine Addon to update ths submit button according to the model status
+   * it waits for change
+   */
+  @Step
+  public static void updateSubmitButtonStatus(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void updateSubmitButtonStatus()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_updateSubmitButtonStatus(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "updateSubmitButtonStatus");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+
   public static void setInitialValues(final QLModel _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void setInitialValues()
@@ -120,17 +165,27 @@ public class QLModelAspect {
         for (final Form f : _forms) {
           FormAspect.render(f);
         }
+        QLModelAspect.updateSubmitButtonStatus(_self);
         QLModelAspect.waitUserInput(_self);
-        EList<DefinitionGroup> _definitionGroup = _self.getDefinitionGroup();
-        for (final DefinitionGroup g : _definitionGroup) {
-          EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
-          for (final QuestionDefinition qd : _questionDefinitions) {
-            boolean _isIsDisplayed = qd.isIsDisplayed();
-            if (_isIsDisplayed) {
-              QuestionDefinitionAspect.updateCurrentValueFromUI(qd);
-            }
-          }
-        }
+        final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f_1) -> {
+          return f_1.getQuestionDefinitions();
+        };
+        final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
+          return Boolean.valueOf(qd.isIsDisplayed());
+        };
+        Iterable<QuestionDefinition> allDisplayedQuestion = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1);
+        final Consumer<QuestionDefinition> _function_2 = (QuestionDefinition qd) -> {
+          QuestionDefinitionAspect.updateCurrentValueFromUI(qd);
+        };
+        allDisplayedQuestion.forEach(_function_2);
+        final Function1<QuestionDefinition, Boolean> _function_3 = (QuestionDefinition qd) -> {
+          return Boolean.valueOf(qd.isIsMandatory());
+        };
+        final Iterable<QuestionDefinition> allDisplayedMandatory = IterableExtensions.<QuestionDefinition>filter(allDisplayedQuestion, _function_3);
+        _self.setCanSubmit((IterableExtensions.isEmpty(allDisplayedMandatory) || IterableExtensions.<QuestionDefinition>forall(allDisplayedMandatory, ((Function1<QuestionDefinition, Boolean>) (QuestionDefinition qd) -> {
+          Value _currentValue = qd.getCurrentValue();
+          return Boolean.valueOf((_currentValue != null));
+        }))));
         i--;
       }
     }
@@ -149,12 +204,32 @@ public class QLModelAspect {
     }
   }
 
+  protected static void _privk3_updateSubmitButtonStatus(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+  }
+
   protected static void _privk3_setInitialValues(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
     EList<DefinitionGroup> _definitionGroup = _self.getDefinitionGroup();
     for (final DefinitionGroup g : _definitionGroup) {
       EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
       for (final QuestionDefinition qd : _questionDefinitions) {
-        qd.setCurrentValue(ValueTypeAspect.createDefaultValue(qd.getDataType()));
+        {
+          final ValueType dataType = qd.getDataType();
+          boolean _matched = false;
+          if (dataType instanceof BooleanValueType) {
+            _matched=true;
+          }
+          if (!_matched) {
+            if (dataType instanceof StringValueType) {
+              _matched=true;
+            }
+          }
+          if (_matched) {
+            qd.setCurrentValue(ValueTypeAspect.createDefaultValue(qd.getDataType()));
+          }
+          if (!_matched) {
+            qd.setCurrentValue(null);
+          }
+        }
       }
     }
   }

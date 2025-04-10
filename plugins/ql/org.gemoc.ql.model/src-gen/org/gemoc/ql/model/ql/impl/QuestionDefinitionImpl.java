@@ -28,6 +28,7 @@ import org.gemoc.ql.model.ql.ValueType;
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getComputedExpression <em>Computed Expression</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#getCurrentValue <em>Current Value</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#isIsDisplayed <em>Is Displayed</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl#isIsMandatory <em>Is Mandatory</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +103,26 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @ordered
 	 */
 	protected boolean isDisplayed = IS_DISPLAYED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_MANDATORY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsMandatory() <em>Is Mandatory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMandatory()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isMandatory = IS_MANDATORY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -322,6 +343,30 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 	 * @generated
 	 */
 	@Override
+	public boolean isIsMandatory() {
+		return isMandatory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIsMandatory(boolean newIsMandatory) {
+		boolean oldIsMandatory = isMandatory;
+		isMandatory = newIsMandatory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QUESTION_DEFINITION__IS_MANDATORY,
+					oldIsMandatory, isMandatory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:
@@ -352,6 +397,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return getCurrentValue();
 		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
 			return isIsDisplayed();
+		case QlPackage.QUESTION_DEFINITION__IS_MANDATORY:
+			return isIsMandatory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -378,6 +425,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return;
 		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
 			setIsDisplayed((Boolean) newValue);
+			return;
+		case QlPackage.QUESTION_DEFINITION__IS_MANDATORY:
+			setIsMandatory((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -406,6 +456,9 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
 			setIsDisplayed(IS_DISPLAYED_EDEFAULT);
 			return;
+		case QlPackage.QUESTION_DEFINITION__IS_MANDATORY:
+			setIsMandatory(IS_MANDATORY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -428,6 +481,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 			return currentValue != null;
 		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
 			return isDisplayed != IS_DISPLAYED_EDEFAULT;
+		case QlPackage.QUESTION_DEFINITION__IS_MANDATORY:
+			return isMandatory != IS_MANDATORY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -447,6 +502,8 @@ public class QuestionDefinitionImpl extends NamedElementImpl implements Question
 		result.append(label);
 		result.append(", isDisplayed: ");
 		result.append(isDisplayed);
+		result.append(", isMandatory: ");
+		result.append(isMandatory);
 		result.append(')');
 		return result.toString();
 	}

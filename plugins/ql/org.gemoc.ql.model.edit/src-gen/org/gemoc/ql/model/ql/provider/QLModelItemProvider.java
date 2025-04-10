@@ -12,12 +12,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -54,8 +56,25 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addCanSubmitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Can Submit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCanSubmitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_QLModel_canSubmit_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QLModel_canSubmit_feature",
+								"_UI_QLModel_type"),
+						QlPackage.Literals.QL_MODEL__CAN_SUBMIT, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -118,7 +137,8 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_QLModel_type");
+		QLModel qlModel = (QLModel) object;
+		return getString("_UI_QLModel_type") + " " + qlModel.isCanSubmit();
 	}
 
 	/**
@@ -133,6 +153,9 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QLModel.class)) {
+		case QlPackage.QL_MODEL__CAN_SUBMIT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		case QlPackage.QL_MODEL__FORMS:
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

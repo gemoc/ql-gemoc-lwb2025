@@ -375,6 +375,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getQLModel_CanSubmit() {
+		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getForm() {
 		return formEClass;
 	}
@@ -447,6 +457,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	@Override
 	public EAttribute getQuestionDefinition_IsDisplayed() {
 		return (EAttribute) questionDefinitionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getQuestionDefinition_IsMandatory() {
+		return (EAttribute) questionDefinitionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1012,6 +1032,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		qlModelEClass = createEClass(QL_MODEL);
 		createEReference(qlModelEClass, QL_MODEL__FORMS);
 		createEReference(qlModelEClass, QL_MODEL__DEFINITION_GROUP);
+		createEAttribute(qlModelEClass, QL_MODEL__CAN_SUBMIT);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__QUESTION_GROUP);
@@ -1022,6 +1043,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__COMPUTED_EXPRESSION);
 		createEReference(questionDefinitionEClass, QUESTION_DEFINITION__CURRENT_VALUE);
 		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__IS_DISPLAYED);
+		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__IS_MANDATORY);
 
 		expressionEClass = createEClass(EXPRESSION);
 		createEReference(expressionEClass, EXPRESSION__RESULT_TYPE);
@@ -1167,6 +1189,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		initEReference(getQLModel_DefinitionGroup(), this.getDefinitionGroup(), null, "definitionGroup", null, 0, -1,
 				QLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQLModel_CanSubmit(), ecorePackage.getEBoolean(), "canSubmit", null, 0, 1, QLModel.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForm_QuestionGroup(), this.getQuestionGroup(), null, "questionGroup", null, 1, 1, Form.class,
@@ -1188,6 +1212,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQuestionDefinition_IsDisplayed(), ecorePackage.getEBoolean(), "isDisplayed", null, 0, 1,
+				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuestionDefinition_IsMandatory(), ecorePackage.getEBoolean(), "isMandatory", null, 0, 1,
 				QuestionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

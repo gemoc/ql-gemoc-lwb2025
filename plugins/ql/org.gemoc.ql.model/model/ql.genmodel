@@ -31,6 +31,7 @@
     <genClasses ecoreClass="ql.ecore#//QLModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/forms"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QLModel/definitionGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QLModel/canSubmit"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//Form">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//Form/questionGroup"/>
@@ -41,6 +42,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionDefinition/computedExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionDefinition/currentValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QuestionDefinition/isDisplayed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//QuestionDefinition/isMandatory"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//Expression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//Expression/resultType"/>

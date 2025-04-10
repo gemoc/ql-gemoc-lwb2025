@@ -86,13 +86,22 @@ public interface QlPackage extends EPackage {
 	int QL_MODEL__DEFINITION_GROUP = 1;
 
 	/**
+	 * The feature id for the '<em><b>Can Submit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL__CAN_SUBMIT = 2;
+
+	/**
 	 * The number of structural features of the '<em>QL Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QL_MODEL_FEATURE_COUNT = 2;
+	int QL_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>QL Model</em>' class.
@@ -251,13 +260,22 @@ public interface QlPackage extends EPackage {
 	int QUESTION_DEFINITION__IS_DISPLAYED = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Is Mandatory</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_DEFINITION__IS_MANDATORY = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Question Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int QUESTION_DEFINITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Question Definition</em>' class.
@@ -1481,6 +1499,17 @@ public interface QlPackage extends EPackage {
 	EReference getQLModel_DefinitionGroup();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.QLModel#isCanSubmit <em>Can Submit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Can Submit</em>'.
+	 * @see org.gemoc.ql.model.ql.QLModel#isCanSubmit()
+	 * @see #getQLModel()
+	 * @generated
+	 */
+	EAttribute getQLModel_CanSubmit();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1565,6 +1594,17 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getQuestionDefinition_IsDisplayed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.QuestionDefinition#isIsMandatory <em>Is Mandatory</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Mandatory</em>'.
+	 * @see org.gemoc.ql.model.ql.QuestionDefinition#isIsMandatory()
+	 * @see #getQuestionDefinition()
+	 * @generated
+	 */
+	EAttribute getQuestionDefinition_IsMandatory();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Expression <em>Expression</em>}'.
@@ -2170,6 +2210,14 @@ public interface QlPackage extends EPackage {
 		EReference QL_MODEL__DEFINITION_GROUP = eINSTANCE.getQLModel_DefinitionGroup();
 
 		/**
+		 * The meta object literal for the '<em><b>Can Submit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QL_MODEL__CAN_SUBMIT = eINSTANCE.getQLModel_CanSubmit();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2236,6 +2284,14 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute QUESTION_DEFINITION__IS_DISPLAYED = eINSTANCE.getQuestionDefinition_IsDisplayed();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Mandatory</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute QUESTION_DEFINITION__IS_MANDATORY = eINSTANCE.getQuestionDefinition_IsMandatory();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.ExpressionImpl <em>Expression</em>}' class.

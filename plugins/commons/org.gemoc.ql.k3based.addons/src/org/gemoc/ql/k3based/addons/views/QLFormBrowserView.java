@@ -155,6 +155,7 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 		buffer.append("<body>");
 		buffer.append("<h3>QL Form</h3>");
 		buffer.append("<div id=\"qlForm\"></div>");
+		buffer.append("<button type=\"button\" id=\"submitButton\">Finish</button>");
 		buffer.append("<h3>Selection</h3>");
 		buffer.append("<div id=\"selection\"></div>");
 		buffer.append("<h3>Last Action</h3>");
@@ -181,6 +182,14 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 		fBrowser.execute("appendQLForm(\"" + qlFormContent.replaceAll("\"", "\\\"") + "\");");
 	}
 
+	public void enableSubmitButton() {
+		fBrowser.execute("enableButton(\"submitButton\");");
+	}
+
+	public void disableSubmitButton() {
+		fBrowser.execute("disableButton(\"submitButton\");");
+	}
+	
 	public String getFieldValueAsString(String fieldId) {
 		Object result = fBrowser.evaluate("return getFieldValueAsString(\""+fieldId+"\");");
 		if (result instanceof String) {

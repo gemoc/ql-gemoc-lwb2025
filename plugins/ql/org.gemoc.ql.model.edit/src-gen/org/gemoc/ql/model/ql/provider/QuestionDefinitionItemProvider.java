@@ -50,6 +50,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 			addLabelPropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
 			addIsDisplayedPropertyDescriptor(object);
+			addIsMandatoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,6 +99,22 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_isDisplayed_feature",
 								"_UI_QuestionDefinition_type"),
 						QlPackage.Literals.QUESTION_DEFINITION__IS_DISPLAYED, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Mandatory feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMandatoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_QuestionDefinition_isMandatory_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_QuestionDefinition_isMandatory_feature",
+								"_UI_QuestionDefinition_type"),
+						QlPackage.Literals.QUESTION_DEFINITION__IS_MANDATORY, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -180,6 +197,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(QuestionDefinition.class)) {
 		case QlPackage.QUESTION_DEFINITION__LABEL:
 		case QlPackage.QUESTION_DEFINITION__IS_DISPLAYED:
+		case QlPackage.QUESTION_DEFINITION__IS_MANDATORY:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case QlPackage.QUESTION_DEFINITION__COMPUTED_EXPRESSION:

@@ -65,6 +65,26 @@ function getFieldValueAsString(fieldId) {
   }
 }
 
+// Call from java to enable a button
+function enableButton(buttonId) {
+  const button = document.getElementById(buttonId);
+  if (button) {
+    button.disabled = false;
+  } else {
+    console.error(`Button with ID "${buttonId}" not found.`);
+  }
+}
+
+// Call from java to disable a button
+function disableButton(buttonId) {
+  const button = document.getElementById(buttonId);
+  if (button) {
+    button.disabled = true;
+  } else {
+    console.error(`Button with ID "${buttonId}" not found.`);
+  }
+}
+
 // Call from java to say something
 function say(something) {
 	alert("Java says: " + something);

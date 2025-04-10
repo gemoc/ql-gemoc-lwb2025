@@ -101,6 +101,33 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 						});
 					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
+							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateSubmitButtonStatus")) {
+						// only when the resetIsDisplayed() function is executed on a QLModel
+						Display.getDefault().syncExec(new Runnable() {
+							@Override
+							public void run() {
+								try {
+									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+											.getActivePage();
+									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+									if (viewPart instanceof QLFormBrowserView) {
+										// enable/disable submitbutton as required by current
+										QLModel ql = (QLModel) stepToExecute.getMseoccurrence().getMse()
+												.getCaller();
+										if(ql.isCanSubmit())
+											((QLFormBrowserView) viewPart).enableSubmitButton();
+										else
+											((QLFormBrowserView) viewPart).disableSubmitButton();
+									}
+								} catch (Exception e) {
+									Activator.error(e.getMessage(), e);
+								}
+							}
+
+						});
+					}
+					
+					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("waitUserInput")) {
 						// only when the waitUserInput() function is executed on a QLModel
 						getUserInputChangeNotifier().waitForInputChange(); // wait for a change in the interpreter thread without blocking UI thread

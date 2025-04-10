@@ -4,6 +4,7 @@ package org.gemoc.ql.model.ql.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,6 +33,7 @@ import org.gemoc.ql.model.ql.QlPackage;
  * <ul>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getForms <em>Forms</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getDefinitionGroup <em>Definition Group</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#isCanSubmit <em>Can Submit</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +58,26 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	 * @ordered
 	 */
 	protected EList<DefinitionGroup> definitionGroup;
+
+	/**
+	 * The default value of the '{@link #isCanSubmit() <em>Can Submit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanSubmit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CAN_SUBMIT_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCanSubmit() <em>Can Submit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanSubmit()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canSubmit = CAN_SUBMIT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +131,30 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	 * @generated
 	 */
 	@Override
+	public boolean isCanSubmit() {
+		return canSubmit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCanSubmit(boolean newCanSubmit) {
+		boolean oldCanSubmit = canSubmit;
+		canSubmit = newCanSubmit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.QL_MODEL__CAN_SUBMIT, oldCanSubmit,
+					canSubmit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlPackage.QL_MODEL__FORMS:
@@ -130,6 +177,8 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return getForms();
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			return getDefinitionGroup();
+		case QlPackage.QL_MODEL__CAN_SUBMIT:
+			return isCanSubmit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,6 +200,9 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			getDefinitionGroup().clear();
 			getDefinitionGroup().addAll((Collection<? extends DefinitionGroup>) newValue);
 			return;
+		case QlPackage.QL_MODEL__CAN_SUBMIT:
+			setCanSubmit((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,6 +221,9 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			getDefinitionGroup().clear();
 			return;
+		case QlPackage.QL_MODEL__CAN_SUBMIT:
+			setCanSubmit(CAN_SUBMIT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -185,8 +240,27 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return forms != null && !forms.isEmpty();
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			return definitionGroup != null && !definitionGroup.isEmpty();
+		case QlPackage.QL_MODEL__CAN_SUBMIT:
+			return canSubmit != CAN_SUBMIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (canSubmit: ");
+		result.append(canSubmit);
+		result.append(')');
+		return result.toString();
 	}
 
 } //QLModelImpl
