@@ -21,7 +21,6 @@ import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.Value;
-import org.gemoc.ql.model.ql.ValueType;
 
 public class QLFormBrowserViewAddon implements IEngineAddon {
 
@@ -124,7 +123,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 										
 										String newValue=((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
 										boolean mustSetNewValue = false;
-										if(newValue != null && qd.getDatatype() instanceof ValueType) {
+										if(newValue != null ) {
 											if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
 												// same value, do not change it
 											} else {
@@ -139,7 +138,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 												RecordingCommand command = new RecordingCommand(ed, "") {
 													protected void doExecute() {
 														try {
-															Value value = ValueTypeAspect.createValue((ValueType)qd.getDatatype(), newValue);
+															Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
 															qd.setCurrentValue(value);
 														} catch (Exception t) {
 															Activator.error(t.getMessage(), t);
@@ -148,7 +147,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 												};
 												CommandExecution.execute(ed, command);
 											} else {
-												Value value = ValueTypeAspect.createValue((ValueType)qd.getDatatype(), newValue);
+												Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
 												qd.setCurrentValue(value);
 											}
 										}
