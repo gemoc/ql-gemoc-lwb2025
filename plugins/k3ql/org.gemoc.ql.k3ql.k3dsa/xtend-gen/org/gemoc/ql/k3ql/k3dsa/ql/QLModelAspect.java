@@ -154,6 +154,7 @@ public class QLModelAspect {
     for (final DefinitionGroup g : _definitionGroup) {
       EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
       for (final QuestionDefinition qd : _questionDefinitions) {
+        qd.setCurrentValue(ValueTypeAspect.createDefaultValue(qd.getDataType()));
       }
     }
   }

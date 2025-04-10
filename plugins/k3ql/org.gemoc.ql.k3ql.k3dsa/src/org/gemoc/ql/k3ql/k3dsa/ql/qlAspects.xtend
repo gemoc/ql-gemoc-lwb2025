@@ -143,7 +143,7 @@ class QLModelAspect {
 	def void setInitialValues() {
 		for( g : _self.definitionGroup) {
 			for (qd : g.questionDefinitions) {
-				//qd.currentValue = qd.datatype.
+				qd.currentValue = qd.dataType.createDefaultValue()
 			}
 		}
 	}
