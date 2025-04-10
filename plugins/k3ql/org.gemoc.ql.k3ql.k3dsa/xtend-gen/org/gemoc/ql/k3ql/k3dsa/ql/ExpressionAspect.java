@@ -29,6 +29,11 @@ public abstract class ExpressionAspect {
   public static Value evaluate(final Expression _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.BasicUnaryExpression){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect
     		if (_self instanceof org.gemoc.ql.model.ql.ConstantCall){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect.evaluate((org.gemoc.ql.model.ql.ConstantCall)_self);
@@ -39,7 +44,12 @@ public abstract class ExpressionAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.CallAspect.evaluate((org.gemoc.ql.model.ql.Call)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.CallAspect
-    // #DispatchPointCut_before# Value evaluate()
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
+		if (_self instanceof org.gemoc.ql.model.ql.BasicBinaryExpression){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
+// #DispatchPointCut_before# Value evaluate()
     if (_self instanceof org.gemoc.ql.model.ql.Expression){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.Expression)_self);
     };

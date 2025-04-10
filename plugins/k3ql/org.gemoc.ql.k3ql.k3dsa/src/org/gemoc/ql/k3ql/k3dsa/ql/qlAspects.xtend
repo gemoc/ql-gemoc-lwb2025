@@ -74,6 +74,8 @@ import org.gemoc.ql.k3ql.k3dsa.NotImplementedException
 import org.gemoc.ql.k3ql.k3dsa.QLException
 import org.gemoc.ql.model.ql.QlFactory
 import org.gemoc.ql.model.ql.StringValueType
+import org.gemoc.ql.model.ql.UnaryOperatorKind
+import org.gemoc.ql.model.ql.BinaryOperatorKind
 
 @Aspect(className=QLModel)
 class QLModelAspect {
@@ -207,7 +209,45 @@ abstract class UnaryExpressionAspect extends ExpressionAspect {
 
 @Aspect(className=BasicBinaryExpression)
 class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
-
+	def Value evaluate() {
+		var Value result; 
+		if(_self.operator == BinaryOperatorKind.OR) {
+			val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+			bValue.booleanValue = _self.lhsOperand.evaluateAsBoolean() || _self.rhsOperand.evaluateAsBoolean(); 
+			result = bValue;
+		} else if(_self.operator == BinaryOperatorKind.AND){
+				
+			val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+			bValue.booleanValue = _self.lhsOperand.evaluateAsBoolean() && _self.rhsOperand.evaluateAsBoolean(); 
+			result = bValue;
+		} else {
+			// all other operators need both lhs and rhs evaluation
+			val Value lhs = _self.lhsOperand.evaluate();
+			val Value rhs = _self.rhsOperand.evaluate();
+			if(_self.operator == BinaryOperatorKind::EQUAL){
+				result = lhs.bEquals(rhs);
+			} else if(_self.operator == BinaryOperatorKind::PLUS){ 
+				result = lhs.plus(rhs);
+			} else if(_self.operator == BinaryOperatorKind::MINUS){ 
+				result = lhs.minus(rhs);
+			} else if(_self.operator == BinaryOperatorKind::MULT){
+				result = lhs.mult(rhs);
+			} else if(_self.operator == BinaryOperatorKind::DIV){
+				result = lhs.div(rhs);
+			} else if(_self.operator == BinaryOperatorKind::GREATER){
+				result = lhs.greater(rhs);
+			} else if(_self.operator == BinaryOperatorKind::LOWER){
+				result = lhs.lower(rhs);
+			} else if(_self.operator == BinaryOperatorKind::GREATEROREQUAL){
+				result = lhs.greaterOrEquals(rhs);
+			} else if(_self.operator == BinaryOperatorKind::LOWEROREQUAL){
+				result = lhs.lowerOrEquals(rhs);
+			} else {
+				throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
+			}
+		}
+		return result;
+	}
 }
 
 @Aspect(className=Call)
@@ -464,7 +504,18 @@ class BooleanValueAspect extends ValueAspect {
 
 @Aspect(className=BasicUnaryExpression)
 class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
-
+	def Value evaluate() {
+		val Value lhs = _self.operand.evaluate();
+		if(_self.operator == UnaryOperatorKind::UNARYMINUS) {
+			return lhs.uminus();
+		} else if(_self.operator == UnaryOperatorKind::NOT) {
+			val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+			bValue.booleanValue = ! _self.operand.evaluateAsBoolean(); 
+			return bValue;
+		} else {
+			throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);			
+		}
+	}
 }
 
 @Aspect(className=DateValue)
@@ -591,6 +642,7 @@ abstract class ConditionnalElementAspect {
 class QuestionGroupAspect extends ConditionnalElementAspect {
 	@Step
 	def void render() {
+		
 		if(_self.guard === null /* || guard evaluates to True */) {
 			for( question : _self.questions) {
 				question.questionDefinition.isDisplayed = true;

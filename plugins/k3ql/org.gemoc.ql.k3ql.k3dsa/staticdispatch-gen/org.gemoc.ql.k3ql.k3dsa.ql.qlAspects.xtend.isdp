@@ -38,6 +38,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect.createValue((org.gemoc.ql.model.ql.BooleanValueType)_self,internalValue);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
+		if (_self instanceof org.gemoc.ql.model.ql.BasicBinaryExpression){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value plus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.plus((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
@@ -48,6 +53,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.bEquals((org.gemoc.ql.model.ql.BooleanValue)_self,rhs);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
+		if (_self instanceof org.gemoc.ql.model.ql.BasicUnaryExpression){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
 		if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect.createValue((org.gemoc.ql.model.ql.IntegerValueType)_self,internalValue);
