@@ -20,6 +20,16 @@ public class DecimalValueTypeAspect extends ValueTypeAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static Value createDefaultValue(final DecimalValueType _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspectDecimalValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspectDecimalValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value createDefaultValue()
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect._privk3_createDefaultValue(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
   protected static Value _privk3_createValue(final DecimalValueTypeAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String internalValue) {
     final DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
     try {
@@ -31,6 +41,12 @@ public class DecimalValueTypeAspect extends ValueTypeAspect {
         throw Exceptions.sneakyThrow(_t);
       }
     }
+    return aValue;
+  }
+
+  protected static Value _privk3_createDefaultValue(final DecimalValueTypeAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self) {
+    final DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
+    aValue.setDecimalValue(0);
     return aValue;
   }
 }

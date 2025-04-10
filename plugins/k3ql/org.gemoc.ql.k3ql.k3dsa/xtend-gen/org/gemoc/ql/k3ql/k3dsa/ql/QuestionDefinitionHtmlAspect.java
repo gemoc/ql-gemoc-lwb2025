@@ -20,6 +20,6 @@ public class QuestionDefinitionHtmlAspect extends NamedElementAspect {
   }
 
   protected static String _privk3_htmlField(final QuestionDefinitionHtmlAspectQuestionDefinitionAspectProperties _self_, final QuestionDefinition _self) {
-    return DataTypeHtmlAspect.htmlField(_self.getDatatype(), _self.getName(), _self.getLabel(), _self.getCurrentValue());
+    return ValueTypeHtmlAspect.htmlField(_self.getDataType(), _self.getName(), _self.getLabel(), _self.getCurrentValue());
   }
 }

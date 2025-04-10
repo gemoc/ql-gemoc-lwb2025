@@ -2,10 +2,6 @@ package org.gemoc.ql.k3ql.k3dsa.ql
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.gemoc.ql.model.ql.QuestionDefinition
-import org.gemoc.ql.model.ql.DataType
-
-import static extension org.gemoc.ql.k3ql.k3dsa.ql.DataTypeHtmlAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect.*
 import org.gemoc.ql.model.ql.ValueType
 import org.gemoc.ql.model.ql.BooleanValueType
 import org.gemoc.ql.model.ql.IntegerValueType
@@ -15,6 +11,11 @@ import org.gemoc.ql.model.ql.DateValueType
 import org.gemoc.ql.model.ql.EnumerationValueType
 import org.gemoc.ql.model.ql.Value
 import org.gemoc.ql.model.ql.BooleanValue
+import org.gemoc.ql.k3ql.k3dsa.NotImplementedException
+
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
 
 /* Aspects used by HTML Form presentation */
 
@@ -23,18 +24,18 @@ class QuestionDefinitionHtmlAspect extends NamedElementAspect {
 
 	def  String htmlField() {
 		
-		return _self.datatype.htmlField(_self.name, _self.label, _self.currentValue);
+		return _self.dataType.htmlField(_self.name, _self.label, _self.currentValue);
 	}
 }
 
-@Aspect(className=DataType)
-abstract class DataTypeHtmlAspect extends NamedElementAspect {
-
-	abstract def String htmlField(String id, String label, Value currentValue);
-}
 
 @Aspect(className=ValueType)
-class ValueTypeHtmlAspect extends DataTypeHtmlAspect {
+class ValueTypeHtmlAspect  {
+	def String htmlField(String id, String label, Value currentValue){
+		
+		_self.devError('not implemented, please ask language designer to implement evaluate() for '+_self);
+		throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
+	}
 }
 
 @Aspect(className=BooleanValueType)

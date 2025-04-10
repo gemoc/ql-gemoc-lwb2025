@@ -2,6 +2,7 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.Question;
 
 @Aspect(className = Question.class)
@@ -32,5 +33,8 @@ public class QuestionAspect {
   }
 
   protected static void _privk3_show(final QuestionAspectQuestionAspectProperties _self_, final Question _self) {
+    String _name = _self.getQuestionDefinition().getName();
+    String _plus = ("QuestionAspect.show " + _name);
+    EObjectAspect.devInfo(_self, _plus);
   }
 }

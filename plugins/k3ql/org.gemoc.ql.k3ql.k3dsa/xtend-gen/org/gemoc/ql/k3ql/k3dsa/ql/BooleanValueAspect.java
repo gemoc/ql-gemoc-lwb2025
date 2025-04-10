@@ -3,9 +3,9 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.BooleanValueType;
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = BooleanValue.class)
 @SuppressWarnings("all")
@@ -60,10 +60,10 @@ public class BooleanValueAspect extends ValueAspect {
     return (java.lang.Object)result;
   }
 
-  public static Boolean isKindOf(final BooleanValue _self, final DataType type) {
+  public static Boolean isKindOf(final BooleanValue _self, final ValueType type) {
     final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspectBooleanValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspectBooleanValueAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# Boolean isKindOf(DataType)
+    // #DispatchPointCut_before# Boolean isKindOf(ValueType)
     if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect._privk3_isKindOf(_self_, (org.gemoc.ql.model.ql.BooleanValue)_self,type);
     };
@@ -101,7 +101,7 @@ public class BooleanValueAspect extends ValueAspect {
     return Boolean.valueOf(_self.isBooleanValue());
   }
 
-  protected static Boolean _privk3_isKindOf(final BooleanValueAspectBooleanValueAspectProperties _self_, final BooleanValue _self, final DataType type) {
+  protected static Boolean _privk3_isKindOf(final BooleanValueAspectBooleanValueAspectProperties _self_, final BooleanValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof BooleanValueType));
   }
 }

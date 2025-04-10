@@ -20,6 +20,16 @@ public class IntegerValueTypeAspect extends ValueTypeAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static Value createDefaultValue(final IntegerValueType _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspectIntegerValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value createDefaultValue()
+    if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect._privk3_createDefaultValue(_self_, (org.gemoc.ql.model.ql.IntegerValueType)_self);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
   protected static Value _privk3_createValue(final IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self, final String internalValue) {
     final IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
     try {
@@ -31,6 +41,12 @@ public class IntegerValueTypeAspect extends ValueTypeAspect {
         throw Exceptions.sneakyThrow(_t);
       }
     }
+    return aValue;
+  }
+
+  protected static Value _privk3_createDefaultValue(final IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self) {
+    final IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
+    aValue.setIntValue(0);
     return aValue;
   }
 }

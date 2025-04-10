@@ -5,10 +5,10 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.k3ql.k3dsa.NotImplementedException;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.BooleanValue;
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = Value.class)
 @SuppressWarnings("all")
@@ -16,11 +16,6 @@ public abstract class ValueAspect {
   public static Value evaluate(final Value _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.evaluate((org.gemoc.ql.model.ql.DecimalValue)_self);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.evaluate((org.gemoc.ql.model.ql.BooleanValue)_self);
@@ -31,6 +26,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.evaluate((org.gemoc.ql.model.ql.StringValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.evaluate((org.gemoc.ql.model.ql.DecimalValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.evaluate((org.gemoc.ql.model.ql.IntegerValue)_self);
@@ -51,11 +51,6 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.copy((org.gemoc.ql.model.ql.StringValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.copy((org.gemoc.ql.model.ql.DecimalValue)_self);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.copy((org.gemoc.ql.model.ql.BooleanValue)_self);
@@ -66,6 +61,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.copy((org.gemoc.ql.model.ql.IntegerValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.copy((org.gemoc.ql.model.ql.DecimalValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# Value copy()
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_copy(_self_, (org.gemoc.ql.model.ql.Value)_self);
@@ -76,6 +76,11 @@ public abstract class ValueAspect {
   public static BooleanValue bEquals(final Value _self, final Value rhs) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.bEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.bEquals((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
@@ -91,11 +96,6 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.bEquals((org.gemoc.ql.model.ql.StringValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.bEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     // #DispatchPointCut_before# BooleanValue bEquals(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_bEquals(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -268,30 +268,30 @@ public abstract class ValueAspect {
     return (org.gemoc.ql.model.ql.IntegerValue)result;
   }
 
-  public static Boolean isKindOf(final Value _self, final DataType type) {
+  public static Boolean isKindOf(final Value _self, final ValueType type) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.isKindOf((org.gemoc.ql.model.ql.StringValue)_self,type);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.isKindOf((org.gemoc.ql.model.ql.DecimalValue)_self,type);
     		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.isKindOf((org.gemoc.ql.model.ql.IntegerValue)_self,type);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.isKindOf((org.gemoc.ql.model.ql.BooleanValue)_self,type);
     		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(DataType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
-    // #DispatchPointCut_before# Boolean isKindOf(DataType)
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.isKindOf((org.gemoc.ql.model.ql.IntegerValue)_self,type);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.isKindOf((org.gemoc.ql.model.ql.StringValue)_self,type);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    // #DispatchPointCut_before# Boolean isKindOf(ValueType)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_isKindOf(_self_, (org.gemoc.ql.model.ql.Value)_self,type);
     };
@@ -304,6 +304,11 @@ public abstract class ValueAspect {
   public static String valueToString(final Value _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.valueToString((org.gemoc.ql.model.ql.StringValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.valueToString((org.gemoc.ql.model.ql.DecimalValue)_self);
@@ -314,11 +319,6 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.valueToString((org.gemoc.ql.model.ql.BooleanValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.valueToString((org.gemoc.ql.model.ql.StringValue)_self);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.valueToString((org.gemoc.ql.model.ql.IntegerValue)_self);
@@ -334,6 +334,11 @@ public abstract class ValueAspect {
   public static Object rawValue(final Value _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.rawValue((org.gemoc.ql.model.ql.IntegerValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.rawValue((org.gemoc.ql.model.ql.BooleanValue)_self);
@@ -349,11 +354,6 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.rawValue((org.gemoc.ql.model.ql.StringValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
-    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
-    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.rawValue((org.gemoc.ql.model.ql.IntegerValue)_self);
-    		} else
-    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     // #DispatchPointCut_before# Object rawValue()
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_rawValue(_self_, (org.gemoc.ql.model.ql.Value)_self);
@@ -487,7 +487,7 @@ public abstract class ValueAspect {
     }
   }
 
-  protected static Boolean _privk3_isKindOf(final ValueAspectValueAspectProperties _self_, final Value _self, final DataType type) {
+  protected static Boolean _privk3_isKindOf(final ValueAspectValueAspectProperties _self_, final Value _self, final ValueType type) {
     try {
       EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement isKindOf() for " + _self));
       throw new NotImplementedException(("not implemented, please implement isKindOf() for " + _self));

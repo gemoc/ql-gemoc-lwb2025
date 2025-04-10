@@ -95,10 +95,19 @@ public class QLModelAspect {
     };
   }
 
+  public static void setInitialValues(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void setInitialValues()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_setInitialValues(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    };
+  }
+
   protected static void _privk3_initializeModel(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self, final EList<String> input) {
     String _get = input.get(0);
     String _plus = ("-> initializeModel() input=" + _get);
     EObjectAspect.devInfo(_self, _plus);
+    QLModelAspect.setInitialValues(_self);
   }
 
   protected static void _privk3_main(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
@@ -136,6 +145,15 @@ public class QLModelAspect {
       EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
       for (final QuestionDefinition qd : _questionDefinitions) {
         qd.setIsDisplayed(false);
+      }
+    }
+  }
+
+  protected static void _privk3_setInitialValues(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+    EList<DefinitionGroup> _definitionGroup = _self.getDefinitionGroup();
+    for (final DefinitionGroup g : _definitionGroup) {
+      EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
+      for (final QuestionDefinition qd : _questionDefinitions) {
       }
     }
   }

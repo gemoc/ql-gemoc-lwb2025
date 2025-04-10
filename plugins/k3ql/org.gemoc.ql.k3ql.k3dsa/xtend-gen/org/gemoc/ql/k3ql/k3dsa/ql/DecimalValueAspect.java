@@ -3,10 +3,10 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.BooleanValueType;
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = DecimalValue.class)
 @SuppressWarnings("all")
@@ -61,10 +61,10 @@ public class DecimalValueAspect extends ValueAspect {
     return (java.lang.Object)result;
   }
 
-  public static Boolean isKindOf(final DecimalValue _self, final DataType type) {
+  public static Boolean isKindOf(final DecimalValue _self, final ValueType type) {
     final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# Boolean isKindOf(DataType)
+    // #DispatchPointCut_before# Boolean isKindOf(ValueType)
     if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_isKindOf(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,type);
     };
@@ -102,7 +102,7 @@ public class DecimalValueAspect extends ValueAspect {
     return Float.valueOf(_self.getDecimalValue());
   }
 
-  protected static Boolean _privk3_isKindOf(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final DataType type) {
+  protected static Boolean _privk3_isKindOf(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof BooleanValueType));
   }
 }

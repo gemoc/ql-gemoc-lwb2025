@@ -18,6 +18,11 @@ public abstract class CallAspect extends ExpressionAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect.evaluate((org.gemoc.ql.model.ql.ConstantCall)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.QuestionCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect.evaluate((org.gemoc.ql.model.ql.QuestionCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
     // #DispatchPointCut_before# Value evaluate()
     if (_self instanceof org.gemoc.ql.model.ql.Call){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.CallAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.Call)_self);

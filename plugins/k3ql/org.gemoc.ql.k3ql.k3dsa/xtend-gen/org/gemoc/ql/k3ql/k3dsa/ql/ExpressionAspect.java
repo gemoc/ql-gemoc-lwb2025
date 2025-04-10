@@ -39,17 +39,22 @@ public abstract class ExpressionAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect.evaluate((org.gemoc.ql.model.ql.ConstantCall)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.ConstantCallAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.BasicBinaryExpression){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.CallAspect
     		if (_self instanceof org.gemoc.ql.model.ql.Call){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.CallAspect.evaluate((org.gemoc.ql.model.ql.Call)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.CallAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
-		if (_self instanceof org.gemoc.ql.model.ql.BasicBinaryExpression){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect
-// #DispatchPointCut_before# Value evaluate()
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.QuestionCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect.evaluate((org.gemoc.ql.model.ql.QuestionCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+    // #DispatchPointCut_before# Value evaluate()
     if (_self instanceof org.gemoc.ql.model.ql.Expression){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.Expression)_self);
     };

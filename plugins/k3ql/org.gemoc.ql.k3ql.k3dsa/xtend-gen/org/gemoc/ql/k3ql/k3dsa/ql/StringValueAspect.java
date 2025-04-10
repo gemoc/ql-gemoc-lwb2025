@@ -3,11 +3,11 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Objects;
 import org.gemoc.ql.model.ql.BooleanValue;
-import org.gemoc.ql.model.ql.DataType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.StringValue;
 import org.gemoc.ql.model.ql.StringValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = StringValue.class)
 @SuppressWarnings("all")
@@ -62,10 +62,10 @@ public class StringValueAspect extends ValueAspect {
     return (java.lang.Object)result;
   }
 
-  public static Boolean isKindOf(final StringValue _self, final DataType type) {
+  public static Boolean isKindOf(final StringValue _self, final ValueType type) {
     final org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspectStringValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspectStringValueAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# Boolean isKindOf(DataType)
+    // #DispatchPointCut_before# Boolean isKindOf(ValueType)
     if (_self instanceof org.gemoc.ql.model.ql.StringValue){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect._privk3_isKindOf(_self_, (org.gemoc.ql.model.ql.StringValue)_self,type);
     };
@@ -103,7 +103,7 @@ public class StringValueAspect extends ValueAspect {
     return _self.getStringValue();
   }
 
-  protected static Boolean _privk3_isKindOf(final StringValueAspectStringValueAspectProperties _self_, final StringValue _self, final DataType type) {
+  protected static Boolean _privk3_isKindOf(final StringValueAspectStringValueAspectProperties _self_, final StringValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof StringValueType));
   }
 }

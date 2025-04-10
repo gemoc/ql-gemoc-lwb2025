@@ -5,7 +5,6 @@ import org.gemoc.ql.model.ql.QLModel
 import org.gemoc.ql.model.ql.Form
 import org.gemoc.ql.model.ql.Question
 import org.gemoc.ql.model.ql.QuestionDefinition
-import org.gemoc.ql.model.ql.DataType
 import org.gemoc.ql.model.ql.Expression
 import org.gemoc.ql.model.ql.BinaryExpression
 import org.gemoc.ql.model.ql.UnaryExpression
@@ -36,7 +35,6 @@ import static extension org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.FormAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.ql.DataTypeAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.BinaryExpressionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.UnaryExpressionAspect.*
@@ -84,6 +82,8 @@ class QLModelAspect {
 	@InitializeModel									
 	def void initializeModel(EList<String> input){
 		_self.devInfo('-> initializeModel() input='+input.get(0));
+		_self.setInitialValues()
+		
 	}
 	
 	@Main
@@ -139,6 +139,14 @@ class QLModelAspect {
 			}
 		}	
 	}
+	
+	def void setInitialValues() {
+		for( g : _self.definitionGroup) {
+			for (qd : g.questionDefinitions) {
+				//qd.currentValue = qd.datatype.
+			}
+		}
+	}
 
 }
 
@@ -156,6 +164,7 @@ class QuestionAspect {
 	@Step
 	def void show(){
 		
+		_self.devInfo('QuestionAspect.show '+_self.questionDefinition.name);
 	}
 }
 
@@ -169,10 +178,7 @@ class QuestionDefinitionAspect extends NamedElementAspect {
 	}
 }
 
-@Aspect(className=DataType)
-abstract class DataTypeAspect extends NamedElementAspect {
 
-}
 
 @Aspect(className=Expression)
 abstract class ExpressionAspect {
@@ -330,7 +336,7 @@ abstract class ValueAspect {
 		throw new NotImplementedException('not implemented, please implement toIntegerValue() for '+_self);
 	}
 	
-	def Boolean isKindOf(DataType type){
+	def Boolean isKindOf(ValueType type){
 		_self.devError('not implemented, please ask language designer to implement isKindOf() for '+_self);
 		throw new NotImplementedException('not implemented, please implement isKindOf() for '+_self);
 	}
@@ -431,7 +437,7 @@ class IntegerValueAspect extends ValueAspect {
 		return _self.intValue;
 	}
 	
-	def Boolean isKindOf(DataType type){
+	def Boolean isKindOf(ValueType type){
 		return type instanceof IntegerValueType;
 	}
 }
@@ -463,7 +469,7 @@ class StringValueAspect extends ValueAspect {
 		return _self.stringValue;
 	}
 	
-	def Boolean isKindOf(DataType type){
+	def Boolean isKindOf(ValueType type){
 		return type instanceof StringValueType;
 	}
 }
@@ -497,7 +503,7 @@ class BooleanValueAspect extends ValueAspect {
 	}
 	
 	
-	def Boolean isKindOf(DataType type){
+	def Boolean isKindOf(ValueType type){
 		return type instanceof BooleanValueType;
 	}
 }
@@ -552,16 +558,20 @@ class DecimalValueAspect extends ValueAspect {
 	}
 	
 	
-	def Boolean isKindOf(DataType type){
+	def Boolean isKindOf(ValueType type){
 		return type instanceof BooleanValueType;
 	}
 
 }
 
 @Aspect(className=ValueType)
-class ValueTypeAspect extends DataTypeAspect {
+class ValueTypeAspect extends NamedElementAspect {
 	def Value createValue(String internalValue) {
 		_self.devError('not implemented, please ask language designer to implement createValue() for '+_self);
+		throw new NotImplementedException('not implemented, please implement createValue() for '+_self);
+	}
+	def Value createDefaultValue() {
+		_self.devError('not implemented, please ask language designer to implement createDefaultValue() for '+_self);
 		throw new NotImplementedException('not implemented, please implement createValue() for '+_self);
 	}
 }
@@ -571,6 +581,11 @@ class BooleanValueTypeAspect extends ValueTypeAspect {
 	def Value createValue(String internalValue) {
 		val BooleanValue aValue = QlFactory.eINSTANCE.createBooleanValue();
 		aValue.booleanValue = Boolean.parseBoolean(internalValue);
+		return aValue;
+	}
+	def Value createDefaultValue() {
+		val BooleanValue aValue = QlFactory.eINSTANCE.createBooleanValue();
+		aValue.booleanValue = false;
 		return aValue;
 	}
 }
@@ -588,6 +603,11 @@ class IntegerValueTypeAspect extends ValueTypeAspect {
 		}
 		return aValue;
 	}
+	def Value createDefaultValue() {
+		val IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
+		aValue.intValue = 0;
+		return aValue;
+	}
 }
 
 @Aspect(className=DecimalValueType)
@@ -602,6 +622,11 @@ class DecimalValueTypeAspect extends ValueTypeAspect {
 			return null;
 		}
 		return aValue;
+	}	
+	def Value createDefaultValue() {
+		val DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
+		aValue.decimalValue = 0;
+		return aValue;
 	}
 }
 @Aspect(className=StringValueType)
@@ -609,6 +634,11 @@ class StringValueTypeAspect extends ValueTypeAspect {
 	def Value createValue(String internalValue) {
 		val StringValue aValue = QlFactory.eINSTANCE.createStringValue();
 		aValue.stringValue = internalValue;
+		return aValue;
+	}
+	def Value createDefaultValue() {
+		val StringValue aValue = QlFactory.eINSTANCE.createStringValue();
+		aValue.stringValue = "";
 		return aValue;
 	}
 }
@@ -642,14 +672,14 @@ abstract class ConditionnalElementAspect {
 class QuestionGroupAspect extends ConditionnalElementAspect {
 	@Step
 	def void render() {
+		_self.devInfo('QuestionGroupAspect guard='+_self.guard);
 		
-		if(_self.guard === null /* || guard evaluates to True */) {
+		if(_self.guard === null  || _self.guard.evaluateAsBoolean().booleanValue) {
 			for( question : _self.questions) {
 				question.questionDefinition.isDisplayed = true;
 				question.show();
 			}
 		}
-		// TODO evaluate guard
 		for(subGroup : _self.questionGroups) {
 			subGroup.render();	
 		}
@@ -663,7 +693,9 @@ class DefinitionGroupAspect {
 
 @Aspect(className=QuestionCall)
 class QuestionCallAspect extends CallAspect {
-
+	def Value evaluate() {
+		return _self.question.currentValue;
+	}
 }
 
 
