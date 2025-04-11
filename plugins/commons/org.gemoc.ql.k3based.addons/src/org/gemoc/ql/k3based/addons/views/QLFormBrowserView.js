@@ -19,6 +19,7 @@ function setQLForm(text) {
 	const qlFormElement = document.getElementById("qlForm");
  	if (qlFormElement) {
     	qlFormElement.innerHTML = text; // replace the text
+		document.getElementById("lastAction").innerText = "setQLForm was called. Return value was: " + result;
  	}
 }
 // Call from Java to append to the current qlForm
@@ -26,6 +27,7 @@ function appendQLForm(text) {
 	const qlFormElement = document.getElementById("qlForm");
  	if (qlFormElement) {
     	qlFormElement.innerHTML += text; // Append the text
+		document.getElementById("lastAction").innerText = "appendQLForm was called. Return value was: " + result;
  	}
 }
 
@@ -66,6 +68,7 @@ function getFieldValueAsString(fieldId) {
     return null; // Or throw an error, depending on your needs
   }
 
+  document.getElementById("lastAction").innerText = "getFieldValueAsString(\""+fieldId+"\")";
   if (element.type === 'checkbox') {
     return element.checked.toString();
   } else if (element.type === 'select-one') {
@@ -80,6 +83,7 @@ function enableButton(buttonId) {
   const button = document.getElementById(buttonId);
   if (button) {
     button.disabled = false;
+	document.getElementById("lastAction").innerText = "button.disabled = false ";
   } else {
     console.error(`Button with ID "${buttonId}" not found.`);
   }
@@ -90,6 +94,7 @@ function disableButton(buttonId) {
   const button = document.getElementById(buttonId);
   if (button) {
     button.disabled = true;
+	document.getElementById("lastAction").innerText = "button.disabled = true ";
   } else {
     console.error(`Button with ID "${buttonId}" not found.`);
   }

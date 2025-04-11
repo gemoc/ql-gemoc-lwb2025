@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
-import java.util.Optional;
 
 import javax.inject.Inject;
 
@@ -15,17 +14,15 @@ import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
-import org.eclipse.jface.dialogs.InputDialog;
-import org.eclipse.jface.preference.PreferenceDialog;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.BrowserFunction;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.*;
-import org.eclipse.ui.dialogs.PreferencesUtil;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.ISharedImages;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.gemoc.ql.k3based.addons.utils.UserInputChangeNotifier;
 import org.gemoc.ql.model.ql.QLModel;
@@ -46,7 +43,7 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 	@Inject
 	Shell shell;
 
-	private Action action1 = makeAction1();
+	private Action submitAction = makeSubmitAction();
 	private Action action2 = makeAction2();
 
 	private Browser fBrowser;
@@ -86,34 +83,34 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 	}
 
 	private void fillLocalPullDown(IMenuManager manager) {
-		manager.add(action1);
+		manager.add(submitAction);
 		manager.add(new Separator());
 		manager.add(action2);
 	}
 
 	private void fillLocalToolBar(IToolBarManager manager) {
-		manager.add(action1);
+		manager.add(submitAction);
 		manager.add(action2);
 	}
 
 	private void makeActions() {
-		makeAction1();
+		makeSubmitAction();
 		makeAction2();
 	}
 
-	private Action makeAction1() {
+	private Action makeSubmitAction() {
 		Action action = new Action() {
 			public void run() {
-				InputDialog inputDialog = new InputDialog(shell, null, "What must the browser say: ", null, null);
-				inputDialog.open();
-				String something = inputDialog.getValue();
-				fBrowser.execute("say(\"" + something + "\");");
+				
+				// it save the current date so when the QL interpreter will require the value it can reads it
+				QLFormBrowserView.this.lastSubmitButtonCall = new java.util.Date();
+				userInputChangeNotifier.onUserInputChange();
 			}
 		};
-		action.setText("Say something");
-		action.setToolTipText("Say something");
+		action.setText("Force Submit");
+		action.setToolTipText("Force submission and finish the questionnaire regardless of mandatory questions status");
 		action.setImageDescriptor(
-				PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
+				PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_ELCL_STOP));
 		return action;
 	}
 
