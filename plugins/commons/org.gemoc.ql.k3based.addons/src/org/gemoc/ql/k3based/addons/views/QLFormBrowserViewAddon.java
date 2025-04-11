@@ -1,9 +1,5 @@
 package org.gemoc.ql.k3based.addons.views;
 
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -38,16 +34,12 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 			{
 				try {
 					IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-			
 					page.showView(QLFormBrowserView.ID);
-				
 				} catch(Exception e) {
 					Activator.error(e.getMessage(),e);
 				}
 			}				
 		});
-		Resource res = engine.getExecutionContext().getResourceModel();
-		QLModel qlModel = (QLModel)res.getContents().get(0);
 	}
 	
 	@Override
