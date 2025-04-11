@@ -168,11 +168,14 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 		buffer.append("<body>");
 		buffer.append("<h3>QL Form</h3>");
 		buffer.append("<div id=\"qlForm\"></div>");
-		buffer.append("<button type=\"button\" id=\"submitButton\" onclick=\"onSubmit()\">Finish</button>");
+		buffer.append("<button type=\"button\" id=\"submitButton\" onclick=\"onSubmit()\">Finish</button>\n");
+		buffer.append("<details>");
+		buffer.append("<summary>debug info</summary>");
 		buffer.append("<h3>Selection</h3>");
 		buffer.append("<div id=\"selection\"></div>");
 		buffer.append("<h3>Last Action</h3>");
 		buffer.append("<div id=\"lastAction\"></div>");
+		buffer.append("</details>");
 		buffer.append("</body>");
 		buffer.append("</html>");
 		return buffer.toString();
