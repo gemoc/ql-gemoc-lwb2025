@@ -3,8 +3,17 @@
 :included_in_readme: true
 
 = ql-gemoc-lwb2025
-Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Competition 2025 (LWB2025)
+Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
 
 :toc:
 
+It implements the Questionnaire Language (QL) of the challenge defined in https://github.com/judithmichael/lwb25
+
+This repository will hopefully contain 3 different implementations:
+
+* [ ]🚧  An implementation using Gemoc sequential engine (K3-based)
+* [ ] An implementation using Gemoc Conccurrent engine (Moccml-based) (partly reusing code from the sequential implementation)
+* [ ] An implementation using Gemoc coordination BCool (partly reuse of the moccml-based implementation)  
+
+== Details of the development status
 include::docs/dev_status.adoc[]

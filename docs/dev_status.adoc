@@ -6,12 +6,16 @@ ifndef::included_in_readme[]
 endif::included_in_readme[]
 
 
+ifndef::included_in_readme[]
+
 == Development Status
+endif::included_in_readme[]
 
 === Languages
 
 * [x] QL ecore
 * [ ] QLS ecore
+* [ ] ⚠️ TODO Language for use of the coordnation implementation
 
 === Representations
 
@@ -27,15 +31,23 @@ endif::included_in_readme[]
 
 === Behavior
 
-==== Common to all implementations
+==== Common to all behavior implementations
+
+* [ ] data format support
+** [x] Boolean
+** [x] String
+** [x] Integer
+** [x] Decimal
+** [ ] Date
+** [ ] Enum
 
 ==== Sequential behavior implementation
 
 * [ ] Conditional show/hide of questions
-** [ ] base support of conditional question groups
+** [x] base support of conditional question groups
 * [ ] Support of computed questions 
 ** [ ] base support of computed questions
-** [ ] Check + warning against cyclic computations 
+** [ ] runtime check + warning against cyclic computations 
 
 ==== Concurrent behavior implementation
 
@@ -54,9 +66,13 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 
 === Static checkers
 
-- [ ] static check of guard cyclic dependencies 
-- [ ] static check of computation cyclic dependencies
-- [ ] static check of guard determinism (cf. https://github.com/judithmichael/lwb25/blob/main/ChallengeTask.pdf)
+* [ ] static type checking of expression
+** [ ] static type checking of guards
+** [ ] static type checking of computed questions
+* [ ] static check of guard cyclic dependencies 
+* [ ] static check of computation cyclic dependencies
+* [ ] static check of guard determinism (cf. https://github.com/judithmichael/lwb25/blob/main/ChallengeTask.pdf)
+* [ ] static check of QLS to prevent multiple presentation of the same question in different groups (pb doesn't occur in basic UI)
 
 === Runtime base UI
 
@@ -65,6 +81,11 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 ** [x] support for read field input to interpreter 
 ** [x] support for write field from interpreter model to UI field
 ** [x] support for write field from interpreter model to UI field
+** [ ] support for Submit
+*** [x] enable/disable submit button if mandatory questions aren't answered
+*** [ ] serialize answers as xmi (ie. both answers and questions definitions)
+*** [ ] custom answer serialization (ie. only answers in a format to be defined (json, csv, or whatever)
+** [ ] support for computed questions (must not be editable by the user)
 ** [ ] data format support
 *** [x] Boolean
 *** [x] String
@@ -84,6 +105,6 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 *** [ ] Decimal (simple text area/ text area + updown / slider )
 *** [ ] Date
 *** [ ] Enum
-** [ ] Group styling
+** [ ] Group styling/layout
 *** [ ] Field groups
 *** [ ] Page groups
