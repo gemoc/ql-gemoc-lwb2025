@@ -74,6 +74,11 @@ import org.gemoc.ql.model.ql.QlFactory
 import org.gemoc.ql.model.ql.StringValueType
 import org.gemoc.ql.model.ql.UnaryOperatorKind
 import org.gemoc.ql.model.ql.BinaryOperatorKind
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
+import java.io.File
+import java.text.SimpleDateFormat
 
 @Aspect(className=QLModel)
 class QLModelAspect {
@@ -112,7 +117,7 @@ class QLModelAspect {
 		}
 		// received submitAction
 		// TODO serialize answers
-		_self.devWarn("TODO implement serialization of the answers");
+		_self.saveToXmi()
 	}
 	
 	/** step captured by the Engine Addon to feed the model forms with input from the user UI
@@ -166,6 +171,35 @@ class QLModelAspect {
 			}
 		}
 	}
+	
+	@Step
+	def void saveToXmi() {
+		val origResource = _self.eResource
+		val resourceUri = _self.eResource.URI;
+		val String fileName = resourceUri.lastSegment(); // Get the file name
+        //val String platformPlugin = resourceUri.segment(1); // Get the plugin name
+        val String platformFolderPath = resourceUri.trimSegments(1).toString(); // get the path within the plugin.
+
+		val SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss"); // Customize the format
+        
+		val String postfix = "_"+dateFormat.format(_self.submitDate);
+		val URI outputUri = URI.createURI(platformFolderPath +"/reports/" + fileName.replaceFirst("\\.([^.]+)$", postfix + ".$1"), true);
+		
+		
+		_self.devInfo("Saving to "+outputUri.toString);
+		val resourceSet = new ResourceSetImpl();
+	    resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
+                "*", new XMIResourceFactoryImpl()
+            );
+	    val outputResource = resourceSet.createResource(outputUri)
+	    outputResource.getContents().addAll(_self.eResource.getContents())
+	
+	    outputResource.save({});
+	    
+	    // move back to the original resource
+	    origResource.getContents().addAll(outputResource.getContents());
+	    
+	} 
 
 }
 

@@ -4,8 +4,16 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import java.text.SimpleDateFormat;
+import java.util.Map;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
@@ -171,6 +179,27 @@ public class QLModelAspect {
     };
   }
 
+  @Step
+  public static void saveToXmi(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void saveToXmi()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_saveToXmi(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "saveToXmi");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+
   protected static void _privk3_initializeModel(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self, final EList<String> input) {
     String _get = input.get(0);
     String _plus = ("-> initializeModel() input=" + _get);
@@ -217,7 +246,7 @@ public class QLModelAspect {
         QLModelAspect.readSubmitButtonStatus(_self);
       }
     }
-    EObjectAspect.devWarn(_self, "TODO implement serialization of the answers");
+    QLModelAspect.saveToXmi(_self);
   }
 
   protected static void _privk3_waitUserInput(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
@@ -263,6 +292,40 @@ public class QLModelAspect {
           }
         }
       }
+    }
+  }
+
+  protected static void _privk3_saveToXmi(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+    try {
+      final Resource origResource = _self.eResource();
+      final URI resourceUri = _self.eResource().getURI();
+      final String fileName = resourceUri.lastSegment();
+      final String platformFolderPath = resourceUri.trimSegments(1).toString();
+      final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
+      String _format = dateFormat.format(_self.getSubmitDate());
+      final String postfix = ("_" + _format);
+      String _replaceFirst = fileName.replaceFirst("\\.([^.]+)$", (postfix + ".$1"));
+      String _plus = ((platformFolderPath + "/reports/") + _replaceFirst);
+      final URI outputUri = URI.createURI(_plus, true);
+      String _string = outputUri.toString();
+      String _plus_1 = ("Saving to " + _string);
+      EObjectAspect.devInfo(_self, _plus_1);
+      final ResourceSetImpl resourceSet = new ResourceSetImpl();
+      Map<String, Object> _extensionToFactoryMap = resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap();
+      XMIResourceFactoryImpl _xMIResourceFactoryImpl = new XMIResourceFactoryImpl();
+      _extensionToFactoryMap.put(
+        "*", _xMIResourceFactoryImpl);
+      final Resource outputResource = resourceSet.createResource(outputUri);
+      outputResource.getContents().addAll(_self.eResource().getContents());
+      outputResource.save(new Function0<Map<?, ?>>() {
+        @Override
+        public Map<?, ?> apply() {
+          return null;
+        }
+      }.apply());
+      origResource.getContents().addAll(outputResource.getContents());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
   }
 }

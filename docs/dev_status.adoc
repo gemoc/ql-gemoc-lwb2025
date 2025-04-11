@@ -84,7 +84,7 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 ** [x] support for write field from interpreter model to UI field
 ** [ ] support for Submit
 *** [x] enable/disable submit button if mandatory questions aren't answered
-*** [ ] serialize answers as xmi (ie. both answers and questions definitions)
+*** [x] serialize answers as xmi (ie. both answers and questions definitions)
 *** [ ] custom answer serialization (ie. only answers in a format to be defined (json, csv, or whatever)
 ** [ ] support for computed questions (must not be editable by the user)
 ** [ ] data format support
