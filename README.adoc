@@ -1,0 +1,10 @@
+
+// used to detect if a document is included in readme master
+:included_in_readme: true
+
+= ql-gemoc-lwb2025
+Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Competition 2025 (LWB2025)
+
+:toc:
+
+include::docs/dev_status.adoc[]

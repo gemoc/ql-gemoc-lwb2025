@@ -1,0 +1,89 @@
+ifdef::included_in_readme[]
+:imagesdir: docs/img
+endif::included_in_readme[]
+ifndef::included_in_readme[]
+:imagesdir: img
+endif::included_in_readme[]
+
+
+== Development Status
+
+=== Languages
+
+* [x] QL ecore
+* [ ] QLS ecore
+
+=== Representations
+
+* [ ] QL editors
+** [*] QL tree editor
+** [ ] QL textual editor
+** [ ] QL graphical editor
+* [ ] QLS editors
+** [ ] QLS tree editor
+** [ ] QLS textual editor
+** [ ] QLS graphical editor
+** [ ] textual support in graphical editor
+
+=== Behavior
+
+==== Common to all implementations
+
+==== Sequential behavior implementation
+
+* [ ] Conditional show/hide of questions
+** [ ] base support of conditional question groups
+* [ ] Support of computed questions 
+** [ ] base support of computed questions
+** [ ] Check + warning against cyclic computations 
+
+==== Concurrent behavior implementation
+
+[CAUTION]
+====
+TO BE DEFINED probably something on the computed questions
+====
+
+==== Language Coordination implementation
+
+[CAUTION]
+====
+TO BE DEFINED need to identify a complementary language to be coordinated that can be relevant in this contest.
+====
+
+
+=== Static checkers
+
+- [ ] static check of guard cyclic dependencies 
+- [ ] static check of computation cyclic dependencies
+- [ ] static check of guard determinism (cf. https://github.com/judithmichael/lwb25/blob/main/ChallengeTask.pdf)
+
+=== Runtime base UI
+
+* [ ] 🚧 Simple web form as GEMOC Engine Add-on
+** [x] support for field show/hide during interpretation
+** [x] support for read field input to interpreter 
+** [x] support for write field from interpreter model to UI field
+** [x] support for write field from interpreter model to UI field
+** [ ] data format support
+*** [x] Boolean
+*** [x] String
+*** [x] Integer
+*** [x] Decimal
+*** [ ] Date
+*** [ ] Enum
+** [ ] feedback on incorrect data format
+
+=== Runtime advanced UI
+
+* [ ] Web form with Styling
+** [ ] Field styling
+*** [ ] Boolean (checkbox / Radio)
+*** [ ] String (single line /  multiline ) 
+*** [ ] Integer (simple text area/ text area + updown / slider )
+*** [ ] Decimal (simple text area/ text area + updown / slider )
+*** [ ] Date
+*** [ ] Enum
+** [ ] Group styling
+*** [ ] Field groups
+*** [ ] Page groups
