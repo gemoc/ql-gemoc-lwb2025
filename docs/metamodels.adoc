@@ -1,0 +1,31 @@
+ifndef::included_in_readme[]
+
+== Metamodels
+endif::included_in_readme[]
+
+Overview of the metamodels used by the implementations
+
+
+== QL 
+
+.QL main class diagram
+[#img-ql-main-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql main class diagram.jpg]
+image::plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql main class diagram.jpg[FCL main class diagram,800]
+
+.Named elements class diagram
+[#img-named-elements-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql named elements class diagram.jpg]
+image::plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql named elements class diagram.jpg[Named elements class diagram,800]
+
+
+.Expression class diagram
+[#img-expression-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql expression class diagram.jpg]
+image::plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/Expression class diagram.jpg[Expression class diagram,800]
+
+.Types class diagram
+[#img-types-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql type class diagram.jpg]
+image::plugins/ql/org.gemoc.ql.model/model/ql.genmodel/img/ql type class diagram.jpg[Types class diagram,800]
+

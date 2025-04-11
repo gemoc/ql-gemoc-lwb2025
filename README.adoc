@@ -16,4 +16,9 @@ This repository will hopefully contain 3 different implementations:
 * [ ] An implementation using Gemoc coordination BCool (partly reuse of the moccml-based implementation)  
 
 == Details of the development status
+
 include::docs/dev_status.adoc[]
+
+== Metamodels overview
+
+include::docs/metamodels.adoc[]
