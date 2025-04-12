@@ -9,20 +9,20 @@
       <questionGroups>
         <guard
             xsi:type="ql:QuestionCall"
-            question="//@definitionGroup.0/@questionDefinitions.0"/>
+            question="hasSoldHouse"/>
         <questions
-            questionDefinition="//@definitionGroup.0/@questionDefinitions.3"/>
+            questionDefinition="sellingPrice"/>
         <questions
-            questionDefinition="//@definitionGroup.0/@questionDefinitions.4"/>
+            questionDefinition="privateDebt"/>
         <questions
-            questionDefinition="//@definitionGroup.0/@questionDefinitions.5"/>
+            questionDefinition="valueResidue"/>
       </questionGroups>
       <questions
-          questionDefinition="//@definitionGroup.0/@questionDefinitions.0"/>
+          questionDefinition="hasSoldHouse"/>
       <questions
-          questionDefinition="//@definitionGroup.0/@questionDefinitions.1"/>
+          questionDefinition="hasBoughtHouse"/>
       <questions
-          questionDefinition="//@definitionGroup.0/@questionDefinitions.2"/>
+          questionDefinition="hasMaintLoan"/>
     </questionGroup>
   </forms>
   <definitionGroup>
@@ -36,39 +36,39 @@
     <questionDefinitions
         name="hasSoldHouse"
         label="Did you sell a house in 2010?"
-        dataType="//@definitionGroup.0/@dataTypes.0"/>
+        dataType="boolean"/>
     <questionDefinitions
         name="hasBoughtHouse"
         label="Did you buy a house in 2010?"
-        dataType="//@definitionGroup.0/@dataTypes.0"/>
+        dataType="boolean"/>
     <questionDefinitions
         name="hasMaintLoan"
         label="Did you enter a loan for maintenance/reconstruction?"
-        dataType="//@definitionGroup.0/@dataTypes.0"/>
+        dataType="boolean"/>
     <questionDefinitions
         name="sellingPrice"
         label="Price the house was sold for:"
-        dataType="//@definitionGroup.0/@dataTypes.1"
+        dataType="money"
         isMandatory="true"/>
     <questionDefinitions
         name="privateDebt"
         label="Private debts for the sold house:"
-        dataType="//@definitionGroup.0/@dataTypes.1"
+        dataType="money"
         isMandatory="true"/>
     <questionDefinitions
         name="valueResidue"
         label="Value residue:"
-        dataType="//@definitionGroup.0/@dataTypes.1">
+        dataType="money">
       <computedExpression
           xsi:type="ql:BasicBinaryExpression"
-          resultType="//@definitionGroup.0/@dataTypes.1"
+          resultType="money"
           operator="MINUS">
         <lhsOperand
             xsi:type="ql:QuestionCall"
-            question="//@definitionGroup.0/@questionDefinitions.3"/>
+            question="sellingPrice"/>
         <rhsOperand
             xsi:type="ql:QuestionCall"
-            question="//@definitionGroup.0/@questionDefinitions.4"/>
+            question="privateDebt"/>
       </computedExpression>
     </questionDefinitions>
   </definitionGroup>
