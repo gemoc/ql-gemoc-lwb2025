@@ -19,6 +19,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
+import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QuestionDefinition;
@@ -180,6 +181,27 @@ public class QLModelAspect {
   }
 
   @Step
+  public static void updateAllComputedQuestions(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void updateAllComputedQuestions()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_updateAllComputedQuestions(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "updateAllComputedQuestions");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+
+  @Step
   public static void saveToXmi(final QLModel _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void saveToXmi()
@@ -244,6 +266,7 @@ public class QLModelAspect {
         };
         allDisplayedQuestion.forEach(_function_5);
         QLModelAspect.readSubmitButtonStatus(_self);
+        QLModelAspect.updateAllComputedQuestions(_self);
       }
     }
     QLModelAspect.saveToXmi(_self);
@@ -293,6 +316,22 @@ public class QLModelAspect {
         }
       }
     }
+  }
+
+  protected static void _privk3_updateAllComputedQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+    final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f) -> {
+      return f.getQuestionDefinitions();
+    };
+    final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
+      Expression _computedExpression = qd.getComputedExpression();
+      return Boolean.valueOf((_computedExpression != null));
+    };
+    Iterable<QuestionDefinition> allComputedQuestions = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1);
+    EObjectAspect.devError(_self, "TODO deal with computed question depending on other computer questions");
+    final Consumer<QuestionDefinition> _function_2 = (QuestionDefinition qd) -> {
+      qd.setCurrentValue(ExpressionAspect.evaluate(qd.getComputedExpression()));
+    };
+    allComputedQuestions.forEach(_function_2);
   }
 
   protected static void _privk3_saveToXmi(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {

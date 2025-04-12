@@ -114,6 +114,9 @@ class QLModelAspect {
 			var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
 			allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
 			_self.readSubmitButtonStatus();
+			
+			// recompute all computedQuestions
+			_self.updateAllComputedQuestions();
 		}
 		// received submitAction
 		// TODO serialize answers
@@ -171,6 +174,17 @@ class QLModelAspect {
 			}
 		}
 	}
+	
+	@Step
+	def void updateAllComputedQuestions() {
+		var allComputedQuestions = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null]
+		// need to define the best evaluation order
+		_self.devError("TODO deal with computed question depending on other computer questions");
+		allComputedQuestions.forEach[qd | 
+			qd.currentValue = qd.computedExpression.evaluate()
+		]
+	}
+	
 	
 	@Step
 	def void saveToXmi() {
