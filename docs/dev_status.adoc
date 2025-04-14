@@ -46,7 +46,7 @@ endif::included_in_readme[]
 * [ ] Conditional show/hide of questions
 ** [x] base support of conditional question groups
 * [ ] Support of computed questions 
-** [ ] base support of computed questions
+** [x] base support of computed questions
 ** [ ] support of computation dependencies
 ** [ ] runtime check + warning against cyclic computations 
 

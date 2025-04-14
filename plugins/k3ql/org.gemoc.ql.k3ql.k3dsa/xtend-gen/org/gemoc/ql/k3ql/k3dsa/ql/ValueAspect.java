@@ -111,6 +111,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.plus((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value plus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value plus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.plus((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value plus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# Value plus(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_plus(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -121,6 +126,11 @@ public abstract class ValueAspect {
   public static Value minus(final Value _self, final Value rhs) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value minus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.minus((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value minus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value minus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.minus((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
@@ -141,6 +151,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.mult((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value mult(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value mult(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.mult((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value mult(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# Value mult(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_mult(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -156,6 +171,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.div((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value div(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value div(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.div((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value div(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# Value div(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_div(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -171,6 +191,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.greater((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greater(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greater(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.greater((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greater(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# BooleanValue greater(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_greater(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -181,6 +206,11 @@ public abstract class ValueAspect {
   public static BooleanValue lower(final Value _self, final Value rhs) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lower(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.lower((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lower(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lower(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.lower((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
@@ -201,6 +231,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.greaterOrEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greaterOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greaterOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.greaterOrEquals((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue greaterOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# BooleanValue greaterOrEquals(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_greaterOrEquals(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -216,6 +251,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.lowerOrEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lowerOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lowerOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.lowerOrEquals((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue lowerOrEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     // #DispatchPointCut_before# BooleanValue lowerOrEquals(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_lowerOrEquals(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
@@ -226,6 +266,11 @@ public abstract class ValueAspect {
   public static Value uminus(final Value _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value uminus() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.uminus((org.gemoc.ql.model.ql.DecimalValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value uminus() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value uminus() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.uminus((org.gemoc.ql.model.ql.IntegerValue)_self);
@@ -241,6 +286,11 @@ public abstract class ValueAspect {
   public static DecimalValue toDecimalValue(final Value _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#DecimalValue toDecimalValue() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.toDecimalValue((org.gemoc.ql.model.ql.DecimalValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#DecimalValue toDecimalValue() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#DecimalValue toDecimalValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.toDecimalValue((org.gemoc.ql.model.ql.IntegerValue)_self);

@@ -436,36 +436,43 @@ class IntegerValueAspect extends ValueAspect {
 		return aValue;
 	}
 	def BooleanValue bEquals(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		bValue.booleanValue = _self.intValue == rhs.toIntegerValue().intValue;
 		return bValue;
 	}
 	def BooleanValue lower(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		bValue.booleanValue = _self.intValue < rhs.toIntegerValue().intValue;
 		return bValue;
 	}
 	def BooleanValue lowerOrEquals(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		bValue.booleanValue = _self.intValue <= rhs.toIntegerValue().intValue;
 		return bValue;
 	}
 	def BooleanValue greater(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		bValue.booleanValue = _self.intValue > rhs.toIntegerValue().intValue;
 		return bValue;
 	}
 	def BooleanValue greaterOrEquals(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		bValue.booleanValue = _self.intValue >= rhs.toIntegerValue().intValue;
 		return bValue;
 	}
 	def Value plus(Value rhs) {
+		if(rhs === null) return null;
 		val IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
 		iValue.intValue = _self.intValue + rhs.toIntegerValue().intValue;
 		return iValue;
 	}
 	def Value minus(Value rhs) {
+		if(rhs === null) return null;
 		val IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
 		iValue.intValue = _self.intValue - rhs.toIntegerValue().intValue;
 		return iValue;
@@ -476,12 +483,14 @@ class IntegerValueAspect extends ValueAspect {
 		return iValue;
 	}
 	def Value mult(Value rhs) {
+		if(rhs === null) return null;
 		val IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
 		iValue.intValue = _self.intValue * rhs.toIntegerValue().intValue;
 		return iValue;
 	}
 	
 	def Value div(Value rhs) {
+		if(rhs === null) return null;
 		val IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
 		iValue.intValue = _self.intValue / rhs.toIntegerValue().intValue;
 		return iValue;
@@ -608,6 +617,7 @@ class DecimalValueAspect extends ValueAspect {
 		return aValue;
 	}
 	def BooleanValue bEquals(Value rhs) {
+		if(rhs === null) return null;
 		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
 		if(rhs instanceof DecimalValue) {
 			bValue.booleanValue = _self.decimalValue == (rhs as DecimalValue).decimalValue;
@@ -616,6 +626,67 @@ class DecimalValueAspect extends ValueAspect {
 		}
 		return bValue;
 	}
+	def BooleanValue lower(Value rhs) {
+		if(rhs === null) return null;
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		bValue.booleanValue = _self.decimalValue < rhs.toDecimalValue().decimalValue;
+		return bValue;
+	}
+	def BooleanValue lowerOrEquals(Value rhs) {
+		if(rhs === null) return null;
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		bValue.booleanValue = _self.decimalValue <= rhs.toDecimalValue().decimalValue;
+		return bValue;
+	}
+	def BooleanValue greater(Value rhs) {
+		if(rhs === null) return null;
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		bValue.booleanValue = _self.decimalValue > rhs.toDecimalValue().decimalValue;
+		return bValue;
+	}
+	def BooleanValue greaterOrEquals(Value rhs) {
+		if(rhs === null) return null;
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		bValue.booleanValue = _self.decimalValue >= rhs.toDecimalValue().decimalValue;
+		return bValue;
+	}
+	def Value plus(Value rhs) {
+		if(rhs === null) return null;
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = _self.decimalValue + rhs.toDecimalValue().decimalValue;
+		return fValue;
+	}
+	def Value minus(Value rhs) {
+		if(rhs === null) return null;
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = _self.decimalValue - rhs.toDecimalValue().decimalValue;
+		return fValue;
+	}
+	def Value uminus() {
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = - _self.decimalValue;
+		return fValue;
+	}
+	def Value mult(Value rhs) {
+		if(rhs === null) return null;
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = _self.decimalValue * rhs.toDecimalValue().decimalValue;
+		return fValue;
+	}
+	
+	def Value div(Value rhs) {
+		if(rhs === null) return null;
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = _self.decimalValue / rhs.toDecimalValue().decimalValue;
+		return fValue;
+	}	
+	
+	def DecimalValue toDecimalValue() {
+		val DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+		fValue.decimalValue = _self.decimalValue;
+		return _self;
+	}
+	
 
 	def String valueToString(){
 		return _self.decimalValue.toString();

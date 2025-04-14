@@ -41,6 +41,106 @@ public class DecimalValueAspect extends ValueAspect {
     return (org.gemoc.ql.model.ql.BooleanValue)result;
   }
 
+  public static BooleanValue lower(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# BooleanValue lower(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_lower(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.BooleanValue)result;
+  }
+
+  public static BooleanValue lowerOrEquals(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# BooleanValue lowerOrEquals(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_lowerOrEquals(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.BooleanValue)result;
+  }
+
+  public static BooleanValue greater(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# BooleanValue greater(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_greater(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.BooleanValue)result;
+  }
+
+  public static BooleanValue greaterOrEquals(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# BooleanValue greaterOrEquals(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_greaterOrEquals(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.BooleanValue)result;
+  }
+
+  public static Value plus(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value plus(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_plus(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static Value minus(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value minus(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_minus(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static Value uminus(final DecimalValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value uminus()
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_uminus(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static Value mult(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value mult(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_mult(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static Value div(final DecimalValue _self, final Value rhs) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# Value div(Value)
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_div(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
+    };
+    return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static DecimalValue toDecimalValue(final DecimalValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# DecimalValue toDecimalValue()
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_toDecimalValue(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.DecimalValue)result;
+  }
+
   public static String valueToString(final DecimalValue _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
     Object result = null;
@@ -82,6 +182,9 @@ public class DecimalValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_bEquals(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     if ((rhs instanceof DecimalValue)) {
       float _decimalValue = _self.getDecimalValue();
@@ -92,6 +195,116 @@ public class DecimalValueAspect extends ValueAspect {
       bValue.setBooleanValue(false);
     }
     return bValue;
+  }
+
+  protected static BooleanValue _privk3_lower(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    boolean _lessThan = (_decimalValue < _decimalValue_1);
+    bValue.setBooleanValue(_lessThan);
+    return bValue;
+  }
+
+  protected static BooleanValue _privk3_lowerOrEquals(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    boolean _lessEqualsThan = (_decimalValue <= _decimalValue_1);
+    bValue.setBooleanValue(_lessEqualsThan);
+    return bValue;
+  }
+
+  protected static BooleanValue _privk3_greater(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    boolean _greaterThan = (_decimalValue > _decimalValue_1);
+    bValue.setBooleanValue(_greaterThan);
+    return bValue;
+  }
+
+  protected static BooleanValue _privk3_greaterOrEquals(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    boolean _greaterEqualsThan = (_decimalValue >= _decimalValue_1);
+    bValue.setBooleanValue(_greaterEqualsThan);
+    return bValue;
+  }
+
+  protected static Value _privk3_plus(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    float _plus = (_decimalValue + _decimalValue_1);
+    fValue.setDecimalValue(_plus);
+    return fValue;
+  }
+
+  protected static Value _privk3_minus(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    float _minus = (_decimalValue - _decimalValue_1);
+    fValue.setDecimalValue(_minus);
+    return fValue;
+  }
+
+  protected static Value _privk3_uminus(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _minus = (-_decimalValue);
+    fValue.setDecimalValue(_minus);
+    return fValue;
+  }
+
+  protected static Value _privk3_mult(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    float _multiply = (_decimalValue * _decimalValue_1);
+    fValue.setDecimalValue(_multiply);
+    return fValue;
+  }
+
+  protected static Value _privk3_div(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    float _decimalValue = _self.getDecimalValue();
+    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    float _divide = (_decimalValue / _decimalValue_1);
+    fValue.setDecimalValue(_divide);
+    return fValue;
+  }
+
+  protected static DecimalValue _privk3_toDecimalValue(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
+    final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
+    fValue.setDecimalValue(_self.getDecimalValue());
+    return _self;
   }
 
   protected static String _privk3_valueToString(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {

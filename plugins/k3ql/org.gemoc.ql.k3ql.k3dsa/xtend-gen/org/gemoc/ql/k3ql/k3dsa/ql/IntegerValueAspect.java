@@ -193,6 +193,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_bEquals(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -202,6 +205,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_lower(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -211,6 +217,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_lowerOrEquals(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -220,6 +229,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_greater(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -229,6 +241,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static BooleanValue _privk3_greaterOrEquals(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -238,6 +253,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static Value _privk3_plus(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -247,6 +265,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static Value _privk3_minus(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -264,6 +285,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static Value _privk3_mult(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
@@ -273,6 +297,9 @@ public class IntegerValueAspect extends ValueAspect {
   }
 
   protected static Value _privk3_div(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final Value rhs) {
+    if ((rhs == null)) {
+      return null;
+    }
     final IntegerValue iValue = QlFactory.eINSTANCE.createIntegerValue();
     int _intValue = _self.getIntValue();
     int _intValue_1 = ValueAspect.toIntegerValue(rhs).getIntValue();
