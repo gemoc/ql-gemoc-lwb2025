@@ -79,6 +79,10 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import java.io.File
 import java.text.SimpleDateFormat
+import java.util.List
+import java.util.HashMap
+import java.util.ArrayList
+import java.util.Set
 
 @Aspect(className=QLModel)
 class QLModelAspect {
@@ -88,6 +92,9 @@ class QLModelAspect {
 	def void initializeModel(EList<String> input){
 		_self.devInfo('-> initializeModel() input='+input.get(0));
 		_self.setInitialValues()
+		
+		_self.definitionGroup.flatMap[ f | f.questionDefinitions].forEach[qd | qd.evaluateComputedQuestionDependencies()]
+		
 		
 	}
 	
@@ -175,14 +182,81 @@ class QLModelAspect {
 		}
 	}
 	
+	/**
+	 * 
+	 * TODO only displayedComputedQuestion ? 
+	 * TODO what happen if a computedQuestion depends on a non displayed question ?
+	 */
 	@Step
 	def void updateAllComputedQuestions() {
-		var allComputedQuestions = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null]
-		// need to define the best evaluation order
-		_self.devError("TODO deal with computed question depending on other computer questions");
+		
+		// need to define the best evaluation order, and error in case of cycle
+		var allComputedQuestions = _self.sortAllDisplayedComputedQuestions
+		
+		_self.devDebug('allComputedQuestions='+allComputedQuestions.map[qd | qd.name].join(', '));
 		allComputedQuestions.forEach[qd | 
-			qd.currentValue = qd.computedExpression.evaluate()
+			// if the computedQuestion depends on a question that is not displayed then it is in error
+			val notDisplayedDependencies = qd.computedExpression.eAllContents.filter(QuestionCall).filter[ qc | !qc.question.isDisplayed]
+			if(!notDisplayedDependencies.empty) {
+				_self.error('TODO implement better user feedback');
+				throw new QLException('Question '+qd.name + ' depends on question(s) ' + notDisplayedDependencies.map[qdc | qdc.question.name].join(', ')+  ' that are currently not displayed ');
+			} else {
+				qd.currentValue = qd.computedExpression.evaluate()	
+			}
 		]
+	}
+	
+	/**
+	 * returns the all computedQuestion of self in a topologically sorted order
+	 * consider only displayed questions
+	 * Kahn's algorithm from https://en.wikipedia.org/wiki/Topological_sorting
+	 */
+	def List<QuestionDefinition> sortAllDisplayedComputedQuestions() {
+		
+		var allComputedQuestions = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null && qd.isIsDisplayed]
+		_self.devDebug('sortAllDisplayedComputedQuestions allComputedQuestions='+allComputedQuestions.map[qd | qd.name].join(', '));
+		allComputedQuestions.forEach[qd | qd.evaluateComputedQuestionDependencies()]
+		// L <- Empty list that will contain the sorted elements
+		val List<QuestionDefinition> resList = newArrayList; //Empty list that will contain the sorted elements		
+		// S <- Set of all nodes with no incoming edge
+		val List<QuestionDefinition> nodeWithNoIncomingEdgeSet = allComputedQuestions.filter[qd | qd.referencingQuestions.isNullOrEmpty].toList
+
+		// while S is non-empty do
+		while(! nodeWithNoIncomingEdgeSet.isEmpty()){
+			// remove a node n from S
+			val QuestionDefinition n = nodeWithNoIncomingEdgeSet.get(0);
+			nodeWithNoIncomingEdgeSet.remove(0);
+			// add n to tail of L
+			//self.devDebug('\tsortedSubfunctions add '+n.name+' to tail of L ');
+			resList.add(n);
+			// for each node m with an edge e from n to m do
+			n.dependencies.clone.forEach[m | 
+				// remove edge e from the graph
+				n.dependencies.remove(m);
+				m.referencingQuestions.remove(n);
+				// if m has no other incoming edges then
+				
+				if(m.referencingQuestions.empty){
+	            	// insert m into S
+	            	//self.devDebug('\tsortedSubfunctions insert '+m.name+' into S');
+	            	nodeWithNoIncomingEdgeSet.add(m);
+            	}
+			]
+		}
+		
+		// if graph has edges then
+		if(allComputedQuestions.exists[qd | !qd.dependencies.empty]){
+	    	// 	return error   (graph has at least one cycle)
+			_self.error('Found at least one cycle in computed questions ');
+			_self.error('Questions involved in cycle(s) are:\n'+allComputedQuestions.filter[qd | !qd.dependencies.empty].map[qd | qd.name+' -> ('+qd.dependencies.map[qddep | qddep.name].join(', ')+')'].join(',   \n'));
+			
+			throw new QLException('No Topological order can be found');
+	    }
+		else { 
+			//  	 return L   (a topologically sorted order)
+			return resList;
+		}
+		
 	}
 	
 	
@@ -242,6 +316,25 @@ class QuestionDefinitionAspect extends NamedElementAspect {
 	@Step
 	def void updateCurrentValueFromUI(){
 		
+	}
+	
+	/** List all questions that this question directly use to compute this question
+	 * is empty is this is not a 
+	 */
+	public Set<QuestionDefinition> dependencies = newHashSet
+	/** List all questions that directly reference this question */
+	public Set<QuestionDefinition> referencingQuestions = newHashSet
+	
+	/**
+	 * evaluation in order to fill the dependencies and referencingQuestions lists
+	 * consider only computedQuestions in the dependency graph
+	 */
+	def void evaluateComputedQuestionDependencies() {
+		if(_self.computedExpression !== null) {
+			_self.dependencies.addAll(
+				_self.computedExpression.eAllContents.filter(QuestionCall).filter[qc | qc.question.computedExpression !== null].map[ qc |qc.question].toList)
+			_self.dependencies.forEach[qd | qd.referencingQuestions.add(_self)]
+		}
 	}
 }
 

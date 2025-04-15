@@ -47,8 +47,8 @@ endif::included_in_readme[]
 ** [x] base support of conditional question groups
 * [ ] Support of computed questions 
 ** [x] base support of computed questions
-** [ ] support of computation dependencies
-** [ ] runtime check + warning against cyclic computations 
+** [ ] 🚧 support of computation dependencies
+** [ ] 🚧 runtime check + warning against cyclic computations 
 
 ==== Concurrent behavior implementation
 
