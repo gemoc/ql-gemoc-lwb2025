@@ -158,30 +158,439 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Expression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cBasicBinaryExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cConstantCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cBasicUnaryExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cQuestionCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cUnaryOrPrimaryExpressionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Expression returns Expression:
-		//    BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
+		//    UnaryOrPrimaryExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall
+		//UnaryOrPrimaryExpression
+		public RuleCall getUnaryOrPrimaryExpressionParserRuleCall() { return cUnaryOrPrimaryExpressionParserRuleCall; }
+	}
+	public class UnaryOrPrimaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.UnaryOrPrimaryExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPrimaryExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cUnaryExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//    //BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
+		//UnaryOrPrimaryExpression returns Expression:
+		//    PrimaryExpression | UnaryExpression
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PrimaryExpression | UnaryExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//BasicBinaryExpression
-		public RuleCall getBasicBinaryExpressionParserRuleCall_0() { return cBasicBinaryExpressionParserRuleCall_0; }
+		//PrimaryExpression
+		public RuleCall getPrimaryExpressionParserRuleCall_0() { return cPrimaryExpressionParserRuleCall_0; }
+		
+		//UnaryExpression
+		public RuleCall getUnaryExpressionParserRuleCall_1() { return cUnaryExpressionParserRuleCall_1; }
+	}
+	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.UnaryExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBasicUnaryExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cOperatorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOperatorUnaryOperatorKindEnumRuleCall_1_0 = (RuleCall)cOperatorAssignment_1.eContents().get(0);
+		private final Assignment cOperandAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOperandUnaryOrPrimaryExpressionParserRuleCall_2_0 = (RuleCall)cOperandAssignment_2.eContents().get(0);
+		
+		//UnaryExpression returns Expression :
+		//    {BasicUnaryExpression}
+		//    operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{BasicUnaryExpression}
+		//operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression
+		public Group getGroup() { return cGroup; }
+		
+		//{BasicUnaryExpression}
+		public Action getBasicUnaryExpressionAction_0() { return cBasicUnaryExpressionAction_0; }
+		
+		//operator=UnaryOperatorKind
+		public Assignment getOperatorAssignment_1() { return cOperatorAssignment_1; }
+		
+		//UnaryOperatorKind
+		public RuleCall getOperatorUnaryOperatorKindEnumRuleCall_1_0() { return cOperatorUnaryOperatorKindEnumRuleCall_1_0; }
+		
+		//operand=UnaryOrPrimaryExpression
+		public Assignment getOperandAssignment_2() { return cOperandAssignment_2; }
+		
+		//UnaryOrPrimaryExpression
+		public RuleCall getOperandUnaryOrPrimaryExpressionParserRuleCall_2_0() { return cOperandUnaryOrPrimaryExpressionParserRuleCall_2_0; }
+	}
+	public class PrimaryExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.PrimaryExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final RuleCall cOrExpressionParserRuleCall_1_1_0 = (RuleCall)cAlternatives_1_1.eContents().get(0);
+		private final RuleCall cUnaryExpressionParserRuleCall_1_1_1 = (RuleCall)cAlternatives_1_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//PrimaryExpression returns Expression:
+		//    Call  | '(' (OrExpression | UnaryExpression) ')'  ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Call  | '(' (OrExpression | UnaryExpression) ')'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Call
+		public RuleCall getCallParserRuleCall_0() { return cCallParserRuleCall_0; }
+		
+		//'(' (OrExpression | UnaryExpression) ')'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		
+		//(OrExpression | UnaryExpression)
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		
+		//OrExpression
+		public RuleCall getOrExpressionParserRuleCall_1_1_0() { return cOrExpressionParserRuleCall_1_1_0; }
+		
+		//UnaryExpression
+		public RuleCall getUnaryExpressionParserRuleCall_1_1_1() { return cUnaryExpressionParserRuleCall_1_1_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+	}
+	public class OrExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.OrExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAndExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorOrOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandAndExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//OrExpression returns Expression:
+		//    AndExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=OrOperatorKind
+		//        rhsOperand=AndExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AndExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=OrOperatorKind
+		//    rhsOperand=AndExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//AndExpression
+		public RuleCall getAndExpressionParserRuleCall_0() { return cAndExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=OrOperatorKind
+		//       rhsOperand=AndExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=OrOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//OrOperatorKind
+		public RuleCall getOperatorOrOperatorKindEnumRuleCall_1_1_0() { return cOperatorOrOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=AndExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//AndExpression
+		public RuleCall getRhsOperandAndExpressionParserRuleCall_1_2_0() { return cRhsOperandAndExpressionParserRuleCall_1_2_0; }
+	}
+	public class AndExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.AndExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cEqualExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorAndOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandEqualExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//AndExpression returns Expression:
+		//    EqualExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=AndOperatorKind
+		//        rhsOperand=EqualExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//EqualExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=AndOperatorKind
+		//    rhsOperand=EqualExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//EqualExpression
+		public RuleCall getEqualExpressionParserRuleCall_0() { return cEqualExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=AndOperatorKind
+		//       rhsOperand=EqualExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=AndOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//AndOperatorKind
+		public RuleCall getOperatorAndOperatorKindEnumRuleCall_1_1_0() { return cOperatorAndOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=EqualExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//EqualExpression
+		public RuleCall getRhsOperandEqualExpressionParserRuleCall_1_2_0() { return cRhsOperandEqualExpressionParserRuleCall_1_2_0; }
+	}
+	public class EqualExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EqualExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cComparisionExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorEqualOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandComparisionExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//EqualExpression returns Expression:
+		//    ComparisionExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=EqualOperatorKind
+		//        rhsOperand=ComparisionExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ComparisionExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=EqualOperatorKind
+		//    rhsOperand=ComparisionExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//ComparisionExpression
+		public RuleCall getComparisionExpressionParserRuleCall_0() { return cComparisionExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=EqualOperatorKind
+		//       rhsOperand=ComparisionExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=EqualOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//EqualOperatorKind
+		public RuleCall getOperatorEqualOperatorKindEnumRuleCall_1_1_0() { return cOperatorEqualOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=ComparisionExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//ComparisionExpression
+		public RuleCall getRhsOperandComparisionExpressionParserRuleCall_1_2_0() { return cRhsOperandComparisionExpressionParserRuleCall_1_2_0; }
+	}
+	public class ComparisionExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.ComparisionExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAdditionExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorComparisionOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandAdditionExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//ComparisionExpression returns Expression:
+		//    AdditionExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=ComparisionOperatorKind
+		//        rhsOperand=AdditionExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AdditionExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=ComparisionOperatorKind
+		//    rhsOperand=AdditionExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//AdditionExpression
+		public RuleCall getAdditionExpressionParserRuleCall_0() { return cAdditionExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=ComparisionOperatorKind
+		//       rhsOperand=AdditionExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=ComparisionOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//ComparisionOperatorKind
+		public RuleCall getOperatorComparisionOperatorKindEnumRuleCall_1_1_0() { return cOperatorComparisionOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=AdditionExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//AdditionExpression
+		public RuleCall getRhsOperandAdditionExpressionParserRuleCall_1_2_0() { return cRhsOperandAdditionExpressionParserRuleCall_1_2_0; }
+	}
+	public class AdditionExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.AdditionExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMultiplicationExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorAdditionOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandMultiplicationExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//AdditionExpression returns Expression:
+		//    MultiplicationExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=AdditionOperatorKind
+		//        rhsOperand=MultiplicationExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//MultiplicationExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=AdditionOperatorKind
+		//    rhsOperand=MultiplicationExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//MultiplicationExpression
+		public RuleCall getMultiplicationExpressionParserRuleCall_0() { return cMultiplicationExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=AdditionOperatorKind
+		//       rhsOperand=MultiplicationExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=AdditionOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//AdditionOperatorKind
+		public RuleCall getOperatorAdditionOperatorKindEnumRuleCall_1_1_0() { return cOperatorAdditionOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=MultiplicationExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//MultiplicationExpression
+		public RuleCall getRhsOperandMultiplicationExpressionParserRuleCall_1_2_0() { return cRhsOperandMultiplicationExpressionParserRuleCall_1_2_0; }
+	}
+	public class MultiplicationExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.MultiplicationExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cPrimaryExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cBasicBinaryExpressionLhsOperandAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOperatorMultiplicationOperatorKindEnumRuleCall_1_1_0 = (RuleCall)cOperatorAssignment_1_1.eContents().get(0);
+		private final Assignment cRhsOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRhsOperandUnaryOrPrimaryExpressionParserRuleCall_1_2_0 = (RuleCall)cRhsOperandAssignment_1_2.eContents().get(0);
+		
+		//MultiplicationExpression returns Expression:
+		//    PrimaryExpression (
+		//        {BasicBinaryExpression.lhsOperand=current}
+		//        operator=MultiplicationOperatorKind
+		//        rhsOperand=UnaryOrPrimaryExpression
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//PrimaryExpression (
+		//    {BasicBinaryExpression.lhsOperand=current}
+		//    operator=MultiplicationOperatorKind
+		//    rhsOperand=UnaryOrPrimaryExpression
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//PrimaryExpression
+		public RuleCall getPrimaryExpressionParserRuleCall_0() { return cPrimaryExpressionParserRuleCall_0; }
+		
+		//(
+		//       {BasicBinaryExpression.lhsOperand=current}
+		//       operator=MultiplicationOperatorKind
+		//       rhsOperand=UnaryOrPrimaryExpression
+		//   )*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{BasicBinaryExpression.lhsOperand=current}
+		public Action getBasicBinaryExpressionLhsOperandAction_1_0() { return cBasicBinaryExpressionLhsOperandAction_1_0; }
+		
+		//operator=MultiplicationOperatorKind
+		public Assignment getOperatorAssignment_1_1() { return cOperatorAssignment_1_1; }
+		
+		//MultiplicationOperatorKind
+		public RuleCall getOperatorMultiplicationOperatorKindEnumRuleCall_1_1_0() { return cOperatorMultiplicationOperatorKindEnumRuleCall_1_1_0; }
+		
+		//rhsOperand=UnaryOrPrimaryExpression
+		public Assignment getRhsOperandAssignment_1_2() { return cRhsOperandAssignment_1_2; }
+		
+		//UnaryOrPrimaryExpression
+		public RuleCall getRhsOperandUnaryOrPrimaryExpressionParserRuleCall_1_2_0() { return cRhsOperandUnaryOrPrimaryExpressionParserRuleCall_1_2_0; }
+	}
+	public class CallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Call");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cConstantCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cQuestionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Call returns Call:
+		//    ConstantCall | QuestionCall;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ConstantCall | QuestionCall
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ConstantCall
-		public RuleCall getConstantCallParserRuleCall_1() { return cConstantCallParserRuleCall_1; }
-		
-		//BasicUnaryExpression
-		public RuleCall getBasicUnaryExpressionParserRuleCall_2() { return cBasicUnaryExpressionParserRuleCall_2; }
+		public RuleCall getConstantCallParserRuleCall_0() { return cConstantCallParserRuleCall_0; }
 		
 		//QuestionCall
-		public RuleCall getQuestionCallParserRuleCall_3() { return cQuestionCallParserRuleCall_3; }
+		public RuleCall getQuestionCallParserRuleCall_1() { return cQuestionCallParserRuleCall_1; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Value");
@@ -609,74 +1018,43 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.ConstantCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cConstantCallAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cConstantCallKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cResultTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cResultTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cResultTypeValueTypeCrossReference_3_1_0 = (CrossReference)cResultTypeAssignment_3_1.eContents().get(0);
-		private final RuleCall cResultTypeValueTypeEStringParserRuleCall_3_1_0_1 = (RuleCall)cResultTypeValueTypeCrossReference_3_1_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cValueKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValueValueParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Alternatives cValueAlternatives_1_0 = (Alternatives)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cValueStringValueParserRuleCall_1_0_0 = (RuleCall)cValueAlternatives_1_0.eContents().get(0);
+		private final RuleCall cValueIntegerValueParserRuleCall_1_0_1 = (RuleCall)cValueAlternatives_1_0.eContents().get(1);
+		private final RuleCall cValueBooleanValueParserRuleCall_1_0_2 = (RuleCall)cValueAlternatives_1_0.eContents().get(2);
+		private final RuleCall cValueDecimalValueParserRuleCall_1_0_3 = (RuleCall)cValueAlternatives_1_0.eContents().get(3);
 		
 		//ConstantCall returns ConstantCall:
 		//    {ConstantCall}
-		//    'ConstantCall'
-		//    '{'
-		//        ('resultType' resultType=[ValueType|EString])?
-		//        ('value' value=Value)?
-		//    '}';
+		//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ConstantCall}
-		//'ConstantCall'
-		//'{'
-		//    ('resultType' resultType=[ValueType|EString])?
-		//    ('value' value=Value)?
-		//'}'
+		//value=(StringValue | IntegerValue | BooleanValue | DecimalValue )
 		public Group getGroup() { return cGroup; }
 		
 		//{ConstantCall}
 		public Action getConstantCallAction_0() { return cConstantCallAction_0; }
 		
-		//'ConstantCall'
-		public Keyword getConstantCallKeyword_1() { return cConstantCallKeyword_1; }
+		//value=(StringValue | IntegerValue | BooleanValue | DecimalValue )
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		//(StringValue | IntegerValue | BooleanValue | DecimalValue )
+		public Alternatives getValueAlternatives_1_0() { return cValueAlternatives_1_0; }
 		
-		//('resultType' resultType=[ValueType|EString])?
-		public Group getGroup_3() { return cGroup_3; }
+		//StringValue
+		public RuleCall getValueStringValueParserRuleCall_1_0_0() { return cValueStringValueParserRuleCall_1_0_0; }
 		
-		//'resultType'
-		public Keyword getResultTypeKeyword_3_0() { return cResultTypeKeyword_3_0; }
+		//IntegerValue
+		public RuleCall getValueIntegerValueParserRuleCall_1_0_1() { return cValueIntegerValueParserRuleCall_1_0_1; }
 		
-		//resultType=[ValueType|EString]
-		public Assignment getResultTypeAssignment_3_1() { return cResultTypeAssignment_3_1; }
+		//BooleanValue
+		public RuleCall getValueBooleanValueParserRuleCall_1_0_2() { return cValueBooleanValueParserRuleCall_1_0_2; }
 		
-		//[ValueType|EString]
-		public CrossReference getResultTypeValueTypeCrossReference_3_1_0() { return cResultTypeValueTypeCrossReference_3_1_0; }
-		
-		//EString
-		public RuleCall getResultTypeValueTypeEStringParserRuleCall_3_1_0_1() { return cResultTypeValueTypeEStringParserRuleCall_3_1_0_1; }
-		
-		//('value' value=Value)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'value'
-		public Keyword getValueKeyword_4_0() { return cValueKeyword_4_0; }
-		
-		//value=Value
-		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
-		
-		//Value
-		public RuleCall getValueValueParserRuleCall_4_1_0() { return cValueValueParserRuleCall_4_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//DecimalValue
+		public RuleCall getValueDecimalValueParserRuleCall_1_0_3() { return cValueDecimalValueParserRuleCall_1_0_3; }
 	}
 	public class BasicUnaryExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.BasicUnaryExpression");
@@ -762,69 +1140,32 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	public class QuestionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.QuestionCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQuestionCallKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cResultTypeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cResultTypeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cResultTypeValueTypeCrossReference_2_1_0 = (CrossReference)cResultTypeAssignment_2_1.eContents().get(0);
-		private final RuleCall cResultTypeValueTypeEStringParserRuleCall_2_1_0_1 = (RuleCall)cResultTypeValueTypeCrossReference_2_1_0.eContents().get(1);
-		private final Keyword cQuestionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cQuestionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cQuestionQuestionDefinitionCrossReference_4_0 = (CrossReference)cQuestionAssignment_4.eContents().get(0);
-		private final RuleCall cQuestionQuestionDefinitionEStringParserRuleCall_4_0_1 = (RuleCall)cQuestionQuestionDefinitionCrossReference_4_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Action cQuestionCallAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cQuestionQuestionDefinitionCrossReference_1_0 = (CrossReference)cQuestionAssignment_1.eContents().get(0);
+		private final RuleCall cQuestionQuestionDefinitionEStringParserRuleCall_1_0_1 = (RuleCall)cQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
 		
 		//QuestionCall returns QuestionCall:
-		//    'QuestionCall'
-		//    '{'
-		//        ('resultType' resultType=[ValueType|EString])?
-		//        'question' question=[QuestionDefinition|EString]
-		//    '}';
+		//    {QuestionCall}
+		//    question=[QuestionDefinition|EString]
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'QuestionCall'
-		//'{'
-		//    ('resultType' resultType=[ValueType|EString])?
-		//    'question' question=[QuestionDefinition|EString]
-		//'}'
+		//{QuestionCall}
+		//question=[QuestionDefinition|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//'QuestionCall'
-		public Keyword getQuestionCallKeyword_0() { return cQuestionCallKeyword_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-		
-		//('resultType' resultType=[ValueType|EString])?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'resultType'
-		public Keyword getResultTypeKeyword_2_0() { return cResultTypeKeyword_2_0; }
-		
-		//resultType=[ValueType|EString]
-		public Assignment getResultTypeAssignment_2_1() { return cResultTypeAssignment_2_1; }
-		
-		//[ValueType|EString]
-		public CrossReference getResultTypeValueTypeCrossReference_2_1_0() { return cResultTypeValueTypeCrossReference_2_1_0; }
-		
-		//EString
-		public RuleCall getResultTypeValueTypeEStringParserRuleCall_2_1_0_1() { return cResultTypeValueTypeEStringParserRuleCall_2_1_0_1; }
-		
-		//'question'
-		public Keyword getQuestionKeyword_3() { return cQuestionKeyword_3; }
+		//{QuestionCall}
+		public Action getQuestionCallAction_0() { return cQuestionCallAction_0; }
 		
 		//question=[QuestionDefinition|EString]
-		public Assignment getQuestionAssignment_4() { return cQuestionAssignment_4; }
+		public Assignment getQuestionAssignment_1() { return cQuestionAssignment_1; }
 		
 		//[QuestionDefinition|EString]
-		public CrossReference getQuestionQuestionDefinitionCrossReference_4_0() { return cQuestionQuestionDefinitionCrossReference_4_0; }
+		public CrossReference getQuestionQuestionDefinitionCrossReference_1_0() { return cQuestionQuestionDefinitionCrossReference_1_0; }
 		
 		//EString
-		public RuleCall getQuestionQuestionDefinitionEStringParserRuleCall_4_0_1() { return cQuestionQuestionDefinitionEStringParserRuleCall_4_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public RuleCall getQuestionQuestionDefinitionEStringParserRuleCall_1_0_1() { return cQuestionQuestionDefinitionEStringParserRuleCall_1_0_1; }
 	}
 	public class BooleanValueTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.BooleanValueType");
@@ -1834,33 +2175,189 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.UnaryOperatorKind");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cUNARYMINUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cUNARYMINUSUNARYMINUSKeyword_0_0 = (Keyword)cUNARYMINUSEnumLiteralDeclaration_0.eContents().get(0);
+		private final Keyword cUNARYMINUSHyphenMinusKeyword_0_0 = (Keyword)cUNARYMINUSEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cNOTEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cNOTNOTKeyword_1_0 = (Keyword)cNOTEnumLiteralDeclaration_1.eContents().get(0);
+		private final Keyword cNOTNotKeyword_1_0 = (Keyword)cNOTEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum UnaryOperatorKind returns UnaryOperatorKind:
-		//                UNARYMINUS = 'UNARYMINUS' | NOT = 'NOT';
+		//                UNARYMINUS = '-' | NOT = 'not';
 		public EnumRule getRule() { return rule; }
 		
-		//UNARYMINUS = 'UNARYMINUS' | NOT = 'NOT'
+		//UNARYMINUS = '-' | NOT = 'not'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//UNARYMINUS = 'UNARYMINUS'
+		//UNARYMINUS = '-'
 		public EnumLiteralDeclaration getUNARYMINUSEnumLiteralDeclaration_0() { return cUNARYMINUSEnumLiteralDeclaration_0; }
 		
-		//'UNARYMINUS'
-		public Keyword getUNARYMINUSUNARYMINUSKeyword_0_0() { return cUNARYMINUSUNARYMINUSKeyword_0_0; }
+		//'-'
+		public Keyword getUNARYMINUSHyphenMinusKeyword_0_0() { return cUNARYMINUSHyphenMinusKeyword_0_0; }
 		
-		//NOT = 'NOT'
+		//NOT = 'not'
 		public EnumLiteralDeclaration getNOTEnumLiteralDeclaration_1() { return cNOTEnumLiteralDeclaration_1; }
 		
-		//'NOT'
-		public Keyword getNOTNOTKeyword_1_0() { return cNOTNOTKeyword_1_0; }
+		//'not'
+		public Keyword getNOTNotKeyword_1_0() { return cNOTNotKeyword_1_0; }
+	}
+	public class AdditionOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.AdditionOperatorKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cPLUSEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cPLUSPlusSignKeyword_0_0 = (Keyword)cPLUSEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMINUSEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cMINUSHyphenMinusKeyword_1_0 = (Keyword)cMINUSEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum AdditionOperatorKind returns BinaryOperatorKind:
+		//    PLUS = '+' | MINUS = '-'
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//PLUS = '+' | MINUS = '-'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//PLUS = '+'
+		public EnumLiteralDeclaration getPLUSEnumLiteralDeclaration_0() { return cPLUSEnumLiteralDeclaration_0; }
+		
+		//'+'
+		public Keyword getPLUSPlusSignKeyword_0_0() { return cPLUSPlusSignKeyword_0_0; }
+		
+		//MINUS = '-'
+		public EnumLiteralDeclaration getMINUSEnumLiteralDeclaration_1() { return cMINUSEnumLiteralDeclaration_1; }
+		
+		//'-'
+		public Keyword getMINUSHyphenMinusKeyword_1_0() { return cMINUSHyphenMinusKeyword_1_0; }
+	}
+	public class MultiplicationOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.MultiplicationOperatorKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMULTEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMULTAsteriskKeyword_0_0 = (Keyword)cMULTEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cDIVEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cDIVSolidusKeyword_1_0 = (Keyword)cDIVEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum MultiplicationOperatorKind returns BinaryOperatorKind:
+		//    MULT = '*' | DIV = '/'
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//MULT = '*' | DIV = '/'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//MULT = '*'
+		public EnumLiteralDeclaration getMULTEnumLiteralDeclaration_0() { return cMULTEnumLiteralDeclaration_0; }
+		
+		//'*'
+		public Keyword getMULTAsteriskKeyword_0_0() { return cMULTAsteriskKeyword_0_0; }
+		
+		//DIV = '/'
+		public EnumLiteralDeclaration getDIVEnumLiteralDeclaration_1() { return cDIVEnumLiteralDeclaration_1; }
+		
+		//'/'
+		public Keyword getDIVSolidusKeyword_1_0() { return cDIVSolidusKeyword_1_0; }
+	}
+	public class EqualOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EqualOperatorKind");
+		private final EnumLiteralDeclaration cEQUALEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cEQUALEqualsSignKeyword_0 = (Keyword)cEQUALEnumLiteralDeclaration.eContents().get(0);
+		
+		//enum EqualOperatorKind  returns BinaryOperatorKind:
+		//    EQUAL = '='
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//EQUAL = '='
+		public EnumLiteralDeclaration getEQUALEnumLiteralDeclaration() { return cEQUALEnumLiteralDeclaration; }
+		
+		//'='
+		public Keyword getEQUALEqualsSignKeyword_0() { return cEQUALEqualsSignKeyword_0; }
+	}
+	public class ComparisionOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.ComparisionOperatorKind");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cGREATEREnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cGREATERGreaterThanSignKeyword_0_0 = (Keyword)cGREATEREnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cLOWEREnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cLOWERLessThanSignKeyword_1_0 = (Keyword)cLOWEREnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cGREATEROREQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cGREATEROREQUALGreaterThanSignEqualsSignKeyword_2_0 = (Keyword)cGREATEROREQUALEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cLOWEROREQUALEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cLOWEROREQUALLessThanSignEqualsSignKeyword_3_0 = (Keyword)cLOWEROREQUALEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum ComparisionOperatorKind  returns BinaryOperatorKind:
+		//    GREATER = '>' | LOWER = '<' | GREATEROREQUAL = '>=' | LOWEROREQUAL = '<='
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//GREATER = '>' | LOWER = '<' | GREATEROREQUAL = '>=' | LOWEROREQUAL = '<='
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//GREATER = '>'
+		public EnumLiteralDeclaration getGREATEREnumLiteralDeclaration_0() { return cGREATEREnumLiteralDeclaration_0; }
+		
+		//'>'
+		public Keyword getGREATERGreaterThanSignKeyword_0_0() { return cGREATERGreaterThanSignKeyword_0_0; }
+		
+		//LOWER = '<'
+		public EnumLiteralDeclaration getLOWEREnumLiteralDeclaration_1() { return cLOWEREnumLiteralDeclaration_1; }
+		
+		//'<'
+		public Keyword getLOWERLessThanSignKeyword_1_0() { return cLOWERLessThanSignKeyword_1_0; }
+		
+		//GREATEROREQUAL = '>='
+		public EnumLiteralDeclaration getGREATEROREQUALEnumLiteralDeclaration_2() { return cGREATEROREQUALEnumLiteralDeclaration_2; }
+		
+		//'>='
+		public Keyword getGREATEROREQUALGreaterThanSignEqualsSignKeyword_2_0() { return cGREATEROREQUALGreaterThanSignEqualsSignKeyword_2_0; }
+		
+		//LOWEROREQUAL = '<='
+		public EnumLiteralDeclaration getLOWEROREQUALEnumLiteralDeclaration_3() { return cLOWEROREQUALEnumLiteralDeclaration_3; }
+		
+		//'<='
+		public Keyword getLOWEROREQUALLessThanSignEqualsSignKeyword_3_0() { return cLOWEROREQUALLessThanSignEqualsSignKeyword_3_0; }
+	}
+	public class AndOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.AndOperatorKind");
+		private final EnumLiteralDeclaration cANDEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cANDAndKeyword_0 = (Keyword)cANDEnumLiteralDeclaration.eContents().get(0);
+		
+		//enum AndOperatorKind  returns BinaryOperatorKind:
+		//    AND = 'and';
+		public EnumRule getRule() { return rule; }
+		
+		//AND = 'and'
+		public EnumLiteralDeclaration getANDEnumLiteralDeclaration() { return cANDEnumLiteralDeclaration; }
+		
+		//'and'
+		public Keyword getANDAndKeyword_0() { return cANDAndKeyword_0; }
+	}
+	public class OrOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.OrOperatorKind");
+		private final EnumLiteralDeclaration cOREnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
+		private final Keyword cOROrKeyword_0 = (Keyword)cOREnumLiteralDeclaration.eContents().get(0);
+		
+		//enum OrOperatorKind returns BinaryOperatorKind:
+		//    OR = 'or';
+		public EnumRule getRule() { return rule; }
+		
+		//OR = 'or'
+		public EnumLiteralDeclaration getOREnumLiteralDeclaration() { return cOREnumLiteralDeclaration; }
+		
+		//'or'
+		public Keyword getOROrKeyword_0() { return cOROrKeyword_0; }
 	}
 	
 	private final QLModelElements pQLModel;
 	private final ValueTypeElements pValueType;
 	private final ExpressionElements pExpression;
+	private final UnaryOrPrimaryExpressionElements pUnaryOrPrimaryExpression;
+	private final UnaryExpressionElements pUnaryExpression;
+	private final PrimaryExpressionElements pPrimaryExpression;
+	private final OrExpressionElements pOrExpression;
+	private final AndExpressionElements pAndExpression;
+	private final EqualExpressionElements pEqualExpression;
+	private final ComparisionExpressionElements pComparisionExpression;
+	private final AdditionExpressionElements pAdditionExpression;
+	private final MultiplicationExpressionElements pMultiplicationExpression;
+	private final CallElements pCall;
 	private final ValueElements pValue;
 	private final FormElements pForm;
 	private final DefinitionGroupElements pDefinitionGroup;
@@ -1890,6 +2387,12 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final DecimalValueElements pDecimalValue;
 	private final EFloatElements pEFloat;
 	private final UnaryOperatorKindElements eUnaryOperatorKind;
+	private final AdditionOperatorKindElements eAdditionOperatorKind;
+	private final MultiplicationOperatorKindElements eMultiplicationOperatorKind;
+	private final EqualOperatorKindElements eEqualOperatorKind;
+	private final ComparisionOperatorKindElements eComparisionOperatorKind;
+	private final AndOperatorKindElements eAndOperatorKind;
+	private final OrOperatorKindElements eOrOperatorKind;
 	private final QuestionDefinitionElements pQuestionDefinition;
 	
 	private final Grammar grammar;
@@ -1904,6 +2407,16 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pQLModel = new QLModelElements();
 		this.pValueType = new ValueTypeElements();
 		this.pExpression = new ExpressionElements();
+		this.pUnaryOrPrimaryExpression = new UnaryOrPrimaryExpressionElements();
+		this.pUnaryExpression = new UnaryExpressionElements();
+		this.pPrimaryExpression = new PrimaryExpressionElements();
+		this.pOrExpression = new OrExpressionElements();
+		this.pAndExpression = new AndExpressionElements();
+		this.pEqualExpression = new EqualExpressionElements();
+		this.pComparisionExpression = new ComparisionExpressionElements();
+		this.pAdditionExpression = new AdditionExpressionElements();
+		this.pMultiplicationExpression = new MultiplicationExpressionElements();
+		this.pCall = new CallElements();
 		this.pValue = new ValueElements();
 		this.pForm = new FormElements();
 		this.pDefinitionGroup = new DefinitionGroupElements();
@@ -1933,6 +2446,12 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pDecimalValue = new DecimalValueElements();
 		this.pEFloat = new EFloatElements();
 		this.eUnaryOperatorKind = new UnaryOperatorKindElements();
+		this.eAdditionOperatorKind = new AdditionOperatorKindElements();
+		this.eMultiplicationOperatorKind = new MultiplicationOperatorKindElements();
+		this.eEqualOperatorKind = new EqualOperatorKindElements();
+		this.eComparisionOperatorKind = new ComparisionOperatorKindElements();
+		this.eAndOperatorKind = new AndOperatorKindElements();
+		this.eOrOperatorKind = new OrOperatorKindElements();
 		this.pQuestionDefinition = new QuestionDefinitionElements();
 	}
 	
@@ -1988,13 +2507,147 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//Expression returns Expression:
-	//    BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
+	//    UnaryOrPrimaryExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
 	
 	public ParserRule getExpressionRule() {
 		return getExpressionAccess().getRule();
+	}
+	
+	//    //BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
+	//UnaryOrPrimaryExpression returns Expression:
+	//    PrimaryExpression | UnaryExpression
+	//    ;
+	public UnaryOrPrimaryExpressionElements getUnaryOrPrimaryExpressionAccess() {
+		return pUnaryOrPrimaryExpression;
+	}
+	
+	public ParserRule getUnaryOrPrimaryExpressionRule() {
+		return getUnaryOrPrimaryExpressionAccess().getRule();
+	}
+	
+	//UnaryExpression returns Expression :
+	//    {BasicUnaryExpression}
+	//    operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression
+	//    ;
+	public UnaryExpressionElements getUnaryExpressionAccess() {
+		return pUnaryExpression;
+	}
+	
+	public ParserRule getUnaryExpressionRule() {
+		return getUnaryExpressionAccess().getRule();
+	}
+	
+	//PrimaryExpression returns Expression:
+	//    Call  | '(' (OrExpression | UnaryExpression) ')'  ;
+	public PrimaryExpressionElements getPrimaryExpressionAccess() {
+		return pPrimaryExpression;
+	}
+	
+	public ParserRule getPrimaryExpressionRule() {
+		return getPrimaryExpressionAccess().getRule();
+	}
+	
+	//OrExpression returns Expression:
+	//    AndExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=OrOperatorKind
+	//        rhsOperand=AndExpression
+	//    )*
+	//;
+	public OrExpressionElements getOrExpressionAccess() {
+		return pOrExpression;
+	}
+	
+	public ParserRule getOrExpressionRule() {
+		return getOrExpressionAccess().getRule();
+	}
+	
+	//AndExpression returns Expression:
+	//    EqualExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=AndOperatorKind
+	//        rhsOperand=EqualExpression
+	//    )*
+	//;
+	public AndExpressionElements getAndExpressionAccess() {
+		return pAndExpression;
+	}
+	
+	public ParserRule getAndExpressionRule() {
+		return getAndExpressionAccess().getRule();
+	}
+	
+	//EqualExpression returns Expression:
+	//    ComparisionExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=EqualOperatorKind
+	//        rhsOperand=ComparisionExpression
+	//    )*
+	//;
+	public EqualExpressionElements getEqualExpressionAccess() {
+		return pEqualExpression;
+	}
+	
+	public ParserRule getEqualExpressionRule() {
+		return getEqualExpressionAccess().getRule();
+	}
+	
+	//ComparisionExpression returns Expression:
+	//    AdditionExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=ComparisionOperatorKind
+	//        rhsOperand=AdditionExpression
+	//    )*
+	//;
+	public ComparisionExpressionElements getComparisionExpressionAccess() {
+		return pComparisionExpression;
+	}
+	
+	public ParserRule getComparisionExpressionRule() {
+		return getComparisionExpressionAccess().getRule();
+	}
+	
+	//AdditionExpression returns Expression:
+	//    MultiplicationExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=AdditionOperatorKind
+	//        rhsOperand=MultiplicationExpression
+	//    )*
+	//;
+	public AdditionExpressionElements getAdditionExpressionAccess() {
+		return pAdditionExpression;
+	}
+	
+	public ParserRule getAdditionExpressionRule() {
+		return getAdditionExpressionAccess().getRule();
+	}
+	
+	//MultiplicationExpression returns Expression:
+	//    PrimaryExpression (
+	//        {BasicBinaryExpression.lhsOperand=current}
+	//        operator=MultiplicationOperatorKind
+	//        rhsOperand=UnaryOrPrimaryExpression
+	//    )*
+	//;
+	public MultiplicationExpressionElements getMultiplicationExpressionAccess() {
+		return pMultiplicationExpression;
+	}
+	
+	public ParserRule getMultiplicationExpressionRule() {
+		return getMultiplicationExpressionAccess().getRule();
+	}
+	
+	//Call returns Call:
+	//    ConstantCall | QuestionCall;
+	public CallElements getCallAccess() {
+		return pCall;
+	}
+	
+	public ParserRule getCallRule() {
+		return getCallAccess().getRule();
 	}
 	
 	//Value returns Value:
@@ -2126,11 +2779,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//ConstantCall returns ConstantCall:
 	//    {ConstantCall}
-	//    'ConstantCall'
-	//    '{'
-	//        ('resultType' resultType=[ValueType|EString])?
-	//        ('value' value=Value)?
-	//    '}';
+	//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+	//    ;
 	public ConstantCallElements getConstantCallAccess() {
 		return pConstantCall;
 	}
@@ -2155,11 +2805,9 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//QuestionCall returns QuestionCall:
-	//    'QuestionCall'
-	//    '{'
-	//        ('resultType' resultType=[ValueType|EString])?
-	//        'question' question=[QuestionDefinition|EString]
-	//    '}';
+	//    {QuestionCall}
+	//    question=[QuestionDefinition|EString]
+	//    ;
 	public QuestionCallElements getQuestionCallAccess() {
 		return pQuestionCall;
 	}
@@ -2372,13 +3020,77 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//enum UnaryOperatorKind returns UnaryOperatorKind:
-	//                UNARYMINUS = 'UNARYMINUS' | NOT = 'NOT';
+	//                UNARYMINUS = '-' | NOT = 'not';
 	public UnaryOperatorKindElements getUnaryOperatorKindAccess() {
 		return eUnaryOperatorKind;
 	}
 	
 	public EnumRule getUnaryOperatorKindRule() {
 		return getUnaryOperatorKindAccess().getRule();
+	}
+	
+	//enum AdditionOperatorKind returns BinaryOperatorKind:
+	//    PLUS = '+' | MINUS = '-'
+	//;
+	public AdditionOperatorKindElements getAdditionOperatorKindAccess() {
+		return eAdditionOperatorKind;
+	}
+	
+	public EnumRule getAdditionOperatorKindRule() {
+		return getAdditionOperatorKindAccess().getRule();
+	}
+	
+	//enum MultiplicationOperatorKind returns BinaryOperatorKind:
+	//    MULT = '*' | DIV = '/'
+	//;
+	public MultiplicationOperatorKindElements getMultiplicationOperatorKindAccess() {
+		return eMultiplicationOperatorKind;
+	}
+	
+	public EnumRule getMultiplicationOperatorKindRule() {
+		return getMultiplicationOperatorKindAccess().getRule();
+	}
+	
+	//enum EqualOperatorKind  returns BinaryOperatorKind:
+	//    EQUAL = '='
+	//;
+	public EqualOperatorKindElements getEqualOperatorKindAccess() {
+		return eEqualOperatorKind;
+	}
+	
+	public EnumRule getEqualOperatorKindRule() {
+		return getEqualOperatorKindAccess().getRule();
+	}
+	
+	//enum ComparisionOperatorKind  returns BinaryOperatorKind:
+	//    GREATER = '>' | LOWER = '<' | GREATEROREQUAL = '>=' | LOWEROREQUAL = '<='
+	//;
+	public ComparisionOperatorKindElements getComparisionOperatorKindAccess() {
+		return eComparisionOperatorKind;
+	}
+	
+	public EnumRule getComparisionOperatorKindRule() {
+		return getComparisionOperatorKindAccess().getRule();
+	}
+	
+	//enum AndOperatorKind  returns BinaryOperatorKind:
+	//    AND = 'and';
+	public AndOperatorKindElements getAndOperatorKindAccess() {
+		return eAndOperatorKind;
+	}
+	
+	public EnumRule getAndOperatorKindRule() {
+		return getAndOperatorKindAccess().getRule();
+	}
+	
+	//enum OrOperatorKind returns BinaryOperatorKind:
+	//    OR = 'or';
+	public OrOperatorKindElements getOrOperatorKindAccess() {
+		return eOrOperatorKind;
+	}
+	
+	public EnumRule getOrOperatorKindRule() {
+		return getOrOperatorKindAccess().getRule();
 	}
 	
 	//QuestionDefinition returns QuestionDefinition:

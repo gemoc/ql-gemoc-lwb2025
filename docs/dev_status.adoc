@@ -15,13 +15,13 @@ endif::included_in_readme[]
 
 * [x] QL ecore
 * [ ] QLS ecore
-* [ ] ⚠️ TODO Language for use of the coordnation implementation
+* [ ] ⚠️ TODO Language for use of the coordination implementation
 
 === Representations
 
 * [ ] QL editors
 ** [x] QL tree editor
-** [ ] 🚧 QL textual editor
+** [x]  QL textual editor
 ** [ ] QL graphical editor
 * [ ] QLS editors
 ** [ ] QLS tree editor

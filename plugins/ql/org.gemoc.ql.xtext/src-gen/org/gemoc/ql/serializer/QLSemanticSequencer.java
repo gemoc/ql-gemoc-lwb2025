@@ -55,11 +55,54 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (epackage == QlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case QlPackage.BASIC_BINARY_EXPRESSION:
-				sequence_BasicBinaryExpression(context, (BasicBinaryExpression) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getExpressionRule()
+						|| rule == grammarAccess.getUnaryOrPrimaryExpressionRule()
+						|| rule == grammarAccess.getPrimaryExpressionRule()
+						|| rule == grammarAccess.getOrExpressionRule()
+						|| action == grammarAccess.getOrExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getAndExpressionRule()
+						|| action == grammarAccess.getAndExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getEqualExpressionRule()
+						|| action == grammarAccess.getEqualExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getComparisionExpressionRule()
+						|| action == grammarAccess.getComparisionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getAdditionExpressionRule()
+						|| action == grammarAccess.getAdditionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getMultiplicationExpressionRule()
+						|| action == grammarAccess.getMultiplicationExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()) {
+					sequence_AdditionExpression_AndExpression_ComparisionExpression_EqualExpression_MultiplicationExpression_OrExpression(context, (BasicBinaryExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getBasicBinaryExpressionRule()) {
+					sequence_BasicBinaryExpression(context, (BasicBinaryExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case QlPackage.BASIC_UNARY_EXPRESSION:
-				sequence_BasicUnaryExpression(context, (BasicUnaryExpression) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getBasicUnaryExpressionRule()) {
+					sequence_BasicUnaryExpression(context, (BasicUnaryExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getExpressionRule()
+						|| rule == grammarAccess.getUnaryOrPrimaryExpressionRule()
+						|| rule == grammarAccess.getUnaryExpressionRule()
+						|| rule == grammarAccess.getPrimaryExpressionRule()
+						|| rule == grammarAccess.getOrExpressionRule()
+						|| action == grammarAccess.getOrExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getAndExpressionRule()
+						|| action == grammarAccess.getAndExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getEqualExpressionRule()
+						|| action == grammarAccess.getEqualExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getComparisionExpressionRule()
+						|| action == grammarAccess.getComparisionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getAdditionExpressionRule()
+						|| action == grammarAccess.getAdditionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()
+						|| rule == grammarAccess.getMultiplicationExpressionRule()
+						|| action == grammarAccess.getMultiplicationExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()) {
+					sequence_UnaryExpression(context, (BasicUnaryExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case QlPackage.BOOLEAN_VALUE:
 				sequence_BooleanValue(context, (BooleanValue) semanticObject); 
 				return; 
@@ -132,6 +175,40 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * <pre>
 	 * Contexts:
 	 *     Expression returns BasicBinaryExpression
+	 *     UnaryOrPrimaryExpression returns BasicBinaryExpression
+	 *     PrimaryExpression returns BasicBinaryExpression
+	 *     OrExpression returns BasicBinaryExpression
+	 *     OrExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *     AndExpression returns BasicBinaryExpression
+	 *     AndExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *     EqualExpression returns BasicBinaryExpression
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *     ComparisionExpression returns BasicBinaryExpression
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *     AdditionExpression returns BasicBinaryExpression
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *     MultiplicationExpression returns BasicBinaryExpression
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns BasicBinaryExpression
+	 *
+	 * Constraint:
+	 *     (
+	 *         (lhsOperand=OrExpression_BasicBinaryExpression_1_0 operator=OrOperatorKind rhsOperand=AndExpression) | 
+	 *         (lhsOperand=AndExpression_BasicBinaryExpression_1_0 operator=AndOperatorKind rhsOperand=EqualExpression) | 
+	 *         (lhsOperand=EqualExpression_BasicBinaryExpression_1_0 operator=EqualOperatorKind rhsOperand=ComparisionExpression) | 
+	 *         (lhsOperand=ComparisionExpression_BasicBinaryExpression_1_0 operator=ComparisionOperatorKind rhsOperand=AdditionExpression) | 
+	 *         (lhsOperand=AdditionExpression_BasicBinaryExpression_1_0 operator=AdditionOperatorKind rhsOperand=MultiplicationExpression) | 
+	 *         (lhsOperand=MultiplicationExpression_BasicBinaryExpression_1_0 operator=MultiplicationOperatorKind rhsOperand=UnaryOrPrimaryExpression)
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_AdditionExpression_AndExpression_ComparisionExpression_EqualExpression_MultiplicationExpression_OrExpression(ISerializationContext context, BasicBinaryExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     BasicBinaryExpression returns BasicBinaryExpression
 	 *
 	 * Constraint:
@@ -146,7 +223,6 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Expression returns BasicUnaryExpression
 	 *     BasicUnaryExpression returns BasicUnaryExpression
 	 *
 	 * Constraint:
@@ -192,10 +268,25 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * <pre>
 	 * Contexts:
 	 *     Expression returns ConstantCall
+	 *     UnaryOrPrimaryExpression returns ConstantCall
+	 *     PrimaryExpression returns ConstantCall
+	 *     OrExpression returns ConstantCall
+	 *     OrExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     AndExpression returns ConstantCall
+	 *     AndExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     EqualExpression returns ConstantCall
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     ComparisionExpression returns ConstantCall
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     AdditionExpression returns ConstantCall
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     MultiplicationExpression returns ConstantCall
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns ConstantCall
+	 *     Call returns ConstantCall
 	 *     ConstantCall returns ConstantCall
 	 *
 	 * Constraint:
-	 *     (resultType=[ValueType|EString]? value=Value?)
+	 *     (value=StringValue | value=IntegerValue | value=BooleanValue | value=DecimalValue)
 	 * </pre>
 	 */
 	protected void sequence_ConstantCall(ISerializationContext context, ConstantCall semanticObject) {
@@ -383,14 +474,35 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * <pre>
 	 * Contexts:
 	 *     Expression returns QuestionCall
+	 *     UnaryOrPrimaryExpression returns QuestionCall
+	 *     PrimaryExpression returns QuestionCall
+	 *     OrExpression returns QuestionCall
+	 *     OrExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     AndExpression returns QuestionCall
+	 *     AndExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     EqualExpression returns QuestionCall
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     ComparisionExpression returns QuestionCall
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     AdditionExpression returns QuestionCall
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     MultiplicationExpression returns QuestionCall
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns QuestionCall
+	 *     Call returns QuestionCall
 	 *     QuestionCall returns QuestionCall
 	 *
 	 * Constraint:
-	 *     (resultType=[ValueType|EString]? question=[QuestionDefinition|EString])
+	 *     question=[QuestionDefinition|EString]
 	 * </pre>
 	 */
 	protected void sequence_QuestionCall(ISerializationContext context, QuestionCall semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.QUESTION_CALL__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.QUESTION_CALL__QUESTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionEStringParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION_CALL__QUESTION, false));
+		feeder.finish();
 	}
 	
 	
@@ -469,6 +581,44 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_StringValue(ISerializationContext context, StringValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns BasicUnaryExpression
+	 *     UnaryOrPrimaryExpression returns BasicUnaryExpression
+	 *     UnaryExpression returns BasicUnaryExpression
+	 *     PrimaryExpression returns BasicUnaryExpression
+	 *     OrExpression returns BasicUnaryExpression
+	 *     OrExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *     AndExpression returns BasicUnaryExpression
+	 *     AndExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *     EqualExpression returns BasicUnaryExpression
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *     ComparisionExpression returns BasicUnaryExpression
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *     AdditionExpression returns BasicUnaryExpression
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *     MultiplicationExpression returns BasicUnaryExpression
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns BasicUnaryExpression
+	 *
+	 * Constraint:
+	 *     (operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression)
+	 * </pre>
+	 */
+	protected void sequence_UnaryExpression(ISerializationContext context, BasicUnaryExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.BASIC_UNARY_EXPRESSION__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.BASIC_UNARY_EXPRESSION__OPERATOR));
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.UNARY_EXPRESSION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.UNARY_EXPRESSION__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorKindEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getUnaryExpressionAccess().getOperandUnaryOrPrimaryExpressionParserRuleCall_2_0(), semanticObject.getOperand());
+		feeder.finish();
 	}
 	
 	

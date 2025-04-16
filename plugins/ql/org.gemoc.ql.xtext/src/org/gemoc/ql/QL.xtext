@@ -20,9 +20,67 @@ ValueType returns ValueType:
 
 
 Expression returns Expression:
-	BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
+	UnaryOrPrimaryExpression;
+	//BasicBinaryExpression | ConstantCall | BasicUnaryExpression | QuestionCall;
 
+UnaryOrPrimaryExpression returns Expression: 
+	PrimaryExpression | UnaryExpression
+	;
+UnaryExpression returns Expression : 
+	{BasicUnaryExpression} 
+	operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression 
+	;
+PrimaryExpression returns Expression:
+	Call  | '(' (OrExpression | UnaryExpression) ')'  ;
 
+OrExpression returns Expression:
+	AndExpression (
+		{BasicBinaryExpression.lhsOperand=current} 
+		operator=OrOperatorKind
+		rhsOperand=AndExpression
+	)*
+;
+AndExpression returns Expression:
+	EqualExpression (
+		{BasicBinaryExpression.lhsOperand=current} 
+		operator=AndOperatorKind
+		rhsOperand=EqualExpression
+	)*
+;
+EqualExpression returns Expression:
+	ComparisionExpression (
+		{BasicBinaryExpression.lhsOperand=current}
+		operator=EqualOperatorKind
+		rhsOperand=ComparisionExpression
+	)*
+;
+
+ComparisionExpression returns Expression:
+	AdditionExpression (
+		{BasicBinaryExpression.lhsOperand=current}
+		operator=ComparisionOperatorKind
+		rhsOperand=AdditionExpression
+	)*
+;
+AdditionExpression returns Expression:
+	MultiplicationExpression (
+		{BasicBinaryExpression.lhsOperand=current} 
+		operator=AdditionOperatorKind
+		rhsOperand=MultiplicationExpression
+	)*
+;
+MultiplicationExpression returns Expression:
+	PrimaryExpression (
+		{BasicBinaryExpression.lhsOperand=current} 
+		operator=MultiplicationOperatorKind
+		rhsOperand=UnaryOrPrimaryExpression
+	)*
+;
+
+Call returns Call:
+	ConstantCall | QuestionCall;
+
+	
 Value returns Value:
 	IntegerValue | StringValue | BooleanValue | DateValue | DecimalValue;
 
@@ -83,11 +141,9 @@ BasicBinaryExpression returns BasicBinaryExpression:
 
 ConstantCall returns ConstantCall:
 	{ConstantCall}
-	'ConstantCall'
-	'{'
-		('resultType' resultType=[ValueType|EString])?
-		('value' value=Value)?
-	'}';
+	value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+
+	;
 
 BasicUnaryExpression returns BasicUnaryExpression:
 	'BasicUnaryExpression'
@@ -98,11 +154,9 @@ BasicUnaryExpression returns BasicUnaryExpression:
 	'}';
 
 QuestionCall returns QuestionCall:
-	'QuestionCall'
-	'{'
-		('resultType' resultType=[ValueType|EString])?
-		'question' question=[QuestionDefinition|EString]
-	'}';
+	{QuestionCall}
+	question=[QuestionDefinition|EString]
+	;
 
 BooleanValueType returns BooleanValueType:
 	{BooleanValueType}
@@ -203,7 +257,24 @@ EFloat returns ecore::EFloat:
 	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
 
 enum UnaryOperatorKind returns UnaryOperatorKind:
-				UNARYMINUS = 'UNARYMINUS' | NOT = 'NOT';
+				UNARYMINUS = '-' | NOT = 'not';
+
+enum AdditionOperatorKind returns BinaryOperatorKind: 
+	PLUS = '+' | MINUS = '-'
+;
+enum MultiplicationOperatorKind returns BinaryOperatorKind: 
+	MULT = '*' | DIV = '/'  
+;
+enum EqualOperatorKind  returns BinaryOperatorKind: 
+	EQUAL = '=' 
+;
+enum ComparisionOperatorKind  returns BinaryOperatorKind: 
+	GREATER = '>' | LOWER = '<' | GREATEROREQUAL = '>=' | LOWEROREQUAL = '<=' 
+;
+enum AndOperatorKind  returns BinaryOperatorKind: 
+	AND = 'and';
+enum OrOperatorKind returns BinaryOperatorKind:
+	OR = 'or';
 
 QuestionDefinition returns QuestionDefinition:
 	(isMandatory?='mandatory')?
