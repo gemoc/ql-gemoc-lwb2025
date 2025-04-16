@@ -9,12 +9,19 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
+import org.eclipse.xtext.formatting2.IHiddenRegionFormatter;
+import org.eclipse.xtext.formatting2.regionaccess.ISemanticRegion;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
+import org.gemoc.ql.model.ql.Question;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.QuestionGroup;
+import org.gemoc.ql.model.ql.ValueType;
 import org.gemoc.ql.services.QLGrammarAccess;
 
 @SuppressWarnings("all")
@@ -24,18 +31,172 @@ public class QLFormatter extends AbstractFormatter2 {
   private QLGrammarAccess _qLGrammarAccess;
 
   protected void _format(final QLModel qLModel, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(qLModel).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(qLModel).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_1);
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(close, _function_2);
     EList<Form> _forms = qLModel.getForms();
     for (final Form form : _forms) {
-      document.<Form>format(form);
+      {
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<Form>prepend(form, _function_3);
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<Form>surround(form, _function_4);
+        document.<Form>format(form);
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<Form>append(form, _function_5);
+      }
     }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1, 1, 2);
+    };
+    document.<QLModel>append(qLModel, _function_3);
     EList<DefinitionGroup> _definitionGroup = qLModel.getDefinitionGroup();
     for (final DefinitionGroup definitionGroup : _definitionGroup) {
-      document.<DefinitionGroup>format(definitionGroup);
+      {
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<DefinitionGroup>prepend(definitionGroup, _function_4);
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<DefinitionGroup>surround(definitionGroup, _function_5);
+        document.<DefinitionGroup>format(definitionGroup);
+        final Procedure1<IHiddenRegionFormatter> _function_6 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<DefinitionGroup>append(definitionGroup, _function_6);
+      }
     }
   }
 
   protected void _format(final Form form, @Extension final IFormattableDocument document) {
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.prepend(this.textRegionExtensions.regionFor(form).keyword("Form"), _function);
     document.<QuestionGroup>format(form.getQuestionGroup());
+  }
+
+  protected void _format(final QuestionGroup questionGroup, @Extension final IFormattableDocument document) {
+    EList<QuestionGroup> _questionGroups = questionGroup.getQuestionGroups();
+    for (final QuestionGroup subGroup : _questionGroups) {
+      {
+        final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<QuestionGroup>prepend(subGroup, _function);
+        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<QuestionGroup>surround(subGroup, _function_1);
+        document.<QuestionGroup>format(subGroup);
+        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<QuestionGroup>append(subGroup, _function_2);
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.<QuestionGroup>append(IterableExtensions.<QuestionGroup>lastOrNull(questionGroup.getQuestionGroups()), _function);
+    EList<Question> _questions = questionGroup.getQuestions();
+    for (final Question question : _questions) {
+      {
+        final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<Question>prepend(question, _function_1);
+        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<Question>surround(question, _function_2);
+        document.<Question>format(question);
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<Question>append(question, _function_3);
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.<Question>append(IterableExtensions.<Question>lastOrNull(questionGroup.getQuestions()), _function_1);
+  }
+
+  protected void _format(final DefinitionGroup definitionGroup, @Extension final IFormattableDocument document) {
+    final ISemanticRegion open = this.textRegionExtensions.regionFor(definitionGroup).keyword("{");
+    final ISemanticRegion close = this.textRegionExtensions.regionFor(definitionGroup).keyword("}");
+    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.append(open, _function);
+    final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
+      it.indent();
+    };
+    document.<ISemanticRegion, ISemanticRegion>interior(open, close, _function_1);
+    EList<QuestionDefinition> _questionDefinitions = definitionGroup.getQuestionDefinitions();
+    for (final QuestionDefinition questionDefinition : _questionDefinitions) {
+      {
+        final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<QuestionDefinition>prepend(questionDefinition, _function_2);
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<QuestionDefinition>surround(questionDefinition, _function_3);
+        document.<QuestionDefinition>format(questionDefinition);
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<QuestionDefinition>append(questionDefinition, _function_4);
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
+      it.setNewLines(1, 1, 2);
+    };
+    document.prepend(this.textRegionExtensions.regionFor(definitionGroup).keyword("questionDefinitions"), _function_2);
+    EList<ValueType> _dataTypes = definitionGroup.getDataTypes();
+    for (final ValueType dataType : _dataTypes) {
+      {
+        final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+          it.newLine();
+        };
+        document.<ValueType>prepend(dataType, _function_3);
+        final Procedure1<IHiddenRegionFormatter> _function_4 = (IHiddenRegionFormatter it) -> {
+          it.indent();
+        };
+        document.<ValueType>surround(dataType, _function_4);
+        document.<ValueType>format(dataType);
+        final Procedure1<IHiddenRegionFormatter> _function_5 = (IHiddenRegionFormatter it) -> {
+          it.noSpace();
+        };
+        document.<ValueType>append(dataType, _function_5);
+      }
+    }
+    final Procedure1<IHiddenRegionFormatter> _function_3 = (IHiddenRegionFormatter it) -> {
+      it.newLine();
+    };
+    document.<ValueType>append(IterableExtensions.<ValueType>lastOrNull(definitionGroup.getDataTypes()), _function_3);
   }
 
   public void format(final Object form, final IFormattableDocument document) {
@@ -44,6 +205,12 @@ public class QLFormatter extends AbstractFormatter2 {
       return;
     } else if (form instanceof Form) {
       _format((Form)form, document);
+      return;
+    } else if (form instanceof QuestionGroup) {
+      _format((QuestionGroup)form, document);
+      return;
+    } else if (form instanceof DefinitionGroup) {
+      _format((DefinitionGroup)form, document);
       return;
     } else if (form instanceof QLModel) {
       _format((QLModel)form, document);

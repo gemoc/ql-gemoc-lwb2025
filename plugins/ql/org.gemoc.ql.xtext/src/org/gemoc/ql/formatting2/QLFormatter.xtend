@@ -9,6 +9,8 @@ import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.gemoc.ql.model.ql.Form
 import org.gemoc.ql.model.ql.QLModel
 import org.gemoc.ql.services.QLGrammarAccess
+import org.gemoc.ql.model.ql.DefinitionGroup
+import org.gemoc.ql.model.ql.QuestionGroup
 
 class QLFormatter extends AbstractFormatter2 {
 	
@@ -16,18 +18,82 @@ class QLFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(QLModel qLModel, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		val open = qLModel.regionFor.keyword("{")
+		val close = qLModel.regionFor.keyword("}")
+		open.append[newLine]
+		interior(open, close)[indent]
+		close.prepend[newLine]
 		for (form : qLModel.forms) {
+//			val openForm = form.regionFor.keyword("{")
+//			val closeForm = form.regionFor.keyword("}")
+//			openForm.append[newLine]
+//			interior(openForm, closeForm)[indent]
+			form.prepend[newLine]
+			form.surround[indent]
 			form.format
+			form.append[noSpace]
 		}
+		qLModel.append[setNewLines(1, 1, 2)]
 		for (definitionGroup : qLModel.definitionGroup) {
+			definitionGroup.prepend[newLine]
+			definitionGroup.surround[indent]
 			definitionGroup.format
+			definitionGroup.append[noSpace]
 		}
+		
 	}
 
 	def dispatch void format(Form form, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		form.regionFor.keyword("Form").prepend[newLine]
+//		val open = form.regionFor.keyword("{")
+//		val close = form.regionFor.keyword("}")
+//		open.append[newLine]
+		//interior(open, close)[indent]	
 		form.questionGroup.format
 	}
 	
+	def dispatch void format(QuestionGroup questionGroup, extension IFormattableDocument document) {
+		for (subGroup : questionGroup.questionGroups) {
+			subGroup.prepend[newLine]
+			subGroup.surround[indent]
+			subGroup.format
+			subGroup.append[noSpace]
+		}	
+		
+		questionGroup.questionGroups.lastOrNull.append[newLine]
+		for(question : questionGroup.questions) {
+			question.prepend[newLine]
+			question.surround[indent]
+			question.format
+			question.append[noSpace]
+		}
+		questionGroup.questions.lastOrNull.append[newLine]
+	}
+	
+	def dispatch void format(DefinitionGroup definitionGroup, extension IFormattableDocument document) {
+		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
+		
+		val open = definitionGroup.regionFor.keyword("{")
+		val close = definitionGroup.regionFor.keyword("}")
+		open.append[newLine]
+		interior(open, close)[indent]
+		for ( questionDefinition  : definitionGroup.questionDefinitions) {
+			questionDefinition.prepend[newLine]
+			questionDefinition.surround[indent]
+			questionDefinition.format
+			questionDefinition.append[noSpace]
+		}
+		definitionGroup.regionFor.keyword("questionDefinitions").prepend[setNewLines(1, 1, 2)]
+		for ( dataType : definitionGroup.dataTypes) {
+			dataType.prepend[newLine]
+			dataType.surround[indent]
+			dataType.format
+			dataType.append[noSpace]
+			//dataType.append[setNewLines(1, 1, 2)]
+		}
+		definitionGroup.dataTypes.lastOrNull.append[newLine]
+		
+	}
 	// TODO: implement for DefinitionGroup, QuestionGroup, BasicBinaryExpression, ConstantCall, BasicUnaryExpression, EnumerationValueType, QuestionDefinition
 }
