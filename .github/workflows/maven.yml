@@ -15,7 +15,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build_and_test:
 
     runs-on: ubuntu-latest
 
@@ -31,11 +31,9 @@ jobs:
       run: mvn -B verify --file pom.xml
       
     - name: Publish Test Results
-      uses: dorny/test-reporter@v1
+      uses: dorny/test-reporter@v2
       if: success() || failure() # Run this step even if tests fail
       with:
         name: Maven Test Results
-        path: |
-           **/target/surefire-reports/*.xml
-           **/target/failsafe-reports/*.xml
+        path: plugins/**/target/surefire-reports/*.xml
         reporter: java-junit
