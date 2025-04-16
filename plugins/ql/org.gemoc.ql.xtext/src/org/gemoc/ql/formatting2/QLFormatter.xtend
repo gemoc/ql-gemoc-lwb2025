@@ -68,6 +68,7 @@ class QLFormatter extends AbstractFormatter2 {
 			questionDefinition.format
 			questionDefinition.append[noSpace]
 		}
+		definitionGroup.questionDefinitions.last.append[newLine]
 		definitionGroup.regionFor.keyword("definitions").prepend[setNewLines(1, 1, 2)]
 		for ( dataType : definitionGroup.dataTypes) {
 			dataType.prepend[newLine]
