@@ -23,7 +23,7 @@ class QLFormatter extends AbstractFormatter2 {
 			form.format
 			form.append[noSpace]
 		}
-		qLModel.forms.lastOrNull.append[newLine]
+		qLModel.forms.last.append[newLine]
 		qLModel.append[setNewLines(1, 1, 2)]
 		for (definitionGroup : qLModel.definitionGroup) {
 			//definitionGroup.prepend[newLine]
@@ -31,7 +31,7 @@ class QLFormatter extends AbstractFormatter2 {
 			definitionGroup.format
 			definitionGroup.append[noSpace]
 		}
-		qLModel.definitionGroup.lastOrNull.append[newLine]
+		qLModel.definitionGroup.last.append[newLine]
 		
 	}
 
@@ -49,14 +49,14 @@ class QLFormatter extends AbstractFormatter2 {
 			subGroup.append[noSpace]
 		}	
 		
-		questionGroup.questionGroups.lastOrNull.append[newLine]
+		questionGroup.questionGroups.last.append[newLine]
 		for(question : questionGroup.questions) {
 			question.prepend[newLine]
 			question.surround[indent]
 			question.format
 			question.append[noSpace]
 		}
-		questionGroup.questions.lastOrNull.append[newLine]
+		questionGroup.questions.last.append[newLine]
 	}
 	
 	def dispatch void format(DefinitionGroup definitionGroup, extension IFormattableDocument document) {
@@ -75,7 +75,7 @@ class QLFormatter extends AbstractFormatter2 {
 			dataType.format
 			dataType.append[noSpace]
 		}
-		definitionGroup.dataTypes.lastOrNull.append[newLine]
+		definitionGroup.dataTypes.last.append[newLine]
 		
 	}
 	// TODO: implement for DefinitionGroup, QuestionGroup, BasicBinaryExpression, ConstantCall, BasicUnaryExpression, EnumerationValueType, QuestionDefinition

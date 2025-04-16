@@ -47,7 +47,7 @@ public class QLFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<Form>append(IterableExtensions.<Form>lastOrNull(qLModel.getForms()), _function);
+    document.<Form>append(IterableExtensions.<Form>last(qLModel.getForms()), _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.setNewLines(1, 1, 2);
     };
@@ -69,7 +69,7 @@ public class QLFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function_2 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<DefinitionGroup>append(IterableExtensions.<DefinitionGroup>lastOrNull(qLModel.getDefinitionGroup()), _function_2);
+    document.<DefinitionGroup>append(IterableExtensions.<DefinitionGroup>last(qLModel.getDefinitionGroup()), _function_2);
   }
 
   protected void _format(final Form form, @Extension final IFormattableDocument document) {
@@ -102,7 +102,7 @@ public class QLFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<QuestionGroup>append(IterableExtensions.<QuestionGroup>lastOrNull(questionGroup.getQuestionGroups()), _function);
+    document.<QuestionGroup>append(IterableExtensions.<QuestionGroup>last(questionGroup.getQuestionGroups()), _function);
     EList<Question> _questions = questionGroup.getQuestions();
     for (final Question question : _questions) {
       {
@@ -124,7 +124,7 @@ public class QLFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<Question>append(IterableExtensions.<Question>lastOrNull(questionGroup.getQuestions()), _function_1);
+    document.<Question>append(IterableExtensions.<Question>last(questionGroup.getQuestions()), _function_1);
   }
 
   protected void _format(final DefinitionGroup definitionGroup, @Extension final IFormattableDocument document) {
@@ -171,7 +171,7 @@ public class QLFormatter extends AbstractFormatter2 {
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<ValueType>append(IterableExtensions.<ValueType>lastOrNull(definitionGroup.getDataTypes()), _function_1);
+    document.<ValueType>append(IterableExtensions.<ValueType>last(definitionGroup.getDataTypes()), _function_1);
   }
 
   public void format(final Object form, final IFormattableDocument document) {
