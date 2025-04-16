@@ -21,7 +21,34 @@ class QLParsingTest {
 	@Test
 	def void loadChallengeHouseOwningModel() {
 		val result = parseHelper.parse('''
-			QLModel { forms { Form " Box1HouseOwning" { questionGroup QuestionGroup { questionGroups { QuestionGroup { guard QuestionCall { question hasSoldHouse } questions { Question { questionDefinition sellingPrice } , Question { questionDefinition privateDebt } , Question { questionDefinition valueResidue } } } } questions { Question { questionDefinition hasSoldHouse } , Question { questionDefinition hasBoughtHouse } , Question { questionDefinition hasMaintLoan } } } } } definitionGroup { DefinitionGroup { dataTypes { BooleanValueType boolean { } , DecimalValueType money { unit Euro } } questionDefinitions { QuestionDefinition hasSoldHouse { label "Did you sell a house in 2010?" dataType boolean } , QuestionDefinition hasBoughtHouse { label "Did you buy a house in 2010?" dataType boolean } , QuestionDefinition hasMaintLoan { label "Did you enter a loan for maintenance/reconstruction?" dataType boolean } , isMandatory QuestionDefinition sellingPrice { label "Price the house was sold for:" dataType money } , isMandatory QuestionDefinition privateDebt { label "Private debts for the sold house:" dataType money } , QuestionDefinition valueResidue { label "Value residue:" dataType money computedExpression BasicBinaryExpression { operator MINUS resultType money lhsOperand QuestionCall { question sellingPrice } rhsOperand QuestionCall { question privateDebt } } } } } } }
+			QLModel {
+				definitions {
+					booleanType boolean
+					decimalType money { unit "Euro" }	
+				} 
+				definitions {
+					question hasSoldHouse: "Did you sell a house in 2010?"  boolean 
+					question hasBoughtHouse: "Did you buy a house in 2010?" boolean
+					question hasMaintLoan: "Did you enter a loan for maintenance/reconstruction?"  boolean
+					mandatory question sellingPrice: "Price the house was sold for:"  money
+					mandatory question privateDebt: "Private debts for the sold house:"  money
+					question valueResidue: "Value residue:"  money = BasicBinaryExpression { operator MINUS resultType money lhsOperand QuestionCall { question sellingPrice } rhsOperand QuestionCall { question privateDebt } }; 		
+					
+				}
+				
+				Form " Box1HouseOwning" {
+					{
+						hasSoldHouse
+						hasBoughtHouse
+						hasMaintLoan
+					}
+					if (QuestionCall { question hasSoldHouse }) {
+						sellingPrice
+						privateDebt 
+						valueResidue 
+					}			 
+				}
+			}
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

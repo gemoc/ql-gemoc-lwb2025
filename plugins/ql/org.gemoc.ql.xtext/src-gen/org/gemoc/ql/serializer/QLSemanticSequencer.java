@@ -292,7 +292,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.NAMED_ELEMENT__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -330,7 +330,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getFormAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_4_0(), semanticObject.getQuestionGroup());
+		feeder.accept(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0(), semanticObject.getQuestionGroup());
 		feeder.finish();
 	}
 	
@@ -371,7 +371,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     QLModel returns QLModel
 	 *
 	 * Constraint:
-	 *     (canSubmit?='canSubmit'? submitDate=EDate? (forms+=Form forms+=Form*)? (definitionGroup+=DefinitionGroup definitionGroup+=DefinitionGroup*)?)
+	 *     (canSubmit?='canSubmit'? submitDate=EDate? (definitionGroup+=DefinitionGroup | forms+=Form)*)
 	 * </pre>
 	 */
 	protected void sequence_QLModel(ISerializationContext context, QLModel semanticObject) {
@@ -400,15 +400,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     QuestionDefinition returns QuestionDefinition
 	 *
 	 * Constraint:
-	 *     (
-	 *         isDisplayed?='isDisplayed'? 
-	 *         isMandatory?='isMandatory'? 
-	 *         name=EString 
-	 *         label=EString? 
-	 *         dataType=[ValueType|EString] 
-	 *         computedExpression=Expression? 
-	 *         currentValue=Value?
-	 *     )
+	 *     (isMandatory?='mandatory'? name=EString label=EString dataType=[ValueType|EString] computedExpression=Expression?)
 	 * </pre>
 	 */
 	protected void sequence_QuestionDefinition(ISerializationContext context, QuestionDefinition semanticObject) {
@@ -422,7 +414,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     QuestionGroup returns QuestionGroup
 	 *
 	 * Constraint:
-	 *     (guard=Expression? (questionGroups+=QuestionGroup questionGroups+=QuestionGroup*)? (questions+=Question questions+=Question*)?)
+	 *     (guard=Expression? (questionGroups+=QuestionGroup | questions+=Question)*)
 	 * </pre>
 	 */
 	protected void sequence_QuestionGroup(ISerializationContext context, QuestionGroup semanticObject) {
@@ -445,7 +437,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.QUESTION__QUESTION_DEFINITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionEStringParserRuleCall_3_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION__QUESTION_DEFINITION, false));
+		feeder.accept(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionEStringParserRuleCall_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION__QUESTION_DEFINITION, false));
 		feeder.finish();
 	}
 	

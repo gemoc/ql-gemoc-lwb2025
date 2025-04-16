@@ -84,126 +84,70 @@ ruleQLModel returns [EObject current=null]
 					$current);
 			}
 		)
-		(
-			(
-				lv_canSubmit_1_0='canSubmit'
-				{
-					newLeafNode(lv_canSubmit_1_0, grammarAccess.getQLModelAccess().getCanSubmitCanSubmitKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getQLModelRule());
-					}
-					setWithLastConsumed($current, "canSubmit", lv_canSubmit_1_0 != null, "canSubmit");
-				}
-			)
-		)?
-		otherlv_2='QLModel'
+		otherlv_1='QLModel'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getQLModelAccess().getQLModelKeyword_2());
-		}
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_1, grammarAccess.getQLModelAccess().getQLModelKeyword_1());
 		}
 		(
-			otherlv_4='submitDate'
+			otherlv_2='('
 			{
-				newLeafNode(otherlv_4, grammarAccess.getQLModelAccess().getSubmitDateKeyword_4_0());
+				newLeafNode(otherlv_2, grammarAccess.getQLModelAccess().getLeftParenthesisKeyword_2_0());
 			}
 			(
 				(
+					lv_canSubmit_3_0='canSubmit'
 					{
-						newCompositeNode(grammarAccess.getQLModelAccess().getSubmitDateEDateParserRuleCall_4_1_0());
+						newLeafNode(lv_canSubmit_3_0, grammarAccess.getQLModelAccess().getCanSubmitCanSubmitKeyword_2_1_0());
 					}
-					lv_submitDate_5_0=ruleEDate
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQLModelRule());
-						}
-						set(
-							$current,
-							"submitDate",
-							lv_submitDate_5_0,
-							"org.gemoc.ql.QL.EDate");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='forms'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getQLModelAccess().getFormsKeyword_5_0());
-			}
-			otherlv_7='{'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_5_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQLModelAccess().getFormsFormParserRuleCall_5_2_0());
-					}
-					lv_forms_8_0=ruleForm
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQLModelRule());
+							$current = createModelElement(grammarAccess.getQLModelRule());
 						}
-						add(
-							$current,
-							"forms",
-							lv_forms_8_0,
-							"org.gemoc.ql.QL.Form");
-						afterParserOrEnumRuleCall();
+						setWithLastConsumed($current, "canSubmit", lv_canSubmit_3_0 != null, "canSubmit");
 					}
 				)
-			)
+			)?
 			(
-				otherlv_9=','
+				otherlv_4='submitDate'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getQLModelAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getQLModelAccess().getSubmitDateKeyword_2_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getQLModelAccess().getFormsFormParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getQLModelAccess().getSubmitDateEDateParserRuleCall_2_2_1_0());
 						}
-						lv_forms_10_0=ruleForm
+						lv_submitDate_5_0=ruleEDate
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getQLModelRule());
 							}
-							add(
+							set(
 								$current,
-								"forms",
-								lv_forms_10_0,
-								"org.gemoc.ql.QL.Form");
+								"submitDate",
+								lv_submitDate_5_0,
+								"org.gemoc.ql.QL.EDate");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-			)*
-			otherlv_11='}'
+			)?
+			otherlv_6=')'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_5_4());
+				newLeafNode(otherlv_6, grammarAccess.getQLModelAccess().getRightParenthesisKeyword_2_3());
 			}
 		)?
+		otherlv_7='{'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_3());
+		}
 		(
-			otherlv_12='definitionGroup'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getQLModelAccess().getDefinitionGroupKeyword_6_0());
-			}
-			otherlv_13='{'
-			{
-				newLeafNode(otherlv_13, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_6_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQLModelAccess().getDefinitionGroupDefinitionGroupParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getQLModelAccess().getDefinitionGroupDefinitionGroupParserRuleCall_4_0_0());
 					}
-					lv_definitionGroup_14_0=ruleDefinitionGroup
+					lv_definitionGroup_8_0=ruleDefinitionGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQLModelRule());
@@ -211,45 +155,36 @@ ruleQLModel returns [EObject current=null]
 						add(
 							$current,
 							"definitionGroup",
-							lv_definitionGroup_14_0,
+							lv_definitionGroup_8_0,
 							"org.gemoc.ql.QL.DefinitionGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
+			    |
 			(
-				otherlv_15=','
-				{
-					newLeafNode(otherlv_15, grammarAccess.getQLModelAccess().getCommaKeyword_6_3_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getQLModelAccess().getDefinitionGroupDefinitionGroupParserRuleCall_6_3_1_0());
+					{
+						newCompositeNode(grammarAccess.getQLModelAccess().getFormsFormParserRuleCall_4_1_0());
+					}
+					lv_forms_9_0=ruleForm
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getQLModelRule());
 						}
-						lv_definitionGroup_16_0=ruleDefinitionGroup
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getQLModelRule());
-							}
-							add(
-								$current,
-								"definitionGroup",
-								lv_definitionGroup_16_0,
-								"org.gemoc.ql.QL.DefinitionGroup");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"forms",
+							lv_forms_9_0,
+							"org.gemoc.ql.QL.Form");
+						afterParserOrEnumRuleCall();
+					}
 				)
-			)*
-			otherlv_17='}'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_6_4());
-			}
-		)?
-		otherlv_18='}'
+			)
+		)*
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_10, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -491,20 +426,12 @@ ruleForm returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_2());
-		}
-		otherlv_3='questionGroup'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getFormAccess().getQuestionGroupKeyword_3());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0());
 				}
-				lv_questionGroup_4_0=ruleQuestionGroup
+				lv_questionGroup_2_0=ruleQuestionGroup
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFormRule());
@@ -512,16 +439,12 @@ ruleForm returns [EObject current=null]
 					set(
 						$current,
 						"questionGroup",
-						lv_questionGroup_4_0,
+						lv_questionGroup_2_0,
 						"org.gemoc.ql.QL.QuestionGroup");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getFormAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -683,25 +606,21 @@ ruleQuestionGroup returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='QuestionGroup'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getQuestionGroupAccess().getQuestionGroupKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='guard'
+			otherlv_1='if'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getQuestionGroupAccess().getGuardKeyword_3_0());
+				newLeafNode(otherlv_1, grammarAccess.getQuestionGroupAccess().getIfKeyword_1_0());
+			}
+			otherlv_2='('
+			{
+				newLeafNode(otherlv_2, grammarAccess.getQuestionGroupAccess().getLeftParenthesisKeyword_1_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionGroupAccess().getGuardExpressionParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getQuestionGroupAccess().getGuardExpressionParserRuleCall_1_2_0());
 					}
-					lv_guard_4_0=ruleExpression
+					lv_guard_3_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -709,28 +628,28 @@ ruleQuestionGroup returns [EObject current=null]
 						set(
 							$current,
 							"guard",
-							lv_guard_4_0,
+							lv_guard_3_0,
 							"org.gemoc.ql.QL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
+			otherlv_4=')'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getQuestionGroupAccess().getRightParenthesisKeyword_1_3());
+			}
 		)?
+		otherlv_5='{'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_2());
+		}
 		(
-			otherlv_5='questionGroups'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getQuestionGroupAccess().getQuestionGroupsKeyword_4_0());
-			}
-			otherlv_6='{'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_4_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionGroupsQuestionGroupParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionGroupsQuestionGroupParserRuleCall_3_0_0());
 					}
-					lv_questionGroups_7_0=ruleQuestionGroup
+					lv_questionGroups_6_0=ruleQuestionGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -738,57 +657,19 @@ ruleQuestionGroup returns [EObject current=null]
 						add(
 							$current,
 							"questionGroups",
-							lv_questionGroups_7_0,
+							lv_questionGroups_6_0,
 							"org.gemoc.ql.QL.QuestionGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_8=','
-				{
-					newLeafNode(otherlv_8, grammarAccess.getQuestionGroupAccess().getCommaKeyword_4_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionGroupsQuestionGroupParserRuleCall_4_3_1_0());
-						}
-						lv_questionGroups_9_0=ruleQuestionGroup
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
-							}
-							add(
-								$current,
-								"questionGroups",
-								lv_questionGroups_9_0,
-								"org.gemoc.ql.QL.QuestionGroup");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_10='}'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_4_4());
-			}
-		)?
-		(
-			otherlv_11='questions'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getQuestionGroupAccess().getQuestionsKeyword_5_0());
-			}
-			otherlv_12='{'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_5_1());
-			}
+			    |
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionsQuestionParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionsQuestionParserRuleCall_3_1_0());
 					}
-					lv_questions_13_0=ruleQuestion
+					lv_questions_7_0=ruleQuestion
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -796,45 +677,16 @@ ruleQuestionGroup returns [EObject current=null]
 						add(
 							$current,
 							"questions",
-							lv_questions_13_0,
+							lv_questions_7_0,
 							"org.gemoc.ql.QL.Question");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			(
-				otherlv_14=','
-				{
-					newLeafNode(otherlv_14, grammarAccess.getQuestionGroupAccess().getCommaKeyword_5_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionsQuestionParserRuleCall_5_3_1_0());
-						}
-						lv_questions_15_0=ruleQuestion
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
-							}
-							add(
-								$current,
-								"questions",
-								lv_questions_15_0,
-								"org.gemoc.ql.QL.Question");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_16='}'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_5_4());
-			}
-		)?
-		otherlv_17='}'
+		)*
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -855,38 +707,20 @@ ruleQuestion returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Question'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getQuestionAccess().getQuestionKeyword_0());
-		}
-		otherlv_1='{'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getQuestionAccess().getLeftCurlyBracketKeyword_1());
-		}
-		otherlv_2='questionDefinition'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getQuestionAccess().getQuestionDefinitionKeyword_2());
-		}
 		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getQuestionRule());
-					}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getQuestionRule());
 				}
-				{
-					newCompositeNode(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionCrossReference_3_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
+			}
+			{
+				newCompositeNode(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionCrossReference_0());
+			}
+			ruleEString
+			{
+				afterParserOrEnumRuleCall();
+			}
 		)
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getQuestionAccess().getRightCurlyBracketKeyword_4());
-		}
 	)
 ;
 
@@ -1376,9 +1210,9 @@ ruleBooleanValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='BooleanValueType'
+		otherlv_1='booleanType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getBooleanValueTypeAccess().getBooleanValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getBooleanValueTypeAccess().getBooleanTypeKeyword_1());
 		}
 		(
 			(
@@ -1399,39 +1233,41 @@ ruleBooleanValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getBooleanValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getBooleanValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getBooleanValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
+				otherlv_4='unit'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getBooleanValueTypeAccess().getUnitKeyword_3_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getBooleanValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBooleanValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getBooleanValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBooleanValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getBooleanValueTypeAccess().getRightCurlyBracketKeyword_3_2());
+			}
 		)?
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getBooleanValueTypeAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -1458,9 +1294,9 @@ ruleIntegerValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='IntegerValueType'
+		otherlv_1='integerType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getIntegerValueTypeAccess().getIntegerValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getIntegerValueTypeAccess().getIntegerTypeKeyword_1());
 		}
 		(
 			(
@@ -1481,89 +1317,91 @@ ruleIntegerValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getIntegerValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getIntegerValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getIntegerValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
+				otherlv_4='unit'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getIntegerValueTypeAccess().getUnitKeyword_3_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
-		)?
-		(
-			otherlv_6='min'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getIntegerValueTypeAccess().getMinKeyword_5_0());
-			}
+			)?
 			(
+				otherlv_6='min'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getIntegerValueTypeAccess().getMinKeyword_3_2_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getMinEIntParserRuleCall_5_1_0());
-					}
-					lv_min_7_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getMinEIntParserRuleCall_3_2_1_0());
 						}
-						set(
-							$current,
-							"min",
-							lv_min_7_0,
-							"org.gemoc.ql.QL.EInt");
-						afterParserOrEnumRuleCall();
-					}
+						lv_min_7_0=ruleEInt
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+							}
+							set(
+								$current,
+								"min",
+								lv_min_7_0,
+								"org.gemoc.ql.QL.EInt");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
-		)?
-		(
-			otherlv_8='max'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getIntegerValueTypeAccess().getMaxKeyword_6_0());
-			}
+			)?
 			(
+				otherlv_8='max'
+				{
+					newLeafNode(otherlv_8, grammarAccess.getIntegerValueTypeAccess().getMaxKeyword_3_3_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getMaxEIntParserRuleCall_6_1_0());
-					}
-					lv_max_9_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getMaxEIntParserRuleCall_3_3_1_0());
 						}
-						set(
-							$current,
-							"max",
-							lv_max_9_0,
-							"org.gemoc.ql.QL.EInt");
-						afterParserOrEnumRuleCall();
-					}
+						lv_max_9_0=ruleEInt
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+							}
+							set(
+								$current,
+								"max",
+								lv_max_9_0,
+								"org.gemoc.ql.QL.EInt");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
+			otherlv_10='}'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getIntegerValueTypeAccess().getRightCurlyBracketKeyword_3_4());
+			}
 		)?
-		otherlv_10='}'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getIntegerValueTypeAccess().getRightCurlyBracketKeyword_7());
-		}
 	)
 ;
 
@@ -1590,9 +1428,9 @@ ruleDecimalValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='DecimalValueType'
+		otherlv_1='decimalType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDecimalValueTypeAccess().getDecimalValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getDecimalValueTypeAccess().getDecimalTypeKeyword_1());
 		}
 		(
 			(
@@ -1613,39 +1451,41 @@ ruleDecimalValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDecimalValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDecimalValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getDecimalValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
+				otherlv_4='unit'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getDecimalValueTypeAccess().getUnitKeyword_3_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getDecimalValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDecimalValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getDecimalValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getDecimalValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getDecimalValueTypeAccess().getRightCurlyBracketKeyword_3_2());
+			}
 		)?
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getDecimalValueTypeAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -1672,9 +1512,9 @@ ruleDateValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='DateValueType'
+		otherlv_1='dateType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDateValueTypeAccess().getDateValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getDateValueTypeAccess().getDateTypeKeyword_1());
 		}
 		(
 			(
@@ -1695,39 +1535,41 @@ ruleDateValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDateValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getDateValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getDateValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
+				otherlv_4='unit'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getDateValueTypeAccess().getUnitKeyword_3_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getDateValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDateValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getDateValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getDateValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getDateValueTypeAccess().getRightCurlyBracketKeyword_3_2());
+			}
 		)?
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getDateValueTypeAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -1754,9 +1596,9 @@ ruleEnumerationValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='EnumerationValueType'
+		otherlv_1='enumerationType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getEnumerationValueTypeAccess().getEnumerationValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getEnumerationValueTypeAccess().getEnumerationTypeKeyword_1());
 		}
 		(
 			(
@@ -1777,74 +1619,51 @@ ruleEnumerationValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getEnumerationValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
-						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_6='enumerationLiterals'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsKeyword_5_0());
-			}
-			otherlv_7='{'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_5_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_5_2_0());
-					}
-					lv_enumerationLiterals_8_0=ruleEnumerationLiteral
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
-						}
-						add(
-							$current,
-							"enumerationLiterals",
-							lv_enumerationLiterals_8_0,
-							"org.gemoc.ql.QL.EnumerationLiteral");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_9=','
+				otherlv_4='unit'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getEnumerationValueTypeAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getEnumerationValueTypeAccess().getUnitKeyword_3_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						lv_enumerationLiterals_10_0=ruleEnumerationLiteral
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)?
+			(
+				otherlv_6='literals'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getEnumerationValueTypeAccess().getLiteralsKeyword_3_2_0());
+				}
+				otherlv_7='{'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3_2_1());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_3_2_2_0());
+						}
+						lv_enumerationLiterals_8_0=ruleEnumerationLiteral
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
@@ -1852,22 +1671,47 @@ ruleEnumerationValueType returns [EObject current=null]
 							add(
 								$current,
 								"enumerationLiterals",
-								lv_enumerationLiterals_10_0,
+								lv_enumerationLiterals_8_0,
 								"org.gemoc.ql.QL.EnumerationLiteral");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-			)*
-			otherlv_11='}'
+				(
+					otherlv_9=','
+					{
+						newLeafNode(otherlv_9, grammarAccess.getEnumerationValueTypeAccess().getCommaKeyword_3_2_3_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_3_2_3_1_0());
+							}
+							lv_enumerationLiterals_10_0=ruleEnumerationLiteral
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
+								}
+								add(
+									$current,
+									"enumerationLiterals",
+									lv_enumerationLiterals_10_0,
+									"org.gemoc.ql.QL.EnumerationLiteral");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+				otherlv_11='}'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_3_2_4());
+				}
+			)?
+			otherlv_12='}'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_5_4());
+				newLeafNode(otherlv_12, grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_3_3());
 			}
 		)?
-		otherlv_12='}'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_6());
-		}
 	)
 ;
 
@@ -1917,39 +1761,41 @@ ruleStringValueType returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getStringValueTypeAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
-			otherlv_4='unit'
+			otherlv_3='{'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getStringValueTypeAccess().getUnitKeyword_4_0());
+				newLeafNode(otherlv_3, grammarAccess.getStringValueTypeAccess().getLeftCurlyBracketKeyword_3_0());
 			}
 			(
+				otherlv_4='unit'
+				{
+					newLeafNode(otherlv_4, grammarAccess.getStringValueTypeAccess().getUnitKeyword_3_1_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getStringValueTypeAccess().getUnitEStringParserRuleCall_4_1_0());
-					}
-					lv_unit_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStringValueTypeRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getStringValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0());
 						}
-						set(
-							$current,
-							"unit",
-							lv_unit_5_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
+						lv_unit_5_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getStringValueTypeRule());
+							}
+							set(
+								$current,
+								"unit",
+								lv_unit_5_0,
+								"org.gemoc.ql.QL.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
+			otherlv_6='}'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getStringValueTypeAccess().getRightCurlyBracketKeyword_3_2());
+			}
 		)?
-		otherlv_6='}'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getStringValueTypeAccess().getRightCurlyBracketKeyword_5());
-		}
 	)
 ;
 
@@ -2009,16 +1855,12 @@ ruleEnumerationLiteral returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='EnumerationLiteral'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getEnumerationLiteralAccess().getEnumerationLiteralKeyword_1());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_1_0());
 				}
-				lv_name_2_0=ruleEString
+				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
@@ -2026,7 +1868,7 @@ ruleEnumerationLiteral returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_1_0,
 						"org.gemoc.ql.QL.EString");
 					afterParserOrEnumRuleCall();
 				}
@@ -2425,42 +2267,28 @@ ruleQuestionDefinition returns [EObject current=null]
 	(
 		(
 			(
-				lv_isDisplayed_0_0='isDisplayed'
+				lv_isMandatory_0_0='mandatory'
 				{
-					newLeafNode(lv_isDisplayed_0_0, grammarAccess.getQuestionDefinitionAccess().getIsDisplayedIsDisplayedKeyword_0_0());
+					newLeafNode(lv_isMandatory_0_0, grammarAccess.getQuestionDefinitionAccess().getIsMandatoryMandatoryKeyword_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getQuestionDefinitionRule());
 					}
-					setWithLastConsumed($current, "isDisplayed", lv_isDisplayed_0_0 != null, "isDisplayed");
+					setWithLastConsumed($current, "isMandatory", lv_isMandatory_0_0 != null, "mandatory");
 				}
 			)
 		)?
-		(
-			(
-				lv_isMandatory_1_0='isMandatory'
-				{
-					newLeafNode(lv_isMandatory_1_0, grammarAccess.getQuestionDefinitionAccess().getIsMandatoryIsMandatoryKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getQuestionDefinitionRule());
-					}
-					setWithLastConsumed($current, "isMandatory", lv_isMandatory_1_0 != null, "isMandatory");
-				}
-			)
-		)?
-		otherlv_2='QuestionDefinition'
+		otherlv_1='question'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getQuestionDefinitionAccess().getQuestionDefinitionKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getQuestionDefinitionAccess().getQuestionKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getNameEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_name_3_0=ruleEString
+				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQuestionDefinitionRule());
@@ -2468,45 +2296,35 @@ ruleQuestionDefinition returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_3_0,
+						lv_name_2_0,
 						"org.gemoc.ql.QL.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='{'
+		otherlv_3=':'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getQuestionDefinitionAccess().getLeftCurlyBracketKeyword_4());
+			newLeafNode(otherlv_3, grammarAccess.getQuestionDefinitionAccess().getColonKeyword_3());
 		}
 		(
-			otherlv_5='label'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getQuestionDefinitionAccess().getLabelKeyword_5_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getLabelEStringParserRuleCall_5_1_0());
+				{
+					newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getLabelEStringParserRuleCall_4_0());
+				}
+				lv_label_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQuestionDefinitionRule());
 					}
-					lv_label_6_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionDefinitionRule());
-						}
-						set(
-							$current,
-							"label",
-							lv_label_6_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"label",
+						lv_label_4_0,
+						"org.gemoc.ql.QL.EString");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
-		otherlv_7='dataType'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getQuestionDefinitionAccess().getDataTypeKeyword_6());
-		}
+		)
 		(
 			(
 				{
@@ -2515,7 +2333,7 @@ ruleQuestionDefinition returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getDataTypeValueTypeCrossReference_7_0());
+					newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getDataTypeValueTypeCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -2524,16 +2342,16 @@ ruleQuestionDefinition returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_9='computedExpression'
+			otherlv_6='='
 			{
-				newLeafNode(otherlv_9, grammarAccess.getQuestionDefinitionAccess().getComputedExpressionKeyword_8_0());
+				newLeafNode(otherlv_6, grammarAccess.getQuestionDefinitionAccess().getEqualsSignKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionExpressionParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionExpressionParserRuleCall_6_1_0());
 					}
-					lv_computedExpression_10_0=ruleExpression
+					lv_computedExpression_7_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionDefinitionRule());
@@ -2541,42 +2359,17 @@ ruleQuestionDefinition returns [EObject current=null]
 						set(
 							$current,
 							"computedExpression",
-							lv_computedExpression_10_0,
+							lv_computedExpression_7_0,
 							"org.gemoc.ql.QL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)?
-		(
-			otherlv_11='currentValue'
+			otherlv_8=';'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getQuestionDefinitionAccess().getCurrentValueKeyword_9_0());
+				newLeafNode(otherlv_8, grammarAccess.getQuestionDefinitionAccess().getSemicolonKeyword_6_2());
 			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQuestionDefinitionAccess().getCurrentValueValueParserRuleCall_9_1_0());
-					}
-					lv_currentValue_12_0=ruleValue
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQuestionDefinitionRule());
-						}
-						set(
-							$current,
-							"currentValue",
-							lv_currentValue_12_0,
-							"org.gemoc.ql.QL.Value");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
 		)?
-		otherlv_13='}'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getQuestionDefinitionAccess().getRightCurlyBracketKeyword_10());
-		}
 	)
 ;
 

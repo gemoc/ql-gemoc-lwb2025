@@ -10,6 +10,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.gemoc.ql.services.QLGrammarAccess;
@@ -18,10 +21,24 @@ import org.gemoc.ql.services.QLGrammarAccess;
 public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected QLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BooleanValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
+	protected AbstractElementAlias match_DateValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
+	protected AbstractElementAlias match_DecimalValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
+	protected AbstractElementAlias match_EnumerationValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q;
+	protected AbstractElementAlias match_IntegerValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_4__q;
+	protected AbstractElementAlias match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q;
+	protected AbstractElementAlias match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (QLGrammarAccess) access;
+		match_BooleanValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBooleanValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getBooleanValueTypeAccess().getRightCurlyBracketKeyword_3_2()));
+		match_DateValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDateValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDateValueTypeAccess().getRightCurlyBracketKeyword_3_2()));
+		match_DecimalValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDecimalValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getDecimalValueTypeAccess().getRightCurlyBracketKeyword_3_2()));
+		match_EnumerationValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_3_3()));
+		match_IntegerValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIntegerValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getIntegerValueTypeAccess().getRightCurlyBracketKeyword_3_4()));
+		match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQLModelAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getQLModelAccess().getRightParenthesisKeyword_2_3()));
+		match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStringValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getStringValueTypeAccess().getRightCurlyBracketKeyword_3_2()));
 	}
 	
 	@Override
@@ -36,8 +53,122 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_BooleanValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_BooleanValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DateValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_DateValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DecimalValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_DecimalValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumerationValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q.equals(syntax))
+				emit_EnumerationValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IntegerValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_4__q.equals(syntax))
+				emit_IntegerValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q.equals(syntax))
+				emit_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
+				emit_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_BooleanValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_DateValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_DecimalValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_EnumerationValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_IntegerValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'QLModel' (ambiguity) '{' '}' (rule start)
+	 *     (rule start) 'QLModel' (ambiguity) '{' definitionGroup+=DefinitionGroup
+	 *     (rule start) 'QLModel' (ambiguity) '{' forms+=Form
+	 
+	 * </pre>
+	 */
+	protected void emit_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }
