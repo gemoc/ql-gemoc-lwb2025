@@ -18,38 +18,26 @@ class QLFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(QLModel qLModel, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		val open = qLModel.regionFor.keyword("{")
-		val close = qLModel.regionFor.keyword("}")
-		open.append[newLine]
-		interior(open, close)[indent]
-		close.prepend[newLine]
 		for (form : qLModel.forms) {
-//			val openForm = form.regionFor.keyword("{")
-//			val closeForm = form.regionFor.keyword("}")
-//			openForm.append[newLine]
-//			interior(openForm, closeForm)[indent]
-			form.prepend[newLine]
 			form.surround[indent]
 			form.format
 			form.append[noSpace]
 		}
+		qLModel.forms.lastOrNull.append[newLine]
 		qLModel.append[setNewLines(1, 1, 2)]
 		for (definitionGroup : qLModel.definitionGroup) {
-			definitionGroup.prepend[newLine]
+			//definitionGroup.prepend[newLine]
 			definitionGroup.surround[indent]
 			definitionGroup.format
 			definitionGroup.append[noSpace]
 		}
+		qLModel.definitionGroup.lastOrNull.append[newLine]
 		
 	}
 
 	def dispatch void format(Form form, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		form.regionFor.keyword("Form").prepend[newLine]
-//		val open = form.regionFor.keyword("{")
-//		val close = form.regionFor.keyword("}")
-//		open.append[newLine]
-		//interior(open, close)[indent]	
 		form.questionGroup.format
 	}
 	
@@ -73,24 +61,19 @@ class QLFormatter extends AbstractFormatter2 {
 	
 	def dispatch void format(DefinitionGroup definitionGroup, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		
-		val open = definitionGroup.regionFor.keyword("{")
-		val close = definitionGroup.regionFor.keyword("}")
-		open.append[newLine]
-		interior(open, close)[indent]
+
 		for ( questionDefinition  : definitionGroup.questionDefinitions) {
 			questionDefinition.prepend[newLine]
 			questionDefinition.surround[indent]
 			questionDefinition.format
 			questionDefinition.append[noSpace]
 		}
-		definitionGroup.regionFor.keyword("questionDefinitions").prepend[setNewLines(1, 1, 2)]
+		definitionGroup.regionFor.keyword("definitions").prepend[setNewLines(1, 1, 2)]
 		for ( dataType : definitionGroup.dataTypes) {
 			dataType.prepend[newLine]
 			dataType.surround[indent]
 			dataType.format
 			dataType.append[noSpace]
-			//dataType.append[setNewLines(1, 1, 2)]
 		}
 		definitionGroup.dataTypes.lastOrNull.append[newLine]
 		
