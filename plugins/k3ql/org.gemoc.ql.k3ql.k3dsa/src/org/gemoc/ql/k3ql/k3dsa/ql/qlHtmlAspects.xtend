@@ -47,7 +47,7 @@ class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		}
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="checkbox" id="«id»" name="«id»" «checked» onchange="onInputChange()">
+		      <input type="checkbox" id="«id»" name="«id»" «checked» oninput="onInput()" onchange="onChange()">
 		    </div>''';
 	}
 }
@@ -62,7 +62,7 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		return '''
 		    <div>
 		      <label for="«id»">«label»</label>
-		      <input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" onchange="onInputChange()">
+		      <input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
 	}
 }
@@ -76,7 +76,7 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		}
 		return '''<div>
 		        <label for="«id»">«label»</label>
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»"  onchange="onInputChange()">
+		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
 	}
 }
@@ -89,7 +89,7 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		}
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInputChange()">
+		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
 	}
 }
@@ -100,7 +100,7 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		// TODO set currentValue
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <input type="date" id="«id»" name="«id»" onchange="onInputChange()">
+		      <input type="date" id="«id»" name="«id»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
 	}
 
@@ -112,7 +112,7 @@ class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		// TODO set currentValue
 		return '''<div>
 		      <label for="«id»">«label»</label>
-		      <select id="«id»" name="«id»" onchange="onInputChange()">
+		      <select id="«id»" name="«id»" onchange="onChange()">
 		      «FOR lit : _self.enumerationLiterals»
 		        <option value="«lit.name»">«lit.name»</option>
 		       «ENDFOR»

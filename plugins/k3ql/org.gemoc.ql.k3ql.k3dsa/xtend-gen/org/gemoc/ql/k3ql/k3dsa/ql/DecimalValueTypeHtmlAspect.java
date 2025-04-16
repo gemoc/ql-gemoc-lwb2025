@@ -40,7 +40,7 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t        ");
     _builder.append("\" min=\"0\" step=\"0.1\" value=\"");
     _builder.append(value, "\t\t        ");
-    _builder.append("\"  onchange=\"onInputChange()\">");
+    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");

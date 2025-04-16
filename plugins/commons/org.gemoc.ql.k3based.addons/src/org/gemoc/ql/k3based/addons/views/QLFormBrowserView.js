@@ -43,13 +43,24 @@ function openPreferences() {
 }
 
 // Call to Java to signal user input changes
-function onInputChange() {
+function onChange() {
 	try {
 		var result = onInputChange(); // Java callback
 		document.getElementById("lastAction").innerText = "onInputChange was called. Return value was: " + result;
 	} catch (e) {
 		document.getElementById("lastAction").innerText = "A Java error occured: " + e.message;
 	}
+}
+
+let inputTimer;
+const debounceDelay = 1500; // Adjust the delay in milliseconds as needed
+
+function onInput(element) {
+  clearTimeout(inputTimer); // Reset the timer if onInput is called again
+
+  inputTimer = setTimeout(() => {
+    onChange(); // Call onChange after the delay
+  }, debounceDelay);
 }
 
 // Call to Java to signal user input changes

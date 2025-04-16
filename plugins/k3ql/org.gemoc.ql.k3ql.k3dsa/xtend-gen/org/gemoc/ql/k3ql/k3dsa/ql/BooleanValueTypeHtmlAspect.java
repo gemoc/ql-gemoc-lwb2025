@@ -44,7 +44,7 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\" ");
     _builder.append(checked, "\t\t      ");
-    _builder.append(" onchange=\"onInputChange()\">");
+    _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");
