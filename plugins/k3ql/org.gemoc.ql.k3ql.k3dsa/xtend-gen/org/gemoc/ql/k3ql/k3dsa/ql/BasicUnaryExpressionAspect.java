@@ -1,7 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import java.util.Objects;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.k3ql.k3dsa.NotImplementedException;
 import org.gemoc.ql.model.ql.BasicUnaryExpression;
@@ -27,12 +27,12 @@ public class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
     try {
       final Value lhs = ExpressionAspect.evaluate(_self.getOperand());
       UnaryOperatorKind _operator = _self.getOperator();
-      boolean _equals = Objects.equals(_operator, UnaryOperatorKind.UNARYMINUS);
+      boolean _equals = Objects.equal(_operator, UnaryOperatorKind.UNARYMINUS);
       if (_equals) {
         return ValueAspect.uminus(lhs);
       } else {
         UnaryOperatorKind _operator_1 = _self.getOperator();
-        boolean _equals_1 = Objects.equals(_operator_1, UnaryOperatorKind.NOT);
+        boolean _equals_1 = Objects.equal(_operator_1, UnaryOperatorKind.NOT);
         if (_equals_1) {
           final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
           boolean _evaluateAsBoolean = ExpressionAspect.evaluateAsBoolean(_self.getOperand());

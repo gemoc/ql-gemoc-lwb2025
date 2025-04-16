@@ -15,6 +15,11 @@
 		<module>org.gemoc.ql.model</module>
 		<module>org.gemoc.ql.model.edit</module>
 		<module>org.gemoc.ql.model.editor</module>
+		<module>org.gemoc.ql.xtext</module>
+		<module>org.gemoc.ql.xtext.ide</module>
+		<module>org.gemoc.ql.xtext.tests</module>
+		<module>org.gemoc.ql.xtext.ui</module>
+		<!--<module>org.gemoc.ql.xtext.ui.tests</module>-->
 	</modules>
 
 	<properties>

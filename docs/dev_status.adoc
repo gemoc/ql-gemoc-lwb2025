@@ -20,8 +20,8 @@ endif::included_in_readme[]
 === Representations
 
 * [ ] QL editors
-** [*] QL tree editor
-** [ ] QL textual editor
+** [x] QL tree editor
+** [ ] 🚧 QL textual editor
 ** [ ] QL graphical editor
 * [ ] QLS editors
 ** [ ] QLS tree editor
