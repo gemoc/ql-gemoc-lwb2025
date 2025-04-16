@@ -38,10 +38,11 @@ Form returns Form:
 
 DefinitionGroup returns DefinitionGroup:
 	{DefinitionGroup}
-	'DefinitionGroup'
+	'definitions'
 	'{'
-		('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
-		('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
+		( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
+		//('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
+		//('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
 	'}';
 
 EBoolean returns ecore::EBoolean:

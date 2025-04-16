@@ -323,118 +323,62 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.DefinitionGroup");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDefinitionGroupAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDefinitionGroupKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDefinitionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDataTypesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cDataTypesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cDataTypesValueTypeParserRuleCall_3_2_0 = (RuleCall)cDataTypesAssignment_3_2.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cDataTypesAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cDataTypesValueTypeParserRuleCall_3_3_1_0 = (RuleCall)cDataTypesAssignment_3_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cQuestionDefinitionsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cQuestionDefinitionsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cQuestionDefinitionsQuestionDefinitionParserRuleCall_4_2_0 = (RuleCall)cQuestionDefinitionsAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cQuestionDefinitionsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cQuestionDefinitionsQuestionDefinitionParserRuleCall_4_3_1_0 = (RuleCall)cQuestionDefinitionsAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cQuestionDefinitionsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0 = (RuleCall)cQuestionDefinitionsAssignment_3_0.eContents().get(0);
+		private final Assignment cDataTypesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cDataTypesValueTypeParserRuleCall_3_1_0 = (RuleCall)cDataTypesAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//DefinitionGroup returns DefinitionGroup:
 		//    {DefinitionGroup}
-		//    'DefinitionGroup'
+		//    'definitions'
 		//    '{'
-		//        ('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
-		//        ('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
+		//        ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
+		//        //('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
+		//        //('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DefinitionGroup}
-		//'DefinitionGroup'
+		//'definitions'
 		//'{'
-		//    ('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
-		//    ('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
+		//    ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
+		//    //('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
+		//    //('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{DefinitionGroup}
 		public Action getDefinitionGroupAction_0() { return cDefinitionGroupAction_0; }
 		
-		//'DefinitionGroup'
-		public Keyword getDefinitionGroupKeyword_1() { return cDefinitionGroupKeyword_1; }
+		//'definitions'
+		public Keyword getDefinitionsKeyword_1() { return cDefinitionsKeyword_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'dataTypes'
-		public Keyword getDataTypesKeyword_3_0() { return cDataTypesKeyword_3_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3_1() { return cLeftCurlyBracketKeyword_3_1; }
-		
-		//dataTypes+=ValueType
-		public Assignment getDataTypesAssignment_3_2() { return cDataTypesAssignment_3_2; }
-		
-		//ValueType
-		public RuleCall getDataTypesValueTypeParserRuleCall_3_2_0() { return cDataTypesValueTypeParserRuleCall_3_2_0; }
-		
-		//( "," dataTypes+=ValueType)*
-		public Group getGroup_3_3() { return cGroup_3_3; }
-		
-		//","
-		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
-		
-		//dataTypes+=ValueType
-		public Assignment getDataTypesAssignment_3_3_1() { return cDataTypesAssignment_3_3_1; }
-		
-		//ValueType
-		public RuleCall getDataTypesValueTypeParserRuleCall_3_3_1_0() { return cDataTypesValueTypeParserRuleCall_3_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_4() { return cRightCurlyBracketKeyword_3_4; }
-		
-		//('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'questionDefinitions'
-		public Keyword getQuestionDefinitionsKeyword_4_0() { return cQuestionDefinitionsKeyword_4_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		//( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//questionDefinitions+=QuestionDefinition
-		public Assignment getQuestionDefinitionsAssignment_4_2() { return cQuestionDefinitionsAssignment_4_2; }
+		public Assignment getQuestionDefinitionsAssignment_3_0() { return cQuestionDefinitionsAssignment_3_0; }
 		
 		//QuestionDefinition
-		public RuleCall getQuestionDefinitionsQuestionDefinitionParserRuleCall_4_2_0() { return cQuestionDefinitionsQuestionDefinitionParserRuleCall_4_2_0; }
+		public RuleCall getQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0() { return cQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0; }
 		
-		//( "," questionDefinitions+=QuestionDefinition)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
+		//dataTypes+=ValueType
+		public Assignment getDataTypesAssignment_3_1() { return cDataTypesAssignment_3_1; }
 		
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		//ValueType
+		public RuleCall getDataTypesValueTypeParserRuleCall_3_1_0() { return cDataTypesValueTypeParserRuleCall_3_1_0; }
 		
-		//questionDefinitions+=QuestionDefinition
-		public Assignment getQuestionDefinitionsAssignment_4_3_1() { return cQuestionDefinitionsAssignment_4_3_1; }
-		
-		//QuestionDefinition
-		public RuleCall getQuestionDefinitionsQuestionDefinitionParserRuleCall_4_3_1_0() { return cQuestionDefinitionsQuestionDefinitionParserRuleCall_4_3_1_0; }
-		
+		//    //('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
+		//    //('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EBoolean");
@@ -2252,10 +2196,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//DefinitionGroup returns DefinitionGroup:
 	//    {DefinitionGroup}
-	//    'DefinitionGroup'
+	//    'definitions'
 	//    '{'
-	//        ('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
-	//        ('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
+	//        ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
+	//        //('dataTypes' '{' dataTypes+=ValueType ( "," dataTypes+=ValueType)* '}' )?
+	//        //('questionDefinitions' '{' questionDefinitions+=QuestionDefinition ( "," questionDefinitions+=QuestionDefinition)* '}' )?
 	//    '}';
 	public DefinitionGroupElements getDefinitionGroupAccess() {
 		return pDefinitionGroup;

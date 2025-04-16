@@ -269,7 +269,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DefinitionGroup returns DefinitionGroup
 	 *
 	 * Constraint:
-	 *     ((dataTypes+=ValueType dataTypes+=ValueType*)? (questionDefinitions+=QuestionDefinition questionDefinitions+=QuestionDefinition*)?)
+	 *     (questionDefinitions+=QuestionDefinition | dataTypes+=ValueType)*
 	 * </pre>
 	 */
 	protected void sequence_DefinitionGroup(ISerializationContext context, DefinitionGroup semanticObject) {

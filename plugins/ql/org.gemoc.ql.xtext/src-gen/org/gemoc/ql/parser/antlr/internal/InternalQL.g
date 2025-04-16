@@ -548,87 +548,21 @@ ruleDefinitionGroup returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='DefinitionGroup'
+		otherlv_1='definitions'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDefinitionGroupAccess().getDefinitionGroupKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getDefinitionGroupAccess().getDefinitionsKeyword_1());
 		}
 		otherlv_2='{'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getDefinitionGroupAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_3='dataTypes'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getDefinitionGroupAccess().getDataTypesKeyword_3_0());
-			}
-			otherlv_4='{'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getDefinitionGroupAccess().getLeftCurlyBracketKeyword_3_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDefinitionGroupAccess().getDataTypesValueTypeParserRuleCall_3_2_0());
+						newCompositeNode(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0());
 					}
-					lv_dataTypes_5_0=ruleValueType
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDefinitionGroupRule());
-						}
-						add(
-							$current,
-							"dataTypes",
-							lv_dataTypes_5_0,
-							"org.gemoc.ql.QL.ValueType");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_6=','
-				{
-					newLeafNode(otherlv_6, grammarAccess.getDefinitionGroupAccess().getCommaKeyword_3_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getDefinitionGroupAccess().getDataTypesValueTypeParserRuleCall_3_3_1_0());
-						}
-						lv_dataTypes_7_0=ruleValueType
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getDefinitionGroupRule());
-							}
-							add(
-								$current,
-								"dataTypes",
-								lv_dataTypes_7_0,
-								"org.gemoc.ql.QL.ValueType");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_8='}'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getDefinitionGroupAccess().getRightCurlyBracketKeyword_3_4());
-			}
-		)?
-		(
-			otherlv_9='questionDefinitions'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsKeyword_4_0());
-			}
-			otherlv_10='{'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getDefinitionGroupAccess().getLeftCurlyBracketKeyword_4_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsQuestionDefinitionParserRuleCall_4_2_0());
-					}
-					lv_questionDefinitions_11_0=ruleQuestionDefinition
+					lv_questionDefinitions_3_0=ruleQuestionDefinition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDefinitionGroupRule());
@@ -636,45 +570,36 @@ ruleDefinitionGroup returns [EObject current=null]
 						add(
 							$current,
 							"questionDefinitions",
-							lv_questionDefinitions_11_0,
+							lv_questionDefinitions_3_0,
 							"org.gemoc.ql.QL.QuestionDefinition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
+			    |
 			(
-				otherlv_12=','
-				{
-					newLeafNode(otherlv_12, grammarAccess.getDefinitionGroupAccess().getCommaKeyword_4_3_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsQuestionDefinitionParserRuleCall_4_3_1_0());
+					{
+						newCompositeNode(grammarAccess.getDefinitionGroupAccess().getDataTypesValueTypeParserRuleCall_3_1_0());
+					}
+					lv_dataTypes_4_0=ruleValueType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefinitionGroupRule());
 						}
-						lv_questionDefinitions_13_0=ruleQuestionDefinition
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getDefinitionGroupRule());
-							}
-							add(
-								$current,
-								"questionDefinitions",
-								lv_questionDefinitions_13_0,
-								"org.gemoc.ql.QL.QuestionDefinition");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"dataTypes",
+							lv_dataTypes_4_0,
+							"org.gemoc.ql.QL.ValueType");
+						afterParserOrEnumRuleCall();
+					}
 				)
-			)*
-			otherlv_14='}'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getDefinitionGroupAccess().getRightCurlyBracketKeyword_4_4());
-			}
-		)?
-		otherlv_15='}'
+			)
+		)*
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getDefinitionGroupAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getDefinitionGroupAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
