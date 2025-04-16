@@ -19,6 +19,8 @@ This repository will hopefully contain 3 different implementations:
 
 include::docs/dev_status.adoc[]
 
+image:https://github.com/gemoc/ql-gemoc-lwb2025/actions/workflows/maven.yml/badge.svg[Java CI with Maven, link="https://github.com/gemoc/ql-gemoc-lwb2025/actions/workflows/maven.yml"]
+
 == Metamodels overview
 
 include::docs/metamodels.adoc[]
