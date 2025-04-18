@@ -29,6 +29,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_PrimaryExpression_LeftParenthesisKeyword_1_0_p;
 	protected AbstractElementAlias match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q;
+	protected AbstractElementAlias match_QuestionDefinition___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_3__q;
 	protected AbstractElementAlias match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q;
 	
 	@Inject
@@ -42,6 +43,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_PrimaryExpression_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_1_0());
 		match_PrimaryExpression_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_1_0());
 		match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQLModelAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getQLModelAccess().getRightParenthesisKeyword_2_3()));
+		match_QuestionDefinition___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getQuestionDefinitionAccess().getLeftParenthesisKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getQuestionDefinitionAccess().getRightParenthesisKeyword_3_3()));
 		match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getStringValueTypeAccess().getLeftCurlyBracketKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getStringValueTypeAccess().getRightCurlyBracketKeyword_3_2()));
 	}
 	
@@ -73,6 +75,8 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_PrimaryExpression_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q.equals(syntax))
 				emit_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_QuestionDefinition___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_3__q.equals(syntax))
+				emit_QuestionDefinition___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q.equals(syntax))
 				emit_StringValueType___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -197,6 +201,20 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_QLModel___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString (ambiguity) ':' label=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_QuestionDefinition___LeftParenthesisKeyword_3_0_RightParenthesisKeyword_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

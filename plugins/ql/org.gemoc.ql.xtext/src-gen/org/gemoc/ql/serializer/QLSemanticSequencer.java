@@ -512,7 +512,15 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     QuestionDefinition returns QuestionDefinition
 	 *
 	 * Constraint:
-	 *     (isMandatory?='mandatory'? name=EString label=EString dataType=[ValueType|EString] computedExpression=Expression?)
+	 *     (
+	 *         isMandatory?='mandatory'? 
+	 *         name=EString 
+	 *         isDisplayed?='isDisplayed'? 
+	 *         currentValue=Value? 
+	 *         label=EString 
+	 *         dataType=[ValueType|EString] 
+	 *         computedExpression=Expression?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_QuestionDefinition(ISerializationContext context, QuestionDefinition semanticObject) {

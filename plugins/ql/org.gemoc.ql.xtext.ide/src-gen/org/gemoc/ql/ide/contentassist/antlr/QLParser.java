@@ -115,7 +115,9 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 			builder.put(grammarAccess.getEFloatAccess().getGroup_4(), "rule__EFloat__Group_4__0");
 			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup(), "rule__QuestionDefinition__Group__0");
-			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup_6(), "rule__QuestionDefinition__Group_6__0");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup_3(), "rule__QuestionDefinition__Group_3__0");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup_3_2(), "rule__QuestionDefinition__Group_3_2__0");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup_7(), "rule__QuestionDefinition__Group_7__0");
 			builder.put(grammarAccess.getQLModelAccess().getCanSubmitAssignment_2_1(), "rule__QLModel__CanSubmitAssignment_2_1");
 			builder.put(grammarAccess.getQLModelAccess().getSubmitDateAssignment_2_2_1(), "rule__QLModel__SubmitDateAssignment_2_2_1");
 			builder.put(grammarAccess.getQLModelAccess().getDefinitionGroupAssignment_4_0(), "rule__QLModel__DefinitionGroupAssignment_4_0");
@@ -177,9 +179,11 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDecimalValueAccess().getDecimalValueAssignment_3_1(), "rule__DecimalValue__DecimalValueAssignment_3_1");
 			builder.put(grammarAccess.getQuestionDefinitionAccess().getIsMandatoryAssignment_0(), "rule__QuestionDefinition__IsMandatoryAssignment_0");
 			builder.put(grammarAccess.getQuestionDefinitionAccess().getNameAssignment_2(), "rule__QuestionDefinition__NameAssignment_2");
-			builder.put(grammarAccess.getQuestionDefinitionAccess().getLabelAssignment_4(), "rule__QuestionDefinition__LabelAssignment_4");
-			builder.put(grammarAccess.getQuestionDefinitionAccess().getDataTypeAssignment_5(), "rule__QuestionDefinition__DataTypeAssignment_5");
-			builder.put(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionAssignment_6_1(), "rule__QuestionDefinition__ComputedExpressionAssignment_6_1");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getIsDisplayedAssignment_3_1(), "rule__QuestionDefinition__IsDisplayedAssignment_3_1");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getCurrentValueAssignment_3_2_1(), "rule__QuestionDefinition__CurrentValueAssignment_3_2_1");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getLabelAssignment_5(), "rule__QuestionDefinition__LabelAssignment_5");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getDataTypeAssignment_6(), "rule__QuestionDefinition__DataTypeAssignment_6");
+			builder.put(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionAssignment_7_1(), "rule__QuestionDefinition__ComputedExpressionAssignment_7_1");
 		}
 	}
 	

@@ -116,10 +116,6 @@ QuestionGroup returns QuestionGroup:
 
 Question returns Question:
 	questionDefinition=[QuestionDefinition|EString]
-//	'Question'
-//	'{'
-//		'questionDefinition' questionDefinition=[QuestionDefinition|EString]
-//	'}'
 	;
 
 ValueType_Impl returns ValueType:
@@ -277,8 +273,12 @@ enum OrOperatorKind returns BinaryOperatorKind:
 	OR = 'or';
 
 QuestionDefinition returns QuestionDefinition:
+	
 	(isMandatory?='mandatory')?
 	'question'
-	name=EString ":" label=EString dataType=[ValueType|EString]
+	name=EString
+	( '('	(isDisplayed?='isDisplayed')?
+		('currentValue' currentValue=Value)? ')' )? 
+	":" label=EString dataType=[ValueType|EString]
 	('=' computedExpression=Expression ';')?
 	;

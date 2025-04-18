@@ -7,7 +7,7 @@
 '.'=68
 '/'=33
 ':'=70
-';'=71
+';'=72
 '<'=35
 '<='=37
 '='=12
@@ -38,8 +38,9 @@
 'ValueType'=47
 'and'=13
 'booleanType'=49
-'booleanValue'=73
-'canSubmit'=72
+'booleanValue'=74
+'canSubmit'=73
+'currentValue'=71
 'dateType'=54
 'dateValue'=65
 'decimalType'=53
@@ -50,8 +51,9 @@
 'if'=46
 'intValue'=60
 'integerType'=50
+'isDisplayed'=76
 'literals'=56
-'mandatory'=74
+'mandatory'=75
 'max'=52
 'min'=51
 'not'=30
@@ -133,3 +135,5 @@ T__71=71
 T__72=72
 T__73=73
 T__74=74
+T__75=75
+T__76=76
