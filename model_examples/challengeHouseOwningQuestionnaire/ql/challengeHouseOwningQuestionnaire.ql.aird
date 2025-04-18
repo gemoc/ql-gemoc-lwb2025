@@ -8,6 +8,10 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']"/>
         <target xmi:type="ql:QLModel" href="challengeHouseOwningQuestionnaire.ql#/"/>
       </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_f6aXQByeEfCcUYpOJc_hWw" name="new QLDiagram" repPath="#_f6ZJIByeEfCcUYpOJc_hWw" changeId="1745013236373">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']"/>
+        <target xmi:type="ql:QLModel" href="challengeHouseOwningQuestionnaire.ql#/"/>
+      </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram uid="_ZYfMsBwtEfCQ_MozREORlQ">
@@ -1294,6 +1298,807 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_ZYmhcBwtEfCQ_MozREORlQ"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer"/>
+    <target xmi:type="ql:QLModel" href="challengeHouseOwningQuestionnaire.ql#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_f6ZJIByeEfCcUYpOJc_hWw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_f6dakByeEfCcUYpOJc_hWw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_f6dakRyeEfCcUYpOJc_hWw" type="Sirius" element="_f6ZJIByeEfCcUYpOJc_hWw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_f6rdAByeEfCcUYpOJc_hWw" type="2002" element="_f6eBoByeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_f6sEEByeEfCcUYpOJc_hWw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_f6sEERyeEfCcUYpOJc_hWw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_f6srJByeEfCcUYpOJc_hWw" type="3008" element="_f6fPwByeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6srJxyeEfCcUYpOJc_hWw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_f6srKByeEfCcUYpOJc_hWw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_f6srKxyeEfCcUYpOJc_hWw" type="3008" element="_f6f20RyeEfCcUYpOJc_hWw">
+                  <children xmi:type="notation:Node" xmi:id="_f6srLhyeEfCcUYpOJc_hWw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_f6srLxyeEfCcUYpOJc_hWw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_f6srORyeEfCcUYpOJc_hWw" type="3008" element="_f6hE8RyeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6srPByeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6tSMByeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6tSMRyeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6tSMhyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6srOhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6srOxyeEfCcUYpOJc_hWw" x="18" y="24" width="140" height="60"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_f6tSMxyeEfCcUYpOJc_hWw" type="3008" element="_f6hsARyeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6tSNhyeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6tSNxyeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6tSOByeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6tSORyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6tSNByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6tSNRyeEfCcUYpOJc_hWw" x="18" y="108" width="140" height="60"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_f6tSOhyeEfCcUYpOJc_hWw" type="3008" element="_f6hsBByeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6t5QByeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6t5QRyeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6t5QhyeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6t5QxyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6tSOxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6tSPByeEfCcUYpOJc_hWw" x="18" y="180" width="140" height="60"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_f6srMByeEfCcUYpOJc_hWw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_f6srMRyeEfCcUYpOJc_hWw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_f6srLByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6srLRyeEfCcUYpOJc_hWw" x="54" y="39" width="275" height="261"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_f6srMhyeEfCcUYpOJc_hWw" type="3008" element="_f6gd4hyeEfCcUYpOJc_hWw">
+                  <children xmi:type="notation:Node" xmi:id="_f6srNRyeEfCcUYpOJc_hWw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_f6srNhyeEfCcUYpOJc_hWw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_f6t5RByeEfCcUYpOJc_hWw" type="3008" element="_f6iTEhyeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6t5RxyeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6t5SByeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6t5SRyeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6t5ShyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6t5RRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6t5RhyeEfCcUYpOJc_hWw" x="18" y="66" width="140" height="60"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_f6t5SxyeEfCcUYpOJc_hWw" type="3008" element="_f6i6IhyeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6t5ThyeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6t5TxyeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6t5UByeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6t5URyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6t5TByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6t5TRyeEfCcUYpOJc_hWw" x="18" y="150" width="140" height="60"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_f6ugUByeEfCcUYpOJc_hWw" type="3008" element="_f6i6JRyeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6ugUxyeEfCcUYpOJc_hWw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_f6ugVByeEfCcUYpOJc_hWw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_f6ugVRyeEfCcUYpOJc_hWw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_f6ugVhyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6ugURyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6ugUhyeEfCcUYpOJc_hWw" x="18" y="234" width="140" height="60"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_f6ugVxyeEfCcUYpOJc_hWw" type="3007" element="_f6jhMByeEfCcUYpOJc_hWw">
+                      <children xmi:type="notation:Node" xmi:id="_f6ugWhyeEfCcUYpOJc_hWw" type="5003">
+                        <layoutConstraint xmi:type="notation:Location" xmi:id="_f6ugWxyeEfCcUYpOJc_hWw" x="-132" y="7"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_f6ugXByeEfCcUYpOJc_hWw" type="3017" element="_f6jhMRyeEfCcUYpOJc_hWw">
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_f6ugXRyeEfCcUYpOJc_hWw" fontName="Noto Sans"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6ugXhyeEfCcUYpOJc_hWw"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_f6ugWByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6ugWRyeEfCcUYpOJc_hWw" x="250" y="27" width="30" height="30"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_f6srNxyeEfCcUYpOJc_hWw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_f6srOByeEfCcUYpOJc_hWw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_f6srMxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6srNByeEfCcUYpOJc_hWw" x="54" y="309" width="299" height="311"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6srKRyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6srKhyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6srJRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6srJhyeEfCcUYpOJc_hWw" x="58" y="28" width="493" height="642"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_f6sEEhyeEfCcUYpOJc_hWw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_f6sEExyeEfCcUYpOJc_hWw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_f6rdARyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6rdAhyeEfCcUYpOJc_hWw" x="1068" y="36" width="603" height="711"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_f6sEFByeEfCcUYpOJc_hWw" type="2002" element="_f6kIQByeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_f6sEFxyeEfCcUYpOJc_hWw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_f6sEGByeEfCcUYpOJc_hWw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_f6ugXxyeEfCcUYpOJc_hWw" type="3008" element="_f6kvUhyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6ugYhyeEfCcUYpOJc_hWw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_f6vHYByeEfCcUYpOJc_hWw" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6vHYRyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6vHYhyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6ugYByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6ugYRyeEfCcUYpOJc_hWw" x="7" y="40" width="160" height="66"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6vHYxyeEfCcUYpOJc_hWw" type="3008" element="_f6lWYByeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6vHZhyeEfCcUYpOJc_hWw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_f6vHZxyeEfCcUYpOJc_hWw" type="7002">
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6vHaByeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6vHaRyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6vHZByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6vHZRyeEfCcUYpOJc_hWw" x="10" y="112" width="153" height="66"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_f6sEGRyeEfCcUYpOJc_hWw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_f6sEGhyeEfCcUYpOJc_hWw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_f6sEFRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6sEFhyeEfCcUYpOJc_hWw" x="144" y="108" width="215" height="195"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_f6sEGxyeEfCcUYpOJc_hWw" type="2002" element="_f6kIQxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_f6srIByeEfCcUYpOJc_hWw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_f6srIRyeEfCcUYpOJc_hWw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_f6vHahyeEfCcUYpOJc_hWw" type="3009" element="_f6l9cByeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6vucByeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6vucRyeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6wVkRyeEfCcUYpOJc_hWw" type="3010" element="_f6nyohyeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6wVkhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6wVkxyeEfCcUYpOJc_hWw" x="10" y="1"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6vuchyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6vucxyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6vHaxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6vHbByeEfCcUYpOJc_hWw" x="94" y="174" width="409" height="49"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6vudByeEfCcUYpOJc_hWw" type="3009" element="_f6l9cxyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6vudxyeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6vueByeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6wVlByeEfCcUYpOJc_hWw" type="3010" element="_f6oZsByeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6wVlRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6wVlhyeEfCcUYpOJc_hWw" x="17" y="1"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6vueRyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6vuehyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6vudRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6vudhyeEfCcUYpOJc_hWw" x="94" y="30" width="441" height="49"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6vuexyeEfCcUYpOJc_hWw" type="3009" element="_f6mkghyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6vufhyeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6vufxyeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6wVlxyeEfCcUYpOJc_hWw" type="3010" element="_f6oZshyeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6wVmByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6wVmRyeEfCcUYpOJc_hWw" x="4" y="1"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6vugByeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6vugRyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6vufByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6vufRyeEfCcUYpOJc_hWw" x="94" y="90" width="522" height="49"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6vughyeEfCcUYpOJc_hWw" type="3009" element="_f6mkhRyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6vuhRyeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6wVgByeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6wVmhyeEfCcUYpOJc_hWw" type="3010" element="_f6pAwByeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6wVmxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6wVnByeEfCcUYpOJc_hWw" x="5" y="1"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6wVgRyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6wVghyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6vugxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6vuhByeEfCcUYpOJc_hWw" x="91" y="246" width="381" height="49"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6wVgxyeEfCcUYpOJc_hWw" type="3009" element="_f6nLkhyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6wVhhyeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6wVhxyeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6w8kByeEfCcUYpOJc_hWw" type="3010" element="_f6pAwhyeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6w8kRyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6w8khyeEfCcUYpOJc_hWw" x="4" y="1"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6wViByeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6wViRyeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6wVhByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6wVhRyeEfCcUYpOJc_hWw" x="91" y="307" width="401" height="49"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f6wVihyeEfCcUYpOJc_hWw" type="3009" element="_f6nLlRyeEfCcUYpOJc_hWw">
+              <children xmi:type="notation:Node" xmi:id="_f6wVjRyeEfCcUYpOJc_hWw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_f6wVjhyeEfCcUYpOJc_hWw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_f6w8kxyeEfCcUYpOJc_hWw" type="3010" element="_f6pn0ByeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6w8lByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6w8lRyeEfCcUYpOJc_hWw" x="26" y="1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_f6w8lhyeEfCcUYpOJc_hWw" type="3010" element="_f6pn0hyeEfCcUYpOJc_hWw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_f6w8lxyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f6w8mByeEfCcUYpOJc_hWw" x="46" y="17"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_f6wVjxyeEfCcUYpOJc_hWw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_f6wVkByeEfCcUYpOJc_hWw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_f6wVixyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6wVjByeEfCcUYpOJc_hWw" x="94" y="362" width="401" height="65"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_f6srIhyeEfCcUYpOJc_hWw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_f6srIxyeEfCcUYpOJc_hWw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_f6sEHByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f6sEHRyeEfCcUYpOJc_hWw" x="420" y="36" width="633" height="445"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_f6dakhyeEfCcUYpOJc_hWw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_m29SoByeEfCcUYpOJc_hWw" type="4001" element="_m2O54ByeEfCcUYpOJc_hWw" source="_f6srORyeEfCcUYpOJc_hWw" target="_f6vHahyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m29SpByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m29SpRyeEfCcUYpOJc_hWw" x="13" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m29SphyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m29SpxyeEfCcUYpOJc_hWw" x="-8" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m29SqByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m29SqRyeEfCcUYpOJc_hWw" x="-4" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m29SoRyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m29SohyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m29SoxyeEfCcUYpOJc_hWw" points="[-69, 8, 490, -58]$[-365, 43, 194, -23]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m29SqhyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m29SqxyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m295sByeEfCcUYpOJc_hWw" type="4001" element="_m2Pg9ByeEfCcUYpOJc_hWw" source="_f6tSMxyeEfCcUYpOJc_hWw" target="_f6vudByeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m295tByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295tRyeEfCcUYpOJc_hWw" x="21" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m295thyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295txyeEfCcUYpOJc_hWw" x="-1" y="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m295uByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295uRyeEfCcUYpOJc_hWw" x="-4" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m295sRyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m295shyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m295sxyeEfCcUYpOJc_hWw" points="[-69, -21, 474, 141]$[-463, -138, 80, 24]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m295uhyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m295uxyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m295vByeEfCcUYpOJc_hWw" type="4001" element="_m2Pg-RyeEfCcUYpOJc_hWw" source="_f6tSOhyeEfCcUYpOJc_hWw" target="_f6vuexyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m295wByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295wRyeEfCcUYpOJc_hWw" x="22" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m295whyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295wxyeEfCcUYpOJc_hWw" x="-6" y="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m295xByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295xRyeEfCcUYpOJc_hWw" x="-2" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m295vRyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m295vhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m295vxyeEfCcUYpOJc_hWw" points="[-69, -24, 433, 150]$[-433, -150, 69, 24]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m295xhyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m295xxyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m295yByeEfCcUYpOJc_hWw" type="4001" element="_m2QIAhyeEfCcUYpOJc_hWw" source="_f6t5RByeEfCcUYpOJc_hWw" target="_f6vughyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m295zByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295zRyeEfCcUYpOJc_hWw" x="10" y="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m295zhyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m295zxyeEfCcUYpOJc_hWw" x="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2950ByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2950RyeEfCcUYpOJc_hWw" x="4" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m295yRyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m295yhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m295yxyeEfCcUYpOJc_hWw" points="[-69, -21, 507, 153]$[-497, -150, 79, 24]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2-gwByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2-gwRyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m2-gwhyeEfCcUYpOJc_hWw" type="4001" element="_m2QIBxyeEfCcUYpOJc_hWw" source="_f6t5SxyeEfCcUYpOJc_hWw" target="_f6wVgxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m2-gxhyeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2-gxxyeEfCcUYpOJc_hWw" x="10" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2-gyByeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2-gyRyeEfCcUYpOJc_hWw" x="3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2-gyhyeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2-gyxyeEfCcUYpOJc_hWw" x="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m2-gwxyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m2-gxByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m2-gxRyeEfCcUYpOJc_hWw" points="[-69, -25, 497, 172]$[-498, -173, 68, 24]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2-gzByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2-gzRyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m2_H0ByeEfCcUYpOJc_hWw" type="4001" element="_m2QIDByeEfCcUYpOJc_hWw" source="_f6ugUByeEfCcUYpOJc_hWw" target="_f6wVihyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m2_H1ByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_H1RyeEfCcUYpOJc_hWw" x="8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_H1hyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_H1xyeEfCcUYpOJc_hWw" x="2" y="2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_H2ByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_H2RyeEfCcUYpOJc_hWw" x="4" y="2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m2_H0RyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m2_H0hyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m2_H0xyeEfCcUYpOJc_hWw" points="[-69, -27, 494, 191]$[-481, -186, 82, 32]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2_H2hyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2_H2xyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m2_H3ByeEfCcUYpOJc_hWw" type="4001" element="_m2QvEhyeEfCcUYpOJc_hWw" source="_f6vHahyeEfCcUYpOJc_hWw" target="_f6ugXxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m2_H4ByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_H4RyeEfCcUYpOJc_hWw" x="2" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_H4hyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_H4xyeEfCcUYpOJc_hWw" x="1" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_u4ByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_u4RyeEfCcUYpOJc_hWw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m2_H3RyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m2_H3hyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m2_H3xyeEfCcUYpOJc_hWw" points="[-203, -23, 284, 30]$[-408, -45, 79, 8]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2_u4hyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m2_u4xyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m2_u5ByeEfCcUYpOJc_hWw" type="4001" element="_m2QvFxyeEfCcUYpOJc_hWw" source="_f6vudByeEfCcUYpOJc_hWw" target="_f6ugXxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m2_u6ByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_u6RyeEfCcUYpOJc_hWw" x="6" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_u6hyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_u6xyeEfCcUYpOJc_hWw" x="-3" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m2_u7ByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m2_u7RyeEfCcUYpOJc_hWw" x="-4" y="12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m2_u5RyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m2_u5hyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m2_u5xyeEfCcUYpOJc_hWw" points="[-133, 24, 370, -67]$[-424, 76, 79, -15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3AV8ByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3AV8RyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m3AV8hyeEfCcUYpOJc_hWw" type="4001" element="_m2QvHByeEfCcUYpOJc_hWw" source="_f6vuexyeEfCcUYpOJc_hWw" target="_f6ugXxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m3AV9hyeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3AV9xyeEfCcUYpOJc_hWw" x="3" y="-8"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3AV-ByeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3AV-RyeEfCcUYpOJc_hWw" x="-2" y="12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3AV-hyeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3AV-xyeEfCcUYpOJc_hWw" x="-3" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m3AV8xyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m3AV9ByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m3AV9RyeEfCcUYpOJc_hWw" points="[-260, 14, 284, -17]$[-465, 26, 79, -5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3AV_ByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3AV_RyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m3A9AByeEfCcUYpOJc_hWw" type="4001" element="_m2RWJByeEfCcUYpOJc_hWw" source="_f6vughyeEfCcUYpOJc_hWw" target="_f6vHYxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m3BkEByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3BkERyeEfCcUYpOJc_hWw" x="-2" y="-7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CLIByeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CLIRyeEfCcUYpOJc_hWw" x="5" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CLIhyeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CLIxyeEfCcUYpOJc_hWw" x="6" y="11"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m3A9ARyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m3A9AhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m3A9AxyeEfCcUYpOJc_hWw" points="[-189, -22, 282, 31]$[-395, -45, 76, 8]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3CLJByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3CLJRyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m3CLJhyeEfCcUYpOJc_hWw" type="4001" element="_m2RWKRyeEfCcUYpOJc_hWw" source="_f6wVgxyeEfCcUYpOJc_hWw" target="_f6vHYxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m3CyMByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyMRyeEfCcUYpOJc_hWw" y="-6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CyMhyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyMxyeEfCcUYpOJc_hWw" x="2" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CyNByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyNRyeEfCcUYpOJc_hWw" x="4" y="9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m3CLJxyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m3CLKByeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m3CLKRyeEfCcUYpOJc_hWw" points="[-98, -23, 383, 91]$[-405, -96, 76, 18]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3CyNhyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3CyNxyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_m3CyOByeEfCcUYpOJc_hWw" type="4001" element="_m2RWLhyeEfCcUYpOJc_hWw" source="_f6wVihyeEfCcUYpOJc_hWw" target="_f6vHYxyeEfCcUYpOJc_hWw">
+          <children xmi:type="notation:Node" xmi:id="_m3CyPByeEfCcUYpOJc_hWw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyPRyeEfCcUYpOJc_hWw" x="2" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CyPhyeEfCcUYpOJc_hWw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyPxyeEfCcUYpOJc_hWw" y="11"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_m3CyQByeEfCcUYpOJc_hWw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m3CyQRyeEfCcUYpOJc_hWw" x="1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_m3CyORyeEfCcUYpOJc_hWw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_m3CyOhyeEfCcUYpOJc_hWw" fontName="Noto Sans" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m3CyOxyeEfCcUYpOJc_hWw" points="[-81, -31, 403, 156]$[-408, -158, 76, 29]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3DZQByeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m3DZQRyeEfCcUYpOJc_hWw" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_f6qO4ByeEfCcUYpOJc_hWw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_f6qO4RyeEfCcUYpOJc_hWw"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6eBoByeEfCcUYpOJc_hWw" name="Form">
+      <target xmi:type="ql:Form" href="challengeHouseOwningQuestionnaire.ql# Box1HouseOwning"/>
+      <semanticElements xmi:type="ql:Form" href="challengeHouseOwningQuestionnaire.ql# Box1HouseOwning"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6eosByeEfCcUYpOJc_hWw" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6fPwByeEfCcUYpOJc_hWw" name=" : QuestionGroup">
+        <target xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup"/>
+        <semanticElements xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6fPwRyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="255,255,255">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6f20RyeEfCcUYpOJc_hWw" name=" : QuestionGroup">
+          <target xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0"/>
+          <semanticElements xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6gd4ByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="255,255,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6hE8RyeEfCcUYpOJc_hWw" name="hasSoldHouse" outgoingEdges="_m2O54ByeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.0"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6hE8hyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6hsARyeEfCcUYpOJc_hWw" name="hasBoughtHouse" outgoingEdges="_m2Pg9ByeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.1"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.1"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6hsAhyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6hsBByeEfCcUYpOJc_hWw" name="hasMaintLoan" outgoingEdges="_m2Pg-RyeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.2"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.2"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6iTEByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6gd4hyeEfCcUYpOJc_hWw" name=" : QuestionGroup">
+          <target xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1"/>
+          <semanticElements xmi:type="ql:QuestionGroup" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6gd4xyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="255,255,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6iTEhyeEfCcUYpOJc_hWw" name="sellingPrice" outgoingEdges="_m2QIAhyeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.0"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.0"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6i6IByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6i6IhyeEfCcUYpOJc_hWw" name="privateDebt" outgoingEdges="_m2QIBxyeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.1"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.1"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6i6IxyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6i6JRyeEfCcUYpOJc_hWw" name="valueResidue" outgoingEdges="_m2QIDByeEfCcUYpOJc_hWw">
+            <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.2"/>
+            <semanticElements xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.2"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6i6JhyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dash">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@conditionnalStyles.0/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" uid="_f6jhMByeEfCcUYpOJc_hWw" name="expressionhasSoldHouse" width="3" height="3" resizeKind="NSEW">
+            <target xmi:type="ql:QuestionCall" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@guard"/>
+            <semanticElements xmi:type="ql:QuestionCall" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@guard"/>
+            <ownedStyle xmi:type="diagram:Lozenge" uid="_f6jhMRyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" color="138,226,52">
+              <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subNodeMappings[name='guardExpression']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subNodeMappings[name='guardExpression']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6kIQByeEfCcUYpOJc_hWw" name="DefinitionGroup">
+      <target xmi:type="ql:DefinitionGroup" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.0"/>
+      <semanticElements xmi:type="ql:DefinitionGroup" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6kIQRyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="204,242,166" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6kvUhyeEfCcUYpOJc_hWw" name="boolean : BooleanValueType" incomingEdges="_m2QvEhyeEfCcUYpOJc_hWw _m2QvFxyeEfCcUYpOJc_hWw _m2QvHByeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:BooleanValueType" href="challengeHouseOwningQuestionnaire.ql#boolean"/>
+        <semanticElements xmi:type="ql:BooleanValueType" href="challengeHouseOwningQuestionnaire.ql#boolean"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6kvUxyeEfCcUYpOJc_hWw">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='BooleanValueTypeContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='BooleanValueTypeContainer']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6lWYByeEfCcUYpOJc_hWw" name="money : DecimalValueType" incomingEdges="_m2RWJByeEfCcUYpOJc_hWw _m2RWKRyeEfCcUYpOJc_hWw _m2RWLhyeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:DecimalValueType" href="challengeHouseOwningQuestionnaire.ql#money"/>
+        <semanticElements xmi:type="ql:DecimalValueType" href="challengeHouseOwningQuestionnaire.ql#money"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6lWYRyeEfCcUYpOJc_hWw">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='DecimalValueTypeContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='DecimalValueTypeContainer']"/>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_f6kIQxyeEfCcUYpOJc_hWw" name="DefinitionGroup">
+      <target xmi:type="ql:DefinitionGroup" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.1"/>
+      <semanticElements xmi:type="ql:DefinitionGroup" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6kvUByeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="204,242,166" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6l9cByeEfCcUYpOJc_hWw" name="hasSoldHouse : QuestionDefinition" outgoingEdges="_m2QvEhyeEfCcUYpOJc_hWw" incomingEdges="_m2O54ByeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasSoldHouse"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasSoldHouse"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6l9cRyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6nyohyeEfCcUYpOJc_hWw" name="label:Did you sell a house in 2010?">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasSoldHouse"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasSoldHouse"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6nyoxyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6l9cxyeEfCcUYpOJc_hWw" name="hasBoughtHouse : QuestionDefinition" outgoingEdges="_m2QvFxyeEfCcUYpOJc_hWw" incomingEdges="_m2Pg9ByeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasBoughtHouse"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasBoughtHouse"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6mkgByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6oZsByeEfCcUYpOJc_hWw" name="label:Did you buy a house in 2010?">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasBoughtHouse"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasBoughtHouse"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6oZsRyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6mkghyeEfCcUYpOJc_hWw" name="hasMaintLoan : QuestionDefinition" outgoingEdges="_m2QvHByeEfCcUYpOJc_hWw" incomingEdges="_m2Pg-RyeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasMaintLoan"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasMaintLoan"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6mkgxyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6oZshyeEfCcUYpOJc_hWw" name="label:Did you enter a loan for maintenance/reconstruction?">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasMaintLoan"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasMaintLoan"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6oZsxyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6mkhRyeEfCcUYpOJc_hWw" name="sellingPrice : QuestionDefinition" outgoingEdges="_m2RWJByeEfCcUYpOJc_hWw" incomingEdges="_m2QIAhyeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#sellingPrice"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#sellingPrice"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6nLkByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6pAwByeEfCcUYpOJc_hWw" name="label:Price the house was sold for:">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#sellingPrice"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#sellingPrice"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6pAwRyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6nLkhyeEfCcUYpOJc_hWw" name="privateDebt : QuestionDefinition" outgoingEdges="_m2RWKRyeEfCcUYpOJc_hWw" incomingEdges="_m2QIBxyeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#privateDebt"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#privateDebt"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6nLkxyeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6pAwhyeEfCcUYpOJc_hWw" name="label:Private debts for the sold house:">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#privateDebt"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#privateDebt"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6pAwxyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_f6nLlRyeEfCcUYpOJc_hWw" name="valueResidue : QuestionDefinition" outgoingEdges="_m2RWLhyeEfCcUYpOJc_hWw" incomingEdges="_m2QIDByeEfCcUYpOJc_hWw">
+        <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#valueResidue"/>
+        <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#valueResidue"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_f6nyoByeEfCcUYpOJc_hWw" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" borderLineStyle="dash" backgroundStyle="GradientTopToBottom" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6pn0ByeEfCcUYpOJc_hWw" name="=(sellingPrice - privateDebt)">
+          <target xmi:type="ql:BasicBinaryExpression" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.1/@questionDefinitions.5/@computedExpression"/>
+          <semanticElements xmi:type="ql:BasicBinaryExpression" href="challengeHouseOwningQuestionnaire.ql#//@definitionGroup.1/@questionDefinitions.5/@computedExpression"/>
+          <ownedStyle xmi:type="diagram:Lozenge" uid="_f6pn0RyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" color="252,175,62">
+            <description xmi:type="style:LozengeNodeDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='computedExpressionNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='computedExpressionNode']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" uid="_f6pn0hyeEfCcUYpOJc_hWw" name="label:Value residue:">
+          <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#valueResidue"/>
+          <semanticElements xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#valueResidue"/>
+          <ownedStyle xmi:type="diagram:Square" uid="_f6pn0xyeEfCcUYpOJc_hWw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@subNodeMappings[name='QuestionDefinitionLabelNode']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2O54ByeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6hE8RyeEfCcUYpOJc_hWw" targetNode="_f6l9cByeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2Pg8ByeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2Pg8RyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2Pg9ByeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6hsARyeEfCcUYpOJc_hWw" targetNode="_f6l9cxyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2Pg9RyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2Pg9hyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2Pg-RyeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6hsBByeEfCcUYpOJc_hWw" targetNode="_f6mkghyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.0/@questions.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2Pg-hyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2Pg-xyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QIAhyeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6iTEhyeEfCcUYpOJc_hWw" targetNode="_f6mkhRyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2QIAxyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2QIBByeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QIBxyeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6i6IhyeEfCcUYpOJc_hWw" targetNode="_f6nLkhyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2QICByeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2QICRyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QIDByeEfCcUYpOJc_hWw" name="definition" sourceNode="_f6i6JRyeEfCcUYpOJc_hWw" targetNode="_f6nLlRyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:Question" href="challengeHouseOwningQuestionnaire.ql#//@forms.0/@questionGroup/@questionGroups.1/@questions.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2QIDRyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2QIDhyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionQuestionDefinitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QvEhyeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6l9cByeEfCcUYpOJc_hWw" targetNode="_f6kvUhyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasSoldHouse"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2QvExyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2QvFByeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QvFxyeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6l9cxyeEfCcUYpOJc_hWw" targetNode="_f6kvUhyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasBoughtHouse"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2QvGByeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2QvGRyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2QvHByeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6mkghyeEfCcUYpOJc_hWw" targetNode="_f6kvUhyeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#hasMaintLoan"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2RWIByeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2RWIRyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2RWJByeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6mkhRyeEfCcUYpOJc_hWw" targetNode="_f6lWYByeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#sellingPrice"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2RWJRyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2RWJhyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2RWKRyeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6nLkhyeEfCcUYpOJc_hWw" targetNode="_f6lWYByeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#privateDebt"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2RWKhyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2RWKxyeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_m2RWLhyeEfCcUYpOJc_hWw" name="dataType" sourceNode="_f6nLlRyeEfCcUYpOJc_hWw" targetNode="_f6lWYByeEfCcUYpOJc_hWw">
+      <target xmi:type="ql:QuestionDefinition" href="challengeHouseOwningQuestionnaire.ql#valueResidue"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_m2RWLxyeEfCcUYpOJc_hWw">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_m2RWMByeEfCcUYpOJc_hWw" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']/@edgeMappings[name='QuestionDefinitionTypeEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_f6ZwMByeEfCcUYpOJc_hWw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Debug']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.gemoc.ql.design/description/ql.odesign#//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Typing']"/>
     <target xmi:type="ql:QLModel" href="challengeHouseOwningQuestionnaire.ql#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>
