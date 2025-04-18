@@ -20,6 +20,7 @@
 		<module>org.gemoc.ql.xtext.tests</module>
 		<module>org.gemoc.ql.xtext.ui</module>
 		<!--<module>org.gemoc.ql.xtext.ui.tests</module>-->
+		<module>org.gemoc.ql.design</module>
 	</modules>
 
 	<properties>

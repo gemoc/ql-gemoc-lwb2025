@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="ql" version="12.0.0.2017041100">
+  <ownedViewpoints name="QLViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" endUserDocumentation="Presents the QL (QuestionnaireLanguage) model using a simple UML inspired Object Diagram.&#xA;Ie. all classes of the QL Metamodel are represented as Node and their references are represented as Edge&#xA;&#xA;This diagram was generated using wizards available in GEMOC Studio." name="BasicObjectDiagram" domainClass="ql::QLModel">
+      <metamodel href="file:/home/dvojtise/git/github/gemoc/ql-gemoc-lwb2025/plugins/ql/org.gemoc.ql.model/model/ql.ecore#/"/>
+      <defaultLayer xsi:type="description_1:AdditionalLayer" name="Default" activeByDefault="true">
+        <edgeMappings name="Form_questionGroupEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='FormContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionGroupContainer']" targetFinderExpression="feature:questionGroup">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'questionGroup'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionDefinition_dataTypeEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BooleanValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='IntegerValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DecimalValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DateValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='EnumerationValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='StringValueTypeContainer']" targetFinderExpression="feature:dataType">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'dataType'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionDefinition_computedExpressionEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetFinderExpression="feature:computedExpression">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'computedExpression'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionDefinition_currentValueEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='IntegerValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='StringValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BooleanValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DateValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DecimalValueContainer']" targetFinderExpression="feature:currentValue">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'currentValue'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Expression_resultTypeEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BooleanValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='IntegerValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DecimalValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DateValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='EnumerationValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='StringValueTypeContainer']" targetFinderExpression="feature:resultType">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'resultType'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="BinaryExpression_lhsOperandEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetFinderExpression="feature:lhsOperand">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'lhsOperand'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="BinaryExpression_rhsOperandEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetFinderExpression="feature:rhsOperand">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'rhsOperand'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="UnaryExpression_operandEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetFinderExpression="feature:operand">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'operand'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ConstantCall_valueEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='IntegerValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='StringValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BooleanValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DateValueContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DecimalValueContainer']" targetFinderExpression="feature:value">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'value'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EnumerationValueType_enumerationLiteralsEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='EnumerationValueTypeContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='EnumerationLiteralContainer']" targetFinderExpression="feature:enumerationLiterals">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'enumerationLiterals'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ConditionnalElement_guardEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionGroupContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicBinaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='ConstantCallContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BasicUnaryExpressionContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetFinderExpression="feature:guard">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'guard'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionGroup_questionGroupsEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionGroupContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionGroupContainer']" targetFinderExpression="feature:questionGroups">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'questionGroups'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionGroup_questionsEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionGroupContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionContainer']" targetFinderExpression="feature:questions">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'questions'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DefinitionGroup_dataTypesEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='BooleanValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='IntegerValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DecimalValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DateValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='EnumerationValueTypeContainer'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='StringValueTypeContainer']" targetFinderExpression="feature:dataTypes">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'dataTypes'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DefinitionGroup_questionDefinitionsEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetFinderExpression="feature:questionDefinitions">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'questionDefinitions'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="QuestionCall_questionEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionCallContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetFinderExpression="feature:question">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'question'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Question_questionDefinitionEdge" sourceMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionContainer']" targetMapping="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='BasicObjectDiagram']/@defaultLayer/@containerMappings[name='QuestionDefinitionContainer']" targetFinderExpression="feature:questionDefinition">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'questionDefinition'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="FormContainer" domainClass="ql::Form">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="QuestionDefinitionContainer" domainClass="ql::QuestionDefinition">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="BasicBinaryExpressionContainer" domainClass="ql::BasicBinaryExpression">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ConstantCallContainer" domainClass="ql::ConstantCall">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="IntegerValueContainer" domainClass="ql::IntegerValue">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="StringValueContainer" domainClass="ql::StringValue">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="BooleanValueContainer" domainClass="ql::BooleanValue">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="BasicUnaryExpressionContainer" domainClass="ql::BasicUnaryExpression">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DateValueContainer" domainClass="ql::DateValue">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DecimalValueContainer" domainClass="ql::DecimalValue">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="BooleanValueTypeContainer" domainClass="ql::BooleanValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="IntegerValueTypeContainer" domainClass="ql::IntegerValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DecimalValueTypeContainer" domainClass="ql::DecimalValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DateValueTypeContainer" domainClass="ql::DateValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EnumerationValueTypeContainer" domainClass="ql::EnumerationValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EnumerationLiteralContainer" domainClass="ql::EnumerationLiteral">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="QuestionGroupContainer" domainClass="ql::QuestionGroup">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DefinitionGroupContainer" domainClass="ql::DefinitionGroup">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="QuestionCallContainer" domainClass="ql::QuestionCall">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="StringValueTypeContainer" domainClass="ql::StringValueType">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="QuestionContainer" domainClass="ql::Question">
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

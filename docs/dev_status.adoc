@@ -22,11 +22,19 @@ endif::included_in_readme[]
 * [ ] QL editors
 ** [x] QL tree editor
 ** [x]  QL textual editor
-** [ ] QL graphical editor
+** [ ] 🚧 QL graphical editor
+*** [x] BasicObjectDiagram (generated)
+*** [ ] Custom Diagram
+** [ ] QL graphical editor debug layer
+** [ ] QL graphical editor animation layer
 * [ ] QLS editors
 ** [ ] QLS tree editor
 ** [ ] QLS textual editor
 ** [ ] QLS graphical editor
+*** [ ] BasicObjectDiagram (generated)
+*** [ ] Custom Diagram
+** [ ] QLS graphical editor debug layer
+** [ ] QLS graphical editor animation layer
 ** [ ] textual support in graphical editor
 
 === Behavior
