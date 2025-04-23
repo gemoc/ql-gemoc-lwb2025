@@ -37,6 +37,8 @@ Workflow {
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 
+			qualifiedNamesProvider = exporting.QualifiedNamesFragment2 auto-inject {}
+			
 			formatter = {
 				generateStub = true
 				generateXtendStub = true

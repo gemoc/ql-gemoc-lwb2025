@@ -25,6 +25,7 @@ import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
+import org.gemoc.ql.model.ql.EnumerationValue;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.IfExpression;
@@ -131,6 +132,9 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case QlPackage.ENUMERATION_LITERAL:
 				sequence_EnumerationLiteral(context, (EnumerationLiteral) semanticObject); 
 				return; 
+			case QlPackage.ENUMERATION_VALUE:
+				sequence_EnumerationValue(context, (EnumerationValue) semanticObject); 
+				return; 
 			case QlPackage.ENUMERATION_VALUE_TYPE:
 				sequence_EnumerationValueType(context, (EnumerationValueType) semanticObject); 
 				return; 
@@ -230,7 +234,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BasicUnaryExpression returns BasicUnaryExpression
 	 *
 	 * Constraint:
-	 *     (operator=UnaryOperatorKind? resultType=[ValueType|EString]? operand=Expression)
+	 *     (operator=UnaryOperatorKind? resultType=[ValueType|QualifiedName]? operand=Expression)
 	 * </pre>
 	 */
 	protected void sequence_BasicUnaryExpression(ISerializationContext context, BasicUnaryExpression semanticObject) {
@@ -245,7 +249,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BooleanValueType returns BooleanValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString?)
+	 *     (name=ID unit=EString?)
 	 * </pre>
 	 */
 	protected void sequence_BooleanValueType(ISerializationContext context, BooleanValueType semanticObject) {
@@ -260,11 +264,17 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     BooleanValue returns BooleanValue
 	 *
 	 * Constraint:
-	 *     booleanValue?='booleanValue'?
+	 *     booleanValue=EBoolean
 	 * </pre>
 	 */
 	protected void sequence_BooleanValue(ISerializationContext context, BooleanValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.BOOLEAN_VALUE__BOOLEAN_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.BOOLEAN_VALUE__BOOLEAN_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBooleanValueAccess().getBooleanValueEBooleanParserRuleCall_1_0(), semanticObject.isBooleanValue());
+		feeder.finish();
 	}
 	
 	
@@ -305,7 +315,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DateValueType returns DateValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString?)
+	 *     (name=ID unit=EString?)
 	 * </pre>
 	 */
 	protected void sequence_DateValueType(ISerializationContext context, DateValueType semanticObject) {
@@ -335,7 +345,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DecimalValueType returns DecimalValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString?)
+	 *     (name=ID unit=EString?)
 	 * </pre>
 	 */
 	protected void sequence_DecimalValueType(ISerializationContext context, DecimalValueType semanticObject) {
@@ -350,11 +360,17 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     DecimalValue returns DecimalValue
 	 *
 	 * Constraint:
-	 *     decimalValue=EFloat?
+	 *     decimalValue=EFloat
 	 * </pre>
 	 */
 	protected void sequence_DecimalValue(ISerializationContext context, DecimalValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.DECIMAL_VALUE__DECIMAL_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.DECIMAL_VALUE__DECIMAL_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_1_0(), semanticObject.getDecimalValue());
+		feeder.finish();
 	}
 	
 	
@@ -378,16 +394,16 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
 	 * Constraint:
-	 *     name=EString
+	 *     name=ID
 	 * </pre>
 	 */
 	protected void sequence_EnumerationLiteral(ISerializationContext context, EnumerationLiteral semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.ENUMERATION_LITERAL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.ENUMERATION_LITERAL__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -399,7 +415,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     EnumerationValueType returns EnumerationValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString? (enumerationLiterals+=EnumerationLiteral enumerationLiterals+=EnumerationLiteral*)?)
+	 *     (name=ID unit=EString? (enumerationLiterals+=EnumerationLiteral enumerationLiterals+=EnumerationLiteral*)?)
 	 * </pre>
 	 */
 	protected void sequence_EnumerationValueType(ISerializationContext context, EnumerationValueType semanticObject) {
@@ -410,10 +426,46 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Expression returns EnumerationValue
+	 *     UnaryOrPrimaryExpression returns EnumerationValue
+	 *     PrimaryExpression returns EnumerationValue
+	 *     OrExpression returns EnumerationValue
+	 *     OrExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     AndExpression returns EnumerationValue
+	 *     AndExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     EqualExpression returns EnumerationValue
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     ComparisionExpression returns EnumerationValue
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     AdditionExpression returns EnumerationValue
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     MultiplicationExpression returns EnumerationValue
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns EnumerationValue
+	 *     Call returns EnumerationValue
+	 *     EnumerationValue returns EnumerationValue
+	 *
+	 * Constraint:
+	 *     enumerationLiteral=[EnumerationLiteral|QualifiedName]
+	 * </pre>
+	 */
+	protected void sequence_EnumerationValue(ISerializationContext context, EnumerationValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Form returns Form
 	 *
 	 * Constraint:
-	 *     (name=EString questionGroup=QuestionGroup)
+	 *     (name=ID questionGroup=QuestionGroup)
 	 * </pre>
 	 */
 	protected void sequence_Form(ISerializationContext context, Form semanticObject) {
@@ -424,7 +476,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.FORM__QUESTION_GROUP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFormAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0(), semanticObject.getQuestionGroup());
 		feeder.finish();
 	}
@@ -466,7 +518,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IntegerValueType returns IntegerValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString? min=EInt? max=EInt?)
+	 *     (name=ID unit=EString? min=EInt? max=EInt?)
 	 * </pre>
 	 */
 	protected void sequence_IntegerValueType(ISerializationContext context, IntegerValueType semanticObject) {
@@ -481,11 +533,17 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     IntegerValue returns IntegerValue
 	 *
 	 * Constraint:
-	 *     intValue=EInt?
+	 *     intValue=EInt
 	 * </pre>
 	 */
 	protected void sequence_IntegerValue(ISerializationContext context, IntegerValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.INTEGER_VALUE__INT_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.INTEGER_VALUE__INT_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIntegerValueAccess().getIntValueEIntParserRuleCall_1_0(), semanticObject.getIntValue());
+		feeder.finish();
 	}
 	
 	
@@ -525,7 +583,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     QuestionCall returns QuestionCall
 	 *
 	 * Constraint:
-	 *     question=[QuestionDefinition|EString]
+	 *     question=[QuestionDefinition|QualifiedName]
 	 * </pre>
 	 */
 	protected void sequence_QuestionCall(ISerializationContext context, QuestionCall semanticObject) {
@@ -534,7 +592,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.QUESTION_CALL__QUESTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionEStringParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION_CALL__QUESTION, false));
+		feeder.accept(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION_CALL__QUESTION, false));
 		feeder.finish();
 	}
 	
@@ -581,7 +639,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Question returns Question
 	 *
 	 * Constraint:
-	 *     questionDefinition=[QuestionDefinition|EString]
+	 *     questionDefinition=[QuestionDefinition|QualifiedName]
 	 * </pre>
 	 */
 	protected void sequence_Question(ISerializationContext context, Question semanticObject) {
@@ -590,7 +648,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.QUESTION__QUESTION_DEFINITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionEStringParserRuleCall_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION__QUESTION_DEFINITION, false));
+		feeder.accept(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionQualifiedNameParserRuleCall_0_1(), semanticObject.eGet(QlPackage.Literals.QUESTION__QUESTION_DEFINITION, false));
 		feeder.finish();
 	}
 	
@@ -602,7 +660,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     StringValueType returns StringValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString?)
+	 *     (name=ID unit=EString?)
 	 * </pre>
 	 */
 	protected void sequence_StringValueType(ISerializationContext context, StringValueType semanticObject) {
@@ -617,11 +675,17 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     StringValue returns StringValue
 	 *
 	 * Constraint:
-	 *     stringValue=EString?
+	 *     stringValue=STRING
 	 * </pre>
 	 */
 	protected void sequence_StringValue(ISerializationContext context, StringValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.STRING_VALUE__STRING_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.STRING_VALUE__STRING_VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringValueAccess().getStringValueSTRINGTerminalRuleCall_1_0(), semanticObject.getStringValue());
+		feeder.finish();
 	}
 	
 	
@@ -670,7 +734,7 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ValueType_Impl returns ValueType
 	 *
 	 * Constraint:
-	 *     (name=EString unit=EString?)
+	 *     (name=ID unit=EString?)
 	 * </pre>
 	 */
 	protected void sequence_ValueType_Impl(ISerializationContext context, ValueType semanticObject) {

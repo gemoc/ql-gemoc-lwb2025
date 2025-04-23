@@ -477,13 +477,16 @@ ruleIfExpression returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='if'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIfExpressionAccess().getIfExpressionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='if'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getIfExpressionAccess().getIfKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getIfExpressionAccess().getIfKeyword_1());
 		}
 		(
 			(
@@ -504,24 +507,16 @@ ruleIfExpression returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=')'
+		otherlv_3='then'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_3());
-		}
-		otherlv_4='then'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getIfExpressionAccess().getThenKeyword_4());
-		}
-		otherlv_5='('
-		{
-			newLeafNode(otherlv_5, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getIfExpressionAccess().getThenKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIfExpressionAccess().getThenExpressionExpressionParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getIfExpressionAccess().getThenExpressionExpressionParserRuleCall_4_0());
 				}
-				lv_thenExpression_6_0=ruleExpression
+				lv_thenExpression_4_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getIfExpressionRule());
@@ -529,31 +524,23 @@ ruleIfExpression returns [EObject current=null]
 					set(
 						$current,
 						"thenExpression",
-						lv_thenExpression_6_0,
+						lv_thenExpression_4_0,
 						"org.gemoc.ql.QL.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7=')'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_7());
-		}
 		(
-			otherlv_8='else'
+			otherlv_5='else'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getIfExpressionAccess().getElseKeyword_8_0());
-			}
-			otherlv_9='('
-			{
-				newLeafNode(otherlv_9, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_8_1());
+				newLeafNode(otherlv_5, grammarAccess.getIfExpressionAccess().getElseKeyword_5_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIfExpressionAccess().getElseExpressionExpressionParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getIfExpressionAccess().getElseExpressionExpressionParserRuleCall_5_1_0());
 					}
-					lv_elseExpression_10_0=ruleExpression
+					lv_elseExpression_6_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIfExpressionRule());
@@ -561,17 +548,17 @@ ruleIfExpression returns [EObject current=null]
 						set(
 							$current,
 							"elseExpression",
-							lv_elseExpression_10_0,
+							lv_elseExpression_6_0,
 							"org.gemoc.ql.QL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_11=')'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_8_3());
-			}
 		)?
+		otherlv_7='endif'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getIfExpressionAccess().getEndifKeyword_6());
+		}
 	)
 ;
 
@@ -1052,6 +1039,15 @@ ruleCall returns [EObject current=null]
 			$current = $this_QuestionCall_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getCallAccess().getEnumerationValueParserRuleCall_2());
+		}
+		this_EnumerationValue_2=ruleEnumerationValue
+		{
+			$current = $this_EnumerationValue_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1140,20 +1136,19 @@ ruleForm returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_1_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getFormAccess().getNameEStringParserRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0());
 				}
-				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFormRule());
+						$current = createModelElement(grammarAccess.getFormRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1258,6 +1253,36 @@ ruleDefinitionGroup returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleEBoolean
+entryRuleEBoolean returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEBooleanRule()); }
+	iv_ruleEBoolean=ruleEBoolean
+	{ $current=$iv_ruleEBoolean.current.getText(); }
+	EOF;
+
+// Rule EBoolean
+ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='true'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
+		}
+		    |
+		kw='false'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
+		}
+	)
+;
+
 // Entry rule entryRuleEDate
 entryRuleEDate returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getEDateRule()); }
@@ -1342,16 +1367,12 @@ ruleQuestionGroup returns [EObject current=null]
 			{
 				newLeafNode(otherlv_1, grammarAccess.getQuestionGroupAccess().getIfKeyword_1_0());
 			}
-			otherlv_2='('
-			{
-				newLeafNode(otherlv_2, grammarAccess.getQuestionGroupAccess().getLeftParenthesisKeyword_1_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionGroupAccess().getGuardExpressionParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getQuestionGroupAccess().getGuardExpressionParserRuleCall_1_1_0());
 					}
-					lv_guard_3_0=ruleExpression
+					lv_guard_2_0=ruleExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -1359,20 +1380,16 @@ ruleQuestionGroup returns [EObject current=null]
 						set(
 							$current,
 							"guard",
-							lv_guard_3_0,
+							lv_guard_2_0,
 							"org.gemoc.ql.QL.Expression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_4=')'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getQuestionGroupAccess().getRightParenthesisKeyword_1_3());
-			}
 		)?
-		otherlv_5='{'
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
@@ -1380,7 +1397,7 @@ ruleQuestionGroup returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionGroupsQuestionGroupParserRuleCall_3_0_0());
 					}
-					lv_questionGroups_6_0=ruleQuestionGroup
+					lv_questionGroups_4_0=ruleQuestionGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -1388,7 +1405,7 @@ ruleQuestionGroup returns [EObject current=null]
 						add(
 							$current,
 							"questionGroups",
-							lv_questionGroups_6_0,
+							lv_questionGroups_4_0,
 							"org.gemoc.ql.QL.QuestionGroup");
 						afterParserOrEnumRuleCall();
 					}
@@ -1400,7 +1417,7 @@ ruleQuestionGroup returns [EObject current=null]
 					{
 						newCompositeNode(grammarAccess.getQuestionGroupAccess().getQuestionsQuestionParserRuleCall_3_1_0());
 					}
-					lv_questions_7_0=ruleQuestion
+					lv_questions_5_0=ruleQuestion
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionGroupRule());
@@ -1408,16 +1425,16 @@ ruleQuestionGroup returns [EObject current=null]
 						add(
 							$current,
 							"questions",
-							lv_questions_7_0,
+							lv_questions_5_0,
 							"org.gemoc.ql.QL.Question");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_8='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -1447,7 +1464,7 @@ ruleQuestion returns [EObject current=null]
 			{
 				newCompositeNode(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionCrossReference_0());
 			}
-			ruleEString
+			ruleQualifiedName
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -1484,20 +1501,19 @@ ruleValueType_Impl returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getValueType_ImplAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getValueType_ImplAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getValueType_ImplRule());
+						$current = createModelElement(grammarAccess.getValueType_ImplRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1665,12 +1681,20 @@ ruleQuestionCall returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionCrossReference_1_0());
 				}
-				ruleEString
+				ruleQualifiedName
 				{
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getQuestionCallAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getQuestionCallAccess().getRightParenthesisKeyword_3());
+		}
 	)
 ;
 
@@ -1703,20 +1727,19 @@ ruleBooleanValueType returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getBooleanValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getBooleanValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBooleanValueTypeRule());
+						$current = createModelElement(grammarAccess.getBooleanValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1787,20 +1810,19 @@ ruleIntegerValueType returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getIntegerValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getIntegerValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getIntegerValueTypeRule());
+						$current = createModelElement(grammarAccess.getIntegerValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -1921,20 +1943,19 @@ ruleDecimalValueType returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getDecimalValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getDecimalValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDecimalValueTypeRule());
+						$current = createModelElement(grammarAccess.getDecimalValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2005,20 +2026,19 @@ ruleDateValueType returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getDateValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getDateValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDateValueTypeRule());
+						$current = createModelElement(grammarAccess.getDateValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2089,20 +2109,19 @@ ruleEnumerationValueType returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getEnumerationValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getEnumerationValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEnumerationValueTypeRule());
+						$current = createModelElement(grammarAccess.getEnumerationValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2225,26 +2244,25 @@ ruleStringValueType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='StringValueType'
+		otherlv_1='StringType'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getStringValueTypeAccess().getStringValueTypeKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getStringValueTypeAccess().getStringTypeKeyword_1());
 		}
 		(
 			(
+				lv_name_2_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getStringValueTypeAccess().getNameEStringParserRuleCall_2_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getStringValueTypeAccess().getNameIDTerminalRuleCall_2_0());
 				}
-				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getStringValueTypeRule());
+						$current = createModelElement(grammarAccess.getStringValueTypeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2286,39 +2304,6 @@ ruleStringValueType returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEInt
-entryRuleEInt returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEIntRule()); }
-	iv_ruleEInt=ruleEInt
-	{ $current=$iv_ruleEInt.current.getText(); }
-	EOF;
-
-// Rule EInt
-ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			kw='-'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		this_INT_1=RULE_INT
-		{
-			$current.merge(this_INT_1);
-		}
-		{
-			newLeafNode(this_INT_1, grammarAccess.getEIntAccess().getINTTerminalRuleCall_1());
-		}
-	)
-;
-
 // Entry rule entryRuleEnumerationLiteral
 entryRuleEnumerationLiteral returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEnumerationLiteralRule()); }
@@ -2344,20 +2329,19 @@ ruleEnumerationLiteral returns [EObject current=null]
 		)
 		(
 			(
+				lv_name_1_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getEnumerationLiteralAccess().getNameEStringParserRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_1_0());
 				}
-				lv_name_1_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEnumerationLiteralRule());
+						$current = createModelElement(grammarAccess.getEnumerationLiteralRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"name",
 						lv_name_1_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -2387,43 +2371,25 @@ ruleIntegerValue returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='IntegerValue'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getIntegerValueAccess().getIntegerValueKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getIntegerValueAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='intValue'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getIntegerValueAccess().getIntValueKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getIntegerValueAccess().getIntValueEIntParserRuleCall_3_1_0());
+				{
+					newCompositeNode(grammarAccess.getIntegerValueAccess().getIntValueEIntParserRuleCall_1_0());
+				}
+				lv_intValue_1_0=ruleEInt
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIntegerValueRule());
 					}
-					lv_intValue_4_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getIntegerValueRule());
-						}
-						set(
-							$current,
-							"intValue",
-							lv_intValue_4_0,
-							"org.gemoc.ql.QL.EInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"intValue",
+						lv_intValue_1_0,
+						"org.gemoc.ql.QL.EInt");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getIntegerValueAccess().getRightCurlyBracketKeyword_4());
-		}
+		)
 	)
 ;
 
@@ -2450,43 +2416,24 @@ ruleStringValue returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='StringValue'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getStringValueAccess().getStringValueKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getStringValueAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='stringValue'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getStringValueAccess().getStringValueKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getStringValueAccess().getStringValueEStringParserRuleCall_3_1_0());
+				lv_stringValue_1_0=RULE_STRING
+				{
+					newLeafNode(lv_stringValue_1_0, grammarAccess.getStringValueAccess().getStringValueSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getStringValueRule());
 					}
-					lv_stringValue_4_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getStringValueRule());
-						}
-						set(
-							$current,
-							"stringValue",
-							lv_stringValue_4_0,
-							"org.gemoc.ql.QL.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"stringValue",
+						lv_stringValue_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
 			)
-		)?
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getStringValueAccess().getRightCurlyBracketKeyword_4());
-		}
+		)
 	)
 ;
 
@@ -2515,22 +2462,65 @@ ruleBooleanValue returns [EObject current=null]
 		)
 		(
 			(
-				lv_booleanValue_1_0='booleanValue'
 				{
-					newLeafNode(lv_booleanValue_1_0, grammarAccess.getBooleanValueAccess().getBooleanValueBooleanValueKeyword_1_0());
+					newCompositeNode(grammarAccess.getBooleanValueAccess().getBooleanValueEBooleanParserRuleCall_1_0());
 				}
+				lv_booleanValue_1_0=ruleEBoolean
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBooleanValueRule());
+						$current = createModelElementForParent(grammarAccess.getBooleanValueRule());
 					}
-					setWithLastConsumed($current, "booleanValue", lv_booleanValue_1_0 != null, "booleanValue");
+					set(
+						$current,
+						"booleanValue",
+						lv_booleanValue_1_0,
+						"org.gemoc.ql.QL.EBoolean");
+					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
-		otherlv_2='BooleanValue'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getBooleanValueAccess().getBooleanValueKeyword_2());
-		}
+		)
+	)
+;
+
+// Entry rule entryRuleEnumerationValue
+entryRuleEnumerationValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnumerationValueRule()); }
+	iv_ruleEnumerationValue=ruleEnumerationValue
+	{ $current=$iv_ruleEnumerationValue.current; }
+	EOF;
+
+// Rule EnumerationValue
+ruleEnumerationValue returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getEnumerationValueAccess().getEnumerationValueAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEnumerationValueRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -2620,44 +2610,50 @@ ruleDecimalValue returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='DecimalValue'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getDecimalValueAccess().getDecimalValueKeyword_1());
-		}
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getDecimalValueAccess().getLeftCurlyBracketKeyword_2());
-		}
 		(
-			otherlv_3='decimalValue'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getDecimalValueAccess().getDecimalValueKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_3_1_0());
+				{
+					newCompositeNode(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_1_0());
+				}
+				lv_decimalValue_1_0=ruleEFloat
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDecimalValueRule());
 					}
-					lv_decimalValue_4_0=ruleEFloat
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDecimalValueRule());
-						}
-						set(
-							$current,
-							"decimalValue",
-							lv_decimalValue_4_0,
-							"org.gemoc.ql.QL.EFloat");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"decimalValue",
+						lv_decimalValue_1_0,
+						"org.gemoc.ql.QL.EFloat");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getDecimalValueAccess().getRightCurlyBracketKeyword_4());
-		}
+		)
 	)
+;
+
+// Entry rule entryRuleEInt
+entryRuleEInt returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEIntRule()); }
+	iv_ruleEInt=ruleEInt
+	{ $current=$iv_ruleEInt.current.getText(); }
+	EOF;
+
+// Rule EInt
+ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getEIntAccess().getINTTerminalRuleCall());
+	}
 ;
 
 // Entry rule entryRuleEFloat
@@ -2677,60 +2673,53 @@ ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 }:
 	(
 		(
-			kw='-'
+			this_INT_0=RULE_INT
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_0());
-			}
-		)?
-		(
-			this_INT_1=RULE_INT
-			{
-				$current.merge(this_INT_1);
+				$current.merge(this_INT_0);
 			}
 			{
-				newLeafNode(this_INT_1, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_1());
+				newLeafNode(this_INT_0, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_0());
 			}
 		)?
 		kw='.'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEFloatAccess().getFullStopKeyword_2());
+			newLeafNode(kw, grammarAccess.getEFloatAccess().getFullStopKeyword_1());
 		}
-		this_INT_3=RULE_INT
+		this_INT_2=RULE_INT
 		{
-			$current.merge(this_INT_3);
+			$current.merge(this_INT_2);
 		}
 		{
-			newLeafNode(this_INT_3, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3());
+			newLeafNode(this_INT_2, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_2());
 		}
 		(
 			(
 				kw='E'
 				{
 					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_0());
+					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_3_0_0());
 				}
 				    |
 				kw='e'
 				{
 					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_4_0_1());
+					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_3_0_1());
 				}
 			)
 			(
 				kw='-'
 				{
 					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_4_1());
+					newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_3_1());
 				}
 			)?
-			this_INT_7=RULE_INT
+			this_INT_6=RULE_INT
 			{
-				$current.merge(this_INT_7);
+				$current.merge(this_INT_6);
 			}
 			{
-				newLeafNode(this_INT_7, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_4_2());
+				newLeafNode(this_INT_6, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3_2());
 			}
 		)?
 	)
@@ -2906,6 +2895,46 @@ ruleQuestionDefinition returns [EObject current=null]
 				newLeafNode(otherlv_13, grammarAccess.getQuestionDefinitionAccess().getSemicolonKeyword_7_2());
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleQualifiedName
+entryRuleQualifiedName returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getQualifiedNameRule()); }
+	iv_ruleQualifiedName=ruleQualifiedName
+	{ $current=$iv_ruleQualifiedName.current.getText(); }
+	EOF;
+
+// Rule QualifiedName
+ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
 	)
 ;
 

@@ -158,6 +158,9 @@ public class IfExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
+				QlFactory.eINSTANCE.createEnumerationValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
 				QlFactory.eINSTANCE.createIfExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
@@ -173,6 +176,9 @@ public class IfExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createEnumerationValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
 				QlFactory.eINSTANCE.createIfExpression()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
@@ -186,6 +192,9 @@ public class IfExpressionItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
 				QlFactory.eINSTANCE.createQuestionCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
+				QlFactory.eINSTANCE.createEnumerationValue()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
 				QlFactory.eINSTANCE.createIfExpression()));

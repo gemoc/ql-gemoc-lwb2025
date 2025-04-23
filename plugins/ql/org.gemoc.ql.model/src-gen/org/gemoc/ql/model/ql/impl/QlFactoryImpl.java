@@ -98,6 +98,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createDefinitionGroup();
 		case QlPackage.QUESTION_CALL:
 			return createQuestionCall();
+		case QlPackage.ENUMERATION_VALUE:
+			return createEnumerationValue();
 		case QlPackage.STRING_VALUE_TYPE:
 			return createStringValueType();
 		case QlPackage.QUESTION:
@@ -372,6 +374,17 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public QuestionCall createQuestionCall() {
 		QuestionCallImpl questionCall = new QuestionCallImpl();
 		return questionCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnumerationValue createEnumerationValue() {
+		EnumerationValueImpl enumerationValue = new EnumerationValueImpl();
+		return enumerationValue;
 	}
 
 	/**

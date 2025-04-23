@@ -268,40 +268,40 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	public class IfExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.IfExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Action cIfExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cThenKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cThenExpressionAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cThenExpressionExpressionParserRuleCall_6_0 = (RuleCall)cThenExpressionAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cElseKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cElseExpressionAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cElseExpressionExpressionParserRuleCall_8_2_0 = (RuleCall)cElseExpressionAssignment_8_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
+		private final Keyword cThenKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cThenExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cThenExpressionExpressionParserRuleCall_4_0 = (RuleCall)cThenExpressionAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cElseKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cElseExpressionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cElseExpressionExpressionParserRuleCall_5_1_0 = (RuleCall)cElseExpressionAssignment_5_1.eContents().get(0);
+		private final Keyword cEndifKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//IfExpression returns IfExpression:
-		//    'if' '(' condition=Expression ')'
-		//    'then' '(' thenExpression=Expression ')'
-		//    ('else' '(' elseExpression=Expression ')')?
+		//    {IfExpression}
+		//    'if' condition=Expression
+		//    'then' thenExpression=Expression
+		//    ('else' elseExpression=Expression )?
+		//    'endif'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' '(' condition=Expression ')'
-		//'then' '(' thenExpression=Expression ')'
-		//('else' '(' elseExpression=Expression ')')?
+		//{IfExpression}
+		//'if' condition=Expression
+		//'then' thenExpression=Expression
+		//('else' elseExpression=Expression )?
+		//'endif'
 		public Group getGroup() { return cGroup; }
 		
-		//'if'
-		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		//{IfExpression}
+		public Action getIfExpressionAction_0() { return cIfExpressionAction_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		//'if'
+		public Keyword getIfKeyword_1() { return cIfKeyword_1; }
 		
 		//condition=Expression
 		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
@@ -309,41 +309,29 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//Expression
 		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-		
 		//'then'
-		public Keyword getThenKeyword_4() { return cThenKeyword_4; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_5() { return cLeftParenthesisKeyword_5; }
+		public Keyword getThenKeyword_3() { return cThenKeyword_3; }
 		
 		//thenExpression=Expression
-		public Assignment getThenExpressionAssignment_6() { return cThenExpressionAssignment_6; }
+		public Assignment getThenExpressionAssignment_4() { return cThenExpressionAssignment_4; }
 		
 		//Expression
-		public RuleCall getThenExpressionExpressionParserRuleCall_6_0() { return cThenExpressionExpressionParserRuleCall_6_0; }
+		public RuleCall getThenExpressionExpressionParserRuleCall_4_0() { return cThenExpressionExpressionParserRuleCall_4_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
-		
-		//('else' '(' elseExpression=Expression ')')?
-		public Group getGroup_8() { return cGroup_8; }
+		//('else' elseExpression=Expression )?
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'else'
-		public Keyword getElseKeyword_8_0() { return cElseKeyword_8_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_8_1() { return cLeftParenthesisKeyword_8_1; }
+		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
 		
 		//elseExpression=Expression
-		public Assignment getElseExpressionAssignment_8_2() { return cElseExpressionAssignment_8_2; }
+		public Assignment getElseExpressionAssignment_5_1() { return cElseExpressionAssignment_5_1; }
 		
 		//Expression
-		public RuleCall getElseExpressionExpressionParserRuleCall_8_2_0() { return cElseExpressionExpressionParserRuleCall_8_2_0; }
+		public RuleCall getElseExpressionExpressionParserRuleCall_5_1_0() { return cElseExpressionExpressionParserRuleCall_5_1_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_8_3() { return cRightParenthesisKeyword_8_3; }
+		//'endif'
+		public Keyword getEndifKeyword_6() { return cEndifKeyword_6; }
 	}
 	public class OrExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.OrExpression");
@@ -662,12 +650,13 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cConstantCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQuestionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEnumerationValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Call returns Call:
-		//    ConstantCall | QuestionCall;
+		//    ConstantCall | QuestionCall | EnumerationValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ConstantCall | QuestionCall
+		//ConstantCall | QuestionCall | EnumerationValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ConstantCall
@@ -675,6 +664,9 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//QuestionCall
 		public RuleCall getQuestionCallParserRuleCall_1() { return cQuestionCallParserRuleCall_1; }
+		
+		//EnumerationValue
+		public RuleCall getEnumerationValueParserRuleCall_2() { return cEnumerationValueParserRuleCall_2; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Value");
@@ -712,30 +704,30 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFormKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cQuestionGroupAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cQuestionGroupQuestionGroupParserRuleCall_2_0 = (RuleCall)cQuestionGroupAssignment_2.eContents().get(0);
 		
 		//Form returns Form:
 		//    'Form'
-		//    name=EString
+		//    name=ID
 		//    questionGroup=QuestionGroup
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Form'
-		//name=EString
+		//name=ID
 		//questionGroup=QuestionGroup
 		public Group getGroup() { return cGroup; }
 		
 		//'Form'
 		public Keyword getFormKeyword_0() { return cFormKeyword_0; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//questionGroup=QuestionGroup
 		public Assignment getQuestionGroupAssignment_2() { return cQuestionGroupAssignment_2; }
@@ -853,10 +845,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cQuestionGroupAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cIfKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cGuardAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cGuardExpressionParserRuleCall_1_2_0 = (RuleCall)cGuardAssignment_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cGuardAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cGuardExpressionParserRuleCall_1_1_0 = (RuleCall)cGuardAssignment_1_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Assignment cQuestionGroupsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
@@ -867,14 +857,14 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//QuestionGroup returns QuestionGroup:
 		//    {QuestionGroup}
-		//    ('if' '(' guard=Expression ')')?
+		//    ('if' guard=Expression )?
 		//    '{'
 		//        ( questionGroups+=QuestionGroup | questions+=Question)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{QuestionGroup}
-		//('if' '(' guard=Expression ')')?
+		//('if' guard=Expression )?
 		//'{'
 		//    ( questionGroups+=QuestionGroup | questions+=Question)*
 		//'}'
@@ -883,23 +873,17 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//{QuestionGroup}
 		public Action getQuestionGroupAction_0() { return cQuestionGroupAction_0; }
 		
-		//('if' '(' guard=Expression ')')?
+		//('if' guard=Expression )?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'if'
 		public Keyword getIfKeyword_1_0() { return cIfKeyword_1_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
-		
 		//guard=Expression
-		public Assignment getGuardAssignment_1_2() { return cGuardAssignment_1_2; }
+		public Assignment getGuardAssignment_1_1() { return cGuardAssignment_1_1; }
 		
 		//Expression
-		public RuleCall getGuardExpressionParserRuleCall_1_2_0() { return cGuardExpressionParserRuleCall_1_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		public RuleCall getGuardExpressionParserRuleCall_1_1_0() { return cGuardExpressionParserRuleCall_1_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -926,21 +910,21 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Question");
 		private final Assignment cQuestionDefinitionAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cQuestionDefinitionQuestionDefinitionCrossReference_0 = (CrossReference)cQuestionDefinitionAssignment.eContents().get(0);
-		private final RuleCall cQuestionDefinitionQuestionDefinitionEStringParserRuleCall_0_1 = (RuleCall)cQuestionDefinitionQuestionDefinitionCrossReference_0.eContents().get(1);
+		private final RuleCall cQuestionDefinitionQuestionDefinitionQualifiedNameParserRuleCall_0_1 = (RuleCall)cQuestionDefinitionQuestionDefinitionCrossReference_0.eContents().get(1);
 		
 		//Question returns Question:
-		//    questionDefinition=[QuestionDefinition|EString]
+		//    questionDefinition=[QuestionDefinition|QualifiedName]
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//questionDefinition=[QuestionDefinition|EString]
+		//questionDefinition=[QuestionDefinition|QualifiedName]
 		public Assignment getQuestionDefinitionAssignment() { return cQuestionDefinitionAssignment; }
 		
-		//[QuestionDefinition|EString]
+		//[QuestionDefinition|QualifiedName]
 		public CrossReference getQuestionDefinitionQuestionDefinitionCrossReference_0() { return cQuestionDefinitionQuestionDefinitionCrossReference_0; }
 		
-		//EString
-		public RuleCall getQuestionDefinitionQuestionDefinitionEStringParserRuleCall_0_1() { return cQuestionDefinitionQuestionDefinitionEStringParserRuleCall_0_1; }
+		//QualifiedName
+		public RuleCall getQuestionDefinitionQuestionDefinitionQualifiedNameParserRuleCall_0_1() { return cQuestionDefinitionQuestionDefinitionQualifiedNameParserRuleCall_0_1; }
 	}
 	public class ValueType_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.ValueType_Impl");
@@ -948,7 +932,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cValueTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cUnitKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
@@ -959,7 +943,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//ValueType_Impl returns ValueType:
 		//    {ValueType}
 		//    'ValueType'
-		//    name=EString
+		//    name=ID
 		//    '{'
 		//        ('unit' unit=EString)?
 		//    '}';
@@ -967,7 +951,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{ValueType}
 		//'ValueType'
-		//name=EString
+		//name=ID
 		//'{'
 		//    ('unit' unit=EString)?
 		//'}'
@@ -979,11 +963,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'ValueType'
 		public Keyword getValueTypeKeyword_1() { return cValueTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -1107,7 +1091,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//ConstantCall returns ConstantCall:
 		//    {ConstantCall}
-		//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+		//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue )
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1149,7 +1133,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Keyword cResultTypeKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cResultTypeAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cResultTypeValueTypeCrossReference_3_1_0 = (CrossReference)cResultTypeAssignment_3_1.eContents().get(0);
-		private final RuleCall cResultTypeValueTypeEStringParserRuleCall_3_1_0_1 = (RuleCall)cResultTypeValueTypeCrossReference_3_1_0.eContents().get(1);
+		private final RuleCall cResultTypeValueTypeQualifiedNameParserRuleCall_3_1_0_1 = (RuleCall)cResultTypeValueTypeCrossReference_3_1_0.eContents().get(1);
 		private final Keyword cOperandKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cOperandAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cOperandExpressionParserRuleCall_5_0 = (RuleCall)cOperandAssignment_5.eContents().get(0);
@@ -1159,7 +1143,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//    'BasicUnaryExpression'
 		//    '{'
 		//        ('operator' operator=UnaryOperatorKind)?
-		//        ('resultType' resultType=[ValueType|EString])?
+		//        ('resultType' resultType=[ValueType|QualifiedName])?
 		//        'operand' operand=Expression
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
@@ -1167,7 +1151,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'BasicUnaryExpression'
 		//'{'
 		//    ('operator' operator=UnaryOperatorKind)?
-		//    ('resultType' resultType=[ValueType|EString])?
+		//    ('resultType' resultType=[ValueType|QualifiedName])?
 		//    'operand' operand=Expression
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -1190,20 +1174,20 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//UnaryOperatorKind
 		public RuleCall getOperatorUnaryOperatorKindEnumRuleCall_2_1_0() { return cOperatorUnaryOperatorKindEnumRuleCall_2_1_0; }
 		
-		//('resultType' resultType=[ValueType|EString])?
+		//('resultType' resultType=[ValueType|QualifiedName])?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'resultType'
 		public Keyword getResultTypeKeyword_3_0() { return cResultTypeKeyword_3_0; }
 		
-		//resultType=[ValueType|EString]
+		//resultType=[ValueType|QualifiedName]
 		public Assignment getResultTypeAssignment_3_1() { return cResultTypeAssignment_3_1; }
 		
-		//[ValueType|EString]
+		//[ValueType|QualifiedName]
 		public CrossReference getResultTypeValueTypeCrossReference_3_1_0() { return cResultTypeValueTypeCrossReference_3_1_0; }
 		
-		//EString
-		public RuleCall getResultTypeValueTypeEStringParserRuleCall_3_1_0_1() { return cResultTypeValueTypeEStringParserRuleCall_3_1_0_1; }
+		//QualifiedName
+		public RuleCall getResultTypeValueTypeQualifiedNameParserRuleCall_3_1_0_1() { return cResultTypeValueTypeQualifiedNameParserRuleCall_3_1_0_1; }
 		
 		//'operand'
 		public Keyword getOperandKeyword_4() { return cOperandKeyword_4; }
@@ -1223,29 +1207,37 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cQuestionCallAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cQuestionQuestionDefinitionCrossReference_1_0 = (CrossReference)cQuestionAssignment_1.eContents().get(0);
-		private final RuleCall cQuestionQuestionDefinitionEStringParserRuleCall_1_0_1 = (RuleCall)cQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
+		private final RuleCall cQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//QuestionCall returns QuestionCall:
 		//    {QuestionCall}
-		//    question=[QuestionDefinition|EString]
+		//    question=[QuestionDefinition|QualifiedName] '(' ')'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{QuestionCall}
-		//question=[QuestionDefinition|EString]
+		//question=[QuestionDefinition|QualifiedName] '(' ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{QuestionCall}
 		public Action getQuestionCallAction_0() { return cQuestionCallAction_0; }
 		
-		//question=[QuestionDefinition|EString]
+		//question=[QuestionDefinition|QualifiedName]
 		public Assignment getQuestionAssignment_1() { return cQuestionAssignment_1; }
 		
-		//[QuestionDefinition|EString]
+		//[QuestionDefinition|QualifiedName]
 		public CrossReference getQuestionQuestionDefinitionCrossReference_1_0() { return cQuestionQuestionDefinitionCrossReference_1_0; }
 		
-		//EString
-		public RuleCall getQuestionQuestionDefinitionEStringParserRuleCall_1_0_1() { return cQuestionQuestionDefinitionEStringParserRuleCall_1_0_1; }
+		//QualifiedName
+		public RuleCall getQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1() { return cQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class BooleanValueTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.BooleanValueType");
@@ -1253,7 +1245,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cBooleanValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBooleanTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1265,7 +1257,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//BooleanValueType returns BooleanValueType:
 		//    {BooleanValueType}
 		//    'booleanType'
-		//    name=EString
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//    '}')?;
@@ -1273,7 +1265,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{BooleanValueType}
 		//'booleanType'
-		//name=EString
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//'}')?
@@ -1285,11 +1277,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'booleanType'
 		public Keyword getBooleanTypeKeyword_1() { return cBooleanTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1320,7 +1312,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cIntegerValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cIntegerTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1340,7 +1332,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//IntegerValueType returns IntegerValueType:
 		//    {IntegerValueType}
 		//    'integerType'
-		//    name=EString
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//        ('min' min=EInt)?
@@ -1350,7 +1342,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{IntegerValueType}
 		//'integerType'
-		//name=EString
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//    ('min' min=EInt)?
@@ -1364,11 +1356,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'integerType'
 		public Keyword getIntegerTypeKeyword_1() { return cIntegerTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1425,7 +1417,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cDecimalValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDecimalTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1437,7 +1429,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//DecimalValueType returns DecimalValueType:
 		//    {DecimalValueType}
 		//    'decimalType'
-		//    name=EString
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//    '}')?;
@@ -1445,7 +1437,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{DecimalValueType}
 		//'decimalType'
-		//name=EString
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//'}')?
@@ -1457,11 +1449,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'decimalType'
 		public Keyword getDecimalTypeKeyword_1() { return cDecimalTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1492,7 +1484,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cDateValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDateTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1504,7 +1496,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//DateValueType returns DateValueType:
 		//    {DateValueType}
 		//    'dateType'
-		//    name=EString
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//    '}')?;
@@ -1512,7 +1504,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{DateValueType}
 		//'dateType'
-		//name=EString
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//'}')?
@@ -1524,11 +1516,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'dateType'
 		public Keyword getDateTypeKeyword_1() { return cDateTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1559,7 +1551,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Action cEnumerationValueTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEnumerationTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1581,7 +1573,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//EnumerationValueType returns EnumerationValueType:
 		//    {EnumerationValueType}
 		//    'enumerationType'
-		//    name=EString
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//        ('literals' '{' enumerationLiterals+=EnumerationLiteral ( "," enumerationLiterals+=EnumerationLiteral)* '}' )?
@@ -1590,7 +1582,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//{EnumerationValueType}
 		//'enumerationType'
-		//name=EString
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//    ('literals' '{' enumerationLiterals+=EnumerationLiteral ( "," enumerationLiterals+=EnumerationLiteral)* '}' )?
@@ -1603,11 +1595,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'enumerationType'
 		public Keyword getEnumerationTypeKeyword_1() { return cEnumerationTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1667,9 +1659,9 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.StringValueType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStringValueTypeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStringValueTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cStringTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
@@ -1680,16 +1672,16 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//StringValueType returns StringValueType:
 		//    {StringValueType}
-		//    'StringValueType'
-		//    name=EString
+		//    'StringType'
+		//    name=ID
 		//    ('{'
 		//        ('unit' unit=EString)?
 		//    '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{StringValueType}
-		//'StringValueType'
-		//name=EString
+		//'StringType'
+		//name=ID
 		//('{'
 		//    ('unit' unit=EString)?
 		//'}')?
@@ -1698,14 +1690,14 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//{StringValueType}
 		public Action getStringValueTypeAction_0() { return cStringValueTypeAction_0; }
 		
-		//'StringValueType'
-		public Keyword getStringValueTypeKeyword_1() { return cStringValueTypeKeyword_1; }
+		//'StringType'
+		public Keyword getStringTypeKeyword_1() { return cStringTypeKeyword_1; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//('{'
 		//    ('unit' unit=EString)?
@@ -1730,183 +1722,138 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
 	}
-	public class EIntElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EInt");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//EInt returns ecore::EInt:
-		//    '-'? INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'-'? INT
-		public Group getGroup() { return cGroup; }
-		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
 	public class EnumerationLiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EnumerationLiteral");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEnumerationLiteralAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//EnumerationLiteral returns EnumerationLiteral:
 		//    {EnumerationLiteral}
-		//    name=EString;
+		//    name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{EnumerationLiteral}
-		//name=EString
+		//name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//{EnumerationLiteral}
 		public Action getEnumerationLiteralAction_0() { return cEnumerationLiteralAction_0; }
 		
-		//name=EString
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class IntegerValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.IntegerValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cIntegerValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cIntegerValueKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cIntValueKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cIntValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cIntValueEIntParserRuleCall_3_1_0 = (RuleCall)cIntValueAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cIntValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIntValueEIntParserRuleCall_1_0 = (RuleCall)cIntValueAssignment_1.eContents().get(0);
 		
 		//IntegerValue returns IntegerValue:
 		//    {IntegerValue}
-		//    'IntegerValue'
-		//    '{'
-		//        ('intValue' intValue=EInt)?
-		//    '}';
+		//    intValue=EInt
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IntegerValue}
-		//'IntegerValue'
-		//'{'
-		//    ('intValue' intValue=EInt)?
-		//'}'
+		//intValue=EInt
 		public Group getGroup() { return cGroup; }
 		
 		//{IntegerValue}
 		public Action getIntegerValueAction_0() { return cIntegerValueAction_0; }
 		
-		//'IntegerValue'
-		public Keyword getIntegerValueKeyword_1() { return cIntegerValueKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('intValue' intValue=EInt)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'intValue'
-		public Keyword getIntValueKeyword_3_0() { return cIntValueKeyword_3_0; }
-		
 		//intValue=EInt
-		public Assignment getIntValueAssignment_3_1() { return cIntValueAssignment_3_1; }
+		public Assignment getIntValueAssignment_1() { return cIntValueAssignment_1; }
 		
 		//EInt
-		public RuleCall getIntValueEIntParserRuleCall_3_1_0() { return cIntValueEIntParserRuleCall_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public RuleCall getIntValueEIntParserRuleCall_1_0() { return cIntValueEIntParserRuleCall_1_0; }
 	}
 	public class StringValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.StringValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStringValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cStringValueKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cStringValueKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cStringValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cStringValueEStringParserRuleCall_3_1_0 = (RuleCall)cStringValueAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cStringValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStringValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cStringValueAssignment_1.eContents().get(0);
 		
 		//StringValue returns StringValue:
 		//    {StringValue}
-		//    'StringValue'
-		//    '{'
-		//        ('stringValue' stringValue=EString)?
-		//    '}';
+		//    stringValue=STRING
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{StringValue}
-		//'StringValue'
-		//'{'
-		//    ('stringValue' stringValue=EString)?
-		//'}'
+		//stringValue=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//{StringValue}
 		public Action getStringValueAction_0() { return cStringValueAction_0; }
 		
-		//'StringValue'
-		public Keyword getStringValueKeyword_1() { return cStringValueKeyword_1; }
+		//stringValue=STRING
+		public Assignment getStringValueAssignment_1() { return cStringValueAssignment_1; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('stringValue' stringValue=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'stringValue'
-		public Keyword getStringValueKeyword_3_0() { return cStringValueKeyword_3_0; }
-		
-		//stringValue=EString
-		public Assignment getStringValueAssignment_3_1() { return cStringValueAssignment_3_1; }
-		
-		//EString
-		public RuleCall getStringValueEStringParserRuleCall_3_1_0() { return cStringValueEStringParserRuleCall_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//STRING
+		public RuleCall getStringValueSTRINGTerminalRuleCall_1_0() { return cStringValueSTRINGTerminalRuleCall_1_0; }
 	}
 	public class BooleanValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.BooleanValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBooleanValueAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cBooleanValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cBooleanValueBooleanValueKeyword_1_0 = (Keyword)cBooleanValueAssignment_1.eContents().get(0);
-		private final Keyword cBooleanValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cBooleanValueEBooleanParserRuleCall_1_0 = (RuleCall)cBooleanValueAssignment_1.eContents().get(0);
 		
 		//BooleanValue returns BooleanValue:
 		//    {BooleanValue}
-		//    (booleanValue?='booleanValue')?
-		//    'BooleanValue'
+		//    booleanValue=EBoolean
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BooleanValue}
-		//(booleanValue?='booleanValue')?
-		//'BooleanValue'
+		//booleanValue=EBoolean
 		public Group getGroup() { return cGroup; }
 		
 		//{BooleanValue}
 		public Action getBooleanValueAction_0() { return cBooleanValueAction_0; }
 		
-		//(booleanValue?='booleanValue')?
+		//booleanValue=EBoolean
 		public Assignment getBooleanValueAssignment_1() { return cBooleanValueAssignment_1; }
 		
-		//'booleanValue'
-		public Keyword getBooleanValueBooleanValueKeyword_1_0() { return cBooleanValueBooleanValueKeyword_1_0; }
+		//EBoolean
+		public RuleCall getBooleanValueEBooleanParserRuleCall_1_0() { return cBooleanValueEBooleanParserRuleCall_1_0; }
+	}
+	public class EnumerationValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EnumerationValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cEnumerationValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cEnumerationLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cEnumerationLiteralEnumerationLiteralCrossReference_1_0 = (CrossReference)cEnumerationLiteralAssignment_1.eContents().get(0);
+		private final RuleCall cEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cEnumerationLiteralEnumerationLiteralCrossReference_1_0.eContents().get(1);
 		
-		//'BooleanValue'
-		public Keyword getBooleanValueKeyword_2() { return cBooleanValueKeyword_2; }
+		//EnumerationValue returns EnumerationValue:
+		//    {EnumerationValue}
+		//    enumerationLiteral=[EnumerationLiteral|QualifiedName]
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{EnumerationValue}
+		//enumerationLiteral=[EnumerationLiteral|QualifiedName]
+		public Group getGroup() { return cGroup; }
+		
+		//{EnumerationValue}
+		public Action getEnumerationValueAction_0() { return cEnumerationValueAction_0; }
+		
+		//enumerationLiteral=[EnumerationLiteral|QualifiedName]
+		public Assignment getEnumerationLiteralAssignment_1() { return cEnumerationLiteralAssignment_1; }
+		
+		//[EnumerationLiteral|QualifiedName]
+		public CrossReference getEnumerationLiteralEnumerationLiteralCrossReference_1_0() { return cEnumerationLiteralEnumerationLiteralCrossReference_1_0; }
+		
+		//QualifiedName
+		public RuleCall getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1() { return cEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1; }
 	}
 	public class DateValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.DateValue");
@@ -1963,103 +1910,90 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.DecimalValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDecimalValueAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDecimalValueKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cDecimalValueKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cDecimalValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cDecimalValueEFloatParserRuleCall_3_1_0 = (RuleCall)cDecimalValueAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDecimalValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDecimalValueEFloatParserRuleCall_1_0 = (RuleCall)cDecimalValueAssignment_1.eContents().get(0);
 		
 		//DecimalValue returns DecimalValue:
 		//    {DecimalValue}
-		//    'DecimalValue'
-		//    '{'
-		//        ('decimalValue' decimalValue=EFloat)?
-		//    '}';
+		//    decimalValue=EFloat
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DecimalValue}
-		//'DecimalValue'
-		//'{'
-		//    ('decimalValue' decimalValue=EFloat)?
-		//'}'
+		//decimalValue=EFloat
 		public Group getGroup() { return cGroup; }
 		
 		//{DecimalValue}
 		public Action getDecimalValueAction_0() { return cDecimalValueAction_0; }
 		
-		//'DecimalValue'
-		public Keyword getDecimalValueKeyword_1() { return cDecimalValueKeyword_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//('decimalValue' decimalValue=EFloat)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'decimalValue'
-		public Keyword getDecimalValueKeyword_3_0() { return cDecimalValueKeyword_3_0; }
-		
 		//decimalValue=EFloat
-		public Assignment getDecimalValueAssignment_3_1() { return cDecimalValueAssignment_3_1; }
+		public Assignment getDecimalValueAssignment_1() { return cDecimalValueAssignment_1; }
 		
 		//EFloat
-		public RuleCall getDecimalValueEFloatParserRuleCall_3_1_0() { return cDecimalValueEFloatParserRuleCall_3_1_0; }
+		public RuleCall getDecimalValueEFloatParserRuleCall_1_0() { return cDecimalValueEFloatParserRuleCall_1_0; }
+	}
+	public class EIntElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EInt");
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		//EInt returns ecore::EInt:
+		//    //'-'? INT;
+		//    INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		////'-'? INT;
+		//INT
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
 	public class EFloatElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EFloat");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cINTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Alternatives cAlternatives_4_0 = (Alternatives)cGroup_4.eContents().get(0);
-		private final Keyword cEKeyword_4_0_0 = (Keyword)cAlternatives_4_0.eContents().get(0);
-		private final Keyword cEKeyword_4_0_1 = (Keyword)cAlternatives_4_0.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_4_2 = (RuleCall)cGroup_4.eContents().get(2);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
+		private final Keyword cEKeyword_3_0_0 = (Keyword)cAlternatives_3_0.eContents().get(0);
+		private final Keyword cEKeyword_3_0_1 = (Keyword)cAlternatives_3_0.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
 		
 		//EFloat returns ecore::EFloat:
-		//    '-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+		//    //'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+		//    INT? '.' INT (('E'|'e') '-'? INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'-'? INT? '.' INT (('E'|'e') '-'? INT)?
+		////'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+		//INT? '.' INT (('E'|'e') '-'? INT)?
 		public Group getGroup() { return cGroup; }
 		
-		//'-'?
-		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
-		
+		////'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
 		//INT?
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_3() { return cINTTerminalRuleCall_3; }
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 		
 		//(('E'|'e') '-'? INT)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//('E'|'e')
-		public Alternatives getAlternatives_4_0() { return cAlternatives_4_0; }
+		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
 		
 		//'E'
-		public Keyword getEKeyword_4_0_0() { return cEKeyword_4_0_0; }
+		public Keyword getEKeyword_3_0_0() { return cEKeyword_3_0_0; }
 		
 		//'e'
-		public Keyword getEKeyword_4_0_1() { return cEKeyword_4_0_1; }
+		public Keyword getEKeyword_3_0_1() { return cEKeyword_3_0_1; }
 		
 		//'-'?
-		public Keyword getHyphenMinusKeyword_4_1() { return cHyphenMinusKeyword_4_1; }
+		public Keyword getHyphenMinusKeyword_3_1() { return cHyphenMinusKeyword_3_1; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_4_2() { return cINTTerminalRuleCall_4_2; }
+		public RuleCall getINTTerminalRuleCall_3_2() { return cINTTerminalRuleCall_3_2; }
 	}
 	public class QuestionDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.QuestionDefinition");
@@ -2185,6 +2119,33 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//';'
 		public Keyword getSemicolonKeyword_7_2() { return cSemicolonKeyword_7_2; }
+	}
+	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.QualifiedName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//QualifiedName:
+		//    ID ('.' ID)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID ('.' ID)*
+		public Group getGroup() { return cGroup; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//('.' ID)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 	
 	public class BinaryOperatorKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -2501,14 +2462,15 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final DateValueTypeElements pDateValueType;
 	private final EnumerationValueTypeElements pEnumerationValueType;
 	private final StringValueTypeElements pStringValueType;
-	private final EIntElements pEInt;
 	private final EnumerationLiteralElements pEnumerationLiteral;
 	private final BinaryOperatorKindElements eBinaryOperatorKind;
 	private final IntegerValueElements pIntegerValue;
 	private final StringValueElements pStringValue;
 	private final BooleanValueElements pBooleanValue;
+	private final EnumerationValueElements pEnumerationValue;
 	private final DateValueElements pDateValue;
 	private final DecimalValueElements pDecimalValue;
+	private final EIntElements pEInt;
 	private final EFloatElements pEFloat;
 	private final UnaryOperatorKindElements eUnaryOperatorKind;
 	private final AdditionOperatorKindElements eAdditionOperatorKind;
@@ -2518,6 +2480,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final AndOperatorKindElements eAndOperatorKind;
 	private final OrOperatorKindElements eOrOperatorKind;
 	private final QuestionDefinitionElements pQuestionDefinition;
+	private final QualifiedNameElements pQualifiedName;
 	
 	private final Grammar grammar;
 	
@@ -2561,14 +2524,15 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pDateValueType = new DateValueTypeElements();
 		this.pEnumerationValueType = new EnumerationValueTypeElements();
 		this.pStringValueType = new StringValueTypeElements();
-		this.pEInt = new EIntElements();
 		this.pEnumerationLiteral = new EnumerationLiteralElements();
 		this.eBinaryOperatorKind = new BinaryOperatorKindElements();
 		this.pIntegerValue = new IntegerValueElements();
 		this.pStringValue = new StringValueElements();
 		this.pBooleanValue = new BooleanValueElements();
+		this.pEnumerationValue = new EnumerationValueElements();
 		this.pDateValue = new DateValueElements();
 		this.pDecimalValue = new DecimalValueElements();
+		this.pEInt = new EIntElements();
 		this.pEFloat = new EFloatElements();
 		this.eUnaryOperatorKind = new UnaryOperatorKindElements();
 		this.eAdditionOperatorKind = new AdditionOperatorKindElements();
@@ -2578,6 +2542,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.eAndOperatorKind = new AndOperatorKindElements();
 		this.eOrOperatorKind = new OrOperatorKindElements();
 		this.pQuestionDefinition = new QuestionDefinitionElements();
+		this.pQualifiedName = new QualifiedNameElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2676,9 +2641,11 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//IfExpression returns IfExpression:
-	//    'if' '(' condition=Expression ')'
-	//    'then' '(' thenExpression=Expression ')'
-	//    ('else' '(' elseExpression=Expression ')')?
+	//    {IfExpression}
+	//    'if' condition=Expression
+	//    'then' thenExpression=Expression
+	//    ('else' elseExpression=Expression )?
+	//    'endif'
 	//;
 	public IfExpressionElements getIfExpressionAccess() {
 		return pIfExpression;
@@ -2779,7 +2746,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//Call returns Call:
-	//    ConstantCall | QuestionCall;
+	//    ConstantCall | QuestionCall | EnumerationValue;
 	public CallElements getCallAccess() {
 		return pCall;
 	}
@@ -2800,7 +2767,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//Form returns Form:
 	//    'Form'
-	//    name=EString
+	//    name=ID
 	//    questionGroup=QuestionGroup
 	//;
 	public FormElements getFormAccess() {
@@ -2857,7 +2824,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//QuestionGroup returns QuestionGroup:
 	//    {QuestionGroup}
-	//    ('if' '(' guard=Expression ')')?
+	//    ('if' guard=Expression )?
 	//    '{'
 	//        ( questionGroups+=QuestionGroup | questions+=Question)*
 	//    '}';
@@ -2870,7 +2837,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//Question returns Question:
-	//    questionDefinition=[QuestionDefinition|EString]
+	//    questionDefinition=[QuestionDefinition|QualifiedName]
 	//    ;
 	public QuestionElements getQuestionAccess() {
 		return pQuestion;
@@ -2883,7 +2850,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//ValueType_Impl returns ValueType:
 	//    {ValueType}
 	//    'ValueType'
-	//    name=EString
+	//    name=ID
 	//    '{'
 	//        ('unit' unit=EString)?
 	//    '}';
@@ -2913,7 +2880,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//ConstantCall returns ConstantCall:
 	//    {ConstantCall}
-	//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+	//    value=(StringValue | IntegerValue | BooleanValue | DecimalValue )
 	//    ;
 	public ConstantCallElements getConstantCallAccess() {
 		return pConstantCall;
@@ -2927,7 +2894,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//    'BasicUnaryExpression'
 	//    '{'
 	//        ('operator' operator=UnaryOperatorKind)?
-	//        ('resultType' resultType=[ValueType|EString])?
+	//        ('resultType' resultType=[ValueType|QualifiedName])?
 	//        'operand' operand=Expression
 	//    '}';
 	public BasicUnaryExpressionElements getBasicUnaryExpressionAccess() {
@@ -2940,7 +2907,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//QuestionCall returns QuestionCall:
 	//    {QuestionCall}
-	//    question=[QuestionDefinition|EString]
+	//    question=[QuestionDefinition|QualifiedName] '(' ')'
 	//    ;
 	public QuestionCallElements getQuestionCallAccess() {
 		return pQuestionCall;
@@ -2953,7 +2920,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//BooleanValueType returns BooleanValueType:
 	//    {BooleanValueType}
 	//    'booleanType'
-	//    name=EString
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//    '}')?;
@@ -2968,7 +2935,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//IntegerValueType returns IntegerValueType:
 	//    {IntegerValueType}
 	//    'integerType'
-	//    name=EString
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//        ('min' min=EInt)?
@@ -2985,7 +2952,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//DecimalValueType returns DecimalValueType:
 	//    {DecimalValueType}
 	//    'decimalType'
-	//    name=EString
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//    '}')?;
@@ -3000,7 +2967,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//DateValueType returns DateValueType:
 	//    {DateValueType}
 	//    'dateType'
-	//    name=EString
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//    '}')?;
@@ -3015,7 +2982,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//EnumerationValueType returns EnumerationValueType:
 	//    {EnumerationValueType}
 	//    'enumerationType'
-	//    name=EString
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//        ('literals' '{' enumerationLiterals+=EnumerationLiteral ( "," enumerationLiterals+=EnumerationLiteral)* '}' )?
@@ -3030,8 +2997,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//StringValueType returns StringValueType:
 	//    {StringValueType}
-	//    'StringValueType'
-	//    name=EString
+	//    'StringType'
+	//    name=ID
 	//    ('{'
 	//        ('unit' unit=EString)?
 	//    '}')?;
@@ -3043,19 +3010,9 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		return getStringValueTypeAccess().getRule();
 	}
 	
-	//EInt returns ecore::EInt:
-	//    '-'? INT;
-	public EIntElements getEIntAccess() {
-		return pEInt;
-	}
-	
-	public ParserRule getEIntRule() {
-		return getEIntAccess().getRule();
-	}
-	
 	//EnumerationLiteral returns EnumerationLiteral:
 	//    {EnumerationLiteral}
-	//    name=EString;
+	//    name=ID;
 	public EnumerationLiteralElements getEnumerationLiteralAccess() {
 		return pEnumerationLiteral;
 	}
@@ -3076,10 +3033,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//IntegerValue returns IntegerValue:
 	//    {IntegerValue}
-	//    'IntegerValue'
-	//    '{'
-	//        ('intValue' intValue=EInt)?
-	//    '}';
+	//    intValue=EInt
+	//    ;
 	public IntegerValueElements getIntegerValueAccess() {
 		return pIntegerValue;
 	}
@@ -3090,10 +3045,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//StringValue returns StringValue:
 	//    {StringValue}
-	//    'StringValue'
-	//    '{'
-	//        ('stringValue' stringValue=EString)?
-	//    '}';
+	//    stringValue=STRING
+	//    ;
 	public StringValueElements getStringValueAccess() {
 		return pStringValue;
 	}
@@ -3104,8 +3057,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//BooleanValue returns BooleanValue:
 	//    {BooleanValue}
-	//    (booleanValue?='booleanValue')?
-	//    'BooleanValue'
+	//    booleanValue=EBoolean
 	//    ;
 	public BooleanValueElements getBooleanValueAccess() {
 		return pBooleanValue;
@@ -3113,6 +3065,18 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	public ParserRule getBooleanValueRule() {
 		return getBooleanValueAccess().getRule();
+	}
+	
+	//EnumerationValue returns EnumerationValue:
+	//    {EnumerationValue}
+	//    enumerationLiteral=[EnumerationLiteral|QualifiedName]
+	//    ;
+	public EnumerationValueElements getEnumerationValueAccess() {
+		return pEnumerationValue;
+	}
+	
+	public ParserRule getEnumerationValueRule() {
+		return getEnumerationValueAccess().getRule();
 	}
 	
 	//DateValue returns DateValue:
@@ -3131,10 +3095,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//DecimalValue returns DecimalValue:
 	//    {DecimalValue}
-	//    'DecimalValue'
-	//    '{'
-	//        ('decimalValue' decimalValue=EFloat)?
-	//    '}';
+	//    decimalValue=EFloat
+	//    ;
 	public DecimalValueElements getDecimalValueAccess() {
 		return pDecimalValue;
 	}
@@ -3143,8 +3105,20 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		return getDecimalValueAccess().getRule();
 	}
 	
+	//EInt returns ecore::EInt:
+	//    //'-'? INT;
+	//    INT;
+	public EIntElements getEIntAccess() {
+		return pEInt;
+	}
+	
+	public ParserRule getEIntRule() {
+		return getEIntAccess().getRule();
+	}
+	
 	//EFloat returns ecore::EFloat:
-	//    '-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+	//    //'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+	//    INT? '.' INT (('E'|'e') '-'? INT)?;
 	public EFloatElements getEFloatAccess() {
 		return pEFloat;
 	}
@@ -3242,6 +3216,16 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	public ParserRule getQuestionDefinitionRule() {
 		return getQuestionDefinitionAccess().getRule();
+	}
+	
+	//QualifiedName:
+	//    ID ('.' ID)*;
+	public QualifiedNameElements getQualifiedNameAccess() {
+		return pQualifiedName;
+	}
+	
+	public ParserRule getQualifiedNameRule() {
+		return getQualifiedNameAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

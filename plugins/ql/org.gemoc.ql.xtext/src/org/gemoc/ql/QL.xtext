@@ -34,9 +34,11 @@ PrimaryExpression returns Expression:
 	Call  | IfExpression | '(' (OrExpression | UnaryExpression) ')'  ;
 
 IfExpression returns IfExpression:
-	'if' '(' condition=Expression ')'
-	'then' '(' thenExpression=Expression ')'
-	('else' '(' elseExpression=Expression ')')?
+	{IfExpression}
+	'if' condition=Expression
+	'then' thenExpression=Expression
+	('else' elseExpression=Expression )?
+	'endif'
 ;
 
 OrExpression returns Expression:
@@ -84,7 +86,7 @@ MultiplicationExpression returns Expression:
 ;
 
 Call returns Call:
-	ConstantCall | QuestionCall;
+	ConstantCall | QuestionCall | EnumerationValue;
 
 	
 Value returns Value:
@@ -93,7 +95,7 @@ Value returns Value:
 
 Form returns Form:
 	'Form'
-	name=EString
+	name=ID
 	questionGroup=QuestionGroup
 ;
 
@@ -115,19 +117,19 @@ EString returns ecore::EString:
 
 QuestionGroup returns QuestionGroup:
 	{QuestionGroup}
-	('if' '(' guard=Expression ')')?
+	('if' guard=Expression )?
 	'{'
 		( questionGroups+=QuestionGroup | questions+=Question)*
 	'}';
 
 Question returns Question:
-	questionDefinition=[QuestionDefinition|EString]
+	questionDefinition=[QuestionDefinition|QualifiedName]
 	;
 
 ValueType_Impl returns ValueType:
 	{ValueType}
 	'ValueType'
-	name=EString
+	name=ID
 	'{'
 		('unit' unit=EString)?
 	'}';
@@ -143,7 +145,7 @@ BasicBinaryExpression returns BasicBinaryExpression:
 
 ConstantCall returns ConstantCall:
 	{ConstantCall}
-	value=(StringValue | IntegerValue | BooleanValue | DecimalValue ) //| EnumerationValue)
+	value=(StringValue | IntegerValue | BooleanValue | DecimalValue )
 
 	;
 
@@ -151,19 +153,19 @@ BasicUnaryExpression returns BasicUnaryExpression:
 	'BasicUnaryExpression'
 	'{'
 		('operator' operator=UnaryOperatorKind)?
-		('resultType' resultType=[ValueType|EString])?
+		('resultType' resultType=[ValueType|QualifiedName])?
 		'operand' operand=Expression
 	'}';
 
 QuestionCall returns QuestionCall:
 	{QuestionCall}
-	question=[QuestionDefinition|EString]
+	question=[QuestionDefinition|QualifiedName] '(' ')'
 	;
 
 BooleanValueType returns BooleanValueType:
 	{BooleanValueType}
 	'booleanType'
-	name=EString
+	name=ID
 	('{'
 		('unit' unit=EString)?
 	'}')?;
@@ -171,7 +173,7 @@ BooleanValueType returns BooleanValueType:
 IntegerValueType returns IntegerValueType:
 	{IntegerValueType}
 	'integerType'
-	name=EString
+	name=ID
 	('{'
 		('unit' unit=EString)?
 		('min' min=EInt)?
@@ -181,7 +183,7 @@ IntegerValueType returns IntegerValueType:
 DecimalValueType returns DecimalValueType:
 	{DecimalValueType}
 	'decimalType'
-	name=EString
+	name=ID
 	('{'
 		('unit' unit=EString)?
 	'}')?;
@@ -189,7 +191,7 @@ DecimalValueType returns DecimalValueType:
 DateValueType returns DateValueType:
 	{DateValueType}
 	'dateType'
-	name=EString
+	name=ID
 	('{'
 		('unit' unit=EString)?
 	'}')?;
@@ -197,7 +199,7 @@ DateValueType returns DateValueType:
 EnumerationValueType returns EnumerationValueType:
 	{EnumerationValueType}
 	'enumerationType'
-	name=EString
+	name=ID
 	('{'
 		('unit' unit=EString)?
 		('literals' '{' enumerationLiterals+=EnumerationLiteral ( "," enumerationLiterals+=EnumerationLiteral)* '}' )?
@@ -205,40 +207,40 @@ EnumerationValueType returns EnumerationValueType:
 
 StringValueType returns StringValueType:
 	{StringValueType}
-	'StringValueType'
-	name=EString
+	'StringType'
+	name=ID
 	('{'
 		('unit' unit=EString)?
 	'}')?;
 
-EInt returns ecore::EInt:
-	'-'? INT;
 
+	
+	
 EnumerationLiteral returns EnumerationLiteral:
 	{EnumerationLiteral}
-	name=EString;
+	name=ID;
 
 enum BinaryOperatorKind returns BinaryOperatorKind:
 				PLUS = 'PLUS' | MINUS = 'MINUS' | MULT = 'MULT' | DIV = 'DIV' | EQUAL = 'EQUAL' | NOTEQUAL = 'NOTEQUAL' | GREATER = 'GREATER' | LOWER = 'LOWER' | GREATEROREQUAL = 'GREATEROREQUAL' | LOWEROREQUAL = 'LOWEROREQUAL' | AND = 'AND' | OR = 'OR';
 
 IntegerValue returns IntegerValue:
 	{IntegerValue}
-	'IntegerValue'
-	'{'
-		('intValue' intValue=EInt)?
-	'}';
+	intValue=EInt
+	;
 
 StringValue returns StringValue:
 	{StringValue}
-	'StringValue'
-	'{'
-		('stringValue' stringValue=EString)?
-	'}';
+	stringValue=STRING
+	;
 
 BooleanValue returns BooleanValue:
 	{BooleanValue}
-	(booleanValue?='booleanValue')?
-	'BooleanValue'
+	booleanValue=EBoolean
+	;
+
+EnumerationValue returns EnumerationValue:
+	{EnumerationValue}
+	enumerationLiteral=[EnumerationLiteral|QualifiedName]
 	;
 
 DateValue returns DateValue:
@@ -250,13 +252,16 @@ DateValue returns DateValue:
 
 DecimalValue returns DecimalValue:
 	{DecimalValue}
-	'DecimalValue'
-	'{'
-		('decimalValue' decimalValue=EFloat)?
-	'}';
+	decimalValue=EFloat
+	;
+
+EInt returns ecore::EInt:
+	//'-'? INT;
+	INT;
 
 EFloat returns ecore::EFloat:
-	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+	//'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
+	INT? '.' INT (('E'|'e') '-'? INT)?;
 
 enum UnaryOperatorKind returns UnaryOperatorKind:
 				UNARYMINUS = '-' | NOT = 'not';
@@ -288,3 +293,6 @@ QuestionDefinition returns QuestionDefinition:
 	":" label=EString dataType=[ValueType|EString]
 	('=' computedExpression=Expression ';')?
 	;
+	
+QualifiedName:
+	ID ('.' ID)*;

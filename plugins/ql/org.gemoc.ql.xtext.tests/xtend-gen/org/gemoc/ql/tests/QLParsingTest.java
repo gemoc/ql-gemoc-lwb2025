@@ -117,4 +117,98 @@ public class QLParsingTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+
+  @Test
+  public void loadIfModel() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("QLModel {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("definitions {");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("booleanType boolean");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("decimalType money { unit \"Euro\" }");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("definitions {");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("question hasSoldHouse: \"Did you sell a house in 2010?\"  boolean");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("question hasBoughtHouse: \"Did you buy a house in 2010?\" boolean");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("question hasMaintLoan: \"Did you enter a loan for maintenance/reconstruction?\"  boolean");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("mandatory question sellingPrice: \"Price the house was sold for:\"  money");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("mandatory question privateDebt: \"Private debts for the sold house:\"  money");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("question valueResidue: \"Value residue:\"  money = (sellingPrice - privateDebt);");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("Form \" Box1HouseOwning\" {");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("hasSoldHouse");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("hasBoughtHouse");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("hasMaintLoan");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("if (hasSoldHouse) {");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("sellingPrice");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("privateDebt");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("valueResidue");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final QLModel result = this.parseHelper.parse(_builder);
+      Assertions.assertNotNull(result);
+      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder_1.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder_1.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

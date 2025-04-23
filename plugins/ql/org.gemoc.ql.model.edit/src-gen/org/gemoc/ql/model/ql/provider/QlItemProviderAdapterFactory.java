@@ -556,6 +556,29 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.EnumerationValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationValueItemProvider enumerationValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.EnumerationValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationValueAdapter() {
+		if (enumerationValueItemProvider == null) {
+			enumerationValueItemProvider = new EnumerationValueItemProvider(this);
+		}
+
+		return enumerationValueItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.StringValueType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,6 +794,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			definitionGroupItemProvider.dispose();
 		if (questionCallItemProvider != null)
 			questionCallItemProvider.dispose();
+		if (enumerationValueItemProvider != null)
+			enumerationValueItemProvider.dispose();
 		if (stringValueTypeItemProvider != null)
 			stringValueTypeItemProvider.dispose();
 		if (questionItemProvider != null)

@@ -89,7 +89,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -103,7 +103,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -117,7 +117,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -131,7 +131,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -145,7 +145,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -159,9 +159,10 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'if' '(' condition=Expression
+	 *     (rule start) (ambiguity) 'if' condition=Expression
+	 *     (rule start) (ambiguity) enumerationLiteral=[EnumerationLiteral|QualifiedName]
 	 *     (rule start) (ambiguity) operator=UnaryOperatorKind
-	 *     (rule start) (ambiguity) question=[QuestionDefinition|EString]
+	 *     (rule start) (ambiguity) question=[QuestionDefinition|QualifiedName]
 	 *     (rule start) (ambiguity) value=BooleanValue
 	 *     (rule start) (ambiguity) value=DecimalValue
 	 *     (rule start) (ambiguity) value=IntegerValue
@@ -225,7 +226,7 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=EString (ambiguity) (rule end)
+	 *     name=ID (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
