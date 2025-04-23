@@ -226,40 +226,124 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.PrimaryExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final RuleCall cOrExpressionParserRuleCall_1_1_0 = (RuleCall)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cUnaryExpressionParserRuleCall_1_1_1 = (RuleCall)cAlternatives_1_1.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cIfExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final RuleCall cOrExpressionParserRuleCall_2_1_0 = (RuleCall)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cUnaryExpressionParserRuleCall_2_1_1 = (RuleCall)cAlternatives_2_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//PrimaryExpression returns Expression:
-		//    Call  | '(' (OrExpression | UnaryExpression) ')'  ;
+		//    Call  | IfExpression | '(' (OrExpression | UnaryExpression) ')'  ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Call  | '(' (OrExpression | UnaryExpression) ')'
+		//Call  | IfExpression | '(' (OrExpression | UnaryExpression) ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Call
 		public RuleCall getCallParserRuleCall_0() { return cCallParserRuleCall_0; }
 		
+		//IfExpression
+		public RuleCall getIfExpressionParserRuleCall_1() { return cIfExpressionParserRuleCall_1; }
+		
 		//'(' (OrExpression | UnaryExpression) ')'
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 		
 		//(OrExpression | UnaryExpression)
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 		
 		//OrExpression
-		public RuleCall getOrExpressionParserRuleCall_1_1_0() { return cOrExpressionParserRuleCall_1_1_0; }
+		public RuleCall getOrExpressionParserRuleCall_2_1_0() { return cOrExpressionParserRuleCall_2_1_0; }
 		
 		//UnaryExpression
-		public RuleCall getUnaryExpressionParserRuleCall_1_1_1() { return cUnaryExpressionParserRuleCall_1_1_1; }
+		public RuleCall getUnaryExpressionParserRuleCall_2_1_1() { return cUnaryExpressionParserRuleCall_2_1_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
+	}
+	public class IfExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.IfExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cThenKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cThenExpressionAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cThenExpressionExpressionParserRuleCall_6_0 = (RuleCall)cThenExpressionAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cElseKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cElseExpressionAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cElseExpressionExpressionParserRuleCall_8_2_0 = (RuleCall)cElseExpressionAssignment_8_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
+		
+		//IfExpression returns IfExpression:
+		//    'if' '(' condition=Expression ')'
+		//    'then' '(' thenExpression=Expression ')'
+		//    ('else' '(' elseExpression=Expression ')')?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' '(' condition=Expression ')'
+		//'then' '(' thenExpression=Expression ')'
+		//('else' '(' elseExpression=Expression ')')?
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//'then'
+		public Keyword getThenKeyword_4() { return cThenKeyword_4; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_5() { return cLeftParenthesisKeyword_5; }
+		
+		//thenExpression=Expression
+		public Assignment getThenExpressionAssignment_6() { return cThenExpressionAssignment_6; }
+		
+		//Expression
+		public RuleCall getThenExpressionExpressionParserRuleCall_6_0() { return cThenExpressionExpressionParserRuleCall_6_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		
+		//('else' '(' elseExpression=Expression ')')?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'else'
+		public Keyword getElseKeyword_8_0() { return cElseKeyword_8_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_8_1() { return cLeftParenthesisKeyword_8_1; }
+		
+		//elseExpression=Expression
+		public Assignment getElseExpressionAssignment_8_2() { return cElseExpressionAssignment_8_2; }
+		
+		//Expression
+		public RuleCall getElseExpressionExpressionParserRuleCall_8_2_0() { return cElseExpressionExpressionParserRuleCall_8_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_8_3() { return cRightParenthesisKeyword_8_3; }
 	}
 	public class OrExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.OrExpression");
@@ -2390,6 +2474,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final UnaryOrPrimaryExpressionElements pUnaryOrPrimaryExpression;
 	private final UnaryExpressionElements pUnaryExpression;
 	private final PrimaryExpressionElements pPrimaryExpression;
+	private final IfExpressionElements pIfExpression;
 	private final OrExpressionElements pOrExpression;
 	private final AndExpressionElements pAndExpression;
 	private final EqualExpressionElements pEqualExpression;
@@ -2449,6 +2534,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pUnaryOrPrimaryExpression = new UnaryOrPrimaryExpressionElements();
 		this.pUnaryExpression = new UnaryExpressionElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
+		this.pIfExpression = new IfExpressionElements();
 		this.pOrExpression = new OrExpressionElements();
 		this.pAndExpression = new AndExpressionElements();
 		this.pEqualExpression = new EqualExpressionElements();
@@ -2580,13 +2666,26 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//PrimaryExpression returns Expression:
-	//    Call  | '(' (OrExpression | UnaryExpression) ')'  ;
+	//    Call  | IfExpression | '(' (OrExpression | UnaryExpression) ')'  ;
 	public PrimaryExpressionElements getPrimaryExpressionAccess() {
 		return pPrimaryExpression;
 	}
 	
 	public ParserRule getPrimaryExpressionRule() {
 		return getPrimaryExpressionAccess().getRule();
+	}
+	
+	//IfExpression returns IfExpression:
+	//    'if' '(' condition=Expression ')'
+	//    'then' '(' thenExpression=Expression ')'
+	//    ('else' '(' elseExpression=Expression ')')?
+	//;
+	public IfExpressionElements getIfExpressionAccess() {
+		return pIfExpression;
+	}
+	
+	public ParserRule getIfExpressionRule() {
+		return getIfExpressionAccess().getRule();
 	}
 	
 	//OrExpression returns Expression:

@@ -27,6 +27,7 @@ import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Form;
+import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.QLModel;
@@ -135,6 +136,9 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case QlPackage.FORM:
 				sequence_Form(context, (Form) semanticObject); 
+				return; 
+			case QlPackage.IF_EXPRESSION:
+				sequence_IfExpression(context, (IfExpression) semanticObject); 
 				return; 
 			case QlPackage.INTEGER_VALUE:
 				sequence_IntegerValue(context, (IntegerValue) semanticObject); 
@@ -423,6 +427,35 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getFormAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0(), semanticObject.getQuestionGroup());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns IfExpression
+	 *     UnaryOrPrimaryExpression returns IfExpression
+	 *     PrimaryExpression returns IfExpression
+	 *     IfExpression returns IfExpression
+	 *     OrExpression returns IfExpression
+	 *     OrExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *     AndExpression returns IfExpression
+	 *     AndExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *     EqualExpression returns IfExpression
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *     ComparisionExpression returns IfExpression
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *     AdditionExpression returns IfExpression
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *     MultiplicationExpression returns IfExpression
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns IfExpression
+	 *
+	 * Constraint:
+	 *     (condition=Expression thenExpression=Expression elseExpression=Expression?)
+	 * </pre>
+	 */
+	protected void sequence_IfExpression(ISerializationContext context, IfExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

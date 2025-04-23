@@ -35,7 +35,7 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getValueTypeAccess().getAlternatives(), "rule__ValueType__Alternatives");
 			builder.put(grammarAccess.getUnaryOrPrimaryExpressionAccess().getAlternatives(), "rule__UnaryOrPrimaryExpression__Alternatives");
 			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
-			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives_1_1(), "rule__PrimaryExpression__Alternatives_1_1");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives_2_1(), "rule__PrimaryExpression__Alternatives_2_1");
 			builder.put(grammarAccess.getCallAccess().getAlternatives(), "rule__Call__Alternatives");
 			builder.put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 			builder.put(grammarAccess.getDefinitionGroupAccess().getAlternatives_3(), "rule__DefinitionGroup__Alternatives_3");
@@ -53,7 +53,9 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQLModelAccess().getGroup_2(), "rule__QLModel__Group_2__0");
 			builder.put(grammarAccess.getQLModelAccess().getGroup_2_2(), "rule__QLModel__Group_2_2__0");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
-			builder.put(grammarAccess.getPrimaryExpressionAccess().getGroup_1(), "rule__PrimaryExpression__Group_1__0");
+			builder.put(grammarAccess.getPrimaryExpressionAccess().getGroup_2(), "rule__PrimaryExpression__Group_2__0");
+			builder.put(grammarAccess.getIfExpressionAccess().getGroup(), "rule__IfExpression__Group__0");
+			builder.put(grammarAccess.getIfExpressionAccess().getGroup_8(), "rule__IfExpression__Group_8__0");
 			builder.put(grammarAccess.getOrExpressionAccess().getGroup(), "rule__OrExpression__Group__0");
 			builder.put(grammarAccess.getOrExpressionAccess().getGroup_1(), "rule__OrExpression__Group_1__0");
 			builder.put(grammarAccess.getAndExpressionAccess().getGroup(), "rule__AndExpression__Group__0");
@@ -124,6 +126,9 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQLModelAccess().getFormsAssignment_4_1(), "rule__QLModel__FormsAssignment_4_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_2(), "rule__UnaryExpression__OperandAssignment_2");
+			builder.put(grammarAccess.getIfExpressionAccess().getConditionAssignment_2(), "rule__IfExpression__ConditionAssignment_2");
+			builder.put(grammarAccess.getIfExpressionAccess().getThenExpressionAssignment_6(), "rule__IfExpression__ThenExpressionAssignment_6");
+			builder.put(grammarAccess.getIfExpressionAccess().getElseExpressionAssignment_8_2(), "rule__IfExpression__ElseExpressionAssignment_8_2");
 			builder.put(grammarAccess.getOrExpressionAccess().getOperatorAssignment_1_1(), "rule__OrExpression__OperatorAssignment_1_1");
 			builder.put(grammarAccess.getOrExpressionAccess().getRhsOperandAssignment_1_2(), "rule__OrExpression__RhsOperandAssignment_1_2");
 			builder.put(grammarAccess.getAndExpressionAccess().getOperatorAssignment_1_1(), "rule__AndExpression__OperatorAssignment_1_1");

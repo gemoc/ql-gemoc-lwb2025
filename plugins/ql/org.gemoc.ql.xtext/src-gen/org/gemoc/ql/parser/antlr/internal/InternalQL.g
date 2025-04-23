@@ -420,35 +420,158 @@ rulePrimaryExpression returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
+		{
+			newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getIfExpressionParserRuleCall_1());
+		}
+		this_IfExpression_1=ruleIfExpression
+		{
+			$current = $this_IfExpression_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
 		(
-			otherlv_1='('
+			otherlv_2='('
 			{
-				newLeafNode(otherlv_1, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_1_0());
+				newLeafNode(otherlv_2, grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_2_0());
 			}
 			(
 				{
-					newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getOrExpressionParserRuleCall_1_1_0());
+					newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getOrExpressionParserRuleCall_2_1_0());
 				}
-				this_OrExpression_2=ruleOrExpression
+				this_OrExpression_3=ruleOrExpression
 				{
-					$current = $this_OrExpression_2.current;
+					$current = $this_OrExpression_3.current;
 					afterParserOrEnumRuleCall();
 				}
 				    |
 				{
-					newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getUnaryExpressionParserRuleCall_1_1_1());
+					newCompositeNode(grammarAccess.getPrimaryExpressionAccess().getUnaryExpressionParserRuleCall_2_1_1());
 				}
-				this_UnaryExpression_3=ruleUnaryExpression
+				this_UnaryExpression_4=ruleUnaryExpression
 				{
-					$current = $this_UnaryExpression_3.current;
+					$current = $this_UnaryExpression_4.current;
 					afterParserOrEnumRuleCall();
 				}
 			)
-			otherlv_4=')'
+			otherlv_5=')'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_1_2());
+				newLeafNode(otherlv_5, grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_2_2());
 			}
 		)
+	)
+;
+
+// Entry rule entryRuleIfExpression
+entryRuleIfExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIfExpressionRule()); }
+	iv_ruleIfExpression=ruleIfExpression
+	{ $current=$iv_ruleIfExpression.current; }
+	EOF;
+
+// Rule IfExpression
+ruleIfExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='if'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getIfExpressionAccess().getIfKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfExpressionAccess().getConditionExpressionParserRuleCall_2_0());
+				}
+				lv_condition_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfExpressionRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_2_0,
+						"org.gemoc.ql.QL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_3());
+		}
+		otherlv_4='then'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getIfExpressionAccess().getThenKeyword_4());
+		}
+		otherlv_5='('
+		{
+			newLeafNode(otherlv_5, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfExpressionAccess().getThenExpressionExpressionParserRuleCall_6_0());
+				}
+				lv_thenExpression_6_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfExpressionRule());
+					}
+					set(
+						$current,
+						"thenExpression",
+						lv_thenExpression_6_0,
+						"org.gemoc.ql.QL.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_7());
+		}
+		(
+			otherlv_8='else'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getIfExpressionAccess().getElseKeyword_8_0());
+			}
+			otherlv_9='('
+			{
+				newLeafNode(otherlv_9, grammarAccess.getIfExpressionAccess().getLeftParenthesisKeyword_8_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIfExpressionAccess().getElseExpressionExpressionParserRuleCall_8_2_0());
+					}
+					lv_elseExpression_10_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIfExpressionRule());
+						}
+						set(
+							$current,
+							"elseExpression",
+							lv_elseExpression_10_0,
+							"org.gemoc.ql.QL.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_11=')'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getIfExpressionAccess().getRightParenthesisKeyword_8_3());
+			}
+		)?
 	)
 ;
 

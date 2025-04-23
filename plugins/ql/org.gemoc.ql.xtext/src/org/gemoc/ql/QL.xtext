@@ -31,7 +31,13 @@ UnaryExpression returns Expression :
 	operator=UnaryOperatorKind operand=UnaryOrPrimaryExpression 
 	;
 PrimaryExpression returns Expression:
-	Call  | '(' (OrExpression | UnaryExpression) ')'  ;
+	Call  | IfExpression | '(' (OrExpression | UnaryExpression) ')'  ;
+
+IfExpression returns IfExpression:
+	'if' '(' condition=Expression ')'
+	'then' '(' thenExpression=Expression ')'
+	('else' '(' elseExpression=Expression ')')?
+;
 
 OrExpression returns Expression:
 	AndExpression (
