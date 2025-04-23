@@ -602,6 +602,29 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.IfExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfExpressionItemProvider ifExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.IfExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfExpressionAdapter() {
+		if (ifExpressionItemProvider == null) {
+			ifExpressionItemProvider = new IfExpressionItemProvider(this);
+		}
+
+		return ifExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,6 +775,8 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			stringValueTypeItemProvider.dispose();
 		if (questionItemProvider != null)
 			questionItemProvider.dispose();
+		if (ifExpressionItemProvider != null)
+			ifExpressionItemProvider.dispose();
 	}
 
 }

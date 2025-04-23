@@ -1456,6 +1456,70 @@ public interface QlPackage extends EPackage {
 	int QUESTION_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.IfExpressionImpl <em>If Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.ql.model.ql.impl.IfExpressionImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIfExpression()
+	 * @generated
+	 */
+	int IF_EXPRESSION = 30;
+
+	/**
+	 * The feature id for the '<em><b>Result Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION__RESULT_TYPE = EXPRESSION__RESULT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION__CONDITION = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Then Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION__THEN_EXPRESSION = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Else Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION__ELSE_EXPRESSION = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>If Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>If Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1463,7 +1527,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryOperatorKind()
 	 * @generated
 	 */
-	int BINARY_OPERATOR_KIND = 30;
+	int BINARY_OPERATOR_KIND = 31;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.UnaryOperatorKind <em>Unary Operator Kind</em>}' enum.
@@ -1473,7 +1537,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryOperatorKind()
 	 * @generated
 	 */
-	int UNARY_OPERATOR_KIND = 31;
+	int UNARY_OPERATOR_KIND = 32;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QLModel <em>QL Model</em>}'.
@@ -2161,6 +2225,49 @@ public interface QlPackage extends EPackage {
 	EReference getQuestion_QuestionDefinition();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.IfExpression <em>If Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Expression</em>'.
+	 * @see org.gemoc.ql.model.ql.IfExpression
+	 * @generated
+	 */
+	EClass getIfExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.IfExpression#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see org.gemoc.ql.model.ql.IfExpression#getCondition()
+	 * @see #getIfExpression()
+	 * @generated
+	 */
+	EReference getIfExpression_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.IfExpression#getThenExpression <em>Then Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Then Expression</em>'.
+	 * @see org.gemoc.ql.model.ql.IfExpression#getThenExpression()
+	 * @see #getIfExpression()
+	 * @generated
+	 */
+	EReference getIfExpression_ThenExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.IfExpression#getElseExpression <em>Else Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else Expression</em>'.
+	 * @see org.gemoc.ql.model.ql.IfExpression#getElseExpression()
+	 * @see #getIfExpression()
+	 * @generated
+	 */
+	EReference getIfExpression_ElseExpression();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2783,6 +2890,40 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUESTION__QUESTION_DEFINITION = eINSTANCE.getQuestion_QuestionDefinition();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.IfExpressionImpl <em>If Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.ql.model.ql.impl.IfExpressionImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIfExpression()
+		 * @generated
+		 */
+		EClass IF_EXPRESSION = eINSTANCE.getIfExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_EXPRESSION__CONDITION = eINSTANCE.getIfExpression_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Then Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_EXPRESSION__THEN_EXPRESSION = eINSTANCE.getIfExpression_ThenExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Else Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_EXPRESSION__ELSE_EXPRESSION = eINSTANCE.getIfExpression_ElseExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.BinaryOperatorKind <em>Binary Operator Kind</em>}' enum.

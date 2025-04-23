@@ -102,6 +102,8 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createStringValueType();
 		case QlPackage.QUESTION:
 			return createQuestion();
+		case QlPackage.IF_EXPRESSION:
+			return createIfExpression();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -392,6 +394,17 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public Question createQuestion() {
 		QuestionImpl question = new QuestionImpl();
 		return question;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public IfExpression createIfExpression() {
+		IfExpressionImpl ifExpression = new IfExpressionImpl();
+		return ifExpression;
 	}
 
 	/**

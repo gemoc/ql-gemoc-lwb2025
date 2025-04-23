@@ -8,38 +8,29 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.gemoc.ql.model.ql.ConditionnalElement;
+import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.QlPackage;
 
 /**
- * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.ConditionnalElement} object.
+ * This is the item provider adapter for a {@link org.gemoc.ql.model.ql.IfExpression} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConditionnalElementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class IfExpressionItemProvider extends ExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConditionnalElementItemProvider(AdapterFactory adapterFactory) {
+	public IfExpressionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,7 +61,9 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD);
+			childrenFeatures.add(QlPackage.Literals.IF_EXPRESSION__CONDITION);
+			childrenFeatures.add(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION);
+			childrenFeatures.add(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION);
 		}
 		return childrenFeatures;
 	}
@@ -89,14 +82,14 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 	}
 
 	/**
-	 * This returns ConditionnalElement.gif.
+	 * This returns IfExpression.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConditionnalElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/IfExpression"));
 	}
 
 	/**
@@ -117,7 +110,7 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ConditionnalElement_type");
+		return getString("_UI_IfExpression_type");
 	}
 
 	/**
@@ -131,8 +124,10 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ConditionnalElement.class)) {
-		case QlPackage.CONDITIONNAL_ELEMENT__GUARD:
+		switch (notification.getFeatureID(IfExpression.class)) {
+		case QlPackage.IF_EXPRESSION__CONDITION:
+		case QlPackage.IF_EXPRESSION__THEN_EXPRESSION:
+		case QlPackage.IF_EXPRESSION__ELSE_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,31 +145,72 @@ public class ConditionnalElementItemProvider extends ItemProviderAdapter impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
 				QlFactory.eINSTANCE.createBasicBinaryExpression()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
 				QlFactory.eINSTANCE.createConstantCall()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
 				QlFactory.eINSTANCE.createBasicUnaryExpression()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
 				QlFactory.eINSTANCE.createQuestionCall()));
 
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD,
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__CONDITION,
+				QlFactory.eINSTANCE.createIfExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createBasicBinaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createConstantCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createQuestionCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION,
+				QlFactory.eINSTANCE.createIfExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
+				QlFactory.eINSTANCE.createBasicBinaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
+				QlFactory.eINSTANCE.createConstantCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
+				QlFactory.eINSTANCE.createBasicUnaryExpression()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
+				QlFactory.eINSTANCE.createQuestionCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION,
 				QlFactory.eINSTANCE.createIfExpression()));
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator() {
-		return QlEditPlugin.INSTANCE;
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == QlPackage.Literals.IF_EXPRESSION__CONDITION
+				|| childFeature == QlPackage.Literals.IF_EXPRESSION__THEN_EXPRESSION
+				|| childFeature == QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

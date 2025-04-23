@@ -116,5 +116,10 @@
     <genClasses ecoreClass="ql.ecore#//Question">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//Question/questionDefinition"/>
     </genClasses>
+    <genClasses ecoreClass="ql.ecore#//IfExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//IfExpression/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//IfExpression/thenExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//IfExpression/elseExpression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

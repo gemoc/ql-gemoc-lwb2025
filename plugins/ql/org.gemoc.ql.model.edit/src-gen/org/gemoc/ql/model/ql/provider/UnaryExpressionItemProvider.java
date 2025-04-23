@@ -169,6 +169,9 @@ public class UnaryExpressionItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.UNARY_EXPRESSION__OPERAND,
 				QlFactory.eINSTANCE.createQuestionCall()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.UNARY_EXPRESSION__OPERAND,
+				QlFactory.eINSTANCE.createIfExpression()));
 	}
 
 }

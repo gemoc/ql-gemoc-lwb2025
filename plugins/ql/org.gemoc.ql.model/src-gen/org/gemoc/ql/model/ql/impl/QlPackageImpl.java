@@ -28,6 +28,7 @@ import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Form;
+import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.NamedElement;
@@ -261,6 +262,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass questionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -995,6 +1003,46 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getIfExpression() {
+		return ifExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIfExpression_Condition() {
+		return (EReference) ifExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIfExpression_ThenExpression() {
+		return (EReference) ifExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIfExpression_ElseExpression() {
+		return (EReference) ifExpressionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBinaryOperatorKind() {
 		return binaryOperatorKindEEnum;
 	}
@@ -1134,6 +1182,11 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		questionEClass = createEClass(QUESTION);
 		createEReference(questionEClass, QUESTION__QUESTION_DEFINITION);
 
+		ifExpressionEClass = createEClass(IF_EXPRESSION);
+		createEReference(ifExpressionEClass, IF_EXPRESSION__CONDITION);
+		createEReference(ifExpressionEClass, IF_EXPRESSION__THEN_EXPRESSION);
+		createEReference(ifExpressionEClass, IF_EXPRESSION__ELSE_EXPRESSION);
+
 		// Create enums
 		binaryOperatorKindEEnum = createEEnum(BINARY_OPERATOR_KIND);
 		unaryOperatorKindEEnum = createEEnum(UNARY_OPERATOR_KIND);
@@ -1191,6 +1244,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
 		questionCallEClass.getESuperTypes().add(this.getCall());
 		stringValueTypeEClass.getESuperTypes().add(this.getValueType());
+		ifExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlModelEClass, QLModel.class, "QLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1374,6 +1428,18 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestion_QuestionDefinition(), this.getQuestionDefinition(), null, "questionDefinition", null,
 				1, 1, Question.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ifExpressionEClass, IfExpression.class, "IfExpression", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIfExpression_Condition(), this.getExpression(), null, "condition", null, 1, 1,
+				IfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfExpression_ThenExpression(), this.getExpression(), null, "thenExpression", null, 1, 1,
+				IfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfExpression_ElseExpression(), this.getExpression(), null, "elseExpression", null, 0, 1,
+				IfExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

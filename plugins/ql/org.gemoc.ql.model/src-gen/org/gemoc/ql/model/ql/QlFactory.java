@@ -229,6 +229,15 @@ public interface QlFactory extends EFactory {
 	Question createQuestion();
 
 	/**
+	 * Returns a new object of class '<em>If Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>If Expression</em>'.
+	 * @generated
+	 */
+	IfExpression createIfExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

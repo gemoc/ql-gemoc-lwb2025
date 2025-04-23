@@ -231,6 +231,9 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION,
 				QlFactory.eINSTANCE.createQuestionCall()));
 
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION,
+				QlFactory.eINSTANCE.createIfExpression()));
+
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
 				QlFactory.eINSTANCE.createIntegerValue()));
 
