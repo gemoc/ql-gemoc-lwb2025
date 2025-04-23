@@ -1168,7 +1168,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL__NAME = NAMED_ELEMENT__NAME;
+	int ENUMERATION_LITERAL__NAME = 0;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration Literal</em>' class.
@@ -1177,7 +1177,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ENUMERATION_LITERAL_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Enumeration Literal</em>' class.
@@ -1186,7 +1186,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_LITERAL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ENUMERATION_LITERAL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.ConditionnalElementImpl <em>Conditionnal Element</em>}' class.
@@ -2067,6 +2067,17 @@ public interface QlPackage extends EPackage {
 	EClass getEnumerationLiteral();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.ql.model.ql.EnumerationLiteral#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.gemoc.ql.model.ql.EnumerationLiteral#getName()
+	 * @see #getEnumerationLiteral()
+	 * @generated
+	 */
+	EAttribute getEnumerationLiteral_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2756,6 +2767,14 @@ public interface QlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ENUMERATION_LITERAL = eINSTANCE.getEnumerationLiteral();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUMERATION_LITERAL__NAME = eINSTANCE.getEnumerationLiteral_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.NamedElementImpl <em>Named Element</em>}' class.

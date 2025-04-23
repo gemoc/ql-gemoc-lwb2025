@@ -94,7 +94,9 @@
     <genClasses ecoreClass="ql.ecore#//EnumerationValueType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ql.ecore#//EnumerationValueType/enumerationLiterals"/>
     </genClasses>
-    <genClasses ecoreClass="ql.ecore#//EnumerationLiteral"/>
+    <genClasses ecoreClass="ql.ecore#//EnumerationLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//EnumerationLiteral/name"/>
+    </genClasses>
     <genClasses ecoreClass="ql.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ql.ecore#//NamedElement/name"/>
     </genClasses>

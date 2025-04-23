@@ -853,6 +853,16 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEnumerationLiteral_Name() {
+		return (EAttribute) enumerationLiteralEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -1159,6 +1169,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		createEReference(enumerationValueTypeEClass, ENUMERATION_VALUE_TYPE__ENUMERATION_LITERALS);
 
 		enumerationLiteralEClass = createEClass(ENUMERATION_LITERAL);
+		createEAttribute(enumerationLiteralEClass, ENUMERATION_LITERAL__NAME);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -1240,7 +1251,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		decimalValueTypeEClass.getESuperTypes().add(this.getValueType());
 		dateValueTypeEClass.getESuperTypes().add(this.getValueType());
 		enumerationValueTypeEClass.getESuperTypes().add(this.getValueType());
-		enumerationLiteralEClass.getESuperTypes().add(this.getNamedElement());
 		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
 		questionCallEClass.getESuperTypes().add(this.getCall());
 		stringValueTypeEClass.getESuperTypes().add(this.getValueType());
@@ -1385,6 +1395,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		initEClass(enumerationLiteralEClass, EnumerationLiteral.class, "EnumerationLiteral", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumerationLiteral_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				EnumerationLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

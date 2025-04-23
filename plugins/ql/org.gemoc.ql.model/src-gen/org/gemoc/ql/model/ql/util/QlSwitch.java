@@ -278,8 +278,6 @@ public class QlSwitch<T> extends Switch<T> {
 			EnumerationLiteral enumerationLiteral = (EnumerationLiteral) theEObject;
 			T result = caseEnumerationLiteral(enumerationLiteral);
 			if (result == null)
-				result = caseNamedElement(enumerationLiteral);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
