@@ -189,7 +189,7 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__LHS_OPERAND,
-				QlFactory.eINSTANCE.createEnumerationValue()));
+				QlFactory.eINSTANCE.createEnumerationCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__LHS_OPERAND,
 				QlFactory.eINSTANCE.createIfExpression()));
@@ -207,7 +207,7 @@ public class BinaryExpressionItemProvider extends ExpressionItemProvider {
 				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
-				QlFactory.eINSTANCE.createEnumerationValue()));
+				QlFactory.eINSTANCE.createEnumerationCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.BINARY_EXPRESSION__RHS_OPERAND,
 				QlFactory.eINSTANCE.createIfExpression()));

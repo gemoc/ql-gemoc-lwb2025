@@ -56,6 +56,7 @@ import static extension org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.DateValueTypeAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.EnumerationLiteralAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.NamedElementAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ConditionnalElementAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect.*
@@ -83,6 +84,9 @@ import java.util.List
 import java.util.HashMap
 import java.util.ArrayList
 import java.util.Set
+import org.gemoc.ql.model.ql.IfExpression
+import org.gemoc.ql.model.ql.EnumerationCall
+import org.gemoc.ql.k3ql.k3dsa.NullValueException
 
 @Aspect(className=QLModel)
 class QLModelAspect {
@@ -271,7 +275,7 @@ class QLModelAspect {
 		val SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss"); // Customize the format
         
 		val String postfix = "_"+dateFormat.format(_self.submitDate);
-		val URI outputUri = URI.createURI(platformFolderPath +"/reports/" + fileName.replaceFirst("\\.([^.]+)$", postfix + ".$1"), true);
+		val URI outputUri = URI.createURI(platformFolderPath +"/reports/" + fileName.replaceFirst("\\.([^.]+)$", postfix + ".$1")+".xmi", true);
 		
 		
 		_self.devInfo("Saving to "+outputUri.toString);
@@ -344,7 +348,7 @@ class QuestionDefinitionAspect extends NamedElementAspect {
 abstract class ExpressionAspect {
 	/**
 	 * evaluate the expression and get the boolean
-	 * if not a boolean raise an exception and stop
+	 * if not a boolean raise an exception 
 	 */ 
 	def boolean evaluateAsBoolean(){
 		val Value internalResult = _self.evaluate();
@@ -352,7 +356,11 @@ abstract class ExpressionAspect {
 		if(internalResult instanceof BooleanValue) {
 			result = internalResult.booleanValue;
 		} else {
-			throw new QLException('expected a boolean but got '+internalResult);
+			if (internalResult === null) {
+				throw new NullValueException('expected a boolean but got '+internalResult);
+			} else {
+				throw new QLException('expected a boolean but got '+internalResult);	
+			}
 		}
 		return result;
 	}
@@ -428,6 +436,23 @@ abstract class CallAspect extends ExpressionAspect {
 class ConstantCallAspect extends CallAspect {
 	def Value evaluate() {
 		return _self.value.evaluate();
+	}
+}
+
+@Aspect(className=IfExpression)
+class IfExpressionAspect extends ExpressionAspect {
+	def Value evaluate() {
+		try {
+			if(_self.condition.evaluateAsBoolean().booleanValue) {
+				return _self.thenExpression.evaluate();
+			} else if(_self.elseExpression !== null) {
+				return _self.elseExpression.evaluate();
+			} else {
+				return null;			
+			}
+		} catch (NullValueException nve) {
+			return null;
+		}
 	}
 }
 
@@ -677,6 +702,13 @@ class BooleanValueAspect extends ValueAspect {
 	}
 }
 
+@Aspect(className=EnumerationCall , with=#[ValueAspect])
+class EnumerationCallAspect extends CallAspect {
+
+	def Value evaluate() {
+		return _self;
+	}
+}
 @Aspect(className=BasicUnaryExpression)
 class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
 	def Value evaluate() {

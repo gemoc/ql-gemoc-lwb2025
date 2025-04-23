@@ -118,8 +118,8 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     				if (ret != null) {
     					return (java.util.Set) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {
@@ -155,8 +155,8 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     				if (ret != null) {
     					return (java.util.Set) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {

@@ -114,8 +114,8 @@
     <genClasses ecoreClass="ql.ecore#//QuestionCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//QuestionCall/question"/>
     </genClasses>
-    <genClasses ecoreClass="ql.ecore#//EnumerationValue">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//EnumerationValue/enumerationLiteral"/>
+    <genClasses ecoreClass="ql.ecore#//EnumerationCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ql.ecore#//EnumerationCall/enumerationLiteral"/>
     </genClasses>
     <genClasses ecoreClass="ql.ecore#//StringValueType"/>
     <genClasses ecoreClass="ql.ecore#//Question">

@@ -322,13 +322,15 @@ public class QlSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlPackage.ENUMERATION_VALUE: {
-			EnumerationValue enumerationValue = (EnumerationValue) theEObject;
-			T result = caseEnumerationValue(enumerationValue);
+		case QlPackage.ENUMERATION_CALL: {
+			EnumerationCall enumerationCall = (EnumerationCall) theEObject;
+			T result = caseEnumerationCall(enumerationCall);
 			if (result == null)
-				result = caseCall(enumerationValue);
+				result = caseCall(enumerationCall);
 			if (result == null)
-				result = caseExpression(enumerationValue);
+				result = caseValue(enumerationCall);
+			if (result == null)
+				result = caseExpression(enumerationCall);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -407,36 +409,6 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQuestionDefinition(QuestionDefinition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Question</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Question</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseQuestion(Question object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>If Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>If Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIfExpression(IfExpression object) {
 		return null;
 	}
 
@@ -816,17 +788,17 @@ public class QlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Value</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enumeration Value</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Call</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEnumerationValue(EnumerationValue object) {
+	public T caseEnumerationCall(EnumerationCall object) {
 		return null;
 	}
 
@@ -842,6 +814,36 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStringValueType(StringValueType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Question</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Question</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuestion(Question object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIfExpression(IfExpression object) {
 		return null;
 	}
 

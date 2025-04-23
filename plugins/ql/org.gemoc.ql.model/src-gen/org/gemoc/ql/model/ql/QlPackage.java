@@ -1373,14 +1373,14 @@ public interface QlPackage extends EPackage {
 	int QUESTION_CALL_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.EnumerationValueImpl <em>Enumeration Value</em>}' class.
+	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.EnumerationCallImpl <em>Enumeration Call</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.EnumerationValueImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationValue()
+	 * @see org.gemoc.ql.model.ql.impl.EnumerationCallImpl
+	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationCall()
 	 * @generated
 	 */
-	int ENUMERATION_VALUE = 28;
+	int ENUMERATION_CALL = 28;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -1389,7 +1389,7 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE__RESULT_TYPE = CALL__RESULT_TYPE;
+	int ENUMERATION_CALL__RESULT_TYPE = CALL__RESULT_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Enumeration Literal</b></em>' reference.
@@ -1398,25 +1398,25 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE__ENUMERATION_LITERAL = CALL_FEATURE_COUNT + 0;
+	int ENUMERATION_CALL__ENUMERATION_LITERAL = CALL_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Enumeration Value</em>' class.
+	 * The number of structural features of the '<em>Enumeration Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
+	int ENUMERATION_CALL_FEATURE_COUNT = CALL_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Enumeration Value</em>' class.
+	 * The number of operations of the '<em>Enumeration Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_VALUE_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
+	int ENUMERATION_CALL_OPERATION_COUNT = CALL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.StringValueTypeImpl <em>String Value Type</em>}' class.
@@ -2251,25 +2251,25 @@ public interface QlPackage extends EPackage {
 	EReference getQuestionCall_Question();
 
 	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.EnumerationValue <em>Enumeration Value</em>}'.
+	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.EnumerationCall <em>Enumeration Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Enumeration Value</em>'.
-	 * @see org.gemoc.ql.model.ql.EnumerationValue
+	 * @return the meta object for class '<em>Enumeration Call</em>'.
+	 * @see org.gemoc.ql.model.ql.EnumerationCall
 	 * @generated
 	 */
-	EClass getEnumerationValue();
+	EClass getEnumerationCall();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.EnumerationValue#getEnumerationLiteral <em>Enumeration Literal</em>}'.
+	 * Returns the meta object for the reference '{@link org.gemoc.ql.model.ql.EnumerationCall#getEnumerationLiteral <em>Enumeration Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Enumeration Literal</em>'.
-	 * @see org.gemoc.ql.model.ql.EnumerationValue#getEnumerationLiteral()
-	 * @see #getEnumerationValue()
+	 * @see org.gemoc.ql.model.ql.EnumerationCall#getEnumerationLiteral()
+	 * @see #getEnumerationCall()
 	 * @generated
 	 */
-	EReference getEnumerationValue_EnumerationLiteral();
+	EReference getEnumerationCall_EnumerationLiteral();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.StringValueType <em>String Value Type</em>}'.
@@ -2950,14 +2950,14 @@ public interface QlPackage extends EPackage {
 		EReference QUESTION_CALL__QUESTION = eINSTANCE.getQuestionCall_Question();
 
 		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.EnumerationValueImpl <em>Enumeration Value</em>}' class.
+		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.EnumerationCallImpl <em>Enumeration Call</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.EnumerationValueImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationValue()
+		 * @see org.gemoc.ql.model.ql.impl.EnumerationCallImpl
+		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationCall()
 		 * @generated
 		 */
-		EClass ENUMERATION_VALUE = eINSTANCE.getEnumerationValue();
+		EClass ENUMERATION_CALL = eINSTANCE.getEnumerationCall();
 
 		/**
 		 * The meta object literal for the '<em><b>Enumeration Literal</b></em>' reference feature.
@@ -2965,7 +2965,7 @@ public interface QlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENUMERATION_VALUE__ENUMERATION_LITERAL = eINSTANCE.getEnumerationValue_EnumerationLiteral();
+		EReference ENUMERATION_CALL__ENUMERATION_LITERAL = eINSTANCE.getEnumerationCall_EnumerationLiteral();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.StringValueTypeImpl <em>String Value Type</em>}' class.

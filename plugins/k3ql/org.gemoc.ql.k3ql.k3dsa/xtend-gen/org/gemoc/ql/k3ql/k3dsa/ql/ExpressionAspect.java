@@ -3,6 +3,7 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.k3ql.k3dsa.NotImplementedException;
+import org.gemoc.ql.k3ql.k3dsa.NullValueException;
 import org.gemoc.ql.k3ql.k3dsa.QLException;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.BooleanValue;
@@ -14,7 +15,7 @@ import org.gemoc.ql.model.ql.Value;
 public abstract class ExpressionAspect {
   /**
    * evaluate the expression and get the boolean
-   * if not a boolean raise an exception and stop
+   * if not a boolean raise an exception
    */
   public static boolean evaluateAsBoolean(final Expression _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectContext.getSelf(_self);
@@ -29,6 +30,11 @@ public abstract class ExpressionAspect {
   public static Value evaluate(final Expression _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspectExpressionAspectContext.getSelf(_self);
     Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.evaluate((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BasicUnaryExpression){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
@@ -54,6 +60,11 @@ public abstract class ExpressionAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect.evaluate((org.gemoc.ql.model.ql.QuestionCall)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IfExpression){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect.evaluate((org.gemoc.ql.model.ql.IfExpression)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect
     // #DispatchPointCut_before# Value evaluate()
     if (_self instanceof org.gemoc.ql.model.ql.Expression){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.Expression)_self);
@@ -68,7 +79,11 @@ public abstract class ExpressionAspect {
       if ((internalResult instanceof BooleanValue)) {
         result = ((BooleanValue)internalResult).isBooleanValue();
       } else {
-        throw new QLException(("expected a boolean but got " + internalResult));
+        if ((internalResult == null)) {
+          throw new NullValueException(("expected a boolean but got " + internalResult));
+        } else {
+          throw new QLException(("expected a boolean but got " + internalResult));
+        }
       }
       return result;
     } catch (Throwable _e) {

@@ -211,13 +211,13 @@ public interface QlFactory extends EFactory {
 	QuestionCall createQuestionCall();
 
 	/**
-	 * Returns a new object of class '<em>Enumeration Value</em>'.
+	 * Returns a new object of class '<em>Enumeration Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enumeration Value</em>'.
+	 * @return a new object of class '<em>Enumeration Call</em>'.
 	 * @generated
 	 */
-	EnumerationValue createEnumerationValue();
+	EnumerationCall createEnumerationCall();
 
 	/**
 	 * Returns a new object of class '<em>String Value Type</em>'.

@@ -650,13 +650,13 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cConstantCallParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cQuestionCallParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEnumerationValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cEnumerationCallParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Call returns Call:
-		//    ConstantCall | QuestionCall | EnumerationValue;
+		//    ConstantCall | QuestionCall | EnumerationCall;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ConstantCall | QuestionCall | EnumerationValue
+		//ConstantCall | QuestionCall | EnumerationCall
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ConstantCall
@@ -665,8 +665,8 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//QuestionCall
 		public RuleCall getQuestionCallParserRuleCall_1() { return cQuestionCallParserRuleCall_1; }
 		
-		//EnumerationValue
-		public RuleCall getEnumerationValueParserRuleCall_2() { return cEnumerationValueParserRuleCall_2; }
+		//EnumerationCall
+		public RuleCall getEnumerationCallParserRuleCall_2() { return cEnumerationCallParserRuleCall_2; }
 	}
 	public class ValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Value");
@@ -1825,26 +1825,26 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//EBoolean
 		public RuleCall getBooleanValueEBooleanParserRuleCall_1_0() { return cBooleanValueEBooleanParserRuleCall_1_0; }
 	}
-	public class EnumerationValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EnumerationValue");
+	public class EnumerationCallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EnumerationCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cEnumerationValueAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cEnumerationCallAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cEnumerationLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cEnumerationLiteralEnumerationLiteralCrossReference_1_0 = (CrossReference)cEnumerationLiteralAssignment_1.eContents().get(0);
 		private final RuleCall cEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cEnumerationLiteralEnumerationLiteralCrossReference_1_0.eContents().get(1);
 		
-		//EnumerationValue returns EnumerationValue:
-		//    {EnumerationValue}
+		//EnumerationCall returns EnumerationCall:
+		//    {EnumerationCall}
 		//    enumerationLiteral=[EnumerationLiteral|QualifiedName]
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{EnumerationValue}
+		//{EnumerationCall}
 		//enumerationLiteral=[EnumerationLiteral|QualifiedName]
 		public Group getGroup() { return cGroup; }
 		
-		//{EnumerationValue}
-		public Action getEnumerationValueAction_0() { return cEnumerationValueAction_0; }
+		//{EnumerationCall}
+		public Action getEnumerationCallAction_0() { return cEnumerationCallAction_0; }
 		
 		//enumerationLiteral=[EnumerationLiteral|QualifiedName]
 		public Assignment getEnumerationLiteralAssignment_1() { return cEnumerationLiteralAssignment_1; }
@@ -2467,7 +2467,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final IntegerValueElements pIntegerValue;
 	private final StringValueElements pStringValue;
 	private final BooleanValueElements pBooleanValue;
-	private final EnumerationValueElements pEnumerationValue;
+	private final EnumerationCallElements pEnumerationCall;
 	private final DateValueElements pDateValue;
 	private final DecimalValueElements pDecimalValue;
 	private final EIntElements pEInt;
@@ -2529,7 +2529,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pIntegerValue = new IntegerValueElements();
 		this.pStringValue = new StringValueElements();
 		this.pBooleanValue = new BooleanValueElements();
-		this.pEnumerationValue = new EnumerationValueElements();
+		this.pEnumerationCall = new EnumerationCallElements();
 		this.pDateValue = new DateValueElements();
 		this.pDecimalValue = new DecimalValueElements();
 		this.pEInt = new EIntElements();
@@ -2746,7 +2746,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	}
 	
 	//Call returns Call:
-	//    ConstantCall | QuestionCall | EnumerationValue;
+	//    ConstantCall | QuestionCall | EnumerationCall;
 	public CallElements getCallAccess() {
 		return pCall;
 	}
@@ -3067,16 +3067,16 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		return getBooleanValueAccess().getRule();
 	}
 	
-	//EnumerationValue returns EnumerationValue:
-	//    {EnumerationValue}
+	//EnumerationCall returns EnumerationCall:
+	//    {EnumerationCall}
 	//    enumerationLiteral=[EnumerationLiteral|QualifiedName]
 	//    ;
-	public EnumerationValueElements getEnumerationValueAccess() {
-		return pEnumerationValue;
+	public EnumerationCallElements getEnumerationCallAccess() {
+		return pEnumerationCall;
 	}
 	
-	public ParserRule getEnumerationValueRule() {
-		return getEnumerationValueAccess().getRule();
+	public ParserRule getEnumerationCallRule() {
+		return getEnumerationCallAccess().getRule();
 	}
 	
 	//DateValue returns DateValue:

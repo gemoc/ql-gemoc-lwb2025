@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.QuestionDefinition;

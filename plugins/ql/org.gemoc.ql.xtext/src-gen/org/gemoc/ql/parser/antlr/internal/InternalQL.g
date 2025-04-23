@@ -1041,11 +1041,11 @@ ruleCall returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getCallAccess().getEnumerationValueParserRuleCall_2());
+			newCompositeNode(grammarAccess.getCallAccess().getEnumerationCallParserRuleCall_2());
 		}
-		this_EnumerationValue_2=ruleEnumerationValue
+		this_EnumerationCall_2=ruleEnumerationCall
 		{
-			$current = $this_EnumerationValue_2.current;
+			$current = $this_EnumerationCall_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2482,15 +2482,15 @@ ruleBooleanValue returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleEnumerationValue
-entryRuleEnumerationValue returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEnumerationValueRule()); }
-	iv_ruleEnumerationValue=ruleEnumerationValue
-	{ $current=$iv_ruleEnumerationValue.current; }
+// Entry rule entryRuleEnumerationCall
+entryRuleEnumerationCall returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEnumerationCallRule()); }
+	iv_ruleEnumerationCall=ruleEnumerationCall
+	{ $current=$iv_ruleEnumerationCall.current; }
 	EOF;
 
-// Rule EnumerationValue
-ruleEnumerationValue returns [EObject current=null]
+// Rule EnumerationCall
+ruleEnumerationCall returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2501,7 +2501,7 @@ ruleEnumerationValue returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getEnumerationValueAccess().getEnumerationValueAction_0(),
+					grammarAccess.getEnumerationCallAccess().getEnumerationCallAction_0(),
 					$current);
 			}
 		)
@@ -2509,11 +2509,11 @@ ruleEnumerationValue returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEnumerationValueRule());
+						$current = createModelElement(grammarAccess.getEnumerationCallRule());
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0());
+					newCompositeNode(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0());
 				}
 				ruleQualifiedName
 				{

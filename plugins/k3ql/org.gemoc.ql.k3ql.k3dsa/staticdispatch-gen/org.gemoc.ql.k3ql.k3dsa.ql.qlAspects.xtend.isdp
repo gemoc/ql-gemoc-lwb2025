@@ -13,6 +13,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.plus((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value plus(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.evaluate((org.gemoc.ql.model.ql.EnumerationCall)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect
 		if (_self instanceof org.gemoc.ql.model.ql.BasicUnaryExpression){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect.evaluate((org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
@@ -188,6 +193,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.bEquals((org.gemoc.ql.model.ql.StringValue)_self,rhs);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.evaluate((org.gemoc.ql.model.ql.EnumerationCall)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#DecimalValue toDecimalValue() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.toDecimalValue((org.gemoc.ql.model.ql.DecimalValue)_self);
@@ -283,11 +293,21 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.valueToString((org.gemoc.ql.model.ql.IntegerValue)_self);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.evaluate((org.gemoc.ql.model.ql.EnumerationCall)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
 		if (_self instanceof org.gemoc.ql.model.ql.QuestionCall){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect.evaluate((org.gemoc.ql.model.ql.QuestionCall)_self);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.CallAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect
+		if (_self instanceof org.gemoc.ql.model.ql.IfExpression){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect.evaluate((org.gemoc.ql.model.ql.IfExpression)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IfExpressionAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createDefaultValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
 		if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect.createDefaultValue((org.gemoc.ql.model.ql.IntegerValueType)_self);

@@ -232,7 +232,7 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 				QlFactory.eINSTANCE.createQuestionCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION,
-				QlFactory.eINSTANCE.createEnumerationValue()));
+				QlFactory.eINSTANCE.createEnumerationCall()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION,
 				QlFactory.eINSTANCE.createIfExpression()));
@@ -251,6 +251,30 @@ public class QuestionDefinitionItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
 				QlFactory.eINSTANCE.createDecimalValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE,
+				QlFactory.eINSTANCE.createEnumerationCall()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION
+				|| childFeature == QlPackage.Literals.QUESTION_DEFINITION__CURRENT_VALUE;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

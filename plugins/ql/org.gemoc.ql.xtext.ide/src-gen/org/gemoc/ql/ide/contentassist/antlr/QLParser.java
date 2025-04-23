@@ -107,7 +107,7 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntegerValueAccess().getGroup(), "rule__IntegerValue__Group__0");
 			builder.put(grammarAccess.getStringValueAccess().getGroup(), "rule__StringValue__Group__0");
 			builder.put(grammarAccess.getBooleanValueAccess().getGroup(), "rule__BooleanValue__Group__0");
-			builder.put(grammarAccess.getEnumerationValueAccess().getGroup(), "rule__EnumerationValue__Group__0");
+			builder.put(grammarAccess.getEnumerationCallAccess().getGroup(), "rule__EnumerationCall__Group__0");
 			builder.put(grammarAccess.getDateValueAccess().getGroup(), "rule__DateValue__Group__0");
 			builder.put(grammarAccess.getDateValueAccess().getGroup_3(), "rule__DateValue__Group_3__0");
 			builder.put(grammarAccess.getDecimalValueAccess().getGroup(), "rule__DecimalValue__Group__0");
@@ -179,7 +179,7 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntegerValueAccess().getIntValueAssignment_1(), "rule__IntegerValue__IntValueAssignment_1");
 			builder.put(grammarAccess.getStringValueAccess().getStringValueAssignment_1(), "rule__StringValue__StringValueAssignment_1");
 			builder.put(grammarAccess.getBooleanValueAccess().getBooleanValueAssignment_1(), "rule__BooleanValue__BooleanValueAssignment_1");
-			builder.put(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralAssignment_1(), "rule__EnumerationValue__EnumerationLiteralAssignment_1");
+			builder.put(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralAssignment_1(), "rule__EnumerationCall__EnumerationLiteralAssignment_1");
 			builder.put(grammarAccess.getDateValueAccess().getDateValueAssignment_3_1(), "rule__DateValue__DateValueAssignment_3_1");
 			builder.put(grammarAccess.getDecimalValueAccess().getDecimalValueAssignment_1(), "rule__DecimalValue__DecimalValueAssignment_1");
 			builder.put(grammarAccess.getQuestionDefinitionAccess().getIsMandatoryAssignment_0(), "rule__QuestionDefinition__IsMandatoryAssignment_0");

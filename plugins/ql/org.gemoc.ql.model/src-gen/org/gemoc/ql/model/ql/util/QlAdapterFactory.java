@@ -207,8 +207,8 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEnumerationValue(EnumerationValue object) {
-			return createEnumerationValueAdapter();
+		public Adapter caseEnumerationCall(EnumerationCall object) {
+			return createEnumerationCallAdapter();
 		}
 
 		@Override
@@ -284,34 +284,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQuestionDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.Question <em>Question</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.Question
-	 * @generated
-	 */
-	public Adapter createQuestionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.IfExpression <em>If Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.IfExpression
-	 * @generated
-	 */
-	public Adapter createIfExpressionAdapter() {
 		return null;
 	}
 
@@ -666,16 +638,16 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.EnumerationValue <em>Enumeration Value</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.EnumerationCall <em>Enumeration Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.EnumerationValue
+	 * @see org.gemoc.ql.model.ql.EnumerationCall
 	 * @generated
 	 */
-	public Adapter createEnumerationValueAdapter() {
+	public Adapter createEnumerationCallAdapter() {
 		return null;
 	}
 
@@ -690,6 +662,34 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringValueTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.Question <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.Question
+	 * @generated
+	 */
+	public Adapter createQuestionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.IfExpression <em>If Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.ql.model.ql.IfExpression
+	 * @generated
+	 */
+	public Adapter createIfExpressionAdapter() {
 		return null;
 	}
 

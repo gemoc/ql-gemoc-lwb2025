@@ -3,8 +3,8 @@
 package org.gemoc.ql.model.ql.impl;
 
 import java.util.Collection;
-
 import java.util.Date;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 

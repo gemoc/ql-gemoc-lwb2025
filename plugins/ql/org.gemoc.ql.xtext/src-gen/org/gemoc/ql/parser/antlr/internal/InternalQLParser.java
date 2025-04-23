@@ -2684,7 +2684,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCall"
-    // InternalQL.g:1017:1: ruleCall returns [EObject current=null] : (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationValue_2= ruleEnumerationValue ) ;
+    // InternalQL.g:1017:1: ruleCall returns [EObject current=null] : (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationCall_2= ruleEnumerationCall ) ;
     public final EObject ruleCall() throws RecognitionException {
         EObject current = null;
 
@@ -2692,17 +2692,17 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
 
         EObject this_QuestionCall_1 = null;
 
-        EObject this_EnumerationValue_2 = null;
+        EObject this_EnumerationCall_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalQL.g:1023:2: ( (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationValue_2= ruleEnumerationValue ) )
-            // InternalQL.g:1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationValue_2= ruleEnumerationValue )
+            // InternalQL.g:1023:2: ( (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationCall_2= ruleEnumerationCall ) )
+            // InternalQL.g:1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationCall_2= ruleEnumerationCall )
             {
-            // InternalQL.g:1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationValue_2= ruleEnumerationValue )
+            // InternalQL.g:1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationCall_2= ruleEnumerationCall )
             int alt16=3;
             alt16 = dfa16.predict(input);
             switch (alt16) {
@@ -2743,18 +2743,18 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalQL.g:1043:3: this_EnumerationValue_2= ruleEnumerationValue
+                    // InternalQL.g:1043:3: this_EnumerationCall_2= ruleEnumerationCall
                     {
 
-                    			newCompositeNode(grammarAccess.getCallAccess().getEnumerationValueParserRuleCall_2());
+                    			newCompositeNode(grammarAccess.getCallAccess().getEnumerationCallParserRuleCall_2());
                     		
                     pushFollow(FOLLOW_2);
-                    this_EnumerationValue_2=ruleEnumerationValue();
+                    this_EnumerationCall_2=ruleEnumerationCall();
 
                     state._fsp--;
 
 
-                    			current = this_EnumerationValue_2;
+                    			current = this_EnumerationCall_2;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -6435,25 +6435,25 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleBooleanValue"
 
 
-    // $ANTLR start "entryRuleEnumerationValue"
-    // InternalQL.g:2486:1: entryRuleEnumerationValue returns [EObject current=null] : iv_ruleEnumerationValue= ruleEnumerationValue EOF ;
-    public final EObject entryRuleEnumerationValue() throws RecognitionException {
+    // $ANTLR start "entryRuleEnumerationCall"
+    // InternalQL.g:2486:1: entryRuleEnumerationCall returns [EObject current=null] : iv_ruleEnumerationCall= ruleEnumerationCall EOF ;
+    public final EObject entryRuleEnumerationCall() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleEnumerationValue = null;
+        EObject iv_ruleEnumerationCall = null;
 
 
         try {
-            // InternalQL.g:2486:57: (iv_ruleEnumerationValue= ruleEnumerationValue EOF )
-            // InternalQL.g:2487:2: iv_ruleEnumerationValue= ruleEnumerationValue EOF
+            // InternalQL.g:2486:56: (iv_ruleEnumerationCall= ruleEnumerationCall EOF )
+            // InternalQL.g:2487:2: iv_ruleEnumerationCall= ruleEnumerationCall EOF
             {
-             newCompositeNode(grammarAccess.getEnumerationValueRule()); 
+             newCompositeNode(grammarAccess.getEnumerationCallRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleEnumerationValue=ruleEnumerationValue();
+            iv_ruleEnumerationCall=ruleEnumerationCall();
 
             state._fsp--;
 
-             current =iv_ruleEnumerationValue; 
+             current =iv_ruleEnumerationCall; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -6468,12 +6468,12 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleEnumerationValue"
+    // $ANTLR end "entryRuleEnumerationCall"
 
 
-    // $ANTLR start "ruleEnumerationValue"
-    // InternalQL.g:2493:1: ruleEnumerationValue returns [EObject current=null] : ( () ( ( ruleQualifiedName ) ) ) ;
-    public final EObject ruleEnumerationValue() throws RecognitionException {
+    // $ANTLR start "ruleEnumerationCall"
+    // InternalQL.g:2493:1: ruleEnumerationCall returns [EObject current=null] : ( () ( ( ruleQualifiedName ) ) ) ;
+    public final EObject ruleEnumerationCall() throws RecognitionException {
         EObject current = null;
 
 
@@ -6491,7 +6491,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getEnumerationValueAccess().getEnumerationValueAction_0(),
+            					grammarAccess.getEnumerationCallAccess().getEnumerationCallAction_0(),
             					current);
             			
 
@@ -6505,11 +6505,11 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getEnumerationValueRule());
+            						current = createModelElement(grammarAccess.getEnumerationCallRule());
             					}
             				
 
-            					newCompositeNode(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0());
+            					newCompositeNode(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0());
             				
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
@@ -6544,7 +6544,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleEnumerationValue"
+    // $ANTLR end "ruleEnumerationCall"
 
 
     // $ANTLR start "entryRuleDateValue"
@@ -8503,7 +8503,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationValue_2= ruleEnumerationValue )";
+            return "1024:2: (this_ConstantCall_0= ruleConstantCall | this_QuestionCall_1= ruleQuestionCall | this_EnumerationCall_2= ruleEnumerationCall )";
         }
     }
  

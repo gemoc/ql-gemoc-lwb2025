@@ -31,6 +31,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.evaluate((org.gemoc.ql.model.ql.DecimalValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.evaluate((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.evaluate((org.gemoc.ql.model.ql.IntegerValue)_self);

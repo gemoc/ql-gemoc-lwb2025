@@ -155,6 +155,9 @@ public class ConstantCallItemProvider extends CallItemProvider {
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE,
 				QlFactory.eINSTANCE.createDecimalValue()));
+
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.CONSTANT_CALL__VALUE,
+				QlFactory.eINSTANCE.createEnumerationCall()));
 	}
 
 }

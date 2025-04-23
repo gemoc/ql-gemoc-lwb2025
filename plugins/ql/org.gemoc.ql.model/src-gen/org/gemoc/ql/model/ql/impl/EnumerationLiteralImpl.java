@@ -3,10 +3,12 @@
 package org.gemoc.ql.model.ql.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.QlPackage;
 
@@ -33,6 +35,7 @@ public class EnumerationLiteralImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

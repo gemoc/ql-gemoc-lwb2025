@@ -86,7 +86,7 @@ MultiplicationExpression returns Expression:
 ;
 
 Call returns Call:
-	ConstantCall | QuestionCall | EnumerationValue;
+	ConstantCall | QuestionCall | EnumerationCall;
 
 	
 Value returns Value:
@@ -238,8 +238,8 @@ BooleanValue returns BooleanValue:
 	booleanValue=EBoolean
 	;
 
-EnumerationValue returns EnumerationValue:
-	{EnumerationValue}
+EnumerationCall returns EnumerationCall:
+	{EnumerationCall}
 	enumerationLiteral=[EnumerationLiteral|QualifiedName]
 	;
 

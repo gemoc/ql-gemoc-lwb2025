@@ -2810,20 +2810,20 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleBooleanValue"
 
 
-    // $ANTLR start "entryRuleEnumerationValue"
-    // InternalQL.g:928:1: entryRuleEnumerationValue : ruleEnumerationValue EOF ;
-    public final void entryRuleEnumerationValue() throws RecognitionException {
+    // $ANTLR start "entryRuleEnumerationCall"
+    // InternalQL.g:928:1: entryRuleEnumerationCall : ruleEnumerationCall EOF ;
+    public final void entryRuleEnumerationCall() throws RecognitionException {
         try {
-            // InternalQL.g:929:1: ( ruleEnumerationValue EOF )
-            // InternalQL.g:930:1: ruleEnumerationValue EOF
+            // InternalQL.g:929:1: ( ruleEnumerationCall EOF )
+            // InternalQL.g:930:1: ruleEnumerationCall EOF
             {
-             before(grammarAccess.getEnumerationValueRule()); 
+             before(grammarAccess.getEnumerationCallRule()); 
             pushFollow(FOLLOW_1);
-            ruleEnumerationValue();
+            ruleEnumerationCall();
 
             state._fsp--;
 
-             after(grammarAccess.getEnumerationValueRule()); 
+             after(grammarAccess.getEnumerationCallRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -2837,35 +2837,35 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleEnumerationValue"
+    // $ANTLR end "entryRuleEnumerationCall"
 
 
-    // $ANTLR start "ruleEnumerationValue"
-    // InternalQL.g:937:1: ruleEnumerationValue : ( ( rule__EnumerationValue__Group__0 ) ) ;
-    public final void ruleEnumerationValue() throws RecognitionException {
+    // $ANTLR start "ruleEnumerationCall"
+    // InternalQL.g:937:1: ruleEnumerationCall : ( ( rule__EnumerationCall__Group__0 ) ) ;
+    public final void ruleEnumerationCall() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:941:2: ( ( ( rule__EnumerationValue__Group__0 ) ) )
-            // InternalQL.g:942:2: ( ( rule__EnumerationValue__Group__0 ) )
+            // InternalQL.g:941:2: ( ( ( rule__EnumerationCall__Group__0 ) ) )
+            // InternalQL.g:942:2: ( ( rule__EnumerationCall__Group__0 ) )
             {
-            // InternalQL.g:942:2: ( ( rule__EnumerationValue__Group__0 ) )
-            // InternalQL.g:943:3: ( rule__EnumerationValue__Group__0 )
+            // InternalQL.g:942:2: ( ( rule__EnumerationCall__Group__0 ) )
+            // InternalQL.g:943:3: ( rule__EnumerationCall__Group__0 )
             {
-             before(grammarAccess.getEnumerationValueAccess().getGroup()); 
-            // InternalQL.g:944:3: ( rule__EnumerationValue__Group__0 )
-            // InternalQL.g:944:4: rule__EnumerationValue__Group__0
+             before(grammarAccess.getEnumerationCallAccess().getGroup()); 
+            // InternalQL.g:944:3: ( rule__EnumerationCall__Group__0 )
+            // InternalQL.g:944:4: rule__EnumerationCall__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__EnumerationValue__Group__0();
+            rule__EnumerationCall__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEnumerationValueAccess().getGroup()); 
+             after(grammarAccess.getEnumerationCallAccess().getGroup()); 
 
             }
 
@@ -2884,7 +2884,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleEnumerationValue"
+    // $ANTLR end "ruleEnumerationCall"
 
 
     // $ANTLR start "entryRuleDateValue"
@@ -4274,13 +4274,13 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Call__Alternatives"
-    // InternalQL.g:1371:1: rule__Call__Alternatives : ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationValue ) );
+    // InternalQL.g:1371:1: rule__Call__Alternatives : ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationCall ) );
     public final void rule__Call__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:1375:1: ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationValue ) )
+            // InternalQL.g:1375:1: ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationCall ) )
             int alt6=3;
             alt6 = dfa6.predict(input);
             switch (alt6) {
@@ -4323,18 +4323,18 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalQL.g:1388:2: ( ruleEnumerationValue )
+                    // InternalQL.g:1388:2: ( ruleEnumerationCall )
                     {
-                    // InternalQL.g:1388:2: ( ruleEnumerationValue )
-                    // InternalQL.g:1389:3: ruleEnumerationValue
+                    // InternalQL.g:1388:2: ( ruleEnumerationCall )
+                    // InternalQL.g:1389:3: ruleEnumerationCall
                     {
-                     before(grammarAccess.getCallAccess().getEnumerationValueParserRuleCall_2()); 
+                     before(grammarAccess.getCallAccess().getEnumerationCallParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleEnumerationValue();
+                    ruleEnumerationCall();
 
                     state._fsp--;
 
-                     after(grammarAccess.getCallAccess().getEnumerationValueParserRuleCall_2()); 
+                     after(grammarAccess.getCallAccess().getEnumerationCallParserRuleCall_2()); 
 
                     }
 
@@ -18892,23 +18892,23 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BooleanValue__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EnumerationValue__Group__0"
-    // InternalQL.g:6126:1: rule__EnumerationValue__Group__0 : rule__EnumerationValue__Group__0__Impl rule__EnumerationValue__Group__1 ;
-    public final void rule__EnumerationValue__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__EnumerationCall__Group__0"
+    // InternalQL.g:6126:1: rule__EnumerationCall__Group__0 : rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 ;
+    public final void rule__EnumerationCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6130:1: ( rule__EnumerationValue__Group__0__Impl rule__EnumerationValue__Group__1 )
-            // InternalQL.g:6131:2: rule__EnumerationValue__Group__0__Impl rule__EnumerationValue__Group__1
+            // InternalQL.g:6130:1: ( rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 )
+            // InternalQL.g:6131:2: rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1
             {
             pushFollow(FOLLOW_54);
-            rule__EnumerationValue__Group__0__Impl();
+            rule__EnumerationCall__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EnumerationValue__Group__1();
+            rule__EnumerationCall__Group__1();
 
             state._fsp--;
 
@@ -18927,12 +18927,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumerationValue__Group__0"
+    // $ANTLR end "rule__EnumerationCall__Group__0"
 
 
-    // $ANTLR start "rule__EnumerationValue__Group__0__Impl"
-    // InternalQL.g:6138:1: rule__EnumerationValue__Group__0__Impl : ( () ) ;
-    public final void rule__EnumerationValue__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumerationCall__Group__0__Impl"
+    // InternalQL.g:6138:1: rule__EnumerationCall__Group__0__Impl : ( () ) ;
+    public final void rule__EnumerationCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -18943,13 +18943,13 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6143:1: ( () )
             // InternalQL.g:6144:2: ()
             {
-             before(grammarAccess.getEnumerationValueAccess().getEnumerationValueAction_0()); 
+             before(grammarAccess.getEnumerationCallAccess().getEnumerationCallAction_0()); 
             // InternalQL.g:6145:2: ()
             // InternalQL.g:6145:3: 
             {
             }
 
-             after(grammarAccess.getEnumerationValueAccess().getEnumerationValueAction_0()); 
+             after(grammarAccess.getEnumerationCallAccess().getEnumerationCallAction_0()); 
 
             }
 
@@ -18964,21 +18964,21 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumerationValue__Group__0__Impl"
+    // $ANTLR end "rule__EnumerationCall__Group__0__Impl"
 
 
-    // $ANTLR start "rule__EnumerationValue__Group__1"
-    // InternalQL.g:6153:1: rule__EnumerationValue__Group__1 : rule__EnumerationValue__Group__1__Impl ;
-    public final void rule__EnumerationValue__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__EnumerationCall__Group__1"
+    // InternalQL.g:6153:1: rule__EnumerationCall__Group__1 : rule__EnumerationCall__Group__1__Impl ;
+    public final void rule__EnumerationCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6157:1: ( rule__EnumerationValue__Group__1__Impl )
-            // InternalQL.g:6158:2: rule__EnumerationValue__Group__1__Impl
+            // InternalQL.g:6157:1: ( rule__EnumerationCall__Group__1__Impl )
+            // InternalQL.g:6158:2: rule__EnumerationCall__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EnumerationValue__Group__1__Impl();
+            rule__EnumerationCall__Group__1__Impl();
 
             state._fsp--;
 
@@ -18997,35 +18997,35 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumerationValue__Group__1"
+    // $ANTLR end "rule__EnumerationCall__Group__1"
 
 
-    // $ANTLR start "rule__EnumerationValue__Group__1__Impl"
-    // InternalQL.g:6164:1: rule__EnumerationValue__Group__1__Impl : ( ( rule__EnumerationValue__EnumerationLiteralAssignment_1 ) ) ;
-    public final void rule__EnumerationValue__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EnumerationCall__Group__1__Impl"
+    // InternalQL.g:6164:1: rule__EnumerationCall__Group__1__Impl : ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) ;
+    public final void rule__EnumerationCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6168:1: ( ( ( rule__EnumerationValue__EnumerationLiteralAssignment_1 ) ) )
-            // InternalQL.g:6169:1: ( ( rule__EnumerationValue__EnumerationLiteralAssignment_1 ) )
+            // InternalQL.g:6168:1: ( ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) )
+            // InternalQL.g:6169:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
             {
-            // InternalQL.g:6169:1: ( ( rule__EnumerationValue__EnumerationLiteralAssignment_1 ) )
-            // InternalQL.g:6170:2: ( rule__EnumerationValue__EnumerationLiteralAssignment_1 )
+            // InternalQL.g:6169:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
+            // InternalQL.g:6170:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
             {
-             before(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralAssignment_1()); 
-            // InternalQL.g:6171:2: ( rule__EnumerationValue__EnumerationLiteralAssignment_1 )
-            // InternalQL.g:6171:3: rule__EnumerationValue__EnumerationLiteralAssignment_1
+             before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralAssignment_1()); 
+            // InternalQL.g:6171:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
+            // InternalQL.g:6171:3: rule__EnumerationCall__EnumerationLiteralAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__EnumerationValue__EnumerationLiteralAssignment_1();
+            rule__EnumerationCall__EnumerationLiteralAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralAssignment_1()); 
+             after(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralAssignment_1()); 
 
             }
 
@@ -19044,7 +19044,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumerationValue__Group__1__Impl"
+    // $ANTLR end "rule__EnumerationCall__Group__1__Impl"
 
 
     // $ANTLR start "rule__DateValue__Group__0"
@@ -24215,9 +24215,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BooleanValue__BooleanValueAssignment_1"
 
 
-    // $ANTLR start "rule__EnumerationValue__EnumerationLiteralAssignment_1"
-    // InternalQL.g:7986:1: rule__EnumerationValue__EnumerationLiteralAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__EnumerationValue__EnumerationLiteralAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EnumerationCall__EnumerationLiteralAssignment_1"
+    // InternalQL.g:7986:1: rule__EnumerationCall__EnumerationLiteralAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__EnumerationCall__EnumerationLiteralAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -24228,21 +24228,21 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:7991:2: ( ( ruleQualifiedName ) )
             // InternalQL.g:7992:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0()); 
+             before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0()); 
             // InternalQL.g:7993:3: ( ruleQualifiedName )
             // InternalQL.g:7994:4: ruleQualifiedName
             {
-             before(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1()); 
+             before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1()); 
+             after(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0()); 
+             after(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0()); 
 
             }
 
@@ -24261,7 +24261,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EnumerationValue__EnumerationLiteralAssignment_1"
+    // $ANTLR end "rule__EnumerationCall__EnumerationLiteralAssignment_1"
 
 
     // $ANTLR start "rule__DateValue__DateValueAssignment_3_1"
@@ -24690,7 +24690,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1371:1: rule__Call__Alternatives : ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationValue ) );";
+            return "1371:1: rule__Call__Alternatives : ( ( ruleConstantCall ) | ( ruleQuestionCall ) | ( ruleEnumerationCall ) );";
         }
     }
  

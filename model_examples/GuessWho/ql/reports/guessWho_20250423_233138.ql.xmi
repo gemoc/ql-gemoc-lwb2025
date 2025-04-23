@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ql:QLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ql="http://www.gemoc.org/ql" canSubmit="true" submitDate="2025-04-23T23:31:38.356+0200">
+  <forms name="GuessWho">
+    <questionGroup>
+      <questionGroups>
+        <questions questionDefinition="isMale"/>
+        <questions questionDefinition="isFemale"/>
+      </questionGroups>
+      <questionGroups>
+        <questions questionDefinition="hasBlackHair"/>
+        <questions questionDefinition="hasBlondeHair"/>
+        <questions questionDefinition="hasBrownHair"/>
+        <questions questionDefinition="hasGreyHair"/>
+        <questions questionDefinition="hasRedHair"/>
+      </questionGroups>
+      <questionGroups>
+        <questions questionDefinition="personGender"/>
+        <questions questionDefinition="personHairColor"/>
+      </questionGroups>
+    </questionGroup>
+  </forms>
+  <definitionGroup>
+    <dataTypes xsi:type="ql:BooleanValueType" name="boolean"/>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="yesNo">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Yes"/>
+      <enumerationLiterals name="No"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="gender">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Male"/>
+      <enumerationLiterals name="Female"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="hairColor">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Brown"/>
+      <enumerationLiterals name="Blonde"/>
+      <enumerationLiterals name="Black"/>
+      <enumerationLiterals name="Red"/>
+      <enumerationLiterals name="Grey"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="facialHair">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Beard"/>
+      <enumerationLiterals name="Mustache"/>
+      <enumerationLiterals name="None"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="glasses">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Yes"/>
+      <enumerationLiterals name="No"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="hat">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Yes"/>
+      <enumerationLiterals name="No"/>
+    </dataTypes>
+    <dataTypes xsi:type="ql:EnumerationValueType" name="eyeColor">
+      <enumerationLiterals name="Unknown"/>
+      <enumerationLiterals name="Blue"/>
+      <enumerationLiterals name="Brown"/>
+      <enumerationLiterals name="Green"/>
+    </dataTypes>
+  </definitionGroup>
+  <definitionGroup>
+    <questionDefinitions name="isMale" label="Is your person a male?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="isFemale" label="Is your person a female?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="personGender" label="Your person is a " dataType="gender" isDisplayed="true">
+      <computedExpression xsi:type="ql:IfExpression">
+        <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+          <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+            <lhsOperand xsi:type="ql:QuestionCall" question="isMale"/>
+            <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.1"/>
+          </lhsOperand>
+          <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+            <lhsOperand xsi:type="ql:QuestionCall" question="isFemale"/>
+            <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+          </rhsOperand>
+        </condition>
+        <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.2/@enumerationLiterals.1"/>
+      </computedExpression>
+    </questionDefinitions>
+    <questionDefinitions name="hasBrownHair" label="Does your person have brown hair?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="hasBlondeHair" label="Does your person have blonde hair?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="hasBlackHair" label="Does your person have black hair?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="hasRedHair" label="Does your person have red hair?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="hasGreyHair" label="Does your person have grey hair?" dataType="yesNo" isDisplayed="true"/>
+    <questionDefinitions name="personHairColor" label="Your person hair color is: " dataType="hairColor" isDisplayed="true">
+      <computedExpression xsi:type="ql:IfExpression">
+        <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+          <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+            <lhsOperand xsi:type="ql:QuestionCall" question="hasBrownHair"/>
+            <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.5/@enumerationLiterals.1"/>
+          </lhsOperand>
+          <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+            <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+              <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                  <lhsOperand xsi:type="ql:QuestionCall" question="hasBlondeHair"/>
+                  <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                </lhsOperand>
+                <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                  <lhsOperand xsi:type="ql:QuestionCall" question="hasBlackHair"/>
+                  <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                </rhsOperand>
+              </lhsOperand>
+              <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                <lhsOperand xsi:type="ql:QuestionCall" question="hasRedHair"/>
+                <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+              </rhsOperand>
+            </lhsOperand>
+            <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+              <lhsOperand xsi:type="ql:QuestionCall" question="hasGreyHair"/>
+              <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+            </rhsOperand>
+          </rhsOperand>
+        </condition>
+        <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.3/@enumerationLiterals.1"/>
+        <elseExpression xsi:type="ql:IfExpression">
+          <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+            <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+              <lhsOperand xsi:type="ql:QuestionCall" question="hasBlondeHair"/>
+              <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.5/@enumerationLiterals.1"/>
+            </lhsOperand>
+            <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+              <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                  <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                    <lhsOperand xsi:type="ql:QuestionCall" question="hasBrownHair"/>
+                    <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                  </lhsOperand>
+                  <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                    <lhsOperand xsi:type="ql:QuestionCall" question="hasBlackHair"/>
+                    <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                  </rhsOperand>
+                </lhsOperand>
+                <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                  <lhsOperand xsi:type="ql:QuestionCall" question="hasRedHair"/>
+                  <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                </rhsOperand>
+              </lhsOperand>
+              <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                <lhsOperand xsi:type="ql:QuestionCall" question="hasGreyHair"/>
+                <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+              </rhsOperand>
+            </rhsOperand>
+          </condition>
+          <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.3/@enumerationLiterals.2"/>
+          <elseExpression xsi:type="ql:IfExpression">
+            <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+              <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                <lhsOperand xsi:type="ql:QuestionCall" question="hasBlackHair"/>
+                <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.5/@enumerationLiterals.1"/>
+              </lhsOperand>
+              <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                  <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                    <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                      <lhsOperand xsi:type="ql:QuestionCall" question="hasBrownHair"/>
+                      <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                    </lhsOperand>
+                    <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                      <lhsOperand xsi:type="ql:QuestionCall" question="hasBlondeHair"/>
+                      <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                    </rhsOperand>
+                  </lhsOperand>
+                  <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                    <lhsOperand xsi:type="ql:QuestionCall" question="hasRedHair"/>
+                    <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                  </rhsOperand>
+                </lhsOperand>
+                <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                  <lhsOperand xsi:type="ql:QuestionCall" question="hasGreyHair"/>
+                  <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                </rhsOperand>
+              </rhsOperand>
+            </condition>
+            <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.3/@enumerationLiterals.3"/>
+            <elseExpression xsi:type="ql:IfExpression">
+              <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+                <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                  <lhsOperand xsi:type="ql:QuestionCall" question="hasRedHair"/>
+                  <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.5/@enumerationLiterals.1"/>
+                </lhsOperand>
+                <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                  <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                    <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                      <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                        <lhsOperand xsi:type="ql:QuestionCall" question="hasBrownHair"/>
+                        <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                      </lhsOperand>
+                      <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                        <lhsOperand xsi:type="ql:QuestionCall" question="hasBlondeHair"/>
+                        <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                      </rhsOperand>
+                    </lhsOperand>
+                    <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                      <lhsOperand xsi:type="ql:QuestionCall" question="hasBlackHair"/>
+                      <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                    </rhsOperand>
+                  </lhsOperand>
+                  <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                    <lhsOperand xsi:type="ql:QuestionCall" question="hasGreyHair"/>
+                    <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                  </rhsOperand>
+                </rhsOperand>
+              </condition>
+              <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.3/@enumerationLiterals.3"/>
+              <elseExpression xsi:type="ql:IfExpression">
+                <condition xsi:type="ql:BasicBinaryExpression" operator="OR">
+                  <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                    <lhsOperand xsi:type="ql:QuestionCall" question="hasGreyHair"/>
+                    <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.5/@enumerationLiterals.1"/>
+                  </lhsOperand>
+                  <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                    <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                      <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="AND">
+                        <lhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                          <lhsOperand xsi:type="ql:QuestionCall" question="hasBrownHair"/>
+                          <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                        </lhsOperand>
+                        <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                          <lhsOperand xsi:type="ql:QuestionCall" question="hasBlondeHair"/>
+                          <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                        </rhsOperand>
+                      </lhsOperand>
+                      <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                        <lhsOperand xsi:type="ql:QuestionCall" question="hasBlackHair"/>
+                        <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                      </rhsOperand>
+                    </lhsOperand>
+                    <rhsOperand xsi:type="ql:BasicBinaryExpression" operator="EQUAL">
+                      <lhsOperand xsi:type="ql:QuestionCall" question="hasRedHair"/>
+                      <rhsOperand xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.1/@enumerationLiterals.2"/>
+                    </rhsOperand>
+                  </rhsOperand>
+                </condition>
+                <thenExpression xsi:type="ql:EnumerationCall" enumerationLiteral="//@definitionGroup.0/@dataTypes.3/@enumerationLiterals.5"/>
+              </elseExpression>
+            </elseExpression>
+          </elseExpression>
+        </elseExpression>
+      </computedExpression>
+    </questionDefinitions>
+  </definitionGroup>
+  <definitionGroup>
+    <questionDefinitions name="isArthur" label="Does your person is Arthur? (Male, Brown hair, Beard, No glasses, No hat, Brown eyes)" dataType="boolean">
+      <currentValue xsi:type="ql:BooleanValue"/>
+    </questionDefinitions>
+    <questionDefinitions name="isBeatrice" label="Does your person is Beatrice? (Female, Blonde hair, No facial hair, Yes glasses, No hat, Blue eyes)" dataType="boolean">
+      <currentValue xsi:type="ql:BooleanValue"/>
+    </questionDefinitions>
+  </definitionGroup>
+</ql:QLModel>

@@ -128,7 +128,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="question" lowerBound="1"
         eType="#//QuestionDefinition"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationValue" eSuperTypes="#//Call">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationCall" eSuperTypes="#//Call #//Value">
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationLiteral" lowerBound="1"
         eType="#//EnumerationLiteral"/>
   </eClassifiers>

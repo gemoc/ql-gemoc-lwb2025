@@ -475,10 +475,11 @@ public class QLModelAspect {
       final String postfix = ("_" + _format);
       String _replaceFirst = fileName.replaceFirst("\\.([^.]+)$", (postfix + ".$1"));
       String _plus = ((platformFolderPath + "/reports/") + _replaceFirst);
-      final URI outputUri = URI.createURI(_plus, true);
+      String _plus_1 = (_plus + ".xmi");
+      final URI outputUri = URI.createURI(_plus_1, true);
       String _string = outputUri.toString();
-      String _plus_1 = ("Saving to " + _string);
-      EObjectAspect.devInfo(_self, _plus_1);
+      String _plus_2 = ("Saving to " + _string);
+      EObjectAspect.devInfo(_self, _plus_2);
       final ResourceSetImpl resourceSet = new ResourceSetImpl();
       Map<String, Object> _extensionToFactoryMap = resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap();
       XMIResourceFactoryImpl _xMIResourceFactoryImpl = new XMIResourceFactoryImpl();

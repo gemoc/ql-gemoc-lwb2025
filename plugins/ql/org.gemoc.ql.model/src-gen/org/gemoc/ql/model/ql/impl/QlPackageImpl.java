@@ -24,8 +24,8 @@ import org.gemoc.ql.model.ql.DateValueType;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
+import org.gemoc.ql.model.ql.EnumerationCall;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
-import org.gemoc.ql.model.ql.EnumerationValue;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Form;
@@ -255,7 +255,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass enumerationValueEClass = null;
+	private EClass enumerationCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -991,8 +991,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getEnumerationValue() {
-		return enumerationValueEClass;
+	public EClass getEnumerationCall() {
+		return enumerationCallEClass;
 	}
 
 	/**
@@ -1001,8 +1001,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEnumerationValue_EnumerationLiteral() {
-		return (EReference) enumerationValueEClass.getEStructuralFeatures().get(0);
+	public EReference getEnumerationCall_EnumerationLiteral() {
+		return (EReference) enumerationCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1216,8 +1216,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		questionCallEClass = createEClass(QUESTION_CALL);
 		createEReference(questionCallEClass, QUESTION_CALL__QUESTION);
 
-		enumerationValueEClass = createEClass(ENUMERATION_VALUE);
-		createEReference(enumerationValueEClass, ENUMERATION_VALUE__ENUMERATION_LITERAL);
+		enumerationCallEClass = createEClass(ENUMERATION_CALL);
+		createEReference(enumerationCallEClass, ENUMERATION_CALL__ENUMERATION_LITERAL);
 
 		stringValueTypeEClass = createEClass(STRING_VALUE_TYPE);
 
@@ -1284,7 +1284,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		enumerationValueTypeEClass.getESuperTypes().add(this.getValueType());
 		questionGroupEClass.getESuperTypes().add(this.getConditionnalElement());
 		questionCallEClass.getESuperTypes().add(this.getCall());
-		enumerationValueEClass.getESuperTypes().add(this.getCall());
+		enumerationCallEClass.getESuperTypes().add(this.getCall());
+		enumerationCallEClass.getESuperTypes().add(this.getValue());
 		stringValueTypeEClass.getESuperTypes().add(this.getValueType());
 		ifExpressionEClass.getESuperTypes().add(this.getExpression());
 
@@ -1466,10 +1467,10 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				QuestionCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(enumerationValueEClass, EnumerationValue.class, "EnumerationValue", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(enumerationCallEClass, EnumerationCall.class, "EnumerationCall", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumerationValue_EnumerationLiteral(), this.getEnumerationLiteral(), null,
-				"enumerationLiteral", null, 1, 1, EnumerationValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEReference(getEnumerationCall_EnumerationLiteral(), this.getEnumerationLiteral(), null,
+				"enumerationLiteral", null, 1, 1, EnumerationCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringValueTypeEClass, StringValueType.class, "StringValueType", !IS_ABSTRACT, !IS_INTERFACE,

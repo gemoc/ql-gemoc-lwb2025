@@ -24,8 +24,8 @@ import org.gemoc.ql.model.ql.DateValueType;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
+import org.gemoc.ql.model.ql.EnumerationCall;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
-import org.gemoc.ql.model.ql.EnumerationValue;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.IfExpression;
@@ -129,11 +129,11 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case QlPackage.DEFINITION_GROUP:
 				sequence_DefinitionGroup(context, (DefinitionGroup) semanticObject); 
 				return; 
+			case QlPackage.ENUMERATION_CALL:
+				sequence_EnumerationCall(context, (EnumerationCall) semanticObject); 
+				return; 
 			case QlPackage.ENUMERATION_LITERAL:
 				sequence_EnumerationLiteral(context, (EnumerationLiteral) semanticObject); 
-				return; 
-			case QlPackage.ENUMERATION_VALUE:
-				sequence_EnumerationValue(context, (EnumerationValue) semanticObject); 
 				return; 
 			case QlPackage.ENUMERATION_VALUE_TYPE:
 				sequence_EnumerationValueType(context, (EnumerationValueType) semanticObject); 
@@ -391,6 +391,42 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Expression returns EnumerationCall
+	 *     UnaryOrPrimaryExpression returns EnumerationCall
+	 *     PrimaryExpression returns EnumerationCall
+	 *     OrExpression returns EnumerationCall
+	 *     OrExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     AndExpression returns EnumerationCall
+	 *     AndExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     EqualExpression returns EnumerationCall
+	 *     EqualExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     ComparisionExpression returns EnumerationCall
+	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     AdditionExpression returns EnumerationCall
+	 *     AdditionExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     MultiplicationExpression returns EnumerationCall
+	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns EnumerationCall
+	 *     Call returns EnumerationCall
+	 *     EnumerationCall returns EnumerationCall
+	 *
+	 * Constraint:
+	 *     enumerationLiteral=[EnumerationLiteral|QualifiedName]
+	 * </pre>
+	 */
+	protected void sequence_EnumerationCall(ISerializationContext context, EnumerationCall semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.ENUMERATION_CALL__ENUMERATION_LITERAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.ENUMERATION_CALL__ENUMERATION_LITERAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.ENUMERATION_CALL__ENUMERATION_LITERAL, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     EnumerationLiteral returns EnumerationLiteral
 	 *
 	 * Constraint:
@@ -420,42 +456,6 @@ public class QLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_EnumerationValueType(ISerializationContext context, EnumerationValueType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Expression returns EnumerationValue
-	 *     UnaryOrPrimaryExpression returns EnumerationValue
-	 *     PrimaryExpression returns EnumerationValue
-	 *     OrExpression returns EnumerationValue
-	 *     OrExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     AndExpression returns EnumerationValue
-	 *     AndExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     EqualExpression returns EnumerationValue
-	 *     EqualExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     ComparisionExpression returns EnumerationValue
-	 *     ComparisionExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     AdditionExpression returns EnumerationValue
-	 *     AdditionExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     MultiplicationExpression returns EnumerationValue
-	 *     MultiplicationExpression.BasicBinaryExpression_1_0 returns EnumerationValue
-	 *     Call returns EnumerationValue
-	 *     EnumerationValue returns EnumerationValue
-	 *
-	 * Constraint:
-	 *     enumerationLiteral=[EnumerationLiteral|QualifiedName]
-	 * </pre>
-	 */
-	protected void sequence_EnumerationValue(ISerializationContext context, EnumerationValue semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEnumerationValueAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1(), semanticObject.eGet(QlPackage.Literals.ENUMERATION_VALUE__ENUMERATION_LITERAL, false));
-		feeder.finish();
 	}
 	
 	
