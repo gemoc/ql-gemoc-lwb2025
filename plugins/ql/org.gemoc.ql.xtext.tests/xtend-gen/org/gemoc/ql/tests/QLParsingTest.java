@@ -61,13 +61,13 @@ public class QLParsingTest {
       _builder.append("mandatory question privateDebt: \"Private debts for the sold house:\"  money");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("question valueResidue: \"Value residue:\"  money = (sellingPrice - privateDebt);");
+      _builder.append("question valueResidue: \"Value residue:\"  money = (sellingPrice() - privateDebt());");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("Form \" Box1HouseOwning\" {");
+      _builder.append("Form \"Box1HouseOwning\" {");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{");

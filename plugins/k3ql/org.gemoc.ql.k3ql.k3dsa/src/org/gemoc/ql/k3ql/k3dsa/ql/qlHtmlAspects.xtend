@@ -109,12 +109,15 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=EnumerationValueType)
 class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue){
-		// TODO set currentValue
+		var String value = ""
+		if(currentValue !== null) {
+			value = currentValue.valueToString
+		}
 		return '''<div>
 		      <label for="«id»">«label»</label>
 		      <select id="«id»" name="«id»" onchange="onChange()">
 		      «FOR lit : _self.enumerationLiterals»
-		        <option value="«lit.name»">«lit.name»</option>
+		      	<option value="«lit.name»" «IF lit.name.equals(value)» selected«ENDIF»>«lit.name»</option>
 		       «ENDFOR»
 		      </select>
 		    </div>'''

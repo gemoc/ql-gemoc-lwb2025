@@ -32,9 +32,9 @@ class QLParsingTest {
 					question hasMaintLoan: "Did you enter a loan for maintenance/reconstruction?"  boolean
 					mandatory question sellingPrice: "Price the house was sold for:"  money
 					mandatory question privateDebt: "Private debts for the sold house:"  money
-					question valueResidue: "Value residue:"  money = (sellingPrice - privateDebt);
+					question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
 				}
-				Form " Box1HouseOwning" {
+				Form "Box1HouseOwning" {
 					{
 						hasSoldHouse
 						hasBoughtHouse

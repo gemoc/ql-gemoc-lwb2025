@@ -708,6 +708,34 @@ class EnumerationCallAspect extends CallAspect {
 	def Value evaluate() {
 		return _self;
 	}
+	
+	def Value copy() {
+		val EnumerationCall aValue = QlFactory.eINSTANCE.createEnumerationCall();
+		aValue.enumerationLiteral = _self.enumerationLiteral;
+		return aValue;
+	}
+	def BooleanValue bEquals(Value rhs) {
+		if(rhs === null) return null;
+		val BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
+		if(rhs instanceof EnumerationCall){
+			bValue.booleanValue = _self.enumerationLiteral == rhs.enumerationLiteral;
+			return bValue;
+		} else {
+			return null;
+		}
+	}
+	
+	def String valueToString(){
+		return _self.enumerationLiteral.name;
+	}
+	
+	def Object rawValue(){
+		return _self.enumerationLiteral;
+	}
+	
+	def Boolean isKindOf(ValueType type){
+		return type instanceof IntegerValueType;
+	}
 }
 @Aspect(className=BasicUnaryExpression)
 class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
@@ -913,7 +941,27 @@ class DateValueTypeAspect extends ValueTypeAspect {
 
 @Aspect(className=EnumerationValueType)
 class EnumerationValueTypeAspect extends ValueTypeAspect {
+	def Value createValue(String internalValue) {
+		
+		val literal = _self.enumerationLiterals.findFirst[e | e.name == internalValue]
+		if(literal !== null) {
+			val EnumerationCall aValue = QlFactory.eINSTANCE.createEnumerationCall();
+			aValue.enumerationLiteral = literal;
+			return aValue;	
+		} else {
+			return null;
+		}
+	}
 	
+	def Value createDefaultValue() {
+		if(!_self.enumerationLiterals.empty) {
+			val EnumerationCall aValue = QlFactory.eINSTANCE.createEnumerationCall();
+			aValue.enumerationLiteral = _self.enumerationLiterals.get(0);
+			return aValue;	
+		} else {
+			return null;
+		}
+	}
 }
 
 @Aspect(className=EnumerationLiteral)

@@ -21,6 +21,10 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue) {
+    String value = "";
+    if ((currentValue != null)) {
+      value = ValueAspect.valueToString(currentValue);
+    }
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
     _builder.newLine();
@@ -45,7 +49,14 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
         _builder.append("<option value=\"");
         String _name = lit.getName();
         _builder.append(_name, "\t\t      ");
-        _builder.append("\">");
+        _builder.append("\" ");
+        {
+          boolean _equals = lit.getName().equals(value);
+          if (_equals) {
+            _builder.append(" selected");
+          }
+        }
+        _builder.append(">");
         String _name_1 = lit.getName();
         _builder.append(_name_1, "\t\t      ");
         _builder.append("</option>");

@@ -18,6 +18,11 @@ public class ValueTypeAspect extends NamedElementAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect.createValue((org.gemoc.ql.model.ql.IntegerValueType)_self,internalValue);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect.createValue((org.gemoc.ql.model.ql.EnumerationValueType)_self,internalValue);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createValue(String) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect.createValue((org.gemoc.ql.model.ql.DecimalValueType)_self,internalValue);
@@ -53,6 +58,11 @@ public class ValueTypeAspect extends NamedElementAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.createDefaultValue((org.gemoc.ql.model.ql.StringValueType)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createDefaultValue() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createDefaultValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect.createDefaultValue((org.gemoc.ql.model.ql.EnumerationValueType)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createDefaultValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#Value createDefaultValue() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect.createDefaultValue((org.gemoc.ql.model.ql.BooleanValueType)_self);

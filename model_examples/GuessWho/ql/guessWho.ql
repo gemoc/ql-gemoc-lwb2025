@@ -21,7 +21,7 @@ QLModel {
 		question hasBlackHair : "Does your person have black hair?" yesNo
 		question hasRedHair : "Does your person have red hair?" yesNo
 		question hasGreyHair : "Does your person have grey hair?" yesNo
-		question personHairColor : "Your person hair color is: " hairColor = if (hasBrownHair() = glasses.Yes or 
+		question personHairColor : "Your person hair color is: " hairColor = if (hasBrownHair() = yesNo.Yes or 
 																				 (  hasBlondeHair() = yesNo.No and 
 																				 	hasBlackHair() = yesNo.No and 
 																				 	hasRedHair() = yesNo.No and
@@ -30,7 +30,7 @@ QLModel {
 																				) 
 																			then hairColor.Brown 
 																			else 
-																				if (hasBlondeHair() = glasses.Yes or 
+																				if (hasBlondeHair() = yesNo.Yes or 
 																					 (  hasBrownHair() = yesNo.No and 
 																					 	hasBlackHair() = yesNo.No and 
 																					 	hasRedHair() = yesNo.No and
@@ -39,7 +39,7 @@ QLModel {
 																					)
 																				then hairColor.Blonde
 																				else
-																					if (hasBlackHair() = glasses.Yes or 
+																					if (hasBlackHair() = yesNo.Yes or 
 																						 (  hasBrownHair() = yesNo.No and 
 																						 	hasBlondeHair() = yesNo.No and 
 																						 	hasRedHair() = yesNo.No and
@@ -48,7 +48,7 @@ QLModel {
 																						)
 																					then hairColor.Black
 																					else 
-																						if (hasRedHair() = glasses.Yes or 
+																						if (hasRedHair() = yesNo.Yes or 
 																							 (  hasBrownHair() = yesNo.No and 
 																							 	hasBlondeHair() = yesNo.No and 
 																							 	hasBlackHair() = yesNo.No and
@@ -57,7 +57,7 @@ QLModel {
 																							)
 																						then hairColor.Black
 																						else
-																							if (hasGreyHair() = glasses.Yes or 
+																							if (hasGreyHair() = yesNo.Yes or 
 																								 (  hasBrownHair() = yesNo.No and 
 																								 	hasBlondeHair() = yesNo.No and 
 																								 	hasBlackHair() = yesNo.No and
