@@ -33,14 +33,14 @@ class QLParsingTest {
 					mandatory question sellingPrice: "Price the house was sold for:"  money
 					mandatory question privateDebt: "Private debts for the sold house:"  money
 					question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
-				}
-				Form "Box1HouseOwning" {
+				} 
+				Form Box1HouseOwning {
 					{
 						hasSoldHouse
 						hasBoughtHouse
 						hasMaintLoan
 					}
-					if (hasSoldHouse) {
+					if (hasSoldHouse()) {
 						sellingPrice
 						privateDebt
 						valueResidue
@@ -54,31 +54,29 @@ class QLParsingTest {
 	}
 	
 	@Test
-	def void loadIfModel() {
+	def void loadGuessWhoMiniModel() {
 		val result = parseHelper.parse('''
 			QLModel {
 				definitions {
 					booleanType boolean
-					decimalType money { unit "Euro" }
+					enumerationType yesNo  { literals {Unknown, Yes , No} }
+					enumerationType gender { literals {Unknown, Male , Female} }
+					enumerationType hairColor { literals {Unknown, Brown, Blonde, Black, Red, Grey} }
+					enumerationType facialHair { literals {Unknown, Beard, Mustache, None}}
+					enumerationType glasses { literals {Unknown, Yes, No}}
+					enumerationType hat { literals {Unknown, Yes, No}}
+					enumerationType eyeColor { literals {Unknown, Blue, Brown, Green}}
 				}
 				definitions {
-					question hasSoldHouse: "Did you sell a house in 2010?"  boolean
-					question hasBoughtHouse: "Did you buy a house in 2010?" boolean
-					question hasMaintLoan: "Did you enter a loan for maintenance/reconstruction?"  boolean
-					mandatory question sellingPrice: "Price the house was sold for:"  money
-					mandatory question privateDebt: "Private debts for the sold house:"  money
-					question valueResidue: "Value residue:"  money = (sellingPrice - privateDebt);
+					//- Gender:
+					question isMale : "Is your person a male?" yesNo
+					question isFemale : "Is your person a female?" yesNo
+					question personGender : "Your person is a " gender = if ( (isMale() = yesNo.Yes) or (isFemale() = yesNo.No)) then (gender.Male) endif;
 				}
-				Form " Box1HouseOwning" {
+				Form GuessWho {
 					{
-						hasSoldHouse
-						hasBoughtHouse
-						hasMaintLoan
-					}
-					if (hasSoldHouse) {
-						sellingPrice
-						privateDebt
-						valueResidue
+						isMale
+						isFemale
 					}
 				}
 			}
