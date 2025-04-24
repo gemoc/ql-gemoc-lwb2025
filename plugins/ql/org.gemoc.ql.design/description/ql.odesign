@@ -351,10 +351,9 @@
         <containerMappings name="FormContainer" domainClass="ql::Form">
           <subContainerMappings name="QuestionGroupContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::QuestionGroup" reusedContainerMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']">
             <subNodeMappings name="guardExpression" semanticCandidatesExpression="aql:self.guard" domainClass="ql::Expression">
-              <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:'expression'+self.xtextPrettyPrint()" labelAlignment="LEFT" resizeKind="NSEW">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.xtextPrettyPrint()" labelAlignment="RIGHT" workspacePath="/org.gemoc.ql.design/images/guard.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
               </style>
             </subNodeMappings>
             <subContainerMappings name="QuestionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::Question">
