@@ -147,11 +147,11 @@ class QLModelAspect {
 	 */
 	@Step
 	def void resetIsDisplayed() {
-		for( g : _self.definitionGroup) {
-			for (qd : g.questionDefinitions) {
-				qd.isDisplayed = false
-			}
-		}	
+//		for( g : _self.definitionGroup) {
+//			for (qd : g.questionDefinitions) {
+//				qd.isDisplayed = false
+//			}
+//		}	
 	}
 	
 	/** step captured by the Engine Addon to update the submit button according to the model status
@@ -990,7 +990,12 @@ class QuestionGroupAspect extends ConditionnalElementAspect {
 				question.questionDefinition.isDisplayed = true;
 				question.show();
 			}
+		} else {
+			for( question : _self.questions) {
+				question.questionDefinition.isDisplayed = false;
+			}
 		}
+		
 		for(subGroup : _self.questionGroups) {
 			subGroup.render();	
 		}

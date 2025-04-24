@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocAnimatorServices;
 import org.eclipse.gemoc.executionframework.extensions.sirius.services.AbstractGemocDebuggerServices;
+import org.gemoc.ql.model.ql.Value;
 
 public class QLAnimatorServices extends AbstractGemocAnimatorServices {
 
@@ -23,6 +24,10 @@ public class QLAnimatorServices extends AbstractGemocAnimatorServices {
 		res.add(new StringCouple("QLDiagram", "Animation"));
 
 		return res;
+	}
+	
+	public String valueToString(Value v) {
+		return org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect.valueToString(v);
 	}
 		
 

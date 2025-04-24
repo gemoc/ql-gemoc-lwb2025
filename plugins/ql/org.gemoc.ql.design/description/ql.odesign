@@ -387,7 +387,7 @@
           </style>
         </containerMappings>
         <containerMappings name="DefinitionGroupContainer" domainClass="ql::DefinitionGroup" reusedContainerMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']">
-          <subContainerMappings name="QuestionDefinitionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::QuestionDefinition" reusedNodeMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Animation']/@nodeMappings[name='currentValue']" childrenPresentation="List">
+          <subContainerMappings name="QuestionDefinitionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::QuestionDefinition" reusedNodeMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Animation']/@nodeMappings[name='currentValue'] //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Animation']/@nodeMappings[name='isDisplayed']" childrenPresentation="List">
             <subNodeMappings name="computedExpressionNode" semanticCandidatesExpression="aql:self.computedExpression" domainClass="ql::Expression">
               <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:'=' + self.xtextPrettyPrint()" labelAlignment="LEFT">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -570,7 +570,14 @@
       </additionalLayers>
       <additionalLayers name="Animation">
         <nodeMappings name="currentValue" semanticCandidatesExpression="aql:self.currentValue" domainClass="ql::Value">
-          <style xsi:type="style:SquareDescription" labelExpression="aql:'currentValue = '+self.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+          <style xsi:type="style:SquareDescription" labelExpression="aql: 'currentValue='+self.valueToString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="isDisplayed" semanticCandidatesExpression="aql:self" domainClass="ql::QuestionDefinition">
+          <style xsi:type="style:SquareDescription" labelExpression="aql:'isDisplayed = '+self.isDisplayed" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
@@ -593,6 +600,7 @@
     <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.Services"/>
     <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.services.BasicobjectdiagramDebugServices"/>
     <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.services.QldiagramDebugServices"/>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.services.QLAnimatorServices"/>
   </ownedViewpoints>
   <userColorsPalettes name="BasicObjectDiagram Palette">
     <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="0" name="current instruction"/>
