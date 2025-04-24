@@ -66,17 +66,17 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.copy((org.gemoc.ql.model.ql.IntegerValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.copy((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.copy((org.gemoc.ql.model.ql.DecimalValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.copy((org.gemoc.ql.model.ql.EnumerationCall)_self);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Value copy() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-// #DispatchPointCut_before# Value copy()
+    // #DispatchPointCut_before# Value copy()
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_copy(_self_, (org.gemoc.ql.model.ql.Value)_self);
     };
@@ -91,6 +91,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.bEquals((org.gemoc.ql.model.ql.IntegerValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.bEquals((org.gemoc.ql.model.ql.EnumerationCall)_self,rhs);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.bEquals((org.gemoc.ql.model.ql.DecimalValue)_self,rhs);
@@ -106,12 +111,7 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.bEquals((org.gemoc.ql.model.ql.StringValue)_self,rhs);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.bEquals((org.gemoc.ql.model.ql.EnumerationCall)_self,rhs);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-// #DispatchPointCut_before# BooleanValue bEquals(Value)
+    // #DispatchPointCut_before# BooleanValue bEquals(Value)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_bEquals(_self_, (org.gemoc.ql.model.ql.Value)_self,rhs);
     };
@@ -351,17 +351,17 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.isKindOf((org.gemoc.ql.model.ql.IntegerValue)_self,type);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.isKindOf((org.gemoc.ql.model.ql.EnumerationCall)_self,type);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.isKindOf((org.gemoc.ql.model.ql.StringValue)_self,type);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.isKindOf((org.gemoc.ql.model.ql.EnumerationCall)_self,type);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Boolean isKindOf(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-// #DispatchPointCut_before# Boolean isKindOf(ValueType)
+    // #DispatchPointCut_before# Boolean isKindOf(ValueType)
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_isKindOf(_self_, (org.gemoc.ql.model.ql.Value)_self,type);
     };
@@ -379,6 +379,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.valueToString((org.gemoc.ql.model.ql.StringValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.valueToString((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.valueToString((org.gemoc.ql.model.ql.DecimalValue)_self);
@@ -394,12 +399,7 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.valueToString((org.gemoc.ql.model.ql.IntegerValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.valueToString((org.gemoc.ql.model.ql.EnumerationCall)_self);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#String valueToString() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-// #DispatchPointCut_before# String valueToString()
+    // #DispatchPointCut_before# String valueToString()
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_valueToString(_self_, (org.gemoc.ql.model.ql.Value)_self);
     };
@@ -414,6 +414,11 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.rawValue((org.gemoc.ql.model.ql.IntegerValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.rawValue((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
     		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.rawValue((org.gemoc.ql.model.ql.BooleanValue)_self);
@@ -429,12 +434,7 @@ public abstract class ValueAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.rawValue((org.gemoc.ql.model.ql.StringValue)_self);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
-    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
-			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.rawValue((org.gemoc.ql.model.ql.EnumerationCall)_self);
-		} else
-		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#Object rawValue() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
-// #DispatchPointCut_before# Object rawValue()
+    // #DispatchPointCut_before# Object rawValue()
     if (_self instanceof org.gemoc.ql.model.ql.Value){
     	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_rawValue(_self_, (org.gemoc.ql.model.ql.Value)_self);
     };

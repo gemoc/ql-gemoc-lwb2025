@@ -60,8 +60,10 @@ public class EObjectAspect {
       sb.append(EObjectAspect.getQualifiedName(eObject.eContainer()));
       sb.append("/");
     }
-    final Function1<EAttribute, Boolean> _function = (EAttribute att) -> {
-      return Boolean.valueOf(att.getName().equals("name"));
+    final Function1<EAttribute, Boolean> _function = new Function1<EAttribute, Boolean>() {
+      public Boolean apply(final EAttribute att) {
+        return Boolean.valueOf(att.getName().equals("name"));
+      }
     };
     final EAttribute feat = IterableExtensions.<EAttribute>findFirst(eObject.eClass().getEAllAttributes(), _function);
     if ((feat != null)) {

@@ -93,17 +93,23 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     Expression _computedExpression = _self.getComputedExpression();
     boolean _tripleNotEquals = (_computedExpression != null);
     if (_tripleNotEquals) {
-      final Function1<QuestionCall, Boolean> _function = (QuestionCall qc) -> {
-        Expression _computedExpression_1 = qc.getQuestion().getComputedExpression();
-        return Boolean.valueOf((_computedExpression_1 != null));
+      final Function1<QuestionCall, Boolean> _function = new Function1<QuestionCall, Boolean>() {
+        public Boolean apply(final QuestionCall qc) {
+          Expression _computedExpression = qc.getQuestion().getComputedExpression();
+          return Boolean.valueOf((_computedExpression != null));
+        }
       };
-      final Function1<QuestionCall, QuestionDefinition> _function_1 = (QuestionCall qc) -> {
-        return qc.getQuestion();
+      final Function1<QuestionCall, QuestionDefinition> _function_1 = new Function1<QuestionCall, QuestionDefinition>() {
+        public QuestionDefinition apply(final QuestionCall qc) {
+          return qc.getQuestion();
+        }
       };
       QuestionDefinitionAspect.dependencies(_self).addAll(
         IteratorExtensions.<QuestionDefinition>toList(IteratorExtensions.<QuestionCall, QuestionDefinition>map(IteratorExtensions.<QuestionCall>filter(Iterators.<QuestionCall>filter(_self.getComputedExpression().eAllContents(), QuestionCall.class), _function), _function_1)));
-      final Consumer<QuestionDefinition> _function_2 = (QuestionDefinition qd) -> {
-        QuestionDefinitionAspect.referencingQuestions(qd).add(_self);
+      final Consumer<QuestionDefinition> _function_2 = new Consumer<QuestionDefinition>() {
+        public void accept(final QuestionDefinition qd) {
+          QuestionDefinitionAspect.referencingQuestions(qd).add(_self);
+        }
       };
       QuestionDefinitionAspect.dependencies(_self).forEach(_function_2);
     }
@@ -118,8 +124,8 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     				if (ret != null) {
     					return (java.util.Set) ret;
     				} else {
-    						return null;
-    					}
+    					return null;
+    				}
     		}
     	}
     } catch (Exception e) {
@@ -155,8 +161,8 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     				if (ret != null) {
     					return (java.util.Set) ret;
     				} else {
-    						return null;
-    					}
+    					return null;
+    				}
     		}
     	}
     } catch (Exception e) {

@@ -1,7 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import java.util.Objects;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.gemoc.ql.model.ql.EnumerationCall;
@@ -34,9 +34,11 @@ public class EnumerationValueTypeAspect extends ValueTypeAspect {
   }
 
   protected static Value _privk3_createValue(final EnumerationValueTypeAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String internalValue) {
-    final Function1<EnumerationLiteral, Boolean> _function = (EnumerationLiteral e) -> {
-      String _name = e.getName();
-      return Boolean.valueOf(Objects.equals(_name, internalValue));
+    final Function1<EnumerationLiteral, Boolean> _function = new Function1<EnumerationLiteral, Boolean>() {
+      public Boolean apply(final EnumerationLiteral e) {
+        String _name = e.getName();
+        return Boolean.valueOf(Objects.equal(_name, internalValue));
+      }
     };
     final EnumerationLiteral literal = IterableExtensions.<EnumerationLiteral>findFirst(_self.getEnumerationLiterals(), _function);
     if ((literal != null)) {

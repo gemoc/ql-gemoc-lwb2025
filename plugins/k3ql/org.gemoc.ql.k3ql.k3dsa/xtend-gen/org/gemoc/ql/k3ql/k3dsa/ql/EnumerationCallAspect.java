@@ -1,7 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
-import java.util.Objects;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.EnumerationCall;
@@ -93,7 +93,7 @@ public class EnumerationCallAspect extends CallAspect {
     if ((rhs instanceof EnumerationCall)) {
       EnumerationLiteral _enumerationLiteral = _self.getEnumerationLiteral();
       EnumerationLiteral _enumerationLiteral_1 = ((EnumerationCall)rhs).getEnumerationLiteral();
-      boolean _equals = Objects.equals(_enumerationLiteral, _enumerationLiteral_1);
+      boolean _equals = Objects.equal(_enumerationLiteral, _enumerationLiteral_1);
       bValue.setBooleanValue(_equals);
       return bValue;
     } else {

@@ -130,7 +130,7 @@ class QLModelAspect {
 			_self.updateAllComputedQuestions();
 		}
 		// received submitAction
-		// TODO serialize answers
+		// serialize answers
 		_self.saveToXmi()
 	}
 	
