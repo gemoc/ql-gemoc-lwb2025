@@ -357,18 +357,18 @@
               </style>
             </subNodeMappings>
             <subContainerMappings name="QuestionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::Question">
-              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:self.questionDefinition. name" labelAlignment="LEFT">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:self.questionDefinition. name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
               <conditionnalStyles predicateExpression="aql:self.questionDefinition.computedExpression != null">
-                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelExpression="aql:self.questionDefinition.name" labelAlignment="LEFT">
+                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelExpression="aql:self.questionDefinition.name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
                 </style>
               </conditionnalStyles>
             </subContainerMappings>
@@ -387,7 +387,7 @@
           </style>
         </containerMappings>
         <containerMappings name="DefinitionGroupContainer" domainClass="ql::DefinitionGroup" reusedContainerMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']">
-          <subContainerMappings name="QuestionDefinitionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::QuestionDefinition" childrenPresentation="List">
+          <subContainerMappings name="QuestionDefinitionContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::QuestionDefinition" reusedNodeMappings="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@additionalLayers[name='Animation']/@nodeMappings[name='currentValue']" childrenPresentation="List">
             <subNodeMappings name="computedExpressionNode" semanticCandidatesExpression="aql:self.computedExpression" domainClass="ql::Expression">
               <style xsi:type="style:LozengeNodeDescription" showIcon="false" labelExpression="aql:'=' + self.xtextPrettyPrint()" labelAlignment="LEFT">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -408,8 +408,24 @@
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
             </style>
-            <conditionnalStyles predicateExpression="aql:self.computedExpression != null">
-              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderLineStyle="dash" labelExpression="aql:self.name+' : '+self.eClass().name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
+            <conditionnalStyles predicateExpression="aql:self.computedExpression != null and self.isMandatory">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="3" borderLineStyle="dash" labelExpression="aql:self.name+' : '+self.eClass().name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.computedExpression == null and self.isMandatory">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="3" labelExpression="aql:self.name+' : '+self.eClass().name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.computedExpression != null and self.isMandatory">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="3" borderLineStyle="dash" labelExpression="aql:self.name+' : '+self.eClass().name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -418,51 +434,51 @@
             </conditionnalStyles>
           </subContainerMappings>
           <subContainerMappings name="BooleanValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::BooleanValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <subContainerMappings name="IntegerValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::IntegerValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <subContainerMappings name="DecimalValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::DecimalValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <subContainerMappings name="DateValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::DateValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <subContainerMappings name="EnumerationValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::EnumerationValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <subContainerMappings name="StringValueTypeContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="ql::StringValueType">
-            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.name+' : '+self.eClass().name" backgroundStyle="GradientTopToBottom">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </subContainerMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:self.eClass().name" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
@@ -552,7 +568,27 @@
           </style>
         </edgeMappings>
       </additionalLayers>
-      <additionalLayers name="Animation"/>
+      <additionalLayers name="Animation">
+        <nodeMappings name="currentValue" semanticCandidatesExpression="aql:self.currentValue" domainClass="ql::Value">
+          <style xsi:type="style:SquareDescription" labelExpression="aql:'currentValue = '+self.toString()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:not self.isDisplayed">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@style //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@conditionnalStyles.0/@style //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@conditionnalStyles.2/@style //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='DefinitionGroupContainer']/@subContainerMappings[name='QuestionDefinitionContainer']/@conditionnalStyles.1/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:not self.questionDefinition.isDisplayed">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@style //@ownedViewpoints[name='QLViewpoint']/@ownedRepresentations[name='QLDiagram']/@defaultLayer/@containerMappings[name='FormContainer']/@subContainerMappings[name='QuestionGroupContainer']/@subContainerMappings[name='QuestionContainer']/@conditionnalStyles.0/@style" referenceName="foregroundColor">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+        </customization>
+      </additionalLayers>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.Services"/>
     <ownedJavaExtensions qualifiedClassName="org.gemoc.ql.design.services.BasicobjectdiagramDebugServices"/>
