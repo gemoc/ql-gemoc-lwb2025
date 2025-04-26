@@ -46,16 +46,16 @@ public class QuestionGroupAspect extends ConditionnalElementAspect {
           QuestionAspect.show(question);
         }
       }
+      EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();
+      for (final QuestionGroup subGroup : _questionGroups) {
+        QuestionGroupAspect.render(subGroup);
+      }
     } else {
       EList<Question> _questions_1 = _self.getQuestions();
       for (final Question question_1 : _questions_1) {
         QuestionDefinition _questionDefinition = question_1.getQuestionDefinition();
         _questionDefinition.setIsDisplayed(false);
       }
-    }
-    EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();
-    for (final QuestionGroup subGroup : _questionGroups) {
-      QuestionGroupAspect.render(subGroup);
     }
   }
 }

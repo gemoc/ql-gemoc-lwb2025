@@ -995,15 +995,16 @@ class QuestionGroupAspect extends ConditionnalElementAspect {
 				question.questionDefinition.isDisplayed = true;
 				question.show();
 			}
+			for(subGroup : _self.questionGroups) {
+				subGroup.render();	
+			}
 		} else {
 			for( question : _self.questions) {
 				question.questionDefinition.isDisplayed = false;
 			}
 		}
 		
-		for(subGroup : _self.questionGroups) {
-			subGroup.render();	
-		}
+		
 	}
 }
 
