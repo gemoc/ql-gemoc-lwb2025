@@ -87,6 +87,7 @@ import java.util.Set
 import org.gemoc.ql.model.ql.IfExpression
 import org.gemoc.ql.model.ql.EnumerationCall
 import org.gemoc.ql.k3ql.k3dsa.NullValueException
+import org.gemoc.ql.k3ql.k3dsa.QuestionNotAvailableException
 
 @Aspect(className=QLModel)
 class QLModelAspect {
@@ -127,6 +128,12 @@ class QLModelAspect {
 				allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
 				_self.readSubmitButtonStatus();
 				
+				// recompute which questions must be displayed now as the user input may enable some computed question
+				_self.resetIsDisplayed();
+				for( f : _self.forms) {
+					f.render();
+				}
+				
 				// recompute all computedQuestions
 				_self.updateAllComputedQuestions();
 			}
@@ -136,6 +143,10 @@ class QLModelAspect {
 		
 		} catch (QLException e) {
 			_self.error(e.message) // show message on user console
+			throw e // forward error
+		} catch (QuestionNotAvailableException e) {
+			// show message on user console
+			_self.error(e.getUserMessage()) 
 			throw e // forward error
 		}
 	}
@@ -194,8 +205,8 @@ class QLModelAspect {
 	
 	/**
 	 * 
-	 * TODO only displayedComputedQuestion ? 
-	 * TODO what happen if a computedQuestion depends on a non displayed question ?
+	 * Consider only displayedComputedQuestion
+	 * Throw a QuestionNotAvailableException if a computedQuestion depends on a non displayed question 
 	 */
 	@Step
 	def void updateAllComputedQuestions() {
@@ -205,12 +216,25 @@ class QLModelAspect {
 		
 		_self.devDebug('allComputedQuestions='+allComputedQuestions.map[qd | qd.name].join(', '));
 		allComputedQuestions.forEach[qd | 
-			// if the computedQuestion depends on a question that is not displayed then it is in error
-			val notDisplayedDependencies = qd.computedExpression.eAllContents.filter(QuestionCall).filter[ qc | !qc.question.isDisplayed]
-			if(!notDisplayedDependencies.empty) {
-				throw new QLException('Question '+qd.name + ' depends on question(s) ' + notDisplayedDependencies.map[qdc | qdc.question.name].join(', ')+  ' that are currently not displayed ');
-			} else {
-				qd.currentValue = qd.computedExpression.evaluate()	
+			try {
+				val evaluatedExp = qd.computedExpression.evaluate()	
+				val mustUpdate = (qd.currentValue === null && evaluatedExp !== null) ||  
+								 (qd.currentValue !== null && evaluatedExp !== null && !qd.currentValue.bEquals(evaluatedExp).booleanValue) ||
+								 (qd.currentValue !== null && evaluatedExp === null)
+				if(mustUpdate){
+					if(evaluatedExp !== null) {
+						qd.currentValue = evaluatedExp.copy
+						_self.devInfo('''updating «qd.name» := «qd.currentValue.toString»''')
+					}
+					else {
+						 qd.currentValue = evaluatedExp
+						 _self.devInfo('''updating «qd.name» := «qd.currentValue»''')
+					}
+				} else {
+					_self.devDebug('''unchanged «qd.name» = «qd.currentValue»''')
+				}
+			} catch (QuestionNotAvailableException e) {
+				throw new QuestionNotAvailableException("Question "+qd.name+" cannot depend on a question that currently not displayed.", e)
 			}
 		]
 	}
@@ -223,6 +247,10 @@ class QLModelAspect {
 	def List<QuestionDefinition> sortAllDisplayedComputedQuestions() {
 		
 		var allComputedQuestions = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null && qd.isIsDisplayed]
+		allComputedQuestions.forEach[ qd | 
+			qd.referencingQuestions.clear
+			qd.dependencies.clear
+		]
 		_self.devDebug('sortAllDisplayedComputedQuestions allComputedQuestions='+allComputedQuestions.map[qd | qd.name].join(', '));
 		allComputedQuestions.forEach[qd | qd.evaluateComputedQuestionDependencies()]
 		// L <- Empty list that will contain the sorted elements
@@ -263,7 +291,7 @@ class QLModelAspect {
 	    }
 		else { 
 			//  	 return L   (a topologically sorted order)
-			return resList;
+			return resList.reverse;
 		}
 		
 	}
@@ -336,12 +364,14 @@ class QuestionDefinitionAspect extends NamedElementAspect {
 	
 	/**
 	 * evaluation in order to fill the dependencies and referencingQuestions lists
-	 * consider only computedQuestions in the dependency graph
+	 * consider only displayed computedQuestions in the dependency graph
 	 */
 	def void evaluateComputedQuestionDependencies() {
 		if(_self.computedExpression !== null) {
 			_self.dependencies.addAll(
-				_self.computedExpression.eAllContents.filter(QuestionCall).filter[qc | qc.question.computedExpression !== null].map[ qc |qc.question].toList)
+				_self.computedExpression.eAllContents.filter(QuestionCall)
+					.filter[qc | qc.question.computedExpression !== null && qc.question.isIsDisplayed]
+					.map[ qc |qc.question].toList)
 			_self.dependencies.forEach[qd | qd.referencingQuestions.add(_self)]
 		}
 	}
@@ -989,21 +1019,23 @@ class QuestionGroupAspect extends ConditionnalElementAspect {
 	@Step
 	def void render() {
 		_self.devInfo('QuestionGroupAspect guard='+_self.guard);
-		
-		if(_self.guard === null  || _self.guard.evaluateAsBoolean().booleanValue) {
-			for( question : _self.questions) {
-				question.questionDefinition.isDisplayed = true;
-				question.show();
+		try{
+			if(_self.guard === null  || _self.guard.evaluateAsBoolean().booleanValue) {
+				for( question : _self.questions) {
+					question.questionDefinition.isDisplayed = true;
+					question.show();
+				}
+				for(subGroup : _self.questionGroups) {
+					subGroup.render();	
+				}
+			} else {
+				for( question : _self.questions) {
+					question.questionDefinition.isDisplayed = false;
+				}
 			}
-			for(subGroup : _self.questionGroups) {
-				subGroup.render();	
-			}
-		} else {
-			for( question : _self.questions) {
-				question.questionDefinition.isDisplayed = false;
-			}
+		}  catch (QuestionNotAvailableException e) {
+			throw new QuestionNotAvailableException("cannot use not displayed question in group guard", e);
 		}
-		
 		
 	}
 }
@@ -1016,7 +1048,11 @@ class DefinitionGroupAspect {
 @Aspect(className=QuestionCall)
 class QuestionCallAspect extends CallAspect {
 	def Value evaluate() {
-		return _self.question.currentValue;
+		if(_self.question.isDisplayed) {
+			return _self.question.currentValue;
+		} else {
+			throw new QuestionNotAvailableException("Question "+_self.question.name + " is not displayed and should not be used");
+		}
 	}
 }
 

@@ -1,6 +1,8 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.gemoc.ql.k3ql.k3dsa.QuestionNotAvailableException;
 import org.gemoc.ql.model.ql.QuestionCall;
 import org.gemoc.ql.model.ql.Value;
 
@@ -18,6 +20,18 @@ public class QuestionCallAspect extends CallAspect {
   }
 
   protected static Value _privk3_evaluate(final QuestionCallAspectQuestionCallAspectProperties _self_, final QuestionCall _self) {
-    return _self.getQuestion().getCurrentValue();
+    try {
+      boolean _isIsDisplayed = _self.getQuestion().isIsDisplayed();
+      if (_isIsDisplayed) {
+        return _self.getQuestion().getCurrentValue();
+      } else {
+        String _name = _self.getQuestion().getName();
+        String _plus = ("Question " + _name);
+        String _plus_1 = (_plus + " is not displayed and should not be used");
+        throw new QuestionNotAvailableException(_plus_1);
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

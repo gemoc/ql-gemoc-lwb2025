@@ -31,11 +31,12 @@ QLModel {
 		
 		question minimalCost : "Minimum Project Cost (Development Only):" money = (estimatedDevCost());
 		question totalProjectCost : "Total Project Cost (including Design & UX, Testing & QA, and  deployment & first year maintenance, if selected):"  money = (
-			estimatedDevCost() + 
-			if requireDesignAndUX() then 	estimatedDesignUXCost() else 0 endif + 
-			if requireTestingAndQA() then estimatedTestingAndQACost() else 0  endif +
-			if requireDeploymentAndMaintenance() then estimatedDeploymentAndMaintenanceCost() else 0 endif
-		);
+			estimatedDevCost()  + 
+			if requireDesignAndUX() then 	estimatedDesignUXCost() else 0.0 endif + 
+			if requireTestingAndQA() then estimatedTestingAndQACost() else 0.0  endif +
+			if requireDeploymentAndMaintenance() then estimatedDeploymentAndMaintenanceCost() else 0.0 endif
+		)
+		;
 	}	
 	
 	Form ProjectBudgetEstimation {
@@ -45,6 +46,7 @@ QLModel {
 			estimatedDevCost
 			requireDesignAndUX
 			requireTestingAndQA
+			requireDeploymentAndMaintenance
 		}
 		if (requireDesignAndUX()) { // Optional Design & UI/UX
 			estimatedPersonHourForDesignUX

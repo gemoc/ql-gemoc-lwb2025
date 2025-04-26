@@ -40,7 +40,7 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
 
   /**
    * evaluation in order to fill the dependencies and referencingQuestions lists
-   * consider only computedQuestions in the dependency graph
+   * consider only displayed computedQuestions in the dependency graph
    */
   public static void evaluateComputedQuestionDependencies(final QuestionDefinition _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspectQuestionDefinitionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspectQuestionDefinitionAspectContext.getSelf(_self);
@@ -94,8 +94,7 @@ public class QuestionDefinitionAspect extends NamedElementAspect {
     boolean _tripleNotEquals = (_computedExpression != null);
     if (_tripleNotEquals) {
       final Function1<QuestionCall, Boolean> _function = (QuestionCall qc) -> {
-        Expression _computedExpression_1 = qc.getQuestion().getComputedExpression();
-        return Boolean.valueOf((_computedExpression_1 != null));
+        return Boolean.valueOf(((qc.getQuestion().getComputedExpression() != null) && qc.getQuestion().isIsDisplayed()));
       };
       final Function1<QuestionCall, QuestionDefinition> _function_1 = (QuestionCall qc) -> {
         return qc.getQuestion();
