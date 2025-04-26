@@ -264,46 +264,60 @@ public class QLModelAspect {
   }
 
   protected static void _privk3_main(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
-    EObjectAspect.devInfo(_self, "-> main() ");
-    while ((_self.getSubmitDate() == null)) {
-      {
-        QLModelAspect.resetIsDisplayed(_self);
-        EList<Form> _forms = _self.getForms();
-        for (final Form f : _forms) {
-          FormAspect.render(f);
+    try {
+      try {
+        EObjectAspect.devInfo(_self, "-> main() ");
+        while ((_self.getSubmitDate() == null)) {
+          {
+            QLModelAspect.resetIsDisplayed(_self);
+            EList<Form> _forms = _self.getForms();
+            for (final Form f : _forms) {
+              FormAspect.render(f);
+            }
+            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f_1) -> {
+              return f_1.getQuestionDefinitions();
+            };
+            final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
+              return Boolean.valueOf(qd.isIsDisplayed());
+            };
+            final Function1<QuestionDefinition, Boolean> _function_2 = (QuestionDefinition qd) -> {
+              return Boolean.valueOf(qd.isIsMandatory());
+            };
+            final Iterable<QuestionDefinition> allDisplayedMandatory = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1), _function_2);
+            _self.setCanSubmit((IterableExtensions.isEmpty(allDisplayedMandatory) || IterableExtensions.<QuestionDefinition>forall(allDisplayedMandatory, ((Function1<QuestionDefinition, Boolean>) (QuestionDefinition qd) -> {
+              Value _currentValue = qd.getCurrentValue();
+              return Boolean.valueOf((_currentValue != null));
+            }))));
+            QLModelAspect.updateSubmitButtonStatus(_self);
+            QLModelAspect.waitUserInput(_self);
+            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function_3 = (DefinitionGroup f_1) -> {
+              return f_1.getQuestionDefinitions();
+            };
+            final Function1<QuestionDefinition, Boolean> _function_4 = (QuestionDefinition qd) -> {
+              return Boolean.valueOf(qd.isIsDisplayed());
+            };
+            Iterable<QuestionDefinition> allDisplayedQuestion = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function_3), _function_4);
+            final Consumer<QuestionDefinition> _function_5 = (QuestionDefinition qd) -> {
+              QuestionDefinitionAspect.updateCurrentValueFromUI(qd);
+            };
+            allDisplayedQuestion.forEach(_function_5);
+            QLModelAspect.readSubmitButtonStatus(_self);
+            QLModelAspect.updateAllComputedQuestions(_self);
+          }
         }
-        final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f_1) -> {
-          return f_1.getQuestionDefinitions();
-        };
-        final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
-          return Boolean.valueOf(qd.isIsDisplayed());
-        };
-        final Function1<QuestionDefinition, Boolean> _function_2 = (QuestionDefinition qd) -> {
-          return Boolean.valueOf(qd.isIsMandatory());
-        };
-        final Iterable<QuestionDefinition> allDisplayedMandatory = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1), _function_2);
-        _self.setCanSubmit((IterableExtensions.isEmpty(allDisplayedMandatory) || IterableExtensions.<QuestionDefinition>forall(allDisplayedMandatory, ((Function1<QuestionDefinition, Boolean>) (QuestionDefinition qd) -> {
-          Value _currentValue = qd.getCurrentValue();
-          return Boolean.valueOf((_currentValue != null));
-        }))));
-        QLModelAspect.updateSubmitButtonStatus(_self);
-        QLModelAspect.waitUserInput(_self);
-        final Function1<DefinitionGroup, EList<QuestionDefinition>> _function_3 = (DefinitionGroup f_1) -> {
-          return f_1.getQuestionDefinitions();
-        };
-        final Function1<QuestionDefinition, Boolean> _function_4 = (QuestionDefinition qd) -> {
-          return Boolean.valueOf(qd.isIsDisplayed());
-        };
-        Iterable<QuestionDefinition> allDisplayedQuestion = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function_3), _function_4);
-        final Consumer<QuestionDefinition> _function_5 = (QuestionDefinition qd) -> {
-          QuestionDefinitionAspect.updateCurrentValueFromUI(qd);
-        };
-        allDisplayedQuestion.forEach(_function_5);
-        QLModelAspect.readSubmitButtonStatus(_self);
-        QLModelAspect.updateAllComputedQuestions(_self);
+        QLModelAspect.saveToXmi(_self);
+      } catch (final Throwable _t) {
+        if (_t instanceof QLException) {
+          final QLException e = (QLException)_t;
+          EObjectAspect.error(_self, e.getMessage());
+          throw e;
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
       }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    QLModelAspect.saveToXmi(_self);
   }
 
   protected static void _privk3_waitUserInput(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
@@ -363,7 +377,6 @@ public class QLModelAspect {
         boolean _isEmpty = IteratorExtensions.isEmpty(notDisplayedDependencies);
         boolean _not = (!_isEmpty);
         if (_not) {
-          EObjectAspect.error(_self, "TODO implement better user feedback");
           String _name = qd.getName();
           String _plus_1 = ("Question " + _name);
           String _plus_2 = (_plus_1 + " depends on question(s) ");

@@ -105,33 +105,39 @@ class QLModelAspect {
 	@Step
 	@Main
 	def void main() {
-		_self.devInfo('-> main() ');
-		
-		while(_self.submitDate === null) {
-			// recompute which questions must be displayed
-			_self.resetIsDisplayed();
-			for( f : _self.forms) {
-				f.render();
+		try {
+			_self.devInfo('-> main() ');
+			
+			while(_self.submitDate === null) {
+				// recompute which questions must be displayed
+				_self.resetIsDisplayed();
+				for( f : _self.forms) {
+					f.render();
+				}
+				// refresh canSubmit
+				val allDisplayedMandatory = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed].filter[qd | qd.isIsMandatory]
+				_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
+				_self.updateSubmitButtonStatus();
+				
+				// wait for an input
+				_self.waitUserInput();
+				
+				// for all rendered questions, update the model with the value in the UI
+				var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
+				allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
+				_self.readSubmitButtonStatus();
+				
+				// recompute all computedQuestions
+				_self.updateAllComputedQuestions();
 			}
-			// refresh canSubmit
-			val allDisplayedMandatory = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed].filter[qd | qd.isIsMandatory]
-			_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
-			_self.updateSubmitButtonStatus();
-			
-			// wait for an input
-			_self.waitUserInput();
-			
-			// for all rendered questions, update the model with the value in the UI
-			var allDisplayedQuestion = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed]
-			allDisplayedQuestion.forEach[qd | qd.updateCurrentValueFromUI();]
-			_self.readSubmitButtonStatus();
-			
-			// recompute all computedQuestions
-			_self.updateAllComputedQuestions();
+			// received submitAction
+			// serialize answers
+			_self.saveToXmi()
+		
+		} catch (QLException e) {
+			_self.error(e.message) // show message on user console
+			throw e // forward error
 		}
-		// received submitAction
-		// serialize answers
-		_self.saveToXmi()
 	}
 	
 	/** step captured by the Engine Addon to feed the model forms with input from the user UI
@@ -202,7 +208,6 @@ class QLModelAspect {
 			// if the computedQuestion depends on a question that is not displayed then it is in error
 			val notDisplayedDependencies = qd.computedExpression.eAllContents.filter(QuestionCall).filter[ qc | !qc.question.isDisplayed]
 			if(!notDisplayedDependencies.empty) {
-				_self.error('TODO implement better user feedback');
 				throw new QLException('Question '+qd.name + ' depends on question(s) ' + notDisplayedDependencies.map[qdc | qdc.question.name].join(', ')+  ' that are currently not displayed ');
 			} else {
 				qd.currentValue = qd.computedExpression.evaluate()	
