@@ -13,7 +13,7 @@
     <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
     <booleanAttribute key="QL Form Browser View" value="true"/>
     <stringAttribute key="Resource" value="/ProjectBudgetEstimation/ql/ProjectBudgetEstimation.ql"/>
-    <stringAttribute key="airdResource" value=""/>
+    <stringAttribute key="airdResource" value="/ProjectBudgetEstimation/ql/ProjectBudgetEstimation.aird"/>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <booleanAttribute key="org.eclipse.gemoc.executionframework.addon.eaop.server.addon" value="false"/>
     <booleanAttribute key="org.eclipse.gemoc.trace.gemoc.addon_equivClassComputing_booleanOption" value="false"/>

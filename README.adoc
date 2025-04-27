@@ -24,3 +24,6 @@ image:https://github.com/gemoc/ql-gemoc-lwb2025/actions/workflows/maven.yml/badg
 == Metamodels overview
 
 include::docs/metamodels.adoc[]
+
+== Getting Started
+

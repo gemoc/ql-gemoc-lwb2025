@@ -1,0 +1,72 @@
+ifdef::included_in_readme[]
+:imagesdir: docs/img
+endif::included_in_readme[]
+ifndef::included_in_readme[]
+:imagesdir: img
+endif::included_in_readme[]
+
+
+ifndef::included_in_readme[]
+
+== Getting started
+endif::included_in_readme[]
+
+=== Requirements:
+* Java 17 minimum
+* A GEMOC studio adapted for your OS downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
+
+
+NOTE: This is the version used to develop the languages for the challenge. You may use a more recent version if available.
+
+* a `git clone` of the repository of the challenge available here : https://github.com/gemoc/ql-gemoc-lwb2025 (this action can be performed in from the GEMOC Studio)
+
+
+=== Quick Start
+
+
+
+* unzip/untar the GEMOC Studio
+* Start the GEMOC Studio. 
+
+NOTE: We will call this workspace the *Language Workbench*, as it will contain the definition of the language for the challenge
+
+* import the projects in the `plugins` folder from the git repository. ie. projects in the folders `plugins/commons`, `plugins/k3ql`, and `plugins/ql` 
+
+* To start the *Modeling Workbench*, you can use the predefined launch configuration. In the Menu: _Run_ > _Run configurations..._  then select _Eclipse Application_ and  _Launch Runtime Eclipse LWB2025_)(This launch configuration must be available if you have correctly imported the project `org.gemoc.ql.k3ql.xdsml`)
+
+[NOTE]
+====
+
+For presenting the various elements of the project for the challenge, we start the projects in a way we can see both the language workbench and the modeling workbench. It is possible to package the DSL for direct use by the end user see. https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
+
+==== 
+
+* open the _Modeling Workbench_, 
+* import the projects in the `model_examples` folder.
+
+Model edition:
+
+* You can edit the various provided models using the textual editor ( `*.ql` files) 
+
+image:mwb_houseOwning_textual_editor.png[Modeling workbench Textual editor opened on the HouseOwning example]
+
+* you can visualize them using the graphical editor by opening the `*.aird` files associated to the `.ql` files.
+
+
+image:mwb_houseOwning_graphical_editor_layers.png[Modeling workbench graphical editor opened on the HouseOwning example]
+
+Model execution: ie. start of a questionnaire
+
+* open the view `QL Form Browser View`. Menu > _Window_ > _Show view_ > _Other_ > _Questionnaire Language_
+* start a questionnaire model in run mode. Menu > _Run_ > _Run configuration..._ > _Executable GEMOC with Java engine_ >  then use one of the predefined launch configuration for the provided models or create you own( in that case makes sure to activate the `QL Form Browser View` addon in the Engine Addons tab)
+
+This starts the questionnaire in the `QL Form Browser View` and, if available, also display an animation of the questionnaire in the graphical editor 
+
+ 
+Model debug: Ie. start of a questionnaire in debug mode
+
+* open the Debug perspective: Menu > _Window_ > _Perspective_ > _Open perspective_ > _Debug_
+* open the view `QL Form Browser View`. Menu > _Window_ > _Show view_ > _Other_ > _Questionnaire Language_
+* start a questionnaire model in debug mode. Menu > _Debug_ > _DEbug configuration..._ > _Executable GEMOC with Java engine_ >  then use one of the predefined launch configuration for the provided models or create you own
+
+ 
