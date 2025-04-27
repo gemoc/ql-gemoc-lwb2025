@@ -27,3 +27,4 @@ include::docs/metamodels.adoc[]
 
 == Getting Started
 
+include::docs/getting_started.adoc[]

@@ -13,10 +13,10 @@ endif::included_in_readme[]
 
 === Requirements:
 * Java 17 minimum
-* A GEMOC studio adapted for your OS downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
+* A GEMOC studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
 
 
-NOTE: This is the version used to develop the languages for the challenge. You may use a more recent version if available.
+NOTE: This is the version used to develop the languages for the challenge. You may use a more recent version if available from https://gemoc.org/download.html.
 
 * a `git clone` of the repository of the challenge available here : https://github.com/gemoc/ql-gemoc-lwb2025 (this action can be performed in from the GEMOC Studio)
 
