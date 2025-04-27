@@ -22,11 +22,11 @@ endif::included_in_readme[]
 * [ ] QL editors
 ** [x] QL tree editor
 ** [x]  QL textual editor
-** [ ] 🚧 QL graphical editor
+** [x] QL graphical editor
 *** [x] BasicObjectDiagram (generated)
-*** [ ] Custom Diagram
-** [ ] QL graphical editor debug layer
-** [ ] QL graphical editor animation layer
+*** [x] Custom Diagram
+** [x] QL graphical editor debug layer
+** [x] QL graphical editor animation layer
 * [ ] QLS editors
 ** [ ] QLS tree editor
 ** [ ] QLS textual editor
@@ -35,7 +35,7 @@ endif::included_in_readme[]
 *** [ ] Custom Diagram
 ** [ ] QLS graphical editor debug layer
 ** [ ] QLS graphical editor animation layer
-** [ ] textual support in graphical editor
+** [x] textual support in graphical editor
 
 === Behavior
 
@@ -47,16 +47,18 @@ endif::included_in_readme[]
 ** [x] Integer
 ** [x] Decimal
 ** [ ] Date
-** [ ] Enum
+** [x] Enum
 
 ==== Sequential behavior implementation
 
 * [ ] Conditional show/hide of questions
 ** [x] base support of conditional question groups
-* [ ] Support of computed questions 
+* [x] Support of computed questions 
 ** [x] base support of computed questions
-** [ ] 🚧 support of computation dependencies
-** [ ] 🚧 runtime check + warning against cyclic computations 
+** [x]  support of computation dependencies
+** [x]  runtime check 
+*** [x] error on cyclic computations 
+*** [x] error on computations dependent of not displayed question
 
 ==== Concurrent behavior implementation
 
@@ -90,18 +92,18 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 ** [x] support for read field input to interpreter 
 ** [x] support for write field from interpreter model to UI field
 ** [x] support for write field from interpreter model to UI field
-** [ ] support for Submit
+** [x] support for Submit
 *** [x] enable/disable submit button if mandatory questions aren't answered
 *** [x] serialize answers as xmi (ie. both answers and questions definitions)
 *** [ ] custom answer serialization (ie. only answers in a format to be defined (json, csv, or whatever)
-** [ ] support for computed questions (must not be editable by the user)
+** [ ] improved support for computed questions (must not be editable by the user)
 ** [ ] data format support
 *** [x] Boolean
 *** [x] String
 *** [x] Integer
 *** [x] Decimal
 *** [ ] Date
-*** [ ] Enum
+*** [x] Enum
 ** [ ] feedback on incorrect data format
 
 === Runtime advanced UI
