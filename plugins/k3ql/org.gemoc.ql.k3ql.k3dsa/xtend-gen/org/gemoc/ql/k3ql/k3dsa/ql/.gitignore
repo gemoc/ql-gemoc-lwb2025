@@ -243,3 +243,9 @@
 /.EnumerationCallAspect.java._trace
 /.EnumerationCallAspectEnumerationCallAspectContext.java._trace
 /.EnumerationCallAspectEnumerationCallAspectProperties.java._trace
+/EnumerationCallAspect.java
+/EnumerationCallAspectEnumerationCallAspectContext.java
+/EnumerationCallAspectEnumerationCallAspectProperties.java
+/IfExpressionAspect.java
+/IfExpressionAspectIfExpressionAspectContext.java
+/IfExpressionAspectIfExpressionAspectProperties.java
