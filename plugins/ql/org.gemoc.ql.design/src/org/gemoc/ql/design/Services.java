@@ -56,7 +56,7 @@ public class Services {
 				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 				try {
 					IEditorPart openEditor = IDE.openEditor(page, workspaceFile,
-							"fr.inria.sed.logo.xtext.Logo", true);
+							"org.gemoc.ql.QL", true);
 					if (openEditor instanceof AbstractTextEditor) {
 						ICompositeNode node = NodeModelUtils.findActualNodeFor(any);
 						if (node != null) {
