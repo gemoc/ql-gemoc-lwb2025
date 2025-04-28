@@ -2,6 +2,8 @@
 // used to detect if a document is included in readme master
 :included_in_readme: true
 
+:imagesdir: docs/img
+
 = ql-gemoc-lwb2025
 Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
 
@@ -11,15 +13,21 @@ Questionnaire Language DSL implemented using the GEMOC Studio as a solution for 
 
 This document presents the implementation of the "Questionnaire Language" proposed in the https://github.com/judithmichael/lwb25[Language Workbench Challenge 2025]. This challenge, as a continuation of the Language Workbench Contest initiated in 2013, aims to demonstrate the capabilities of modern language workbenches by modeling and implementing a relatively simple but representative domain-specific language (DSL).
 
-For this participation, the GEMOC Studio was selected as the platform for the implementation. The GEMOC Studio offers a wide range of tools and approaches for language engineering, including:
+The GEMOC Studio integrates and assembles several major existing Eclipse technologies for language engineering, including:
 
-* *Sirius Desktop* for the graphical definition of languages,
+* *EMF* (Eclipse Modeling Framework) for metamodeling and model management,
+* *Sirius Desktop* for the definition of graphical editors,
+* *Xtext* for the specification of textual editors.
 
-* *Xtext* for the textual syntax specification,
+Readers may refer to the respective official documentation of these tools for detailed usage information.
 
-* Several *semantic modeling frameworks* (such as K3, ALE for sequential semantics; MoCCML for concurrency),
+Beyond this integration, the GEMOC Studio extends these capabilities by providing:
 
-* *Execution engines* and *engine addons* to support various advanced runtime services (such as debugging, animation, state exploration, and concurrency control).
+* Several *semantic modeling frameworks* for defining the execution behavior of models (e.g., K3, ALE for sequential semantics; MoCCML for concurrency modeling),
+* *Execution engines* and *engine addons* that enable advanced runtime services such as model animation, debugging, timeline visualization, state space exploration, and concurrency control,
+* *Coordination mechanisms* for combining multiple models or languages at execution time.
+
+This architecture allows users to not only define the structure and editors of a DSL but also to specify, execute, and debug its operational semantics.
 
 Given the diversity of capabilities offered by the GEMOC Studio, specific tools and approaches were deliberately chosen to showcase the breadth of GEMOC’s potential. The design decisions made in this implementation aim not only to address the technical requirements of the Questionnaire Language but also to illustrate various features of the GEMOC Studio. In some cases, alternative choices might have been more appropriate for a production-ready language implementation, but demonstrating the versatility of the workbench was prioritized.
 
@@ -33,32 +41,182 @@ The remainder of this document is organized as follows:
 
 * *Demonstration of Execution and Tooling Support*: An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
 
-* *Alternative design options* and *additional GEMOC Studio features* that, although not used in this implementation, are considered noteworthy for their potential contributions to language workbench capabilities (e.g., advanced concurrency modeling, state space exploration, or live model-execution synchronization).
+* *Additional GEMOC Studio features illustrated in other case studies*: Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
 
 
+== Repository Structure
 
+The repository is organized as follows:
 
-This repository will hopefully contain 3 different implementations:
+- `plugins/`
+  - Contains the source code for the language definition and execution support.
+  - Subfolders:
+    - `commons/`: Utility projects reused across different parts of the implementation.
+    - `k3ql/`: Projects defining the behavioral semantics of the Questionnaire Language using the K3 framework (GEMOC Sequential Engine).
+    - `ql/`: Projects defining the structural (metamodels) and syntactical (editors) aspects of the Questionnaire Language (including Xtext grammar and Sirius diagrams).
 
-* [x]  An implementation using Gemoc sequential engine (K3-based)
-* [ ] An implementation using Gemoc Conccurrent engine (Moccml-based) (partly reusing code from the sequential implementation)
-* [ ] An implementation using Gemoc coordination BCool (reuse of the moccml-based implementation)  
+[NOTE]
+====
+Each of these folders contains **multiple Eclipse plug-in projects** that must be imported individually into the GEMOC Studio.
+====
+
+- `model_examples/`
+  - Example models conforming to the Questionnaire Language.
+  - Includes both textual models (`*.ql`) and corresponding graphical representations (`*.aird`).
+
+- `docs/`
+  - Documentation files for the project (such as metamodel diagrams and development notes).
+
+- `releng/`
+  - Maven/Tycho configuration for building and managing the project as an Eclipse-based product.
+
+- `README.adoc`
+  - Entry point documentation, including context, quick start, and technical explanations.
+
+- `.github/`, `.mvn/`, `.settings/`
+  - Standard GitHub Actions, Maven, and Eclipse settings for automation and environment configuration.
 
 
 
 == Quick start
 
-This section provides the  basic instructions to install the *Language Workbench* with the definition of the languages for the challenge, and run the *Modeling Workbench* with example models conforming to the languages.
+This section provides the basic instructions to install the *Language Workbench* with the language definitions for the challenge, and to run the *Modeling Workbench* with example models conforming to the languages.
 
-include::docs/quick_start.adoc[]
+=== Setting up the Language Workbench with Questionnaire Language Definitions
 
-== Presentation of the k3ql implementation
+Requirements:
+
+* Java 17 or higher
+* A GEMOC Studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
+
+NOTE: This is the version used to develop the languages for the challenge. A more recent version may be available from https://gemoc.org/download.html.
+
+NOTE: Documentation for the GEMOC Studio is available at https://download.eclipse.org/gemoc/docs/nightly/index.html[here^].
+
+* A `git clone` of the challenge repository: https://github.com/gemoc/ql-gemoc-lwb2025
+  (This can also be performed directly from within GEMOC Studio.)
+
+Steps:
+
+* Unzip or untar the downloaded GEMOC Studio.
+* Start GEMOC Studio.
+
+NOTE: In this context, we refer to this initial workspace as the *Language Workbench*, since it contains the language definitions for the challenge.
+
+* Import all projects contained in the following folders of the cloned repository:
+  - `plugins/commons/`
+  - `plugins/k3ql/`
+  - `plugins/ql/`
+
+TIP: In GEMOC Studio, use _File_ > _Import..._ > _General_ > _Existing Projects into Workspace_, then select each folder above to import all contained projects at once.
+
+=== Setting up the Modeling Workbench to Use the Questionnaire Language
+
+From the Language Workbench instance of GEMOC Studio, a second instance (the *Modeling Workbench*) must be launched where the developed language plugins will be deployed.
+
+Steps:
+
+* In GEMOC Studio, open the menu: _Run_ > _Run Configurations..._
+* Under _Eclipse Application_, select _Launch Runtime Eclipse LWB2025_ and click _Run_.
+
+NOTE: This launch configuration is available if the `org.gemoc.ql.k3ql.xdsml` project has been correctly imported.
+
+[NOTE]
+====
+Although for demonstration purposes we start the Modeling Workbench from the Language Workbench, it is possible to package the DSL for standalone use by end users. 
+See: https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
+====
+
+* In the opened Modeling Workbench, import the projects located in the `model_examples/` folder.
+
+=== Model Editing
+
+* Edit the provided models using the textual editor (`*.ql` files).
+
+image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor opened on the HouseOwning example]
+
+* Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
+
+image::mwb_houseOwning_graphical_editor_layers.png[Modeling Workbench graphical editor opened on the HouseOwning example]
+
+=== Model Execution
+
+To execute a model (i.e., to start a questionnaire):
+
+* Open the view `QL Form Browser View`:
+  - Menu _Window_ > _Show View_ > _Other_ > _Questionnaire Language_ > _QL Form Browser View_.
+* Start the model execution:
+  - Menu _Run_ > _Run Configurations..._ > _Executable GEMOC with Java engine_.
+  - Use one of the predefined launch configurations for the provided models, or create your own (make sure to activate the `QL Form Browser View` addon in the Engine Addons tab).
+
+This launches the questionnaire execution inside the `QL Form Browser View` and, if available, also triggers graphical animation of the model with Sirius.
+
+The Sirius-based graphical animation offers a complementary visualization of the running questionnaire by displaying runtime information directly on the model:
+- The current value of each question is dynamically displayed.
+- The visual appearance of questions (such as color changes) is updated in real time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
+
+IMPORTANT: TODO add screenshot with caption: Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution.
+image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution]
+
+=== Model Debugging
+
+To debug a model (i.e., to start a questionnaire in debug mode):
+
+* Open the Debug perspective:
+  - Menu _Window_ > _Perspective_ > _Open Perspective_ > _Debug_.
+* Open the view `QL Form Browser View` as described above.
+* Start the model in debug mode:
+  - Menu _Debug_ > _Debug Configurations..._ > _Executable GEMOC with Java engine_.
+  - Use one of the predefined launch configurations or create your own.
+
+
+In addition to the Sirius-based graphical animation available during execution, several debugging-specific views and actions are provided. These features operate at the level of the *Questionnaire Language* (i.e., they allow debugging the model itself, not the underlying Java code):
+
+- **Stack View**: Displays the current execution stack when the execution is paused.
+- **Variables View**: Shows the current runtime values of the model elements.
+- **Step-by-Step Execution**: Enables manual control to execute one step at a time through the model behavior.
+- **Model Breakpoints**: Allows breakpoints to be set directly on model elements (Right-click a model element in the Sirius view to toggle a breakpoint; execution will pause when a related model step occurs).
+- **Current Element Highlighting**: Highlights the model element currently being executed (decorated in yellow in the Sirius graphical editor and selected in the textual Xtext editor).
+- **Multidimensional Timeline (optional)**: If enabled in the launch configuration (Engine Addons tab), the *Multidimensional Timeline* view visualizes the history of runtime data changes over time in a structured and synchronized manner.
+
+These capabilities together offer a rich environment for observing, inspecting, and controlling the execution of the questionnaire models at a high level of abstraction.
+
+image::mwb_houseOwning_debug_paused_when_updating_value_from_ui_hasSoldHouse.png[Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)]
+
+== Selected Tools, Approaches, and Design Rationale
+
+// A description of the tools and modeling approaches selected within the GEMOC Studio environment, combined with explanations of the main motivations behind these choices.
+
+K3QL, separation of the UI using the Engine addon
+
+== Modeling and Implementation Overview
+
+//A detailed description of the abstract syntax, concrete syntax, and behavioral semantics.
+
+include::docs/metamodels.adoc[]
+
+separation of Question Definition from Question application
+
+support of user data type
+
+* *Demonstration of Execution and Tooling Support*: An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
+
+capabilities
+
+* *Additional GEMOC Studio features illustrated in other case studies*: Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
+
+
+== Language Implementation Choices
+// explanation of design decisions
+
+== Hints about Alternative Features
+// suggestions for exploration
+
 
 
 
 == Metamodels overview
 
-include::docs/metamodels.adoc[]
 
 
 == Details of the development status
