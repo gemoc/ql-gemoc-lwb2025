@@ -7,24 +7,62 @@ Questionnaire Language DSL implemented using the GEMOC Studio as a solution for 
 
 :toc:
 
-It implements the Questionnaire Language (QL) of the challenge defined in https://github.com/judithmichael/lwb25
+== Challenge Participation and Context
+
+This document presents the implementation of the "Questionnaire Language" proposed in the https://github.com/judithmichael/lwb25[Language Workbench Challenge 2025]. This challenge, as a continuation of the Language Workbench Contest initiated in 2013, aims to demonstrate the capabilities of modern language workbenches by modeling and implementing a relatively simple but representative domain-specific language (DSL).
+
+For this participation, the GEMOC Studio was selected as the platform for the implementation. The GEMOC Studio offers a wide range of tools and approaches for language engineering, including:
+
+* *Sirius Desktop* for the graphical definition of languages,
+
+* *Xtext* for the textual syntax specification,
+
+* Several *semantic modeling frameworks* (such as K3, ALE for sequential semantics; MoCCML for concurrency),
+
+* *Execution engines* and *engine addons* to support various advanced runtime services (such as debugging, animation, state exploration, and concurrency control).
+
+Given the diversity of capabilities offered by the GEMOC Studio, specific tools and approaches were deliberately chosen to showcase the breadth of GEMOC’s potential. The design decisions made in this implementation aim not only to address the technical requirements of the Questionnaire Language but also to illustrate various features of the GEMOC Studio. In some cases, alternative choices might have been more appropriate for a production-ready language implementation, but demonstrating the versatility of the workbench was prioritized.
+
+The remainder of this document is organized as follows:
+
+* *Quick Start Instructions*: A brief guide to install the necessary tools, import the project, and launch the Questionnaire Language execution. This section allows readers to quickly verify the implementation without going into technical details.
+
+* *Selected Tools, Approaches, and Design Rationale*: A description of the tools and modeling approaches selected within the GEMOC Studio environment, combined with explanations of the main motivations behind these choices.
+
+* *Modeling and Implementation Overview*: A detailed description of the abstract syntax, concrete syntax, and behavioral semantics.
+
+* *Demonstration of Execution and Tooling Support*: An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
+
+* *Alternative design options* and *additional GEMOC Studio features* that, although not used in this implementation, are considered noteworthy for their potential contributions to language workbench capabilities (e.g., advanced concurrency modeling, state space exploration, or live model-execution synchronization).
+
+
+
 
 This repository will hopefully contain 3 different implementations:
 
-* [ ]🚧  An implementation using Gemoc sequential engine (K3-based)
+* [x]  An implementation using Gemoc sequential engine (K3-based)
 * [ ] An implementation using Gemoc Conccurrent engine (Moccml-based) (partly reusing code from the sequential implementation)
-* [ ] An implementation using Gemoc coordination BCool (partly reuse of the moccml-based implementation)  
+* [ ] An implementation using Gemoc coordination BCool (reuse of the moccml-based implementation)  
+
+
+
+== Quick start
+
+This section provides the  basic instructions to install the *Language Workbench* with the definition of the languages for the challenge, and run the *Modeling Workbench* with example models conforming to the languages.
+
+include::docs/quick_start.adoc[]
+
+== Presentation of the k3ql implementation
+
+
+
+== Metamodels overview
+
+include::docs/metamodels.adoc[]
+
 
 == Details of the development status
 
 include::docs/dev_status.adoc[]
 
 image:https://github.com/gemoc/ql-gemoc-lwb2025/actions/workflows/maven.yml/badge.svg[Java CI with Maven, link="https://github.com/gemoc/ql-gemoc-lwb2025/actions/workflows/maven.yml"]
-
-== Metamodels overview
-
-include::docs/metamodels.adoc[]
-
-== Getting Started
-
-include::docs/getting_started.adoc[]

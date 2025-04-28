@@ -9,42 +9,53 @@ endif::included_in_readme[]
 ifndef::included_in_readme[]
 
 == Getting started
+
+This section provides the  basic instructions to install the *Language Workbench* with the definition of the languages for the challenge, and run the *Modeling Workbench* with example models conforming to the languages.
+
 endif::included_in_readme[]
 
-=== Requirements:
-* Java 17 minimum
-* A GEMOC studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
 
+=== Start of the Language Workbench with Questionnaire Language definitions
+
+Requirements:
+
+* Java 17 minimum
+* A GEMOC studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/ 
 
 NOTE: This is the version used to develop the languages for the challenge. You may use a more recent version if available from https://gemoc.org/download.html.
 
-* a `git clone` of the repository of the challenge available here : https://github.com/gemoc/ql-gemoc-lwb2025 (this action can be performed in from the GEMOC Studio)
+NOTE: Most of the documentation about the GEMOC approach is available  https://download.eclipse.org/gemoc/docs/nightly/index.html[here^]
 
-
-=== Quick Start
-
-
+* a `git clone` of the repository of the challenge available here : https://github.com/gemoc/ql-gemoc-lwb2025 (this action can be performed in the GEMOC Studio)
 
 * unzip/untar the GEMOC Studio
 * Start the GEMOC Studio. 
 
+===
+
 NOTE: We will call this workspace the *Language Workbench*, as it will contain the definition of the language for the challenge
 
 * import the projects in the `plugins` folder from the git repository. ie. projects in the folders `plugins/commons`, `plugins/k3ql`, and `plugins/ql` 
+
+=== 
+
+=== Start of Modeling Workbench with Questionnaire Language models and run of 
+
+From your first instance of Eclipse (i.e. the _language workbench_), you must launch a new Eclipse instance (i.e. the *Modeling Workbench*) where the plugins developed in the workspace of the language workbench will be deployed
 
 * To start the *Modeling Workbench*, you can use the predefined launch configuration. In the Menu: _Run_ > _Run configurations..._  then select _Eclipse Application_ and  _Launch Runtime Eclipse LWB2025_)(This launch configuration must be available if you have correctly imported the project `org.gemoc.ql.k3ql.xdsml`)
 
 [NOTE]
 ====
 
-For presenting the various elements of the project for the challenge, we start the projects in a way we can see both the language workbench and the modeling workbench. It is possible to package the DSL for direct use by the end user see. https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
+For presenting the various elements of the project for the challenge, we start the modeling workbench from the language workbench. However, thanks to Eclipse platform, it is possible to package the DSL for direct use by the end user by starting only the modeling workbench. see. https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
 
 ==== 
 
 * open the _Modeling Workbench_, 
 * import the projects in the `model_examples` folder.
 
-Model edition:
+==== Model edition
 
 * You can edit the various provided models using the textual editor ( `*.ql` files) 
 
@@ -52,8 +63,10 @@ image:mwb_houseOwning_textual_editor.png[Modeling workbench Textual editor opene
 
 * you can visualize them using the graphical editor by opening the `*.aird` files associated to the `.ql` files.
 
-
 image:mwb_houseOwning_graphical_editor_layers.png[Modeling workbench graphical editor opened on the HouseOwning example]
+
+
+==== Model execution
 
 Model execution: ie. start of a questionnaire
 
