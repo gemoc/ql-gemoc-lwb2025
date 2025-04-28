@@ -10,76 +10,87 @@ ifndef::included_in_readme[]
 
 == Getting started
 
-This section provides the  basic instructions to install the *Language Workbench* with the definition of the languages for the challenge, and run the *Modeling Workbench* with example models conforming to the languages.
+This section provides the basic instructions to install the *Language Workbench* with the language definitions for the challenge, and to run the *Modeling Workbench* with example models conforming to the languages.
 
 endif::included_in_readme[]
 
-
-=== Start of the Language Workbench with Questionnaire Language definitions
+=== Setting up the Language Workbench with Questionnaire Language Definitions
 
 Requirements:
 
-* Java 17 minimum
-* A GEMOC studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/ 
+* Java 17 or higher
+* A GEMOC Studio downloaded from http://gemoc.irisa.fr/pub/studio/gemoc_studio_2024_11_12/
 
-NOTE: This is the version used to develop the languages for the challenge. You may use a more recent version if available from https://gemoc.org/download.html.
+NOTE: This is the version used to develop the languages for the challenge. A more recent version may be available from https://gemoc.org/download.html.
 
-NOTE: Most of the documentation about the GEMOC approach is available  https://download.eclipse.org/gemoc/docs/nightly/index.html[here^]
+NOTE: Documentation for the GEMOC Studio is available at https://download.eclipse.org/gemoc/docs/nightly/index.html[here^].
 
-* a `git clone` of the repository of the challenge available here : https://github.com/gemoc/ql-gemoc-lwb2025 (this action can be performed in the GEMOC Studio)
+* A `git clone` of the challenge repository: https://github.com/gemoc/ql-gemoc-lwb2025
+  (This can also be performed directly from within GEMOC Studio.)
 
-* unzip/untar the GEMOC Studio
-* Start the GEMOC Studio. 
+Steps:
 
-===
+* Unzip or untar the downloaded GEMOC Studio.
+* Start GEMOC Studio.
 
-NOTE: We will call this workspace the *Language Workbench*, as it will contain the definition of the language for the challenge
+NOTE: In this context, we refer to this initial workspace as the *Language Workbench*, since it contains the language definitions for the challenge.
 
-* import the projects in the `plugins` folder from the git repository. ie. projects in the folders `plugins/commons`, `plugins/k3ql`, and `plugins/ql` 
+* Import all projects contained in the following folders of the cloned repository:
+  - `plugins/commons/`
+  - `plugins/k3ql/`
+  - `plugins/ql/`
 
-=== 
+TIP: In GEMOC Studio, use _File_ > _Import..._ > _General_ > _Existing Projects into Workspace_, then select each folder above to import all contained projects at once.
 
-=== Start of Modeling Workbench with Questionnaire Language models and run of 
+=== Setting up the Modeling Workbench to Use the Questionnaire Language
 
-From your first instance of Eclipse (i.e. the _language workbench_), you must launch a new Eclipse instance (i.e. the *Modeling Workbench*) where the plugins developed in the workspace of the language workbench will be deployed
+From the Language Workbench instance of GEMOC Studio, a second instance (the *Modeling Workbench*) must be launched where the developed language plugins will be deployed.
 
-* To start the *Modeling Workbench*, you can use the predefined launch configuration. In the Menu: _Run_ > _Run configurations..._  then select _Eclipse Application_ and  _Launch Runtime Eclipse LWB2025_)(This launch configuration must be available if you have correctly imported the project `org.gemoc.ql.k3ql.xdsml`)
+Steps:
+
+* In GEMOC Studio, open the menu: _Run_ > _Run Configurations..._
+* Under _Eclipse Application_, select _Launch Runtime Eclipse LWB2025_ and click _Run_.
+
+NOTE: This launch configuration is available if the `org.gemoc.ql.k3ql.xdsml` project has been correctly imported.
 
 [NOTE]
 ====
+Although for demonstration purposes we start the Modeling Workbench from the Language Workbench, it is possible to package the DSL for standalone use by end users. 
+See: https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
+====
 
-For presenting the various elements of the project for the challenge, we start the modeling workbench from the language workbench. However, thanks to Eclipse platform, it is possible to package the DSL for direct use by the end user by starting only the modeling workbench. see. https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-language.html#distribute-language-for-model-designer-section
+* In the opened Modeling Workbench, import the projects located in the `model_examples/` folder.
 
-==== 
+=== Model Editing
 
-* open the _Modeling Workbench_, 
-* import the projects in the `model_examples` folder.
+* Edit the provided models using the textual editor (`*.ql` files).
 
-==== Model edition
+image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor opened on the HouseOwning example]
 
-* You can edit the various provided models using the textual editor ( `*.ql` files) 
+* Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
 
-image:mwb_houseOwning_textual_editor.png[Modeling workbench Textual editor opened on the HouseOwning example]
+image::mwb_houseOwning_graphical_editor_layers.png[Modeling Workbench graphical editor opened on the HouseOwning example]
 
-* you can visualize them using the graphical editor by opening the `*.aird` files associated to the `.ql` files.
+=== Model Execution
 
-image:mwb_houseOwning_graphical_editor_layers.png[Modeling workbench graphical editor opened on the HouseOwning example]
+To execute a model (i.e., to start a questionnaire):
 
+* Open the view `QL Form Browser View`:
+  - Menu _Window_ > _Show View_ > _Other_ > _Questionnaire Language_ > _QL Form Browser View_.
+* Start the model execution:
+  - Menu _Run_ > _Run Configurations..._ > _Executable GEMOC with Java engine_.
+  - Use one of the predefined launch configurations for the provided models, or create your own (make sure to activate the `QL Form Browser View` addon in the Engine Addons tab).
 
-==== Model execution
+This launches the questionnaire execution inside the `QL Form Browser View` and, if available, also triggers graphical animation of the model.
 
-Model execution: ie. start of a questionnaire
+=== Model Debugging
 
-* open the view `QL Form Browser View`. Menu > _Window_ > _Show view_ > _Other_ > _Questionnaire Language_
-* start a questionnaire model in run mode. Menu > _Run_ > _Run configuration..._ > _Executable GEMOC with Java engine_ >  then use one of the predefined launch configuration for the provided models or create you own( in that case makes sure to activate the `QL Form Browser View` addon in the Engine Addons tab)
+To debug a model (i.e., to start a questionnaire in debug mode):
 
-This starts the questionnaire in the `QL Form Browser View` and, if available, also display an animation of the questionnaire in the graphical editor 
+* Open the Debug perspective:
+  - Menu _Window_ > _Perspective_ > _Open Perspective_ > _Debug_.
+* Open the view `QL Form Browser View` as described above.
+* Start the model in debug mode:
+  - Menu _Debug_ > _Debug Configurations..._ > _Executable GEMOC with Java engine_.
+  - Use one of the predefined launch configurations or create your own.
 
- 
-Model debug: Ie. start of a questionnaire in debug mode
-
-* open the Debug perspective: Menu > _Window_ > _Perspective_ > _Open perspective_ > _Debug_
-* open the view `QL Form Browser View`. Menu > _Window_ > _Show view_ > _Other_ > _Questionnaire Language_
-* start a questionnaire model in debug mode. Menu > _Debug_ > _DEbug configuration..._ > _Executable GEMOC with Java engine_ >  then use one of the predefined launch configuration for the provided models or create you own
-
- 
