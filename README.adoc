@@ -133,10 +133,12 @@ See: https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-
 
 * Edit the provided models using the textual editor (`*.ql` files).
 
+.Modeling Workbench textual editor opened on the HouseOwning example
 image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor opened on the HouseOwning example]
 
 * Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
 
+.Modeling Workbench graphical editor opened on the HouseOwning example
 image::mwb_houseOwning_graphical_editor_layers.png[Modeling Workbench graphical editor opened on the HouseOwning example]
 
 [NOTE]
@@ -161,6 +163,7 @@ The Sirius-based graphical animation offers a complementary visualization of the
 - The current value of each question is dynamically displayed.
 - The visual appearance of questions (such as color changes) is updated in real time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
 
+.Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution
 image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution]
 
 === Model Debugging
@@ -186,6 +189,7 @@ In addition to the Sirius-based graphical animation available during execution, 
 
 These capabilities together offer a rich environment for observing, inspecting, and controlling the execution of the questionnaire models at a high level of abstraction.
 
+.Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)
 image::mwb_houseOwning_debug_paused_when_updating_value_from_ui_hasSoldHouse.png[Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)]
 
 == Selected Tools, Approaches, and Design Rationale
