@@ -139,6 +139,12 @@ image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor open
 
 image::mwb_houseOwning_graphical_editor_layers.png[Modeling Workbench graphical editor opened on the HouseOwning example]
 
+[NOTE]
+====
+For the challenge, we haven't implemented Sirius edition tool (palette) except interactions with the Xtext editor. 
+So edition within Sirius views is currently limited to its property view.
+====
+
 === Model Execution
 
 To execute a model (i.e., to start a questionnaire):
@@ -155,7 +161,6 @@ The Sirius-based graphical animation offers a complementary visualization of the
 - The current value of each question is dynamically displayed.
 - The visual appearance of questions (such as color changes) is updated in real time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
 
-IMPORTANT: TODO add screenshot with caption: Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution.
 image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution]
 
 === Model Debugging
