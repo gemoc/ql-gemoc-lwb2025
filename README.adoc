@@ -241,30 +241,150 @@ The resulting language and its associated tooling support are named **K3QL**.
 
 //A detailed description of the abstract syntax, concrete syntax, and behavioral semantics.
 
-include::docs/metamodels.adoc[]
+=== Abstract Syntax
 
-separation of Question Definition from Question application
+The abstract syntax of the QL language is capture using an Ecore metamodel that is defined in the `org.gemoc.ql.model` plugin.
 
-support of user data type
+It is organized as follow:
 
-* *Demonstration of Execution and Tooling Support*: An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
-
-capabilities
-
-* *Additional GEMOC Studio features illustrated in other case studies*: Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
-
-
-== Language Implementation Choices
-// explanation of design decisions
-
-== Hints about Alternative Features
-// suggestions for exploration
+.QL main class diagram
+[#img-ql-main-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql main class diagram.jpg]
+image::../plugins/ql/org.gemoc.ql.model/model/img/ql main class diagram.jpg[FCL main class diagram,800]
 
 
+.Named elements class diagram
+[#img-named-elements-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql named elements class diagram.jpg]
+image::../plugins/ql/org.gemoc.ql.model/model/img/ql named elements class diagram.jpg[Named elements class diagram,800]
 
 
-== Metamodels overview
+.Expression class diagram
+[#img-expression-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql expression class diagram.jpg]
+image::../plugins/ql/org.gemoc.ql.model/model/img/ql expression class diagram.jpg[Expression class diagram,800]
 
+.Types class diagram
+[#img-types-class-diagram]
+[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql type class diagram.jpg]
+image::../plugins/ql/org.gemoc.ql.model/model/img/ql type class diagram.jpg[Types class diagram,800]
+
+<<img-ql-main-class-diagram>> shows that `Question` conforms to  a `QuestionDefinition`. A set of `Question` is organized in group and sub-group that may have a guard. This guard indicates when the questions in the group must be displayed.
+`QuestionDefinition` may be calculated by evaluating an `Expression`.
+
+NOTE: The name `Question` and `QuestionDefinition` is arguable in case of calculation. A refactoring may be done later in order to enhance the readability of the abstract syntax.
+
+A `QuestionDefinition` data is typed  by a `ValueType` that can take one of the primitive type as shown in <<img-types-class-diagram>>.
+
+
+`ValueType` are defined with the Questionnaire (QLModel) and may define a `unit` and additional attributes such as min or max. 
+
+`Expression` allows to support evaluation of `Value` that can come from different kind of expression: `BinaryExpression` for expression having left hand side and right hand side, `UnaryExpression` for operators such as `Not` or `Minus`.
+
+the `IfExpression` allows to create conditional expression return the evaluation of the `thenExpression` or the `elseExpression` depending on the evaluation of the `condition`.
+
+The runtime data has been directly added into the QL.ecore: `QuestionDefinition.currentValue`, `QuestionDefinition.isDisplayed`, and `QLModel.canSubmit`. These data aren't intended to be directly edited by the user but used by the interpreter. They have the annotation `aspect` in order to identify them in the ecore file.
+
+[NOTE]
+====
+Some techniques exist to define these runtime data separately from the QL.ecore:
+
+* by weaving ecore models using http://melange.inria.fr[Melange] but this would have made the projects more complex due to the required conversion. (see. https://download.eclipse.org/gemoc/docs/nightly/userguide-lw-create-language-define-syntaxes.html#section-melange-editor and http://melange.inria.fr)
+
+* by creating a separate metamodel that references the elements in QL.ecore, as a counter part, the code for the behavior would have been a bit less readable.
+====
+
+
+
+=== Concrete Syntax
+
+Three editors are provided: the EMF tree editor, the XText textual editor, and the Sirius graphical editor
+
+
+==== EMF tree editor
+It was not modified much from its initial generation except for some minor enhancement  about the model element labels and icons.
+
+It is composed of the plugins: `org.gemoc.ql.model.edit` and `org.gemoc.ql.model.editor`
+
+TIP: `org.gemoc.ql.model.edit` is actually reused in several other editors and Eclipse views, such as the Sirius editor and the outline view.
+
+==== XText textual editor
+
+It is composed of the plugins: `org.gemoc.ql.xtext`, `org.gemoc.ql.xtext.ide`, and `org.gemoc.ql.xtext.ui`.
+
+The `QL.xtext` file defines a user friendly grammar allowing support of qualified names, expressions, ...
+
+It provides a modern textual editor with syntax coloring, code completion, error reporting, ...
+
+It also provides a framework for quick fixes, validation, renaming, hovering, ...  A more complete list of feature is available in this https://eclipse.dev/Xtext/documentation/310_eclipse_support.html[XText documentation section].
+
+For the challenge, in addition to the grammar, we also have slightly customized the formatting support.
+
+==== Sirius Graphical editor
+
+It is composed of the plugin: `org.gemoc.ql.design`.
+
+It provides 2 diagrams:
+* A *Basic Object Diagram* was automatically generated using the GEMOC wizard. Inspired by UML Object Diagrams, this view is verbose and generic, but can serve as a starting point for more specialized diagrams.
+* A manually crafted *QLDiagram* was designed to offer a more domain-specific and readable visualization of questionnaires.
+
+Sirius provides a way to define a mapping between visual elements (Node, Edge) and the abstract syntax concepts. Then it interpret this mapping in order to provide
+  
+Each diagram use the notion of _Layer_ in order to easily switch on or off  some customization.
+
+For example the QLDiagram, proposes a `Typing` layer tha shows the link between `Question` and `QuestionDefinition`
+
+The `Debug` layer has been generated by GEMOC. It allows to set/remove breakpoints, and allow to conditional styling during debug pause (ie. highlight the element in the diagram corresponding to selection in the stack view)
+
+TIP: Sirius provides several kind of representations. In the challenge, we used the Diagram representation, but other might be useful too see https://eclipse.dev/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual]
+
+
+=== Behavioral Semantics
+
+==== Core Execution Semantics
+
+The execution semantic is defined in the `org.gemoc.ql.k3ql.k3dsa` plugins.
+
+The operational semantics of QL are defined in the files `qlAspects.xtend`. This file which employs http://www.kermeta.org/[Kermeta 3 (K3)] and the https://en.wikipedia.org/wiki/Interpreter_pattern[Interpreter Design Pattern] to describe the dynamic behavior of QL models.
+Its contents is woven into the metamodel of your executable DSL. In this file, you have aspects for all classes of your metamodel. Some of these aspects use annotations to define execution functions or entry points.
+
+*Execution Functions*:
+
+The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method. These methods must be annotated with the *@Step* annotation. Whenever a method with an `@Step` annotation returns, the changes in the model will be applied (via a transaction) to the resource. This means that the changes will be visible from an animator. K3 supports nested `@Step` annotation calls so that changes in the model will be applied when entering and leaving methods having these annotations.
+
+*Entry Points*:
+
+The GEMOC sequential engines uses methods annotated with *@Main* as entry points to model execution. This annotation must be placed on operations applicable to model elements considered as the model starting point. 
+
+Additionally, a function annotated with *@InitializeModel* will be used to capture any argument passed by the launcher in order to initialize the runtime data if necessary.
+
+For the challenge, the entry point is a `QLModel` element.
+
+
+The logic in QL implementation is as follow:
+
+* The main method is simply a loop that alternates question rendering requests, wait for user input, computation of value for computed questions.
+* When the submit button has been pushed, it ends by performing a basic serialization of the whole model, including the runtime data (ie. the answers)
+
+Question rendering requests ensures via guard evaluation that only `Question` in group where the guard is true will be rendered.
+
+The concrete rendering in the UI is handled by an engine addon that captures the events `Question.show()` and the event `QLModel.updateSubmitButtonStatus()`.
+Similarly, the wait for user input is also handled by the engine addon that captures the event `QLModel.waitUserInput()`. It pauses the execution until the UI has some event.
+The events `QLModel.readSubmitButtonStatus()` and  `QuestionDefinition.updateCurrentValueFromUI()` are also captured by the addon. They modify the runtime data in the model.
+
+
+
+==== UI 
+
+TODO: Separation of the UI/ADddon 
+
+== Demonstration of Execution and Tooling Support
+// An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
+
+
+== Additional GEMOC Studio features illustrated in other case studies
+
+Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
 
 
 == Details of the development status
