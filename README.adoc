@@ -16,8 +16,8 @@ This document presents the implementation of the "Questionnaire Language" propos
 The GEMOC Studio integrates and assembles several major existing Eclipse technologies for language engineering, including:
 
 * *EMF* (Eclipse Modeling Framework) for metamodeling and model management,
-* *Sirius Desktop* for the definition of graphical editors,
-* *Xtext* for the specification of textual editors.
+* *https://eclipse.dev/sirius/[Sirius Desktop]* for the definition of graphical editors,
+* *https://www.eclipse.org/Xtext/documentation/[Xtext]* for the specification of textual editors.
 
 Readers may refer to the respective official documentation of these tools for detailed usage information.
 
@@ -192,11 +192,50 @@ These capabilities together offer a rich environment for observing, inspecting, 
 .Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)
 image::mwb_houseOwning_debug_paused_when_updating_value_from_ui_hasSoldHouse.png[Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)]
 
+
 == Selected Tools, Approaches, and Design Rationale
 
-// A description of the tools and modeling approaches selected within the GEMOC Studio environment, combined with explanations of the main motivations behind these choices.
+For this implementation, we selected a combination of GEMOC Studio tools and modeling approaches to illustrate both essential and advanced capabilities of the platform. The choices were guided by a balance between simplicity, modularity, and demonstration value for the challenge.
 
-K3QL, separation of the UI using the Engine addon
+=== DSL Edition
+
+* **EMF (Eclipse Modeling Framework)** was used to define the metamodel, and automatically provide a basic *tree-based editor* for model instances (offering a structured syntax).
+* **Xtext** was employed to define a more user-friendly *textual syntax* for questionnaire models, integrated directly into the Eclipse environment.
+* **Sirius Desktop** was used to define *graphical visualizations*:
+  - A *Basic Object Diagram* was automatically generated using the GEMOC wizard. Inspired by UML Object Diagrams, this view is verbose and generic, but can serve as a starting point for more specialized diagrams.
+  - A manually crafted *QLDiagram* was designed to offer a more domain-specific and readable visualization of questionnaires.
+
+[NOTE]
+====
+In this implementation, the Sirius graphical editors focus on visualization rather than full model editing: edition actions (e.g., palette tools) were not implemented, and editing remains limited to the property view or synchronized editing through the Xtext textual editor.
+====
+
+=== DSL Semantics
+
+* A **K3-based sequential execution engine** defines the operational semantics of the questionnaire models. https://www.kermeta.org/[K3 language] offers a simple yet powerful metaprogramming approach by weaving behavioral aspects directly onto EMF model elements.
+
+NOTE: As K3 language is actually a set of annotations for the https://eclipse.dev/Xtext/xtend/[Xtend] that compiles to java, for GEMOC this is also refered as GEMOC Java Engine.
+
+* **Separation of UI and execution semantics** was emphasized through the use of the GEMOC Engine Addon mechanism:
+  - A custom Engine Addon (`QLFormBrowserView`) was developed to handle the display and interaction of the questionnaire UI, without mixing UI concerns into the execution semantics.
+  - This addon listens to runtime events published by the execution engine, enabling dynamic updates of a web-based form embedded in an Eclipse view.
+
+[IMPORTANT]
+====
+The https://download.eclipse.org/gemoc/docs/nightly/_contributing.html#dev-new-addonsEngine Addon mechanism used here reflects one of GEMOC Studio’s core strengths: it enables coordination between multiple concurrent runtime models or external systems. In this case, the questionnaire execution and the UI form are treated as loosely coupled artifacts, coordinated dynamically through the engine events.
+====
+
+=== Edition and Semantic Customizations
+
+* **Debug layers** were automatically generated for both Sirius diagrams, providing support for execution highlighting, breakpoints, and stepping during model debugging.
+* **Animation layers** were manually designed for the *QLDiagram*, enabling visual feedback during execution (such as dynamic value display and question visibility indication).
+
+=== Resulting Language
+
+The resulting language and its associated tooling support are named **K3QL**.  
+*K3QL* encapsulates the questionnaire domain-specific modeling constructs, textual and graphical editors, execution semantics, and runtime interaction features defined through the approaches outlined above.
+
+
 
 == Modeling and Implementation Overview
 
