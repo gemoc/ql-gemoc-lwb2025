@@ -450,6 +450,9 @@ BCOoL offers:
 * *Model-driven generation* of coordination logic that is reusable and automatically applicable across different models.
 * *Integration with GEMOC's runtime execution framework*, enabling the execution of coordinated multi-language models.
 
+Importantly, this integration is made possible by the underlying *GEMOC Framework Engine API*. At runtime, each language is extended through *Engine Addons*, which allow models to emit and respond to coordination events. BCOoL-generated coordination logic is deployed as such addons, enabling synchronized execution across independently defined engines.
+
+
 // Key Concepts and Implementation Flow
 
 BCOoL builds on three core concepts:
