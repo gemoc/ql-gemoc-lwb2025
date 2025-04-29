@@ -1529,6 +1529,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 */
 	protected void createAspectAnnotations() {
 		String source = "aspect";
+		addAnnotation(getQLModel_CanSubmit(), source, new String[] {});
+		addAnnotation(getQLModel_SubmitDate(), source, new String[] {});
 		addAnnotation(getQuestionDefinition_CurrentValue(), source, new String[] {});
 		addAnnotation(getQuestionDefinition_IsDisplayed(), source, new String[] {});
 	}

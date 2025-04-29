@@ -59,7 +59,7 @@ public interface QLModel extends EObject {
 	 * @return the value of the '<em>Can Submit</em>' attribute.
 	 * @see #setCanSubmit(boolean)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getQLModel_CanSubmit()
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	boolean isCanSubmit();
@@ -81,7 +81,7 @@ public interface QLModel extends EObject {
 	 * @return the value of the '<em>Submit Date</em>' attribute.
 	 * @see #setSubmitDate(Date)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getQLModel_SubmitDate()
-	 * @model
+	 * @model annotation="aspect"
 	 * @generated
 	 */
 	Date getSubmitDate();
