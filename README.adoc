@@ -382,9 +382,70 @@ TODO: Separation of the UI/ADddon
 // An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
 
 
+[TODO]
+==== 
+
+Omniscient Debugging and Execution Tracing
+
+the GEMOC Studio's omniscient debugging capabilities
+
+These features allow users to:
+
+- Navigate through execution traces both forward and backward.
+- Inspect the state of models at any point in the execution.
+- Set breakpoints and observe variable changes over time.
+
+====
+
+
+
 == Additional GEMOC Studio features illustrated in other case studies
 
-Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
+Beyond the features demonstrated in the K3QL implementation, the GEMOC Studio offers advanced capabilities that have been showcased in other case studies and tutorials. While these features are not used directly in the context of the Questionnaire Language defined for the challenge, they are important to highlight in the context of evaluating the GEMOC Studio as a language workbench. They illustrate powerful and often unique capabilities—such as explicit concurrency modeling, coordination of multiple DSMLs, and advanced execution analysis—that are especially valuable when engineering complex or interacting languages. These aspects reinforce the strength and flexibility of the GEMOC approach, even beyond the scope of this specific challenge use case.
+
+
+=== Concurrency Modeling with MoCCML
+
+The GEMOC Studio supports advanced concurrency modeling through the Model of Concurrency and Communication Modeling Language (MoCCML). This capability allows language designers to formally specify concurrency constraints independently of a language's operational semantics. The result is a modular and analyzable approach to handling concurrent behaviors in domain-specific modeling languages.
+
+MoCCML is based on defining *logical relationships between events*—such as precedence, mutual exclusion, and causal dependencies—without prescribing how the behavior is implemented imperatively. This is particularly useful for domains such as reactive systems, embedded control, or human-machine interaction, where concurrency and timing are central.
+
+When a DSL allows several elements to execute independently, it may naturally give rise to multiple valid execution orders. For instance, if two actions A and B are unrelated by semantics, then both the execution order A → B and B → A—or even a simultaneous execution—can be considered correct. Without a formal concurrency specification, such behavior remains implicit, making it harder to predict, debug, or analyze. MoCCML provides the means to make these concurrency relationships explicit.
+
+A typical development flow includes:
+
+- Defining *execution steps* in the behavioral semantics (e.g., via methods in K3). Unlike `@Step` in the sequential engine, these methods must be atomic and cannot be nested. If nesting is required, you need to split them in atomic parts. In GEMOC, they are called `DSA` (Domain Specific Action)
+- Declaring relevant *event* definition corresponding to those execution steps in the context of the DSL metaclasses. In GEMOC, they are called `DSE` (Domain Specific Event)
+- Writing MoCCML models and ECL constraints to express concurrency constraints between events.
+- Launching model execution in GEMOC Studio using the MoCCML engine.
+
+Once in place, these models enable:
+
+- Executions that respect specified concurrency constraints.
+- Visualization of partially ordered execution traces.
+- Usage of the *Multibranch Timeline View* to inspect concurrent behavior and temporal properties. This view allows omniscient debugging by effectively navigating backward in the execution trace and branch to alternative concurrent possible execution.
+- Step-by-step debugging that reflects both behavioral logic and concurrency control.
+- Generate the complete state space of a model.
+- Analyze possible execution paths.
+- Identify deadlocks and unreachable states.
+
+This technique is illustrated in several case studies and tutorials, such as the ICSA 2017 tutorial (https://github.com/gemoc/ICSA2017Tutorial), the MODELS 2017 tutorial (https://github.com/gemoc/MODELS2017Tutorial), and the dedicated tutorial “Weave Domain-Specific Concurrency Constraints Into Your DSL!” (https://gemoc.org/weave-domain-concurrency-into-your-dsl.html).
+
+MoCCML-based concurrency modeling exemplifies one of GEMOC Studio’s distinctive strengths: allowing DSL designers to explicitly and modularly define how concurrency should behave, enabling more robust and analyzable modeling tools.
+
+
+=== Behavioral Coordination with BCOoL
+
+BCOoL (Behavioral Coordination Operator Language) enables the specification of coordination patterns between different domain-specific modeling languages (DSMLs). It facilitates:
+
+- The explicit definition of coordination operators.
+- Automated coordination of heterogeneous models.
+- Execution of coordinated models using an integrated engine.
+
+An example application is the synchronization of timed finite state machines (TFSMs), as demonstrated in the BCOoL tutorial: https://gemoc.org/BCOoL/
+
+
+
 
 
 == Details of the development status
