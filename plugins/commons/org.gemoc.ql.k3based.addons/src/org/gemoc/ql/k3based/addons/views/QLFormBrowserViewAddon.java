@@ -1,12 +1,18 @@
 package org.gemoc.ql.k3based.addons.views;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gemoc.executionframework.debugger.IGemocDebugger;
 import org.eclipse.gemoc.executionframework.engine.core.CommandExecution;
 import org.eclipse.gemoc.trace.commons.model.trace.Step;
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine;
+import org.eclipse.gemoc.xdsmlframework.api.engine_addon.EngineAddonSortingRule;
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IViewPart;
@@ -24,6 +30,17 @@ import org.gemoc.ql.model.ql.Value;
 
 public class QLFormBrowserViewAddon implements IEngineAddon {
 
+	
+	@Override
+	public List<EngineAddonSortingRule> getAddonSortingRules() {
+		// cf. https://download.eclipse.org/gemoc/docs/nightly/_contributing.html#_controling_call_to_addon
+		ArrayList<EngineAddonSortingRule> sortingRules = new ArrayList<EngineAddonSortingRule>();
+		sortingRules.add(new EngineAddonSortingRule( this,
+				EngineAddonSortingRule.EngineEvent.aboutToExecuteStep,
+				EngineAddonSortingRule.Priority.BEFORE,
+				Arrays.asList(IGemocDebugger.GROUP_TAG)));
+		return sortingRules;
+	}
 	
 	@Override
 	public void engineAboutToStart(IExecutionEngine<?> engine) {
