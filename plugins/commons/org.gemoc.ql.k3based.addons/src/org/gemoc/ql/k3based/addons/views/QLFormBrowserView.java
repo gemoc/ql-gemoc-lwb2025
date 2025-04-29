@@ -222,18 +222,22 @@ public class QLFormBrowserView extends ViewPart implements IEngineSelectionListe
 
 	@Override
 	public void engineSelectionChanged(IExecutionEngine<?> engine) {
-		fBrowser.execute("setSelection(\"Engine "+ engine.getName() + " was selected\");");
-
-		if(engine.getExecutionContext() != null) {
-			Resource res = engine.getExecutionContext().getResourceModel();
-			if(res.getContents().get(0) instanceof QLModel) {
-				fBrowser.execute("setSelection(\"Engine "+ engine.getName() + "("+ engine.getRunningStatus() +") was selected and contains a QLModel\");");
+		if(engine !=null) {
+			fBrowser.execute("setSelection(\"Engine "+ engine.getName() + " was selected\");");
+	
+			if(engine.getExecutionContext() != null) {
+				Resource res = engine.getExecutionContext().getResourceModel();
+				if(res.getContents().get(0) instanceof QLModel) {
+					fBrowser.execute("setSelection(\"Engine "+ engine.getName() + "("+ engine.getRunningStatus() +") was selected and contains a QLModel\");");
+				}
 			}
+			// reset the date when submit was pressed when changing engine
+			// TODO maybe keep a hashmap in case we need to support multiple executions and switch between running engines
+			this.lastSubmitButtonCall =  null;
+		} else {
+			fBrowser.execute("setSelection(\"Engine was stopped and removed\");");
+			this.setQLForm("");
 		}
-		// reset the date when submit was pressed when changing engine
-		// TODO maybe keep a hashmap in case we need to support multiple executions and switch between running engines
-		this.lastSubmitButtonCall =  null;
-		
 	}
 
 
