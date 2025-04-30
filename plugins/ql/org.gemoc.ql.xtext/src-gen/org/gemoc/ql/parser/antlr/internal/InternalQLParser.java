@@ -6739,7 +6739,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDecimalValue"
-    // InternalQL.g:2598:1: ruleDecimalValue returns [EObject current=null] : ( () ( (lv_decimalValue_1_0= ruleEFloat ) ) ) ;
+    // InternalQL.g:2598:1: ruleDecimalValue returns [EObject current=null] : ( () ( (lv_decimalValue_1_0= ruleEDouble ) ) ) ;
     public final EObject ruleDecimalValue() throws RecognitionException {
         EObject current = null;
 
@@ -6750,11 +6750,11 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalQL.g:2604:2: ( ( () ( (lv_decimalValue_1_0= ruleEFloat ) ) ) )
-            // InternalQL.g:2605:2: ( () ( (lv_decimalValue_1_0= ruleEFloat ) ) )
+            // InternalQL.g:2604:2: ( ( () ( (lv_decimalValue_1_0= ruleEDouble ) ) ) )
+            // InternalQL.g:2605:2: ( () ( (lv_decimalValue_1_0= ruleEDouble ) ) )
             {
-            // InternalQL.g:2605:2: ( () ( (lv_decimalValue_1_0= ruleEFloat ) ) )
-            // InternalQL.g:2606:3: () ( (lv_decimalValue_1_0= ruleEFloat ) )
+            // InternalQL.g:2605:2: ( () ( (lv_decimalValue_1_0= ruleEDouble ) ) )
+            // InternalQL.g:2606:3: () ( (lv_decimalValue_1_0= ruleEDouble ) )
             {
             // InternalQL.g:2606:3: ()
             // InternalQL.g:2607:4: 
@@ -6767,17 +6767,17 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalQL.g:2613:3: ( (lv_decimalValue_1_0= ruleEFloat ) )
-            // InternalQL.g:2614:4: (lv_decimalValue_1_0= ruleEFloat )
+            // InternalQL.g:2613:3: ( (lv_decimalValue_1_0= ruleEDouble ) )
+            // InternalQL.g:2614:4: (lv_decimalValue_1_0= ruleEDouble )
             {
-            // InternalQL.g:2614:4: (lv_decimalValue_1_0= ruleEFloat )
-            // InternalQL.g:2615:5: lv_decimalValue_1_0= ruleEFloat
+            // InternalQL.g:2614:4: (lv_decimalValue_1_0= ruleEDouble )
+            // InternalQL.g:2615:5: lv_decimalValue_1_0= ruleEDouble
             {
 
-            					newCompositeNode(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getDecimalValueAccess().getDecimalValueEDoubleParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_2);
-            lv_decimalValue_1_0=ruleEFloat();
+            lv_decimalValue_1_0=ruleEDouble();
 
             state._fsp--;
 
@@ -6789,7 +6789,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
             						current,
             						"decimalValue",
             						lv_decimalValue_1_0,
-            						"org.gemoc.ql.QL.EFloat");
+            						"org.gemoc.ql.QL.EDouble");
             					afterParserOrEnumRuleCall();
             				
 
@@ -6896,25 +6896,25 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEInt"
 
 
-    // $ANTLR start "entryRuleEFloat"
-    // InternalQL.g:2660:1: entryRuleEFloat returns [String current=null] : iv_ruleEFloat= ruleEFloat EOF ;
-    public final String entryRuleEFloat() throws RecognitionException {
+    // $ANTLR start "entryRuleEDouble"
+    // InternalQL.g:2660:1: entryRuleEDouble returns [String current=null] : iv_ruleEDouble= ruleEDouble EOF ;
+    public final String entryRuleEDouble() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleEFloat = null;
+        AntlrDatatypeRuleToken iv_ruleEDouble = null;
 
 
         try {
-            // InternalQL.g:2660:46: (iv_ruleEFloat= ruleEFloat EOF )
-            // InternalQL.g:2661:2: iv_ruleEFloat= ruleEFloat EOF
+            // InternalQL.g:2660:47: (iv_ruleEDouble= ruleEDouble EOF )
+            // InternalQL.g:2661:2: iv_ruleEDouble= ruleEDouble EOF
             {
-             newCompositeNode(grammarAccess.getEFloatRule()); 
+             newCompositeNode(grammarAccess.getEDoubleRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleEFloat=ruleEFloat();
+            iv_ruleEDouble=ruleEDouble();
 
             state._fsp--;
 
-             current =iv_ruleEFloat.getText(); 
+             current =iv_ruleEDouble.getText(); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -6929,12 +6929,12 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleEFloat"
+    // $ANTLR end "entryRuleEDouble"
 
 
-    // $ANTLR start "ruleEFloat"
-    // InternalQL.g:2667:1: ruleEFloat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_INT_0= RULE_INT )? kw= '.' this_INT_2= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_6= RULE_INT )? ) ;
-    public final AntlrDatatypeRuleToken ruleEFloat() throws RecognitionException {
+    // $ANTLR start "ruleEDouble"
+    // InternalQL.g:2667:1: ruleEDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_INT_0= RULE_INT )? kw= '.' this_INT_2= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_6= RULE_INT )? ) ;
+    public final AntlrDatatypeRuleToken ruleEDouble() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token this_INT_0=null;
@@ -6968,7 +6968,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                     				current.merge(this_INT_0);
                     			
 
-                    				newLeafNode(this_INT_0, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_0());
+                    				newLeafNode(this_INT_0, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_0());
                     			
 
                     }
@@ -6979,14 +6979,14 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
             kw=(Token)match(input,41,FOLLOW_32); 
 
             			current.merge(kw);
-            			newLeafNode(kw, grammarAccess.getEFloatAccess().getFullStopKeyword_1());
+            			newLeafNode(kw, grammarAccess.getEDoubleAccess().getFullStopKeyword_1());
             		
             this_INT_2=(Token)match(input,RULE_INT,FOLLOW_39); 
 
             			current.merge(this_INT_2);
             		
 
-            			newLeafNode(this_INT_2, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_2());
+            			newLeafNode(this_INT_2, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_2());
             		
             // InternalQL.g:2696:3: ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_6= RULE_INT )?
             int alt45=2;
@@ -7022,7 +7022,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                             kw=(Token)match(input,42,FOLLOW_40); 
 
                             					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_3_0_0());
+                            					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_3_0_0());
                             				
 
                             }
@@ -7033,7 +7033,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                             kw=(Token)match(input,43,FOLLOW_40); 
 
                             					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getEKeyword_3_0_1());
+                            					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_3_0_1());
                             				
 
                             }
@@ -7055,7 +7055,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                             kw=(Token)match(input,44,FOLLOW_32); 
 
                             					current.merge(kw);
-                            					newLeafNode(kw, grammarAccess.getEFloatAccess().getHyphenMinusKeyword_3_1());
+                            					newLeafNode(kw, grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_3_1());
                             				
 
                             }
@@ -7068,7 +7068,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
                     				current.merge(this_INT_6);
                     			
 
-                    				newLeafNode(this_INT_6, grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3_2());
+                    				newLeafNode(this_INT_6, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3_2());
                     			
 
                     }
@@ -7095,7 +7095,7 @@ public class InternalQLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleEFloat"
+    // $ANTLR end "ruleEDouble"
 
 
     // $ANTLR start "entryRuleQuestionDefinition"

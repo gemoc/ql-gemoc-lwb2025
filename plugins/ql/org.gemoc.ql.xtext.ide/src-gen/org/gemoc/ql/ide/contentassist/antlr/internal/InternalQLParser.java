@@ -3108,20 +3108,20 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleEInt"
 
 
-    // $ANTLR start "entryRuleEFloat"
-    // InternalQL.g:1028:1: entryRuleEFloat : ruleEFloat EOF ;
-    public final void entryRuleEFloat() throws RecognitionException {
+    // $ANTLR start "entryRuleEDouble"
+    // InternalQL.g:1028:1: entryRuleEDouble : ruleEDouble EOF ;
+    public final void entryRuleEDouble() throws RecognitionException {
         try {
-            // InternalQL.g:1029:1: ( ruleEFloat EOF )
-            // InternalQL.g:1030:1: ruleEFloat EOF
+            // InternalQL.g:1029:1: ( ruleEDouble EOF )
+            // InternalQL.g:1030:1: ruleEDouble EOF
             {
-             before(grammarAccess.getEFloatRule()); 
+             before(grammarAccess.getEDoubleRule()); 
             pushFollow(FOLLOW_1);
-            ruleEFloat();
+            ruleEDouble();
 
             state._fsp--;
 
-             after(grammarAccess.getEFloatRule()); 
+             after(grammarAccess.getEDoubleRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -3135,35 +3135,35 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleEFloat"
+    // $ANTLR end "entryRuleEDouble"
 
 
-    // $ANTLR start "ruleEFloat"
-    // InternalQL.g:1037:1: ruleEFloat : ( ( rule__EFloat__Group__0 ) ) ;
-    public final void ruleEFloat() throws RecognitionException {
+    // $ANTLR start "ruleEDouble"
+    // InternalQL.g:1037:1: ruleEDouble : ( ( rule__EDouble__Group__0 ) ) ;
+    public final void ruleEDouble() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:1041:2: ( ( ( rule__EFloat__Group__0 ) ) )
-            // InternalQL.g:1042:2: ( ( rule__EFloat__Group__0 ) )
+            // InternalQL.g:1041:2: ( ( ( rule__EDouble__Group__0 ) ) )
+            // InternalQL.g:1042:2: ( ( rule__EDouble__Group__0 ) )
             {
-            // InternalQL.g:1042:2: ( ( rule__EFloat__Group__0 ) )
-            // InternalQL.g:1043:3: ( rule__EFloat__Group__0 )
+            // InternalQL.g:1042:2: ( ( rule__EDouble__Group__0 ) )
+            // InternalQL.g:1043:3: ( rule__EDouble__Group__0 )
             {
-             before(grammarAccess.getEFloatAccess().getGroup()); 
-            // InternalQL.g:1044:3: ( rule__EFloat__Group__0 )
-            // InternalQL.g:1044:4: rule__EFloat__Group__0
+             before(grammarAccess.getEDoubleAccess().getGroup()); 
+            // InternalQL.g:1044:3: ( rule__EDouble__Group__0 )
+            // InternalQL.g:1044:4: rule__EDouble__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group__0();
+            rule__EDouble__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEFloatAccess().getGroup()); 
+             after(grammarAccess.getEDoubleAccess().getGroup()); 
 
             }
 
@@ -3182,7 +3182,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleEFloat"
+    // $ANTLR end "ruleEDouble"
 
 
     // $ANTLR start "entryRuleQuestionDefinition"
@@ -4996,9 +4996,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ConstantCall__ValueAlternatives_1_0"
 
 
-    // $ANTLR start "rule__EFloat__Alternatives_3_0"
-    // InternalQL.g:1554:1: rule__EFloat__Alternatives_3_0 : ( ( 'E' ) | ( 'e' ) );
-    public final void rule__EFloat__Alternatives_3_0() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Alternatives_3_0"
+    // InternalQL.g:1554:1: rule__EDouble__Alternatives_3_0 : ( ( 'E' ) | ( 'e' ) );
+    public final void rule__EDouble__Alternatives_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -5026,9 +5026,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
                     // InternalQL.g:1559:2: ( 'E' )
                     // InternalQL.g:1560:3: 'E'
                     {
-                     before(grammarAccess.getEFloatAccess().getEKeyword_3_0_0()); 
+                     before(grammarAccess.getEDoubleAccess().getEKeyword_3_0_0()); 
                     match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getEFloatAccess().getEKeyword_3_0_0()); 
+                     after(grammarAccess.getEDoubleAccess().getEKeyword_3_0_0()); 
 
                     }
 
@@ -5041,9 +5041,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
                     // InternalQL.g:1565:2: ( 'e' )
                     // InternalQL.g:1566:3: 'e'
                     {
-                     before(grammarAccess.getEFloatAccess().getEKeyword_3_0_1()); 
+                     before(grammarAccess.getEDoubleAccess().getEKeyword_3_0_1()); 
                     match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getEFloatAccess().getEKeyword_3_0_1()); 
+                     after(grammarAccess.getEDoubleAccess().getEKeyword_3_0_1()); 
 
                     }
 
@@ -5064,7 +5064,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Alternatives_3_0"
+    // $ANTLR end "rule__EDouble__Alternatives_3_0"
 
 
     // $ANTLR start "rule__BinaryOperatorKind__Alternatives"
@@ -19748,23 +19748,23 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__DecimalValue__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group__0"
-    // InternalQL.g:6423:1: rule__EFloat__Group__0 : rule__EFloat__Group__0__Impl rule__EFloat__Group__1 ;
-    public final void rule__EFloat__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__0"
+    // InternalQL.g:6423:1: rule__EDouble__Group__0 : rule__EDouble__Group__0__Impl rule__EDouble__Group__1 ;
+    public final void rule__EDouble__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6427:1: ( rule__EFloat__Group__0__Impl rule__EFloat__Group__1 )
-            // InternalQL.g:6428:2: rule__EFloat__Group__0__Impl rule__EFloat__Group__1
+            // InternalQL.g:6427:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
+            // InternalQL.g:6428:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
             {
             pushFollow(FOLLOW_39);
-            rule__EFloat__Group__0__Impl();
+            rule__EDouble__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group__1();
+            rule__EDouble__Group__1();
 
             state._fsp--;
 
@@ -19783,12 +19783,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__0"
+    // $ANTLR end "rule__EDouble__Group__0"
 
 
-    // $ANTLR start "rule__EFloat__Group__0__Impl"
-    // InternalQL.g:6435:1: rule__EFloat__Group__0__Impl : ( ( RULE_INT )? ) ;
-    public final void rule__EFloat__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__0__Impl"
+    // InternalQL.g:6435:1: rule__EDouble__Group__0__Impl : ( ( RULE_INT )? ) ;
+    public final void rule__EDouble__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -19799,7 +19799,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6440:1: ( ( RULE_INT )? )
             // InternalQL.g:6441:2: ( RULE_INT )?
             {
-             before(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_0()); 
+             before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_0()); 
             // InternalQL.g:6442:2: ( RULE_INT )?
             int alt51=2;
             int LA51_0 = input.LA(1);
@@ -19818,7 +19818,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_0()); 
+             after(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_0()); 
 
             }
 
@@ -19837,26 +19837,26 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__0__Impl"
+    // $ANTLR end "rule__EDouble__Group__0__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group__1"
-    // InternalQL.g:6450:1: rule__EFloat__Group__1 : rule__EFloat__Group__1__Impl rule__EFloat__Group__2 ;
-    public final void rule__EFloat__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__1"
+    // InternalQL.g:6450:1: rule__EDouble__Group__1 : rule__EDouble__Group__1__Impl rule__EDouble__Group__2 ;
+    public final void rule__EDouble__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6454:1: ( rule__EFloat__Group__1__Impl rule__EFloat__Group__2 )
-            // InternalQL.g:6455:2: rule__EFloat__Group__1__Impl rule__EFloat__Group__2
+            // InternalQL.g:6454:1: ( rule__EDouble__Group__1__Impl rule__EDouble__Group__2 )
+            // InternalQL.g:6455:2: rule__EDouble__Group__1__Impl rule__EDouble__Group__2
             {
             pushFollow(FOLLOW_44);
-            rule__EFloat__Group__1__Impl();
+            rule__EDouble__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group__2();
+            rule__EDouble__Group__2();
 
             state._fsp--;
 
@@ -19875,12 +19875,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__1"
+    // $ANTLR end "rule__EDouble__Group__1"
 
 
-    // $ANTLR start "rule__EFloat__Group__1__Impl"
-    // InternalQL.g:6462:1: rule__EFloat__Group__1__Impl : ( '.' ) ;
-    public final void rule__EFloat__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__1__Impl"
+    // InternalQL.g:6462:1: rule__EDouble__Group__1__Impl : ( '.' ) ;
+    public final void rule__EDouble__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -19891,9 +19891,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6467:1: ( '.' )
             // InternalQL.g:6468:2: '.'
             {
-             before(grammarAccess.getEFloatAccess().getFullStopKeyword_1()); 
+             before(grammarAccess.getEDoubleAccess().getFullStopKeyword_1()); 
             match(input,66,FOLLOW_2); 
-             after(grammarAccess.getEFloatAccess().getFullStopKeyword_1()); 
+             after(grammarAccess.getEDoubleAccess().getFullStopKeyword_1()); 
 
             }
 
@@ -19912,26 +19912,26 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__1__Impl"
+    // $ANTLR end "rule__EDouble__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group__2"
-    // InternalQL.g:6477:1: rule__EFloat__Group__2 : rule__EFloat__Group__2__Impl rule__EFloat__Group__3 ;
-    public final void rule__EFloat__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__2"
+    // InternalQL.g:6477:1: rule__EDouble__Group__2 : rule__EDouble__Group__2__Impl rule__EDouble__Group__3 ;
+    public final void rule__EDouble__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6481:1: ( rule__EFloat__Group__2__Impl rule__EFloat__Group__3 )
-            // InternalQL.g:6482:2: rule__EFloat__Group__2__Impl rule__EFloat__Group__3
+            // InternalQL.g:6481:1: ( rule__EDouble__Group__2__Impl rule__EDouble__Group__3 )
+            // InternalQL.g:6482:2: rule__EDouble__Group__2__Impl rule__EDouble__Group__3
             {
             pushFollow(FOLLOW_57);
-            rule__EFloat__Group__2__Impl();
+            rule__EDouble__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group__3();
+            rule__EDouble__Group__3();
 
             state._fsp--;
 
@@ -19950,12 +19950,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__2"
+    // $ANTLR end "rule__EDouble__Group__2"
 
 
-    // $ANTLR start "rule__EFloat__Group__2__Impl"
-    // InternalQL.g:6489:1: rule__EFloat__Group__2__Impl : ( RULE_INT ) ;
-    public final void rule__EFloat__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__2__Impl"
+    // InternalQL.g:6489:1: rule__EDouble__Group__2__Impl : ( RULE_INT ) ;
+    public final void rule__EDouble__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -19966,9 +19966,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6494:1: ( RULE_INT )
             // InternalQL.g:6495:2: RULE_INT
             {
-             before(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_2()); 
+             before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_2()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_2()); 
+             after(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_2()); 
 
             }
 
@@ -19987,21 +19987,21 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__2__Impl"
+    // $ANTLR end "rule__EDouble__Group__2__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group__3"
-    // InternalQL.g:6504:1: rule__EFloat__Group__3 : rule__EFloat__Group__3__Impl ;
-    public final void rule__EFloat__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__3"
+    // InternalQL.g:6504:1: rule__EDouble__Group__3 : rule__EDouble__Group__3__Impl ;
+    public final void rule__EDouble__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6508:1: ( rule__EFloat__Group__3__Impl )
-            // InternalQL.g:6509:2: rule__EFloat__Group__3__Impl
+            // InternalQL.g:6508:1: ( rule__EDouble__Group__3__Impl )
+            // InternalQL.g:6509:2: rule__EDouble__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group__3__Impl();
+            rule__EDouble__Group__3__Impl();
 
             state._fsp--;
 
@@ -20020,24 +20020,24 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__3"
+    // $ANTLR end "rule__EDouble__Group__3"
 
 
-    // $ANTLR start "rule__EFloat__Group__3__Impl"
-    // InternalQL.g:6515:1: rule__EFloat__Group__3__Impl : ( ( rule__EFloat__Group_3__0 )? ) ;
-    public final void rule__EFloat__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group__3__Impl"
+    // InternalQL.g:6515:1: rule__EDouble__Group__3__Impl : ( ( rule__EDouble__Group_3__0 )? ) ;
+    public final void rule__EDouble__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6519:1: ( ( ( rule__EFloat__Group_3__0 )? ) )
-            // InternalQL.g:6520:1: ( ( rule__EFloat__Group_3__0 )? )
+            // InternalQL.g:6519:1: ( ( ( rule__EDouble__Group_3__0 )? ) )
+            // InternalQL.g:6520:1: ( ( rule__EDouble__Group_3__0 )? )
             {
-            // InternalQL.g:6520:1: ( ( rule__EFloat__Group_3__0 )? )
-            // InternalQL.g:6521:2: ( rule__EFloat__Group_3__0 )?
+            // InternalQL.g:6520:1: ( ( rule__EDouble__Group_3__0 )? )
+            // InternalQL.g:6521:2: ( rule__EDouble__Group_3__0 )?
             {
-             before(grammarAccess.getEFloatAccess().getGroup_3()); 
-            // InternalQL.g:6522:2: ( rule__EFloat__Group_3__0 )?
+             before(grammarAccess.getEDoubleAccess().getGroup_3()); 
+            // InternalQL.g:6522:2: ( rule__EDouble__Group_3__0 )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -20046,10 +20046,10 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             }
             switch (alt52) {
                 case 1 :
-                    // InternalQL.g:6522:3: rule__EFloat__Group_3__0
+                    // InternalQL.g:6522:3: rule__EDouble__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__EFloat__Group_3__0();
+                    rule__EDouble__Group_3__0();
 
                     state._fsp--;
 
@@ -20059,7 +20059,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getEFloatAccess().getGroup_3()); 
+             after(grammarAccess.getEDoubleAccess().getGroup_3()); 
 
             }
 
@@ -20078,26 +20078,26 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group__3__Impl"
+    // $ANTLR end "rule__EDouble__Group__3__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__0"
-    // InternalQL.g:6531:1: rule__EFloat__Group_3__0 : rule__EFloat__Group_3__0__Impl rule__EFloat__Group_3__1 ;
-    public final void rule__EFloat__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__0"
+    // InternalQL.g:6531:1: rule__EDouble__Group_3__0 : rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 ;
+    public final void rule__EDouble__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6535:1: ( rule__EFloat__Group_3__0__Impl rule__EFloat__Group_3__1 )
-            // InternalQL.g:6536:2: rule__EFloat__Group_3__0__Impl rule__EFloat__Group_3__1
+            // InternalQL.g:6535:1: ( rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 )
+            // InternalQL.g:6536:2: rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1
             {
             pushFollow(FOLLOW_58);
-            rule__EFloat__Group_3__0__Impl();
+            rule__EDouble__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group_3__1();
+            rule__EDouble__Group_3__1();
 
             state._fsp--;
 
@@ -20116,35 +20116,35 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__0"
+    // $ANTLR end "rule__EDouble__Group_3__0"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__0__Impl"
-    // InternalQL.g:6543:1: rule__EFloat__Group_3__0__Impl : ( ( rule__EFloat__Alternatives_3_0 ) ) ;
-    public final void rule__EFloat__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__0__Impl"
+    // InternalQL.g:6543:1: rule__EDouble__Group_3__0__Impl : ( ( rule__EDouble__Alternatives_3_0 ) ) ;
+    public final void rule__EDouble__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6547:1: ( ( ( rule__EFloat__Alternatives_3_0 ) ) )
-            // InternalQL.g:6548:1: ( ( rule__EFloat__Alternatives_3_0 ) )
+            // InternalQL.g:6547:1: ( ( ( rule__EDouble__Alternatives_3_0 ) ) )
+            // InternalQL.g:6548:1: ( ( rule__EDouble__Alternatives_3_0 ) )
             {
-            // InternalQL.g:6548:1: ( ( rule__EFloat__Alternatives_3_0 ) )
-            // InternalQL.g:6549:2: ( rule__EFloat__Alternatives_3_0 )
+            // InternalQL.g:6548:1: ( ( rule__EDouble__Alternatives_3_0 ) )
+            // InternalQL.g:6549:2: ( rule__EDouble__Alternatives_3_0 )
             {
-             before(grammarAccess.getEFloatAccess().getAlternatives_3_0()); 
-            // InternalQL.g:6550:2: ( rule__EFloat__Alternatives_3_0 )
-            // InternalQL.g:6550:3: rule__EFloat__Alternatives_3_0
+             before(grammarAccess.getEDoubleAccess().getAlternatives_3_0()); 
+            // InternalQL.g:6550:2: ( rule__EDouble__Alternatives_3_0 )
+            // InternalQL.g:6550:3: rule__EDouble__Alternatives_3_0
             {
             pushFollow(FOLLOW_2);
-            rule__EFloat__Alternatives_3_0();
+            rule__EDouble__Alternatives_3_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEFloatAccess().getAlternatives_3_0()); 
+             after(grammarAccess.getEDoubleAccess().getAlternatives_3_0()); 
 
             }
 
@@ -20163,26 +20163,26 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__0__Impl"
+    // $ANTLR end "rule__EDouble__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__1"
-    // InternalQL.g:6558:1: rule__EFloat__Group_3__1 : rule__EFloat__Group_3__1__Impl rule__EFloat__Group_3__2 ;
-    public final void rule__EFloat__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__1"
+    // InternalQL.g:6558:1: rule__EDouble__Group_3__1 : rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 ;
+    public final void rule__EDouble__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6562:1: ( rule__EFloat__Group_3__1__Impl rule__EFloat__Group_3__2 )
-            // InternalQL.g:6563:2: rule__EFloat__Group_3__1__Impl rule__EFloat__Group_3__2
+            // InternalQL.g:6562:1: ( rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 )
+            // InternalQL.g:6563:2: rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2
             {
             pushFollow(FOLLOW_58);
-            rule__EFloat__Group_3__1__Impl();
+            rule__EDouble__Group_3__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group_3__2();
+            rule__EDouble__Group_3__2();
 
             state._fsp--;
 
@@ -20201,12 +20201,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__1"
+    // $ANTLR end "rule__EDouble__Group_3__1"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__1__Impl"
-    // InternalQL.g:6570:1: rule__EFloat__Group_3__1__Impl : ( ( '-' )? ) ;
-    public final void rule__EFloat__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__1__Impl"
+    // InternalQL.g:6570:1: rule__EDouble__Group_3__1__Impl : ( ( '-' )? ) ;
+    public final void rule__EDouble__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -20217,7 +20217,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6575:1: ( ( '-' )? )
             // InternalQL.g:6576:2: ( '-' )?
             {
-             before(grammarAccess.getEFloatAccess().getHyphenMinusKeyword_3_1()); 
+             before(grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_3_1()); 
             // InternalQL.g:6577:2: ( '-' )?
             int alt53=2;
             int LA53_0 = input.LA(1);
@@ -20236,7 +20236,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getEFloatAccess().getHyphenMinusKeyword_3_1()); 
+             after(grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_3_1()); 
 
             }
 
@@ -20255,21 +20255,21 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__1__Impl"
+    // $ANTLR end "rule__EDouble__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__2"
-    // InternalQL.g:6585:1: rule__EFloat__Group_3__2 : rule__EFloat__Group_3__2__Impl ;
-    public final void rule__EFloat__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__2"
+    // InternalQL.g:6585:1: rule__EDouble__Group_3__2 : rule__EDouble__Group_3__2__Impl ;
+    public final void rule__EDouble__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:6589:1: ( rule__EFloat__Group_3__2__Impl )
-            // InternalQL.g:6590:2: rule__EFloat__Group_3__2__Impl
+            // InternalQL.g:6589:1: ( rule__EDouble__Group_3__2__Impl )
+            // InternalQL.g:6590:2: rule__EDouble__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EFloat__Group_3__2__Impl();
+            rule__EDouble__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -20288,12 +20288,12 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__2"
+    // $ANTLR end "rule__EDouble__Group_3__2"
 
 
-    // $ANTLR start "rule__EFloat__Group_3__2__Impl"
-    // InternalQL.g:6596:1: rule__EFloat__Group_3__2__Impl : ( RULE_INT ) ;
-    public final void rule__EFloat__Group_3__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EDouble__Group_3__2__Impl"
+    // InternalQL.g:6596:1: rule__EDouble__Group_3__2__Impl : ( RULE_INT ) ;
+    public final void rule__EDouble__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -20304,9 +20304,9 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
             // InternalQL.g:6601:1: ( RULE_INT )
             // InternalQL.g:6602:2: RULE_INT
             {
-             before(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3_2()); 
+             before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3_2()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getEFloatAccess().getINTTerminalRuleCall_3_2()); 
+             after(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3_2()); 
 
             }
 
@@ -20325,7 +20325,7 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EFloat__Group_3__2__Impl"
+    // $ANTLR end "rule__EDouble__Group_3__2__Impl"
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__0"
@@ -24306,25 +24306,25 @@ public class InternalQLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__DecimalValueAssignment_1"
-    // InternalQL.g:8020:1: rule__DecimalValue__DecimalValueAssignment_1 : ( ruleEFloat ) ;
+    // InternalQL.g:8020:1: rule__DecimalValue__DecimalValueAssignment_1 : ( ruleEDouble ) ;
     public final void rule__DecimalValue__DecimalValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQL.g:8024:1: ( ( ruleEFloat ) )
-            // InternalQL.g:8025:2: ( ruleEFloat )
+            // InternalQL.g:8024:1: ( ( ruleEDouble ) )
+            // InternalQL.g:8025:2: ( ruleEDouble )
             {
-            // InternalQL.g:8025:2: ( ruleEFloat )
-            // InternalQL.g:8026:3: ruleEFloat
+            // InternalQL.g:8025:2: ( ruleEDouble )
+            // InternalQL.g:8026:3: ruleEDouble
             {
-             before(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_1_0()); 
+             before(grammarAccess.getDecimalValueAccess().getDecimalValueEDoubleParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleEFloat();
+            ruleEDouble();
 
             state._fsp--;
 
-             after(grammarAccess.getDecimalValueAccess().getDecimalValueEFloatParserRuleCall_1_0()); 
+             after(grammarAccess.getDecimalValueAccess().getDecimalValueEDoubleParserRuleCall_1_0()); 
 
             }
 

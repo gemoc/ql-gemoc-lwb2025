@@ -252,14 +252,14 @@ DateValue returns DateValue:
 
 DecimalValue returns DecimalValue:
 	{DecimalValue}
-	decimalValue=EFloat
+	decimalValue=EDouble
 	;
 
 EInt returns ecore::EInt:
 	//'-'? INT;
 	INT;
 
-EFloat returns ecore::EFloat:
+EDouble returns ecore::EDouble:
 	//'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
 	INT? '.' INT (('E'|'e') '-'? INT)?;
 
