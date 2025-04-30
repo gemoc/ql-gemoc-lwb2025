@@ -17,7 +17,7 @@ import java.util.Date;
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getDateValue()
- * @model
+ * @model annotation="aspect"
  * @generated
  */
 public interface DateValue extends Value {

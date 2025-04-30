@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getValue()
  * @model abstract="true"
+ *        annotation="aspect"
  * @generated
  */
 public interface Value extends EObject {

@@ -68,14 +68,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Value"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true">
+    <eAnnotations source="aspect"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerValue" eSuperTypes="#//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValue" eSuperTypes="#//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BasicUnaryExpression" eSuperTypes="#//UnaryExpression">
@@ -86,9 +91,11 @@
     <eLiterals name="NOT" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateValue" eSuperTypes="#//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dateValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DecimalValue" eSuperTypes="#//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValueType" eSuperTypes="#//NamedElement">
@@ -133,6 +140,7 @@
         eType="#//QuestionDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationCall" eSuperTypes="#//Call #//Value">
+    <eAnnotations source="aspect"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumerationLiteral" lowerBound="1"
         eType="#//EnumerationLiteral"/>
   </eClassifiers>

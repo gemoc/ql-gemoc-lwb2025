@@ -1533,6 +1533,13 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		addAnnotation(getQLModel_SubmitDate(), source, new String[] {});
 		addAnnotation(getQuestionDefinition_CurrentValue(), source, new String[] {});
 		addAnnotation(getQuestionDefinition_IsDisplayed(), source, new String[] {});
+		addAnnotation(valueEClass, source, new String[] {});
+		addAnnotation(integerValueEClass, source, new String[] {});
+		addAnnotation(stringValueEClass, source, new String[] {});
+		addAnnotation(booleanValueEClass, source, new String[] {});
+		addAnnotation(dateValueEClass, source, new String[] {});
+		addAnnotation(decimalValueEClass, source, new String[] {});
+		addAnnotation(enumerationCallEClass, source, new String[] {});
 	}
 
 } //QlPackageImpl

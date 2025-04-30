@@ -15,7 +15,7 @@ package org.gemoc.ql.model.ql;
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getIntegerValue()
- * @model
+ * @model annotation="aspect"
  * @generated
  */
 public interface IntegerValue extends Value {

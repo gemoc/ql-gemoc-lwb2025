@@ -15,7 +15,7 @@ package org.gemoc.ql.model.ql;
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getDecimalValue()
- * @model
+ * @model annotation="aspect"
  * @generated
  */
 public interface DecimalValue extends Value {
