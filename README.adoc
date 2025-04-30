@@ -551,7 +551,7 @@ Figure <<img-concurrency-multibranchTime>>, taken from the MODELS 2017 tutorial,
 MoCCML-based concurrency modeling exemplifies one of GEMOC Studio’s distinctive strengths: allowing DSL designers to explicitly and modularly define how concurrency should behave, enabling more robust and analyzable modeling tools.
 
 
-=== Behavioral Coordination with BCOoL
+== Behavioral Coordination with BCOoL
 
 The *GEMOC Studio* offers a unique and powerful capability for coordinating the behavior of models written in different *Domain-Specific Modeling Languages (DSMLs)*. This is achieved through *BCOoL* — the Behavioral Coordination Operator Language. BCOoL enables language designers to explicitly define how models from different DSMLs should interact at runtime, making it a key tool for supporting *multi-language modeling* in complex systems.
 
@@ -563,43 +563,46 @@ When engineering complex systems, different concerns (e.g., control logic, physi
 
 BCOoL offers:
 
-* *Formal definition of coordination operators* between events produced by different DSMLs (e.g., synchronizing a state change in a controller with a signal in a simulator).
+* *Formal definition of coordination operators* between events produced by different DSMLs (e.g., synchronizing a state change in a controller with an action in a process model).
 * *Model-driven generation* of coordination logic that is reusable and automatically applicable across different models.
 * *Integration with GEMOC's runtime execution framework*, enabling the execution of coordinated multi-language models.
 
 Importantly, this integration is made possible by the underlying *GEMOC Framework Engine API*. At runtime, each language is extended through *Engine Addons*, which allow models to emit and respond to coordination events. BCOoL-generated coordination logic is deployed as such addons, enabling synchronized execution across independently defined engines.
 
-
-// Key Concepts and Implementation Flow
+//  Key Concepts and Implementation Flow
 
 BCOoL builds on three core concepts:
 
-. *Events as a coordination interface*: Each DSML exposes a set of meaningful runtime events (called *DSA* — Domain-Specific Actions — in GEMOC) that can be coordinated. These are typically defined during the implementation of the DSML's behavioral semantics.
-. *Coordination Operators*: Coordination logic is written as BCOoL specifications, where language designers declare synchronization rules (e.g., "when event A in language L1 occurs, event B in language L2 must follow").
-. *Execution Model Coordination*:
-.. BCOoL specifications are compiled into *Coordination Models*.
-.. These are woven into a *Coordinated Execution Engine* that integrates the event streams of the involved DSMLs.
-.. At runtime, GEMOC Studio uses this coordination model to control the interleaving and synchronization of the models' behaviors.
+* *Events as a coordination interface*: Each DSML exposes a set of meaningful runtime events (called *DSA* — Domain-Specific Actions — in GEMOC) that can be coordinated. These are typically defined during the implementation of the DSML's behavioral semantics.
+* *Coordination Operators*: Coordination logic is written as BCOoL specifications, where language designers declare synchronization rules (e.g., "when event A in language L1 occurs, event B in language L2 must follow").
+* *Execution Model Coordination*:
+** BCOoL specifications are compiled into *Coordination Models*.
+** These are woven into a *Coordinated Execution Engine* that integrates the event streams of the involved DSMLs.
+** At runtime, GEMOC Studio uses this coordination model to control the interleaving and synchronization of the models' behaviors.
 
-*Example: Synchronizing Timed Finite State Machines (TFSMs)*
+*Example: Coordinating a Coffee Machine using FSM and Activity Diagram*
 
-A canonical example of BCOoL's power is shown in the BCOoL tutorial:
+A practical example from the https://gemoc.org/BCOoL/[BCOoL tutorial] demonstrates coordination between:
 
-https://gemoc.org/BCOoL/
+* A Finite State Machine (FSM) modeling the user interface of a coffee machine, and
+* An Activity Diagram (AD) modeling the internal preparation process of the machine.
 
-Two DSMLs — each representing *Timed Finite State Machines (TFSMs)* — are coordinated so that one FSM can trigger transitions in the other. In this case:
+BCOoL is used to specify coordination rules that, for instance, ensure that selecting a beverage in the FSM must trigger corresponding activities in the AD. The coordination operators synchronize user-driven state transitions with back-end processing steps.
 
-* Events corresponding to state transitions are exposed by both DSMLs.
-* BCOoL is used to define that a transition in FSM1 causes (or must follow) a transition in FSM2.
-* A coordinated execution engine is generated and used to simulate both FSMs in synchronization, respecting the declared rules.
+A coordinated execution engine is generated and used to simulate the interaction between both models. This maintains a clear separation of concerns while ensuring correct behavioral interaction between the front-end control and internal logic.
 
-This example demonstrates how BCOoL helps maintain *modularity* (languages remain separate) while enabling *behavioral integration* across models.
+The following figure shows the *Concurrent Logical Step Decider* view. This view displays the set of logical steps available at each execution state, including all valid interleavings of steps across the two models. This is particularly useful for visualizing coordination between DSMLs with different execution structures.
+
+.Coffee machine example showing coordination between FSM and Activity Diagram (with Concurrent Logical Step Decider)
+[#img-coffee-machine-coordination]
+image::coffee_machine_concurrent_logical_steps.jpg[Coordination of FSM and AD in the coffee machine example,800]
 
 // Runtime Views and Debugging
 
 When executing coordinated models in GEMOC Studio:
 
-* The *Multidimensional Timeline View* is particularly helpful to understand and debug coordination, as it shows how events across languages align and interleave over time.
+* The *Multibranch Timeline View* from the concurrent engine is particularly helpful to understand and debug coordination, as it shows how events across languages align and interleave over time.
+* The *Concurrent Logical Step Decider* allows inspection of alternative interleavings, including which combinations of steps are possible or currently selected.
 * Standard debugging tools (breakpoints, step-by-step execution, etc.) are also applicable to coordinated models, allowing inspection at both the individual DSML and system level.
 
 // Value for Language Workbenches
@@ -608,13 +611,12 @@ BCOoL exemplifies a rare and highly valuable feature in language workbenches: it
 
 [NOTE]
 ====
-
 Further Resources:
 
 * BCOoL tutorial page: https://gemoc.org/BCOoL/
 * Reference implementation and example: https://github.com/gemoc/bcool-examples
-
 ====
+
 
 
 
