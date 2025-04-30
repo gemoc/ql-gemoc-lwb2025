@@ -441,7 +441,9 @@ These features allow users to:
 
 ====
 
-
+.Debug of a ProjectBudget example model paused after enabling the requireDesignAndUX question (with MultiDimentional data timeline enabled)
+[#img-mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox]
+image::mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox.png[mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox,800]
 
 == Additional GEMOC Studio features illustrated in other case studies
 
