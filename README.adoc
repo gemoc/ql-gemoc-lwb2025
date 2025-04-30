@@ -422,22 +422,6 @@ As this is an addon, we can imagine to implement this in many other ways (web pr
 // An illustration of the execution features enabled by the implementation, including screenshots and explanations of the available tooling.
 
 
-
-[TODO]
-==== 
-
-Omniscient Debugging and Execution Tracing
-
-the GEMOC Studio's omniscient debugging capabilities
-
-These features allow users to:
-
-- Navigate through execution traces both forward and backward.
-- Inspect the state of models at any point in the execution.
-- Set breakpoints and observe variable changes over time.
-
-====
-
 As seen in Section <<section-quick-start>>, in addition to allow edition which are actually provided by embedded tools such as Xtext and Sirius, GEMOC Studio has a special focus on providing model debugging support. 
 
 This section provides details of some of the features used by the Questionnaire language.
