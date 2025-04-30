@@ -438,11 +438,11 @@ These features allow users to:
 
 ====
 
-As seen in Section <<section-quick-start>>, in addition to allow edition whihc are actually provided by embedded tools such as Xtext and Sirius, GEMOC Studio has a special focus on providing model debugging support.
+As seen in Section <<section-quick-start>>, in addition to allow edition which are actually provided by embedded tools such as Xtext and Sirius, GEMOC Studio has a special focus on providing model debugging support. 
 
-This section provides some details of the proposed features implemented for the Questionnaire language.
+This section provides details of some of the features used by the Questionnaire language.
 
-By default in GEMOC, launching a model is done via a launch configuration.Figure <<img-mwb_projectBudget_launch_main_tab>> show the main tab of launch configuration. It allows to select the model to run, the language semantic that must be used to execute the language (as we may have provided several variant semantics), the entry point (ie. the model element used to start the execution. this is useful as some DSL may contains several starting points), and the main method (I.e, the `@Main` method, it may be used in some DSL implementation that provides different main methods).
+By default in GEMOC, launching a model is done via a launch configuration. Figure <<img-mwb-projectBudget-launch-maintab>> show the main tab of launch configuration. It allows to select the model to run, the language semantic that must be used to execute the language (as we may have provided several variant semantics), the entry point (ie. the model element used to start the execution. this is useful as some DSL may contains several starting points), and the main method (I.e, the `@Main` method, it may be used in some DSL implementation that provides different main methods).
 
 Additionally, we can specify arguments (a list of strings) to pass to the `@InitializeModel` model. So it can intialize any relevant runitme data prior to start the execution.
 
@@ -455,23 +455,23 @@ As GEMOC Studio is an Eclipse IDE, it is possible to provide UI in order to star
 ====
 
 .Main tab of the launch configuration for the ProjectBudgetEstimation questionnaire example model)
-[#img-mwb_projectBudget_launch_main_tab]
+[#img-mwb-projectBudget-launch-maintab]
 image::mwb_projectBudget_launch_main_tab.png[Main tab of the launch configuration for the ProjectBudgetEstimation questionnaire example model,1024]
 
-Figure <<img-mwb_projectBudget_launch_addon_tab>> shows how to activate/desactivate the optional Engine addons.
+Figure <<img-mwb-projectBudget-launch-addon-tab>> shows how to activate/desactivate the optional Engine addons.
 The _Generic Multidimentional Data Trace_ enable the storage of runtime data so it can be used by the _MultiDimentional Data timeline_. This addon and its view are generic and available for any DSL using the sequential engine.
 
 The _QLForm Browser View_ addon provide the UI for the language. It is specific to the QL DSL. You need to enable it in order to display the challenge Form UI. (As stated in section <<section-behavioral-semantics>>, if other addon provide alternative UI, you could have made the choice here)
 
 
 .Engine addon tab of the launch configuration for the ProjectBudgetEstimation questionnaire example model)
-[#img-mwb_projectBudget_launch_addon_tab]
+[#img-mwb-projectBudget-launch-addon-tab]
 image::mwb_projectBudget_launch_addon_tab.png[Engine addon tab of the launch configuration for the ProjectBudgetEstimation questionnaire example model,1024]
 
 When started in Debug mode, the Eclipse IDE will provide several views.
 If the animation is active, the Sirius editor will be closed, and will reopen in readonly mode.
 
-Figure <<img-mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox>> shows several noticiable elements:
+Figure <<img-mwb-projectBudget-debug-timeline-paused-after-enabling-designUX-checkbox>> shows several noticiable elements:
 
 * The _QLForm Browser View_ allows user interaction with the form, displaying questions, results, and a Submit button to end the execution when the user has finished.
 * The _Sirius view_ displays with a small blue bullet that a break point is active and will pause the execution whenever a `@Step` method is called on the  `totalProjectCost` `QuestionDefinition`. 
@@ -489,19 +489,19 @@ TIP: It is possible to kill an execution at all time by using the _GEMOC Engine 
 
 
 .Debug of a ProjectBudget example model paused after enabling the requireDesignAndUX question (with MultiDimentional data timeline enabled)
-[#img-mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox]
+[#img-mwb-projectBudget-debug-timeline-paused-after-enabling-designUX-checkbox]
 image::mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox.png[Debug of a ProjectBudget example model paused after enabling the requireDesignAndUX question (with MultiDimentional data timeline enabled),1024]
 
-Figure <<img-mwb_projectBudget_debug_timeline_with_variables>> provide a better view of the display provided by the _Variable view_. It is paused when the user has changed the `estimatedPersonHourForDev` value.
+Figure <<img-mwb-projectBudget-debug-timeline-with-variables>> provide a better view of the display provided by the _Variable view_. It is paused when the user has changed the `estimatedPersonHourForDev` value.
 
 .Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value (with MultiDimentional data timeline enabled)
-[#img-mwb_projectBudget_debug_timeline_with_variables]
+[#img-mwb-projectBudget-debug-timeline-with-variables]
 image::mwb_projectBudget_debug_timeline_with_variables.png[Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value,1024]
 
-It it then possible to navigate backward in the timeline. Either by clicking on the blue bullets, or in a data line in order to follow this data changes.
+It it then possible to *navigate backward and forward in the timeline*. Either by clicking on the blue bullets, or in a data line in order to follow this data changes.
 
-Figure <<img-mwb_projectBudget_debug_timeline_with_backward_navigation>> illustrates this backward navigation.
-It is the  possible to look into the variable view or the Sirius Animation view to inspect the status of the model at that time.
+Figure <<img-mwb-projectBudget-debug-timeline-with-backward-navigation>> illustrates this backward navigation.
+It is then  possible to look into the _Variables view_ or the _Sirius Animation view_ to inspect the status of the model at that time. We can observe for example, that the `estimatedPersonHourForDev` value is now back to `7` and the `estimatedDevCost` to `140`.
 
 [NOTE]
 ====
@@ -510,9 +510,17 @@ Some UI may also be able to refresh according to the current status of the model
 ====
 [NOTE]
 ====
+
+Unlike the concurrent engine presented in Section <<section-concurrency-mmodeling>>, the backward navigation proposed by the sequential engine used by K3QL isn't a full rollback of the engine. 
+It cannot restart the execution from an older state and simply offers to navigate in the recorded trace. 
+
+However, it restores the model to the previous state, so the animation and compatible addons can use this information to display the model at that point in time.
+
+On that point, the GEMOC concurrent engine is more powerful than the GEMOC sequential engine as it can branch execution from a state in the past.
+
 ====
 
-.Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state.e[#img-mwb_projectBudget_debug_timeline_with_backward_navigation]]
+.Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state.e[#img-mwb-projectBudget-debug-timeline-with-backward-navigation]
 image::mwb_projectBudget_debug_timeline_with_backward_navigation.png[Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state,1024]
 
 == Additional GEMOC Studio features illustrated in other case studies
@@ -520,6 +528,7 @@ image::mwb_projectBudget_debug_timeline_with_backward_navigation.png[Debug of a 
 Beyond the features demonstrated in the K3QL implementation, the GEMOC Studio offers advanced capabilities that have been showcased in other case studies and tutorials. While these features are not used directly in the context of the Questionnaire Language defined for the challenge, they are important to highlight in the context of evaluating the GEMOC Studio as a language workbench. They illustrate powerful and often unique capabilities—such as explicit concurrency modeling, coordination of multiple DSMLs, and advanced execution analysis—that are especially valuable when engineering complex or interacting languages. These aspects reinforce the strength and flexibility of the GEMOC approach, even beyond the scope of this specific challenge use case.
 
 
+[#section-concurrency-mmodeling]
 === Concurrency Modeling with MoCCML
 
 The GEMOC Studio supports advanced concurrency modeling through the Model of Concurrency and Communication Modeling Language (MoCCML). This capability allows language designers to formally specify concurrency constraints independently of a language's operational semantics. The result is a modular and analyzable approach to handling concurrent behaviors in domain-specific modeling languages.
