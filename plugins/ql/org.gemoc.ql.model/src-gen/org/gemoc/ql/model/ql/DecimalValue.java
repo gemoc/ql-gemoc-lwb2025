@@ -24,12 +24,12 @@ public interface DecimalValue extends Value {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Decimal Value</em>' attribute.
-	 * @see #setDecimalValue(float)
+	 * @see #setDecimalValue(double)
 	 * @see org.gemoc.ql.model.ql.QlPackage#getDecimalValue_DecimalValue()
 	 * @model
 	 * @generated
 	 */
-	float getDecimalValue();
+	double getDecimalValue();
 
 	/**
 	 * Sets the value of the '{@link org.gemoc.ql.model.ql.DecimalValue#getDecimalValue <em>Decimal Value</em>}' attribute.
@@ -39,6 +39,6 @@ public interface DecimalValue extends Value {
 	 * @see #getDecimalValue()
 	 * @generated
 	 */
-	void setDecimalValue(float value);
+	void setDecimalValue(double value);
 
 } // DecimalValue

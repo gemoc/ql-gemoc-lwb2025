@@ -1395,7 +1395,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		initEClass(decimalValueEClass, DecimalValue.class, "DecimalValue", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDecimalValue_DecimalValue(), ecorePackage.getEFloat(), "decimalValue", null, 0, 1,
+		initEAttribute(getDecimalValue_DecimalValue(), ecorePackage.getEDouble(), "decimalValue", null, 0, 1,
 				DecimalValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 

@@ -33,7 +33,7 @@ public class DecimalValueImpl extends ValueImpl implements DecimalValue {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float DECIMAL_VALUE_EDEFAULT = 0.0F;
+	protected static final double DECIMAL_VALUE_EDEFAULT = 0.0;
 
 	/**
 	 * The cached value of the '{@link #getDecimalValue() <em>Decimal Value</em>}' attribute.
@@ -43,7 +43,7 @@ public class DecimalValueImpl extends ValueImpl implements DecimalValue {
 	 * @generated
 	 * @ordered
 	 */
-	protected float decimalValue = DECIMAL_VALUE_EDEFAULT;
+	protected double decimalValue = DECIMAL_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,7 +70,7 @@ public class DecimalValueImpl extends ValueImpl implements DecimalValue {
 	 * @generated
 	 */
 	@Override
-	public float getDecimalValue() {
+	public double getDecimalValue() {
 		return decimalValue;
 	}
 
@@ -80,8 +80,8 @@ public class DecimalValueImpl extends ValueImpl implements DecimalValue {
 	 * @generated
 	 */
 	@Override
-	public void setDecimalValue(float newDecimalValue) {
-		float oldDecimalValue = decimalValue;
+	public void setDecimalValue(double newDecimalValue) {
+		double oldDecimalValue = decimalValue;
 		decimalValue = newDecimalValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QlPackage.DECIMAL_VALUE__DECIMAL_VALUE,
@@ -111,7 +111,7 @@ public class DecimalValueImpl extends ValueImpl implements DecimalValue {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case QlPackage.DECIMAL_VALUE__DECIMAL_VALUE:
-			setDecimalValue((Float) newValue);
+			setDecimalValue((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

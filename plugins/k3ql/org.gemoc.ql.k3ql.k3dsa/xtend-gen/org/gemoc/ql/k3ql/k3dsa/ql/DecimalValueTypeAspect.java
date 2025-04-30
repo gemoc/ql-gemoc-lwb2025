@@ -33,7 +33,7 @@ public class DecimalValueTypeAspect extends ValueTypeAspect {
   protected static Value _privk3_createValue(final DecimalValueTypeAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String internalValue) {
     final DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
     try {
-      aValue.setDecimalValue(Float.parseFloat(internalValue));
+      aValue.setDecimalValue(Double.parseDouble(internalValue));
     } catch (final Throwable _t) {
       if (_t instanceof NumberFormatException) {
         return null;

@@ -941,7 +941,7 @@ class DecimalValueTypeAspect extends ValueTypeAspect {
 	def Value createValue(String internalValue) {
 		val DecimalValue aValue = QlFactory.eINSTANCE.createDecimalValue();
 		try {
-			aValue.decimalValue = Float.parseFloat(internalValue);
+			aValue.decimalValue = Double.parseDouble(internalValue);
 		}
 		catch (NumberFormatException e) { 
 			// do not create value if it is invalid

@@ -187,8 +187,8 @@ public class DecimalValueAspect extends ValueAspect {
     }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
     if ((rhs instanceof DecimalValue)) {
-      float _decimalValue = _self.getDecimalValue();
-      float _decimalValue_1 = ((DecimalValue) rhs).getDecimalValue();
+      double _decimalValue = _self.getDecimalValue();
+      double _decimalValue_1 = ((DecimalValue) rhs).getDecimalValue();
       boolean _equals = (_decimalValue == _decimalValue_1);
       bValue.setBooleanValue(_equals);
     } else {
@@ -202,8 +202,8 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
     boolean _lessThan = (_decimalValue < _decimalValue_1);
     bValue.setBooleanValue(_lessThan);
     return bValue;
@@ -214,8 +214,8 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
     boolean _lessEqualsThan = (_decimalValue <= _decimalValue_1);
     bValue.setBooleanValue(_lessEqualsThan);
     return bValue;
@@ -226,8 +226,8 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
     boolean _greaterThan = (_decimalValue > _decimalValue_1);
     bValue.setBooleanValue(_greaterThan);
     return bValue;
@@ -238,8 +238,8 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final BooleanValue bValue = QlFactory.eINSTANCE.createBooleanValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
     boolean _greaterEqualsThan = (_decimalValue >= _decimalValue_1);
     bValue.setBooleanValue(_greaterEqualsThan);
     return bValue;
@@ -250,9 +250,9 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
-    float _plus = (_decimalValue + _decimalValue_1);
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _plus = (_decimalValue + _decimalValue_1);
     fValue.setDecimalValue(_plus);
     return fValue;
   }
@@ -262,17 +262,17 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
-    float _minus = (_decimalValue - _decimalValue_1);
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _minus = (_decimalValue - _decimalValue_1);
     fValue.setDecimalValue(_minus);
     return fValue;
   }
 
   protected static Value _privk3_uminus(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
     final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _minus = (-_decimalValue);
+    double _decimalValue = _self.getDecimalValue();
+    double _minus = (-_decimalValue);
     fValue.setDecimalValue(_minus);
     return fValue;
   }
@@ -282,9 +282,9 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
-    float _multiply = (_decimalValue * _decimalValue_1);
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _multiply = (_decimalValue * _decimalValue_1);
     fValue.setDecimalValue(_multiply);
     return fValue;
   }
@@ -294,9 +294,9 @@ public class DecimalValueAspect extends ValueAspect {
       return null;
     }
     final DecimalValue fValue = QlFactory.eINSTANCE.createDecimalValue();
-    float _decimalValue = _self.getDecimalValue();
-    float _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
-    float _divide = (_decimalValue / _decimalValue_1);
+    double _decimalValue = _self.getDecimalValue();
+    double _decimalValue_1 = ValueAspect.toDecimalValue(rhs).getDecimalValue();
+    double _divide = (_decimalValue / _decimalValue_1);
     fValue.setDecimalValue(_divide);
     return fValue;
   }
@@ -308,11 +308,11 @@ public class DecimalValueAspect extends ValueAspect {
   }
 
   protected static String _privk3_valueToString(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
-    return Float.valueOf(_self.getDecimalValue()).toString();
+    return Double.valueOf(_self.getDecimalValue()).toString();
   }
 
   protected static Object _privk3_rawValue(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
-    return Float.valueOf(_self.getDecimalValue());
+    return Double.valueOf(_self.getDecimalValue());
   }
 
   protected static Boolean _privk3_isKindOf(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final ValueType type) {
