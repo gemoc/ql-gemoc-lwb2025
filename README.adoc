@@ -443,7 +443,9 @@ As seen in Section <<section-quick-start>>, in addition to allow edition whihc a
 This section provides some details of the proposed features implemented for the Questionnaire language.
 
 By default in GEMOC, launching a model is done via a launch configuration.Figure <<img-mwb_projectBudget_launch_main_tab>> show the main tab of launch configuration. It allows to select the model to run, the language semantic that must be used to execute the language (as we may have provided several variant semantics), the entry point (ie. the model element used to start the execution. this is useful as some DSL may contains several starting points), and the main method (I.e, the `@Main` method, it may be used in some DSL implementation that provides different main methods).
+
 Additionally, we can specify arguments (a list of strings) to pass to the `@InitializeModel` model. So it can intialize any relevant runitme data prior to start the execution.
+
 We can also specify a Sirius graphical representation. When started, it will automatically activate the `Animation` layer as it is declared in the `AbstractGemocAnimatorServices` class that extends `AbstractGemocAnimatorServices`.
 
 [TIP]
@@ -470,6 +472,7 @@ When started in Debug mode, the Eclipse IDE will provide several views.
 If the animation is active, the Sirius editor will be closed, and will reopen in readonly mode.
 
 Figure <<img-mwb_projectBudget_debug_timeline_paused_after_enabling_designUX_checkbox>> shows several noticiable elements:
+
 * The _QLForm Browser View_ allows user interaction with the form, displaying questions, results, and a Submit button to end the execution when the user has finished.
 * The _Sirius view_ displays with a small blue bullet that a break point is active and will pause the execution whenever a `@Step` method is called on the  `totalProjectCost` `QuestionDefinition`. 
 * When paused due to a breakpoint, all classical, step into, step over button from eclipse are available in order to continue the execution to the desired following `@Step`.
@@ -503,12 +506,13 @@ It is the  possible to look into the variable view or the Sirius Animation view 
 [NOTE]
 ====
 
-Some UI, may be able to also refresh according to the current status of the model at this point in time. However, this highly depend on the technology used build the UI.c
+Some UI may also be able to refresh according to the current status of the model at this point in time. However, this highly dependent on the technology used build the UI.c
 ====
-[NOTE
+[NOTE]
+====
+====
 
-.Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state
-[#img-mwb_projectBudget_debug_timeline_with_backward_navigation]
+.Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state.e[#img-mwb_projectBudget_debug_timeline_with_backward_navigation]]
 image::mwb_projectBudget_debug_timeline_with_backward_navigation.png[Debug of a ProjectBudget example model paused after enabling changing the estimatedPersonHourForDev value but using backward navigation to display a previous state,1024]
 
 == Additional GEMOC Studio features illustrated in other case studies
