@@ -249,24 +249,20 @@ It is organized as follow:
 
 .QL main class diagram
 [#img-ql-main-class-diagram]
-[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql main class diagram.jpg]
 image::../../plugins/ql/org.gemoc.ql.model/model/img/ql main class diagram.jpg[QL main class diagram,1024]
 
 
 .Named elements class diagram
 [#img-named-elements-class-diagram]
-[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql named elements class diagram.jpg]
 image::../../plugins/ql/org.gemoc.ql.model/model/img/ql named elements class diagram.jpg[Named elements class diagram,1024]
 
 
 .Expression class diagram
 [#img-expression-class-diagram]
-[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql expression class diagram.jpg]
 image::../../plugins/ql/org.gemoc.ql.model/model/img/ql expression class diagram.jpg[Expression class diagram,1024]
 
 .Types class diagram
 [#img-types-class-diagram]
-[caption="Figure 1: ",link=https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/plugins/ql/org.gemoc.ql.model/model/img/ql type class diagram.jpg]
 image::../../plugins/ql/org.gemoc.ql.model/model/img/ql type class diagram.jpg[Types class diagram,1024]
 
 <<img-ql-main-class-diagram>> shows that `Question` conforms to  a `QuestionDefinition`. A set of `Question` is organized in group and sub-group that may have a guard. This guard indicates when the questions in the group must be displayed.
