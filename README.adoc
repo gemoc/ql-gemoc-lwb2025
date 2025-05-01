@@ -642,7 +642,7 @@ Further Resources:
 | Number of Sirius viewpoints/diagrams
 | 2
 
-| Number of GEMOC engine addons implemented footnote:[Consider only addon implemented specifically for QL.]
+| Number of GEMOC engine addons implemented
 | 1
 
 |===
