@@ -661,7 +661,7 @@ Detailled SLOC
 |===
 | Language / Format | Files | SLOC
 
-| XML (e.g., Sirius, metamodels) | 65 | 6,228
+| XML (e.g., Sirius, metamodels, project configurations) | 65 | 6,228
 | Xtend (semantic implementation) | 8 | 2,094
 | Java (custom add-ons, helpers) | 145 | 1,205
 | Properties and Config | 46 | 334
