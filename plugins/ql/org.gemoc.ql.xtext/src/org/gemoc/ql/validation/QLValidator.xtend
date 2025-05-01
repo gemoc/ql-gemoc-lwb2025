@@ -11,6 +11,11 @@ import org.gemoc.ql.model.ql.QlPackage
 import org.gemoc.ql.model.ql.BooleanValueType
 import org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect
 import org.gemoc.ql.model.ql.ValueType
+import org.gemoc.ql.model.ql.IfExpression
+import org.gemoc.ql.model.ql.BasicBinaryExpression
+
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect.*
 
 /**
  * This class contains custom validation rules. 
@@ -65,6 +70,49 @@ class QLValidator extends AbstractQLValidator {
 				)
 				
 			}
+		}
+	}
+	
+	@Check(NORMAL)
+	def checkIfExpressionGuardType(IfExpression ifExpression) {
+		if(ifExpression.condition !== null ) {
+			// deep first evaluate and check expression content types
+			val inferredValueType = ExpressionAspect.inferredValueType(ifExpression.condition)
+			// then guard expression type must be boolean
+			if(inferredValueType === null) {
+				error('''Condition expression type cannot be inferred''',
+					QlPackage.Literals.IF_EXPRESSION__CONDITION, 
+					INVALID_TYPE
+				)
+			} else if(!(inferredValueType instanceof BooleanValueType)) {
+				error('''Condition expression type is a «prettyPrintType(inferredValueType)»  instead of a boolean''',
+					QlPackage.Literals.IF_EXPRESSION__CONDITION, 
+					INVALID_TYPE
+				)
+			}
+		}
+		val thenInferredValueType = ifExpression.thenExpression.inferredValueType
+		if(thenInferredValueType !== null && ifExpression.elseExpression !== null) {
+			val elseInferredValueType = ifExpression.elseExpression.inferredValueType
+			if(!thenInferredValueType.isCompatible(elseInferredValueType)) {
+				error('''else type «prettyPrintType(elseInferredValueType)» is not compatible with then type «prettyPrintType(thenInferredValueType)»''',
+					QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION, 
+					INVALID_TYPE
+				)
+			}
+		}
+	}
+
+	@Check(NORMAL)
+	def checkBasicBinaryExpressionTypes(BasicBinaryExpression binaryExpression) {
+		val lhsType = binaryExpression.lhsOperand.inferredValueType
+		val rhsType = binaryExpression.rhsOperand.inferredValueType
+		lhsType.isCompatible(rhsType)
+		if(lhsType === null || !lhsType.isCompatible(rhsType)) {
+			error('''Incompatible types «prettyPrintType(lhsType)» and «prettyPrintType(rhsType)» for operator «binaryExpression.operator.getName»''',
+				QlPackage.Literals.BASIC_BINARY_EXPRESSION__OPERATOR, 
+				INVALID_TYPE
+			)
 		}
 	}
 	

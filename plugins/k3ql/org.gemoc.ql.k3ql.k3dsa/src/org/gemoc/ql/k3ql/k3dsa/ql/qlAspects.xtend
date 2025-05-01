@@ -475,10 +475,43 @@ class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
 	def ValueType inferredValueType() {
 		val lhsValueType = _self.lhsOperand.inferredValueType
 		val rhsValueType = _self.rhsOperand.inferredValueType
-		if( lhsValueType !== null && rhsValueType !== null) {
-			if(lhsValueType.isCompatible(rhsValueType)) return lhsValueType
-			else return null
-		} else return null
+		switch (_self.operator) {
+			case BinaryOperatorKind.OR,
+			case BinaryOperatorKind.AND: {
+				if(lhsValueType instanceof BooleanValueType && rhsValueType instanceof BooleanValueType) {
+					return lhsValueType	
+				}
+				else return null
+			}
+			case BinaryOperatorKind.PLUS,
+			case BinaryOperatorKind.MINUS, 
+			case BinaryOperatorKind.MULT, 
+			case BinaryOperatorKind.DIV: {
+				if(lhsValueType.isCompatible(rhsValueType)) return lhsValueType
+				else return null
+			}
+			case BinaryOperatorKind.EQUAL,
+			case BinaryOperatorKind.NOTEQUAL,
+			: {
+				val vt = QlFactory.eINSTANCE.createBooleanValueType();
+				vt.name = "internal_ValueType_"+vt.hashCode
+				return vt
+			}
+			case BinaryOperatorKind.GREATER,
+			case BinaryOperatorKind.GREATEROREQUAL,
+			case BinaryOperatorKind.LOWER,
+			case BinaryOperatorKind.LOWEROREQUAL: {
+				if(lhsValueType.isCompatible(rhsValueType)) {
+					val vt = QlFactory.eINSTANCE.createBooleanValueType();
+					vt.name = "internal_ValueType_"+vt.hashCode
+					return vt
+				}
+				else return null
+			}
+			default: {
+				return null
+			}
+		}
 	}
 }
 
@@ -836,6 +869,10 @@ class EnumerationCallAspect extends CallAspect {
 	def ValueType getValueType(){
 		return _self.enumerationLiteral.eContainer as EnumerationValueType
 	}
+	
+	def ValueType inferredValueType() {
+		return _self.getValueType()
+	}
 }
 @Aspect(className=BasicUnaryExpression)
 class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
@@ -1115,6 +1152,9 @@ class EnumerationValueTypeAspect extends ValueTypeAspect {
 		} else {
 			return null;
 		}
+	}
+	def boolean isCompatible(ValueType otherValueType) {
+		return _self === otherValueType
 	}
 }
 

@@ -98,6 +98,11 @@ public class ValueTypeAspect extends NamedElementAspect {
     			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.StringValueType)_self,otherValueType);
     		} else
     		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.EnumerationValueType)_self,otherValueType);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
     	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
     		if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
     			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.IntegerValueType)_self,otherValueType);

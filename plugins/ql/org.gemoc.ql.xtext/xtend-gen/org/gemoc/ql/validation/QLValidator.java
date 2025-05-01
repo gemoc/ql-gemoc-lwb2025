@@ -8,9 +8,11 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.CheckType;
 import org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect;
 import org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect;
+import org.gemoc.ql.model.ql.BasicBinaryExpression;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.ConditionnalElement;
 import org.gemoc.ql.model.ql.Expression;
+import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.QlPackage;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.ValueType;
@@ -71,6 +73,73 @@ public class QLValidator extends AbstractQLValidator {
             QLValidator.INVALID_TYPE);
         }
       }
+    }
+  }
+
+  @Check(CheckType.NORMAL)
+  public void checkIfExpressionGuardType(final IfExpression ifExpression) {
+    Expression _condition = ifExpression.getCondition();
+    boolean _tripleNotEquals = (_condition != null);
+    if (_tripleNotEquals) {
+      final ValueType inferredValueType = ExpressionAspect.inferredValueType(ifExpression.getCondition());
+      if ((inferredValueType == null)) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Condition expression type cannot be inferred");
+        this.error(_builder.toString(), 
+          QlPackage.Literals.IF_EXPRESSION__CONDITION, 
+          QLValidator.INVALID_TYPE);
+      } else {
+        if ((!(inferredValueType instanceof BooleanValueType))) {
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("Condition expression type is a ");
+          String _prettyPrintType = this.prettyPrintType(inferredValueType);
+          _builder_1.append(_prettyPrintType);
+          _builder_1.append("  instead of a boolean");
+          this.error(_builder_1.toString(), 
+            QlPackage.Literals.IF_EXPRESSION__CONDITION, 
+            QLValidator.INVALID_TYPE);
+        }
+      }
+    }
+    final ValueType thenInferredValueType = ExpressionAspect.inferredValueType(ifExpression.getThenExpression());
+    if (((thenInferredValueType != null) && (ifExpression.getElseExpression() != null))) {
+      final ValueType elseInferredValueType = ExpressionAspect.inferredValueType(ifExpression.getElseExpression());
+      boolean _isCompatible = ValueTypeAspect.isCompatible(thenInferredValueType, elseInferredValueType);
+      boolean _not = (!_isCompatible);
+      if (_not) {
+        StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("else type ");
+        String _prettyPrintType_1 = this.prettyPrintType(elseInferredValueType);
+        _builder_2.append(_prettyPrintType_1);
+        _builder_2.append(" is not compatible with then type ");
+        String _prettyPrintType_2 = this.prettyPrintType(thenInferredValueType);
+        _builder_2.append(_prettyPrintType_2);
+        this.error(_builder_2.toString(), 
+          QlPackage.Literals.IF_EXPRESSION__ELSE_EXPRESSION, 
+          QLValidator.INVALID_TYPE);
+      }
+    }
+  }
+
+  @Check(CheckType.NORMAL)
+  public void checkBasicBinaryExpressionTypes(final BasicBinaryExpression binaryExpression) {
+    final ValueType lhsType = ExpressionAspect.inferredValueType(binaryExpression.getLhsOperand());
+    final ValueType rhsType = ExpressionAspect.inferredValueType(binaryExpression.getRhsOperand());
+    ValueTypeAspect.isCompatible(lhsType, rhsType);
+    if (((lhsType == null) || (!ValueTypeAspect.isCompatible(lhsType, rhsType)))) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Incompatible types ");
+      String _prettyPrintType = this.prettyPrintType(lhsType);
+      _builder.append(_prettyPrintType);
+      _builder.append(" and ");
+      String _prettyPrintType_1 = this.prettyPrintType(rhsType);
+      _builder.append(_prettyPrintType_1);
+      _builder.append(" for operator ");
+      String _name = binaryExpression.getOperator().getName();
+      _builder.append(_name);
+      this.error(_builder.toString(), 
+        QlPackage.Literals.BASIC_BINARY_EXPRESSION__OPERATOR, 
+        QLValidator.INVALID_TYPE);
     }
   }
 

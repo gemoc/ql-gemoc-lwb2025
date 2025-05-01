@@ -253,6 +253,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.bEquals((org.gemoc.ql.model.ql.BooleanValue)_self,rhs);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#ValueType inferredValueType() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.inferredValueType((org.gemoc.ql.model.ql.EnumerationCall)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#ValueType inferredValueType() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#BooleanValue bEquals(Value) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
 		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.bEquals((org.gemoc.ql.model.ql.StringValue)_self,rhs);
@@ -353,6 +358,11 @@
 			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.StringValueType)_self,otherValueType);
 		} else
 		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
+		if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.EnumerationValueType)_self,otherValueType);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect
 	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect#Value evaluate() from org.gemoc.ql.k3ql.k3dsa.ql.CallAspect
 		if (_self instanceof org.gemoc.ql.model.ql.Call){
 			result = org.gemoc.ql.k3ql.k3dsa.ql.CallAspect.evaluate((org.gemoc.ql.model.ql.Call)_self);

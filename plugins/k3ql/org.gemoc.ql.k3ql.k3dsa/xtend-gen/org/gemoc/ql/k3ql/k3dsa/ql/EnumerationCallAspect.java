@@ -86,6 +86,16 @@ public class EnumerationCallAspect extends CallAspect {
     return (org.gemoc.ql.model.ql.ValueType)result;
   }
 
+  public static ValueType inferredValueType(final EnumerationCall _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspectEnumerationCallAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspectEnumerationCallAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType inferredValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect._privk3_inferredValueType(_self_, (org.gemoc.ql.model.ql.EnumerationCall)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self) {
     return _self;
   }
@@ -128,6 +138,10 @@ public class EnumerationCallAspect extends CallAspect {
   protected static ValueType _privk3_getValueType(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self) {
     EObject _eContainer = _self.getEnumerationLiteral().eContainer();
     return ((EnumerationValueType) _eContainer);
+  }
+
+  protected static ValueType _privk3_inferredValueType(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self) {
+    return EnumerationCallAspect.getValueType(_self);
   }
 
   public static Value plus(final EnumerationCall _self, final Value rhs) {

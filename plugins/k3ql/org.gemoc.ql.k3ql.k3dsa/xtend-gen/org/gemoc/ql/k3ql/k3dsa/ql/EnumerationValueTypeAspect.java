@@ -9,6 +9,7 @@ import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = EnumerationValueType.class)
 @SuppressWarnings("all")
@@ -31,6 +32,16 @@ public class EnumerationValueTypeAspect extends ValueTypeAspect {
     	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect._privk3_createDefaultValue(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self);
     };
     return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static boolean isCompatible(final EnumerationValueType _self, final ValueType otherValueType) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspectEnumerationValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspectEnumerationValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isCompatible(ValueType)
+    if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeAspect._privk3_isCompatible(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,otherValueType);
+    };
+    return (boolean)result;
   }
 
   protected static Value _privk3_createValue(final EnumerationValueTypeAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String internalValue) {
@@ -58,5 +69,9 @@ public class EnumerationValueTypeAspect extends ValueTypeAspect {
     } else {
       return null;
     }
+  }
+
+  protected static boolean _privk3_isCompatible(final EnumerationValueTypeAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final ValueType otherValueType) {
+    return (_self == otherValueType);
   }
 }

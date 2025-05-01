@@ -7,6 +7,7 @@ import org.gemoc.ql.k3ql.k3dsa.NotImplementedException;
 import org.gemoc.ql.model.ql.BasicBinaryExpression;
 import org.gemoc.ql.model.ql.BinaryOperatorKind;
 import org.gemoc.ql.model.ql.BooleanValue;
+import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
 import org.gemoc.ql.model.ql.ValueType;
@@ -119,15 +120,103 @@ public class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
   protected static ValueType _privk3_inferredValueType(final BasicBinaryExpressionAspectBasicBinaryExpressionAspectProperties _self_, final BasicBinaryExpression _self) {
     final ValueType lhsValueType = ExpressionAspect.inferredValueType(_self.getLhsOperand());
     final ValueType rhsValueType = ExpressionAspect.inferredValueType(_self.getRhsOperand());
-    if (((lhsValueType != null) && (rhsValueType != null))) {
-      boolean _isCompatible = ValueTypeAspect.isCompatible(lhsValueType, rhsValueType);
-      if (_isCompatible) {
+    BinaryOperatorKind _operator = _self.getOperator();
+    boolean _matched = false;
+    if (Objects.equal(_operator, BinaryOperatorKind.OR)) {
+      _matched=true;
+    }
+    if (!_matched) {
+      if (Objects.equal(_operator, BinaryOperatorKind.AND)) {
+        _matched=true;
+      }
+    }
+    if (_matched) {
+      if (((lhsValueType instanceof BooleanValueType) && (rhsValueType instanceof BooleanValueType))) {
         return lhsValueType;
       } else {
         return null;
       }
-    } else {
-      return null;
     }
+    if (!_matched) {
+      if (Objects.equal(_operator, BinaryOperatorKind.PLUS)) {
+        _matched=true;
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.MINUS)) {
+          _matched=true;
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.MULT)) {
+          _matched=true;
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.DIV)) {
+          _matched=true;
+        }
+      }
+      if (_matched) {
+        boolean _isCompatible = ValueTypeAspect.isCompatible(lhsValueType, rhsValueType);
+        if (_isCompatible) {
+          return lhsValueType;
+        } else {
+          return null;
+        }
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_operator, BinaryOperatorKind.EQUAL)) {
+        _matched=true;
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.NOTEQUAL)) {
+          _matched=true;
+        }
+      }
+      if (!_matched) {
+        _matched=true;
+      }
+      if (_matched) {
+        final BooleanValueType vt = QlFactory.eINSTANCE.createBooleanValueType();
+        int _hashCode = vt.hashCode();
+        String _plus = ("internal_ValueType_" + Integer.valueOf(_hashCode));
+        vt.setName(_plus);
+        return vt;
+      }
+    }
+    if (!_matched) {
+      if (Objects.equal(_operator, BinaryOperatorKind.GREATER)) {
+        _matched=true;
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.GREATEROREQUAL)) {
+          _matched=true;
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.LOWER)) {
+          _matched=true;
+        }
+      }
+      if (!_matched) {
+        if (Objects.equal(_operator, BinaryOperatorKind.LOWEROREQUAL)) {
+          _matched=true;
+        }
+      }
+      if (_matched) {
+        boolean _isCompatible_1 = ValueTypeAspect.isCompatible(lhsValueType, rhsValueType);
+        if (_isCompatible_1) {
+          final BooleanValueType vt_1 = QlFactory.eINSTANCE.createBooleanValueType();
+          int _hashCode_1 = vt_1.hashCode();
+          String _plus_1 = ("internal_ValueType_" + Integer.valueOf(_hashCode_1));
+          vt_1.setName(_plus_1);
+          return vt_1;
+        } else {
+          return null;
+        }
+      }
+    }
+    return null;
   }
 }
