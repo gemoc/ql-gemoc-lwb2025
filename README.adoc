@@ -618,7 +618,8 @@ BCOoL exemplifies a rare and highly valuable feature in language workbenches: it
 Further Resources:
 
 * BCOoL tutorial page: https://gemoc.org/BCOoL/
-* Reference implementation and example: https://github.com/gemoc/bcool-examples
+* Section about BCOoL in GEMOC documentation : https://download.eclipse.org/gemoc/docs/nightly/userguide-lw-define-composition-of-languages.html
+* github: https://github.com/gemoc/coordination
 ====
 
 
