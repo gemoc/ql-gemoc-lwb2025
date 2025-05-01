@@ -651,7 +651,7 @@ Further Resources:
 | 32
 
 | Total source lines of code (SLOC) 
-| 10,231
+| 7,804
 
 | Number of Sirius viewpoints/diagrams
 | 2
@@ -665,7 +665,7 @@ Further Resources:
 ====
 SLOC includes Java/K3 code, Xtend, and model files (e.g., .ecore, .xtext, .odesign), but excludes generated code and standard library dependencies.
 
-Command used to obtain SLOC: `cloc plugins --exclude-dir=xtend-gen,src-gen --exclude-ext=g,g4` from the root of the repository
+Command used to obtain SLOC: `cloc plugins --exclude-dir=xtend-gen,src-gen,target --exclude-ext=g,g4` from the root of the repository
 ====
 
 
@@ -675,15 +675,16 @@ Detailled SLOC
 |===
 | Language / Format | Files | SLOC
 
-| XML (e.g., Sirius, metamodels, project configurations) | 65 | 6,228
-| Xtend (semantic implementation) | 8 | 2,332
-| Java (custom add-ons, helpers) | 145 | 1,205
-| Properties and Config | 46 | 334
-| JavaScript (UI extensions) | 2 | 191
-| Maven (pom.xml files) | 4 | 142
-| Other (INI, text, SVG) | 7 | 37
+| XML (e.g., Sirius models, workflows, configurations) | 44 | 4,976
+| Xtend (behavioral semantics) | 7 | 1,486
+| Java (engine addons, utilities) | 26 | 848
+| Properties (config files) | 14 | 231
+| Maven (build configuration) | 4 | 142
+| JavaScript (UI customization) | 1 | 97
+| INI and other small formats | 4 | 23
+| SVG (placeholder or icon) | 1 | 1
 
-| *Total* | *277* | *10,469*
+| *Total* | *101* | *7,804*
 |===
 
 
