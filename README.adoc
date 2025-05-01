@@ -5,6 +5,10 @@
 :imagesdir: docs/img
 
 = ql-gemoc-lwb2025
+
+Didier Vojtisek <didier.vojtisek@inria.fr>
+v1.0, 2025-04-30
+
 Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
 
 :toc:
