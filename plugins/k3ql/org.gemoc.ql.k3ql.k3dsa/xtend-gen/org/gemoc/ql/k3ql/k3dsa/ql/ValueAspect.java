@@ -368,6 +368,41 @@ public abstract class ValueAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final Value _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspectValueAspectContext.getSelf(_self);
+    Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect.getValueType((org.gemoc.ql.model.ql.IntegerValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect.getValueType((org.gemoc.ql.model.ql.DecimalValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.StringValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect.getValueType((org.gemoc.ql.model.ql.StringValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect.getValueType((org.gemoc.ql.model.ql.BooleanValue)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect.getValueType((org.gemoc.ql.model.ql.EnumerationCall)_self);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect#ValueType getValueType() from org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.Value){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.Value)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   /**
    * a human readable version of the value
    */
@@ -571,6 +606,15 @@ public abstract class ValueAspect {
     try {
       EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement isKindOf() for " + _self));
       throw new NotImplementedException(("not implemented, please implement isKindOf() for " + _self));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+
+  protected static ValueType _privk3_getValueType(final ValueAspectValueAspectProperties _self_, final Value _self) {
+    try {
+      EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement getValueType() for " + _self));
+      throw new NotImplementedException(("not implemented, please implement getValueType() for " + _self));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

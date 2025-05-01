@@ -70,6 +70,16 @@ public class BooleanValueAspect extends ValueAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final BooleanValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspectBooleanValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspectBooleanValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.BooleanValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.BooleanValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final BooleanValueAspectBooleanValueAspectProperties _self_, final BooleanValue _self) {
     return _self;
   }
@@ -103,5 +113,13 @@ public class BooleanValueAspect extends ValueAspect {
 
   protected static Boolean _privk3_isKindOf(final BooleanValueAspectBooleanValueAspectProperties _self_, final BooleanValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof BooleanValueType));
+  }
+
+  protected static ValueType _privk3_getValueType(final BooleanValueAspectBooleanValueAspectProperties _self_, final BooleanValue _self) {
+    final BooleanValueType vt = QlFactory.eINSTANCE.createBooleanValueType();
+    int _hashCode = vt.hashCode();
+    String _plus = ("internal_ValueType_" + Integer.valueOf(_hashCode));
+    vt.setName(_plus);
+    return vt;
   }
 }

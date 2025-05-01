@@ -80,6 +80,36 @@ public class ValueTypeAspect extends NamedElementAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static boolean isCompatible(final ValueType _self, final ValueType otherValueType) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspectValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspectValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.DecimalValueType)_self,otherValueType);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.BooleanValueType)_self,otherValueType);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.StringValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.StringValueType)_self,otherValueType);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect
+    	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
+    		if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
+    			result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect.isCompatible((org.gemoc.ql.model.ql.IntegerValueType)_self,otherValueType);
+    		} else
+    		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect#boolean isCompatible(ValueType) from org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect
+    // #DispatchPointCut_before# boolean isCompatible(ValueType)
+    if (_self instanceof org.gemoc.ql.model.ql.ValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect._privk3_isCompatible(_self_, (org.gemoc.ql.model.ql.ValueType)_self,otherValueType);
+    };
+    return (boolean)result;
+  }
+
   protected static Value _privk3_createValue(final ValueTypeAspectValueTypeAspectProperties _self_, final ValueType _self, final String internalValue) {
     try {
       EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement createValue() for " + _self));
@@ -93,6 +123,15 @@ public class ValueTypeAspect extends NamedElementAspect {
     try {
       EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement createDefaultValue() for " + _self));
       throw new NotImplementedException(("not implemented, please implement createValue() for " + _self));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+
+  protected static boolean _privk3_isCompatible(final ValueTypeAspectValueTypeAspectProperties _self_, final ValueType _self, final ValueType otherValueType) {
+    try {
+      EObjectAspect.devError(_self, ("not implemented, please ask language designer to implement isCompatible() for " + _self));
+      throw new NotImplementedException(("not implemented, please implement isCompatible() for " + _self));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

@@ -6,6 +6,7 @@ import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = IntegerValueType.class)
 @SuppressWarnings("all")
@@ -30,6 +31,16 @@ public class IntegerValueTypeAspect extends ValueTypeAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static boolean isCompatible(final IntegerValueType _self, final ValueType otherValueType) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspectIntegerValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isCompatible(ValueType)
+    if (_self instanceof org.gemoc.ql.model.ql.IntegerValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueTypeAspect._privk3_isCompatible(_self_, (org.gemoc.ql.model.ql.IntegerValueType)_self,otherValueType);
+    };
+    return (boolean)result;
+  }
+
   protected static Value _privk3_createValue(final IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self, final String internalValue) {
     final IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
     try {
@@ -48,5 +59,14 @@ public class IntegerValueTypeAspect extends ValueTypeAspect {
     final IntegerValue aValue = QlFactory.eINSTANCE.createIntegerValue();
     aValue.setIntValue(0);
     return aValue;
+  }
+
+  protected static boolean _privk3_isCompatible(final IntegerValueTypeAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self, final ValueType otherValueType) {
+    boolean _matched = false;
+    if (otherValueType instanceof IntegerValueType) {
+      _matched=true;
+      return true;
+    }
+    return false;
   }
 }

@@ -182,6 +182,16 @@ public class IntegerValueAspect extends ValueAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final IntegerValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspectIntegerValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspectIntegerValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.IntegerValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.IntegerValueAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.IntegerValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self) {
     return _self;
   }
@@ -328,5 +338,13 @@ public class IntegerValueAspect extends ValueAspect {
 
   protected static Boolean _privk3_isKindOf(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof IntegerValueType));
+  }
+
+  protected static ValueType _privk3_getValueType(final IntegerValueAspectIntegerValueAspectProperties _self_, final IntegerValue _self) {
+    final IntegerValueType vt = QlFactory.eINSTANCE.createIntegerValueType();
+    int _hashCode = vt.hashCode();
+    String _plus = ("internal_ValueType_" + Integer.valueOf(_hashCode));
+    vt.setName(_plus);
+    return vt;
   }
 }

@@ -2,8 +2,8 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.ql.model.ql.BooleanValue;
-import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.DecimalValue;
+import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
 import org.gemoc.ql.model.ql.ValueType;
@@ -171,6 +171,16 @@ public class DecimalValueAspect extends ValueAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final DecimalValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspectDecimalValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.DecimalValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
     return _self;
   }
@@ -316,6 +326,14 @@ public class DecimalValueAspect extends ValueAspect {
   }
 
   protected static Boolean _privk3_isKindOf(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self, final ValueType type) {
-    return Boolean.valueOf((type instanceof BooleanValueType));
+    return Boolean.valueOf((type instanceof DecimalValueType));
+  }
+
+  protected static ValueType _privk3_getValueType(final DecimalValueAspectDecimalValueAspectProperties _self_, final DecimalValue _self) {
+    final DecimalValueType vt = QlFactory.eINSTANCE.createDecimalValueType();
+    int _hashCode = vt.hashCode();
+    String _plus = ("internal_ValueType_" + Integer.valueOf(_hashCode));
+    vt.setName(_plus);
+    return vt;
   }
 }

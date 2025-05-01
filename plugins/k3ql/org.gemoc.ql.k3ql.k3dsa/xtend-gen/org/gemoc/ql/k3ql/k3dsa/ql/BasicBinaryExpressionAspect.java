@@ -9,6 +9,7 @@ import org.gemoc.ql.model.ql.BinaryOperatorKind;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = BasicBinaryExpression.class)
 @SuppressWarnings("all")
@@ -21,6 +22,16 @@ public class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
     	result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
     };
     return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static ValueType inferredValueType(final BasicBinaryExpression _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspectBasicBinaryExpressionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspectBasicBinaryExpressionAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType inferredValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.BasicBinaryExpression){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BasicBinaryExpressionAspect._privk3_inferredValueType(_self_, (org.gemoc.ql.model.ql.BasicBinaryExpression)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
   }
 
   protected static Value _privk3_evaluate(final BasicBinaryExpressionAspectBasicBinaryExpressionAspectProperties _self_, final BasicBinaryExpression _self) {
@@ -102,6 +113,21 @@ public class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
       return result;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
+    }
+  }
+
+  protected static ValueType _privk3_inferredValueType(final BasicBinaryExpressionAspectBasicBinaryExpressionAspectProperties _self_, final BasicBinaryExpression _self) {
+    final ValueType lhsValueType = ExpressionAspect.inferredValueType(_self.getLhsOperand());
+    final ValueType rhsValueType = ExpressionAspect.inferredValueType(_self.getRhsOperand());
+    if (((lhsValueType != null) && (rhsValueType != null))) {
+      boolean _isCompatible = ValueTypeAspect.isCompatible(lhsValueType, rhsValueType);
+      if (_isCompatible) {
+        return lhsValueType;
+      } else {
+        return null;
+      }
+    } else {
+      return null;
     }
   }
 }

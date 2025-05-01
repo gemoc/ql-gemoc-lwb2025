@@ -26,6 +26,7 @@ import org.gemoc.ql.k3ql.k3dsa.QuestionNotAvailableException;
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
+import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QuestionDefinition;
@@ -216,12 +217,12 @@ public class QLModelAspect {
    * consider only displayed questions
    * Kahn's algorithm from https://en.wikipedia.org/wiki/Topological_sorting
    */
-  public static List<QuestionDefinition> sortAllDisplayedComputedQuestions(final QLModel _self) {
+  public static List<QuestionDefinition> sortAllDisplayedComputedQuestions(final QLModel _self, final boolean ignoreHiddenQuestion) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# List<QuestionDefinition> sortAllDisplayedComputedQuestions()
+    // #DispatchPointCut_before# List<QuestionDefinition> sortAllDisplayedComputedQuestions(boolean)
     if (_self instanceof org.gemoc.ql.model.ql.QLModel){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_sortAllDisplayedComputedQuestions(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_sortAllDisplayedComputedQuestions(_self_, (org.gemoc.ql.model.ql.QLModel)_self,ignoreHiddenQuestion);
     };
     return (java.util.List<org.gemoc.ql.model.ql.QuestionDefinition>)result;
   }
@@ -367,7 +368,7 @@ public class QLModelAspect {
   }
 
   protected static void _privk3_updateAllComputedQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
-    List<QuestionDefinition> allComputedQuestions = QLModelAspect.sortAllDisplayedComputedQuestions(_self);
+    List<QuestionDefinition> allComputedQuestions = QLModelAspect.sortAllDisplayedComputedQuestions(_self, true);
     final Function1<QuestionDefinition, String> _function = (QuestionDefinition qd) -> {
       return qd.getName();
     };
@@ -429,41 +430,54 @@ public class QLModelAspect {
     allComputedQuestions.forEach(_function_1);
   }
 
-  protected static List<QuestionDefinition> _privk3_sortAllDisplayedComputedQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+  protected static List<QuestionDefinition> _privk3_sortAllDisplayedComputedQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self, final boolean ignoreHiddenQuestion) {
     try {
-      final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f) -> {
-        return f.getQuestionDefinitions();
-      };
-      final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
-        return Boolean.valueOf(((qd.getComputedExpression() != null) && qd.isIsDisplayed()));
-      };
-      Iterable<QuestionDefinition> allComputedQuestions = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1);
-      final Consumer<QuestionDefinition> _function_2 = (QuestionDefinition qd) -> {
+      Iterable<QuestionDefinition> _xifexpression = null;
+      if (ignoreHiddenQuestion) {
+        final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f) -> {
+          return f.getQuestionDefinitions();
+        };
+        final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
+          return Boolean.valueOf(((qd.getComputedExpression() != null) && qd.isIsDisplayed()));
+        };
+        _xifexpression = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function), _function_1);
+      } else {
+        final Function1<DefinitionGroup, EList<QuestionDefinition>> _function_2 = (DefinitionGroup f) -> {
+          return f.getQuestionDefinitions();
+        };
+        final Function1<QuestionDefinition, Boolean> _function_3 = (QuestionDefinition qd) -> {
+          Expression _computedExpression = qd.getComputedExpression();
+          return Boolean.valueOf((_computedExpression != null));
+        };
+        _xifexpression = IterableExtensions.<QuestionDefinition>filter(IterableExtensions.<DefinitionGroup, QuestionDefinition>flatMap(_self.getDefinitionGroup(), _function_2), _function_3);
+      }
+      Iterable<QuestionDefinition> allComputedQuestions = _xifexpression;
+      final Consumer<QuestionDefinition> _function_4 = (QuestionDefinition qd) -> {
         QuestionDefinitionAspect.referencingQuestions(qd).clear();
         QuestionDefinitionAspect.dependencies(qd).clear();
       };
-      allComputedQuestions.forEach(_function_2);
-      final Function1<QuestionDefinition, String> _function_3 = (QuestionDefinition qd) -> {
+      allComputedQuestions.forEach(_function_4);
+      final Function1<QuestionDefinition, String> _function_5 = (QuestionDefinition qd) -> {
         return qd.getName();
       };
-      String _join = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(allComputedQuestions, _function_3), ", ");
+      String _join = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(allComputedQuestions, _function_5), ", ");
       String _plus = ("sortAllDisplayedComputedQuestions allComputedQuestions=" + _join);
       EObjectAspect.devDebug(_self, _plus);
-      final Consumer<QuestionDefinition> _function_4 = (QuestionDefinition qd) -> {
+      final Consumer<QuestionDefinition> _function_6 = (QuestionDefinition qd) -> {
         QuestionDefinitionAspect.evaluateComputedQuestionDependencies(qd);
       };
-      allComputedQuestions.forEach(_function_4);
+      allComputedQuestions.forEach(_function_6);
       final List<QuestionDefinition> resList = CollectionLiterals.<QuestionDefinition>newArrayList();
-      final Function1<QuestionDefinition, Boolean> _function_5 = (QuestionDefinition qd) -> {
+      final Function1<QuestionDefinition, Boolean> _function_7 = (QuestionDefinition qd) -> {
         return Boolean.valueOf(IterableExtensions.isNullOrEmpty(QuestionDefinitionAspect.referencingQuestions(qd)));
       };
-      final List<QuestionDefinition> nodeWithNoIncomingEdgeSet = IterableExtensions.<QuestionDefinition>toList(IterableExtensions.<QuestionDefinition>filter(allComputedQuestions, _function_5));
+      final List<QuestionDefinition> nodeWithNoIncomingEdgeSet = IterableExtensions.<QuestionDefinition>toList(IterableExtensions.<QuestionDefinition>filter(allComputedQuestions, _function_7));
       while ((!nodeWithNoIncomingEdgeSet.isEmpty())) {
         {
           final QuestionDefinition n = nodeWithNoIncomingEdgeSet.get(0);
           nodeWithNoIncomingEdgeSet.remove(0);
           resList.add(n);
-          final Consumer<QuestionDefinition> _function_6 = (QuestionDefinition m) -> {
+          final Consumer<QuestionDefinition> _function_8 = (QuestionDefinition m) -> {
             QuestionDefinitionAspect.dependencies(n).remove(m);
             QuestionDefinitionAspect.referencingQuestions(m).remove(n);
             boolean _isEmpty = QuestionDefinitionAspect.referencingQuestions(m).isEmpty();
@@ -471,31 +485,31 @@ public class QLModelAspect {
               nodeWithNoIncomingEdgeSet.add(m);
             }
           };
-          ((List<QuestionDefinition>)Conversions.doWrapArray(((QuestionDefinition[])Conversions.unwrapArray(QuestionDefinitionAspect.dependencies(n), QuestionDefinition.class)).clone())).forEach(_function_6);
+          ((List<QuestionDefinition>)Conversions.doWrapArray(((QuestionDefinition[])Conversions.unwrapArray(QuestionDefinitionAspect.dependencies(n), QuestionDefinition.class)).clone())).forEach(_function_8);
         }
       }
-      final Function1<QuestionDefinition, Boolean> _function_6 = (QuestionDefinition qd) -> {
+      final Function1<QuestionDefinition, Boolean> _function_8 = (QuestionDefinition qd) -> {
         boolean _isEmpty = QuestionDefinitionAspect.dependencies(qd).isEmpty();
         return Boolean.valueOf((!_isEmpty));
       };
-      boolean _exists = IterableExtensions.<QuestionDefinition>exists(allComputedQuestions, _function_6);
+      boolean _exists = IterableExtensions.<QuestionDefinition>exists(allComputedQuestions, _function_8);
       if (_exists) {
         EObjectAspect.error(_self, "Found at least one cycle in computed questions ");
-        final Function1<QuestionDefinition, Boolean> _function_7 = (QuestionDefinition qd) -> {
+        final Function1<QuestionDefinition, Boolean> _function_9 = (QuestionDefinition qd) -> {
           boolean _isEmpty = QuestionDefinitionAspect.dependencies(qd).isEmpty();
           return Boolean.valueOf((!_isEmpty));
         };
-        final Function1<QuestionDefinition, String> _function_8 = (QuestionDefinition qd) -> {
+        final Function1<QuestionDefinition, String> _function_10 = (QuestionDefinition qd) -> {
           String _name = qd.getName();
           String _plus_1 = (_name + " -> (");
-          final Function1<QuestionDefinition, String> _function_9 = (QuestionDefinition qddep) -> {
+          final Function1<QuestionDefinition, String> _function_11 = (QuestionDefinition qddep) -> {
             return qddep.getName();
           };
-          String _join_1 = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(QuestionDefinitionAspect.dependencies(qd), _function_9), ", ");
+          String _join_1 = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(QuestionDefinitionAspect.dependencies(qd), _function_11), ", ");
           String _plus_2 = (_plus_1 + _join_1);
           return (_plus_2 + ")");
         };
-        String _join_1 = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(IterableExtensions.<QuestionDefinition>filter(allComputedQuestions, _function_7), _function_8), ",   \n");
+        String _join_1 = IterableExtensions.join(IterableExtensions.<QuestionDefinition, String>map(IterableExtensions.<QuestionDefinition>filter(allComputedQuestions, _function_9), _function_10), ",   \n");
         String _plus_1 = ("Questions involved in cycle(s) are:\n" + _join_1);
         EObjectAspect.error(_self, _plus_1);
         throw new QLException("No Topological order can be found");

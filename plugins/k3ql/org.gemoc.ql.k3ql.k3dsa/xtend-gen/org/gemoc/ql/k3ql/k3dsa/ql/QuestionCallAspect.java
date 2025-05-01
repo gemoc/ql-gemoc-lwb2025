@@ -5,6 +5,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.gemoc.ql.k3ql.k3dsa.QuestionNotAvailableException;
 import org.gemoc.ql.model.ql.QuestionCall;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = QuestionCall.class)
 @SuppressWarnings("all")
@@ -17,6 +18,16 @@ public class QuestionCallAspect extends CallAspect {
     	result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.QuestionCall)_self);
     };
     return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static ValueType inferredValueType(final QuestionCall _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspectQuestionCallAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspectQuestionCallAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType inferredValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.QuestionCall){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect._privk3_inferredValueType(_self_, (org.gemoc.ql.model.ql.QuestionCall)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
   }
 
   protected static Value _privk3_evaluate(final QuestionCallAspectQuestionCallAspectProperties _self_, final QuestionCall _self) {
@@ -33,5 +44,9 @@ public class QuestionCallAspect extends CallAspect {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+
+  protected static ValueType _privk3_inferredValueType(final QuestionCallAspectQuestionCallAspectProperties _self_, final QuestionCall _self) {
+    return _self.getQuestion().getDataType();
   }
 }

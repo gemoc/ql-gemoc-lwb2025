@@ -5,6 +5,7 @@ import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.StringValue;
 import org.gemoc.ql.model.ql.StringValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = StringValueType.class)
 @SuppressWarnings("all")
@@ -29,6 +30,16 @@ public class StringValueTypeAspect extends ValueTypeAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static boolean isCompatible(final StringValueType _self, final ValueType otherValueType) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspectStringValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspectStringValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isCompatible(ValueType)
+    if (_self instanceof org.gemoc.ql.model.ql.StringValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeAspect._privk3_isCompatible(_self_, (org.gemoc.ql.model.ql.StringValueType)_self,otherValueType);
+    };
+    return (boolean)result;
+  }
+
   protected static Value _privk3_createValue(final StringValueTypeAspectStringValueTypeAspectProperties _self_, final StringValueType _self, final String internalValue) {
     final StringValue aValue = QlFactory.eINSTANCE.createStringValue();
     aValue.setStringValue(internalValue);
@@ -39,5 +50,14 @@ public class StringValueTypeAspect extends ValueTypeAspect {
     final StringValue aValue = QlFactory.eINSTANCE.createStringValue();
     aValue.setStringValue("");
     return aValue;
+  }
+
+  protected static boolean _privk3_isCompatible(final StringValueTypeAspectStringValueTypeAspectProperties _self_, final StringValueType _self, final ValueType otherValueType) {
+    boolean _matched = false;
+    if (otherValueType instanceof StringValueType) {
+      _matched=true;
+      return true;
+    }
+    return false;
   }
 }

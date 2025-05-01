@@ -5,6 +5,7 @@ import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = BooleanValueType.class)
 @SuppressWarnings("all")
@@ -29,6 +30,16 @@ public class BooleanValueTypeAspect extends ValueTypeAspect {
     return (org.gemoc.ql.model.ql.Value)result;
   }
 
+  public static boolean isCompatible(final BooleanValueType _self, final ValueType otherValueType) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspectBooleanValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspectBooleanValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# boolean isCompatible(ValueType)
+    if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeAspect._privk3_isCompatible(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self,otherValueType);
+    };
+    return (boolean)result;
+  }
+
   protected static Value _privk3_createValue(final BooleanValueTypeAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String internalValue) {
     final BooleanValue aValue = QlFactory.eINSTANCE.createBooleanValue();
     aValue.setBooleanValue(Boolean.parseBoolean(internalValue));
@@ -39,5 +50,14 @@ public class BooleanValueTypeAspect extends ValueTypeAspect {
     final BooleanValue aValue = QlFactory.eINSTANCE.createBooleanValue();
     aValue.setBooleanValue(false);
     return aValue;
+  }
+
+  protected static boolean _privk3_isCompatible(final BooleanValueTypeAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final ValueType otherValueType) {
+    boolean _matched = false;
+    if (otherValueType instanceof BooleanValueType) {
+      _matched=true;
+      return true;
+    }
+    return false;
   }
 }

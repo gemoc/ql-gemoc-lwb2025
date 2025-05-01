@@ -9,6 +9,7 @@ import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.UnaryOperatorKind;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 
 @Aspect(className = BasicUnaryExpression.class)
 @SuppressWarnings("all")
@@ -21,6 +22,16 @@ public class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
     	result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect._privk3_evaluate(_self_, (org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
     };
     return (org.gemoc.ql.model.ql.Value)result;
+  }
+
+  public static ValueType inferredValueType(final BasicUnaryExpression _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspectBasicUnaryExpressionAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspectBasicUnaryExpressionAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType inferredValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.BasicUnaryExpression){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BasicUnaryExpressionAspect._privk3_inferredValueType(_self_, (org.gemoc.ql.model.ql.BasicUnaryExpression)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
   }
 
   protected static Value _privk3_evaluate(final BasicUnaryExpressionAspectBasicUnaryExpressionAspectProperties _self_, final BasicUnaryExpression _self) {
@@ -46,5 +57,9 @@ public class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+
+  protected static ValueType _privk3_inferredValueType(final BasicUnaryExpressionAspectBasicUnaryExpressionAspectProperties _self_, final BasicUnaryExpression _self) {
+    return ExpressionAspect.inferredValueType(_self.getOperand());
   }
 }

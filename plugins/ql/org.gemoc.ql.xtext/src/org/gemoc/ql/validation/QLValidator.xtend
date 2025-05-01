@@ -3,6 +3,14 @@
  */
 package org.gemoc.ql.validation
 
+import org.eclipse.xtext.validation.Check
+import org.gemoc.ql.model.ql.QuestionDefinition
+import org.gemoc.ql.model.ql.ConditionnalElement
+import org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect
+import org.gemoc.ql.model.ql.QlPackage
+import org.gemoc.ql.model.ql.BooleanValueType
+import org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect
+import org.gemoc.ql.model.ql.ValueType
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +29,52 @@ class QLValidator extends AbstractQLValidator {
 //					INVALID_NAME)
 //		}
 //	}
+
+	public static val INVALID_TYPE = 'invalidType'
+	
+	@Check(NORMAL)
+	def checkComputedQuestionExpressionType(QuestionDefinition qd) {
+		if(qd.computedExpression !== null ) {
+			// deep first evaluate and check expression content types
+			val inferredValueType = ExpressionAspect.inferredValueType(qd.computedExpression)
+			// then expression type must conform to question type
+			if(!ValueTypeAspect.isCompatible( qd.dataType, inferredValueType)) {
+				error('''Expecting «prettyPrintType(qd.dataType)» but expression type is «prettyPrintType(inferredValueType)»''',
+					QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION, 
+					INVALID_TYPE
+				)
+			}
+		}
+	}
+	
+	@Check(NORMAL)
+	def checkGuardExpressionType(ConditionnalElement ce) {
+		if(ce.guard !== null ) {
+			// deep first evaluate and check expression content types
+			val inferredValueType = ExpressionAspect.inferredValueType(ce.guard)
+			// then guard expression type must be boolean
+			if(inferredValueType === null) {
+				error('''Guard expression type cannot be inferred''',
+					QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD, 
+					INVALID_TYPE
+				)
+			} else if(!(inferredValueType instanceof BooleanValueType)) {
+				error('''Guard expression type is a «prettyPrintType(inferredValueType)»  instead of a boolean''',
+					QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD, 
+					INVALID_TYPE
+				)
+				
+			}
+		}
+	}
+	
+	def String prettyPrintType(ValueType valueType) {
+		if(valueType !== null) {
+			return '''«valueType.name»(«valueType.eClass.name»)'''
+		} else {
+			return 'null'
+		}
+	}
+	 
 	
 }

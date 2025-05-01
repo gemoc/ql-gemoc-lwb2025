@@ -3,6 +3,18 @@
  */
 package org.gemoc.ql.validation;
 
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.validation.CheckType;
+import org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect;
+import org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeAspect;
+import org.gemoc.ql.model.ql.BooleanValueType;
+import org.gemoc.ql.model.ql.ConditionnalElement;
+import org.gemoc.ql.model.ql.Expression;
+import org.gemoc.ql.model.ql.QlPackage;
+import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.ValueType;
+
 /**
  * This class contains custom validation rules.
  * 
@@ -10,4 +22,70 @@ package org.gemoc.ql.validation;
  */
 @SuppressWarnings("all")
 public class QLValidator extends AbstractQLValidator {
+  public static final String INVALID_TYPE = "invalidType";
+
+  @Check(CheckType.NORMAL)
+  public void checkComputedQuestionExpressionType(final QuestionDefinition qd) {
+    Expression _computedExpression = qd.getComputedExpression();
+    boolean _tripleNotEquals = (_computedExpression != null);
+    if (_tripleNotEquals) {
+      final ValueType inferredValueType = ExpressionAspect.inferredValueType(qd.getComputedExpression());
+      boolean _isCompatible = ValueTypeAspect.isCompatible(qd.getDataType(), inferredValueType);
+      boolean _not = (!_isCompatible);
+      if (_not) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Expecting ");
+        String _prettyPrintType = this.prettyPrintType(qd.getDataType());
+        _builder.append(_prettyPrintType);
+        _builder.append(" but expression type is ");
+        String _prettyPrintType_1 = this.prettyPrintType(inferredValueType);
+        _builder.append(_prettyPrintType_1);
+        this.error(_builder.toString(), 
+          QlPackage.Literals.QUESTION_DEFINITION__COMPUTED_EXPRESSION, 
+          QLValidator.INVALID_TYPE);
+      }
+    }
+  }
+
+  @Check(CheckType.NORMAL)
+  public void checkGuardExpressionType(final ConditionnalElement ce) {
+    Expression _guard = ce.getGuard();
+    boolean _tripleNotEquals = (_guard != null);
+    if (_tripleNotEquals) {
+      final ValueType inferredValueType = ExpressionAspect.inferredValueType(ce.getGuard());
+      if ((inferredValueType == null)) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Guard expression type cannot be inferred");
+        this.error(_builder.toString(), 
+          QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD, 
+          QLValidator.INVALID_TYPE);
+      } else {
+        if ((!(inferredValueType instanceof BooleanValueType))) {
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("Guard expression type is a ");
+          String _prettyPrintType = this.prettyPrintType(inferredValueType);
+          _builder_1.append(_prettyPrintType);
+          _builder_1.append("  instead of a boolean");
+          this.error(_builder_1.toString(), 
+            QlPackage.Literals.CONDITIONNAL_ELEMENT__GUARD, 
+            QLValidator.INVALID_TYPE);
+        }
+      }
+    }
+  }
+
+  public String prettyPrintType(final ValueType valueType) {
+    if ((valueType != null)) {
+      StringConcatenation _builder = new StringConcatenation();
+      String _name = valueType.getName();
+      _builder.append(_name);
+      _builder.append("(");
+      String _name_1 = valueType.eClass().getName();
+      _builder.append(_name_1);
+      _builder.append(")");
+      return _builder.toString();
+    } else {
+      return "null";
+    }
+  }
 }

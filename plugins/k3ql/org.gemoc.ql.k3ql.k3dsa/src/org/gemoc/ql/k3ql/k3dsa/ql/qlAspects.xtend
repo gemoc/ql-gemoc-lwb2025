@@ -212,7 +212,7 @@ class QLModelAspect {
 	def void updateAllComputedQuestions() {
 		
 		// need to define the best evaluation order, and error in case of cycle
-		var allComputedQuestions = _self.sortAllDisplayedComputedQuestions
+		var allComputedQuestions = _self.sortAllDisplayedComputedQuestions(true)
 		
 		_self.devDebug('allComputedQuestions='+allComputedQuestions.map[qd | qd.name].join(', '));
 		allComputedQuestions.forEach[qd | 
@@ -244,9 +244,14 @@ class QLModelAspect {
 	 * consider only displayed questions
 	 * Kahn's algorithm from https://en.wikipedia.org/wiki/Topological_sorting
 	 */
-	def List<QuestionDefinition> sortAllDisplayedComputedQuestions() {
+	def List<QuestionDefinition> sortAllDisplayedComputedQuestions(boolean ignoreHiddenQuestion) {
 		
-		var allComputedQuestions = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null && qd.isIsDisplayed]
+		var allComputedQuestions = if(ignoreHiddenQuestion) {
+			_self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null && qd.isIsDisplayed]
+		} 
+		else {
+			_self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.computedExpression !== null ]
+		}
 		allComputedQuestions.forEach[ qd | 
 			qd.referencingQuestions.clear
 			qd.dependencies.clear
@@ -404,6 +409,16 @@ abstract class ExpressionAspect {
 		_self.devError('not implemented, please ask language designer to implement evaluate() for '+_self);
 		throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
 	}
+	
+	/**
+	 * Cache for the inferredValueType() avoiding multiple evaluation when called for various checks
+	 */
+	public ValueType inferredValueTypeCache
+	
+	def ValueType inferredValueType() {
+		_self.devError('not implemented, please ask language designer to implement inferredValueType() for '+_self);
+		throw new NotImplementedException('not implemented, please implement inferredValueType() for '+_self);
+	}
 }
 
 @Aspect(className=BinaryExpression)
@@ -457,6 +472,14 @@ class BasicBinaryExpressionAspect extends BinaryExpressionAspect {
 		}
 		return result;
 	}
+	def ValueType inferredValueType() {
+		val lhsValueType = _self.lhsOperand.inferredValueType
+		val rhsValueType = _self.rhsOperand.inferredValueType
+		if( lhsValueType !== null && rhsValueType !== null) {
+			if(lhsValueType.isCompatible(rhsValueType)) return lhsValueType
+			else return null
+		} else return null
+	}
 }
 
 @Aspect(className=Call)
@@ -465,12 +488,17 @@ abstract class CallAspect extends ExpressionAspect {
 		_self.devError('not implemented, please ask language designer to implement evaluate() for '+_self);
 		throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
 	}
+	
 }
 
 @Aspect(className=ConstantCall)
 class ConstantCallAspect extends CallAspect {
 	def Value evaluate() {
 		return _self.value.evaluate();
+	}
+	
+	def ValueType inferredValueType() {
+		return _self.value.valueType
 	}
 }
 
@@ -488,6 +516,18 @@ class IfExpressionAspect extends ExpressionAspect {
 		} catch (NullValueException nve) {
 			return null;
 		}
+	}
+	
+	def ValueType inferredValueType() {
+		val thenInferredValueType = _self.thenExpression.inferredValueType
+		if(thenInferredValueType !== null && _self.elseExpression !== null) {
+			if(thenInferredValueType.isCompatible(_self.elseExpression.inferredValueType)) {
+				return thenInferredValueType 
+			} else return null
+		} else {
+			return	thenInferredValueType	
+		}
+		
 	}
 }
 
@@ -559,6 +599,11 @@ abstract class ValueAspect {
 	def Boolean isKindOf(ValueType type){
 		_self.devError('not implemented, please ask language designer to implement isKindOf() for '+_self);
 		throw new NotImplementedException('not implemented, please implement isKindOf() for '+_self);
+	}
+	
+	def ValueType getValueType(){
+		_self.devError('not implemented, please ask language designer to implement getValueType() for '+_self);
+		throw new NotImplementedException('not implemented, please implement getValueType() for '+_self);
 	}
 	
 	/*
@@ -669,6 +714,12 @@ class IntegerValueAspect extends ValueAspect {
 	def Boolean isKindOf(ValueType type){
 		return type instanceof IntegerValueType;
 	}
+	
+	def ValueType getValueType(){
+		val vt = QlFactory.eINSTANCE.createIntegerValueType()
+		vt.name = "internal_ValueType_"+vt.hashCode
+		return vt
+	}
 }
 
 @Aspect(className=StringValue)
@@ -700,6 +751,11 @@ class StringValueAspect extends ValueAspect {
 	
 	def Boolean isKindOf(ValueType type){
 		return type instanceof StringValueType;
+	}
+	def ValueType getValueType(){
+		val vt = QlFactory.eINSTANCE.createStringValueType()
+		vt.name = "internal_ValueType_"+vt.hashCode
+		return vt
 	}
 }
 
@@ -735,6 +791,11 @@ class BooleanValueAspect extends ValueAspect {
 	def Boolean isKindOf(ValueType type){
 		return type instanceof BooleanValueType;
 	}
+	def ValueType getValueType(){
+		val vt = QlFactory.eINSTANCE.createBooleanValueType()
+		vt.name = "internal_ValueType_"+vt.hashCode
+		return vt
+	}
 }
 
 @Aspect(className=EnumerationCall , with=#[ValueAspect])
@@ -769,7 +830,11 @@ class EnumerationCallAspect extends CallAspect {
 	}
 	
 	def Boolean isKindOf(ValueType type){
-		return type instanceof IntegerValueType;
+		return _self.enumerationLiteral.eContainer == type;
+	}
+	
+	def ValueType getValueType(){
+		return _self.enumerationLiteral.eContainer as EnumerationValueType
 	}
 }
 @Aspect(className=BasicUnaryExpression)
@@ -785,6 +850,10 @@ class BasicUnaryExpressionAspect extends UnaryExpressionAspect {
 		} else {
 			throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);			
 		}
+	}
+	
+	def ValueType inferredValueType() {
+		return _self.operand.inferredValueType
 	}
 }
 
@@ -885,7 +954,12 @@ class DecimalValueAspect extends ValueAspect {
 	
 	
 	def Boolean isKindOf(ValueType type){
-		return type instanceof BooleanValueType;
+		return type instanceof DecimalValueType;
+	}
+	def ValueType getValueType(){
+		val vt = QlFactory.eINSTANCE.createDecimalValueType()
+		vt.name = "internal_ValueType_"+vt.hashCode
+		return vt
 	}
 
 }
@@ -900,6 +974,11 @@ class ValueTypeAspect extends NamedElementAspect {
 		_self.devError('not implemented, please ask language designer to implement createDefaultValue() for '+_self);
 		throw new NotImplementedException('not implemented, please implement createValue() for '+_self);
 	}
+	
+	def boolean isCompatible(ValueType otherValueType) {
+		_self.devError('not implemented, please ask language designer to implement isCompatible() for '+_self);
+		throw new NotImplementedException('not implemented, please implement isCompatible() for '+_self);
+	}
 }
 
 @Aspect(className=BooleanValueType)
@@ -913,6 +992,16 @@ class BooleanValueTypeAspect extends ValueTypeAspect {
 		val BooleanValue aValue = QlFactory.eINSTANCE.createBooleanValue();
 		aValue.booleanValue = false;
 		return aValue;
+	}
+	def boolean isCompatible(ValueType otherValueType) {
+		switch (otherValueType) {
+			BooleanValueType: {
+				return true
+			}
+			default: {
+				return false
+			}
+		}
 	}
 }
 
@@ -934,6 +1023,16 @@ class IntegerValueTypeAspect extends ValueTypeAspect {
 		aValue.intValue = 0;
 		return aValue;
 	}
+	def boolean isCompatible(ValueType otherValueType) {
+		switch (otherValueType) {
+			IntegerValueType: {
+				return true
+			}
+			default: {
+				return false
+			}
+		}
+	}
 }
 
 @Aspect(className=DecimalValueType)
@@ -954,6 +1053,16 @@ class DecimalValueTypeAspect extends ValueTypeAspect {
 		aValue.decimalValue = 0;
 		return aValue;
 	}
+	def boolean isCompatible(ValueType otherValueType) {
+		switch (otherValueType) {
+			DecimalValueType, IntegerValueType: {
+				return true
+			}
+			default: {
+				return false
+			}
+		}
+	}
 }
 @Aspect(className=StringValueType)
 class StringValueTypeAspect extends ValueTypeAspect {
@@ -966,6 +1075,16 @@ class StringValueTypeAspect extends ValueTypeAspect {
 		val StringValue aValue = QlFactory.eINSTANCE.createStringValue();
 		aValue.stringValue = "";
 		return aValue;
+	}
+	def boolean isCompatible(ValueType otherValueType) {
+		switch (otherValueType) {
+			StringValueType: {
+				return true
+			}
+			default: {
+				return false
+			}
+		}
 	}
 }
 
@@ -1053,6 +1172,9 @@ class QuestionCallAspect extends CallAspect {
 		} else {
 			throw new QuestionNotAvailableException("Question "+_self.question.name + " is not displayed and should not be used");
 		}
+	}
+	def ValueType inferredValueType() {
+		return	_self.question.dataType
 	}
 }
 

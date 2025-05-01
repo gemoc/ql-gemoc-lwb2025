@@ -2,12 +2,13 @@ package org.gemoc.ql.k3ql.k3dsa.ql;
 
 import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import org.eclipse.emf.ecore.EObject;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.DecimalValue;
 import org.gemoc.ql.model.ql.EnumerationCall;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
+import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.IntegerValue;
-import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.QlFactory;
 import org.gemoc.ql.model.ql.Value;
 import org.gemoc.ql.model.ql.ValueType;
@@ -75,6 +76,16 @@ public class EnumerationCallAspect extends CallAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final EnumerationCall _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspectEnumerationCallAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspectEnumerationCallAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.EnumerationCall){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationCallAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.EnumerationCall)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self) {
     return _self;
   }
@@ -110,7 +121,13 @@ public class EnumerationCallAspect extends CallAspect {
   }
 
   protected static Boolean _privk3_isKindOf(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self, final ValueType type) {
-    return Boolean.valueOf((type instanceof IntegerValueType));
+    EObject _eContainer = _self.getEnumerationLiteral().eContainer();
+    return Boolean.valueOf(Objects.equal(_eContainer, type));
+  }
+
+  protected static ValueType _privk3_getValueType(final EnumerationCallAspectEnumerationCallAspectProperties _self_, final EnumerationCall _self) {
+    EObject _eContainer = _self.getEnumerationLiteral().eContainer();
+    return ((EnumerationValueType) _eContainer);
   }
 
   public static Value plus(final EnumerationCall _self, final Value rhs) {

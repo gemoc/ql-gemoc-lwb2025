@@ -72,6 +72,16 @@ public class StringValueAspect extends ValueAspect {
     return (java.lang.Boolean)result;
   }
 
+  public static ValueType getValueType(final StringValue _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspectStringValueAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspectStringValueAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# ValueType getValueType()
+    if (_self instanceof org.gemoc.ql.model.ql.StringValue){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueAspect._privk3_getValueType(_self_, (org.gemoc.ql.model.ql.StringValue)_self);
+    };
+    return (org.gemoc.ql.model.ql.ValueType)result;
+  }
+
   protected static Value _privk3_evaluate(final StringValueAspectStringValueAspectProperties _self_, final StringValue _self) {
     return _self;
   }
@@ -105,5 +115,13 @@ public class StringValueAspect extends ValueAspect {
 
   protected static Boolean _privk3_isKindOf(final StringValueAspectStringValueAspectProperties _self_, final StringValue _self, final ValueType type) {
     return Boolean.valueOf((type instanceof StringValueType));
+  }
+
+  protected static ValueType _privk3_getValueType(final StringValueAspectStringValueAspectProperties _self_, final StringValue _self) {
+    final StringValueType vt = QlFactory.eINSTANCE.createStringValueType();
+    int _hashCode = vt.hashCode();
+    String _plus = ("internal_ValueType_" + Integer.valueOf(_hashCode));
+    vt.setName(_plus);
+    return vt;
   }
 }

@@ -78,8 +78,8 @@ TO BE DEFINED need to identify a complementary language to be coordinated that c
 === Static checkers
 
 * [ ] static type checking of expression
-** [ ] static type checking of guards
-** [ ] static type checking of computed questions
+** [x] static type checking of guards
+** [x] static type checking of computed questions
 * [ ] static check of guard cyclic dependencies 
 * [ ] static check of computation cyclic dependencies
 * [ ] static check of guard determinism (cf. https://github.com/judithmichael/lwb25/blob/main/ChallengeTask.pdf)
