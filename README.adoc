@@ -140,6 +140,9 @@ See: https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-
 .Modeling Workbench textual editor opened on the HouseOwning example
 image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor opened on the HouseOwning example]
 
+.Modeling Workbench textual editor with typechecker in action
+image::mwb_houseOwning_textual_editor_type_check.png[Modeling Workbench textual editor with typechecker in action]
+
 * Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
 
 .Modeling Workbench graphical editor opened on the HouseOwning example
@@ -318,7 +321,11 @@ It provides a modern textual editor with syntax coloring, code completion, error
 
 It also provides a framework for quick fixes, validation, renaming, hovering, ...  A more complete list of feature is available in this https://eclipse.dev/Xtext/documentation/310_eclipse_support.html[XText documentation section].
 
-For the challenge, in addition to the grammar, we also have slightly customized the formatting support.
+For the challenge, in addition to the grammar, we also have:
+
+* customized the formatting support.
+* implemented the type checking of expressions.
+
 
 ==== Sirius Graphical editor
 
@@ -375,7 +382,13 @@ The concrete rendering in the UI is handled by an engine addon that captures the
 Similarly, the wait for user input is also handled by the engine addon that captures the event `QLModel.waitUserInput()`. It pauses the execution until the UI has some event.
 The events `QLModel.readSubmitButtonStatus()` and  `QuestionDefinition.updateCurrentValueFromUI()` are also captured by the addon. They modify the runtime data in the model.
 
+[NOTE]
+====
 
+The code for the Type checking used by Xtext editor, uses the same approach as the execution semantics: it uses K3 aspects. Xtext validation framework triggers the validation in the editor and then call the aspects for inferring the types and checking compatibility.
+uThe approach allows to reuse the same code in other validation frameworks such as the EMF validation framework or the Sirius internal validation. This can be handy in case we allow edition of the model using other editors than the textual one.
+
+====
 
 ==== UI 
 
