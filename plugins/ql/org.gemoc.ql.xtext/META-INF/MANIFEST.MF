@@ -12,7 +12,8 @@ Require-Bundle: org.gemoc.ql.model,
  org.eclipse.equinox.common;bundle-version="3.16.0",
  org.eclipse.xtext.xbase.lib;bundle-version="2.27.0",
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
- org.eclipse.xtext.util
+ org.eclipse.xtext.util,
+ org.gemoc.ql.k3ql.k3dsa;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gemoc.ql.validation,
  org.gemoc.ql.services,
