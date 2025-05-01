@@ -622,7 +622,55 @@ Further Resources:
 ====
 
 
+== Implementation Metrics of K3QL
 
+
+[cols="1,1", options="header"]
+|===
+| Metric
+| Value
+
+| Development period
+| ~1 month (part-time)
+
+| Number of metaclasses (combined across all Ecore models)
+| 32
+
+| Total source lines of code (SLOC) 
+| 10,231
+
+| Number of Sirius viewpoints/diagrams
+| 2
+
+| Number of GEMOC engine addons implemented footnote:[Consider only addon implemented specifically for QL.]
+| 1
+
+|===
+
+[NOTE]
+====
+SLOC includes Java/K3 code, Xtend, and model files (e.g., .ecore, .xtext, .odesign), but excludes generated code and standard library dependencies.
+
+Command used to obtain SLOC: `cloc plugins --exclude-dir=xtend-gen,src-gen --exclude-ext=g,g4` from the root of the repository
+====
+
+
+Detailled SLOC
+
+[cols="2,1,1", options="header"]
+|===
+| Language / Format | Files | SLOC
+
+| XML (e.g., Sirius, metamodels) | 65 | 6,228
+| Xtend (semantic implementation) | 8 | 2,094
+| Java (custom add-ons, helpers) | 145 | 1,205
+| Properties and Config | 46 | 334
+| JavaScript (UI extensions) | 2 | 191
+| Maven (pom.xml files) | 4 | 142
+| Other (INI, text, SVG) | 7 | 37
+
+| *Total* | *277* | *10,231*
+|===
 
 
 == Details of the development status
