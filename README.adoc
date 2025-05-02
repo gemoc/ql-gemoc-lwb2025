@@ -7,8 +7,8 @@
 = ql-gemoc-lwb2025
 
 Authors:
-Didier Vojtisek <didier.vojtisek@inria.fr>,
-Benoit Combemale <benoit.combemal@irisa.fr> - 
+Didier Vojtisek <didier.vojtisek@inria.fr>
+Benoit Combemale <benoit.combemal@irisa.fr> 
 v1.0, 2025-04-30
 
 Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
@@ -18,6 +18,8 @@ Questionnaire Language DSL implemented using the GEMOC Studio as a solution for 
 == Challenge Participation and Context
 
 This document presents the implementation of the "Questionnaire Language" proposed in the https://github.com/judithmichael/lwb25[Language Workbench Challenge 2025]. This challenge, as a continuation of the Language Workbench Contest initiated in 2013, aims to demonstrate the capabilities of modern language workbenches by modeling and implementing a relatively simple but representative domain-specific language (DSL).
+
+The GEMOC Studio has its origins in the GEMOC Initiative, which began in 2013 as a research-driven effort to explore the modular and executable definition of domain-specific modeling languages (DSMLs). Initially developed within academic settings, the project has evolved into a robust open-source platform. It is now officially hosted by the Eclipse Foundation, providing a stable and open governance structure within the broader Eclipse modeling ecosystem. Built on top of Eclipse technologies, the GEMOC Studio aims to offer a comprehensive environment for designing, executing, and coordinating DSMLs, with a particular focus on executable modeling and multi-language system integration.
 
 The GEMOC Studio integrates and assembles several major existing Eclipse technologies for language engineering, including:
 
