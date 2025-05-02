@@ -75,7 +75,7 @@ The repository is organized as follows:
 * `plugins/`
 ** Contains the source code for the language definition and execution support.
 ** Subfolders:
-*** `commons/`: Utility projects reused across different parts of the implementation.
+*** `commons/`: Utility projects intended for reuse across multiple engine implementations. This reflects an initial design goal to support alternative execution approaches (e.g., MoCCML, coordination-based engines) in addition to the current K3-based implementation.
 *** `k3ql/`: Projects defining the behavioral semantics of the Questionnaire Language using the K3 framework (GEMOC Sequential Engine).
 *** `ql/`: Projects defining the structural (metamodels) and syntactical (editors) aspects of the Questionnaire Language (including Xtext grammar and Sirius diagrams).
 
