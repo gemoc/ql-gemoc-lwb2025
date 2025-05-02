@@ -19,7 +19,10 @@ Questionnaire Language DSL implemented using the GEMOC Studio as a solution for 
 
 This document presents the implementation of the "Questionnaire Language" proposed in the https://github.com/judithmichael/lwb25[Language Workbench Challenge 2025]. This challenge, as a continuation of the Language Workbench Contest initiated in 2013, aims to demonstrate the capabilities of modern language workbenches by modeling and implementing a relatively simple but representative domain-specific language (DSL).
 
-The GEMOC Studio has its origins in the GEMOC Initiative, which began in 2013 as a research-driven effort to explore the modular and executable definition of domain-specific modeling languages (DSMLs). Initially developed within academic settings, the project has evolved into a robust open-source platform. It is now officially hosted by the Eclipse Foundation, providing a stable and open governance structure within the broader Eclipse modeling ecosystem. Built on top of Eclipse technologies, the GEMOC Studio aims to offer a comprehensive environment for designing, executing, and coordinating DSMLs, with a particular focus on executable modeling and multi-language system integration.
+
+The origins of the GEMOC Studio trace back to an initial ANR-funded research project launched in 2011, prior to the formalization of the GEMOC initiative (2013). Initially developed as an academic platform to explore model execution and coordination of heterogeneous modeling languages, the Studio has since evolved through successive research collaborations and open-source contributions. Over time, it has matured into a modular workbench built on Eclipse technologies, primarily used in academic and experimental contexts for designing and executing DSMLs. Today, the GEMOC Studio is hosted as an official project under the Eclipse Foundation, benefiting from a stable and open governance structure within the broader Eclipse Modeling ecosystem.
+
+The GEMOC Studio aims to offer a comprehensive environment for designing, executing, and coordinating DSMLs, with a particular focus on executable modeling and multi-language system integration.
 
 The GEMOC Studio integrates and assembles several major existing Eclipse technologies for language engineering, including:
 
