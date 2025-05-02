@@ -1,0 +1,7 @@
+*target
+.git
+build
+images
+LICENSE
+**/xtend-gen
+**/src-gen
