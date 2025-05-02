@@ -6,7 +6,9 @@
 
 = ql-gemoc-lwb2025
 
-Didier Vojtisek <didier.vojtisek@inria.fr>
+Authors:
+Didier Vojtisek <didier.vojtisek@inria.fr>,
+Benoit Combemale <benoit.combemal@irisa.fr> - 
 v1.0, 2025-04-30
 
 Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
@@ -35,7 +37,20 @@ This architecture allows users to not only define the structure and editors of a
 
 Given the diversity of capabilities offered by the GEMOC Studio, specific tools and approaches were deliberately chosen to showcase the breadth of GEMOC’s potential. The design decisions made in this implementation aim not only to address the technical requirements of the Questionnaire Language but also to illustrate various features of the GEMOC Studio. In some cases, alternative choices might have been more appropriate for a production-ready language implementation, but demonstrating the versatility of the workbench was prioritized.
 
+=== Deliverables
+
+* The git repository : https://github.com/gemoc/ql-gemoc-lwb2025
+* The feature tables for this submission:
+** QL: https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/docs/QLFeatures_Table_Template.xlsx
+** LWB: https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/docs/LanguageWorkbench_FeatureConfiguration.xlsx
+** MW: https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/docs/ModelingWorkbench_FeatureConfiguration.xlsx
+
+=== Document Structure
+
 The remainder of this document is organized as follows:
+
+
+* *Repository Structure*: A description of the repository content.
 
 * *Quick Start Instructions*: A brief guide to install the necessary tools, import the project, and launch the Questionnaire Language execution. This section allows readers to quickly verify the implementation without going into technical details.
 
@@ -69,6 +84,7 @@ Each of these folders contains **multiple Eclipse plug-in projects** that must b
 ** Includes both textual models (`.ql`) and corresponding graphical representations (`.aird`).
 
 * `docs/`
+** `.xlsx` files for the QL, LWB, and MW feature tables applied for the GEMOC Studio and this implementation.
 ** Documentation files for the project (such as metamodel diagrams and development notes).
 
 * `releng/`
