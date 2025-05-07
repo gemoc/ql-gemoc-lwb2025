@@ -15,6 +15,7 @@
 
 
 		<module>ql</module>
+		<module>qls</module>
 		<module>k3ql</module>
 		<module>commons</module>
 	</modules>
