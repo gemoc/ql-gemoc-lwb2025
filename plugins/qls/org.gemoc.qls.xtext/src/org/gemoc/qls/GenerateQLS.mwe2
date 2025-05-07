@@ -33,15 +33,8 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.gemoc.qls.QLS"
 			fileExtensions = "qls"
-			referencedResource = "platform:/resource/org.gemoc.qls.model/model/qls.genmodel"
+			referencedResource = "platform:/resource/org.gemoc.ql.model/model/ql.genmodel"
 			
-			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
-
-			formatter = {
-				generateStub = true
-				generateXtendStub = true
-			}
-
 			serializer = {
 				generateStub = false
 			}
@@ -49,7 +42,12 @@ Workflow {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
 				generateDeprecationValidation = true
+				generateXtendStub = true
 			}
+			scopeProvider = scoping.ImportNamespacesScopingFragment2 auto-inject { 
+				generateXtendStub = true
+			}
+			
 			generator = {
 				generateXtendStub = true
 			}

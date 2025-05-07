@@ -6,8 +6,14 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.gemoc.qls.xtext.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.gemoc.qls.xtext,
- org.gemoc.qls.model,
+Require-Bundle: org.gemoc.ql.xtext.ide;bundle-version="1.0.0",
+ org.gemoc.ql.model;bundle-version="0.1.0",
+ org.gemoc.qls.xtext,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.gemoc.ql.xtext;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.gemoc.qls.ide,
+ org.gemoc.qls.ide.contentassist.antlr,
+ org.gemoc.qls.ide.contentassist.antlr.internal

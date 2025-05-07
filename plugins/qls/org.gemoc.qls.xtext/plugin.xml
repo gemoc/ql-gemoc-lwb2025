@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.gemoc.org/qls/QLS"
+			class = "org.gemoc.qls.qLS.QLSPackage"
+			genModel = "model/generated/QLS.genmodel" />
+	</extension>
+</plugin>
