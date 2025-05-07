@@ -8,7 +8,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="QuestionStyle">
     <eStructuralFeatures xsi:type="ecore:EReference" name="styledQuestion" lowerBound="1"
         eType="ecore:EClass ../../org.gemoc.ql.model/model/ql.ecore#//QuestionDefinition"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//LabelStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//LabelStyle"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeStyle" eType="#//TypeStyle"
         containment="true"/>
   </eClassifiers>

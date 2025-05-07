@@ -28,7 +28,7 @@
             id="org.gemoc.qls.model.qls.presentation.QlsEditorID"
             name="%_UI_QlsEditor_label"
             icon="icons/full/obj16/QlsModelFile.gif"
-            extensions="qls"
+            extensions="qlsxmi"
             class="org.gemoc.qls.model.qls.presentation.QlsEditor"
             contributorClass="org.gemoc.qls.model.qls.presentation.QlsActionBarContributor">
       </editor>

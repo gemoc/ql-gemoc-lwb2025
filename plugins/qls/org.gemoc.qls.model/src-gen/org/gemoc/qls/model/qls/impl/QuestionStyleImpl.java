@@ -45,7 +45,7 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 	protected QuestionDefinition styledQuestion;
 
 	/**
-	 * The cached value of the '{@link #getLabelStyle() <em>Label Style</em>}' reference.
+	 * The cached value of the '{@link #getLabelStyle() <em>Label Style</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLabelStyle()
@@ -132,15 +132,6 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 	 */
 	@Override
 	public LabelStyle getLabelStyle() {
-		if (labelStyle != null && labelStyle.eIsProxy()) {
-			InternalEObject oldLabelStyle = (InternalEObject) labelStyle;
-			labelStyle = (LabelStyle) eResolveProxy(oldLabelStyle);
-			if (labelStyle != oldLabelStyle) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlsPackage.QUESTION_STYLE__LABEL_STYLE,
-							oldLabelStyle, labelStyle));
-			}
-		}
 		return labelStyle;
 	}
 
@@ -149,8 +140,18 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LabelStyle basicGetLabelStyle() {
-		return labelStyle;
+	public NotificationChain basicSetLabelStyle(LabelStyle newLabelStyle, NotificationChain msgs) {
+		LabelStyle oldLabelStyle = labelStyle;
+		labelStyle = newLabelStyle;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					QlsPackage.QUESTION_STYLE__LABEL_STYLE, oldLabelStyle, newLabelStyle);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -160,11 +161,20 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 	 */
 	@Override
 	public void setLabelStyle(LabelStyle newLabelStyle) {
-		LabelStyle oldLabelStyle = labelStyle;
-		labelStyle = newLabelStyle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QlsPackage.QUESTION_STYLE__LABEL_STYLE, oldLabelStyle,
-					labelStyle));
+		if (newLabelStyle != labelStyle) {
+			NotificationChain msgs = null;
+			if (labelStyle != null)
+				msgs = ((InternalEObject) labelStyle).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - QlsPackage.QUESTION_STYLE__LABEL_STYLE, null, msgs);
+			if (newLabelStyle != null)
+				msgs = ((InternalEObject) newLabelStyle).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - QlsPackage.QUESTION_STYLE__LABEL_STYLE, null, msgs);
+			msgs = basicSetLabelStyle(newLabelStyle, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlsPackage.QUESTION_STYLE__LABEL_STYLE, newLabelStyle,
+					newLabelStyle));
 	}
 
 	/**
@@ -227,6 +237,8 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case QlsPackage.QUESTION_STYLE__LABEL_STYLE:
+			return basicSetLabelStyle(null, msgs);
 		case QlsPackage.QUESTION_STYLE__TYPE_STYLE:
 			return basicSetTypeStyle(null, msgs);
 		}
@@ -246,9 +258,7 @@ public class QuestionStyleImpl extends MinimalEObjectImpl.Container implements Q
 				return getStyledQuestion();
 			return basicGetStyledQuestion();
 		case QlsPackage.QUESTION_STYLE__LABEL_STYLE:
-			if (resolve)
-				return getLabelStyle();
-			return basicGetLabelStyle();
+			return getLabelStyle();
 		case QlsPackage.QUESTION_STYLE__TYPE_STYLE:
 			return getTypeStyle();
 		}

@@ -103,6 +103,7 @@ public class QuestionStyleItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(QlsPackage.Literals.QUESTION_STYLE__LABEL_STYLE);
 			childrenFeatures.add(QlsPackage.Literals.QUESTION_STYLE__TYPE_STYLE);
 		}
 		return childrenFeatures;
@@ -165,6 +166,7 @@ public class QuestionStyleItemProvider extends ItemProviderAdapter implements IE
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QuestionStyle.class)) {
+		case QlsPackage.QUESTION_STYLE__LABEL_STYLE:
 		case QlsPackage.QUESTION_STYLE__TYPE_STYLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -182,6 +184,9 @@ public class QuestionStyleItemProvider extends ItemProviderAdapter implements IE
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QUESTION_STYLE__LABEL_STYLE,
+				QlsFactory.eINSTANCE.createLabelStyle()));
 
 		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QUESTION_STYLE__TYPE_STYLE,
 				QlsFactory.eINSTANCE.createBooleanTypeStyle()));

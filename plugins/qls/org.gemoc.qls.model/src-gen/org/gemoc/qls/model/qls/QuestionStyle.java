@@ -48,22 +48,22 @@ public interface QuestionStyle extends EObject {
 	void setStyledQuestion(QuestionDefinition value);
 
 	/**
-	 * Returns the value of the '<em><b>Label Style</b></em>' reference.
+	 * Returns the value of the '<em><b>Label Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Label Style</em>' reference.
+	 * @return the value of the '<em>Label Style</em>' containment reference.
 	 * @see #setLabelStyle(LabelStyle)
 	 * @see org.gemoc.qls.model.qls.QlsPackage#getQuestionStyle_LabelStyle()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	LabelStyle getLabelStyle();
 
 	/**
-	 * Sets the value of the '{@link org.gemoc.qls.model.qls.QuestionStyle#getLabelStyle <em>Label Style</em>}' reference.
+	 * Sets the value of the '{@link org.gemoc.qls.model.qls.QuestionStyle#getLabelStyle <em>Label Style</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label Style</em>' reference.
+	 * @param value the new value of the '<em>Label Style</em>' containment reference.
 	 * @see #getLabelStyle()
 	 * @generated
 	 */

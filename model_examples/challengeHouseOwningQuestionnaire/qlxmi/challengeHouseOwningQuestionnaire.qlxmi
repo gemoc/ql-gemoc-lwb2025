@@ -1,74 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ql:QLModel
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ql="http://www.gemoc.org/ql">
+<ql:QLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ql="http://www.gemoc.org/ql">
   <forms name=" Box1HouseOwning">
     <questionGroup>
       <questionGroups>
-        <guard
-            xsi:type="ql:QuestionCall"
-            question="hasSoldHouse"/>
-        <questions
-            questionDefinition="sellingPrice"/>
-        <questions
-            questionDefinition="privateDebt"/>
-        <questions
-            questionDefinition="valueResidue"/>
+        <guard xsi:type="ql:QuestionCall" question="hasSoldHouse"/>
+        <questions questionDefinition="sellingPrice"/>
+        <questions questionDefinition="privateDebt"/>
+        <questions questionDefinition="valueResidue"/>
       </questionGroups>
-      <questions
-          questionDefinition="hasSoldHouse"/>
-      <questions
-          questionDefinition="hasBoughtHouse"/>
-      <questions
-          questionDefinition="hasMaintLoan"/>
+      <questions questionDefinition="hasSoldHouse"/>
+      <questions questionDefinition="hasBoughtHouse"/>
+      <questions questionDefinition="hasMaintLoan"/>
     </questionGroup>
   </forms>
   <definitionGroup>
-    <dataTypes
-        xsi:type="ql:BooleanValueType"
-        name="boolean"/>
-    <dataTypes
-        xsi:type="ql:DecimalValueType"
-        name="money"
-        unit="Euro"/>
-    <questionDefinitions
-        name="hasSoldHouse"
-        label="Did you sell a house in 2010?"
-        dataType="boolean"/>
-    <questionDefinitions
-        name="hasBoughtHouse"
-        label="Did you buy a house in 2010?"
-        dataType="boolean"/>
-    <questionDefinitions
-        name="hasMaintLoan"
-        label="Did you enter a loan for maintenance/reconstruction?"
-        dataType="boolean"/>
-    <questionDefinitions
-        name="sellingPrice"
-        label="Price the house was sold for:"
-        dataType="money"
-        isMandatory="true"/>
-    <questionDefinitions
-        name="privateDebt"
-        label="Private debts for the sold house:"
-        dataType="money"
-        isMandatory="true"/>
-    <questionDefinitions
-        name="valueResidue"
-        label="Value residue:"
-        dataType="money">
-      <computedExpression
-          xsi:type="ql:BasicBinaryExpression"
-          resultType="money"
-          operator="MINUS">
-        <lhsOperand
-            xsi:type="ql:QuestionCall"
-            question="sellingPrice"/>
-        <rhsOperand
-            xsi:type="ql:QuestionCall"
-            question="privateDebt"/>
+    <dataTypes xsi:type="ql:BooleanValueType" name="boolean"/>
+    <dataTypes xsi:type="ql:DecimalValueType" name="money" unit="Euro"/>
+    <questionDefinitions name="hasSoldHouse" label="Did you sell a house in 2010?" dataType="boolean"/>
+    <questionDefinitions name="hasBoughtHouse" label="Did you buy a house in 2010?" dataType="boolean"/>
+    <questionDefinitions name="hasMaintLoan" label="Did you enter a loan for maintenance/reconstruction?" dataType="boolean"/>
+    <questionDefinitions name="sellingPrice" label="Price the house was sold for:" dataType="money" isMandatory="true"/>
+    <questionDefinitions name="privateDebt" label="Private debts for the sold house:" dataType="money" isMandatory="true"/>
+    <questionDefinitions name="valueResidue" label="Value residue:" dataType="money">
+      <computedExpression xsi:type="ql:BasicBinaryExpression" resultType="money" operator="MINUS">
+        <lhsOperand xsi:type="ql:QuestionCall" question="sellingPrice"/>
+        <rhsOperand xsi:type="ql:QuestionCall" question="privateDebt"/>
       </computedExpression>
     </questionDefinitions>
   </definitionGroup>

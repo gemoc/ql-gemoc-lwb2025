@@ -114,7 +114,7 @@ public interface QlsPackage extends EPackage {
 	int QUESTION_STYLE__STYLED_QUESTION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Label Style</b></em>' reference.
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -452,10 +452,10 @@ public interface QlsPackage extends EPackage {
 	EReference getQuestionStyle_StyledQuestion();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.qls.model.qls.QuestionStyle#getLabelStyle <em>Label Style</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.gemoc.qls.model.qls.QuestionStyle#getLabelStyle <em>Label Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Label Style</em>'.
+	 * @return the meta object for the containment reference '<em>Label Style</em>'.
 	 * @see org.gemoc.qls.model.qls.QuestionStyle#getLabelStyle()
 	 * @see #getQuestionStyle()
 	 * @generated
@@ -679,7 +679,7 @@ public interface QlsPackage extends EPackage {
 		EReference QUESTION_STYLE__STYLED_QUESTION = eINSTANCE.getQuestionStyle_StyledQuestion();
 
 		/**
-		 * The meta object literal for the '<em><b>Label Style</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Label Style</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
