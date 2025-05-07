@@ -35,24 +35,19 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
 		private final Keyword cQLSModelKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cQuestionStylesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cQuestionStylesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_4_2_0 = (RuleCall)cQuestionStylesAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cQuestionStylesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_4_3_1_0 = (RuleCall)cQuestionStylesAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cQuestionStylesKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cQuestionStylesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_6_0 = (RuleCall)cQuestionStylesAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//QLSModel returns QLSModel:
 		//    {QLSModel}
 		//    imports+=Import*
 		//    'QLSModel'
 		//    '{'
-		//        ('questionStyles' '{' questionStyles+=QuestionStyle ( "," questionStyles+=QuestionStyle)* '}' )?
+		//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -60,7 +55,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//imports+=Import*
 		//'QLSModel'
 		//'{'
-		//    ('questionStyles' '{' questionStyles+=QuestionStyle ( "," questionStyles+=QuestionStyle)* '}' )?
+		//    'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -79,38 +74,23 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('questionStyles' '{' questionStyles+=QuestionStyle ( "," questionStyles+=QuestionStyle)* '}' )?
-		public Group getGroup_4() { return cGroup_4; }
-		
 		//'questionStyles'
-		public Keyword getQuestionStylesKeyword_4_0() { return cQuestionStylesKeyword_4_0; }
+		public Keyword getQuestionStylesKeyword_4() { return cQuestionStylesKeyword_4; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
-		//questionStyles+=QuestionStyle
-		public Assignment getQuestionStylesAssignment_4_2() { return cQuestionStylesAssignment_4_2; }
-		
-		//QuestionStyle
-		public RuleCall getQuestionStylesQuestionStyleParserRuleCall_4_2_0() { return cQuestionStylesQuestionStyleParserRuleCall_4_2_0; }
-		
-		//( "," questionStyles+=QuestionStyle)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
-		
-		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
-		
-		//questionStyles+=QuestionStyle
-		public Assignment getQuestionStylesAssignment_4_3_1() { return cQuestionStylesAssignment_4_3_1; }
+		//(questionStyles+=QuestionStyle)*
+		public Assignment getQuestionStylesAssignment_6() { return cQuestionStylesAssignment_6; }
 		
 		//QuestionStyle
-		public RuleCall getQuestionStylesQuestionStyleParserRuleCall_4_3_1_0() { return cQuestionStylesQuestionStyleParserRuleCall_4_3_1_0; }
+		public RuleCall getQuestionStylesQuestionStyleParserRuleCall_6_0() { return cQuestionStylesQuestionStyleParserRuleCall_6_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.Import");
@@ -119,16 +99,15 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cImportKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cImportURIAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cImportURISTRINGTerminalRuleCall_2_0 = (RuleCall)cImportURIAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Import returns Import:
 		//    {Import}
-		//    'import' importURI=STRING ';'
+		//    'import' importURI=STRING
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Import}
-		//'import' importURI=STRING ';'
+		//'import' importURI=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//{Import}
@@ -142,9 +121,6 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//STRING
 		public RuleCall getImportURISTRINGTerminalRuleCall_2_0() { return cImportURISTRINGTerminalRuleCall_2_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class TypeStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.TypeStyle");
@@ -196,25 +172,30 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cStyledQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cStyledQuestionQuestionDefinitionCrossReference_1_0 = (CrossReference)cStyledQuestionAssignment_1.eContents().get(0);
 		private final RuleCall cStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cStyledQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLabelStyleKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cLabelStyleAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cLabelStyleLabelStyleParserRuleCall_2_1_0 = (RuleCall)cLabelStyleAssignment_2_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTypeStyleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTypeStyleAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTypeStyleTypeStyleParserRuleCall_3_1_0 = (RuleCall)cTypeStyleAssignment_3_1.eContents().get(0);
+		private final Keyword cLabelStyleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cLabelStyleAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLabelStyleLabelStyleParserRuleCall_3_1_0 = (RuleCall)cLabelStyleAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cTypeStyleKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cTypeStyleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cTypeStyleTypeStyleParserRuleCall_4_1_0 = (RuleCall)cTypeStyleAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//QuestionStyle returns QuestionStyle:
 		//    'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+		//    '{'
 		//        ('labelStyle' labelStyle=LabelStyle)?
 		//        ('typeStyle' typeStyle=TypeStyle)?
-		//    ;
+		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+		//'{'
 		//    ('labelStyle' labelStyle=LabelStyle)?
 		//    ('typeStyle' typeStyle=TypeStyle)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//'styledQuestion'
@@ -229,29 +210,35 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//ID
 		public RuleCall getStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1() { return cStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1; }
 		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
 		//('labelStyle' labelStyle=LabelStyle)?
-		public Group getGroup_2() { return cGroup_2; }
-		
-		//'labelStyle'
-		public Keyword getLabelStyleKeyword_2_0() { return cLabelStyleKeyword_2_0; }
-		
-		//labelStyle=LabelStyle
-		public Assignment getLabelStyleAssignment_2_1() { return cLabelStyleAssignment_2_1; }
-		
-		//LabelStyle
-		public RuleCall getLabelStyleLabelStyleParserRuleCall_2_1_0() { return cLabelStyleLabelStyleParserRuleCall_2_1_0; }
-		
-		//('typeStyle' typeStyle=TypeStyle)?
 		public Group getGroup_3() { return cGroup_3; }
 		
+		//'labelStyle'
+		public Keyword getLabelStyleKeyword_3_0() { return cLabelStyleKeyword_3_0; }
+		
+		//labelStyle=LabelStyle
+		public Assignment getLabelStyleAssignment_3_1() { return cLabelStyleAssignment_3_1; }
+		
+		//LabelStyle
+		public RuleCall getLabelStyleLabelStyleParserRuleCall_3_1_0() { return cLabelStyleLabelStyleParserRuleCall_3_1_0; }
+		
+		//('typeStyle' typeStyle=TypeStyle)?
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//'typeStyle'
-		public Keyword getTypeStyleKeyword_3_0() { return cTypeStyleKeyword_3_0; }
+		public Keyword getTypeStyleKeyword_4_0() { return cTypeStyleKeyword_4_0; }
 		
 		//typeStyle=TypeStyle
-		public Assignment getTypeStyleAssignment_3_1() { return cTypeStyleAssignment_3_1; }
+		public Assignment getTypeStyleAssignment_4_1() { return cTypeStyleAssignment_4_1; }
 		
 		//TypeStyle
-		public RuleCall getTypeStyleTypeStyleParserRuleCall_3_1_0() { return cTypeStyleTypeStyleParserRuleCall_3_1_0; }
+		public RuleCall getTypeStyleTypeStyleParserRuleCall_4_1_0() { return cTypeStyleTypeStyleParserRuleCall_4_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class LabelStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.LabelStyle");
@@ -399,15 +386,17 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Action cNumericSpinnerStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cNumericStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cSpinnerKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
 		//    {NumericSpinnerStyle}
-		//    'NumericStyle' 'spinner'
+		//    'NumericStyle' 'spinner' '{' '}'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NumericSpinnerStyle}
-		//'NumericStyle' 'spinner'
+		//'NumericStyle' 'spinner' '{' '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{NumericSpinnerStyle}
@@ -418,38 +407,50 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'spinner'
 		public Keyword getSpinnerKeyword_2() { return cSpinnerKeyword_2; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class TextTypeStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.TextTypeStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTextTypeStyleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cMultilineAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cMultilineMultilineKeyword_1_0 = (Keyword)cMultilineAssignment_1.eContents().get(0);
-		private final Keyword cTextTypeStyleKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cTextStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMultilineAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cMultilineMultilineKeyword_3_0 = (Keyword)cMultilineAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TextTypeStyle returns TextTypeStyle:
 		//    {TextTypeStyle}
-		//    (multiline?='multiline')?
-		//    'TextTypeStyle'
+		//    'TextStyle' '{' (multiline?='multiline')? '}'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{TextTypeStyle}
-		//(multiline?='multiline')?
-		//'TextTypeStyle'
+		//'TextStyle' '{' (multiline?='multiline')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{TextTypeStyle}
 		public Action getTextTypeStyleAction_0() { return cTextTypeStyleAction_0; }
 		
+		//'TextStyle'
+		public Keyword getTextStyleKeyword_1() { return cTextStyleKeyword_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
 		//(multiline?='multiline')?
-		public Assignment getMultilineAssignment_1() { return cMultilineAssignment_1; }
+		public Assignment getMultilineAssignment_3() { return cMultilineAssignment_3; }
 		
 		//'multiline'
-		public Keyword getMultilineMultilineKeyword_1_0() { return cMultilineMultilineKeyword_1_0; }
+		public Keyword getMultilineMultilineKeyword_3_0() { return cMultilineMultilineKeyword_3_0; }
 		
-		//'TextTypeStyle'
-		public Keyword getTextTypeStyleKeyword_2() { return cTextTypeStyleKeyword_2; }
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	
 	public class BooleanStyleKindElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -562,7 +563,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    imports+=Import*
 	//    'QLSModel'
 	//    '{'
-	//        ('questionStyles' '{' questionStyles+=QuestionStyle ( "," questionStyles+=QuestionStyle)* '}' )?
+	//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 	//    '}';
 	public QLSModelElements getQLSModelAccess() {
 		return pQLSModel;
@@ -574,7 +575,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//Import returns Import:
 	//    {Import}
-	//    'import' importURI=STRING ';'
+	//    'import' importURI=STRING
 	//    ;
 	public ImportElements getImportAccess() {
 		return pImport;
@@ -607,9 +608,10 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//QuestionStyle returns QuestionStyle:
 	//    'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+	//    '{'
 	//        ('labelStyle' labelStyle=LabelStyle)?
 	//        ('typeStyle' typeStyle=TypeStyle)?
-	//    ;
+	//    '}';
 	public QuestionStyleElements getQuestionStyleAccess() {
 		return pQuestionStyle;
 	}
@@ -662,7 +664,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
 	//    {NumericSpinnerStyle}
-	//    'NumericStyle' 'spinner'
+	//    'NumericStyle' 'spinner' '{' '}'
 	//    ;
 	public NumericTypeSpinnerStyleElements getNumericTypeSpinnerStyleAccess() {
 		return pNumericTypeSpinnerStyle;
@@ -674,8 +676,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//TextTypeStyle returns TextTypeStyle:
 	//    {TextTypeStyle}
-	//    (multiline?='multiline')?
-	//    'TextTypeStyle'
+	//    'TextStyle' '{' (multiline?='multiline')? '}'
 	//    ;
 	public TextTypeStyleElements getTextTypeStyleAccess() {
 		return pTextTypeStyle;

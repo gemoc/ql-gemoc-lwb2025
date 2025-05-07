@@ -8,12 +8,12 @@ QLSModel returns QLSModel:
 	imports+=Import*
 	'QLSModel'
 	'{'
-		('questionStyles' '{' questionStyles+=QuestionStyle ( "," questionStyles+=QuestionStyle)* '}' )?
+		'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}' 
 	'}';
 
 Import returns Import:
 	{Import}
-	'import' importURI=STRING ';'
+	'import' importURI=STRING 
 	;
 	
 TypeStyle returns TypeStyle:
@@ -26,9 +26,10 @@ NumericTypeStyle returns NumericTypeStyle:
 
 QuestionStyle returns QuestionStyle:
 	'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+	'{'
 		('labelStyle' labelStyle=LabelStyle)?
 		('typeStyle' typeStyle=TypeStyle)?
-	;
+	'}';
 
 
 LabelStyle returns LabelStyle:
@@ -54,13 +55,13 @@ NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle:
 
 NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
 	{NumericSpinnerStyle}
-	'NumericStyle' 'spinner'
+	'NumericStyle' 'spinner' '{' '}'
 	;
 
 TextTypeStyle returns TextTypeStyle:
 	{TextTypeStyle}
-	(multiline?='multiline')?
-	'TextTypeStyle'
+	
+	'TextStyle' '{' (multiline?='multiline')? '}'
 	;
 
 enum BooleanStyleKind returns BooleanStyleKind:

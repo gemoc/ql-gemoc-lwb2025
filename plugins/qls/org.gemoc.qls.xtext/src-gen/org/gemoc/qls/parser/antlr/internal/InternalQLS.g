@@ -111,67 +111,40 @@ ruleQLSModel returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3());
 		}
-		(
-			otherlv_4='questionStyles'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4_0());
-			}
-			otherlv_5='{'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_4_2_0());
-					}
-					lv_questionStyles_6_0=ruleQuestionStyle
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getQLSModelRule());
-						}
-						add(
-							$current,
-							"questionStyles",
-							lv_questionStyles_6_0,
-							"org.gemoc.qls.QLS.QuestionStyle");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_7=','
-				{
-					newLeafNode(otherlv_7, grammarAccess.getQLSModelAccess().getCommaKeyword_4_3_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_4_3_1_0());
-						}
-						lv_questionStyles_8_0=ruleQuestionStyle
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getQLSModelRule());
-							}
-							add(
-								$current,
-								"questionStyles",
-								lv_questionStyles_8_0,
-								"org.gemoc.qls.QLS.QuestionStyle");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_9='}'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_4_4());
-			}
-		)?
-		otherlv_10='}'
+		otherlv_4='questionStyles'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4());
+		}
+		otherlv_5='{'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0());
+				}
+				lv_questionStyles_6_0=ruleQuestionStyle
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQLSModelRule());
+					}
+					add(
+						$current,
+						"questionStyles",
+						lv_questionStyles_6_0,
+						"org.gemoc.qls.QLS.QuestionStyle");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7());
+		}
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -221,10 +194,6 @@ ruleImport returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=';'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getImportAccess().getSemicolonKeyword_3());
-		}
 	)
 ;
 
@@ -342,17 +311,21 @@ ruleQuestionStyle returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getQuestionStyleAccess().getLeftCurlyBracketKeyword_2());
+		}
 		(
-			otherlv_2='labelStyle'
+			otherlv_3='labelStyle'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getQuestionStyleAccess().getLabelStyleKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getQuestionStyleAccess().getLabelStyleKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionStyleAccess().getLabelStyleLabelStyleParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getQuestionStyleAccess().getLabelStyleLabelStyleParserRuleCall_3_1_0());
 					}
-					lv_labelStyle_3_0=ruleLabelStyle
+					lv_labelStyle_4_0=ruleLabelStyle
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionStyleRule());
@@ -360,7 +333,7 @@ ruleQuestionStyle returns [EObject current=null]
 						set(
 							$current,
 							"labelStyle",
-							lv_labelStyle_3_0,
+							lv_labelStyle_4_0,
 							"org.gemoc.qls.QLS.LabelStyle");
 						afterParserOrEnumRuleCall();
 					}
@@ -368,16 +341,16 @@ ruleQuestionStyle returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_4='typeStyle'
+			otherlv_5='typeStyle'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getQuestionStyleAccess().getTypeStyleKeyword_3_0());
+				newLeafNode(otherlv_5, grammarAccess.getQuestionStyleAccess().getTypeStyleKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQuestionStyleAccess().getTypeStyleTypeStyleParserRuleCall_3_1_0());
+						newCompositeNode(grammarAccess.getQuestionStyleAccess().getTypeStyleTypeStyleParserRuleCall_4_1_0());
 					}
-					lv_typeStyle_5_0=ruleTypeStyle
+					lv_typeStyle_6_0=ruleTypeStyle
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQuestionStyleRule());
@@ -385,13 +358,17 @@ ruleQuestionStyle returns [EObject current=null]
 						set(
 							$current,
 							"typeStyle",
-							lv_typeStyle_5_0,
+							lv_typeStyle_6_0,
 							"org.gemoc.qls.QLS.TypeStyle");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getQuestionStyleAccess().getRightCurlyBracketKeyword_5());
+		}
 	)
 ;
 
@@ -605,6 +582,14 @@ ruleNumericTypeSpinnerStyle returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2());
 		}
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3());
+		}
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_4());
+		}
 	)
 ;
 
@@ -631,23 +616,31 @@ ruleTextTypeStyle returns [EObject current=null]
 					$current);
 			}
 		)
+		otherlv_1='TextStyle'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1());
+		}
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTextTypeStyleAccess().getLeftCurlyBracketKeyword_2());
+		}
 		(
 			(
-				lv_multiline_1_0='multiline'
+				lv_multiline_3_0='multiline'
 				{
-					newLeafNode(lv_multiline_1_0, grammarAccess.getTextTypeStyleAccess().getMultilineMultilineKeyword_1_0());
+					newLeafNode(lv_multiline_3_0, grammarAccess.getTextTypeStyleAccess().getMultilineMultilineKeyword_3_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getTextTypeStyleRule());
 					}
-					setWithLastConsumed($current, "multiline", lv_multiline_1_0 != null, "multiline");
+					setWithLastConsumed($current, "multiline", lv_multiline_3_0 != null, "multiline");
 				}
 			)
 		)?
-		otherlv_2='TextTypeStyle'
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getTextTypeStyleAccess().getTextTypeStyleKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getTextTypeStyleAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
