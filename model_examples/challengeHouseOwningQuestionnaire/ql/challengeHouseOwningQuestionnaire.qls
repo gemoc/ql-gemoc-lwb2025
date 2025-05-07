@@ -1,0 +1,9 @@
+
+import "challengeHouseOwningQuestionnaire.ql"
+
+QLSModel { 
+	questionStyles { 
+		styledQuestion hasBoughtHouse {labelStyle { bold }}
+		styledQuestion valueResidue { labelStyle {italic}}
+	}
+}
