@@ -3,11 +3,13 @@
  */
 package org.gemoc.qls.scoping;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.scoping.IScope;
+import org.gemoc.qls.qLS.QLSPackage;
 
 /**
  * This class contains custom scoping description.
@@ -22,6 +24,11 @@ public class QLSScopeProvider extends AbstractQLSScopeProvider {
 
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
+    boolean _matched = false;
+    if (Objects.equal(reference, QLSPackage.Literals.QUESTION_STYLE__STYLED_QUESTION)) {
+      _matched=true;
+      return super.getScope(context, reference);
+    }
     return super.getScope(context, reference);
   }
 }

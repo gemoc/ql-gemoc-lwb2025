@@ -3,7 +3,7 @@ import "challengeHouseOwningQuestionnaire.ql"
 
 QLSModel { 
 	questionStyles { 
-		styledQuestion hasBoughtHouse {labelStyle { bold }}
-		styledQuestion valueResidue { labelStyle {italic}}
+		styledQuestion HouseOwning.hasBoughtHouse {labelStyle { bold }}
+		styledQuestion HouseOwning.valueResidue { labelStyle {italic}}
 	}
 }

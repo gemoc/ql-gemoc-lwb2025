@@ -31,7 +31,7 @@ public class QLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, QLGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getQLModelAccess().getAlternatives_4(), "rule__QLModel__Alternatives_4");
+			builder.put(grammarAccess.getQLModelAccess().getAlternatives_5(), "rule__QLModel__Alternatives_5");
 			builder.put(grammarAccess.getValueTypeAccess().getAlternatives(), "rule__ValueType__Alternatives");
 			builder.put(grammarAccess.getUnaryOrPrimaryExpressionAccess().getAlternatives(), "rule__UnaryOrPrimaryExpression__Alternatives");
 			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
@@ -50,8 +50,8 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMultiplicationOperatorKindAccess().getAlternatives(), "rule__MultiplicationOperatorKind__Alternatives");
 			builder.put(grammarAccess.getComparisionOperatorKindAccess().getAlternatives(), "rule__ComparisionOperatorKind__Alternatives");
 			builder.put(grammarAccess.getQLModelAccess().getGroup(), "rule__QLModel__Group__0");
-			builder.put(grammarAccess.getQLModelAccess().getGroup_2(), "rule__QLModel__Group_2__0");
-			builder.put(grammarAccess.getQLModelAccess().getGroup_2_2(), "rule__QLModel__Group_2_2__0");
+			builder.put(grammarAccess.getQLModelAccess().getGroup_3(), "rule__QLModel__Group_3__0");
+			builder.put(grammarAccess.getQLModelAccess().getGroup_3_2(), "rule__QLModel__Group_3_2__0");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 			builder.put(grammarAccess.getPrimaryExpressionAccess().getGroup_2(), "rule__PrimaryExpression__Group_2__0");
 			builder.put(grammarAccess.getIfExpressionAccess().getGroup(), "rule__IfExpression__Group__0");
@@ -68,7 +68,6 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAdditionExpressionAccess().getGroup_1(), "rule__AdditionExpression__Group_1__0");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getGroup(), "rule__MultiplicationExpression__Group__0");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getGroup_1(), "rule__MultiplicationExpression__Group_1__0");
-			builder.put(grammarAccess.getFormAccess().getGroup(), "rule__Form__Group__0");
 			builder.put(grammarAccess.getDefinitionGroupAccess().getGroup(), "rule__DefinitionGroup__Group__0");
 			builder.put(grammarAccess.getQuestionGroupAccess().getGroup(), "rule__QuestionGroup__Group__0");
 			builder.put(grammarAccess.getQuestionGroupAccess().getGroup_1(), "rule__QuestionGroup__Group_1__0");
@@ -119,10 +118,11 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQuestionDefinitionAccess().getGroup_7(), "rule__QuestionDefinition__Group_7__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
-			builder.put(grammarAccess.getQLModelAccess().getCanSubmitAssignment_2_1(), "rule__QLModel__CanSubmitAssignment_2_1");
-			builder.put(grammarAccess.getQLModelAccess().getSubmitDateAssignment_2_2_1(), "rule__QLModel__SubmitDateAssignment_2_2_1");
-			builder.put(grammarAccess.getQLModelAccess().getDefinitionGroupAssignment_4_0(), "rule__QLModel__DefinitionGroupAssignment_4_0");
-			builder.put(grammarAccess.getQLModelAccess().getFormsAssignment_4_1(), "rule__QLModel__FormsAssignment_4_1");
+			builder.put(grammarAccess.getQLModelAccess().getNameAssignment_2(), "rule__QLModel__NameAssignment_2");
+			builder.put(grammarAccess.getQLModelAccess().getCanSubmitAssignment_3_1(), "rule__QLModel__CanSubmitAssignment_3_1");
+			builder.put(grammarAccess.getQLModelAccess().getSubmitDateAssignment_3_2_1(), "rule__QLModel__SubmitDateAssignment_3_2_1");
+			builder.put(grammarAccess.getQLModelAccess().getDefinitionGroupAssignment_5_0(), "rule__QLModel__DefinitionGroupAssignment_5_0");
+			builder.put(grammarAccess.getQLModelAccess().getQuestionGroupsAssignment_5_1(), "rule__QLModel__QuestionGroupsAssignment_5_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_2(), "rule__UnaryExpression__OperandAssignment_2");
 			builder.put(grammarAccess.getIfExpressionAccess().getConditionAssignment_2(), "rule__IfExpression__ConditionAssignment_2");
@@ -140,8 +140,6 @@ public class QLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAdditionExpressionAccess().getRhsOperandAssignment_1_2(), "rule__AdditionExpression__RhsOperandAssignment_1_2");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getOperatorAssignment_1_1(), "rule__MultiplicationExpression__OperatorAssignment_1_1");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getRhsOperandAssignment_1_2(), "rule__MultiplicationExpression__RhsOperandAssignment_1_2");
-			builder.put(grammarAccess.getFormAccess().getNameAssignment_1(), "rule__Form__NameAssignment_1");
-			builder.put(grammarAccess.getFormAccess().getQuestionGroupAssignment_2(), "rule__Form__QuestionGroupAssignment_2");
 			builder.put(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsAssignment_3_0(), "rule__DefinitionGroup__QuestionDefinitionsAssignment_3_0");
 			builder.put(grammarAccess.getDefinitionGroupAccess().getDataTypesAssignment_3_1(), "rule__DefinitionGroup__DataTypesAssignment_3_1");
 			builder.put(grammarAccess.getQuestionGroupAccess().getGuardAssignment_1_1(), "rule__QuestionGroup__GuardAssignment_1_1");

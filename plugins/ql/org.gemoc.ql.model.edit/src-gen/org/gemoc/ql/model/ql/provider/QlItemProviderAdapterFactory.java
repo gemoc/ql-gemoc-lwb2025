@@ -96,29 +96,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.Form} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FormItemProvider formItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.Form}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFormAdapter() {
-		if (formItemProvider == null) {
-			formItemProvider = new FormItemProvider(this);
-		}
-
-		return formItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.QuestionDefinition} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -754,8 +731,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	public void dispose() {
 		if (qlModelItemProvider != null)
 			qlModelItemProvider.dispose();
-		if (formItemProvider != null)
-			formItemProvider.dispose();
 		if (questionDefinitionItemProvider != null)
 			questionDefinitionItemProvider.dispose();
 		if (basicBinaryExpressionItemProvider != null)

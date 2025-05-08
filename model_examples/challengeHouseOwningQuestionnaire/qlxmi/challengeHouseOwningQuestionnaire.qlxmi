@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ql:QLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ql="http://www.gemoc.org/ql">
-  <forms name=" Box1HouseOwning">
-    <questionGroup>
+<ql:QLModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ql="http://www.gemoc.org/ql"
+	name="Box1HouseOwning">
+  <questionGroups>
       <questionGroups>
         <guard xsi:type="ql:QuestionCall" question="hasSoldHouse"/>
         <questions questionDefinition="sellingPrice"/>
@@ -11,8 +11,7 @@
       <questions questionDefinition="hasSoldHouse"/>
       <questions questionDefinition="hasBoughtHouse"/>
       <questions questionDefinition="hasMaintLoan"/>
-    </questionGroup>
-  </forms>
+    </questionGroups>
   <definitionGroup>
     <dataTypes xsi:type="ql:BooleanValueType" name="boolean"/>
     <dataTypes xsi:type="ql:DecimalValueType" name="money" unit="Euro"/>

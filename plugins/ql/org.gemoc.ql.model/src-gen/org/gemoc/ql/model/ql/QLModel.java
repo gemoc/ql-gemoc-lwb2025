@@ -6,8 +6,6 @@ import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>QL Model</b></em>'.
@@ -17,29 +15,17 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.ql.model.ql.QLModel#getForms <em>Forms</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#getDefinitionGroup <em>Definition Group</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#isCanSubmit <em>Can Submit</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.QLModel#getSubmitDate <em>Submit Date</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.QLModel#getQuestionGroups <em>Question Groups</em>}</li>
  * </ul>
  *
  * @see org.gemoc.ql.model.ql.QlPackage#getQLModel()
  * @model
  * @generated
  */
-public interface QLModel extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Forms</b></em>' containment reference list.
-	 * The list contents are of type {@link org.gemoc.ql.model.ql.Form}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Forms</em>' containment reference list.
-	 * @see org.gemoc.ql.model.ql.QlPackage#getQLModel_Forms()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Form> getForms();
-
+public interface QLModel extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Definition Group</b></em>' containment reference list.
 	 * The list contents are of type {@link org.gemoc.ql.model.ql.DefinitionGroup}.
@@ -95,5 +81,17 @@ public interface QLModel extends EObject {
 	 * @generated
 	 */
 	void setSubmitDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Question Groups</b></em>' containment reference list.
+	 * The list contents are of type {@link org.gemoc.ql.model.ql.QuestionGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Question Groups</em>' containment reference list.
+	 * @see org.gemoc.ql.model.ql.QlPackage#getQLModel_QuestionGroups()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<QuestionGroup> getQuestionGroups();
 
 } // QLModel

@@ -7,20 +7,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.gemoc.ql.model.ql.QLModel;
@@ -33,8 +24,7 @@ import org.gemoc.ql.model.ql.QlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QLModelItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class QLModelItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -106,8 +96,8 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlPackage.Literals.QL_MODEL__FORMS);
 			childrenFeatures.add(QlPackage.Literals.QL_MODEL__DEFINITION_GROUP);
+			childrenFeatures.add(QlPackage.Literals.QL_MODEL__QUESTION_GROUPS);
 		}
 		return childrenFeatures;
 	}
@@ -154,8 +144,9 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		QLModel qlModel = (QLModel) object;
-		return getString("_UI_QLModel_type") + " " + qlModel.isCanSubmit();
+		String label = ((QLModel) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_QLModel_type")
+				: getString("_UI_QLModel_type") + " " + label;
 	}
 
 	/**
@@ -174,8 +165,8 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case QlPackage.QL_MODEL__FORMS:
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -193,22 +184,11 @@ public class QLModelItemProvider extends ItemProviderAdapter implements IEditing
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(QlPackage.Literals.QL_MODEL__FORMS, QlFactory.eINSTANCE.createForm()));
-
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QL_MODEL__DEFINITION_GROUP,
 				QlFactory.eINSTANCE.createDefinitionGroup()));
-	}
 
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return QlEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(QlPackage.Literals.QL_MODEL__QUESTION_GROUPS,
+				QlFactory.eINSTANCE.createQuestionGroup()));
 	}
 
 }

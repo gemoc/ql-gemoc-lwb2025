@@ -72,11 +72,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseForm(Form object) {
-			return createFormAdapter();
-		}
-
-		@Override
 		public Adapter caseQuestionDefinition(QuestionDefinition object) {
 			return createQuestionDefinitionAdapter();
 		}
@@ -256,20 +251,6 @@ public class QlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQLModelAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.gemoc.ql.model.ql.Form
-	 * @generated
-	 */
-	public Adapter createFormAdapter() {
 		return null;
 	}
 

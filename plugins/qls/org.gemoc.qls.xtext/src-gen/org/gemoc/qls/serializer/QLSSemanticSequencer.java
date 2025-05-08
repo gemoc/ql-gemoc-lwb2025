@@ -26,7 +26,6 @@ import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.EnumerationCall;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
-import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
@@ -174,9 +173,6 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 			case QlPackage.ENUMERATION_VALUE_TYPE:
 				sequence_EnumerationValueType(context, (EnumerationValueType) semanticObject); 
 				return; 
-			case QlPackage.FORM:
-				sequence_Form(context, (Form) semanticObject); 
-				return; 
 			case QlPackage.IF_EXPRESSION:
 				sequence_IfExpression(context, (IfExpression) semanticObject); 
 				return; 
@@ -322,7 +318,7 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 *     QuestionStyle returns QuestionStyle
 	 *
 	 * Constraint:
-	 *     (styledQuestion=[QuestionDefinition|ID] labelStyle=LabelStyle? typeStyle=TypeStyle?)
+	 *     (styledQuestion=[QuestionDefinition|QualifiedName] labelStyle=LabelStyle? typeStyle=TypeStyle?)
 	 * </pre>
 	 */
 	protected void sequence_QuestionStyle(ISerializationContext context, QuestionStyle semanticObject) {

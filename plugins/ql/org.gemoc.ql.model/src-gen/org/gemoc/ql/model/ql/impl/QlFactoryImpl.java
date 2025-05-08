@@ -58,8 +58,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 		switch (eClass.getClassifierID()) {
 		case QlPackage.QL_MODEL:
 			return createQLModel();
-		case QlPackage.FORM:
-			return createForm();
 		case QlPackage.QUESTION_DEFINITION:
 			return createQuestionDefinition();
 		case QlPackage.BASIC_BINARY_EXPRESSION:
@@ -154,17 +152,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public QLModel createQLModel() {
 		QLModelImpl qlModel = new QLModelImpl();
 		return qlModel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Form createForm() {
-		FormImpl form = new FormImpl();
-		return form;
 	}
 
 	/**

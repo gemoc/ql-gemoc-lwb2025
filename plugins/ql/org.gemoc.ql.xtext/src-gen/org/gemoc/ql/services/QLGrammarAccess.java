@@ -31,35 +31,39 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cQLModelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cQLModelKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cCanSubmitAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Keyword cCanSubmitCanSubmitKeyword_2_1_0 = (Keyword)cCanSubmitAssignment_2_1.eContents().get(0);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cSubmitDateKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cSubmitDateAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cSubmitDateEDateParserRuleCall_2_2_1_0 = (RuleCall)cSubmitDateAssignment_2_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Assignment cDefinitionGroupAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
-		private final RuleCall cDefinitionGroupDefinitionGroupParserRuleCall_4_0_0 = (RuleCall)cDefinitionGroupAssignment_4_0.eContents().get(0);
-		private final Assignment cFormsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
-		private final RuleCall cFormsFormParserRuleCall_4_1_0 = (RuleCall)cFormsAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cCanSubmitAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Keyword cCanSubmitCanSubmitKeyword_3_1_0 = (Keyword)cCanSubmitAssignment_3_1.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cSubmitDateKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cSubmitDateAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cSubmitDateEDateParserRuleCall_3_2_1_0 = (RuleCall)cSubmitDateAssignment_3_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Assignment cDefinitionGroupAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
+		private final RuleCall cDefinitionGroupDefinitionGroupParserRuleCall_5_0_0 = (RuleCall)cDefinitionGroupAssignment_5_0.eContents().get(0);
+		private final Assignment cQuestionGroupsAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
+		private final RuleCall cQuestionGroupsQuestionGroupParserRuleCall_5_1_0 = (RuleCall)cQuestionGroupsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//QLModel returns QLModel:
 		//    {QLModel}
-		//    'QLModel' ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
+		//    'QLModel' name=ID
+		//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 		//    '{'
-		//        (definitionGroup+=DefinitionGroup | forms+=Form)*
+		//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{QLModel}
-		//'QLModel' ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
+		//'QLModel' name=ID
+		//('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 		//'{'
-		//    (definitionGroup+=DefinitionGroup | forms+=Form)*
+		//    (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -69,53 +73,59 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'QLModel'
 		public Keyword getQLModelKeyword_1() { return cQLModelKeyword_1; }
 		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
 		//('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 		
 		//(canSubmit?='canSubmit')?
-		public Assignment getCanSubmitAssignment_2_1() { return cCanSubmitAssignment_2_1; }
+		public Assignment getCanSubmitAssignment_3_1() { return cCanSubmitAssignment_3_1; }
 		
 		//'canSubmit'
-		public Keyword getCanSubmitCanSubmitKeyword_2_1_0() { return cCanSubmitCanSubmitKeyword_2_1_0; }
+		public Keyword getCanSubmitCanSubmitKeyword_3_1_0() { return cCanSubmitCanSubmitKeyword_3_1_0; }
 		
 		//('submitDate' submitDate=EDate)?
-		public Group getGroup_2_2() { return cGroup_2_2; }
+		public Group getGroup_3_2() { return cGroup_3_2; }
 		
 		//'submitDate'
-		public Keyword getSubmitDateKeyword_2_2_0() { return cSubmitDateKeyword_2_2_0; }
+		public Keyword getSubmitDateKeyword_3_2_0() { return cSubmitDateKeyword_3_2_0; }
 		
 		//submitDate=EDate
-		public Assignment getSubmitDateAssignment_2_2_1() { return cSubmitDateAssignment_2_2_1; }
+		public Assignment getSubmitDateAssignment_3_2_1() { return cSubmitDateAssignment_3_2_1; }
 		
 		//EDate
-		public RuleCall getSubmitDateEDateParserRuleCall_2_2_1_0() { return cSubmitDateEDateParserRuleCall_2_2_1_0; }
+		public RuleCall getSubmitDateEDateParserRuleCall_3_2_1_0() { return cSubmitDateEDateParserRuleCall_3_2_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
+		public Keyword getRightParenthesisKeyword_3_3() { return cRightParenthesisKeyword_3_3; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//(definitionGroup+=DefinitionGroup | forms+=Form)*
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		//(definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
 		//definitionGroup+=DefinitionGroup
-		public Assignment getDefinitionGroupAssignment_4_0() { return cDefinitionGroupAssignment_4_0; }
+		public Assignment getDefinitionGroupAssignment_5_0() { return cDefinitionGroupAssignment_5_0; }
 		
 		//DefinitionGroup
-		public RuleCall getDefinitionGroupDefinitionGroupParserRuleCall_4_0_0() { return cDefinitionGroupDefinitionGroupParserRuleCall_4_0_0; }
+		public RuleCall getDefinitionGroupDefinitionGroupParserRuleCall_5_0_0() { return cDefinitionGroupDefinitionGroupParserRuleCall_5_0_0; }
 		
-		//forms+=Form
-		public Assignment getFormsAssignment_4_1() { return cFormsAssignment_4_1; }
+		//questionGroups+=QuestionGroup
+		public Assignment getQuestionGroupsAssignment_5_1() { return cQuestionGroupsAssignment_5_1; }
 		
-		//Form
-		public RuleCall getFormsFormParserRuleCall_4_1_0() { return cFormsFormParserRuleCall_4_1_0; }
+		//QuestionGroup
+		public RuleCall getQuestionGroupsQuestionGroupParserRuleCall_5_1_0() { return cQuestionGroupsQuestionGroupParserRuleCall_5_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class ValueTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.ValueType");
@@ -698,42 +708,6 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		
 		//DecimalValue
 		public RuleCall getDecimalValueParserRuleCall_4() { return cDecimalValueParserRuleCall_4; }
-	}
-	public class FormElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.Form");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFormKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cQuestionGroupAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cQuestionGroupQuestionGroupParserRuleCall_2_0 = (RuleCall)cQuestionGroupAssignment_2.eContents().get(0);
-		
-		//Form returns Form:
-		//    'Form'
-		//    name=ID
-		//    questionGroup=QuestionGroup
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'Form'
-		//name=ID
-		//questionGroup=QuestionGroup
-		public Group getGroup() { return cGroup; }
-		
-		//'Form'
-		public Keyword getFormKeyword_0() { return cFormKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//questionGroup=QuestionGroup
-		public Assignment getQuestionGroupAssignment_2() { return cQuestionGroupAssignment_2; }
-		
-		//QuestionGroup
-		public RuleCall getQuestionGroupQuestionGroupParserRuleCall_2_0() { return cQuestionGroupQuestionGroupParserRuleCall_2_0; }
 	}
 	public class DefinitionGroupElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.DefinitionGroup");
@@ -2444,7 +2418,6 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	private final MultiplicationExpressionElements pMultiplicationExpression;
 	private final CallElements pCall;
 	private final ValueElements pValue;
-	private final FormElements pForm;
 	private final DefinitionGroupElements pDefinitionGroup;
 	private final EBooleanElements pEBoolean;
 	private final EDateElements pEDate;
@@ -2506,7 +2479,6 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		this.pMultiplicationExpression = new MultiplicationExpressionElements();
 		this.pCall = new CallElements();
 		this.pValue = new ValueElements();
-		this.pForm = new FormElements();
 		this.pDefinitionGroup = new DefinitionGroupElements();
 		this.pEBoolean = new EBooleanElements();
 		this.pEDate = new EDateElements();
@@ -2574,9 +2546,10 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//QLModel returns QLModel:
 	//    {QLModel}
-	//    'QLModel' ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
+	//    'QLModel' name=ID
+	//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 	//    '{'
-	//        (definitionGroup+=DefinitionGroup | forms+=Form)*
+	//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
 	//    '}';
 	public QLModelElements getQLModelAccess() {
 		return pQLModel;
@@ -2763,19 +2736,6 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	public ParserRule getValueRule() {
 		return getValueAccess().getRule();
-	}
-	
-	//Form returns Form:
-	//    'Form'
-	//    name=ID
-	//    questionGroup=QuestionGroup
-	//;
-	public FormElements getFormAccess() {
-		return pForm;
-	}
-	
-	public ParserRule getFormRule() {
-		return getFormAccess().getRule();
 	}
 	
 	//DefinitionGroup returns DefinitionGroup:

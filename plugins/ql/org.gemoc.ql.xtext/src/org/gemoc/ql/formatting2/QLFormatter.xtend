@@ -6,7 +6,6 @@ package org.gemoc.ql.formatting2
 import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
-import org.gemoc.ql.model.ql.Form
 import org.gemoc.ql.model.ql.QLModel
 import org.gemoc.ql.services.QLGrammarAccess
 import org.gemoc.ql.model.ql.DefinitionGroup
@@ -18,12 +17,12 @@ class QLFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(QLModel qLModel, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (form : qLModel.forms) {
-			form.surround[indent]
-			form.format
-			form.append[noSpace]
+		for (questionGroup : qLModel.questionGroups) {
+			questionGroup.surround[indent]
+			questionGroup.format
+			questionGroup.append[noSpace]
 		}
-		IteratorExtensions.last(qLModel.forms.iterator).append[newLine]
+		IteratorExtensions.last(qLModel.questionGroups.iterator).append[newLine]
 		//qLModel.forms.last.append[newLine]
 		qLModel.append[setNewLines(1, 1, 2)]
 		for (definitionGroup : qLModel.definitionGroup) {
@@ -37,11 +36,6 @@ class QLFormatter extends AbstractFormatter2 {
 		
 	}
 
-	def dispatch void format(Form form, extension IFormattableDocument document) {
-		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		form.regionFor.keyword("Form").prepend[newLine]
-		form.questionGroup.format
-	}
 	
 	def dispatch void format(QuestionGroup questionGroup, extension IFormattableDocument document) {
 		for (subGroup : questionGroup.questionGroups) {

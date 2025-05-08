@@ -177,8 +177,8 @@ public abstract class ExpressionAspect {
     				if (ret != null) {
     					return (org.gemoc.ql.model.ql.ValueType) ret;
     				} else {
-    					return null;
-    				}
+    						return null;
+    					}
     		}
     	}
     } catch (Exception e) {

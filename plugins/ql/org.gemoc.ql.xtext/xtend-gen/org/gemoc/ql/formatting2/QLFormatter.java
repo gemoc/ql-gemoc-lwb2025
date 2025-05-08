@@ -15,7 +15,6 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.gemoc.ql.model.ql.DefinitionGroup;
-import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionDefinition;
@@ -30,24 +29,24 @@ public class QLFormatter extends AbstractFormatter2 {
   private QLGrammarAccess _qLGrammarAccess;
 
   protected void _format(final QLModel qLModel, @Extension final IFormattableDocument document) {
-    EList<Form> _forms = qLModel.getForms();
-    for (final Form form : _forms) {
+    EList<QuestionGroup> _questionGroups = qLModel.getQuestionGroups();
+    for (final QuestionGroup questionGroup : _questionGroups) {
       {
         final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
           it.indent();
         };
-        document.<Form>surround(form, _function);
-        document.<Form>format(form);
+        document.<QuestionGroup>surround(questionGroup, _function);
+        document.<QuestionGroup>format(questionGroup);
         final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
           it.noSpace();
         };
-        document.<Form>append(form, _function_1);
+        document.<QuestionGroup>append(questionGroup, _function_1);
       }
     }
     final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
       it.newLine();
     };
-    document.<Form>append(IteratorExtensions.<Form>last(qLModel.getForms().iterator()), _function);
+    document.<QuestionGroup>append(IteratorExtensions.<QuestionGroup>last(qLModel.getQuestionGroups().iterator()), _function);
     final Procedure1<IHiddenRegionFormatter> _function_1 = (IHiddenRegionFormatter it) -> {
       it.setNewLines(1, 1, 2);
     };
@@ -70,14 +69,6 @@ public class QLFormatter extends AbstractFormatter2 {
       it.newLine();
     };
     document.<DefinitionGroup>append(IteratorExtensions.<DefinitionGroup>last(qLModel.getDefinitionGroup().iterator()), _function_2);
-  }
-
-  protected void _format(final Form form, @Extension final IFormattableDocument document) {
-    final Procedure1<IHiddenRegionFormatter> _function = (IHiddenRegionFormatter it) -> {
-      it.newLine();
-    };
-    document.prepend(this.textRegionExtensions.regionFor(form).keyword("Form"), _function);
-    document.<QuestionGroup>format(form.getQuestionGroup());
   }
 
   protected void _format(final QuestionGroup questionGroup, @Extension final IFormattableDocument document) {
@@ -178,34 +169,31 @@ public class QLFormatter extends AbstractFormatter2 {
     document.<QuestionDefinition>append(IteratorExtensions.<QuestionDefinition>last(definitionGroup.getQuestionDefinitions().iterator()), _function_2);
   }
 
-  public void format(final Object form, final IFormattableDocument document) {
-    if (form instanceof XtextResource) {
-      _format((XtextResource)form, document);
+  public void format(final Object qLModel, final IFormattableDocument document) {
+    if (qLModel instanceof XtextResource) {
+      _format((XtextResource)qLModel, document);
       return;
-    } else if (form instanceof Form) {
-      _format((Form)form, document);
+    } else if (qLModel instanceof QLModel) {
+      _format((QLModel)qLModel, document);
       return;
-    } else if (form instanceof QuestionGroup) {
-      _format((QuestionGroup)form, document);
+    } else if (qLModel instanceof QuestionGroup) {
+      _format((QuestionGroup)qLModel, document);
       return;
-    } else if (form instanceof DefinitionGroup) {
-      _format((DefinitionGroup)form, document);
+    } else if (qLModel instanceof DefinitionGroup) {
+      _format((DefinitionGroup)qLModel, document);
       return;
-    } else if (form instanceof QLModel) {
-      _format((QLModel)form, document);
+    } else if (qLModel instanceof EObject) {
+      _format((EObject)qLModel, document);
       return;
-    } else if (form instanceof EObject) {
-      _format((EObject)form, document);
-      return;
-    } else if (form == null) {
+    } else if (qLModel == null) {
       _format((Void)null, document);
       return;
-    } else if (form != null) {
-      _format(form, document);
+    } else if (qLModel != null) {
+      _format(qLModel, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(form, document).toString());
+        Arrays.<Object>asList(qLModel, document).toString());
     }
   }
 }

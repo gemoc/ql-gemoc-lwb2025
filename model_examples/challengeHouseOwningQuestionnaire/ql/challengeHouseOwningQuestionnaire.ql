@@ -1,4 +1,4 @@
-QLModel {
+QLModel HouseOwning {
 	definitions {
 		booleanType boolean
 		decimalType money { unit "Euro" }
@@ -11,16 +11,17 @@ QLModel {
 		mandatory question privateDebt: "Private debts for the sold house:"  money
 		question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
 	} 
-	Form Box1HouseOwning {
-		{
-			hasSoldHouse
-			hasBoughtHouse
-			hasMaintLoan
-		}
-		if (hasSoldHouse()) {
-			sellingPrice
-			privateDebt
-			valueResidue
-		}
+	
+	{
+		hasSoldHouse
+		hasBoughtHouse
+		hasMaintLoan
+		
 	}
+	if (hasSoldHouse()) {
+		sellingPrice
+		privateDebt
+		valueResidue
+	}
+	
 }

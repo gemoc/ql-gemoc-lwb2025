@@ -171,7 +171,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cStyledQuestionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cStyledQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cStyledQuestionQuestionDefinitionCrossReference_1_0 = (CrossReference)cStyledQuestionAssignment_1.eContents().get(0);
-		private final RuleCall cStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1 = (RuleCall)cStyledQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
+		private final RuleCall cStyledQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cStyledQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLabelStyleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
@@ -184,14 +184,14 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//QuestionStyle returns QuestionStyle:
-		//    'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+		//    'styledQuestion' styledQuestion=[ql::QuestionDefinition|QualifiedName]
 		//    '{'
 		//        ('labelStyle' labelStyle=LabelStyle)?
 		//        ('typeStyle' typeStyle=TypeStyle)?
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+		//'styledQuestion' styledQuestion=[ql::QuestionDefinition|QualifiedName]
 		//'{'
 		//    ('labelStyle' labelStyle=LabelStyle)?
 		//    ('typeStyle' typeStyle=TypeStyle)?
@@ -201,14 +201,14 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'styledQuestion'
 		public Keyword getStyledQuestionKeyword_0() { return cStyledQuestionKeyword_0; }
 		
-		//styledQuestion=[ql::QuestionDefinition]
+		//styledQuestion=[ql::QuestionDefinition|QualifiedName]
 		public Assignment getStyledQuestionAssignment_1() { return cStyledQuestionAssignment_1; }
 		
-		//[ql::QuestionDefinition]
+		//[ql::QuestionDefinition|QualifiedName]
 		public CrossReference getStyledQuestionQuestionDefinitionCrossReference_1_0() { return cStyledQuestionQuestionDefinitionCrossReference_1_0; }
 		
-		//ID
-		public RuleCall getStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1() { return cStyledQuestionQuestionDefinitionIDTerminalRuleCall_1_0_1; }
+		//QualifiedName
+		public RuleCall getStyledQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1() { return cStyledQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -607,7 +607,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//QuestionStyle returns QuestionStyle:
-	//    'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+	//    'styledQuestion' styledQuestion=[ql::QuestionDefinition|QualifiedName]
 	//    '{'
 	//        ('labelStyle' labelStyle=LabelStyle)?
 	//        ('typeStyle' typeStyle=TypeStyle)?
@@ -698,9 +698,10 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//QLModel returns QLModel:
 	//    {QLModel}
-	//    'QLModel' ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
+	//    'QLModel' name=ID
+	//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 	//    '{'
-	//        (definitionGroup+=DefinitionGroup | forms+=Form)*
+	//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
 	//    '}';
 	public QLGrammarAccess.QLModelElements getQLModelAccess() {
 		return gaQL.getQLModelAccess();
@@ -887,19 +888,6 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getValueRule() {
 		return getValueAccess().getRule();
-	}
-	
-	//Form returns Form:
-	//    'Form'
-	//    name=ID
-	//    questionGroup=QuestionGroup
-	//;
-	public QLGrammarAccess.FormElements getFormAccess() {
-		return gaQL.getFormAccess();
-	}
-	
-	public ParserRule getFormRule() {
-		return getFormAccess().getRule();
 	}
 	
 	//DefinitionGroup returns DefinitionGroup:

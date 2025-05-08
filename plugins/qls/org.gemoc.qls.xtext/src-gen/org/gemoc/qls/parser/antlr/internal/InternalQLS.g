@@ -305,9 +305,12 @@ ruleQuestionStyle returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getQuestionStyleRule());
 					}
 				}
-				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getQuestionStyleAccess().getStyledQuestionQuestionDefinitionCrossReference_1_0());
+					newCompositeNode(grammarAccess.getQuestionStyleAccess().getStyledQuestionQuestionDefinitionCrossReference_1_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1567,66 +1570,6 @@ ruleValue returns [EObject current=null]
 			$current = $this_DecimalValue_4.current;
 			afterParserOrEnumRuleCall();
 		}
-	)
-;
-
-// Entry rule entryRuleForm
-entryRuleForm returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFormRule()); }
-	iv_ruleForm=ruleForm
-	{ $current=$iv_ruleForm.current; }
-	EOF;
-
-// Rule Form
-ruleForm returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Form'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getFormAccess().getFormKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFormRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0());
-				}
-				lv_questionGroup_2_0=ruleQuestionGroup
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFormRule());
-					}
-					set(
-						$current,
-						"questionGroup",
-						lv_questionGroup_2_0,
-						"org.gemoc.ql.QL.QuestionGroup");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 	)
 ;
 

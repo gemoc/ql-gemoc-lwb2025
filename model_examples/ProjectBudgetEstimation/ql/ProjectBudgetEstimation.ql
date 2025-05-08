@@ -1,4 +1,4 @@
-QLModel {
+QLModel ProjectBudgetEstimation {
 	definitions {
 		booleanType boolean
 		decimalType personHour {}
@@ -37,7 +37,7 @@ QLModel {
 		;
 	}	
 	
-	Form ProjectBudgetEstimation {
+	{
 		{ // Core Project Elements (Always Present)
 			estimatedPersonHourForDev
 			hourlyRateForDev

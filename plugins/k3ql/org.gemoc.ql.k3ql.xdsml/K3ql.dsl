@@ -1,7 +1,6 @@
 name = org.gemoc.ql.k3ql.K3ql
 ecore = platform:/resource/org.gemoc.ql.model/model/ql.ecore
 k3 = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect,    \
-	 org.gemoc.ql.k3ql.k3dsa.ql.FormAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect,    \

@@ -70,14 +70,7 @@ public class QlSwitch<T> extends Switch<T> {
 			QLModel qlModel = (QLModel) theEObject;
 			T result = caseQLModel(qlModel);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case QlPackage.FORM: {
-			Form form = (Form) theEObject;
-			T result = caseForm(form);
-			if (result == null)
-				result = caseNamedElement(form);
+				result = caseNamedElement(qlModel);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -379,21 +372,6 @@ public class QlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQLModel(QLModel object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Form</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Form</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseForm(Form object) {
 		return null;
 	}
 

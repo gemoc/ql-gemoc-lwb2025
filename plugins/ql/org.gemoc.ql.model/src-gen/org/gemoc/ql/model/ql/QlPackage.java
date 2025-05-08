@@ -68,60 +68,6 @@ public interface QlPackage extends EPackage {
 	int QL_MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Forms</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL__FORMS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Definition Group</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL__DEFINITION_GROUP = 1;
-
-	/**
-	 * The feature id for the '<em><b>Can Submit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL__CAN_SUBMIT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Submit Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL__SUBMIT_DATE = 3;
-
-	/**
-	 * The number of structural features of the '<em>QL Model</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>QL Model</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QL_MODEL_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,7 +75,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 23;
+	int NAMED_ELEMENT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -159,50 +105,67 @@ public interface QlPackage extends EPackage {
 	int NAMED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.ql.model.ql.impl.FormImpl
-	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getForm()
-	 * @generated
-	 */
-	int FORM = 1;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM__NAME = NAMED_ELEMENT__NAME;
+	int QL_MODEL__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Question Group</b></em>' containment reference.
+	 * The feature id for the '<em><b>Definition Group</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM__QUESTION_GROUP = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int QL_MODEL__DEFINITION_GROUP = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Form</em>' class.
+	 * The feature id for the '<em><b>Can Submit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int QL_MODEL__CAN_SUBMIT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Form</em>' class.
+	 * The feature id for the '<em><b>Submit Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int QL_MODEL__SUBMIT_DATE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Question Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL__QUESTION_GROUPS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>QL Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>QL Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QL_MODEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl <em>Question Definition</em>}' class.
@@ -212,7 +175,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionDefinition()
 	 * @generated
 	 */
-	int QUESTION_DEFINITION = 2;
+	int QUESTION_DEFINITION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -303,7 +266,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 3;
+	int EXPRESSION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -340,7 +303,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 4;
+	int BINARY_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -395,7 +358,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 5;
+	int UNARY_EXPRESSION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -441,7 +404,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBasicBinaryExpression()
 	 * @generated
 	 */
-	int BASIC_BINARY_EXPRESSION = 6;
+	int BASIC_BINARY_EXPRESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -505,7 +468,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getCall()
 	 * @generated
 	 */
-	int CALL = 7;
+	int CALL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -542,7 +505,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getConstantCall()
 	 * @generated
 	 */
-	int CONSTANT_CALL = 8;
+	int CONSTANT_CALL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -588,7 +551,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getValue()
 	 * @generated
 	 */
-	int VALUE = 9;
+	int VALUE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Value</em>' class.
@@ -616,7 +579,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIntegerValue()
 	 * @generated
 	 */
-	int INTEGER_VALUE = 10;
+	int INTEGER_VALUE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Int Value</b></em>' attribute.
@@ -653,7 +616,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getStringValue()
 	 * @generated
 	 */
-	int STRING_VALUE = 11;
+	int STRING_VALUE = 10;
 
 	/**
 	 * The feature id for the '<em><b>String Value</b></em>' attribute.
@@ -690,7 +653,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBooleanValue()
 	 * @generated
 	 */
-	int BOOLEAN_VALUE = 12;
+	int BOOLEAN_VALUE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Boolean Value</b></em>' attribute.
@@ -727,7 +690,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBasicUnaryExpression()
 	 * @generated
 	 */
-	int BASIC_UNARY_EXPRESSION = 13;
+	int BASIC_UNARY_EXPRESSION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -782,7 +745,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDateValue()
 	 * @generated
 	 */
-	int DATE_VALUE = 14;
+	int DATE_VALUE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Date Value</b></em>' attribute.
@@ -819,7 +782,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDecimalValue()
 	 * @generated
 	 */
-	int DECIMAL_VALUE = 15;
+	int DECIMAL_VALUE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Decimal Value</b></em>' attribute.
@@ -856,7 +819,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getValueType()
 	 * @generated
 	 */
-	int VALUE_TYPE = 16;
+	int VALUE_TYPE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -902,7 +865,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBooleanValueType()
 	 * @generated
 	 */
-	int BOOLEAN_VALUE_TYPE = 17;
+	int BOOLEAN_VALUE_TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -948,7 +911,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIntegerValueType()
 	 * @generated
 	 */
-	int INTEGER_VALUE_TYPE = 18;
+	int INTEGER_VALUE_TYPE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1012,7 +975,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDecimalValueType()
 	 * @generated
 	 */
-	int DECIMAL_VALUE_TYPE = 19;
+	int DECIMAL_VALUE_TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1058,7 +1021,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDateValueType()
 	 * @generated
 	 */
-	int DATE_VALUE_TYPE = 20;
+	int DATE_VALUE_TYPE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1104,7 +1067,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationValueType()
 	 * @generated
 	 */
-	int ENUMERATION_VALUE_TYPE = 21;
+	int ENUMERATION_VALUE_TYPE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1159,7 +1122,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationLiteral()
 	 * @generated
 	 */
-	int ENUMERATION_LITERAL = 22;
+	int ENUMERATION_LITERAL = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1196,7 +1159,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getConditionnalElement()
 	 * @generated
 	 */
-	int CONDITIONNAL_ELEMENT = 24;
+	int CONDITIONNAL_ELEMENT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1233,7 +1196,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionGroup()
 	 * @generated
 	 */
-	int QUESTION_GROUP = 25;
+	int QUESTION_GROUP = 24;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1288,7 +1251,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getDefinitionGroup()
 	 * @generated
 	 */
-	int DEFINITION_GROUP = 26;
+	int DEFINITION_GROUP = 25;
 
 	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -1334,7 +1297,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestionCall()
 	 * @generated
 	 */
-	int QUESTION_CALL = 27;
+	int QUESTION_CALL = 26;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -1380,7 +1343,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getEnumerationCall()
 	 * @generated
 	 */
-	int ENUMERATION_CALL = 28;
+	int ENUMERATION_CALL = 27;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -1426,7 +1389,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getStringValueType()
 	 * @generated
 	 */
-	int STRING_VALUE_TYPE = 29;
+	int STRING_VALUE_TYPE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1472,7 +1435,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getQuestion()
 	 * @generated
 	 */
-	int QUESTION = 30;
+	int QUESTION = 29;
 
 	/**
 	 * The feature id for the '<em><b>Question Definition</b></em>' reference.
@@ -1509,7 +1472,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getIfExpression()
 	 * @generated
 	 */
-	int IF_EXPRESSION = 31;
+	int IF_EXPRESSION = 30;
 
 	/**
 	 * The feature id for the '<em><b>Result Type</b></em>' reference.
@@ -1573,7 +1536,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getBinaryOperatorKind()
 	 * @generated
 	 */
-	int BINARY_OPERATOR_KIND = 32;
+	int BINARY_OPERATOR_KIND = 31;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.ql.model.ql.UnaryOperatorKind <em>Unary Operator Kind</em>}' enum.
@@ -1583,7 +1546,7 @@ public interface QlPackage extends EPackage {
 	 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getUnaryOperatorKind()
 	 * @generated
 	 */
-	int UNARY_OPERATOR_KIND = 33;
+	int UNARY_OPERATOR_KIND = 32;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QLModel <em>QL Model</em>}'.
@@ -1594,17 +1557,6 @@ public interface QlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getQLModel();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getForms <em>Forms</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Forms</em>'.
-	 * @see org.gemoc.ql.model.ql.QLModel#getForms()
-	 * @see #getQLModel()
-	 * @generated
-	 */
-	EReference getQLModel_Forms();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getDefinitionGroup <em>Definition Group</em>}'.
@@ -1640,25 +1592,15 @@ public interface QlPackage extends EPackage {
 	EAttribute getQLModel_SubmitDate();
 
 	/**
-	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.Form <em>Form</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.ql.model.ql.QLModel#getQuestionGroups <em>Question Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Form</em>'.
-	 * @see org.gemoc.ql.model.ql.Form
+	 * @return the meta object for the containment reference list '<em>Question Groups</em>'.
+	 * @see org.gemoc.ql.model.ql.QLModel#getQuestionGroups()
+	 * @see #getQLModel()
 	 * @generated
 	 */
-	EClass getForm();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.gemoc.ql.model.ql.Form#getQuestionGroup <em>Question Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Question Group</em>'.
-	 * @see org.gemoc.ql.model.ql.Form#getQuestionGroup()
-	 * @see #getForm()
-	 * @generated
-	 */
-	EReference getForm_QuestionGroup();
+	EReference getQLModel_QuestionGroups();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.ql.model.ql.QuestionDefinition <em>Question Definition</em>}'.
@@ -2399,14 +2341,6 @@ public interface QlPackage extends EPackage {
 		EClass QL_MODEL = eINSTANCE.getQLModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Forms</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QL_MODEL__FORMS = eINSTANCE.getQLModel_Forms();
-
-		/**
 		 * The meta object literal for the '<em><b>Definition Group</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2431,22 +2365,12 @@ public interface QlPackage extends EPackage {
 		EAttribute QL_MODEL__SUBMIT_DATE = eINSTANCE.getQLModel_SubmitDate();
 
 		/**
-		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.FormImpl <em>Form</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gemoc.ql.model.ql.impl.FormImpl
-		 * @see org.gemoc.ql.model.ql.impl.QlPackageImpl#getForm()
-		 * @generated
-		 */
-		EClass FORM = eINSTANCE.getForm();
-
-		/**
-		 * The meta object literal for the '<em><b>Question Group</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Question Groups</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORM__QUESTION_GROUP = eINSTANCE.getForm_QuestionGroup();
+		EReference QL_MODEL__QUESTION_GROUPS = eINSTANCE.getQLModel_QuestionGroups();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.ql.model.ql.impl.QuestionDefinitionImpl <em>Question Definition</em>}' class.

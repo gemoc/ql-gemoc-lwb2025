@@ -25,7 +25,7 @@ NumericTypeStyle returns NumericTypeStyle:
 ;
 
 QuestionStyle returns QuestionStyle:
-	'styledQuestion' styledQuestion=[ql::QuestionDefinition]
+	'styledQuestion' styledQuestion=[ql::QuestionDefinition|QualifiedName]
 	'{'
 		('labelStyle' labelStyle=LabelStyle)?
 		('typeStyle' typeStyle=TypeStyle)?

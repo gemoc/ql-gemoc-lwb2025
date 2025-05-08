@@ -28,7 +28,6 @@ import org.gemoc.ql.model.ql.EnumerationCall;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Expression;
-import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.IfExpression;
 import org.gemoc.ql.model.ql.IntegerValue;
 import org.gemoc.ql.model.ql.IntegerValueType;
@@ -60,13 +59,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	private EClass qlModelEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass formEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -371,7 +363,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQLModel_Forms() {
+	public EReference getQLModel_DefinitionGroup() {
 		return (EReference) qlModelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -381,18 +373,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQLModel_DefinitionGroup() {
-		return (EReference) qlModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getQLModel_CanSubmit() {
-		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -402,7 +384,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 */
 	@Override
 	public EAttribute getQLModel_SubmitDate() {
-		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) qlModelEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -411,18 +393,8 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getForm() {
-		return formEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getForm_QuestionGroup() {
-		return (EReference) formEClass.getEStructuralFeatures().get(0);
+	public EReference getQLModel_QuestionGroups() {
+		return (EReference) qlModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1126,13 +1098,10 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		// Create classes and their features
 		qlModelEClass = createEClass(QL_MODEL);
-		createEReference(qlModelEClass, QL_MODEL__FORMS);
 		createEReference(qlModelEClass, QL_MODEL__DEFINITION_GROUP);
 		createEAttribute(qlModelEClass, QL_MODEL__CAN_SUBMIT);
 		createEAttribute(qlModelEClass, QL_MODEL__SUBMIT_DATE);
-
-		formEClass = createEClass(FORM);
-		createEReference(formEClass, FORM__QUESTION_GROUP);
+		createEReference(qlModelEClass, QL_MODEL__QUESTION_GROUPS);
 
 		questionDefinitionEClass = createEClass(QUESTION_DEFINITION);
 		createEAttribute(questionDefinitionEClass, QUESTION_DEFINITION__LABEL);
@@ -1263,7 +1232,7 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		formEClass.getESuperTypes().add(this.getNamedElement());
+		qlModelEClass.getESuperTypes().add(this.getNamedElement());
 		questionDefinitionEClass.getESuperTypes().add(this.getNamedElement());
 		binaryExpressionEClass.getESuperTypes().add(this.getExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getExpression());
@@ -1291,9 +1260,6 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlModelEClass, QLModel.class, "QLModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQLModel_Forms(), this.getForm(), null, "forms", null, 0, -1, QLModel.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getQLModel_DefinitionGroup(), this.getDefinitionGroup(), null, "definitionGroup", null, 0, -1,
 				QLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1301,11 +1267,9 @@ public class QlPackageImpl extends EPackageImpl implements QlPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getQLModel_SubmitDate(), ecorePackage.getEDate(), "submitDate", null, 0, 1, QLModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getForm_QuestionGroup(), this.getQuestionGroup(), null, "questionGroup", null, 1, 1, Form.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQLModel_QuestionGroups(), this.getQuestionGroup(), null, "questionGroups", null, 0, -1,
+				QLModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(questionDefinitionEClass, QuestionDefinition.class, "QuestionDefinition", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

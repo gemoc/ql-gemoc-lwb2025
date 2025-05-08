@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<qls:QLSModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qls="http://www.gemoc.org/qls">
-  <questionStyles>
-    <styledQuestion href="challengeHouseOwningQuestionnaire.qlxmi#hasBoughtHouse"/>
-    <labelStyle bold="true"/>
-    <typeStyle xsi:type="qls:BooleanTypeStyle"/>
-  </questionStyles>
-</qls:QLSModel>

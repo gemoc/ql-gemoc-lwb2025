@@ -2,7 +2,6 @@ package org.gemoc.ql.k3ql.k3dsa.ql
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.gemoc.ql.model.ql.QLModel
-import org.gemoc.ql.model.ql.Form
 import org.gemoc.ql.model.ql.Question
 import org.gemoc.ql.model.ql.QuestionDefinition
 import org.gemoc.ql.model.ql.Expression
@@ -32,7 +31,6 @@ import org.gemoc.ql.model.ql.DefinitionGroup
 import org.gemoc.ql.model.ql.QuestionCall
 
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.ql.FormAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ExpressionAspect.*
@@ -111,10 +109,8 @@ class QLModelAspect {
 			
 			while(_self.submitDate === null) {
 				// recompute which questions must be displayed
-				_self.resetIsDisplayed();
-				for( f : _self.forms) {
-					f.render();
-				}
+				_self.renderQuestions();
+				
 				// refresh canSubmit
 				val allDisplayedMandatory = _self.definitionGroup.flatMap[ f | f.questionDefinitions].filter[qd | qd.isIsDisplayed].filter[qd | qd.isIsMandatory]
 				_self.canSubmit = allDisplayedMandatory.empty || allDisplayedMandatory.forall[qd | qd.currentValue !== null];
@@ -129,10 +125,7 @@ class QLModelAspect {
 				_self.readSubmitButtonStatus();
 				
 				// recompute which questions must be displayed now as the user input may enable some computed question
-				_self.resetIsDisplayed();
-				for( f : _self.forms) {
-					f.render();
-				}
+				_self.renderQuestions();
 				
 				// recompute all computedQuestions
 				_self.updateAllComputedQuestions();
@@ -169,6 +162,17 @@ class QLModelAspect {
 //				qd.isDisplayed = false
 //			}
 //		}	
+	}
+	
+	/**
+	 * REcompute which question must be displayed and trigger a show of the relevant question
+	 */
+	@Step 
+	def void renderQuestions() {
+		_self.resetIsDisplayed();
+		for( qg : _self.questionGroups) {
+			qg.render();
+		}
 	}
 	
 	/** step captured by the Engine Addon to update the submit button according to the model status
@@ -333,13 +337,7 @@ class QLModelAspect {
 
 }
 
-@Aspect(className=Form)
-class FormAspect extends NamedElementAspect {
-	@Step
-	def void render() {
-		_self.questionGroup.render();
-	}
-}
+
 
 @Aspect(className=Question)
 class QuestionAspect {

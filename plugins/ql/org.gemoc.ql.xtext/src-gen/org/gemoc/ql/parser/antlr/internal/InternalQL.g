@@ -89,35 +89,53 @@ ruleQLModel returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getQLModelAccess().getQLModelKeyword_1());
 		}
 		(
-			otherlv_2='('
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getQLModelAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getQLModelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			otherlv_3='('
 			{
-				newLeafNode(otherlv_2, grammarAccess.getQLModelAccess().getLeftParenthesisKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getQLModelAccess().getLeftParenthesisKeyword_3_0());
 			}
 			(
 				(
-					lv_canSubmit_3_0='canSubmit'
+					lv_canSubmit_4_0='canSubmit'
 					{
-						newLeafNode(lv_canSubmit_3_0, grammarAccess.getQLModelAccess().getCanSubmitCanSubmitKeyword_2_1_0());
+						newLeafNode(lv_canSubmit_4_0, grammarAccess.getQLModelAccess().getCanSubmitCanSubmitKeyword_3_1_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getQLModelRule());
 						}
-						setWithLastConsumed($current, "canSubmit", lv_canSubmit_3_0 != null, "canSubmit");
+						setWithLastConsumed($current, "canSubmit", lv_canSubmit_4_0 != null, "canSubmit");
 					}
 				)
 			)?
 			(
-				otherlv_4='submitDate'
+				otherlv_5='submitDate'
 				{
-					newLeafNode(otherlv_4, grammarAccess.getQLModelAccess().getSubmitDateKeyword_2_2_0());
+					newLeafNode(otherlv_5, grammarAccess.getQLModelAccess().getSubmitDateKeyword_3_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getQLModelAccess().getSubmitDateEDateParserRuleCall_2_2_1_0());
+							newCompositeNode(grammarAccess.getQLModelAccess().getSubmitDateEDateParserRuleCall_3_2_1_0());
 						}
-						lv_submitDate_5_0=ruleEDate
+						lv_submitDate_6_0=ruleEDate
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getQLModelRule());
@@ -125,29 +143,29 @@ ruleQLModel returns [EObject current=null]
 							set(
 								$current,
 								"submitDate",
-								lv_submitDate_5_0,
+								lv_submitDate_6_0,
 								"org.gemoc.ql.QL.EDate");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)?
-			otherlv_6=')'
+			otherlv_7=')'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getQLModelAccess().getRightParenthesisKeyword_2_3());
+				newLeafNode(otherlv_7, grammarAccess.getQLModelAccess().getRightParenthesisKeyword_3_3());
 			}
 		)?
-		otherlv_7='{'
+		otherlv_8='{'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_8, grammarAccess.getQLModelAccess().getLeftCurlyBracketKeyword_4());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQLModelAccess().getDefinitionGroupDefinitionGroupParserRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getQLModelAccess().getDefinitionGroupDefinitionGroupParserRuleCall_5_0_0());
 					}
-					lv_definitionGroup_8_0=ruleDefinitionGroup
+					lv_definitionGroup_9_0=ruleDefinitionGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQLModelRule());
@@ -155,7 +173,7 @@ ruleQLModel returns [EObject current=null]
 						add(
 							$current,
 							"definitionGroup",
-							lv_definitionGroup_8_0,
+							lv_definitionGroup_9_0,
 							"org.gemoc.ql.QL.DefinitionGroup");
 						afterParserOrEnumRuleCall();
 					}
@@ -165,26 +183,26 @@ ruleQLModel returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getQLModelAccess().getFormsFormParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getQLModelAccess().getQuestionGroupsQuestionGroupParserRuleCall_5_1_0());
 					}
-					lv_forms_9_0=ruleForm
+					lv_questionGroups_10_0=ruleQuestionGroup
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getQLModelRule());
 						}
 						add(
 							$current,
-							"forms",
-							lv_forms_9_0,
-							"org.gemoc.ql.QL.Form");
+							"questionGroups",
+							lv_questionGroups_10_0,
+							"org.gemoc.ql.QL.QuestionGroup");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_10='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_11, grammarAccess.getQLModelAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -1111,66 +1129,6 @@ ruleValue returns [EObject current=null]
 			$current = $this_DecimalValue_4.current;
 			afterParserOrEnumRuleCall();
 		}
-	)
-;
-
-// Entry rule entryRuleForm
-entryRuleForm returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFormRule()); }
-	iv_ruleForm=ruleForm
-	{ $current=$iv_ruleForm.current; }
-	EOF;
-
-// Rule Form
-ruleForm returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='Form'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getFormAccess().getFormKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getFormAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFormRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getFormAccess().getQuestionGroupQuestionGroupParserRuleCall_2_0());
-				}
-				lv_questionGroup_2_0=ruleQuestionGroup
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFormRule());
-					}
-					set(
-						$current,
-						"questionGroup",
-						lv_questionGroup_2_0,
-						"org.gemoc.ql.QL.QuestionGroup");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 	)
 ;
 

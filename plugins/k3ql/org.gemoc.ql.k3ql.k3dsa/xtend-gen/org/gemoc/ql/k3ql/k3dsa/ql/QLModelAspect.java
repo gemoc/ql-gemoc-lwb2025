@@ -27,9 +27,9 @@ import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.DefinitionGroup;
 import org.gemoc.ql.model.ql.Expression;
-import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.QuestionGroup;
 import org.gemoc.ql.model.ql.StringValueType;
 import org.gemoc.ql.model.ql.Value;
 import org.gemoc.ql.model.ql.ValueType;
@@ -124,6 +124,30 @@ public class QLModelAspect {
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     	if (stepManager != null) {
     		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "resetIsDisplayed");
+    	} else {
+    		command.execute();
+    	}
+    	;
+    };
+  }
+
+  /**
+   * REcompute which question must be displayed and trigger a show of the relevant question
+   */
+  @Step
+  public static void renderQuestions(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void renderQuestions()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    		@Override
+    		public void execute() {
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_renderQuestions(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    		}
+    	};
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    	if (stepManager != null) {
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "renderQuestions");
     	} else {
     		command.execute();
     	}
@@ -268,13 +292,9 @@ public class QLModelAspect {
         EObjectAspect.devInfo(_self, "-> main() ");
         while ((_self.getSubmitDate() == null)) {
           {
-            QLModelAspect.resetIsDisplayed(_self);
-            EList<Form> _forms = _self.getForms();
-            for (final Form f : _forms) {
-              FormAspect.render(f);
-            }
-            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f_1) -> {
-              return f_1.getQuestionDefinitions();
+            QLModelAspect.renderQuestions(_self);
+            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f) -> {
+              return f.getQuestionDefinitions();
             };
             final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
               return Boolean.valueOf(qd.isIsDisplayed());
@@ -289,8 +309,8 @@ public class QLModelAspect {
             }))));
             QLModelAspect.updateSubmitButtonStatus(_self);
             QLModelAspect.waitUserInput(_self);
-            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function_3 = (DefinitionGroup f_1) -> {
-              return f_1.getQuestionDefinitions();
+            final Function1<DefinitionGroup, EList<QuestionDefinition>> _function_3 = (DefinitionGroup f) -> {
+              return f.getQuestionDefinitions();
             };
             final Function1<QuestionDefinition, Boolean> _function_4 = (QuestionDefinition qd) -> {
               return Boolean.valueOf(qd.isIsDisplayed());
@@ -301,11 +321,7 @@ public class QLModelAspect {
             };
             allDisplayedQuestion.forEach(_function_5);
             QLModelAspect.readSubmitButtonStatus(_self);
-            QLModelAspect.resetIsDisplayed(_self);
-            EList<Form> _forms_1 = _self.getForms();
-            for (final Form f_1 : _forms_1) {
-              FormAspect.render(f_1);
-            }
+            QLModelAspect.renderQuestions(_self);
             QLModelAspect.updateAllComputedQuestions(_self);
           }
         }
@@ -332,6 +348,14 @@ public class QLModelAspect {
   }
 
   protected static void _privk3_resetIsDisplayed(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+  }
+
+  protected static void _privk3_renderQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+    QLModelAspect.resetIsDisplayed(_self);
+    EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();
+    for (final QuestionGroup qg : _questionGroups) {
+      QuestionGroupAspect.render(qg);
+    }
   }
 
   protected static void _privk3_updateSubmitButtonStatus(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {

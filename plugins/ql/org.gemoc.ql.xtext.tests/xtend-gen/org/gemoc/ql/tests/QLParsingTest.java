@@ -28,7 +28,7 @@ public class QLParsingTest {
   public void loadChallengeHouseOwningModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("QLModel {");
+      _builder.append("QLModel Box1HouseOwning {");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("definitions {");
@@ -67,7 +67,7 @@ public class QLParsingTest {
       _builder.append("} ");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("Form Box1HouseOwning {");
+      _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{");
@@ -122,7 +122,7 @@ public class QLParsingTest {
   public void loadGuessWhoMiniModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("QLModel {");
+      _builder.append("QLModel GuessWho {");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("definitions {");
@@ -173,7 +173,7 @@ public class QLParsingTest {
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("Form GuessWho {");
+      _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{");
@@ -210,7 +210,7 @@ public class QLParsingTest {
   public void loadProjectBudgetEstimationModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("QLModel {");
+      _builder.append("QLModel ProjectBudgetEstimation {");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("definitions {");
@@ -323,7 +323,7 @@ public class QLParsingTest {
       _builder.append("\t");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("Form ProjectBudgetEstimation {");
+      _builder.append("{");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{ // Core Project Elements (Always Present)");

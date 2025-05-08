@@ -14,15 +14,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.gemoc.ql.model.ql.DefinitionGroup;
-import org.gemoc.ql.model.ql.Form;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QlPackage;
+import org.gemoc.ql.model.ql.QuestionGroup;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,25 +30,15 @@ import org.gemoc.ql.model.ql.QlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getForms <em>Forms</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getDefinitionGroup <em>Definition Group</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#isCanSubmit <em>Can Submit</em>}</li>
  *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getSubmitDate <em>Submit Date</em>}</li>
+ *   <li>{@link org.gemoc.ql.model.ql.impl.QLModelImpl#getQuestionGroups <em>Question Groups</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel {
-	/**
-	 * The cached value of the '{@link #getForms() <em>Forms</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getForms()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Form> forms;
-
+public class QLModelImpl extends NamedElementImpl implements QLModel {
 	/**
 	 * The cached value of the '{@link #getDefinitionGroup() <em>Definition Group</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -102,6 +90,16 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	protected Date submitDate = SUBMIT_DATE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getQuestionGroups() <em>Question Groups</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuestionGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<QuestionGroup> questionGroups;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,19 +116,6 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	@Override
 	protected EClass eStaticClass() {
 		return QlPackage.Literals.QL_MODEL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Form> getForms() {
-		if (forms == null) {
-			forms = new EObjectContainmentEList<Form>(Form.class, this, QlPackage.QL_MODEL__FORMS);
-		}
-		return forms;
 	}
 
 	/**
@@ -201,12 +186,26 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	 * @generated
 	 */
 	@Override
+	public EList<QuestionGroup> getQuestionGroups() {
+		if (questionGroups == null) {
+			questionGroups = new EObjectContainmentEList<QuestionGroup>(QuestionGroup.class, this,
+					QlPackage.QL_MODEL__QUESTION_GROUPS);
+		}
+		return questionGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case QlPackage.QL_MODEL__FORMS:
-			return ((InternalEList<?>) getForms()).basicRemove(otherEnd, msgs);
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			return ((InternalEList<?>) getDefinitionGroup()).basicRemove(otherEnd, msgs);
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
+			return ((InternalEList<?>) getQuestionGroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -219,14 +218,14 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case QlPackage.QL_MODEL__FORMS:
-			return getForms();
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			return getDefinitionGroup();
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			return isCanSubmit();
 		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			return getSubmitDate();
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
+			return getQuestionGroups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,10 +239,6 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case QlPackage.QL_MODEL__FORMS:
-			getForms().clear();
-			getForms().addAll((Collection<? extends Form>) newValue);
-			return;
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			getDefinitionGroup().clear();
 			getDefinitionGroup().addAll((Collection<? extends DefinitionGroup>) newValue);
@@ -253,6 +248,10 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return;
 		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			setSubmitDate((Date) newValue);
+			return;
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
+			getQuestionGroups().clear();
+			getQuestionGroups().addAll((Collection<? extends QuestionGroup>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,9 +265,6 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case QlPackage.QL_MODEL__FORMS:
-			getForms().clear();
-			return;
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			getDefinitionGroup().clear();
 			return;
@@ -277,6 +273,9 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 			return;
 		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			setSubmitDate(SUBMIT_DATE_EDEFAULT);
+			return;
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
+			getQuestionGroups().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -290,14 +289,14 @@ public class QLModelImpl extends MinimalEObjectImpl.Container implements QLModel
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case QlPackage.QL_MODEL__FORMS:
-			return forms != null && !forms.isEmpty();
 		case QlPackage.QL_MODEL__DEFINITION_GROUP:
 			return definitionGroup != null && !definitionGroup.isEmpty();
 		case QlPackage.QL_MODEL__CAN_SUBMIT:
 			return canSubmit != CAN_SUBMIT_EDEFAULT;
 		case QlPackage.QL_MODEL__SUBMIT_DATE:
 			return SUBMIT_DATE_EDEFAULT == null ? submitDate != null : !SUBMIT_DATE_EDEFAULT.equals(submitDate);
+		case QlPackage.QL_MODEL__QUESTION_GROUPS:
+			return questionGroups != null && !questionGroups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
