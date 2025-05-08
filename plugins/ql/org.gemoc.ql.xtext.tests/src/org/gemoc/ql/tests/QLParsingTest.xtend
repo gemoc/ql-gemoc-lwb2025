@@ -21,7 +21,7 @@ class QLParsingTest {
 	@Test
 	def void loadChallengeHouseOwningModel() {
 		val result = parseHelper.parse('''
-			QLModel {
+			QLModel Box1HouseOwning {
 				definitions {
 					booleanType boolean
 					decimalType money { unit "Euro" }
@@ -34,7 +34,7 @@ class QLParsingTest {
 					mandatory question privateDebt: "Private debts for the sold house:"  money
 					question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
 				} 
-				Form Box1HouseOwning {
+				{
 					{
 						hasSoldHouse
 						hasBoughtHouse
@@ -56,7 +56,7 @@ class QLParsingTest {
 	@Test
 	def void loadGuessWhoMiniModel() {
 		val result = parseHelper.parse('''
-			QLModel {
+			QLModel GuessWho {
 				definitions {
 					booleanType boolean
 					enumerationType yesNo  { literals {Unknown, Yes , No} }
@@ -73,7 +73,7 @@ class QLParsingTest {
 					question isFemale : "Is your person a female?" yesNo
 					question personGender : "Your person is a " gender = if ( (isMale() = yesNo.Yes) or (isFemale() = yesNo.No)) then (gender.Male) endif;
 				}
-				Form GuessWho {
+				{
 					{
 						isMale
 						isFemale
@@ -88,7 +88,7 @@ class QLParsingTest {
 		@Test
 	def void loadProjectBudgetEstimationModel() {
 		val result = parseHelper.parse('''
-			QLModel {
+			QLModel ProjectBudgetEstimation {
 				definitions {
 					booleanType boolean
 					decimalType personHour {}
@@ -128,7 +128,7 @@ class QLParsingTest {
 					);
 				}	
 				
-				Form ProjectBudgetEstimation {
+				{
 					{ // Core Project Elements (Always Present)
 						estimatedPersonHourForDev
 						hourlyRateForDev
