@@ -34,19 +34,23 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
 		private final Keyword cQLSModelKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cQuestionStylesKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cQuestionStylesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_6_0 = (RuleCall)cQuestionStylesAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cStyledQLModelAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cStyledQLModelQLModelCrossReference_3_0 = (CrossReference)cStyledQLModelAssignment_3.eContents().get(0);
+		private final RuleCall cStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cStyledQLModelQLModelCrossReference_3_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cQuestionStylesKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cQuestionStylesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_7_0 = (RuleCall)cQuestionStylesAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		////generate qLS "http://www.gemoc.org/qls/QLS"
 		//QLSModel returns QLSModel:
 		//    {QLSModel}
 		//    imports+=Import*
 		//    'QLSModel'
+		//    styledQLModel=[ql::QLModel|QualifiedName]
 		//    '{'
 		//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 		//    '}';
@@ -55,6 +59,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//{QLSModel}
 		//imports+=Import*
 		//'QLSModel'
+		//styledQLModel=[ql::QLModel|QualifiedName]
 		//'{'
 		//    'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 		//'}'
@@ -72,26 +77,35 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'QLSModel'
 		public Keyword getQLSModelKeyword_2() { return cQLSModelKeyword_2; }
 		
+		//styledQLModel=[ql::QLModel|QualifiedName]
+		public Assignment getStyledQLModelAssignment_3() { return cStyledQLModelAssignment_3; }
+		
+		//[ql::QLModel|QualifiedName]
+		public CrossReference getStyledQLModelQLModelCrossReference_3_0() { return cStyledQLModelQLModelCrossReference_3_0; }
+		
+		//QualifiedName
+		public RuleCall getStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1() { return cStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
 		//'questionStyles'
-		public Keyword getQuestionStylesKeyword_4() { return cQuestionStylesKeyword_4; }
+		public Keyword getQuestionStylesKeyword_5() { return cQuestionStylesKeyword_5; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 		
 		//(questionStyles+=QuestionStyle)*
-		public Assignment getQuestionStylesAssignment_6() { return cQuestionStylesAssignment_6; }
+		public Assignment getQuestionStylesAssignment_7() { return cQuestionStylesAssignment_7; }
 		
 		//QuestionStyle
-		public RuleCall getQuestionStylesQuestionStyleParserRuleCall_6_0() { return cQuestionStylesQuestionStyleParserRuleCall_6_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public RuleCall getQuestionStylesQuestionStyleParserRuleCall_7_0() { return cQuestionStylesQuestionStyleParserRuleCall_7_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.Import");
@@ -564,6 +578,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    {QLSModel}
 	//    imports+=Import*
 	//    'QLSModel'
+	//    styledQLModel=[ql::QLModel|QualifiedName]
 	//    '{'
 	//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
 	//    '}';

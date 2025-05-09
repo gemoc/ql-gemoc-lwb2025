@@ -5,6 +5,7 @@ package org.gemoc.qls.model.qls;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.gemoc.ql.model.ql.QLModel;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getImports <em>Imports</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getQuestionStyles <em>Question Styles</em>}</li>
+ *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getStyledQLModel <em>Styled QL Model</em>}</li>
  * </ul>
  *
  * @see org.gemoc.qls.model.qls.QlsPackage#getQLSModel()
@@ -47,5 +49,27 @@ public interface QLSModel extends EObject {
 	 * @generated
 	 */
 	EList<QuestionStyle> getQuestionStyles();
+
+	/**
+	 * Returns the value of the '<em><b>Styled QL Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Styled QL Model</em>' reference.
+	 * @see #setStyledQLModel(QLModel)
+	 * @see org.gemoc.qls.model.qls.QlsPackage#getQLSModel_StyledQLModel()
+	 * @model required="true"
+	 * @generated
+	 */
+	QLModel getStyledQLModel();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.qls.model.qls.QLSModel#getStyledQLModel <em>Styled QL Model</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Styled QL Model</em>' reference.
+	 * @see #getStyledQLModel()
+	 * @generated
+	 */
+	void setStyledQLModel(QLModel value);
 
 } // QLSModel

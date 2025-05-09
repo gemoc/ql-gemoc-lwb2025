@@ -86,13 +86,22 @@ public interface QlsPackage extends EPackage {
 	int QLS_MODEL__QUESTION_STYLES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Styled QL Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QLS_MODEL__STYLED_QL_MODEL = 2;
+
+	/**
 	 * The number of structural features of the '<em>QLS Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QLS_MODEL_FEATURE_COUNT = 2;
+	int QLS_MODEL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>QLS Model</em>' class.
@@ -507,6 +516,17 @@ public interface QlsPackage extends EPackage {
 	EReference getQLSModel_QuestionStyles();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.qls.model.qls.QLSModel#getStyledQLModel <em>Styled QL Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Styled QL Model</em>'.
+	 * @see org.gemoc.qls.model.qls.QLSModel#getStyledQLModel()
+	 * @see #getQLSModel()
+	 * @generated
+	 */
+	EReference getQLSModel_StyledQLModel();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.Import <em>Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -763,6 +783,14 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QLS_MODEL__QUESTION_STYLES = eINSTANCE.getQLSModel_QuestionStyles();
+
+		/**
+		 * The meta object literal for the '<em><b>Styled QL Model</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QLS_MODEL__STYLED_QL_MODEL = eINSTANCE.getQLSModel_StyledQLModel();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.ImportImpl <em>Import</em>}' class.

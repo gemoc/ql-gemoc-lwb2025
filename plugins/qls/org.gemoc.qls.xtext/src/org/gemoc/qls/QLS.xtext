@@ -9,6 +9,7 @@ QLSModel returns QLSModel:
 	{QLSModel}
 	imports+=Import*
 	'QLSModel'
+	styledQLModel=[ql::QLModel|QualifiedName]
 	'{'
 		'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}' 
 	'}';

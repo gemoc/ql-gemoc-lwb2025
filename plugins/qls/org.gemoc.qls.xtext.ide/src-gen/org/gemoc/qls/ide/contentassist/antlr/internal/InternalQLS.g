@@ -2118,9 +2118,9 @@ rule__QLSModel__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3()); }
-	'{'
-	{ after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3()); }
+	{ before(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3()); }
+	(rule__QLSModel__StyledQLModelAssignment_3)
+	{ after(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3()); }
 )
 ;
 finally {
@@ -2145,9 +2145,9 @@ rule__QLSModel__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4()); }
-	'questionStyles'
-	{ after(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4()); }
+	{ before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4()); }
+	'{'
+	{ after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4()); }
 )
 ;
 finally {
@@ -2172,9 +2172,9 @@ rule__QLSModel__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5()); }
-	'{'
-	{ after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5()); }
+	{ before(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_5()); }
+	'questionStyles'
+	{ after(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_5()); }
 )
 ;
 finally {
@@ -2199,9 +2199,9 @@ rule__QLSModel__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_6()); }
-	(rule__QLSModel__QuestionStylesAssignment_6)*
-	{ after(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_6()); }
+	{ before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_6()); }
+	'{'
+	{ after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_6()); }
 )
 ;
 finally {
@@ -2226,9 +2226,9 @@ rule__QLSModel__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7()); }
-	'}'
-	{ after(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7()); }
+	{ before(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7()); }
+	(rule__QLSModel__QuestionStylesAssignment_7)*
+	{ after(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7()); }
 )
 ;
 finally {
@@ -2241,6 +2241,7 @@ rule__QLSModel__Group__8
 	}
 :
 	rule__QLSModel__Group__8__Impl
+	rule__QLSModel__Group__9
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2255,6 +2256,32 @@ rule__QLSModel__Group__8__Impl
 	{ before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8()); }
 	'}'
 	{ after(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QLSModel__Group__9
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__QLSModel__Group__9__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QLSModel__Group__9__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9()); }
+	'}'
+	{ after(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9()); }
 )
 ;
 finally {
@@ -8352,15 +8379,34 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__QLSModel__QuestionStylesAssignment_6
+rule__QLSModel__StyledQLModelAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0()); }
+		{ before(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelCrossReference_3_0()); }
+		(
+			{ before(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1()); }
+			ruleQualifiedName
+			{ after(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1()); }
+		)
+		{ after(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelCrossReference_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__QLSModel__QuestionStylesAssignment_7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_7_0()); }
 		ruleQuestionStyle
-		{ after(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0()); }
+		{ after(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_7_0()); }
 	)
 ;
 finally {

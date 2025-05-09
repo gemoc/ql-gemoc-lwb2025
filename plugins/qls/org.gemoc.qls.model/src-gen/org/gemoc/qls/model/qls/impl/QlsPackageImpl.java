@@ -221,6 +221,16 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getQLSModel_StyledQLModel() {
+		return (EReference) qlsModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getImport() {
 		return importEClass;
 	}
@@ -448,6 +458,7 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		qlsModelEClass = createEClass(QLS_MODEL);
 		createEReference(qlsModelEClass, QLS_MODEL__IMPORTS);
 		createEReference(qlsModelEClass, QLS_MODEL__QUESTION_STYLES);
+		createEReference(qlsModelEClass, QLS_MODEL__STYLED_QL_MODEL);
 
 		importEClass = createEClass(IMPORT);
 		createEAttribute(importEClass, IMPORT__IMPORT_URI);
@@ -529,6 +540,9 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQLSModel_QuestionStyles(), this.getQuestionStyle(), null, "questionStyles", null, 0, -1,
 				QLSModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQLSModel_StyledQLModel(), theQlPackage.getQLModel(), null, "styledQLModel", null, 1, 1,
+				QLSModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

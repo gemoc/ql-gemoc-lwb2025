@@ -23,7 +23,7 @@ class QLSParsingTest {
 		val result = parseHelper.parse('''
 			import "challengeHouseOwningQuestionnaire.ql"
 			
-			QLSModel { 
+			QLSModel HouseOwningQuestionnaire { 
 				questionStyles { 
 					styledQuestion HouseOwning.hasBoughtHouse {labelStyle { bold }}
 					styledQuestion HouseOwning.valueResidue { labelStyle {italic}}

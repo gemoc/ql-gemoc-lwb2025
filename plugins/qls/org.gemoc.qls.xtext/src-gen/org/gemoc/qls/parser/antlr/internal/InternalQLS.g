@@ -107,24 +107,40 @@ ruleQLSModel returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getQLSModelAccess().getQLSModelKeyword_2());
 		}
-		otherlv_3='{'
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getQLSModelRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelCrossReference_3_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4());
 		}
-		otherlv_4='questionStyles'
+		otherlv_5='questionStyles'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_5());
 		}
-		otherlv_5='{'
+		otherlv_6='{'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_7_0());
 				}
-				lv_questionStyles_6_0=ruleQuestionStyle
+				lv_questionStyles_7_0=ruleQuestionStyle
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getQLSModelRule());
@@ -132,19 +148,19 @@ ruleQLSModel returns [EObject current=null]
 					add(
 						$current,
 						"questionStyles",
-						lv_questionStyles_6_0,
+						lv_questionStyles_7_0,
 						"org.gemoc.qls.QLS.QuestionStyle");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_7='}'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7());
-		}
 		otherlv_8='}'
 		{
 			newLeafNode(otherlv_8, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8());
+		}
+		otherlv_9='}'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;

@@ -4500,11 +4500,11 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             if ( (LA2_0==52) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==53) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_1==55) ) {
+                if ( (LA2_1==55) ) {
                     alt2=2;
+                }
+                else if ( (LA2_1==53) ) {
+                    alt2=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -5153,11 +5153,11 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
                 {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==77) ) {
-                    alt8=5;
-                }
-                else if ( (LA8_1==EOF||LA8_1==58) ) {
+                if ( (LA8_1==EOF||LA8_1==58) ) {
                     alt8=1;
+                }
+                else if ( (LA8_1==77) ) {
+                    alt8=5;
                 }
                 else {
                     NoViableAltException nvae =
@@ -6988,21 +6988,31 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__3__Impl"
-    // InternalQLS.g:2115:1: rule__QLSModel__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:2115:1: rule__QLSModel__Group__3__Impl : ( ( rule__QLSModel__StyledQLModelAssignment_3 ) ) ;
     public final void rule__QLSModel__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2119:1: ( ( '{' ) )
-            // InternalQLS.g:2120:1: ( '{' )
+            // InternalQLS.g:2119:1: ( ( ( rule__QLSModel__StyledQLModelAssignment_3 ) ) )
+            // InternalQLS.g:2120:1: ( ( rule__QLSModel__StyledQLModelAssignment_3 ) )
             {
-            // InternalQLS.g:2120:1: ( '{' )
-            // InternalQLS.g:2121:2: '{'
+            // InternalQLS.g:2120:1: ( ( rule__QLSModel__StyledQLModelAssignment_3 ) )
+            // InternalQLS.g:2121:2: ( rule__QLSModel__StyledQLModelAssignment_3 )
             {
-             before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3()); 
+            // InternalQLS.g:2122:2: ( rule__QLSModel__StyledQLModelAssignment_3 )
+            // InternalQLS.g:2122:3: rule__QLSModel__StyledQLModelAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__QLSModel__StyledQLModelAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3()); 
 
             }
 
@@ -7034,7 +7044,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2134:1: ( rule__QLSModel__Group__4__Impl rule__QLSModel__Group__5 )
             // InternalQLS.g:2135:2: rule__QLSModel__Group__4__Impl rule__QLSModel__Group__5
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_7);
             rule__QLSModel__Group__4__Impl();
 
             state._fsp--;
@@ -7063,21 +7073,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__4__Impl"
-    // InternalQLS.g:2142:1: rule__QLSModel__Group__4__Impl : ( 'questionStyles' ) ;
+    // InternalQLS.g:2142:1: rule__QLSModel__Group__4__Impl : ( '{' ) ;
     public final void rule__QLSModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2146:1: ( ( 'questionStyles' ) )
-            // InternalQLS.g:2147:1: ( 'questionStyles' )
+            // InternalQLS.g:2146:1: ( ( '{' ) )
+            // InternalQLS.g:2147:1: ( '{' )
             {
-            // InternalQLS.g:2147:1: ( 'questionStyles' )
-            // InternalQLS.g:2148:2: 'questionStyles'
+            // InternalQLS.g:2147:1: ( '{' )
+            // InternalQLS.g:2148:2: '{'
             {
-             before(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4()); 
-            match(input,45,FOLLOW_2); 
-             after(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_4()); 
+             before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4()); 
+            match(input,44,FOLLOW_2); 
+             after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
 
@@ -7109,7 +7119,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2161:1: ( rule__QLSModel__Group__5__Impl rule__QLSModel__Group__6 )
             // InternalQLS.g:2162:2: rule__QLSModel__Group__5__Impl rule__QLSModel__Group__6
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__QLSModel__Group__5__Impl();
 
             state._fsp--;
@@ -7138,21 +7148,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__5__Impl"
-    // InternalQLS.g:2169:1: rule__QLSModel__Group__5__Impl : ( '{' ) ;
+    // InternalQLS.g:2169:1: rule__QLSModel__Group__5__Impl : ( 'questionStyles' ) ;
     public final void rule__QLSModel__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2173:1: ( ( '{' ) )
-            // InternalQLS.g:2174:1: ( '{' )
+            // InternalQLS.g:2173:1: ( ( 'questionStyles' ) )
+            // InternalQLS.g:2174:1: ( 'questionStyles' )
             {
-            // InternalQLS.g:2174:1: ( '{' )
-            // InternalQLS.g:2175:2: '{'
+            // InternalQLS.g:2174:1: ( 'questionStyles' )
+            // InternalQLS.g:2175:2: 'questionStyles'
             {
-             before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_5()); 
+             before(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_5()); 
+            match(input,45,FOLLOW_2); 
+             after(grammarAccess.getQLSModelAccess().getQuestionStylesKeyword_5()); 
 
             }
 
@@ -7184,7 +7194,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2188:1: ( rule__QLSModel__Group__6__Impl rule__QLSModel__Group__7 )
             // InternalQLS.g:2189:2: rule__QLSModel__Group__6__Impl rule__QLSModel__Group__7
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_8);
             rule__QLSModel__Group__6__Impl();
 
             state._fsp--;
@@ -7213,49 +7223,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__6__Impl"
-    // InternalQLS.g:2196:1: rule__QLSModel__Group__6__Impl : ( ( rule__QLSModel__QuestionStylesAssignment_6 )* ) ;
+    // InternalQLS.g:2196:1: rule__QLSModel__Group__6__Impl : ( '{' ) ;
     public final void rule__QLSModel__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2200:1: ( ( ( rule__QLSModel__QuestionStylesAssignment_6 )* ) )
-            // InternalQLS.g:2201:1: ( ( rule__QLSModel__QuestionStylesAssignment_6 )* )
+            // InternalQLS.g:2200:1: ( ( '{' ) )
+            // InternalQLS.g:2201:1: ( '{' )
             {
-            // InternalQLS.g:2201:1: ( ( rule__QLSModel__QuestionStylesAssignment_6 )* )
-            // InternalQLS.g:2202:2: ( rule__QLSModel__QuestionStylesAssignment_6 )*
+            // InternalQLS.g:2201:1: ( '{' )
+            // InternalQLS.g:2202:2: '{'
             {
-             before(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_6()); 
-            // InternalQLS.g:2203:2: ( rule__QLSModel__QuestionStylesAssignment_6 )*
-            loop22:
-            do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
-
-                if ( (LA22_0==48) ) {
-                    alt22=1;
-                }
-
-
-                switch (alt22) {
-            	case 1 :
-            	    // InternalQLS.g:2203:3: rule__QLSModel__QuestionStylesAssignment_6
-            	    {
-            	    pushFollow(FOLLOW_8);
-            	    rule__QLSModel__QuestionStylesAssignment_6();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop22;
-                }
-            } while (true);
-
-             after(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_6()); 
+             before(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_6()); 
+            match(input,44,FOLLOW_2); 
+             after(grammarAccess.getQLSModelAccess().getLeftCurlyBracketKeyword_6()); 
 
             }
 
@@ -7287,7 +7269,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2215:1: ( rule__QLSModel__Group__7__Impl rule__QLSModel__Group__8 )
             // InternalQLS.g:2216:2: rule__QLSModel__Group__7__Impl rule__QLSModel__Group__8
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_8);
             rule__QLSModel__Group__7__Impl();
 
             state._fsp--;
@@ -7316,21 +7298,49 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__7__Impl"
-    // InternalQLS.g:2223:1: rule__QLSModel__Group__7__Impl : ( '}' ) ;
+    // InternalQLS.g:2223:1: rule__QLSModel__Group__7__Impl : ( ( rule__QLSModel__QuestionStylesAssignment_7 )* ) ;
     public final void rule__QLSModel__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2227:1: ( ( '}' ) )
-            // InternalQLS.g:2228:1: ( '}' )
+            // InternalQLS.g:2227:1: ( ( ( rule__QLSModel__QuestionStylesAssignment_7 )* ) )
+            // InternalQLS.g:2228:1: ( ( rule__QLSModel__QuestionStylesAssignment_7 )* )
             {
-            // InternalQLS.g:2228:1: ( '}' )
-            // InternalQLS.g:2229:2: '}'
+            // InternalQLS.g:2228:1: ( ( rule__QLSModel__QuestionStylesAssignment_7 )* )
+            // InternalQLS.g:2229:2: ( rule__QLSModel__QuestionStylesAssignment_7 )*
             {
-             before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,46,FOLLOW_2); 
-             after(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_7()); 
+             before(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7()); 
+            // InternalQLS.g:2230:2: ( rule__QLSModel__QuestionStylesAssignment_7 )*
+            loop22:
+            do {
+                int alt22=2;
+                int LA22_0 = input.LA(1);
+
+                if ( (LA22_0==48) ) {
+                    alt22=1;
+                }
+
+
+                switch (alt22) {
+            	case 1 :
+            	    // InternalQLS.g:2230:3: rule__QLSModel__QuestionStylesAssignment_7
+            	    {
+            	    pushFollow(FOLLOW_9);
+            	    rule__QLSModel__QuestionStylesAssignment_7();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop22;
+                }
+            } while (true);
+
+             after(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7()); 
 
             }
 
@@ -7353,17 +7363,22 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__8"
-    // InternalQLS.g:2238:1: rule__QLSModel__Group__8 : rule__QLSModel__Group__8__Impl ;
+    // InternalQLS.g:2238:1: rule__QLSModel__Group__8 : rule__QLSModel__Group__8__Impl rule__QLSModel__Group__9 ;
     public final void rule__QLSModel__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2242:1: ( rule__QLSModel__Group__8__Impl )
-            // InternalQLS.g:2243:2: rule__QLSModel__Group__8__Impl
+            // InternalQLS.g:2242:1: ( rule__QLSModel__Group__8__Impl rule__QLSModel__Group__9 )
+            // InternalQLS.g:2243:2: rule__QLSModel__Group__8__Impl rule__QLSModel__Group__9
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_10);
             rule__QLSModel__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__QLSModel__Group__9();
 
             state._fsp--;
 
@@ -7386,17 +7401,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__Group__8__Impl"
-    // InternalQLS.g:2249:1: rule__QLSModel__Group__8__Impl : ( '}' ) ;
+    // InternalQLS.g:2250:1: rule__QLSModel__Group__8__Impl : ( '}' ) ;
     public final void rule__QLSModel__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2253:1: ( ( '}' ) )
-            // InternalQLS.g:2254:1: ( '}' )
+            // InternalQLS.g:2254:1: ( ( '}' ) )
+            // InternalQLS.g:2255:1: ( '}' )
             {
-            // InternalQLS.g:2254:1: ( '}' )
-            // InternalQLS.g:2255:2: '}'
+            // InternalQLS.g:2255:1: ( '}' )
+            // InternalQLS.g:2256:2: '}'
             {
              before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8()); 
             match(input,46,FOLLOW_2); 
@@ -7422,17 +7437,87 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__QLSModel__Group__8__Impl"
 
 
+    // $ANTLR start "rule__QLSModel__Group__9"
+    // InternalQLS.g:2265:1: rule__QLSModel__Group__9 : rule__QLSModel__Group__9__Impl ;
+    public final void rule__QLSModel__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:2269:1: ( rule__QLSModel__Group__9__Impl )
+            // InternalQLS.g:2270:2: rule__QLSModel__Group__9__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__QLSModel__Group__9__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QLSModel__Group__9"
+
+
+    // $ANTLR start "rule__QLSModel__Group__9__Impl"
+    // InternalQLS.g:2276:1: rule__QLSModel__Group__9__Impl : ( '}' ) ;
+    public final void rule__QLSModel__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:2280:1: ( ( '}' ) )
+            // InternalQLS.g:2281:1: ( '}' )
+            {
+            // InternalQLS.g:2281:1: ( '}' )
+            // InternalQLS.g:2282:2: '}'
+            {
+             before(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9()); 
+            match(input,46,FOLLOW_2); 
+             after(grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QLSModel__Group__9__Impl"
+
+
     // $ANTLR start "rule__Import__Group__0"
-    // InternalQLS.g:2265:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    // InternalQLS.g:2292:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
     public final void rule__Import__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2269:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
-            // InternalQLS.g:2270:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            // InternalQLS.g:2296:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // InternalQLS.g:2297:2: rule__Import__Group__0__Impl rule__Import__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Import__Group__0__Impl();
 
             state._fsp--;
@@ -7461,21 +7546,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__0__Impl"
-    // InternalQLS.g:2277:1: rule__Import__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:2304:1: rule__Import__Group__0__Impl : ( () ) ;
     public final void rule__Import__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2281:1: ( ( () ) )
-            // InternalQLS.g:2282:1: ( () )
+            // InternalQLS.g:2308:1: ( ( () ) )
+            // InternalQLS.g:2309:1: ( () )
             {
-            // InternalQLS.g:2282:1: ( () )
-            // InternalQLS.g:2283:2: ()
+            // InternalQLS.g:2309:1: ( () )
+            // InternalQLS.g:2310:2: ()
             {
              before(grammarAccess.getImportAccess().getImportAction_0()); 
-            // InternalQLS.g:2284:2: ()
-            // InternalQLS.g:2284:3: 
+            // InternalQLS.g:2311:2: ()
+            // InternalQLS.g:2311:3: 
             {
             }
 
@@ -7498,16 +7583,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1"
-    // InternalQLS.g:2292:1: rule__Import__Group__1 : rule__Import__Group__1__Impl rule__Import__Group__2 ;
+    // InternalQLS.g:2319:1: rule__Import__Group__1 : rule__Import__Group__1__Impl rule__Import__Group__2 ;
     public final void rule__Import__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2296:1: ( rule__Import__Group__1__Impl rule__Import__Group__2 )
-            // InternalQLS.g:2297:2: rule__Import__Group__1__Impl rule__Import__Group__2
+            // InternalQLS.g:2323:1: ( rule__Import__Group__1__Impl rule__Import__Group__2 )
+            // InternalQLS.g:2324:2: rule__Import__Group__1__Impl rule__Import__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Import__Group__1__Impl();
 
             state._fsp--;
@@ -7536,17 +7621,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1__Impl"
-    // InternalQLS.g:2304:1: rule__Import__Group__1__Impl : ( 'import' ) ;
+    // InternalQLS.g:2331:1: rule__Import__Group__1__Impl : ( 'import' ) ;
     public final void rule__Import__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2308:1: ( ( 'import' ) )
-            // InternalQLS.g:2309:1: ( 'import' )
+            // InternalQLS.g:2335:1: ( ( 'import' ) )
+            // InternalQLS.g:2336:1: ( 'import' )
             {
-            // InternalQLS.g:2309:1: ( 'import' )
-            // InternalQLS.g:2310:2: 'import'
+            // InternalQLS.g:2336:1: ( 'import' )
+            // InternalQLS.g:2337:2: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_1()); 
             match(input,47,FOLLOW_2); 
@@ -7573,14 +7658,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__2"
-    // InternalQLS.g:2319:1: rule__Import__Group__2 : rule__Import__Group__2__Impl ;
+    // InternalQLS.g:2346:1: rule__Import__Group__2 : rule__Import__Group__2__Impl ;
     public final void rule__Import__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2323:1: ( rule__Import__Group__2__Impl )
-            // InternalQLS.g:2324:2: rule__Import__Group__2__Impl
+            // InternalQLS.g:2350:1: ( rule__Import__Group__2__Impl )
+            // InternalQLS.g:2351:2: rule__Import__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Import__Group__2__Impl();
@@ -7606,21 +7691,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__2__Impl"
-    // InternalQLS.g:2330:1: rule__Import__Group__2__Impl : ( ( rule__Import__ImportURIAssignment_2 ) ) ;
+    // InternalQLS.g:2357:1: rule__Import__Group__2__Impl : ( ( rule__Import__ImportURIAssignment_2 ) ) ;
     public final void rule__Import__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2334:1: ( ( ( rule__Import__ImportURIAssignment_2 ) ) )
-            // InternalQLS.g:2335:1: ( ( rule__Import__ImportURIAssignment_2 ) )
+            // InternalQLS.g:2361:1: ( ( ( rule__Import__ImportURIAssignment_2 ) ) )
+            // InternalQLS.g:2362:1: ( ( rule__Import__ImportURIAssignment_2 ) )
             {
-            // InternalQLS.g:2335:1: ( ( rule__Import__ImportURIAssignment_2 ) )
-            // InternalQLS.g:2336:2: ( rule__Import__ImportURIAssignment_2 )
+            // InternalQLS.g:2362:1: ( ( rule__Import__ImportURIAssignment_2 ) )
+            // InternalQLS.g:2363:2: ( rule__Import__ImportURIAssignment_2 )
             {
              before(grammarAccess.getImportAccess().getImportURIAssignment_2()); 
-            // InternalQLS.g:2337:2: ( rule__Import__ImportURIAssignment_2 )
-            // InternalQLS.g:2337:3: rule__Import__ImportURIAssignment_2
+            // InternalQLS.g:2364:2: ( rule__Import__ImportURIAssignment_2 )
+            // InternalQLS.g:2364:3: rule__Import__ImportURIAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Import__ImportURIAssignment_2();
@@ -7653,16 +7738,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__0"
-    // InternalQLS.g:2346:1: rule__QuestionStyle__Group__0 : rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1 ;
+    // InternalQLS.g:2373:1: rule__QuestionStyle__Group__0 : rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1 ;
     public final void rule__QuestionStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2350:1: ( rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1 )
-            // InternalQLS.g:2351:2: rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1
+            // InternalQLS.g:2377:1: ( rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1 )
+            // InternalQLS.g:2378:2: rule__QuestionStyle__Group__0__Impl rule__QuestionStyle__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__QuestionStyle__Group__0__Impl();
 
             state._fsp--;
@@ -7691,17 +7776,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__0__Impl"
-    // InternalQLS.g:2358:1: rule__QuestionStyle__Group__0__Impl : ( 'styledQuestion' ) ;
+    // InternalQLS.g:2385:1: rule__QuestionStyle__Group__0__Impl : ( 'styledQuestion' ) ;
     public final void rule__QuestionStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2362:1: ( ( 'styledQuestion' ) )
-            // InternalQLS.g:2363:1: ( 'styledQuestion' )
+            // InternalQLS.g:2389:1: ( ( 'styledQuestion' ) )
+            // InternalQLS.g:2390:1: ( 'styledQuestion' )
             {
-            // InternalQLS.g:2363:1: ( 'styledQuestion' )
-            // InternalQLS.g:2364:2: 'styledQuestion'
+            // InternalQLS.g:2390:1: ( 'styledQuestion' )
+            // InternalQLS.g:2391:2: 'styledQuestion'
             {
              before(grammarAccess.getQuestionStyleAccess().getStyledQuestionKeyword_0()); 
             match(input,48,FOLLOW_2); 
@@ -7728,16 +7813,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__1"
-    // InternalQLS.g:2373:1: rule__QuestionStyle__Group__1 : rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2 ;
+    // InternalQLS.g:2400:1: rule__QuestionStyle__Group__1 : rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2 ;
     public final void rule__QuestionStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2377:1: ( rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2 )
-            // InternalQLS.g:2378:2: rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2
+            // InternalQLS.g:2404:1: ( rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2 )
+            // InternalQLS.g:2405:2: rule__QuestionStyle__Group__1__Impl rule__QuestionStyle__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__QuestionStyle__Group__1__Impl();
 
             state._fsp--;
@@ -7766,21 +7851,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__1__Impl"
-    // InternalQLS.g:2385:1: rule__QuestionStyle__Group__1__Impl : ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) ) ;
+    // InternalQLS.g:2412:1: rule__QuestionStyle__Group__1__Impl : ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) ) ;
     public final void rule__QuestionStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2389:1: ( ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) ) )
-            // InternalQLS.g:2390:1: ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) )
+            // InternalQLS.g:2416:1: ( ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) ) )
+            // InternalQLS.g:2417:1: ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) )
             {
-            // InternalQLS.g:2390:1: ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) )
-            // InternalQLS.g:2391:2: ( rule__QuestionStyle__StyledQuestionAssignment_1 )
+            // InternalQLS.g:2417:1: ( ( rule__QuestionStyle__StyledQuestionAssignment_1 ) )
+            // InternalQLS.g:2418:2: ( rule__QuestionStyle__StyledQuestionAssignment_1 )
             {
              before(grammarAccess.getQuestionStyleAccess().getStyledQuestionAssignment_1()); 
-            // InternalQLS.g:2392:2: ( rule__QuestionStyle__StyledQuestionAssignment_1 )
-            // InternalQLS.g:2392:3: rule__QuestionStyle__StyledQuestionAssignment_1
+            // InternalQLS.g:2419:2: ( rule__QuestionStyle__StyledQuestionAssignment_1 )
+            // InternalQLS.g:2419:3: rule__QuestionStyle__StyledQuestionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__StyledQuestionAssignment_1();
@@ -7813,14 +7898,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__2"
-    // InternalQLS.g:2400:1: rule__QuestionStyle__Group__2 : rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3 ;
+    // InternalQLS.g:2427:1: rule__QuestionStyle__Group__2 : rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3 ;
     public final void rule__QuestionStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2404:1: ( rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3 )
-            // InternalQLS.g:2405:2: rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3
+            // InternalQLS.g:2431:1: ( rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3 )
+            // InternalQLS.g:2432:2: rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__QuestionStyle__Group__2__Impl();
@@ -7851,17 +7936,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__2__Impl"
-    // InternalQLS.g:2412:1: rule__QuestionStyle__Group__2__Impl : ( '{' ) ;
+    // InternalQLS.g:2439:1: rule__QuestionStyle__Group__2__Impl : ( '{' ) ;
     public final void rule__QuestionStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2416:1: ( ( '{' ) )
-            // InternalQLS.g:2417:1: ( '{' )
+            // InternalQLS.g:2443:1: ( ( '{' ) )
+            // InternalQLS.g:2444:1: ( '{' )
             {
-            // InternalQLS.g:2417:1: ( '{' )
-            // InternalQLS.g:2418:2: '{'
+            // InternalQLS.g:2444:1: ( '{' )
+            // InternalQLS.g:2445:2: '{'
             {
              before(grammarAccess.getQuestionStyleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,44,FOLLOW_2); 
@@ -7888,14 +7973,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__3"
-    // InternalQLS.g:2427:1: rule__QuestionStyle__Group__3 : rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4 ;
+    // InternalQLS.g:2454:1: rule__QuestionStyle__Group__3 : rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4 ;
     public final void rule__QuestionStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2431:1: ( rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4 )
-            // InternalQLS.g:2432:2: rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4
+            // InternalQLS.g:2458:1: ( rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4 )
+            // InternalQLS.g:2459:2: rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__QuestionStyle__Group__3__Impl();
@@ -7926,20 +8011,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__3__Impl"
-    // InternalQLS.g:2439:1: rule__QuestionStyle__Group__3__Impl : ( ( rule__QuestionStyle__Group_3__0 )? ) ;
+    // InternalQLS.g:2466:1: rule__QuestionStyle__Group__3__Impl : ( ( rule__QuestionStyle__Group_3__0 )? ) ;
     public final void rule__QuestionStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2443:1: ( ( ( rule__QuestionStyle__Group_3__0 )? ) )
-            // InternalQLS.g:2444:1: ( ( rule__QuestionStyle__Group_3__0 )? )
+            // InternalQLS.g:2470:1: ( ( ( rule__QuestionStyle__Group_3__0 )? ) )
+            // InternalQLS.g:2471:1: ( ( rule__QuestionStyle__Group_3__0 )? )
             {
-            // InternalQLS.g:2444:1: ( ( rule__QuestionStyle__Group_3__0 )? )
-            // InternalQLS.g:2445:2: ( rule__QuestionStyle__Group_3__0 )?
+            // InternalQLS.g:2471:1: ( ( rule__QuestionStyle__Group_3__0 )? )
+            // InternalQLS.g:2472:2: ( rule__QuestionStyle__Group_3__0 )?
             {
              before(grammarAccess.getQuestionStyleAccess().getGroup_3()); 
-            // InternalQLS.g:2446:2: ( rule__QuestionStyle__Group_3__0 )?
+            // InternalQLS.g:2473:2: ( rule__QuestionStyle__Group_3__0 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -7948,7 +8033,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt23) {
                 case 1 :
-                    // InternalQLS.g:2446:3: rule__QuestionStyle__Group_3__0
+                    // InternalQLS.g:2473:3: rule__QuestionStyle__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionStyle__Group_3__0();
@@ -7984,14 +8069,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__4"
-    // InternalQLS.g:2454:1: rule__QuestionStyle__Group__4 : rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5 ;
+    // InternalQLS.g:2481:1: rule__QuestionStyle__Group__4 : rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5 ;
     public final void rule__QuestionStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2458:1: ( rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5 )
-            // InternalQLS.g:2459:2: rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5
+            // InternalQLS.g:2485:1: ( rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5 )
+            // InternalQLS.g:2486:2: rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__QuestionStyle__Group__4__Impl();
@@ -8022,20 +8107,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__4__Impl"
-    // InternalQLS.g:2466:1: rule__QuestionStyle__Group__4__Impl : ( ( rule__QuestionStyle__Group_4__0 )? ) ;
+    // InternalQLS.g:2493:1: rule__QuestionStyle__Group__4__Impl : ( ( rule__QuestionStyle__Group_4__0 )? ) ;
     public final void rule__QuestionStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2470:1: ( ( ( rule__QuestionStyle__Group_4__0 )? ) )
-            // InternalQLS.g:2471:1: ( ( rule__QuestionStyle__Group_4__0 )? )
+            // InternalQLS.g:2497:1: ( ( ( rule__QuestionStyle__Group_4__0 )? ) )
+            // InternalQLS.g:2498:1: ( ( rule__QuestionStyle__Group_4__0 )? )
             {
-            // InternalQLS.g:2471:1: ( ( rule__QuestionStyle__Group_4__0 )? )
-            // InternalQLS.g:2472:2: ( rule__QuestionStyle__Group_4__0 )?
+            // InternalQLS.g:2498:1: ( ( rule__QuestionStyle__Group_4__0 )? )
+            // InternalQLS.g:2499:2: ( rule__QuestionStyle__Group_4__0 )?
             {
              before(grammarAccess.getQuestionStyleAccess().getGroup_4()); 
-            // InternalQLS.g:2473:2: ( rule__QuestionStyle__Group_4__0 )?
+            // InternalQLS.g:2500:2: ( rule__QuestionStyle__Group_4__0 )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -8044,7 +8129,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt24) {
                 case 1 :
-                    // InternalQLS.g:2473:3: rule__QuestionStyle__Group_4__0
+                    // InternalQLS.g:2500:3: rule__QuestionStyle__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionStyle__Group_4__0();
@@ -8080,14 +8165,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__5"
-    // InternalQLS.g:2481:1: rule__QuestionStyle__Group__5 : rule__QuestionStyle__Group__5__Impl ;
+    // InternalQLS.g:2508:1: rule__QuestionStyle__Group__5 : rule__QuestionStyle__Group__5__Impl ;
     public final void rule__QuestionStyle__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2485:1: ( rule__QuestionStyle__Group__5__Impl )
-            // InternalQLS.g:2486:2: rule__QuestionStyle__Group__5__Impl
+            // InternalQLS.g:2512:1: ( rule__QuestionStyle__Group__5__Impl )
+            // InternalQLS.g:2513:2: rule__QuestionStyle__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__Group__5__Impl();
@@ -8113,17 +8198,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group__5__Impl"
-    // InternalQLS.g:2492:1: rule__QuestionStyle__Group__5__Impl : ( '}' ) ;
+    // InternalQLS.g:2519:1: rule__QuestionStyle__Group__5__Impl : ( '}' ) ;
     public final void rule__QuestionStyle__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2496:1: ( ( '}' ) )
-            // InternalQLS.g:2497:1: ( '}' )
+            // InternalQLS.g:2523:1: ( ( '}' ) )
+            // InternalQLS.g:2524:1: ( '}' )
             {
-            // InternalQLS.g:2497:1: ( '}' )
-            // InternalQLS.g:2498:2: '}'
+            // InternalQLS.g:2524:1: ( '}' )
+            // InternalQLS.g:2525:2: '}'
             {
              before(grammarAccess.getQuestionStyleAccess().getRightCurlyBracketKeyword_5()); 
             match(input,46,FOLLOW_2); 
@@ -8150,16 +8235,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_3__0"
-    // InternalQLS.g:2508:1: rule__QuestionStyle__Group_3__0 : rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1 ;
+    // InternalQLS.g:2535:1: rule__QuestionStyle__Group_3__0 : rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1 ;
     public final void rule__QuestionStyle__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2512:1: ( rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1 )
-            // InternalQLS.g:2513:2: rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1
+            // InternalQLS.g:2539:1: ( rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1 )
+            // InternalQLS.g:2540:2: rule__QuestionStyle__Group_3__0__Impl rule__QuestionStyle__Group_3__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__QuestionStyle__Group_3__0__Impl();
 
             state._fsp--;
@@ -8188,17 +8273,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_3__0__Impl"
-    // InternalQLS.g:2520:1: rule__QuestionStyle__Group_3__0__Impl : ( 'labelStyle' ) ;
+    // InternalQLS.g:2547:1: rule__QuestionStyle__Group_3__0__Impl : ( 'labelStyle' ) ;
     public final void rule__QuestionStyle__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2524:1: ( ( 'labelStyle' ) )
-            // InternalQLS.g:2525:1: ( 'labelStyle' )
+            // InternalQLS.g:2551:1: ( ( 'labelStyle' ) )
+            // InternalQLS.g:2552:1: ( 'labelStyle' )
             {
-            // InternalQLS.g:2525:1: ( 'labelStyle' )
-            // InternalQLS.g:2526:2: 'labelStyle'
+            // InternalQLS.g:2552:1: ( 'labelStyle' )
+            // InternalQLS.g:2553:2: 'labelStyle'
             {
              before(grammarAccess.getQuestionStyleAccess().getLabelStyleKeyword_3_0()); 
             match(input,49,FOLLOW_2); 
@@ -8225,14 +8310,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_3__1"
-    // InternalQLS.g:2535:1: rule__QuestionStyle__Group_3__1 : rule__QuestionStyle__Group_3__1__Impl ;
+    // InternalQLS.g:2562:1: rule__QuestionStyle__Group_3__1 : rule__QuestionStyle__Group_3__1__Impl ;
     public final void rule__QuestionStyle__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2539:1: ( rule__QuestionStyle__Group_3__1__Impl )
-            // InternalQLS.g:2540:2: rule__QuestionStyle__Group_3__1__Impl
+            // InternalQLS.g:2566:1: ( rule__QuestionStyle__Group_3__1__Impl )
+            // InternalQLS.g:2567:2: rule__QuestionStyle__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__Group_3__1__Impl();
@@ -8258,21 +8343,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_3__1__Impl"
-    // InternalQLS.g:2546:1: rule__QuestionStyle__Group_3__1__Impl : ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) ) ;
+    // InternalQLS.g:2573:1: rule__QuestionStyle__Group_3__1__Impl : ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) ) ;
     public final void rule__QuestionStyle__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2550:1: ( ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) ) )
-            // InternalQLS.g:2551:1: ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) )
+            // InternalQLS.g:2577:1: ( ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) ) )
+            // InternalQLS.g:2578:1: ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) )
             {
-            // InternalQLS.g:2551:1: ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) )
-            // InternalQLS.g:2552:2: ( rule__QuestionStyle__LabelStyleAssignment_3_1 )
+            // InternalQLS.g:2578:1: ( ( rule__QuestionStyle__LabelStyleAssignment_3_1 ) )
+            // InternalQLS.g:2579:2: ( rule__QuestionStyle__LabelStyleAssignment_3_1 )
             {
              before(grammarAccess.getQuestionStyleAccess().getLabelStyleAssignment_3_1()); 
-            // InternalQLS.g:2553:2: ( rule__QuestionStyle__LabelStyleAssignment_3_1 )
-            // InternalQLS.g:2553:3: rule__QuestionStyle__LabelStyleAssignment_3_1
+            // InternalQLS.g:2580:2: ( rule__QuestionStyle__LabelStyleAssignment_3_1 )
+            // InternalQLS.g:2580:3: rule__QuestionStyle__LabelStyleAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__LabelStyleAssignment_3_1();
@@ -8305,14 +8390,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_4__0"
-    // InternalQLS.g:2562:1: rule__QuestionStyle__Group_4__0 : rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1 ;
+    // InternalQLS.g:2589:1: rule__QuestionStyle__Group_4__0 : rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1 ;
     public final void rule__QuestionStyle__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2566:1: ( rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1 )
-            // InternalQLS.g:2567:2: rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1
+            // InternalQLS.g:2593:1: ( rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1 )
+            // InternalQLS.g:2594:2: rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1
             {
             pushFollow(FOLLOW_14);
             rule__QuestionStyle__Group_4__0__Impl();
@@ -8343,17 +8428,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_4__0__Impl"
-    // InternalQLS.g:2574:1: rule__QuestionStyle__Group_4__0__Impl : ( 'typeStyle' ) ;
+    // InternalQLS.g:2601:1: rule__QuestionStyle__Group_4__0__Impl : ( 'typeStyle' ) ;
     public final void rule__QuestionStyle__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2578:1: ( ( 'typeStyle' ) )
-            // InternalQLS.g:2579:1: ( 'typeStyle' )
+            // InternalQLS.g:2605:1: ( ( 'typeStyle' ) )
+            // InternalQLS.g:2606:1: ( 'typeStyle' )
             {
-            // InternalQLS.g:2579:1: ( 'typeStyle' )
-            // InternalQLS.g:2580:2: 'typeStyle'
+            // InternalQLS.g:2606:1: ( 'typeStyle' )
+            // InternalQLS.g:2607:2: 'typeStyle'
             {
              before(grammarAccess.getQuestionStyleAccess().getTypeStyleKeyword_4_0()); 
             match(input,50,FOLLOW_2); 
@@ -8380,14 +8465,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_4__1"
-    // InternalQLS.g:2589:1: rule__QuestionStyle__Group_4__1 : rule__QuestionStyle__Group_4__1__Impl ;
+    // InternalQLS.g:2616:1: rule__QuestionStyle__Group_4__1 : rule__QuestionStyle__Group_4__1__Impl ;
     public final void rule__QuestionStyle__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2593:1: ( rule__QuestionStyle__Group_4__1__Impl )
-            // InternalQLS.g:2594:2: rule__QuestionStyle__Group_4__1__Impl
+            // InternalQLS.g:2620:1: ( rule__QuestionStyle__Group_4__1__Impl )
+            // InternalQLS.g:2621:2: rule__QuestionStyle__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__Group_4__1__Impl();
@@ -8413,21 +8498,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__Group_4__1__Impl"
-    // InternalQLS.g:2600:1: rule__QuestionStyle__Group_4__1__Impl : ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) ) ;
+    // InternalQLS.g:2627:1: rule__QuestionStyle__Group_4__1__Impl : ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) ) ;
     public final void rule__QuestionStyle__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2604:1: ( ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) ) )
-            // InternalQLS.g:2605:1: ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) )
+            // InternalQLS.g:2631:1: ( ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) ) )
+            // InternalQLS.g:2632:1: ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) )
             {
-            // InternalQLS.g:2605:1: ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) )
-            // InternalQLS.g:2606:2: ( rule__QuestionStyle__TypeStyleAssignment_4_1 )
+            // InternalQLS.g:2632:1: ( ( rule__QuestionStyle__TypeStyleAssignment_4_1 ) )
+            // InternalQLS.g:2633:2: ( rule__QuestionStyle__TypeStyleAssignment_4_1 )
             {
              before(grammarAccess.getQuestionStyleAccess().getTypeStyleAssignment_4_1()); 
-            // InternalQLS.g:2607:2: ( rule__QuestionStyle__TypeStyleAssignment_4_1 )
-            // InternalQLS.g:2607:3: rule__QuestionStyle__TypeStyleAssignment_4_1
+            // InternalQLS.g:2634:2: ( rule__QuestionStyle__TypeStyleAssignment_4_1 )
+            // InternalQLS.g:2634:3: rule__QuestionStyle__TypeStyleAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionStyle__TypeStyleAssignment_4_1();
@@ -8460,16 +8545,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__0"
-    // InternalQLS.g:2616:1: rule__LabelStyle__Group__0 : rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1 ;
+    // InternalQLS.g:2643:1: rule__LabelStyle__Group__0 : rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1 ;
     public final void rule__LabelStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2620:1: ( rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1 )
-            // InternalQLS.g:2621:2: rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1
+            // InternalQLS.g:2647:1: ( rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1 )
+            // InternalQLS.g:2648:2: rule__LabelStyle__Group__0__Impl rule__LabelStyle__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__LabelStyle__Group__0__Impl();
 
             state._fsp--;
@@ -8498,21 +8583,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__0__Impl"
-    // InternalQLS.g:2628:1: rule__LabelStyle__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:2655:1: rule__LabelStyle__Group__0__Impl : ( () ) ;
     public final void rule__LabelStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2632:1: ( ( () ) )
-            // InternalQLS.g:2633:1: ( () )
+            // InternalQLS.g:2659:1: ( ( () ) )
+            // InternalQLS.g:2660:1: ( () )
             {
-            // InternalQLS.g:2633:1: ( () )
-            // InternalQLS.g:2634:2: ()
+            // InternalQLS.g:2660:1: ( () )
+            // InternalQLS.g:2661:2: ()
             {
              before(grammarAccess.getLabelStyleAccess().getLabelStyleAction_0()); 
-            // InternalQLS.g:2635:2: ()
-            // InternalQLS.g:2635:3: 
+            // InternalQLS.g:2662:2: ()
+            // InternalQLS.g:2662:3: 
             {
             }
 
@@ -8535,14 +8620,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__1"
-    // InternalQLS.g:2643:1: rule__LabelStyle__Group__1 : rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2 ;
+    // InternalQLS.g:2670:1: rule__LabelStyle__Group__1 : rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2 ;
     public final void rule__LabelStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2647:1: ( rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2 )
-            // InternalQLS.g:2648:2: rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2
+            // InternalQLS.g:2674:1: ( rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2 )
+            // InternalQLS.g:2675:2: rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2
             {
             pushFollow(FOLLOW_15);
             rule__LabelStyle__Group__1__Impl();
@@ -8573,17 +8658,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__1__Impl"
-    // InternalQLS.g:2655:1: rule__LabelStyle__Group__1__Impl : ( '{' ) ;
+    // InternalQLS.g:2682:1: rule__LabelStyle__Group__1__Impl : ( '{' ) ;
     public final void rule__LabelStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2659:1: ( ( '{' ) )
-            // InternalQLS.g:2660:1: ( '{' )
+            // InternalQLS.g:2686:1: ( ( '{' ) )
+            // InternalQLS.g:2687:1: ( '{' )
             {
-            // InternalQLS.g:2660:1: ( '{' )
-            // InternalQLS.g:2661:2: '{'
+            // InternalQLS.g:2687:1: ( '{' )
+            // InternalQLS.g:2688:2: '{'
             {
              before(grammarAccess.getLabelStyleAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,44,FOLLOW_2); 
@@ -8610,14 +8695,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__2"
-    // InternalQLS.g:2670:1: rule__LabelStyle__Group__2 : rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3 ;
+    // InternalQLS.g:2697:1: rule__LabelStyle__Group__2 : rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3 ;
     public final void rule__LabelStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2674:1: ( rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3 )
-            // InternalQLS.g:2675:2: rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3
+            // InternalQLS.g:2701:1: ( rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3 )
+            // InternalQLS.g:2702:2: rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__LabelStyle__Group__2__Impl();
@@ -8648,20 +8733,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__2__Impl"
-    // InternalQLS.g:2682:1: rule__LabelStyle__Group__2__Impl : ( ( rule__LabelStyle__ItalicAssignment_2 )? ) ;
+    // InternalQLS.g:2709:1: rule__LabelStyle__Group__2__Impl : ( ( rule__LabelStyle__ItalicAssignment_2 )? ) ;
     public final void rule__LabelStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2686:1: ( ( ( rule__LabelStyle__ItalicAssignment_2 )? ) )
-            // InternalQLS.g:2687:1: ( ( rule__LabelStyle__ItalicAssignment_2 )? )
+            // InternalQLS.g:2713:1: ( ( ( rule__LabelStyle__ItalicAssignment_2 )? ) )
+            // InternalQLS.g:2714:1: ( ( rule__LabelStyle__ItalicAssignment_2 )? )
             {
-            // InternalQLS.g:2687:1: ( ( rule__LabelStyle__ItalicAssignment_2 )? )
-            // InternalQLS.g:2688:2: ( rule__LabelStyle__ItalicAssignment_2 )?
+            // InternalQLS.g:2714:1: ( ( rule__LabelStyle__ItalicAssignment_2 )? )
+            // InternalQLS.g:2715:2: ( rule__LabelStyle__ItalicAssignment_2 )?
             {
              before(grammarAccess.getLabelStyleAccess().getItalicAssignment_2()); 
-            // InternalQLS.g:2689:2: ( rule__LabelStyle__ItalicAssignment_2 )?
+            // InternalQLS.g:2716:2: ( rule__LabelStyle__ItalicAssignment_2 )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -8670,7 +8755,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt25) {
                 case 1 :
-                    // InternalQLS.g:2689:3: rule__LabelStyle__ItalicAssignment_2
+                    // InternalQLS.g:2716:3: rule__LabelStyle__ItalicAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__LabelStyle__ItalicAssignment_2();
@@ -8706,14 +8791,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__3"
-    // InternalQLS.g:2697:1: rule__LabelStyle__Group__3 : rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4 ;
+    // InternalQLS.g:2724:1: rule__LabelStyle__Group__3 : rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4 ;
     public final void rule__LabelStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2701:1: ( rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4 )
-            // InternalQLS.g:2702:2: rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4
+            // InternalQLS.g:2728:1: ( rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4 )
+            // InternalQLS.g:2729:2: rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__LabelStyle__Group__3__Impl();
@@ -8744,20 +8829,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__3__Impl"
-    // InternalQLS.g:2709:1: rule__LabelStyle__Group__3__Impl : ( ( rule__LabelStyle__BoldAssignment_3 )? ) ;
+    // InternalQLS.g:2736:1: rule__LabelStyle__Group__3__Impl : ( ( rule__LabelStyle__BoldAssignment_3 )? ) ;
     public final void rule__LabelStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2713:1: ( ( ( rule__LabelStyle__BoldAssignment_3 )? ) )
-            // InternalQLS.g:2714:1: ( ( rule__LabelStyle__BoldAssignment_3 )? )
+            // InternalQLS.g:2740:1: ( ( ( rule__LabelStyle__BoldAssignment_3 )? ) )
+            // InternalQLS.g:2741:1: ( ( rule__LabelStyle__BoldAssignment_3 )? )
             {
-            // InternalQLS.g:2714:1: ( ( rule__LabelStyle__BoldAssignment_3 )? )
-            // InternalQLS.g:2715:2: ( rule__LabelStyle__BoldAssignment_3 )?
+            // InternalQLS.g:2741:1: ( ( rule__LabelStyle__BoldAssignment_3 )? )
+            // InternalQLS.g:2742:2: ( rule__LabelStyle__BoldAssignment_3 )?
             {
              before(grammarAccess.getLabelStyleAccess().getBoldAssignment_3()); 
-            // InternalQLS.g:2716:2: ( rule__LabelStyle__BoldAssignment_3 )?
+            // InternalQLS.g:2743:2: ( rule__LabelStyle__BoldAssignment_3 )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -8766,7 +8851,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt26) {
                 case 1 :
-                    // InternalQLS.g:2716:3: rule__LabelStyle__BoldAssignment_3
+                    // InternalQLS.g:2743:3: rule__LabelStyle__BoldAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__LabelStyle__BoldAssignment_3();
@@ -8802,14 +8887,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__4"
-    // InternalQLS.g:2724:1: rule__LabelStyle__Group__4 : rule__LabelStyle__Group__4__Impl ;
+    // InternalQLS.g:2751:1: rule__LabelStyle__Group__4 : rule__LabelStyle__Group__4__Impl ;
     public final void rule__LabelStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2728:1: ( rule__LabelStyle__Group__4__Impl )
-            // InternalQLS.g:2729:2: rule__LabelStyle__Group__4__Impl
+            // InternalQLS.g:2755:1: ( rule__LabelStyle__Group__4__Impl )
+            // InternalQLS.g:2756:2: rule__LabelStyle__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LabelStyle__Group__4__Impl();
@@ -8835,17 +8920,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__Group__4__Impl"
-    // InternalQLS.g:2735:1: rule__LabelStyle__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:2762:1: rule__LabelStyle__Group__4__Impl : ( '}' ) ;
     public final void rule__LabelStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2739:1: ( ( '}' ) )
-            // InternalQLS.g:2740:1: ( '}' )
+            // InternalQLS.g:2766:1: ( ( '}' ) )
+            // InternalQLS.g:2767:1: ( '}' )
             {
-            // InternalQLS.g:2740:1: ( '}' )
-            // InternalQLS.g:2741:2: '}'
+            // InternalQLS.g:2767:1: ( '}' )
+            // InternalQLS.g:2768:2: '}'
             {
              before(grammarAccess.getLabelStyleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -8872,16 +8957,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__0"
-    // InternalQLS.g:2751:1: rule__BooleanTypeStyle__Group__0 : rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1 ;
+    // InternalQLS.g:2778:1: rule__BooleanTypeStyle__Group__0 : rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1 ;
     public final void rule__BooleanTypeStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2755:1: ( rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1 )
-            // InternalQLS.g:2756:2: rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1
+            // InternalQLS.g:2782:1: ( rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1 )
+            // InternalQLS.g:2783:2: rule__BooleanTypeStyle__Group__0__Impl rule__BooleanTypeStyle__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__BooleanTypeStyle__Group__0__Impl();
 
             state._fsp--;
@@ -8910,17 +8995,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__0__Impl"
-    // InternalQLS.g:2763:1: rule__BooleanTypeStyle__Group__0__Impl : ( 'BooleanStyle' ) ;
+    // InternalQLS.g:2790:1: rule__BooleanTypeStyle__Group__0__Impl : ( 'BooleanStyle' ) ;
     public final void rule__BooleanTypeStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2767:1: ( ( 'BooleanStyle' ) )
-            // InternalQLS.g:2768:1: ( 'BooleanStyle' )
+            // InternalQLS.g:2794:1: ( ( 'BooleanStyle' ) )
+            // InternalQLS.g:2795:1: ( 'BooleanStyle' )
             {
-            // InternalQLS.g:2768:1: ( 'BooleanStyle' )
-            // InternalQLS.g:2769:2: 'BooleanStyle'
+            // InternalQLS.g:2795:1: ( 'BooleanStyle' )
+            // InternalQLS.g:2796:2: 'BooleanStyle'
             {
              before(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKeyword_0()); 
             match(input,51,FOLLOW_2); 
@@ -8947,14 +9032,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__1"
-    // InternalQLS.g:2778:1: rule__BooleanTypeStyle__Group__1 : rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2 ;
+    // InternalQLS.g:2805:1: rule__BooleanTypeStyle__Group__1 : rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2 ;
     public final void rule__BooleanTypeStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2782:1: ( rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2 )
-            // InternalQLS.g:2783:2: rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2
+            // InternalQLS.g:2809:1: ( rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2 )
+            // InternalQLS.g:2810:2: rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__BooleanTypeStyle__Group__1__Impl();
@@ -8985,17 +9070,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__1__Impl"
-    // InternalQLS.g:2790:1: rule__BooleanTypeStyle__Group__1__Impl : ( '{' ) ;
+    // InternalQLS.g:2817:1: rule__BooleanTypeStyle__Group__1__Impl : ( '{' ) ;
     public final void rule__BooleanTypeStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2794:1: ( ( '{' ) )
-            // InternalQLS.g:2795:1: ( '{' )
+            // InternalQLS.g:2821:1: ( ( '{' ) )
+            // InternalQLS.g:2822:1: ( '{' )
             {
-            // InternalQLS.g:2795:1: ( '{' )
-            // InternalQLS.g:2796:2: '{'
+            // InternalQLS.g:2822:1: ( '{' )
+            // InternalQLS.g:2823:2: '{'
             {
              before(grammarAccess.getBooleanTypeStyleAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,44,FOLLOW_2); 
@@ -9022,16 +9107,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__2"
-    // InternalQLS.g:2805:1: rule__BooleanTypeStyle__Group__2 : rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3 ;
+    // InternalQLS.g:2832:1: rule__BooleanTypeStyle__Group__2 : rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3 ;
     public final void rule__BooleanTypeStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2809:1: ( rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3 )
-            // InternalQLS.g:2810:2: rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3
+            // InternalQLS.g:2836:1: ( rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3 )
+            // InternalQLS.g:2837:2: rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__BooleanTypeStyle__Group__2__Impl();
 
             state._fsp--;
@@ -9060,21 +9145,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__2__Impl"
-    // InternalQLS.g:2817:1: rule__BooleanTypeStyle__Group__2__Impl : ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) ) ;
+    // InternalQLS.g:2844:1: rule__BooleanTypeStyle__Group__2__Impl : ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) ) ;
     public final void rule__BooleanTypeStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2821:1: ( ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) ) )
-            // InternalQLS.g:2822:1: ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) )
+            // InternalQLS.g:2848:1: ( ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) ) )
+            // InternalQLS.g:2849:1: ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) )
             {
-            // InternalQLS.g:2822:1: ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) )
-            // InternalQLS.g:2823:2: ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 )
+            // InternalQLS.g:2849:1: ( ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 ) )
+            // InternalQLS.g:2850:2: ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 )
             {
              before(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKindAssignment_2()); 
-            // InternalQLS.g:2824:2: ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 )
-            // InternalQLS.g:2824:3: rule__BooleanTypeStyle__BooleanStyleKindAssignment_2
+            // InternalQLS.g:2851:2: ( rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 )
+            // InternalQLS.g:2851:3: rule__BooleanTypeStyle__BooleanStyleKindAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BooleanTypeStyle__BooleanStyleKindAssignment_2();
@@ -9107,14 +9192,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__3"
-    // InternalQLS.g:2832:1: rule__BooleanTypeStyle__Group__3 : rule__BooleanTypeStyle__Group__3__Impl ;
+    // InternalQLS.g:2859:1: rule__BooleanTypeStyle__Group__3 : rule__BooleanTypeStyle__Group__3__Impl ;
     public final void rule__BooleanTypeStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2836:1: ( rule__BooleanTypeStyle__Group__3__Impl )
-            // InternalQLS.g:2837:2: rule__BooleanTypeStyle__Group__3__Impl
+            // InternalQLS.g:2863:1: ( rule__BooleanTypeStyle__Group__3__Impl )
+            // InternalQLS.g:2864:2: rule__BooleanTypeStyle__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanTypeStyle__Group__3__Impl();
@@ -9140,17 +9225,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__3__Impl"
-    // InternalQLS.g:2843:1: rule__BooleanTypeStyle__Group__3__Impl : ( '}' ) ;
+    // InternalQLS.g:2870:1: rule__BooleanTypeStyle__Group__3__Impl : ( '}' ) ;
     public final void rule__BooleanTypeStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2847:1: ( ( '}' ) )
-            // InternalQLS.g:2848:1: ( '}' )
+            // InternalQLS.g:2874:1: ( ( '}' ) )
+            // InternalQLS.g:2875:1: ( '}' )
             {
-            // InternalQLS.g:2848:1: ( '}' )
-            // InternalQLS.g:2849:2: '}'
+            // InternalQLS.g:2875:1: ( '}' )
+            // InternalQLS.g:2876:2: '}'
             {
              before(grammarAccess.getBooleanTypeStyleAccess().getRightCurlyBracketKeyword_3()); 
             match(input,46,FOLLOW_2); 
@@ -9177,14 +9262,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__0"
-    // InternalQLS.g:2859:1: rule__NumericTypeTextFieldStyle__Group__0 : rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1 ;
+    // InternalQLS.g:2886:1: rule__NumericTypeTextFieldStyle__Group__0 : rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1 ;
     public final void rule__NumericTypeTextFieldStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2863:1: ( rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1 )
-            // InternalQLS.g:2864:2: rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1
+            // InternalQLS.g:2890:1: ( rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1 )
+            // InternalQLS.g:2891:2: rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__NumericTypeTextFieldStyle__Group__0__Impl();
@@ -9215,21 +9300,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__0__Impl"
-    // InternalQLS.g:2871:1: rule__NumericTypeTextFieldStyle__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:2898:1: rule__NumericTypeTextFieldStyle__Group__0__Impl : ( () ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2875:1: ( ( () ) )
-            // InternalQLS.g:2876:1: ( () )
+            // InternalQLS.g:2902:1: ( ( () ) )
+            // InternalQLS.g:2903:1: ( () )
             {
-            // InternalQLS.g:2876:1: ( () )
-            // InternalQLS.g:2877:2: ()
+            // InternalQLS.g:2903:1: ( () )
+            // InternalQLS.g:2904:2: ()
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericTypeTextFieldStyleAction_0()); 
-            // InternalQLS.g:2878:2: ()
-            // InternalQLS.g:2878:3: 
+            // InternalQLS.g:2905:2: ()
+            // InternalQLS.g:2905:3: 
             {
             }
 
@@ -9252,14 +9337,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__1"
-    // InternalQLS.g:2886:1: rule__NumericTypeTextFieldStyle__Group__1 : rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 ;
+    // InternalQLS.g:2913:1: rule__NumericTypeTextFieldStyle__Group__1 : rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 ;
     public final void rule__NumericTypeTextFieldStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2890:1: ( rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 )
-            // InternalQLS.g:2891:2: rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2
+            // InternalQLS.g:2917:1: ( rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 )
+            // InternalQLS.g:2918:2: rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2
             {
             pushFollow(FOLLOW_18);
             rule__NumericTypeTextFieldStyle__Group__1__Impl();
@@ -9290,17 +9375,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__1__Impl"
-    // InternalQLS.g:2898:1: rule__NumericTypeTextFieldStyle__Group__1__Impl : ( 'NumericStyle' ) ;
+    // InternalQLS.g:2925:1: rule__NumericTypeTextFieldStyle__Group__1__Impl : ( 'NumericStyle' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2902:1: ( ( 'NumericStyle' ) )
-            // InternalQLS.g:2903:1: ( 'NumericStyle' )
+            // InternalQLS.g:2929:1: ( ( 'NumericStyle' ) )
+            // InternalQLS.g:2930:1: ( 'NumericStyle' )
             {
-            // InternalQLS.g:2903:1: ( 'NumericStyle' )
-            // InternalQLS.g:2904:2: 'NumericStyle'
+            // InternalQLS.g:2930:1: ( 'NumericStyle' )
+            // InternalQLS.g:2931:2: 'NumericStyle'
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericStyleKeyword_1()); 
             match(input,52,FOLLOW_2); 
@@ -9327,16 +9412,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__2"
-    // InternalQLS.g:2913:1: rule__NumericTypeTextFieldStyle__Group__2 : rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3 ;
+    // InternalQLS.g:2940:1: rule__NumericTypeTextFieldStyle__Group__2 : rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3 ;
     public final void rule__NumericTypeTextFieldStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2917:1: ( rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3 )
-            // InternalQLS.g:2918:2: rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3
+            // InternalQLS.g:2944:1: ( rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3 )
+            // InternalQLS.g:2945:2: rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__NumericTypeTextFieldStyle__Group__2__Impl();
 
             state._fsp--;
@@ -9365,17 +9450,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__2__Impl"
-    // InternalQLS.g:2925:1: rule__NumericTypeTextFieldStyle__Group__2__Impl : ( 'textField' ) ;
+    // InternalQLS.g:2952:1: rule__NumericTypeTextFieldStyle__Group__2__Impl : ( 'textField' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2929:1: ( ( 'textField' ) )
-            // InternalQLS.g:2930:1: ( 'textField' )
+            // InternalQLS.g:2956:1: ( ( 'textField' ) )
+            // InternalQLS.g:2957:1: ( 'textField' )
             {
-            // InternalQLS.g:2930:1: ( 'textField' )
-            // InternalQLS.g:2931:2: 'textField'
+            // InternalQLS.g:2957:1: ( 'textField' )
+            // InternalQLS.g:2958:2: 'textField'
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_2()); 
             match(input,53,FOLLOW_2); 
@@ -9402,14 +9487,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__3"
-    // InternalQLS.g:2940:1: rule__NumericTypeTextFieldStyle__Group__3 : rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 ;
+    // InternalQLS.g:2967:1: rule__NumericTypeTextFieldStyle__Group__3 : rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 ;
     public final void rule__NumericTypeTextFieldStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2944:1: ( rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 )
-            // InternalQLS.g:2945:2: rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4
+            // InternalQLS.g:2971:1: ( rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 )
+            // InternalQLS.g:2972:2: rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4
             {
             pushFollow(FOLLOW_19);
             rule__NumericTypeTextFieldStyle__Group__3__Impl();
@@ -9440,17 +9525,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__3__Impl"
-    // InternalQLS.g:2952:1: rule__NumericTypeTextFieldStyle__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:2979:1: rule__NumericTypeTextFieldStyle__Group__3__Impl : ( '{' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2956:1: ( ( '{' ) )
-            // InternalQLS.g:2957:1: ( '{' )
+            // InternalQLS.g:2983:1: ( ( '{' ) )
+            // InternalQLS.g:2984:1: ( '{' )
             {
-            // InternalQLS.g:2957:1: ( '{' )
-            // InternalQLS.g:2958:2: '{'
+            // InternalQLS.g:2984:1: ( '{' )
+            // InternalQLS.g:2985:2: '{'
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,44,FOLLOW_2); 
@@ -9477,14 +9562,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__4"
-    // InternalQLS.g:2967:1: rule__NumericTypeTextFieldStyle__Group__4 : rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 ;
+    // InternalQLS.g:2994:1: rule__NumericTypeTextFieldStyle__Group__4 : rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 ;
     public final void rule__NumericTypeTextFieldStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2971:1: ( rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 )
-            // InternalQLS.g:2972:2: rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5
+            // InternalQLS.g:2998:1: ( rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 )
+            // InternalQLS.g:2999:2: rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5
             {
             pushFollow(FOLLOW_19);
             rule__NumericTypeTextFieldStyle__Group__4__Impl();
@@ -9515,20 +9600,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__4__Impl"
-    // InternalQLS.g:2979:1: rule__NumericTypeTextFieldStyle__Group__4__Impl : ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) ;
+    // InternalQLS.g:3006:1: rule__NumericTypeTextFieldStyle__Group__4__Impl : ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2983:1: ( ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) )
-            // InternalQLS.g:2984:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
+            // InternalQLS.g:3010:1: ( ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) )
+            // InternalQLS.g:3011:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
             {
-            // InternalQLS.g:2984:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
-            // InternalQLS.g:2985:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
+            // InternalQLS.g:3011:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
+            // InternalQLS.g:3012:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getGroup_4()); 
-            // InternalQLS.g:2986:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
+            // InternalQLS.g:3013:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -9537,7 +9622,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt27) {
                 case 1 :
-                    // InternalQLS.g:2986:3: rule__NumericTypeTextFieldStyle__Group_4__0
+                    // InternalQLS.g:3013:3: rule__NumericTypeTextFieldStyle__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NumericTypeTextFieldStyle__Group_4__0();
@@ -9573,14 +9658,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__5"
-    // InternalQLS.g:2994:1: rule__NumericTypeTextFieldStyle__Group__5 : rule__NumericTypeTextFieldStyle__Group__5__Impl ;
+    // InternalQLS.g:3021:1: rule__NumericTypeTextFieldStyle__Group__5 : rule__NumericTypeTextFieldStyle__Group__5__Impl ;
     public final void rule__NumericTypeTextFieldStyle__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2998:1: ( rule__NumericTypeTextFieldStyle__Group__5__Impl )
-            // InternalQLS.g:2999:2: rule__NumericTypeTextFieldStyle__Group__5__Impl
+            // InternalQLS.g:3025:1: ( rule__NumericTypeTextFieldStyle__Group__5__Impl )
+            // InternalQLS.g:3026:2: rule__NumericTypeTextFieldStyle__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumericTypeTextFieldStyle__Group__5__Impl();
@@ -9606,17 +9691,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__5__Impl"
-    // InternalQLS.g:3005:1: rule__NumericTypeTextFieldStyle__Group__5__Impl : ( '}' ) ;
+    // InternalQLS.g:3032:1: rule__NumericTypeTextFieldStyle__Group__5__Impl : ( '}' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3009:1: ( ( '}' ) )
-            // InternalQLS.g:3010:1: ( '}' )
+            // InternalQLS.g:3036:1: ( ( '}' ) )
+            // InternalQLS.g:3037:1: ( '}' )
             {
-            // InternalQLS.g:3010:1: ( '}' )
-            // InternalQLS.g:3011:2: '}'
+            // InternalQLS.g:3037:1: ( '}' )
+            // InternalQLS.g:3038:2: '}'
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_5()); 
             match(input,46,FOLLOW_2); 
@@ -9643,14 +9728,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__0"
-    // InternalQLS.g:3021:1: rule__NumericTypeTextFieldStyle__Group_4__0 : rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 ;
+    // InternalQLS.g:3048:1: rule__NumericTypeTextFieldStyle__Group_4__0 : rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 ;
     public final void rule__NumericTypeTextFieldStyle__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3025:1: ( rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 )
-            // InternalQLS.g:3026:2: rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1
+            // InternalQLS.g:3052:1: ( rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 )
+            // InternalQLS.g:3053:2: rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1
             {
             pushFollow(FOLLOW_20);
             rule__NumericTypeTextFieldStyle__Group_4__0__Impl();
@@ -9681,17 +9766,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__0__Impl"
-    // InternalQLS.g:3033:1: rule__NumericTypeTextFieldStyle__Group_4__0__Impl : ( 'step' ) ;
+    // InternalQLS.g:3060:1: rule__NumericTypeTextFieldStyle__Group_4__0__Impl : ( 'step' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3037:1: ( ( 'step' ) )
-            // InternalQLS.g:3038:1: ( 'step' )
+            // InternalQLS.g:3064:1: ( ( 'step' ) )
+            // InternalQLS.g:3065:1: ( 'step' )
             {
-            // InternalQLS.g:3038:1: ( 'step' )
-            // InternalQLS.g:3039:2: 'step'
+            // InternalQLS.g:3065:1: ( 'step' )
+            // InternalQLS.g:3066:2: 'step'
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepKeyword_4_0()); 
             match(input,54,FOLLOW_2); 
@@ -9718,14 +9803,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__1"
-    // InternalQLS.g:3048:1: rule__NumericTypeTextFieldStyle__Group_4__1 : rule__NumericTypeTextFieldStyle__Group_4__1__Impl ;
+    // InternalQLS.g:3075:1: rule__NumericTypeTextFieldStyle__Group_4__1 : rule__NumericTypeTextFieldStyle__Group_4__1__Impl ;
     public final void rule__NumericTypeTextFieldStyle__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3052:1: ( rule__NumericTypeTextFieldStyle__Group_4__1__Impl )
-            // InternalQLS.g:3053:2: rule__NumericTypeTextFieldStyle__Group_4__1__Impl
+            // InternalQLS.g:3079:1: ( rule__NumericTypeTextFieldStyle__Group_4__1__Impl )
+            // InternalQLS.g:3080:2: rule__NumericTypeTextFieldStyle__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumericTypeTextFieldStyle__Group_4__1__Impl();
@@ -9751,21 +9836,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__1__Impl"
-    // InternalQLS.g:3059:1: rule__NumericTypeTextFieldStyle__Group_4__1__Impl : ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) ;
+    // InternalQLS.g:3086:1: rule__NumericTypeTextFieldStyle__Group_4__1__Impl : ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) ;
     public final void rule__NumericTypeTextFieldStyle__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3063:1: ( ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) )
-            // InternalQLS.g:3064:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
+            // InternalQLS.g:3090:1: ( ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) )
+            // InternalQLS.g:3091:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
             {
-            // InternalQLS.g:3064:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
-            // InternalQLS.g:3065:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
+            // InternalQLS.g:3091:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
+            // InternalQLS.g:3092:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepAssignment_4_1()); 
-            // InternalQLS.g:3066:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
-            // InternalQLS.g:3066:3: rule__NumericTypeTextFieldStyle__StepAssignment_4_1
+            // InternalQLS.g:3093:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
+            // InternalQLS.g:3093:3: rule__NumericTypeTextFieldStyle__StepAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__NumericTypeTextFieldStyle__StepAssignment_4_1();
@@ -9798,14 +9883,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__0"
-    // InternalQLS.g:3075:1: rule__NumericTypeSpinnerStyle__Group__0 : rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 ;
+    // InternalQLS.g:3102:1: rule__NumericTypeSpinnerStyle__Group__0 : rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 ;
     public final void rule__NumericTypeSpinnerStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3079:1: ( rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 )
-            // InternalQLS.g:3080:2: rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1
+            // InternalQLS.g:3106:1: ( rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 )
+            // InternalQLS.g:3107:2: rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__NumericTypeSpinnerStyle__Group__0__Impl();
@@ -9836,21 +9921,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__0__Impl"
-    // InternalQLS.g:3087:1: rule__NumericTypeSpinnerStyle__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:3114:1: rule__NumericTypeSpinnerStyle__Group__0__Impl : ( () ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3091:1: ( ( () ) )
-            // InternalQLS.g:3092:1: ( () )
+            // InternalQLS.g:3118:1: ( ( () ) )
+            // InternalQLS.g:3119:1: ( () )
             {
-            // InternalQLS.g:3092:1: ( () )
-            // InternalQLS.g:3093:2: ()
+            // InternalQLS.g:3119:1: ( () )
+            // InternalQLS.g:3120:2: ()
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericSpinnerStyleAction_0()); 
-            // InternalQLS.g:3094:2: ()
-            // InternalQLS.g:3094:3: 
+            // InternalQLS.g:3121:2: ()
+            // InternalQLS.g:3121:3: 
             {
             }
 
@@ -9873,14 +9958,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__1"
-    // InternalQLS.g:3102:1: rule__NumericTypeSpinnerStyle__Group__1 : rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 ;
+    // InternalQLS.g:3129:1: rule__NumericTypeSpinnerStyle__Group__1 : rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 ;
     public final void rule__NumericTypeSpinnerStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3106:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
-            // InternalQLS.g:3107:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
+            // InternalQLS.g:3133:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
+            // InternalQLS.g:3134:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
             {
             pushFollow(FOLLOW_21);
             rule__NumericTypeSpinnerStyle__Group__1__Impl();
@@ -9911,17 +9996,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__1__Impl"
-    // InternalQLS.g:3114:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'NumericStyle' ) ;
+    // InternalQLS.g:3141:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'NumericStyle' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3118:1: ( ( 'NumericStyle' ) )
-            // InternalQLS.g:3119:1: ( 'NumericStyle' )
+            // InternalQLS.g:3145:1: ( ( 'NumericStyle' ) )
+            // InternalQLS.g:3146:1: ( 'NumericStyle' )
             {
-            // InternalQLS.g:3119:1: ( 'NumericStyle' )
-            // InternalQLS.g:3120:2: 'NumericStyle'
+            // InternalQLS.g:3146:1: ( 'NumericStyle' )
+            // InternalQLS.g:3147:2: 'NumericStyle'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1()); 
             match(input,52,FOLLOW_2); 
@@ -9948,16 +10033,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__2"
-    // InternalQLS.g:3129:1: rule__NumericTypeSpinnerStyle__Group__2 : rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 ;
+    // InternalQLS.g:3156:1: rule__NumericTypeSpinnerStyle__Group__2 : rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 ;
     public final void rule__NumericTypeSpinnerStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3133:1: ( rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 )
-            // InternalQLS.g:3134:2: rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3
+            // InternalQLS.g:3160:1: ( rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 )
+            // InternalQLS.g:3161:2: rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__NumericTypeSpinnerStyle__Group__2__Impl();
 
             state._fsp--;
@@ -9986,17 +10071,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__2__Impl"
-    // InternalQLS.g:3141:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( 'spinner' ) ;
+    // InternalQLS.g:3168:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( 'spinner' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3145:1: ( ( 'spinner' ) )
-            // InternalQLS.g:3146:1: ( 'spinner' )
+            // InternalQLS.g:3172:1: ( ( 'spinner' ) )
+            // InternalQLS.g:3173:1: ( 'spinner' )
             {
-            // InternalQLS.g:3146:1: ( 'spinner' )
-            // InternalQLS.g:3147:2: 'spinner'
+            // InternalQLS.g:3173:1: ( 'spinner' )
+            // InternalQLS.g:3174:2: 'spinner'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2()); 
             match(input,55,FOLLOW_2); 
@@ -10023,16 +10108,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__3"
-    // InternalQLS.g:3156:1: rule__NumericTypeSpinnerStyle__Group__3 : rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 ;
+    // InternalQLS.g:3183:1: rule__NumericTypeSpinnerStyle__Group__3 : rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 ;
     public final void rule__NumericTypeSpinnerStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3160:1: ( rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 )
-            // InternalQLS.g:3161:2: rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4
+            // InternalQLS.g:3187:1: ( rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 )
+            // InternalQLS.g:3188:2: rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__NumericTypeSpinnerStyle__Group__3__Impl();
 
             state._fsp--;
@@ -10061,17 +10146,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__3__Impl"
-    // InternalQLS.g:3168:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:3195:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( '{' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3172:1: ( ( '{' ) )
-            // InternalQLS.g:3173:1: ( '{' )
+            // InternalQLS.g:3199:1: ( ( '{' ) )
+            // InternalQLS.g:3200:1: ( '{' )
             {
-            // InternalQLS.g:3173:1: ( '{' )
-            // InternalQLS.g:3174:2: '{'
+            // InternalQLS.g:3200:1: ( '{' )
+            // InternalQLS.g:3201:2: '{'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,44,FOLLOW_2); 
@@ -10098,14 +10183,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__4"
-    // InternalQLS.g:3183:1: rule__NumericTypeSpinnerStyle__Group__4 : rule__NumericTypeSpinnerStyle__Group__4__Impl ;
+    // InternalQLS.g:3210:1: rule__NumericTypeSpinnerStyle__Group__4 : rule__NumericTypeSpinnerStyle__Group__4__Impl ;
     public final void rule__NumericTypeSpinnerStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3187:1: ( rule__NumericTypeSpinnerStyle__Group__4__Impl )
-            // InternalQLS.g:3188:2: rule__NumericTypeSpinnerStyle__Group__4__Impl
+            // InternalQLS.g:3214:1: ( rule__NumericTypeSpinnerStyle__Group__4__Impl )
+            // InternalQLS.g:3215:2: rule__NumericTypeSpinnerStyle__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumericTypeSpinnerStyle__Group__4__Impl();
@@ -10131,17 +10216,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__4__Impl"
-    // InternalQLS.g:3194:1: rule__NumericTypeSpinnerStyle__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:3221:1: rule__NumericTypeSpinnerStyle__Group__4__Impl : ( '}' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3198:1: ( ( '}' ) )
-            // InternalQLS.g:3199:1: ( '}' )
+            // InternalQLS.g:3225:1: ( ( '}' ) )
+            // InternalQLS.g:3226:1: ( '}' )
             {
-            // InternalQLS.g:3199:1: ( '}' )
-            // InternalQLS.g:3200:2: '}'
+            // InternalQLS.g:3226:1: ( '}' )
+            // InternalQLS.g:3227:2: '}'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -10168,14 +10253,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__0"
-    // InternalQLS.g:3210:1: rule__TextTypeStyle__Group__0 : rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1 ;
+    // InternalQLS.g:3237:1: rule__TextTypeStyle__Group__0 : rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1 ;
     public final void rule__TextTypeStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3214:1: ( rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1 )
-            // InternalQLS.g:3215:2: rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1
+            // InternalQLS.g:3241:1: ( rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1 )
+            // InternalQLS.g:3242:2: rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__TextTypeStyle__Group__0__Impl();
@@ -10206,21 +10291,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__0__Impl"
-    // InternalQLS.g:3222:1: rule__TextTypeStyle__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:3249:1: rule__TextTypeStyle__Group__0__Impl : ( () ) ;
     public final void rule__TextTypeStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3226:1: ( ( () ) )
-            // InternalQLS.g:3227:1: ( () )
+            // InternalQLS.g:3253:1: ( ( () ) )
+            // InternalQLS.g:3254:1: ( () )
             {
-            // InternalQLS.g:3227:1: ( () )
-            // InternalQLS.g:3228:2: ()
+            // InternalQLS.g:3254:1: ( () )
+            // InternalQLS.g:3255:2: ()
             {
              before(grammarAccess.getTextTypeStyleAccess().getTextTypeStyleAction_0()); 
-            // InternalQLS.g:3229:2: ()
-            // InternalQLS.g:3229:3: 
+            // InternalQLS.g:3256:2: ()
+            // InternalQLS.g:3256:3: 
             {
             }
 
@@ -10243,16 +10328,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__1"
-    // InternalQLS.g:3237:1: rule__TextTypeStyle__Group__1 : rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2 ;
+    // InternalQLS.g:3264:1: rule__TextTypeStyle__Group__1 : rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2 ;
     public final void rule__TextTypeStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3241:1: ( rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2 )
-            // InternalQLS.g:3242:2: rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2
+            // InternalQLS.g:3268:1: ( rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2 )
+            // InternalQLS.g:3269:2: rule__TextTypeStyle__Group__1__Impl rule__TextTypeStyle__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__TextTypeStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10281,17 +10366,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__1__Impl"
-    // InternalQLS.g:3249:1: rule__TextTypeStyle__Group__1__Impl : ( 'TextStyle' ) ;
+    // InternalQLS.g:3276:1: rule__TextTypeStyle__Group__1__Impl : ( 'TextStyle' ) ;
     public final void rule__TextTypeStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3253:1: ( ( 'TextStyle' ) )
-            // InternalQLS.g:3254:1: ( 'TextStyle' )
+            // InternalQLS.g:3280:1: ( ( 'TextStyle' ) )
+            // InternalQLS.g:3281:1: ( 'TextStyle' )
             {
-            // InternalQLS.g:3254:1: ( 'TextStyle' )
-            // InternalQLS.g:3255:2: 'TextStyle'
+            // InternalQLS.g:3281:1: ( 'TextStyle' )
+            // InternalQLS.g:3282:2: 'TextStyle'
             {
              before(grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1()); 
             match(input,56,FOLLOW_2); 
@@ -10318,14 +10403,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__2"
-    // InternalQLS.g:3264:1: rule__TextTypeStyle__Group__2 : rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3 ;
+    // InternalQLS.g:3291:1: rule__TextTypeStyle__Group__2 : rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3 ;
     public final void rule__TextTypeStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3268:1: ( rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3 )
-            // InternalQLS.g:3269:2: rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3
+            // InternalQLS.g:3295:1: ( rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3 )
+            // InternalQLS.g:3296:2: rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__TextTypeStyle__Group__2__Impl();
@@ -10356,17 +10441,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__2__Impl"
-    // InternalQLS.g:3276:1: rule__TextTypeStyle__Group__2__Impl : ( '{' ) ;
+    // InternalQLS.g:3303:1: rule__TextTypeStyle__Group__2__Impl : ( '{' ) ;
     public final void rule__TextTypeStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3280:1: ( ( '{' ) )
-            // InternalQLS.g:3281:1: ( '{' )
+            // InternalQLS.g:3307:1: ( ( '{' ) )
+            // InternalQLS.g:3308:1: ( '{' )
             {
-            // InternalQLS.g:3281:1: ( '{' )
-            // InternalQLS.g:3282:2: '{'
+            // InternalQLS.g:3308:1: ( '{' )
+            // InternalQLS.g:3309:2: '{'
             {
              before(grammarAccess.getTextTypeStyleAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,44,FOLLOW_2); 
@@ -10393,14 +10478,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__3"
-    // InternalQLS.g:3291:1: rule__TextTypeStyle__Group__3 : rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4 ;
+    // InternalQLS.g:3318:1: rule__TextTypeStyle__Group__3 : rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4 ;
     public final void rule__TextTypeStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3295:1: ( rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4 )
-            // InternalQLS.g:3296:2: rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4
+            // InternalQLS.g:3322:1: ( rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4 )
+            // InternalQLS.g:3323:2: rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4
             {
             pushFollow(FOLLOW_22);
             rule__TextTypeStyle__Group__3__Impl();
@@ -10431,20 +10516,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__3__Impl"
-    // InternalQLS.g:3303:1: rule__TextTypeStyle__Group__3__Impl : ( ( rule__TextTypeStyle__MultilineAssignment_3 )? ) ;
+    // InternalQLS.g:3330:1: rule__TextTypeStyle__Group__3__Impl : ( ( rule__TextTypeStyle__MultilineAssignment_3 )? ) ;
     public final void rule__TextTypeStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3307:1: ( ( ( rule__TextTypeStyle__MultilineAssignment_3 )? ) )
-            // InternalQLS.g:3308:1: ( ( rule__TextTypeStyle__MultilineAssignment_3 )? )
+            // InternalQLS.g:3334:1: ( ( ( rule__TextTypeStyle__MultilineAssignment_3 )? ) )
+            // InternalQLS.g:3335:1: ( ( rule__TextTypeStyle__MultilineAssignment_3 )? )
             {
-            // InternalQLS.g:3308:1: ( ( rule__TextTypeStyle__MultilineAssignment_3 )? )
-            // InternalQLS.g:3309:2: ( rule__TextTypeStyle__MultilineAssignment_3 )?
+            // InternalQLS.g:3335:1: ( ( rule__TextTypeStyle__MultilineAssignment_3 )? )
+            // InternalQLS.g:3336:2: ( rule__TextTypeStyle__MultilineAssignment_3 )?
             {
              before(grammarAccess.getTextTypeStyleAccess().getMultilineAssignment_3()); 
-            // InternalQLS.g:3310:2: ( rule__TextTypeStyle__MultilineAssignment_3 )?
+            // InternalQLS.g:3337:2: ( rule__TextTypeStyle__MultilineAssignment_3 )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -10453,7 +10538,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt28) {
                 case 1 :
-                    // InternalQLS.g:3310:3: rule__TextTypeStyle__MultilineAssignment_3
+                    // InternalQLS.g:3337:3: rule__TextTypeStyle__MultilineAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__TextTypeStyle__MultilineAssignment_3();
@@ -10489,14 +10574,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__4"
-    // InternalQLS.g:3318:1: rule__TextTypeStyle__Group__4 : rule__TextTypeStyle__Group__4__Impl ;
+    // InternalQLS.g:3345:1: rule__TextTypeStyle__Group__4 : rule__TextTypeStyle__Group__4__Impl ;
     public final void rule__TextTypeStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3322:1: ( rule__TextTypeStyle__Group__4__Impl )
-            // InternalQLS.g:3323:2: rule__TextTypeStyle__Group__4__Impl
+            // InternalQLS.g:3349:1: ( rule__TextTypeStyle__Group__4__Impl )
+            // InternalQLS.g:3350:2: rule__TextTypeStyle__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TextTypeStyle__Group__4__Impl();
@@ -10522,17 +10607,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__4__Impl"
-    // InternalQLS.g:3329:1: rule__TextTypeStyle__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:3356:1: rule__TextTypeStyle__Group__4__Impl : ( '}' ) ;
     public final void rule__TextTypeStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3333:1: ( ( '}' ) )
-            // InternalQLS.g:3334:1: ( '}' )
+            // InternalQLS.g:3360:1: ( ( '}' ) )
+            // InternalQLS.g:3361:1: ( '}' )
             {
-            // InternalQLS.g:3334:1: ( '}' )
-            // InternalQLS.g:3335:2: '}'
+            // InternalQLS.g:3361:1: ( '}' )
+            // InternalQLS.g:3362:2: '}'
             {
              before(grammarAccess.getTextTypeStyleAccess().getRightCurlyBracketKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -10559,14 +10644,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__0"
-    // InternalQLS.g:3345:1: rule__UnaryExpression__Group__0 : rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1 ;
+    // InternalQLS.g:3372:1: rule__UnaryExpression__Group__0 : rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1 ;
     public final void rule__UnaryExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3349:1: ( rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1 )
-            // InternalQLS.g:3350:2: rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1
+            // InternalQLS.g:3376:1: ( rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1 )
+            // InternalQLS.g:3377:2: rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__UnaryExpression__Group__0__Impl();
@@ -10597,21 +10682,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__0__Impl"
-    // InternalQLS.g:3357:1: rule__UnaryExpression__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:3384:1: rule__UnaryExpression__Group__0__Impl : ( () ) ;
     public final void rule__UnaryExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3361:1: ( ( () ) )
-            // InternalQLS.g:3362:1: ( () )
+            // InternalQLS.g:3388:1: ( ( () ) )
+            // InternalQLS.g:3389:1: ( () )
             {
-            // InternalQLS.g:3362:1: ( () )
-            // InternalQLS.g:3363:2: ()
+            // InternalQLS.g:3389:1: ( () )
+            // InternalQLS.g:3390:2: ()
             {
              before(grammarAccess.getUnaryExpressionAccess().getBasicUnaryExpressionAction_0()); 
-            // InternalQLS.g:3364:2: ()
-            // InternalQLS.g:3364:3: 
+            // InternalQLS.g:3391:2: ()
+            // InternalQLS.g:3391:3: 
             {
             }
 
@@ -10634,14 +10719,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__1"
-    // InternalQLS.g:3372:1: rule__UnaryExpression__Group__1 : rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2 ;
+    // InternalQLS.g:3399:1: rule__UnaryExpression__Group__1 : rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2 ;
     public final void rule__UnaryExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3376:1: ( rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2 )
-            // InternalQLS.g:3377:2: rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2
+            // InternalQLS.g:3403:1: ( rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2 )
+            // InternalQLS.g:3404:2: rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2
             {
             pushFollow(FOLLOW_24);
             rule__UnaryExpression__Group__1__Impl();
@@ -10672,21 +10757,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__1__Impl"
-    // InternalQLS.g:3384:1: rule__UnaryExpression__Group__1__Impl : ( ( rule__UnaryExpression__OperatorAssignment_1 ) ) ;
+    // InternalQLS.g:3411:1: rule__UnaryExpression__Group__1__Impl : ( ( rule__UnaryExpression__OperatorAssignment_1 ) ) ;
     public final void rule__UnaryExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3388:1: ( ( ( rule__UnaryExpression__OperatorAssignment_1 ) ) )
-            // InternalQLS.g:3389:1: ( ( rule__UnaryExpression__OperatorAssignment_1 ) )
+            // InternalQLS.g:3415:1: ( ( ( rule__UnaryExpression__OperatorAssignment_1 ) ) )
+            // InternalQLS.g:3416:1: ( ( rule__UnaryExpression__OperatorAssignment_1 ) )
             {
-            // InternalQLS.g:3389:1: ( ( rule__UnaryExpression__OperatorAssignment_1 ) )
-            // InternalQLS.g:3390:2: ( rule__UnaryExpression__OperatorAssignment_1 )
+            // InternalQLS.g:3416:1: ( ( rule__UnaryExpression__OperatorAssignment_1 ) )
+            // InternalQLS.g:3417:2: ( rule__UnaryExpression__OperatorAssignment_1 )
             {
              before(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1()); 
-            // InternalQLS.g:3391:2: ( rule__UnaryExpression__OperatorAssignment_1 )
-            // InternalQLS.g:3391:3: rule__UnaryExpression__OperatorAssignment_1
+            // InternalQLS.g:3418:2: ( rule__UnaryExpression__OperatorAssignment_1 )
+            // InternalQLS.g:3418:3: rule__UnaryExpression__OperatorAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__OperatorAssignment_1();
@@ -10719,14 +10804,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__2"
-    // InternalQLS.g:3399:1: rule__UnaryExpression__Group__2 : rule__UnaryExpression__Group__2__Impl ;
+    // InternalQLS.g:3426:1: rule__UnaryExpression__Group__2 : rule__UnaryExpression__Group__2__Impl ;
     public final void rule__UnaryExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3403:1: ( rule__UnaryExpression__Group__2__Impl )
-            // InternalQLS.g:3404:2: rule__UnaryExpression__Group__2__Impl
+            // InternalQLS.g:3430:1: ( rule__UnaryExpression__Group__2__Impl )
+            // InternalQLS.g:3431:2: rule__UnaryExpression__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__Group__2__Impl();
@@ -10752,21 +10837,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__Group__2__Impl"
-    // InternalQLS.g:3410:1: rule__UnaryExpression__Group__2__Impl : ( ( rule__UnaryExpression__OperandAssignment_2 ) ) ;
+    // InternalQLS.g:3437:1: rule__UnaryExpression__Group__2__Impl : ( ( rule__UnaryExpression__OperandAssignment_2 ) ) ;
     public final void rule__UnaryExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3414:1: ( ( ( rule__UnaryExpression__OperandAssignment_2 ) ) )
-            // InternalQLS.g:3415:1: ( ( rule__UnaryExpression__OperandAssignment_2 ) )
+            // InternalQLS.g:3441:1: ( ( ( rule__UnaryExpression__OperandAssignment_2 ) ) )
+            // InternalQLS.g:3442:1: ( ( rule__UnaryExpression__OperandAssignment_2 ) )
             {
-            // InternalQLS.g:3415:1: ( ( rule__UnaryExpression__OperandAssignment_2 ) )
-            // InternalQLS.g:3416:2: ( rule__UnaryExpression__OperandAssignment_2 )
+            // InternalQLS.g:3442:1: ( ( rule__UnaryExpression__OperandAssignment_2 ) )
+            // InternalQLS.g:3443:2: ( rule__UnaryExpression__OperandAssignment_2 )
             {
              before(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_2()); 
-            // InternalQLS.g:3417:2: ( rule__UnaryExpression__OperandAssignment_2 )
-            // InternalQLS.g:3417:3: rule__UnaryExpression__OperandAssignment_2
+            // InternalQLS.g:3444:2: ( rule__UnaryExpression__OperandAssignment_2 )
+            // InternalQLS.g:3444:3: rule__UnaryExpression__OperandAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__UnaryExpression__OperandAssignment_2();
@@ -10799,14 +10884,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__0"
-    // InternalQLS.g:3426:1: rule__PrimaryExpression__Group_2__0 : rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1 ;
+    // InternalQLS.g:3453:1: rule__PrimaryExpression__Group_2__0 : rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1 ;
     public final void rule__PrimaryExpression__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3430:1: ( rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1 )
-            // InternalQLS.g:3431:2: rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1
+            // InternalQLS.g:3457:1: ( rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1 )
+            // InternalQLS.g:3458:2: rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1
             {
             pushFollow(FOLLOW_24);
             rule__PrimaryExpression__Group_2__0__Impl();
@@ -10837,17 +10922,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__0__Impl"
-    // InternalQLS.g:3438:1: rule__PrimaryExpression__Group_2__0__Impl : ( '(' ) ;
+    // InternalQLS.g:3465:1: rule__PrimaryExpression__Group_2__0__Impl : ( '(' ) ;
     public final void rule__PrimaryExpression__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3442:1: ( ( '(' ) )
-            // InternalQLS.g:3443:1: ( '(' )
+            // InternalQLS.g:3469:1: ( ( '(' ) )
+            // InternalQLS.g:3470:1: ( '(' )
             {
-            // InternalQLS.g:3443:1: ( '(' )
-            // InternalQLS.g:3444:2: '('
+            // InternalQLS.g:3470:1: ( '(' )
+            // InternalQLS.g:3471:2: '('
             {
              before(grammarAccess.getPrimaryExpressionAccess().getLeftParenthesisKeyword_2_0()); 
             match(input,57,FOLLOW_2); 
@@ -10874,14 +10959,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__1"
-    // InternalQLS.g:3453:1: rule__PrimaryExpression__Group_2__1 : rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2 ;
+    // InternalQLS.g:3480:1: rule__PrimaryExpression__Group_2__1 : rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2 ;
     public final void rule__PrimaryExpression__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3457:1: ( rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2 )
-            // InternalQLS.g:3458:2: rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2
+            // InternalQLS.g:3484:1: ( rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2 )
+            // InternalQLS.g:3485:2: rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2
             {
             pushFollow(FOLLOW_25);
             rule__PrimaryExpression__Group_2__1__Impl();
@@ -10912,21 +10997,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__1__Impl"
-    // InternalQLS.g:3465:1: rule__PrimaryExpression__Group_2__1__Impl : ( ( rule__PrimaryExpression__Alternatives_2_1 ) ) ;
+    // InternalQLS.g:3492:1: rule__PrimaryExpression__Group_2__1__Impl : ( ( rule__PrimaryExpression__Alternatives_2_1 ) ) ;
     public final void rule__PrimaryExpression__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3469:1: ( ( ( rule__PrimaryExpression__Alternatives_2_1 ) ) )
-            // InternalQLS.g:3470:1: ( ( rule__PrimaryExpression__Alternatives_2_1 ) )
+            // InternalQLS.g:3496:1: ( ( ( rule__PrimaryExpression__Alternatives_2_1 ) ) )
+            // InternalQLS.g:3497:1: ( ( rule__PrimaryExpression__Alternatives_2_1 ) )
             {
-            // InternalQLS.g:3470:1: ( ( rule__PrimaryExpression__Alternatives_2_1 ) )
-            // InternalQLS.g:3471:2: ( rule__PrimaryExpression__Alternatives_2_1 )
+            // InternalQLS.g:3497:1: ( ( rule__PrimaryExpression__Alternatives_2_1 ) )
+            // InternalQLS.g:3498:2: ( rule__PrimaryExpression__Alternatives_2_1 )
             {
              before(grammarAccess.getPrimaryExpressionAccess().getAlternatives_2_1()); 
-            // InternalQLS.g:3472:2: ( rule__PrimaryExpression__Alternatives_2_1 )
-            // InternalQLS.g:3472:3: rule__PrimaryExpression__Alternatives_2_1
+            // InternalQLS.g:3499:2: ( rule__PrimaryExpression__Alternatives_2_1 )
+            // InternalQLS.g:3499:3: rule__PrimaryExpression__Alternatives_2_1
             {
             pushFollow(FOLLOW_2);
             rule__PrimaryExpression__Alternatives_2_1();
@@ -10959,14 +11044,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__2"
-    // InternalQLS.g:3480:1: rule__PrimaryExpression__Group_2__2 : rule__PrimaryExpression__Group_2__2__Impl ;
+    // InternalQLS.g:3507:1: rule__PrimaryExpression__Group_2__2 : rule__PrimaryExpression__Group_2__2__Impl ;
     public final void rule__PrimaryExpression__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3484:1: ( rule__PrimaryExpression__Group_2__2__Impl )
-            // InternalQLS.g:3485:2: rule__PrimaryExpression__Group_2__2__Impl
+            // InternalQLS.g:3511:1: ( rule__PrimaryExpression__Group_2__2__Impl )
+            // InternalQLS.g:3512:2: rule__PrimaryExpression__Group_2__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PrimaryExpression__Group_2__2__Impl();
@@ -10992,17 +11077,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PrimaryExpression__Group_2__2__Impl"
-    // InternalQLS.g:3491:1: rule__PrimaryExpression__Group_2__2__Impl : ( ')' ) ;
+    // InternalQLS.g:3518:1: rule__PrimaryExpression__Group_2__2__Impl : ( ')' ) ;
     public final void rule__PrimaryExpression__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3495:1: ( ( ')' ) )
-            // InternalQLS.g:3496:1: ( ')' )
+            // InternalQLS.g:3522:1: ( ( ')' ) )
+            // InternalQLS.g:3523:1: ( ')' )
             {
-            // InternalQLS.g:3496:1: ( ')' )
-            // InternalQLS.g:3497:2: ')'
+            // InternalQLS.g:3523:1: ( ')' )
+            // InternalQLS.g:3524:2: ')'
             {
              before(grammarAccess.getPrimaryExpressionAccess().getRightParenthesisKeyword_2_2()); 
             match(input,58,FOLLOW_2); 
@@ -11029,14 +11114,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__0"
-    // InternalQLS.g:3507:1: rule__IfExpression__Group__0 : rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1 ;
+    // InternalQLS.g:3534:1: rule__IfExpression__Group__0 : rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1 ;
     public final void rule__IfExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3511:1: ( rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1 )
-            // InternalQLS.g:3512:2: rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1
+            // InternalQLS.g:3538:1: ( rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1 )
+            // InternalQLS.g:3539:2: rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1
             {
             pushFollow(FOLLOW_26);
             rule__IfExpression__Group__0__Impl();
@@ -11067,21 +11152,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__0__Impl"
-    // InternalQLS.g:3519:1: rule__IfExpression__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:3546:1: rule__IfExpression__Group__0__Impl : ( () ) ;
     public final void rule__IfExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3523:1: ( ( () ) )
-            // InternalQLS.g:3524:1: ( () )
+            // InternalQLS.g:3550:1: ( ( () ) )
+            // InternalQLS.g:3551:1: ( () )
             {
-            // InternalQLS.g:3524:1: ( () )
-            // InternalQLS.g:3525:2: ()
+            // InternalQLS.g:3551:1: ( () )
+            // InternalQLS.g:3552:2: ()
             {
              before(grammarAccess.getIfExpressionAccess().getIfExpressionAction_0()); 
-            // InternalQLS.g:3526:2: ()
-            // InternalQLS.g:3526:3: 
+            // InternalQLS.g:3553:2: ()
+            // InternalQLS.g:3553:3: 
             {
             }
 
@@ -11104,14 +11189,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__1"
-    // InternalQLS.g:3534:1: rule__IfExpression__Group__1 : rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2 ;
+    // InternalQLS.g:3561:1: rule__IfExpression__Group__1 : rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2 ;
     public final void rule__IfExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3538:1: ( rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2 )
-            // InternalQLS.g:3539:2: rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2
+            // InternalQLS.g:3565:1: ( rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2 )
+            // InternalQLS.g:3566:2: rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2
             {
             pushFollow(FOLLOW_24);
             rule__IfExpression__Group__1__Impl();
@@ -11142,17 +11227,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__1__Impl"
-    // InternalQLS.g:3546:1: rule__IfExpression__Group__1__Impl : ( 'if' ) ;
+    // InternalQLS.g:3573:1: rule__IfExpression__Group__1__Impl : ( 'if' ) ;
     public final void rule__IfExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3550:1: ( ( 'if' ) )
-            // InternalQLS.g:3551:1: ( 'if' )
+            // InternalQLS.g:3577:1: ( ( 'if' ) )
+            // InternalQLS.g:3578:1: ( 'if' )
             {
-            // InternalQLS.g:3551:1: ( 'if' )
-            // InternalQLS.g:3552:2: 'if'
+            // InternalQLS.g:3578:1: ( 'if' )
+            // InternalQLS.g:3579:2: 'if'
             {
              before(grammarAccess.getIfExpressionAccess().getIfKeyword_1()); 
             match(input,59,FOLLOW_2); 
@@ -11179,14 +11264,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__2"
-    // InternalQLS.g:3561:1: rule__IfExpression__Group__2 : rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3 ;
+    // InternalQLS.g:3588:1: rule__IfExpression__Group__2 : rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3 ;
     public final void rule__IfExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3565:1: ( rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3 )
-            // InternalQLS.g:3566:2: rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3
+            // InternalQLS.g:3592:1: ( rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3 )
+            // InternalQLS.g:3593:2: rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3
             {
             pushFollow(FOLLOW_27);
             rule__IfExpression__Group__2__Impl();
@@ -11217,21 +11302,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__2__Impl"
-    // InternalQLS.g:3573:1: rule__IfExpression__Group__2__Impl : ( ( rule__IfExpression__ConditionAssignment_2 ) ) ;
+    // InternalQLS.g:3600:1: rule__IfExpression__Group__2__Impl : ( ( rule__IfExpression__ConditionAssignment_2 ) ) ;
     public final void rule__IfExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3577:1: ( ( ( rule__IfExpression__ConditionAssignment_2 ) ) )
-            // InternalQLS.g:3578:1: ( ( rule__IfExpression__ConditionAssignment_2 ) )
+            // InternalQLS.g:3604:1: ( ( ( rule__IfExpression__ConditionAssignment_2 ) ) )
+            // InternalQLS.g:3605:1: ( ( rule__IfExpression__ConditionAssignment_2 ) )
             {
-            // InternalQLS.g:3578:1: ( ( rule__IfExpression__ConditionAssignment_2 ) )
-            // InternalQLS.g:3579:2: ( rule__IfExpression__ConditionAssignment_2 )
+            // InternalQLS.g:3605:1: ( ( rule__IfExpression__ConditionAssignment_2 ) )
+            // InternalQLS.g:3606:2: ( rule__IfExpression__ConditionAssignment_2 )
             {
              before(grammarAccess.getIfExpressionAccess().getConditionAssignment_2()); 
-            // InternalQLS.g:3580:2: ( rule__IfExpression__ConditionAssignment_2 )
-            // InternalQLS.g:3580:3: rule__IfExpression__ConditionAssignment_2
+            // InternalQLS.g:3607:2: ( rule__IfExpression__ConditionAssignment_2 )
+            // InternalQLS.g:3607:3: rule__IfExpression__ConditionAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__IfExpression__ConditionAssignment_2();
@@ -11264,14 +11349,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__3"
-    // InternalQLS.g:3588:1: rule__IfExpression__Group__3 : rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4 ;
+    // InternalQLS.g:3615:1: rule__IfExpression__Group__3 : rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4 ;
     public final void rule__IfExpression__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3592:1: ( rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4 )
-            // InternalQLS.g:3593:2: rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4
+            // InternalQLS.g:3619:1: ( rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4 )
+            // InternalQLS.g:3620:2: rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4
             {
             pushFollow(FOLLOW_24);
             rule__IfExpression__Group__3__Impl();
@@ -11302,17 +11387,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__3__Impl"
-    // InternalQLS.g:3600:1: rule__IfExpression__Group__3__Impl : ( 'then' ) ;
+    // InternalQLS.g:3627:1: rule__IfExpression__Group__3__Impl : ( 'then' ) ;
     public final void rule__IfExpression__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3604:1: ( ( 'then' ) )
-            // InternalQLS.g:3605:1: ( 'then' )
+            // InternalQLS.g:3631:1: ( ( 'then' ) )
+            // InternalQLS.g:3632:1: ( 'then' )
             {
-            // InternalQLS.g:3605:1: ( 'then' )
-            // InternalQLS.g:3606:2: 'then'
+            // InternalQLS.g:3632:1: ( 'then' )
+            // InternalQLS.g:3633:2: 'then'
             {
              before(grammarAccess.getIfExpressionAccess().getThenKeyword_3()); 
             match(input,60,FOLLOW_2); 
@@ -11339,14 +11424,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__4"
-    // InternalQLS.g:3615:1: rule__IfExpression__Group__4 : rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5 ;
+    // InternalQLS.g:3642:1: rule__IfExpression__Group__4 : rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5 ;
     public final void rule__IfExpression__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3619:1: ( rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5 )
-            // InternalQLS.g:3620:2: rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5
+            // InternalQLS.g:3646:1: ( rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5 )
+            // InternalQLS.g:3647:2: rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5
             {
             pushFollow(FOLLOW_28);
             rule__IfExpression__Group__4__Impl();
@@ -11377,21 +11462,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__4__Impl"
-    // InternalQLS.g:3627:1: rule__IfExpression__Group__4__Impl : ( ( rule__IfExpression__ThenExpressionAssignment_4 ) ) ;
+    // InternalQLS.g:3654:1: rule__IfExpression__Group__4__Impl : ( ( rule__IfExpression__ThenExpressionAssignment_4 ) ) ;
     public final void rule__IfExpression__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3631:1: ( ( ( rule__IfExpression__ThenExpressionAssignment_4 ) ) )
-            // InternalQLS.g:3632:1: ( ( rule__IfExpression__ThenExpressionAssignment_4 ) )
+            // InternalQLS.g:3658:1: ( ( ( rule__IfExpression__ThenExpressionAssignment_4 ) ) )
+            // InternalQLS.g:3659:1: ( ( rule__IfExpression__ThenExpressionAssignment_4 ) )
             {
-            // InternalQLS.g:3632:1: ( ( rule__IfExpression__ThenExpressionAssignment_4 ) )
-            // InternalQLS.g:3633:2: ( rule__IfExpression__ThenExpressionAssignment_4 )
+            // InternalQLS.g:3659:1: ( ( rule__IfExpression__ThenExpressionAssignment_4 ) )
+            // InternalQLS.g:3660:2: ( rule__IfExpression__ThenExpressionAssignment_4 )
             {
              before(grammarAccess.getIfExpressionAccess().getThenExpressionAssignment_4()); 
-            // InternalQLS.g:3634:2: ( rule__IfExpression__ThenExpressionAssignment_4 )
-            // InternalQLS.g:3634:3: rule__IfExpression__ThenExpressionAssignment_4
+            // InternalQLS.g:3661:2: ( rule__IfExpression__ThenExpressionAssignment_4 )
+            // InternalQLS.g:3661:3: rule__IfExpression__ThenExpressionAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__IfExpression__ThenExpressionAssignment_4();
@@ -11424,14 +11509,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__5"
-    // InternalQLS.g:3642:1: rule__IfExpression__Group__5 : rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6 ;
+    // InternalQLS.g:3669:1: rule__IfExpression__Group__5 : rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6 ;
     public final void rule__IfExpression__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3646:1: ( rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6 )
-            // InternalQLS.g:3647:2: rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6
+            // InternalQLS.g:3673:1: ( rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6 )
+            // InternalQLS.g:3674:2: rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6
             {
             pushFollow(FOLLOW_28);
             rule__IfExpression__Group__5__Impl();
@@ -11462,20 +11547,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__5__Impl"
-    // InternalQLS.g:3654:1: rule__IfExpression__Group__5__Impl : ( ( rule__IfExpression__Group_5__0 )? ) ;
+    // InternalQLS.g:3681:1: rule__IfExpression__Group__5__Impl : ( ( rule__IfExpression__Group_5__0 )? ) ;
     public final void rule__IfExpression__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3658:1: ( ( ( rule__IfExpression__Group_5__0 )? ) )
-            // InternalQLS.g:3659:1: ( ( rule__IfExpression__Group_5__0 )? )
+            // InternalQLS.g:3685:1: ( ( ( rule__IfExpression__Group_5__0 )? ) )
+            // InternalQLS.g:3686:1: ( ( rule__IfExpression__Group_5__0 )? )
             {
-            // InternalQLS.g:3659:1: ( ( rule__IfExpression__Group_5__0 )? )
-            // InternalQLS.g:3660:2: ( rule__IfExpression__Group_5__0 )?
+            // InternalQLS.g:3686:1: ( ( rule__IfExpression__Group_5__0 )? )
+            // InternalQLS.g:3687:2: ( rule__IfExpression__Group_5__0 )?
             {
              before(grammarAccess.getIfExpressionAccess().getGroup_5()); 
-            // InternalQLS.g:3661:2: ( rule__IfExpression__Group_5__0 )?
+            // InternalQLS.g:3688:2: ( rule__IfExpression__Group_5__0 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -11484,7 +11569,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt29) {
                 case 1 :
-                    // InternalQLS.g:3661:3: rule__IfExpression__Group_5__0
+                    // InternalQLS.g:3688:3: rule__IfExpression__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IfExpression__Group_5__0();
@@ -11520,14 +11605,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__6"
-    // InternalQLS.g:3669:1: rule__IfExpression__Group__6 : rule__IfExpression__Group__6__Impl ;
+    // InternalQLS.g:3696:1: rule__IfExpression__Group__6 : rule__IfExpression__Group__6__Impl ;
     public final void rule__IfExpression__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3673:1: ( rule__IfExpression__Group__6__Impl )
-            // InternalQLS.g:3674:2: rule__IfExpression__Group__6__Impl
+            // InternalQLS.g:3700:1: ( rule__IfExpression__Group__6__Impl )
+            // InternalQLS.g:3701:2: rule__IfExpression__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IfExpression__Group__6__Impl();
@@ -11553,17 +11638,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group__6__Impl"
-    // InternalQLS.g:3680:1: rule__IfExpression__Group__6__Impl : ( 'endif' ) ;
+    // InternalQLS.g:3707:1: rule__IfExpression__Group__6__Impl : ( 'endif' ) ;
     public final void rule__IfExpression__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3684:1: ( ( 'endif' ) )
-            // InternalQLS.g:3685:1: ( 'endif' )
+            // InternalQLS.g:3711:1: ( ( 'endif' ) )
+            // InternalQLS.g:3712:1: ( 'endif' )
             {
-            // InternalQLS.g:3685:1: ( 'endif' )
-            // InternalQLS.g:3686:2: 'endif'
+            // InternalQLS.g:3712:1: ( 'endif' )
+            // InternalQLS.g:3713:2: 'endif'
             {
              before(grammarAccess.getIfExpressionAccess().getEndifKeyword_6()); 
             match(input,61,FOLLOW_2); 
@@ -11590,14 +11675,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group_5__0"
-    // InternalQLS.g:3696:1: rule__IfExpression__Group_5__0 : rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1 ;
+    // InternalQLS.g:3723:1: rule__IfExpression__Group_5__0 : rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1 ;
     public final void rule__IfExpression__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3700:1: ( rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1 )
-            // InternalQLS.g:3701:2: rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1
+            // InternalQLS.g:3727:1: ( rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1 )
+            // InternalQLS.g:3728:2: rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1
             {
             pushFollow(FOLLOW_24);
             rule__IfExpression__Group_5__0__Impl();
@@ -11628,17 +11713,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group_5__0__Impl"
-    // InternalQLS.g:3708:1: rule__IfExpression__Group_5__0__Impl : ( 'else' ) ;
+    // InternalQLS.g:3735:1: rule__IfExpression__Group_5__0__Impl : ( 'else' ) ;
     public final void rule__IfExpression__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3712:1: ( ( 'else' ) )
-            // InternalQLS.g:3713:1: ( 'else' )
+            // InternalQLS.g:3739:1: ( ( 'else' ) )
+            // InternalQLS.g:3740:1: ( 'else' )
             {
-            // InternalQLS.g:3713:1: ( 'else' )
-            // InternalQLS.g:3714:2: 'else'
+            // InternalQLS.g:3740:1: ( 'else' )
+            // InternalQLS.g:3741:2: 'else'
             {
              before(grammarAccess.getIfExpressionAccess().getElseKeyword_5_0()); 
             match(input,62,FOLLOW_2); 
@@ -11665,14 +11750,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group_5__1"
-    // InternalQLS.g:3723:1: rule__IfExpression__Group_5__1 : rule__IfExpression__Group_5__1__Impl ;
+    // InternalQLS.g:3750:1: rule__IfExpression__Group_5__1 : rule__IfExpression__Group_5__1__Impl ;
     public final void rule__IfExpression__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3727:1: ( rule__IfExpression__Group_5__1__Impl )
-            // InternalQLS.g:3728:2: rule__IfExpression__Group_5__1__Impl
+            // InternalQLS.g:3754:1: ( rule__IfExpression__Group_5__1__Impl )
+            // InternalQLS.g:3755:2: rule__IfExpression__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IfExpression__Group_5__1__Impl();
@@ -11698,21 +11783,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__Group_5__1__Impl"
-    // InternalQLS.g:3734:1: rule__IfExpression__Group_5__1__Impl : ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) ) ;
+    // InternalQLS.g:3761:1: rule__IfExpression__Group_5__1__Impl : ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) ) ;
     public final void rule__IfExpression__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3738:1: ( ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) ) )
-            // InternalQLS.g:3739:1: ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) )
+            // InternalQLS.g:3765:1: ( ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) ) )
+            // InternalQLS.g:3766:1: ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) )
             {
-            // InternalQLS.g:3739:1: ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) )
-            // InternalQLS.g:3740:2: ( rule__IfExpression__ElseExpressionAssignment_5_1 )
+            // InternalQLS.g:3766:1: ( ( rule__IfExpression__ElseExpressionAssignment_5_1 ) )
+            // InternalQLS.g:3767:2: ( rule__IfExpression__ElseExpressionAssignment_5_1 )
             {
              before(grammarAccess.getIfExpressionAccess().getElseExpressionAssignment_5_1()); 
-            // InternalQLS.g:3741:2: ( rule__IfExpression__ElseExpressionAssignment_5_1 )
-            // InternalQLS.g:3741:3: rule__IfExpression__ElseExpressionAssignment_5_1
+            // InternalQLS.g:3768:2: ( rule__IfExpression__ElseExpressionAssignment_5_1 )
+            // InternalQLS.g:3768:3: rule__IfExpression__ElseExpressionAssignment_5_1
             {
             pushFollow(FOLLOW_2);
             rule__IfExpression__ElseExpressionAssignment_5_1();
@@ -11745,14 +11830,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group__0"
-    // InternalQLS.g:3750:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
+    // InternalQLS.g:3777:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
     public final void rule__OrExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3754:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // InternalQLS.g:3755:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
+            // InternalQLS.g:3781:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
+            // InternalQLS.g:3782:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
             pushFollow(FOLLOW_29);
             rule__OrExpression__Group__0__Impl();
@@ -11783,17 +11868,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // InternalQLS.g:3762:1: rule__OrExpression__Group__0__Impl : ( ruleAndExpression ) ;
+    // InternalQLS.g:3789:1: rule__OrExpression__Group__0__Impl : ( ruleAndExpression ) ;
     public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3766:1: ( ( ruleAndExpression ) )
-            // InternalQLS.g:3767:1: ( ruleAndExpression )
+            // InternalQLS.g:3793:1: ( ( ruleAndExpression ) )
+            // InternalQLS.g:3794:1: ( ruleAndExpression )
             {
-            // InternalQLS.g:3767:1: ( ruleAndExpression )
-            // InternalQLS.g:3768:2: ruleAndExpression
+            // InternalQLS.g:3794:1: ( ruleAndExpression )
+            // InternalQLS.g:3795:2: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getAndExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -11824,14 +11909,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group__1"
-    // InternalQLS.g:3777:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
+    // InternalQLS.g:3804:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
     public final void rule__OrExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3781:1: ( rule__OrExpression__Group__1__Impl )
-            // InternalQLS.g:3782:2: rule__OrExpression__Group__1__Impl
+            // InternalQLS.g:3808:1: ( rule__OrExpression__Group__1__Impl )
+            // InternalQLS.g:3809:2: rule__OrExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group__1__Impl();
@@ -11857,20 +11942,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // InternalQLS.g:3788:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:3815:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
     public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3792:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
-            // InternalQLS.g:3793:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalQLS.g:3819:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
+            // InternalQLS.g:3820:1: ( ( rule__OrExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:3793:1: ( ( rule__OrExpression__Group_1__0 )* )
-            // InternalQLS.g:3794:2: ( rule__OrExpression__Group_1__0 )*
+            // InternalQLS.g:3820:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalQLS.g:3821:2: ( rule__OrExpression__Group_1__0 )*
             {
              before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:3795:2: ( rule__OrExpression__Group_1__0 )*
+            // InternalQLS.g:3822:2: ( rule__OrExpression__Group_1__0 )*
             loop30:
             do {
                 int alt30=2;
@@ -11883,7 +11968,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt30) {
             	case 1 :
-            	    // InternalQLS.g:3795:3: rule__OrExpression__Group_1__0
+            	    // InternalQLS.g:3822:3: rule__OrExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_30);
             	    rule__OrExpression__Group_1__0();
@@ -11922,14 +12007,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0"
-    // InternalQLS.g:3804:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
+    // InternalQLS.g:3831:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
     public final void rule__OrExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3808:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // InternalQLS.g:3809:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // InternalQLS.g:3835:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
+            // InternalQLS.g:3836:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
             pushFollow(FOLLOW_29);
             rule__OrExpression__Group_1__0__Impl();
@@ -11960,21 +12045,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // InternalQLS.g:3816:1: rule__OrExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:3843:1: rule__OrExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3820:1: ( ( () ) )
-            // InternalQLS.g:3821:1: ( () )
+            // InternalQLS.g:3847:1: ( ( () ) )
+            // InternalQLS.g:3848:1: ( () )
             {
-            // InternalQLS.g:3821:1: ( () )
-            // InternalQLS.g:3822:2: ()
+            // InternalQLS.g:3848:1: ( () )
+            // InternalQLS.g:3849:2: ()
             {
              before(grammarAccess.getOrExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:3823:2: ()
-            // InternalQLS.g:3823:3: 
+            // InternalQLS.g:3850:2: ()
+            // InternalQLS.g:3850:3: 
             {
             }
 
@@ -11997,14 +12082,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1"
-    // InternalQLS.g:3831:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 ;
+    // InternalQLS.g:3858:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 ;
     public final void rule__OrExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3835:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
-            // InternalQLS.g:3836:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
+            // InternalQLS.g:3862:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
+            // InternalQLS.g:3863:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
             {
             pushFollow(FOLLOW_31);
             rule__OrExpression__Group_1__1__Impl();
@@ -12035,21 +12120,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // InternalQLS.g:3843:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:3870:1: rule__OrExpression__Group_1__1__Impl : ( ( rule__OrExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3847:1: ( ( ( rule__OrExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:3848:1: ( ( rule__OrExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:3874:1: ( ( ( rule__OrExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:3875:1: ( ( rule__OrExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:3848:1: ( ( rule__OrExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:3849:2: ( rule__OrExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:3875:1: ( ( rule__OrExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:3876:2: ( rule__OrExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getOrExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:3850:2: ( rule__OrExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:3850:3: rule__OrExpression__OperatorAssignment_1_1
+            // InternalQLS.g:3877:2: ( rule__OrExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:3877:3: rule__OrExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__OperatorAssignment_1_1();
@@ -12082,14 +12167,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__2"
-    // InternalQLS.g:3858:1: rule__OrExpression__Group_1__2 : rule__OrExpression__Group_1__2__Impl ;
+    // InternalQLS.g:3885:1: rule__OrExpression__Group_1__2 : rule__OrExpression__Group_1__2__Impl ;
     public final void rule__OrExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3862:1: ( rule__OrExpression__Group_1__2__Impl )
-            // InternalQLS.g:3863:2: rule__OrExpression__Group_1__2__Impl
+            // InternalQLS.g:3889:1: ( rule__OrExpression__Group_1__2__Impl )
+            // InternalQLS.g:3890:2: rule__OrExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1__2__Impl();
@@ -12115,21 +12200,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__Group_1__2__Impl"
-    // InternalQLS.g:3869:1: rule__OrExpression__Group_1__2__Impl : ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:3896:1: rule__OrExpression__Group_1__2__Impl : ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__OrExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3873:1: ( ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:3874:1: ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:3900:1: ( ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:3901:1: ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:3874:1: ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:3875:2: ( rule__OrExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:3901:1: ( ( rule__OrExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:3902:2: ( rule__OrExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getOrExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:3876:2: ( rule__OrExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:3876:3: rule__OrExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:3903:2: ( rule__OrExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:3903:3: rule__OrExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__RhsOperandAssignment_1_2();
@@ -12162,14 +12247,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group__0"
-    // InternalQLS.g:3885:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
+    // InternalQLS.g:3912:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
     public final void rule__AndExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3889:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
-            // InternalQLS.g:3890:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
+            // InternalQLS.g:3916:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
+            // InternalQLS.g:3917:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
             pushFollow(FOLLOW_32);
             rule__AndExpression__Group__0__Impl();
@@ -12200,17 +12285,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group__0__Impl"
-    // InternalQLS.g:3897:1: rule__AndExpression__Group__0__Impl : ( ruleEqualExpression ) ;
+    // InternalQLS.g:3924:1: rule__AndExpression__Group__0__Impl : ( ruleEqualExpression ) ;
     public final void rule__AndExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3901:1: ( ( ruleEqualExpression ) )
-            // InternalQLS.g:3902:1: ( ruleEqualExpression )
+            // InternalQLS.g:3928:1: ( ( ruleEqualExpression ) )
+            // InternalQLS.g:3929:1: ( ruleEqualExpression )
             {
-            // InternalQLS.g:3902:1: ( ruleEqualExpression )
-            // InternalQLS.g:3903:2: ruleEqualExpression
+            // InternalQLS.g:3929:1: ( ruleEqualExpression )
+            // InternalQLS.g:3930:2: ruleEqualExpression
             {
              before(grammarAccess.getAndExpressionAccess().getEqualExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -12241,14 +12326,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group__1"
-    // InternalQLS.g:3912:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
+    // InternalQLS.g:3939:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
     public final void rule__AndExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3916:1: ( rule__AndExpression__Group__1__Impl )
-            // InternalQLS.g:3917:2: rule__AndExpression__Group__1__Impl
+            // InternalQLS.g:3943:1: ( rule__AndExpression__Group__1__Impl )
+            // InternalQLS.g:3944:2: rule__AndExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group__1__Impl();
@@ -12274,20 +12359,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group__1__Impl"
-    // InternalQLS.g:3923:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:3950:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
     public final void rule__AndExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3927:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
-            // InternalQLS.g:3928:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalQLS.g:3954:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
+            // InternalQLS.g:3955:1: ( ( rule__AndExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:3928:1: ( ( rule__AndExpression__Group_1__0 )* )
-            // InternalQLS.g:3929:2: ( rule__AndExpression__Group_1__0 )*
+            // InternalQLS.g:3955:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalQLS.g:3956:2: ( rule__AndExpression__Group_1__0 )*
             {
              before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:3930:2: ( rule__AndExpression__Group_1__0 )*
+            // InternalQLS.g:3957:2: ( rule__AndExpression__Group_1__0 )*
             loop31:
             do {
                 int alt31=2;
@@ -12300,7 +12385,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // InternalQLS.g:3930:3: rule__AndExpression__Group_1__0
+            	    // InternalQLS.g:3957:3: rule__AndExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_33);
             	    rule__AndExpression__Group_1__0();
@@ -12339,14 +12424,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0"
-    // InternalQLS.g:3939:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
+    // InternalQLS.g:3966:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
     public final void rule__AndExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3943:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
-            // InternalQLS.g:3944:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
+            // InternalQLS.g:3970:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
+            // InternalQLS.g:3971:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
             pushFollow(FOLLOW_32);
             rule__AndExpression__Group_1__0__Impl();
@@ -12377,21 +12462,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0__Impl"
-    // InternalQLS.g:3951:1: rule__AndExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:3978:1: rule__AndExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__AndExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3955:1: ( ( () ) )
-            // InternalQLS.g:3956:1: ( () )
+            // InternalQLS.g:3982:1: ( ( () ) )
+            // InternalQLS.g:3983:1: ( () )
             {
-            // InternalQLS.g:3956:1: ( () )
-            // InternalQLS.g:3957:2: ()
+            // InternalQLS.g:3983:1: ( () )
+            // InternalQLS.g:3984:2: ()
             {
              before(grammarAccess.getAndExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:3958:2: ()
-            // InternalQLS.g:3958:3: 
+            // InternalQLS.g:3985:2: ()
+            // InternalQLS.g:3985:3: 
             {
             }
 
@@ -12414,14 +12499,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1"
-    // InternalQLS.g:3966:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 ;
+    // InternalQLS.g:3993:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 ;
     public final void rule__AndExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3970:1: ( rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 )
-            // InternalQLS.g:3971:2: rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2
+            // InternalQLS.g:3997:1: ( rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 )
+            // InternalQLS.g:3998:2: rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2
             {
             pushFollow(FOLLOW_31);
             rule__AndExpression__Group_1__1__Impl();
@@ -12452,21 +12537,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1__Impl"
-    // InternalQLS.g:3978:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:4005:1: rule__AndExpression__Group_1__1__Impl : ( ( rule__AndExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__AndExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3982:1: ( ( ( rule__AndExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:3983:1: ( ( rule__AndExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4009:1: ( ( ( rule__AndExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:4010:1: ( ( rule__AndExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:3983:1: ( ( rule__AndExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:3984:2: ( rule__AndExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4010:1: ( ( rule__AndExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4011:2: ( rule__AndExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getAndExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:3985:2: ( rule__AndExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:3985:3: rule__AndExpression__OperatorAssignment_1_1
+            // InternalQLS.g:4012:2: ( rule__AndExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4012:3: rule__AndExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__OperatorAssignment_1_1();
@@ -12499,14 +12584,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__2"
-    // InternalQLS.g:3993:1: rule__AndExpression__Group_1__2 : rule__AndExpression__Group_1__2__Impl ;
+    // InternalQLS.g:4020:1: rule__AndExpression__Group_1__2 : rule__AndExpression__Group_1__2__Impl ;
     public final void rule__AndExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3997:1: ( rule__AndExpression__Group_1__2__Impl )
-            // InternalQLS.g:3998:2: rule__AndExpression__Group_1__2__Impl
+            // InternalQLS.g:4024:1: ( rule__AndExpression__Group_1__2__Impl )
+            // InternalQLS.g:4025:2: rule__AndExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1__2__Impl();
@@ -12532,21 +12617,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__Group_1__2__Impl"
-    // InternalQLS.g:4004:1: rule__AndExpression__Group_1__2__Impl : ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:4031:1: rule__AndExpression__Group_1__2__Impl : ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__AndExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4008:1: ( ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:4009:1: ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4035:1: ( ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:4036:1: ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:4009:1: ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:4010:2: ( rule__AndExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4036:1: ( ( rule__AndExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4037:2: ( rule__AndExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getAndExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:4011:2: ( rule__AndExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:4011:3: rule__AndExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:4038:2: ( rule__AndExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4038:3: rule__AndExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__RhsOperandAssignment_1_2();
@@ -12579,14 +12664,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group__0"
-    // InternalQLS.g:4020:1: rule__EqualExpression__Group__0 : rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1 ;
+    // InternalQLS.g:4047:1: rule__EqualExpression__Group__0 : rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1 ;
     public final void rule__EqualExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4024:1: ( rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1 )
-            // InternalQLS.g:4025:2: rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1
+            // InternalQLS.g:4051:1: ( rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1 )
+            // InternalQLS.g:4052:2: rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1
             {
             pushFollow(FOLLOW_34);
             rule__EqualExpression__Group__0__Impl();
@@ -12617,17 +12702,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group__0__Impl"
-    // InternalQLS.g:4032:1: rule__EqualExpression__Group__0__Impl : ( ruleComparisionExpression ) ;
+    // InternalQLS.g:4059:1: rule__EqualExpression__Group__0__Impl : ( ruleComparisionExpression ) ;
     public final void rule__EqualExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4036:1: ( ( ruleComparisionExpression ) )
-            // InternalQLS.g:4037:1: ( ruleComparisionExpression )
+            // InternalQLS.g:4063:1: ( ( ruleComparisionExpression ) )
+            // InternalQLS.g:4064:1: ( ruleComparisionExpression )
             {
-            // InternalQLS.g:4037:1: ( ruleComparisionExpression )
-            // InternalQLS.g:4038:2: ruleComparisionExpression
+            // InternalQLS.g:4064:1: ( ruleComparisionExpression )
+            // InternalQLS.g:4065:2: ruleComparisionExpression
             {
              before(grammarAccess.getEqualExpressionAccess().getComparisionExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -12658,14 +12743,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group__1"
-    // InternalQLS.g:4047:1: rule__EqualExpression__Group__1 : rule__EqualExpression__Group__1__Impl ;
+    // InternalQLS.g:4074:1: rule__EqualExpression__Group__1 : rule__EqualExpression__Group__1__Impl ;
     public final void rule__EqualExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4051:1: ( rule__EqualExpression__Group__1__Impl )
-            // InternalQLS.g:4052:2: rule__EqualExpression__Group__1__Impl
+            // InternalQLS.g:4078:1: ( rule__EqualExpression__Group__1__Impl )
+            // InternalQLS.g:4079:2: rule__EqualExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualExpression__Group__1__Impl();
@@ -12691,20 +12776,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group__1__Impl"
-    // InternalQLS.g:4058:1: rule__EqualExpression__Group__1__Impl : ( ( rule__EqualExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:4085:1: rule__EqualExpression__Group__1__Impl : ( ( rule__EqualExpression__Group_1__0 )* ) ;
     public final void rule__EqualExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4062:1: ( ( ( rule__EqualExpression__Group_1__0 )* ) )
-            // InternalQLS.g:4063:1: ( ( rule__EqualExpression__Group_1__0 )* )
+            // InternalQLS.g:4089:1: ( ( ( rule__EqualExpression__Group_1__0 )* ) )
+            // InternalQLS.g:4090:1: ( ( rule__EqualExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:4063:1: ( ( rule__EqualExpression__Group_1__0 )* )
-            // InternalQLS.g:4064:2: ( rule__EqualExpression__Group_1__0 )*
+            // InternalQLS.g:4090:1: ( ( rule__EqualExpression__Group_1__0 )* )
+            // InternalQLS.g:4091:2: ( rule__EqualExpression__Group_1__0 )*
             {
              before(grammarAccess.getEqualExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:4065:2: ( rule__EqualExpression__Group_1__0 )*
+            // InternalQLS.g:4092:2: ( rule__EqualExpression__Group_1__0 )*
             loop32:
             do {
                 int alt32=2;
@@ -12717,7 +12802,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt32) {
             	case 1 :
-            	    // InternalQLS.g:4065:3: rule__EqualExpression__Group_1__0
+            	    // InternalQLS.g:4092:3: rule__EqualExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_35);
             	    rule__EqualExpression__Group_1__0();
@@ -12756,14 +12841,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__0"
-    // InternalQLS.g:4074:1: rule__EqualExpression__Group_1__0 : rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1 ;
+    // InternalQLS.g:4101:1: rule__EqualExpression__Group_1__0 : rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1 ;
     public final void rule__EqualExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4078:1: ( rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1 )
-            // InternalQLS.g:4079:2: rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1
+            // InternalQLS.g:4105:1: ( rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1 )
+            // InternalQLS.g:4106:2: rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1
             {
             pushFollow(FOLLOW_34);
             rule__EqualExpression__Group_1__0__Impl();
@@ -12794,21 +12879,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__0__Impl"
-    // InternalQLS.g:4086:1: rule__EqualExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:4113:1: rule__EqualExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__EqualExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4090:1: ( ( () ) )
-            // InternalQLS.g:4091:1: ( () )
+            // InternalQLS.g:4117:1: ( ( () ) )
+            // InternalQLS.g:4118:1: ( () )
             {
-            // InternalQLS.g:4091:1: ( () )
-            // InternalQLS.g:4092:2: ()
+            // InternalQLS.g:4118:1: ( () )
+            // InternalQLS.g:4119:2: ()
             {
              before(grammarAccess.getEqualExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:4093:2: ()
-            // InternalQLS.g:4093:3: 
+            // InternalQLS.g:4120:2: ()
+            // InternalQLS.g:4120:3: 
             {
             }
 
@@ -12831,14 +12916,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__1"
-    // InternalQLS.g:4101:1: rule__EqualExpression__Group_1__1 : rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2 ;
+    // InternalQLS.g:4128:1: rule__EqualExpression__Group_1__1 : rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2 ;
     public final void rule__EqualExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4105:1: ( rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2 )
-            // InternalQLS.g:4106:2: rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2
+            // InternalQLS.g:4132:1: ( rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2 )
+            // InternalQLS.g:4133:2: rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2
             {
             pushFollow(FOLLOW_31);
             rule__EqualExpression__Group_1__1__Impl();
@@ -12869,21 +12954,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__1__Impl"
-    // InternalQLS.g:4113:1: rule__EqualExpression__Group_1__1__Impl : ( ( rule__EqualExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:4140:1: rule__EqualExpression__Group_1__1__Impl : ( ( rule__EqualExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__EqualExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4117:1: ( ( ( rule__EqualExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:4118:1: ( ( rule__EqualExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4144:1: ( ( ( rule__EqualExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:4145:1: ( ( rule__EqualExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:4118:1: ( ( rule__EqualExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:4119:2: ( rule__EqualExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4145:1: ( ( rule__EqualExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4146:2: ( rule__EqualExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getEqualExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:4120:2: ( rule__EqualExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:4120:3: rule__EqualExpression__OperatorAssignment_1_1
+            // InternalQLS.g:4147:2: ( rule__EqualExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4147:3: rule__EqualExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__EqualExpression__OperatorAssignment_1_1();
@@ -12916,14 +13001,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__2"
-    // InternalQLS.g:4128:1: rule__EqualExpression__Group_1__2 : rule__EqualExpression__Group_1__2__Impl ;
+    // InternalQLS.g:4155:1: rule__EqualExpression__Group_1__2 : rule__EqualExpression__Group_1__2__Impl ;
     public final void rule__EqualExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4132:1: ( rule__EqualExpression__Group_1__2__Impl )
-            // InternalQLS.g:4133:2: rule__EqualExpression__Group_1__2__Impl
+            // InternalQLS.g:4159:1: ( rule__EqualExpression__Group_1__2__Impl )
+            // InternalQLS.g:4160:2: rule__EqualExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EqualExpression__Group_1__2__Impl();
@@ -12949,21 +13034,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__Group_1__2__Impl"
-    // InternalQLS.g:4139:1: rule__EqualExpression__Group_1__2__Impl : ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:4166:1: rule__EqualExpression__Group_1__2__Impl : ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__EqualExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4143:1: ( ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:4144:1: ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4170:1: ( ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:4171:1: ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:4144:1: ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:4145:2: ( rule__EqualExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4171:1: ( ( rule__EqualExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4172:2: ( rule__EqualExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getEqualExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:4146:2: ( rule__EqualExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:4146:3: rule__EqualExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:4173:2: ( rule__EqualExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4173:3: rule__EqualExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__EqualExpression__RhsOperandAssignment_1_2();
@@ -12996,14 +13081,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group__0"
-    // InternalQLS.g:4155:1: rule__ComparisionExpression__Group__0 : rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1 ;
+    // InternalQLS.g:4182:1: rule__ComparisionExpression__Group__0 : rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1 ;
     public final void rule__ComparisionExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4159:1: ( rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1 )
-            // InternalQLS.g:4160:2: rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1
+            // InternalQLS.g:4186:1: ( rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1 )
+            // InternalQLS.g:4187:2: rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1
             {
             pushFollow(FOLLOW_36);
             rule__ComparisionExpression__Group__0__Impl();
@@ -13034,17 +13119,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group__0__Impl"
-    // InternalQLS.g:4167:1: rule__ComparisionExpression__Group__0__Impl : ( ruleAdditionExpression ) ;
+    // InternalQLS.g:4194:1: rule__ComparisionExpression__Group__0__Impl : ( ruleAdditionExpression ) ;
     public final void rule__ComparisionExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4171:1: ( ( ruleAdditionExpression ) )
-            // InternalQLS.g:4172:1: ( ruleAdditionExpression )
+            // InternalQLS.g:4198:1: ( ( ruleAdditionExpression ) )
+            // InternalQLS.g:4199:1: ( ruleAdditionExpression )
             {
-            // InternalQLS.g:4172:1: ( ruleAdditionExpression )
-            // InternalQLS.g:4173:2: ruleAdditionExpression
+            // InternalQLS.g:4199:1: ( ruleAdditionExpression )
+            // InternalQLS.g:4200:2: ruleAdditionExpression
             {
              before(grammarAccess.getComparisionExpressionAccess().getAdditionExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -13075,14 +13160,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group__1"
-    // InternalQLS.g:4182:1: rule__ComparisionExpression__Group__1 : rule__ComparisionExpression__Group__1__Impl ;
+    // InternalQLS.g:4209:1: rule__ComparisionExpression__Group__1 : rule__ComparisionExpression__Group__1__Impl ;
     public final void rule__ComparisionExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4186:1: ( rule__ComparisionExpression__Group__1__Impl )
-            // InternalQLS.g:4187:2: rule__ComparisionExpression__Group__1__Impl
+            // InternalQLS.g:4213:1: ( rule__ComparisionExpression__Group__1__Impl )
+            // InternalQLS.g:4214:2: rule__ComparisionExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComparisionExpression__Group__1__Impl();
@@ -13108,20 +13193,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group__1__Impl"
-    // InternalQLS.g:4193:1: rule__ComparisionExpression__Group__1__Impl : ( ( rule__ComparisionExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:4220:1: rule__ComparisionExpression__Group__1__Impl : ( ( rule__ComparisionExpression__Group_1__0 )* ) ;
     public final void rule__ComparisionExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4197:1: ( ( ( rule__ComparisionExpression__Group_1__0 )* ) )
-            // InternalQLS.g:4198:1: ( ( rule__ComparisionExpression__Group_1__0 )* )
+            // InternalQLS.g:4224:1: ( ( ( rule__ComparisionExpression__Group_1__0 )* ) )
+            // InternalQLS.g:4225:1: ( ( rule__ComparisionExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:4198:1: ( ( rule__ComparisionExpression__Group_1__0 )* )
-            // InternalQLS.g:4199:2: ( rule__ComparisionExpression__Group_1__0 )*
+            // InternalQLS.g:4225:1: ( ( rule__ComparisionExpression__Group_1__0 )* )
+            // InternalQLS.g:4226:2: ( rule__ComparisionExpression__Group_1__0 )*
             {
              before(grammarAccess.getComparisionExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:4200:2: ( rule__ComparisionExpression__Group_1__0 )*
+            // InternalQLS.g:4227:2: ( rule__ComparisionExpression__Group_1__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -13134,7 +13219,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalQLS.g:4200:3: rule__ComparisionExpression__Group_1__0
+            	    // InternalQLS.g:4227:3: rule__ComparisionExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_37);
             	    rule__ComparisionExpression__Group_1__0();
@@ -13173,14 +13258,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__0"
-    // InternalQLS.g:4209:1: rule__ComparisionExpression__Group_1__0 : rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1 ;
+    // InternalQLS.g:4236:1: rule__ComparisionExpression__Group_1__0 : rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1 ;
     public final void rule__ComparisionExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4213:1: ( rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1 )
-            // InternalQLS.g:4214:2: rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1
+            // InternalQLS.g:4240:1: ( rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1 )
+            // InternalQLS.g:4241:2: rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1
             {
             pushFollow(FOLLOW_36);
             rule__ComparisionExpression__Group_1__0__Impl();
@@ -13211,21 +13296,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__0__Impl"
-    // InternalQLS.g:4221:1: rule__ComparisionExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:4248:1: rule__ComparisionExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__ComparisionExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4225:1: ( ( () ) )
-            // InternalQLS.g:4226:1: ( () )
+            // InternalQLS.g:4252:1: ( ( () ) )
+            // InternalQLS.g:4253:1: ( () )
             {
-            // InternalQLS.g:4226:1: ( () )
-            // InternalQLS.g:4227:2: ()
+            // InternalQLS.g:4253:1: ( () )
+            // InternalQLS.g:4254:2: ()
             {
              before(grammarAccess.getComparisionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:4228:2: ()
-            // InternalQLS.g:4228:3: 
+            // InternalQLS.g:4255:2: ()
+            // InternalQLS.g:4255:3: 
             {
             }
 
@@ -13248,14 +13333,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__1"
-    // InternalQLS.g:4236:1: rule__ComparisionExpression__Group_1__1 : rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2 ;
+    // InternalQLS.g:4263:1: rule__ComparisionExpression__Group_1__1 : rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2 ;
     public final void rule__ComparisionExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4240:1: ( rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2 )
-            // InternalQLS.g:4241:2: rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2
+            // InternalQLS.g:4267:1: ( rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2 )
+            // InternalQLS.g:4268:2: rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2
             {
             pushFollow(FOLLOW_31);
             rule__ComparisionExpression__Group_1__1__Impl();
@@ -13286,21 +13371,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__1__Impl"
-    // InternalQLS.g:4248:1: rule__ComparisionExpression__Group_1__1__Impl : ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:4275:1: rule__ComparisionExpression__Group_1__1__Impl : ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__ComparisionExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4252:1: ( ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:4253:1: ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4279:1: ( ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:4280:1: ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:4253:1: ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:4254:2: ( rule__ComparisionExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4280:1: ( ( rule__ComparisionExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4281:2: ( rule__ComparisionExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getComparisionExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:4255:2: ( rule__ComparisionExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:4255:3: rule__ComparisionExpression__OperatorAssignment_1_1
+            // InternalQLS.g:4282:2: ( rule__ComparisionExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4282:3: rule__ComparisionExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__ComparisionExpression__OperatorAssignment_1_1();
@@ -13333,14 +13418,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__2"
-    // InternalQLS.g:4263:1: rule__ComparisionExpression__Group_1__2 : rule__ComparisionExpression__Group_1__2__Impl ;
+    // InternalQLS.g:4290:1: rule__ComparisionExpression__Group_1__2 : rule__ComparisionExpression__Group_1__2__Impl ;
     public final void rule__ComparisionExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4267:1: ( rule__ComparisionExpression__Group_1__2__Impl )
-            // InternalQLS.g:4268:2: rule__ComparisionExpression__Group_1__2__Impl
+            // InternalQLS.g:4294:1: ( rule__ComparisionExpression__Group_1__2__Impl )
+            // InternalQLS.g:4295:2: rule__ComparisionExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComparisionExpression__Group_1__2__Impl();
@@ -13366,21 +13451,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__Group_1__2__Impl"
-    // InternalQLS.g:4274:1: rule__ComparisionExpression__Group_1__2__Impl : ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:4301:1: rule__ComparisionExpression__Group_1__2__Impl : ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__ComparisionExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4278:1: ( ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:4279:1: ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4305:1: ( ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:4306:1: ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:4279:1: ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:4280:2: ( rule__ComparisionExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4306:1: ( ( rule__ComparisionExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4307:2: ( rule__ComparisionExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getComparisionExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:4281:2: ( rule__ComparisionExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:4281:3: rule__ComparisionExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:4308:2: ( rule__ComparisionExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4308:3: rule__ComparisionExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__ComparisionExpression__RhsOperandAssignment_1_2();
@@ -13413,14 +13498,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group__0"
-    // InternalQLS.g:4290:1: rule__AdditionExpression__Group__0 : rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1 ;
+    // InternalQLS.g:4317:1: rule__AdditionExpression__Group__0 : rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1 ;
     public final void rule__AdditionExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4294:1: ( rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1 )
-            // InternalQLS.g:4295:2: rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1
+            // InternalQLS.g:4321:1: ( rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1 )
+            // InternalQLS.g:4322:2: rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1
             {
             pushFollow(FOLLOW_38);
             rule__AdditionExpression__Group__0__Impl();
@@ -13451,17 +13536,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group__0__Impl"
-    // InternalQLS.g:4302:1: rule__AdditionExpression__Group__0__Impl : ( ruleMultiplicationExpression ) ;
+    // InternalQLS.g:4329:1: rule__AdditionExpression__Group__0__Impl : ( ruleMultiplicationExpression ) ;
     public final void rule__AdditionExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4306:1: ( ( ruleMultiplicationExpression ) )
-            // InternalQLS.g:4307:1: ( ruleMultiplicationExpression )
+            // InternalQLS.g:4333:1: ( ( ruleMultiplicationExpression ) )
+            // InternalQLS.g:4334:1: ( ruleMultiplicationExpression )
             {
-            // InternalQLS.g:4307:1: ( ruleMultiplicationExpression )
-            // InternalQLS.g:4308:2: ruleMultiplicationExpression
+            // InternalQLS.g:4334:1: ( ruleMultiplicationExpression )
+            // InternalQLS.g:4335:2: ruleMultiplicationExpression
             {
              before(grammarAccess.getAdditionExpressionAccess().getMultiplicationExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -13492,14 +13577,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group__1"
-    // InternalQLS.g:4317:1: rule__AdditionExpression__Group__1 : rule__AdditionExpression__Group__1__Impl ;
+    // InternalQLS.g:4344:1: rule__AdditionExpression__Group__1 : rule__AdditionExpression__Group__1__Impl ;
     public final void rule__AdditionExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4321:1: ( rule__AdditionExpression__Group__1__Impl )
-            // InternalQLS.g:4322:2: rule__AdditionExpression__Group__1__Impl
+            // InternalQLS.g:4348:1: ( rule__AdditionExpression__Group__1__Impl )
+            // InternalQLS.g:4349:2: rule__AdditionExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AdditionExpression__Group__1__Impl();
@@ -13525,20 +13610,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group__1__Impl"
-    // InternalQLS.g:4328:1: rule__AdditionExpression__Group__1__Impl : ( ( rule__AdditionExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:4355:1: rule__AdditionExpression__Group__1__Impl : ( ( rule__AdditionExpression__Group_1__0 )* ) ;
     public final void rule__AdditionExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4332:1: ( ( ( rule__AdditionExpression__Group_1__0 )* ) )
-            // InternalQLS.g:4333:1: ( ( rule__AdditionExpression__Group_1__0 )* )
+            // InternalQLS.g:4359:1: ( ( ( rule__AdditionExpression__Group_1__0 )* ) )
+            // InternalQLS.g:4360:1: ( ( rule__AdditionExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:4333:1: ( ( rule__AdditionExpression__Group_1__0 )* )
-            // InternalQLS.g:4334:2: ( rule__AdditionExpression__Group_1__0 )*
+            // InternalQLS.g:4360:1: ( ( rule__AdditionExpression__Group_1__0 )* )
+            // InternalQLS.g:4361:2: ( rule__AdditionExpression__Group_1__0 )*
             {
              before(grammarAccess.getAdditionExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:4335:2: ( rule__AdditionExpression__Group_1__0 )*
+            // InternalQLS.g:4362:2: ( rule__AdditionExpression__Group_1__0 )*
             loop34:
             do {
                 int alt34=2;
@@ -13551,7 +13636,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt34) {
             	case 1 :
-            	    // InternalQLS.g:4335:3: rule__AdditionExpression__Group_1__0
+            	    // InternalQLS.g:4362:3: rule__AdditionExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_39);
             	    rule__AdditionExpression__Group_1__0();
@@ -13590,14 +13675,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__0"
-    // InternalQLS.g:4344:1: rule__AdditionExpression__Group_1__0 : rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1 ;
+    // InternalQLS.g:4371:1: rule__AdditionExpression__Group_1__0 : rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1 ;
     public final void rule__AdditionExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4348:1: ( rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1 )
-            // InternalQLS.g:4349:2: rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1
+            // InternalQLS.g:4375:1: ( rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1 )
+            // InternalQLS.g:4376:2: rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1
             {
             pushFollow(FOLLOW_38);
             rule__AdditionExpression__Group_1__0__Impl();
@@ -13628,21 +13713,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__0__Impl"
-    // InternalQLS.g:4356:1: rule__AdditionExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:4383:1: rule__AdditionExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__AdditionExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4360:1: ( ( () ) )
-            // InternalQLS.g:4361:1: ( () )
+            // InternalQLS.g:4387:1: ( ( () ) )
+            // InternalQLS.g:4388:1: ( () )
             {
-            // InternalQLS.g:4361:1: ( () )
-            // InternalQLS.g:4362:2: ()
+            // InternalQLS.g:4388:1: ( () )
+            // InternalQLS.g:4389:2: ()
             {
              before(grammarAccess.getAdditionExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:4363:2: ()
-            // InternalQLS.g:4363:3: 
+            // InternalQLS.g:4390:2: ()
+            // InternalQLS.g:4390:3: 
             {
             }
 
@@ -13665,14 +13750,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__1"
-    // InternalQLS.g:4371:1: rule__AdditionExpression__Group_1__1 : rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2 ;
+    // InternalQLS.g:4398:1: rule__AdditionExpression__Group_1__1 : rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2 ;
     public final void rule__AdditionExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4375:1: ( rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2 )
-            // InternalQLS.g:4376:2: rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2
+            // InternalQLS.g:4402:1: ( rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2 )
+            // InternalQLS.g:4403:2: rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2
             {
             pushFollow(FOLLOW_31);
             rule__AdditionExpression__Group_1__1__Impl();
@@ -13703,21 +13788,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__1__Impl"
-    // InternalQLS.g:4383:1: rule__AdditionExpression__Group_1__1__Impl : ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:4410:1: rule__AdditionExpression__Group_1__1__Impl : ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__AdditionExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4387:1: ( ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:4388:1: ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4414:1: ( ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:4415:1: ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:4388:1: ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:4389:2: ( rule__AdditionExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4415:1: ( ( rule__AdditionExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4416:2: ( rule__AdditionExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getAdditionExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:4390:2: ( rule__AdditionExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:4390:3: rule__AdditionExpression__OperatorAssignment_1_1
+            // InternalQLS.g:4417:2: ( rule__AdditionExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4417:3: rule__AdditionExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AdditionExpression__OperatorAssignment_1_1();
@@ -13750,14 +13835,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__2"
-    // InternalQLS.g:4398:1: rule__AdditionExpression__Group_1__2 : rule__AdditionExpression__Group_1__2__Impl ;
+    // InternalQLS.g:4425:1: rule__AdditionExpression__Group_1__2 : rule__AdditionExpression__Group_1__2__Impl ;
     public final void rule__AdditionExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4402:1: ( rule__AdditionExpression__Group_1__2__Impl )
-            // InternalQLS.g:4403:2: rule__AdditionExpression__Group_1__2__Impl
+            // InternalQLS.g:4429:1: ( rule__AdditionExpression__Group_1__2__Impl )
+            // InternalQLS.g:4430:2: rule__AdditionExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AdditionExpression__Group_1__2__Impl();
@@ -13783,21 +13868,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__Group_1__2__Impl"
-    // InternalQLS.g:4409:1: rule__AdditionExpression__Group_1__2__Impl : ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:4436:1: rule__AdditionExpression__Group_1__2__Impl : ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__AdditionExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4413:1: ( ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:4414:1: ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4440:1: ( ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:4441:1: ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:4414:1: ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:4415:2: ( rule__AdditionExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4441:1: ( ( rule__AdditionExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4442:2: ( rule__AdditionExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getAdditionExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:4416:2: ( rule__AdditionExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:4416:3: rule__AdditionExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:4443:2: ( rule__AdditionExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4443:3: rule__AdditionExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__AdditionExpression__RhsOperandAssignment_1_2();
@@ -13830,14 +13915,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group__0"
-    // InternalQLS.g:4425:1: rule__MultiplicationExpression__Group__0 : rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1 ;
+    // InternalQLS.g:4452:1: rule__MultiplicationExpression__Group__0 : rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1 ;
     public final void rule__MultiplicationExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4429:1: ( rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1 )
-            // InternalQLS.g:4430:2: rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1
+            // InternalQLS.g:4456:1: ( rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1 )
+            // InternalQLS.g:4457:2: rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1
             {
             pushFollow(FOLLOW_40);
             rule__MultiplicationExpression__Group__0__Impl();
@@ -13868,17 +13953,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group__0__Impl"
-    // InternalQLS.g:4437:1: rule__MultiplicationExpression__Group__0__Impl : ( rulePrimaryExpression ) ;
+    // InternalQLS.g:4464:1: rule__MultiplicationExpression__Group__0__Impl : ( rulePrimaryExpression ) ;
     public final void rule__MultiplicationExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4441:1: ( ( rulePrimaryExpression ) )
-            // InternalQLS.g:4442:1: ( rulePrimaryExpression )
+            // InternalQLS.g:4468:1: ( ( rulePrimaryExpression ) )
+            // InternalQLS.g:4469:1: ( rulePrimaryExpression )
             {
-            // InternalQLS.g:4442:1: ( rulePrimaryExpression )
-            // InternalQLS.g:4443:2: rulePrimaryExpression
+            // InternalQLS.g:4469:1: ( rulePrimaryExpression )
+            // InternalQLS.g:4470:2: rulePrimaryExpression
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getPrimaryExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -13909,14 +13994,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group__1"
-    // InternalQLS.g:4452:1: rule__MultiplicationExpression__Group__1 : rule__MultiplicationExpression__Group__1__Impl ;
+    // InternalQLS.g:4479:1: rule__MultiplicationExpression__Group__1 : rule__MultiplicationExpression__Group__1__Impl ;
     public final void rule__MultiplicationExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4456:1: ( rule__MultiplicationExpression__Group__1__Impl )
-            // InternalQLS.g:4457:2: rule__MultiplicationExpression__Group__1__Impl
+            // InternalQLS.g:4483:1: ( rule__MultiplicationExpression__Group__1__Impl )
+            // InternalQLS.g:4484:2: rule__MultiplicationExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicationExpression__Group__1__Impl();
@@ -13942,20 +14027,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group__1__Impl"
-    // InternalQLS.g:4463:1: rule__MultiplicationExpression__Group__1__Impl : ( ( rule__MultiplicationExpression__Group_1__0 )* ) ;
+    // InternalQLS.g:4490:1: rule__MultiplicationExpression__Group__1__Impl : ( ( rule__MultiplicationExpression__Group_1__0 )* ) ;
     public final void rule__MultiplicationExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4467:1: ( ( ( rule__MultiplicationExpression__Group_1__0 )* ) )
-            // InternalQLS.g:4468:1: ( ( rule__MultiplicationExpression__Group_1__0 )* )
+            // InternalQLS.g:4494:1: ( ( ( rule__MultiplicationExpression__Group_1__0 )* ) )
+            // InternalQLS.g:4495:1: ( ( rule__MultiplicationExpression__Group_1__0 )* )
             {
-            // InternalQLS.g:4468:1: ( ( rule__MultiplicationExpression__Group_1__0 )* )
-            // InternalQLS.g:4469:2: ( rule__MultiplicationExpression__Group_1__0 )*
+            // InternalQLS.g:4495:1: ( ( rule__MultiplicationExpression__Group_1__0 )* )
+            // InternalQLS.g:4496:2: ( rule__MultiplicationExpression__Group_1__0 )*
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getGroup_1()); 
-            // InternalQLS.g:4470:2: ( rule__MultiplicationExpression__Group_1__0 )*
+            // InternalQLS.g:4497:2: ( rule__MultiplicationExpression__Group_1__0 )*
             loop35:
             do {
                 int alt35=2;
@@ -13968,7 +14053,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt35) {
             	case 1 :
-            	    // InternalQLS.g:4470:3: rule__MultiplicationExpression__Group_1__0
+            	    // InternalQLS.g:4497:3: rule__MultiplicationExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_41);
             	    rule__MultiplicationExpression__Group_1__0();
@@ -14007,14 +14092,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__0"
-    // InternalQLS.g:4479:1: rule__MultiplicationExpression__Group_1__0 : rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1 ;
+    // InternalQLS.g:4506:1: rule__MultiplicationExpression__Group_1__0 : rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1 ;
     public final void rule__MultiplicationExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4483:1: ( rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1 )
-            // InternalQLS.g:4484:2: rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1
+            // InternalQLS.g:4510:1: ( rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1 )
+            // InternalQLS.g:4511:2: rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1
             {
             pushFollow(FOLLOW_40);
             rule__MultiplicationExpression__Group_1__0__Impl();
@@ -14045,21 +14130,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__0__Impl"
-    // InternalQLS.g:4491:1: rule__MultiplicationExpression__Group_1__0__Impl : ( () ) ;
+    // InternalQLS.g:4518:1: rule__MultiplicationExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__MultiplicationExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4495:1: ( ( () ) )
-            // InternalQLS.g:4496:1: ( () )
+            // InternalQLS.g:4522:1: ( ( () ) )
+            // InternalQLS.g:4523:1: ( () )
             {
-            // InternalQLS.g:4496:1: ( () )
-            // InternalQLS.g:4497:2: ()
+            // InternalQLS.g:4523:1: ( () )
+            // InternalQLS.g:4524:2: ()
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getBasicBinaryExpressionLhsOperandAction_1_0()); 
-            // InternalQLS.g:4498:2: ()
-            // InternalQLS.g:4498:3: 
+            // InternalQLS.g:4525:2: ()
+            // InternalQLS.g:4525:3: 
             {
             }
 
@@ -14082,14 +14167,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__1"
-    // InternalQLS.g:4506:1: rule__MultiplicationExpression__Group_1__1 : rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2 ;
+    // InternalQLS.g:4533:1: rule__MultiplicationExpression__Group_1__1 : rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2 ;
     public final void rule__MultiplicationExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4510:1: ( rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2 )
-            // InternalQLS.g:4511:2: rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2
+            // InternalQLS.g:4537:1: ( rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2 )
+            // InternalQLS.g:4538:2: rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2
             {
             pushFollow(FOLLOW_24);
             rule__MultiplicationExpression__Group_1__1__Impl();
@@ -14120,21 +14205,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__1__Impl"
-    // InternalQLS.g:4518:1: rule__MultiplicationExpression__Group_1__1__Impl : ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) ) ;
+    // InternalQLS.g:4545:1: rule__MultiplicationExpression__Group_1__1__Impl : ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) ) ;
     public final void rule__MultiplicationExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4522:1: ( ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) ) )
-            // InternalQLS.g:4523:1: ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4549:1: ( ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) ) )
+            // InternalQLS.g:4550:1: ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) )
             {
-            // InternalQLS.g:4523:1: ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) )
-            // InternalQLS.g:4524:2: ( rule__MultiplicationExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4550:1: ( ( rule__MultiplicationExpression__OperatorAssignment_1_1 ) )
+            // InternalQLS.g:4551:2: ( rule__MultiplicationExpression__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getOperatorAssignment_1_1()); 
-            // InternalQLS.g:4525:2: ( rule__MultiplicationExpression__OperatorAssignment_1_1 )
-            // InternalQLS.g:4525:3: rule__MultiplicationExpression__OperatorAssignment_1_1
+            // InternalQLS.g:4552:2: ( rule__MultiplicationExpression__OperatorAssignment_1_1 )
+            // InternalQLS.g:4552:3: rule__MultiplicationExpression__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicationExpression__OperatorAssignment_1_1();
@@ -14167,14 +14252,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__2"
-    // InternalQLS.g:4533:1: rule__MultiplicationExpression__Group_1__2 : rule__MultiplicationExpression__Group_1__2__Impl ;
+    // InternalQLS.g:4560:1: rule__MultiplicationExpression__Group_1__2 : rule__MultiplicationExpression__Group_1__2__Impl ;
     public final void rule__MultiplicationExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4537:1: ( rule__MultiplicationExpression__Group_1__2__Impl )
-            // InternalQLS.g:4538:2: rule__MultiplicationExpression__Group_1__2__Impl
+            // InternalQLS.g:4564:1: ( rule__MultiplicationExpression__Group_1__2__Impl )
+            // InternalQLS.g:4565:2: rule__MultiplicationExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicationExpression__Group_1__2__Impl();
@@ -14200,21 +14285,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__Group_1__2__Impl"
-    // InternalQLS.g:4544:1: rule__MultiplicationExpression__Group_1__2__Impl : ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) ) ;
+    // InternalQLS.g:4571:1: rule__MultiplicationExpression__Group_1__2__Impl : ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) ) ;
     public final void rule__MultiplicationExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4548:1: ( ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) ) )
-            // InternalQLS.g:4549:1: ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4575:1: ( ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) ) )
+            // InternalQLS.g:4576:1: ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) )
             {
-            // InternalQLS.g:4549:1: ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) )
-            // InternalQLS.g:4550:2: ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4576:1: ( ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 ) )
+            // InternalQLS.g:4577:2: ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 )
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getRhsOperandAssignment_1_2()); 
-            // InternalQLS.g:4551:2: ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 )
-            // InternalQLS.g:4551:3: rule__MultiplicationExpression__RhsOperandAssignment_1_2
+            // InternalQLS.g:4578:2: ( rule__MultiplicationExpression__RhsOperandAssignment_1_2 )
+            // InternalQLS.g:4578:3: rule__MultiplicationExpression__RhsOperandAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__MultiplicationExpression__RhsOperandAssignment_1_2();
@@ -14247,16 +14332,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__0"
-    // InternalQLS.g:4560:1: rule__DefinitionGroup__Group__0 : rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1 ;
+    // InternalQLS.g:4587:1: rule__DefinitionGroup__Group__0 : rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1 ;
     public final void rule__DefinitionGroup__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4564:1: ( rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1 )
-            // InternalQLS.g:4565:2: rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1
+            // InternalQLS.g:4591:1: ( rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1 )
+            // InternalQLS.g:4592:2: rule__DefinitionGroup__Group__0__Impl rule__DefinitionGroup__Group__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__DefinitionGroup__Group__0__Impl();
 
             state._fsp--;
@@ -14285,21 +14370,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__0__Impl"
-    // InternalQLS.g:4572:1: rule__DefinitionGroup__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:4599:1: rule__DefinitionGroup__Group__0__Impl : ( () ) ;
     public final void rule__DefinitionGroup__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4576:1: ( ( () ) )
-            // InternalQLS.g:4577:1: ( () )
+            // InternalQLS.g:4603:1: ( ( () ) )
+            // InternalQLS.g:4604:1: ( () )
             {
-            // InternalQLS.g:4577:1: ( () )
-            // InternalQLS.g:4578:2: ()
+            // InternalQLS.g:4604:1: ( () )
+            // InternalQLS.g:4605:2: ()
             {
              before(grammarAccess.getDefinitionGroupAccess().getDefinitionGroupAction_0()); 
-            // InternalQLS.g:4579:2: ()
-            // InternalQLS.g:4579:3: 
+            // InternalQLS.g:4606:2: ()
+            // InternalQLS.g:4606:3: 
             {
             }
 
@@ -14322,14 +14407,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__1"
-    // InternalQLS.g:4587:1: rule__DefinitionGroup__Group__1 : rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2 ;
+    // InternalQLS.g:4614:1: rule__DefinitionGroup__Group__1 : rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2 ;
     public final void rule__DefinitionGroup__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4591:1: ( rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2 )
-            // InternalQLS.g:4592:2: rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2
+            // InternalQLS.g:4618:1: ( rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2 )
+            // InternalQLS.g:4619:2: rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2
             {
             pushFollow(FOLLOW_42);
             rule__DefinitionGroup__Group__1__Impl();
@@ -14360,17 +14445,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__1__Impl"
-    // InternalQLS.g:4599:1: rule__DefinitionGroup__Group__1__Impl : ( '{' ) ;
+    // InternalQLS.g:4626:1: rule__DefinitionGroup__Group__1__Impl : ( '{' ) ;
     public final void rule__DefinitionGroup__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4603:1: ( ( '{' ) )
-            // InternalQLS.g:4604:1: ( '{' )
+            // InternalQLS.g:4630:1: ( ( '{' ) )
+            // InternalQLS.g:4631:1: ( '{' )
             {
-            // InternalQLS.g:4604:1: ( '{' )
-            // InternalQLS.g:4605:2: '{'
+            // InternalQLS.g:4631:1: ( '{' )
+            // InternalQLS.g:4632:2: '{'
             {
              before(grammarAccess.getDefinitionGroupAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,44,FOLLOW_2); 
@@ -14397,14 +14482,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__2"
-    // InternalQLS.g:4614:1: rule__DefinitionGroup__Group__2 : rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3 ;
+    // InternalQLS.g:4641:1: rule__DefinitionGroup__Group__2 : rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3 ;
     public final void rule__DefinitionGroup__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4618:1: ( rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3 )
-            // InternalQLS.g:4619:2: rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3
+            // InternalQLS.g:4645:1: ( rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3 )
+            // InternalQLS.g:4646:2: rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3
             {
             pushFollow(FOLLOW_42);
             rule__DefinitionGroup__Group__2__Impl();
@@ -14435,20 +14520,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__2__Impl"
-    // InternalQLS.g:4626:1: rule__DefinitionGroup__Group__2__Impl : ( ( rule__DefinitionGroup__Alternatives_2 )* ) ;
+    // InternalQLS.g:4653:1: rule__DefinitionGroup__Group__2__Impl : ( ( rule__DefinitionGroup__Alternatives_2 )* ) ;
     public final void rule__DefinitionGroup__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4630:1: ( ( ( rule__DefinitionGroup__Alternatives_2 )* ) )
-            // InternalQLS.g:4631:1: ( ( rule__DefinitionGroup__Alternatives_2 )* )
+            // InternalQLS.g:4657:1: ( ( ( rule__DefinitionGroup__Alternatives_2 )* ) )
+            // InternalQLS.g:4658:1: ( ( rule__DefinitionGroup__Alternatives_2 )* )
             {
-            // InternalQLS.g:4631:1: ( ( rule__DefinitionGroup__Alternatives_2 )* )
-            // InternalQLS.g:4632:2: ( rule__DefinitionGroup__Alternatives_2 )*
+            // InternalQLS.g:4658:1: ( ( rule__DefinitionGroup__Alternatives_2 )* )
+            // InternalQLS.g:4659:2: ( rule__DefinitionGroup__Alternatives_2 )*
             {
              before(grammarAccess.getDefinitionGroupAccess().getAlternatives_2()); 
-            // InternalQLS.g:4633:2: ( rule__DefinitionGroup__Alternatives_2 )*
+            // InternalQLS.g:4660:2: ( rule__DefinitionGroup__Alternatives_2 )*
             loop36:
             do {
                 int alt36=2;
@@ -14461,7 +14546,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt36) {
             	case 1 :
-            	    // InternalQLS.g:4633:3: rule__DefinitionGroup__Alternatives_2
+            	    // InternalQLS.g:4660:3: rule__DefinitionGroup__Alternatives_2
             	    {
             	    pushFollow(FOLLOW_43);
             	    rule__DefinitionGroup__Alternatives_2();
@@ -14500,14 +14585,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__3"
-    // InternalQLS.g:4641:1: rule__DefinitionGroup__Group__3 : rule__DefinitionGroup__Group__3__Impl ;
+    // InternalQLS.g:4668:1: rule__DefinitionGroup__Group__3 : rule__DefinitionGroup__Group__3__Impl ;
     public final void rule__DefinitionGroup__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4645:1: ( rule__DefinitionGroup__Group__3__Impl )
-            // InternalQLS.g:4646:2: rule__DefinitionGroup__Group__3__Impl
+            // InternalQLS.g:4672:1: ( rule__DefinitionGroup__Group__3__Impl )
+            // InternalQLS.g:4673:2: rule__DefinitionGroup__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DefinitionGroup__Group__3__Impl();
@@ -14533,17 +14618,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__Group__3__Impl"
-    // InternalQLS.g:4652:1: rule__DefinitionGroup__Group__3__Impl : ( '}' ) ;
+    // InternalQLS.g:4679:1: rule__DefinitionGroup__Group__3__Impl : ( '}' ) ;
     public final void rule__DefinitionGroup__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4656:1: ( ( '}' ) )
-            // InternalQLS.g:4657:1: ( '}' )
+            // InternalQLS.g:4683:1: ( ( '}' ) )
+            // InternalQLS.g:4684:1: ( '}' )
             {
-            // InternalQLS.g:4657:1: ( '}' )
-            // InternalQLS.g:4658:2: '}'
+            // InternalQLS.g:4684:1: ( '}' )
+            // InternalQLS.g:4685:2: '}'
             {
              before(grammarAccess.getDefinitionGroupAccess().getRightCurlyBracketKeyword_3()); 
             match(input,46,FOLLOW_2); 
@@ -14570,14 +14655,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__0"
-    // InternalQLS.g:4668:1: rule__QuestionGroup__Group__0 : rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1 ;
+    // InternalQLS.g:4695:1: rule__QuestionGroup__Group__0 : rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1 ;
     public final void rule__QuestionGroup__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4672:1: ( rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1 )
-            // InternalQLS.g:4673:2: rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1
+            // InternalQLS.g:4699:1: ( rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1 )
+            // InternalQLS.g:4700:2: rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1
             {
             pushFollow(FOLLOW_44);
             rule__QuestionGroup__Group__0__Impl();
@@ -14608,21 +14693,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__0__Impl"
-    // InternalQLS.g:4680:1: rule__QuestionGroup__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:4707:1: rule__QuestionGroup__Group__0__Impl : ( () ) ;
     public final void rule__QuestionGroup__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4684:1: ( ( () ) )
-            // InternalQLS.g:4685:1: ( () )
+            // InternalQLS.g:4711:1: ( ( () ) )
+            // InternalQLS.g:4712:1: ( () )
             {
-            // InternalQLS.g:4685:1: ( () )
-            // InternalQLS.g:4686:2: ()
+            // InternalQLS.g:4712:1: ( () )
+            // InternalQLS.g:4713:2: ()
             {
              before(grammarAccess.getQuestionGroupAccess().getQuestionGroupAction_0()); 
-            // InternalQLS.g:4687:2: ()
-            // InternalQLS.g:4687:3: 
+            // InternalQLS.g:4714:2: ()
+            // InternalQLS.g:4714:3: 
             {
             }
 
@@ -14645,14 +14730,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__1"
-    // InternalQLS.g:4695:1: rule__QuestionGroup__Group__1 : rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2 ;
+    // InternalQLS.g:4722:1: rule__QuestionGroup__Group__1 : rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2 ;
     public final void rule__QuestionGroup__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4699:1: ( rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2 )
-            // InternalQLS.g:4700:2: rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2
+            // InternalQLS.g:4726:1: ( rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2 )
+            // InternalQLS.g:4727:2: rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2
             {
             pushFollow(FOLLOW_44);
             rule__QuestionGroup__Group__1__Impl();
@@ -14683,20 +14768,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__1__Impl"
-    // InternalQLS.g:4707:1: rule__QuestionGroup__Group__1__Impl : ( ( rule__QuestionGroup__Group_1__0 )? ) ;
+    // InternalQLS.g:4734:1: rule__QuestionGroup__Group__1__Impl : ( ( rule__QuestionGroup__Group_1__0 )? ) ;
     public final void rule__QuestionGroup__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4711:1: ( ( ( rule__QuestionGroup__Group_1__0 )? ) )
-            // InternalQLS.g:4712:1: ( ( rule__QuestionGroup__Group_1__0 )? )
+            // InternalQLS.g:4738:1: ( ( ( rule__QuestionGroup__Group_1__0 )? ) )
+            // InternalQLS.g:4739:1: ( ( rule__QuestionGroup__Group_1__0 )? )
             {
-            // InternalQLS.g:4712:1: ( ( rule__QuestionGroup__Group_1__0 )? )
-            // InternalQLS.g:4713:2: ( rule__QuestionGroup__Group_1__0 )?
+            // InternalQLS.g:4739:1: ( ( rule__QuestionGroup__Group_1__0 )? )
+            // InternalQLS.g:4740:2: ( rule__QuestionGroup__Group_1__0 )?
             {
              before(grammarAccess.getQuestionGroupAccess().getGroup_1()); 
-            // InternalQLS.g:4714:2: ( rule__QuestionGroup__Group_1__0 )?
+            // InternalQLS.g:4741:2: ( rule__QuestionGroup__Group_1__0 )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -14705,7 +14790,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt37) {
                 case 1 :
-                    // InternalQLS.g:4714:3: rule__QuestionGroup__Group_1__0
+                    // InternalQLS.g:4741:3: rule__QuestionGroup__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionGroup__Group_1__0();
@@ -14741,14 +14826,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__2"
-    // InternalQLS.g:4722:1: rule__QuestionGroup__Group__2 : rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3 ;
+    // InternalQLS.g:4749:1: rule__QuestionGroup__Group__2 : rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3 ;
     public final void rule__QuestionGroup__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4726:1: ( rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3 )
-            // InternalQLS.g:4727:2: rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3
+            // InternalQLS.g:4753:1: ( rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3 )
+            // InternalQLS.g:4754:2: rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3
             {
             pushFollow(FOLLOW_45);
             rule__QuestionGroup__Group__2__Impl();
@@ -14779,17 +14864,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__2__Impl"
-    // InternalQLS.g:4734:1: rule__QuestionGroup__Group__2__Impl : ( '{' ) ;
+    // InternalQLS.g:4761:1: rule__QuestionGroup__Group__2__Impl : ( '{' ) ;
     public final void rule__QuestionGroup__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4738:1: ( ( '{' ) )
-            // InternalQLS.g:4739:1: ( '{' )
+            // InternalQLS.g:4765:1: ( ( '{' ) )
+            // InternalQLS.g:4766:1: ( '{' )
             {
-            // InternalQLS.g:4739:1: ( '{' )
-            // InternalQLS.g:4740:2: '{'
+            // InternalQLS.g:4766:1: ( '{' )
+            // InternalQLS.g:4767:2: '{'
             {
              before(grammarAccess.getQuestionGroupAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,44,FOLLOW_2); 
@@ -14816,14 +14901,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__3"
-    // InternalQLS.g:4749:1: rule__QuestionGroup__Group__3 : rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4 ;
+    // InternalQLS.g:4776:1: rule__QuestionGroup__Group__3 : rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4 ;
     public final void rule__QuestionGroup__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4753:1: ( rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4 )
-            // InternalQLS.g:4754:2: rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4
+            // InternalQLS.g:4780:1: ( rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4 )
+            // InternalQLS.g:4781:2: rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4
             {
             pushFollow(FOLLOW_45);
             rule__QuestionGroup__Group__3__Impl();
@@ -14854,20 +14939,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__3__Impl"
-    // InternalQLS.g:4761:1: rule__QuestionGroup__Group__3__Impl : ( ( rule__QuestionGroup__Alternatives_3 )* ) ;
+    // InternalQLS.g:4788:1: rule__QuestionGroup__Group__3__Impl : ( ( rule__QuestionGroup__Alternatives_3 )* ) ;
     public final void rule__QuestionGroup__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4765:1: ( ( ( rule__QuestionGroup__Alternatives_3 )* ) )
-            // InternalQLS.g:4766:1: ( ( rule__QuestionGroup__Alternatives_3 )* )
+            // InternalQLS.g:4792:1: ( ( ( rule__QuestionGroup__Alternatives_3 )* ) )
+            // InternalQLS.g:4793:1: ( ( rule__QuestionGroup__Alternatives_3 )* )
             {
-            // InternalQLS.g:4766:1: ( ( rule__QuestionGroup__Alternatives_3 )* )
-            // InternalQLS.g:4767:2: ( rule__QuestionGroup__Alternatives_3 )*
+            // InternalQLS.g:4793:1: ( ( rule__QuestionGroup__Alternatives_3 )* )
+            // InternalQLS.g:4794:2: ( rule__QuestionGroup__Alternatives_3 )*
             {
              before(grammarAccess.getQuestionGroupAccess().getAlternatives_3()); 
-            // InternalQLS.g:4768:2: ( rule__QuestionGroup__Alternatives_3 )*
+            // InternalQLS.g:4795:2: ( rule__QuestionGroup__Alternatives_3 )*
             loop38:
             do {
                 int alt38=2;
@@ -14880,7 +14965,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt38) {
             	case 1 :
-            	    // InternalQLS.g:4768:3: rule__QuestionGroup__Alternatives_3
+            	    // InternalQLS.g:4795:3: rule__QuestionGroup__Alternatives_3
             	    {
             	    pushFollow(FOLLOW_46);
             	    rule__QuestionGroup__Alternatives_3();
@@ -14919,14 +15004,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__4"
-    // InternalQLS.g:4776:1: rule__QuestionGroup__Group__4 : rule__QuestionGroup__Group__4__Impl ;
+    // InternalQLS.g:4803:1: rule__QuestionGroup__Group__4 : rule__QuestionGroup__Group__4__Impl ;
     public final void rule__QuestionGroup__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4780:1: ( rule__QuestionGroup__Group__4__Impl )
-            // InternalQLS.g:4781:2: rule__QuestionGroup__Group__4__Impl
+            // InternalQLS.g:4807:1: ( rule__QuestionGroup__Group__4__Impl )
+            // InternalQLS.g:4808:2: rule__QuestionGroup__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionGroup__Group__4__Impl();
@@ -14952,17 +15037,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group__4__Impl"
-    // InternalQLS.g:4787:1: rule__QuestionGroup__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:4814:1: rule__QuestionGroup__Group__4__Impl : ( '}' ) ;
     public final void rule__QuestionGroup__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4791:1: ( ( '}' ) )
-            // InternalQLS.g:4792:1: ( '}' )
+            // InternalQLS.g:4818:1: ( ( '}' ) )
+            // InternalQLS.g:4819:1: ( '}' )
             {
-            // InternalQLS.g:4792:1: ( '}' )
-            // InternalQLS.g:4793:2: '}'
+            // InternalQLS.g:4819:1: ( '}' )
+            // InternalQLS.g:4820:2: '}'
             {
              before(grammarAccess.getQuestionGroupAccess().getRightCurlyBracketKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -14989,14 +15074,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group_1__0"
-    // InternalQLS.g:4803:1: rule__QuestionGroup__Group_1__0 : rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1 ;
+    // InternalQLS.g:4830:1: rule__QuestionGroup__Group_1__0 : rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1 ;
     public final void rule__QuestionGroup__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4807:1: ( rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1 )
-            // InternalQLS.g:4808:2: rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1
+            // InternalQLS.g:4834:1: ( rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1 )
+            // InternalQLS.g:4835:2: rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1
             {
             pushFollow(FOLLOW_24);
             rule__QuestionGroup__Group_1__0__Impl();
@@ -15027,17 +15112,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group_1__0__Impl"
-    // InternalQLS.g:4815:1: rule__QuestionGroup__Group_1__0__Impl : ( 'if' ) ;
+    // InternalQLS.g:4842:1: rule__QuestionGroup__Group_1__0__Impl : ( 'if' ) ;
     public final void rule__QuestionGroup__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4819:1: ( ( 'if' ) )
-            // InternalQLS.g:4820:1: ( 'if' )
+            // InternalQLS.g:4846:1: ( ( 'if' ) )
+            // InternalQLS.g:4847:1: ( 'if' )
             {
-            // InternalQLS.g:4820:1: ( 'if' )
-            // InternalQLS.g:4821:2: 'if'
+            // InternalQLS.g:4847:1: ( 'if' )
+            // InternalQLS.g:4848:2: 'if'
             {
              before(grammarAccess.getQuestionGroupAccess().getIfKeyword_1_0()); 
             match(input,59,FOLLOW_2); 
@@ -15064,14 +15149,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group_1__1"
-    // InternalQLS.g:4830:1: rule__QuestionGroup__Group_1__1 : rule__QuestionGroup__Group_1__1__Impl ;
+    // InternalQLS.g:4857:1: rule__QuestionGroup__Group_1__1 : rule__QuestionGroup__Group_1__1__Impl ;
     public final void rule__QuestionGroup__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4834:1: ( rule__QuestionGroup__Group_1__1__Impl )
-            // InternalQLS.g:4835:2: rule__QuestionGroup__Group_1__1__Impl
+            // InternalQLS.g:4861:1: ( rule__QuestionGroup__Group_1__1__Impl )
+            // InternalQLS.g:4862:2: rule__QuestionGroup__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionGroup__Group_1__1__Impl();
@@ -15097,21 +15182,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__Group_1__1__Impl"
-    // InternalQLS.g:4841:1: rule__QuestionGroup__Group_1__1__Impl : ( ( rule__QuestionGroup__GuardAssignment_1_1 ) ) ;
+    // InternalQLS.g:4868:1: rule__QuestionGroup__Group_1__1__Impl : ( ( rule__QuestionGroup__GuardAssignment_1_1 ) ) ;
     public final void rule__QuestionGroup__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4845:1: ( ( ( rule__QuestionGroup__GuardAssignment_1_1 ) ) )
-            // InternalQLS.g:4846:1: ( ( rule__QuestionGroup__GuardAssignment_1_1 ) )
+            // InternalQLS.g:4872:1: ( ( ( rule__QuestionGroup__GuardAssignment_1_1 ) ) )
+            // InternalQLS.g:4873:1: ( ( rule__QuestionGroup__GuardAssignment_1_1 ) )
             {
-            // InternalQLS.g:4846:1: ( ( rule__QuestionGroup__GuardAssignment_1_1 ) )
-            // InternalQLS.g:4847:2: ( rule__QuestionGroup__GuardAssignment_1_1 )
+            // InternalQLS.g:4873:1: ( ( rule__QuestionGroup__GuardAssignment_1_1 ) )
+            // InternalQLS.g:4874:2: ( rule__QuestionGroup__GuardAssignment_1_1 )
             {
              before(grammarAccess.getQuestionGroupAccess().getGuardAssignment_1_1()); 
-            // InternalQLS.g:4848:2: ( rule__QuestionGroup__GuardAssignment_1_1 )
-            // InternalQLS.g:4848:3: rule__QuestionGroup__GuardAssignment_1_1
+            // InternalQLS.g:4875:2: ( rule__QuestionGroup__GuardAssignment_1_1 )
+            // InternalQLS.g:4875:3: rule__QuestionGroup__GuardAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionGroup__GuardAssignment_1_1();
@@ -15144,14 +15229,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__0"
-    // InternalQLS.g:4857:1: rule__ValueType_Impl__Group__0 : rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1 ;
+    // InternalQLS.g:4884:1: rule__ValueType_Impl__Group__0 : rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1 ;
     public final void rule__ValueType_Impl__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4861:1: ( rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1 )
-            // InternalQLS.g:4862:2: rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1
+            // InternalQLS.g:4888:1: ( rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1 )
+            // InternalQLS.g:4889:2: rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1
             {
             pushFollow(FOLLOW_47);
             rule__ValueType_Impl__Group__0__Impl();
@@ -15182,21 +15267,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__0__Impl"
-    // InternalQLS.g:4869:1: rule__ValueType_Impl__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:4896:1: rule__ValueType_Impl__Group__0__Impl : ( () ) ;
     public final void rule__ValueType_Impl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4873:1: ( ( () ) )
-            // InternalQLS.g:4874:1: ( () )
+            // InternalQLS.g:4900:1: ( ( () ) )
+            // InternalQLS.g:4901:1: ( () )
             {
-            // InternalQLS.g:4874:1: ( () )
-            // InternalQLS.g:4875:2: ()
+            // InternalQLS.g:4901:1: ( () )
+            // InternalQLS.g:4902:2: ()
             {
              before(grammarAccess.getValueType_ImplAccess().getValueTypeAction_0()); 
-            // InternalQLS.g:4876:2: ()
-            // InternalQLS.g:4876:3: 
+            // InternalQLS.g:4903:2: ()
+            // InternalQLS.g:4903:3: 
             {
             }
 
@@ -15219,16 +15304,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__1"
-    // InternalQLS.g:4884:1: rule__ValueType_Impl__Group__1 : rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2 ;
+    // InternalQLS.g:4911:1: rule__ValueType_Impl__Group__1 : rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2 ;
     public final void rule__ValueType_Impl__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4888:1: ( rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2 )
-            // InternalQLS.g:4889:2: rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2
+            // InternalQLS.g:4915:1: ( rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2 )
+            // InternalQLS.g:4916:2: rule__ValueType_Impl__Group__1__Impl rule__ValueType_Impl__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__ValueType_Impl__Group__1__Impl();
 
             state._fsp--;
@@ -15257,17 +15342,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__1__Impl"
-    // InternalQLS.g:4896:1: rule__ValueType_Impl__Group__1__Impl : ( 'ValueType' ) ;
+    // InternalQLS.g:4923:1: rule__ValueType_Impl__Group__1__Impl : ( 'ValueType' ) ;
     public final void rule__ValueType_Impl__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4900:1: ( ( 'ValueType' ) )
-            // InternalQLS.g:4901:1: ( 'ValueType' )
+            // InternalQLS.g:4927:1: ( ( 'ValueType' ) )
+            // InternalQLS.g:4928:1: ( 'ValueType' )
             {
-            // InternalQLS.g:4901:1: ( 'ValueType' )
-            // InternalQLS.g:4902:2: 'ValueType'
+            // InternalQLS.g:4928:1: ( 'ValueType' )
+            // InternalQLS.g:4929:2: 'ValueType'
             {
              before(grammarAccess.getValueType_ImplAccess().getValueTypeKeyword_1()); 
             match(input,63,FOLLOW_2); 
@@ -15294,16 +15379,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__2"
-    // InternalQLS.g:4911:1: rule__ValueType_Impl__Group__2 : rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3 ;
+    // InternalQLS.g:4938:1: rule__ValueType_Impl__Group__2 : rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3 ;
     public final void rule__ValueType_Impl__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4915:1: ( rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3 )
-            // InternalQLS.g:4916:2: rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3
+            // InternalQLS.g:4942:1: ( rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3 )
+            // InternalQLS.g:4943:2: rule__ValueType_Impl__Group__2__Impl rule__ValueType_Impl__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__ValueType_Impl__Group__2__Impl();
 
             state._fsp--;
@@ -15332,21 +15417,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__2__Impl"
-    // InternalQLS.g:4923:1: rule__ValueType_Impl__Group__2__Impl : ( ( rule__ValueType_Impl__NameAssignment_2 ) ) ;
+    // InternalQLS.g:4950:1: rule__ValueType_Impl__Group__2__Impl : ( ( rule__ValueType_Impl__NameAssignment_2 ) ) ;
     public final void rule__ValueType_Impl__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4927:1: ( ( ( rule__ValueType_Impl__NameAssignment_2 ) ) )
-            // InternalQLS.g:4928:1: ( ( rule__ValueType_Impl__NameAssignment_2 ) )
+            // InternalQLS.g:4954:1: ( ( ( rule__ValueType_Impl__NameAssignment_2 ) ) )
+            // InternalQLS.g:4955:1: ( ( rule__ValueType_Impl__NameAssignment_2 ) )
             {
-            // InternalQLS.g:4928:1: ( ( rule__ValueType_Impl__NameAssignment_2 ) )
-            // InternalQLS.g:4929:2: ( rule__ValueType_Impl__NameAssignment_2 )
+            // InternalQLS.g:4955:1: ( ( rule__ValueType_Impl__NameAssignment_2 ) )
+            // InternalQLS.g:4956:2: ( rule__ValueType_Impl__NameAssignment_2 )
             {
              before(grammarAccess.getValueType_ImplAccess().getNameAssignment_2()); 
-            // InternalQLS.g:4930:2: ( rule__ValueType_Impl__NameAssignment_2 )
-            // InternalQLS.g:4930:3: rule__ValueType_Impl__NameAssignment_2
+            // InternalQLS.g:4957:2: ( rule__ValueType_Impl__NameAssignment_2 )
+            // InternalQLS.g:4957:3: rule__ValueType_Impl__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ValueType_Impl__NameAssignment_2();
@@ -15379,14 +15464,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__3"
-    // InternalQLS.g:4938:1: rule__ValueType_Impl__Group__3 : rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4 ;
+    // InternalQLS.g:4965:1: rule__ValueType_Impl__Group__3 : rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4 ;
     public final void rule__ValueType_Impl__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4942:1: ( rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4 )
-            // InternalQLS.g:4943:2: rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4
+            // InternalQLS.g:4969:1: ( rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4 )
+            // InternalQLS.g:4970:2: rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4
             {
             pushFollow(FOLLOW_48);
             rule__ValueType_Impl__Group__3__Impl();
@@ -15417,17 +15502,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__3__Impl"
-    // InternalQLS.g:4950:1: rule__ValueType_Impl__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:4977:1: rule__ValueType_Impl__Group__3__Impl : ( '{' ) ;
     public final void rule__ValueType_Impl__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4954:1: ( ( '{' ) )
-            // InternalQLS.g:4955:1: ( '{' )
+            // InternalQLS.g:4981:1: ( ( '{' ) )
+            // InternalQLS.g:4982:1: ( '{' )
             {
-            // InternalQLS.g:4955:1: ( '{' )
-            // InternalQLS.g:4956:2: '{'
+            // InternalQLS.g:4982:1: ( '{' )
+            // InternalQLS.g:4983:2: '{'
             {
              before(grammarAccess.getValueType_ImplAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,44,FOLLOW_2); 
@@ -15454,14 +15539,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__4"
-    // InternalQLS.g:4965:1: rule__ValueType_Impl__Group__4 : rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5 ;
+    // InternalQLS.g:4992:1: rule__ValueType_Impl__Group__4 : rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5 ;
     public final void rule__ValueType_Impl__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4969:1: ( rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5 )
-            // InternalQLS.g:4970:2: rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5
+            // InternalQLS.g:4996:1: ( rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5 )
+            // InternalQLS.g:4997:2: rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5
             {
             pushFollow(FOLLOW_48);
             rule__ValueType_Impl__Group__4__Impl();
@@ -15492,20 +15577,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__4__Impl"
-    // InternalQLS.g:4977:1: rule__ValueType_Impl__Group__4__Impl : ( ( rule__ValueType_Impl__Group_4__0 )? ) ;
+    // InternalQLS.g:5004:1: rule__ValueType_Impl__Group__4__Impl : ( ( rule__ValueType_Impl__Group_4__0 )? ) ;
     public final void rule__ValueType_Impl__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4981:1: ( ( ( rule__ValueType_Impl__Group_4__0 )? ) )
-            // InternalQLS.g:4982:1: ( ( rule__ValueType_Impl__Group_4__0 )? )
+            // InternalQLS.g:5008:1: ( ( ( rule__ValueType_Impl__Group_4__0 )? ) )
+            // InternalQLS.g:5009:1: ( ( rule__ValueType_Impl__Group_4__0 )? )
             {
-            // InternalQLS.g:4982:1: ( ( rule__ValueType_Impl__Group_4__0 )? )
-            // InternalQLS.g:4983:2: ( rule__ValueType_Impl__Group_4__0 )?
+            // InternalQLS.g:5009:1: ( ( rule__ValueType_Impl__Group_4__0 )? )
+            // InternalQLS.g:5010:2: ( rule__ValueType_Impl__Group_4__0 )?
             {
              before(grammarAccess.getValueType_ImplAccess().getGroup_4()); 
-            // InternalQLS.g:4984:2: ( rule__ValueType_Impl__Group_4__0 )?
+            // InternalQLS.g:5011:2: ( rule__ValueType_Impl__Group_4__0 )?
             int alt39=2;
             int LA39_0 = input.LA(1);
 
@@ -15514,7 +15599,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt39) {
                 case 1 :
-                    // InternalQLS.g:4984:3: rule__ValueType_Impl__Group_4__0
+                    // InternalQLS.g:5011:3: rule__ValueType_Impl__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ValueType_Impl__Group_4__0();
@@ -15550,14 +15635,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__5"
-    // InternalQLS.g:4992:1: rule__ValueType_Impl__Group__5 : rule__ValueType_Impl__Group__5__Impl ;
+    // InternalQLS.g:5019:1: rule__ValueType_Impl__Group__5 : rule__ValueType_Impl__Group__5__Impl ;
     public final void rule__ValueType_Impl__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:4996:1: ( rule__ValueType_Impl__Group__5__Impl )
-            // InternalQLS.g:4997:2: rule__ValueType_Impl__Group__5__Impl
+            // InternalQLS.g:5023:1: ( rule__ValueType_Impl__Group__5__Impl )
+            // InternalQLS.g:5024:2: rule__ValueType_Impl__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ValueType_Impl__Group__5__Impl();
@@ -15583,17 +15668,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group__5__Impl"
-    // InternalQLS.g:5003:1: rule__ValueType_Impl__Group__5__Impl : ( '}' ) ;
+    // InternalQLS.g:5030:1: rule__ValueType_Impl__Group__5__Impl : ( '}' ) ;
     public final void rule__ValueType_Impl__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5007:1: ( ( '}' ) )
-            // InternalQLS.g:5008:1: ( '}' )
+            // InternalQLS.g:5034:1: ( ( '}' ) )
+            // InternalQLS.g:5035:1: ( '}' )
             {
-            // InternalQLS.g:5008:1: ( '}' )
-            // InternalQLS.g:5009:2: '}'
+            // InternalQLS.g:5035:1: ( '}' )
+            // InternalQLS.g:5036:2: '}'
             {
              before(grammarAccess.getValueType_ImplAccess().getRightCurlyBracketKeyword_5()); 
             match(input,46,FOLLOW_2); 
@@ -15620,14 +15705,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group_4__0"
-    // InternalQLS.g:5019:1: rule__ValueType_Impl__Group_4__0 : rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1 ;
+    // InternalQLS.g:5046:1: rule__ValueType_Impl__Group_4__0 : rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1 ;
     public final void rule__ValueType_Impl__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5023:1: ( rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1 )
-            // InternalQLS.g:5024:2: rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1
+            // InternalQLS.g:5050:1: ( rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1 )
+            // InternalQLS.g:5051:2: rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1
             {
             pushFollow(FOLLOW_49);
             rule__ValueType_Impl__Group_4__0__Impl();
@@ -15658,17 +15743,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group_4__0__Impl"
-    // InternalQLS.g:5031:1: rule__ValueType_Impl__Group_4__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:5058:1: rule__ValueType_Impl__Group_4__0__Impl : ( 'unit' ) ;
     public final void rule__ValueType_Impl__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5035:1: ( ( 'unit' ) )
-            // InternalQLS.g:5036:1: ( 'unit' )
+            // InternalQLS.g:5062:1: ( ( 'unit' ) )
+            // InternalQLS.g:5063:1: ( 'unit' )
             {
-            // InternalQLS.g:5036:1: ( 'unit' )
-            // InternalQLS.g:5037:2: 'unit'
+            // InternalQLS.g:5063:1: ( 'unit' )
+            // InternalQLS.g:5064:2: 'unit'
             {
              before(grammarAccess.getValueType_ImplAccess().getUnitKeyword_4_0()); 
             match(input,64,FOLLOW_2); 
@@ -15695,14 +15780,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group_4__1"
-    // InternalQLS.g:5046:1: rule__ValueType_Impl__Group_4__1 : rule__ValueType_Impl__Group_4__1__Impl ;
+    // InternalQLS.g:5073:1: rule__ValueType_Impl__Group_4__1 : rule__ValueType_Impl__Group_4__1__Impl ;
     public final void rule__ValueType_Impl__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5050:1: ( rule__ValueType_Impl__Group_4__1__Impl )
-            // InternalQLS.g:5051:2: rule__ValueType_Impl__Group_4__1__Impl
+            // InternalQLS.g:5077:1: ( rule__ValueType_Impl__Group_4__1__Impl )
+            // InternalQLS.g:5078:2: rule__ValueType_Impl__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ValueType_Impl__Group_4__1__Impl();
@@ -15728,21 +15813,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__Group_4__1__Impl"
-    // InternalQLS.g:5057:1: rule__ValueType_Impl__Group_4__1__Impl : ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) ) ;
+    // InternalQLS.g:5084:1: rule__ValueType_Impl__Group_4__1__Impl : ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) ) ;
     public final void rule__ValueType_Impl__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5061:1: ( ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) ) )
-            // InternalQLS.g:5062:1: ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) )
+            // InternalQLS.g:5088:1: ( ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) ) )
+            // InternalQLS.g:5089:1: ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) )
             {
-            // InternalQLS.g:5062:1: ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) )
-            // InternalQLS.g:5063:2: ( rule__ValueType_Impl__UnitAssignment_4_1 )
+            // InternalQLS.g:5089:1: ( ( rule__ValueType_Impl__UnitAssignment_4_1 ) )
+            // InternalQLS.g:5090:2: ( rule__ValueType_Impl__UnitAssignment_4_1 )
             {
              before(grammarAccess.getValueType_ImplAccess().getUnitAssignment_4_1()); 
-            // InternalQLS.g:5064:2: ( rule__ValueType_Impl__UnitAssignment_4_1 )
-            // InternalQLS.g:5064:3: rule__ValueType_Impl__UnitAssignment_4_1
+            // InternalQLS.g:5091:2: ( rule__ValueType_Impl__UnitAssignment_4_1 )
+            // InternalQLS.g:5091:3: rule__ValueType_Impl__UnitAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__ValueType_Impl__UnitAssignment_4_1();
@@ -15775,14 +15860,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantCall__Group__0"
-    // InternalQLS.g:5073:1: rule__ConstantCall__Group__0 : rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1 ;
+    // InternalQLS.g:5100:1: rule__ConstantCall__Group__0 : rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1 ;
     public final void rule__ConstantCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5077:1: ( rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1 )
-            // InternalQLS.g:5078:2: rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1
+            // InternalQLS.g:5104:1: ( rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1 )
+            // InternalQLS.g:5105:2: rule__ConstantCall__Group__0__Impl rule__ConstantCall__Group__1
             {
             pushFollow(FOLLOW_50);
             rule__ConstantCall__Group__0__Impl();
@@ -15813,21 +15898,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantCall__Group__0__Impl"
-    // InternalQLS.g:5085:1: rule__ConstantCall__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:5112:1: rule__ConstantCall__Group__0__Impl : ( () ) ;
     public final void rule__ConstantCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5089:1: ( ( () ) )
-            // InternalQLS.g:5090:1: ( () )
+            // InternalQLS.g:5116:1: ( ( () ) )
+            // InternalQLS.g:5117:1: ( () )
             {
-            // InternalQLS.g:5090:1: ( () )
-            // InternalQLS.g:5091:2: ()
+            // InternalQLS.g:5117:1: ( () )
+            // InternalQLS.g:5118:2: ()
             {
              before(grammarAccess.getConstantCallAccess().getConstantCallAction_0()); 
-            // InternalQLS.g:5092:2: ()
-            // InternalQLS.g:5092:3: 
+            // InternalQLS.g:5119:2: ()
+            // InternalQLS.g:5119:3: 
             {
             }
 
@@ -15850,14 +15935,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantCall__Group__1"
-    // InternalQLS.g:5100:1: rule__ConstantCall__Group__1 : rule__ConstantCall__Group__1__Impl ;
+    // InternalQLS.g:5127:1: rule__ConstantCall__Group__1 : rule__ConstantCall__Group__1__Impl ;
     public final void rule__ConstantCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5104:1: ( rule__ConstantCall__Group__1__Impl )
-            // InternalQLS.g:5105:2: rule__ConstantCall__Group__1__Impl
+            // InternalQLS.g:5131:1: ( rule__ConstantCall__Group__1__Impl )
+            // InternalQLS.g:5132:2: rule__ConstantCall__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ConstantCall__Group__1__Impl();
@@ -15883,21 +15968,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantCall__Group__1__Impl"
-    // InternalQLS.g:5111:1: rule__ConstantCall__Group__1__Impl : ( ( rule__ConstantCall__ValueAssignment_1 ) ) ;
+    // InternalQLS.g:5138:1: rule__ConstantCall__Group__1__Impl : ( ( rule__ConstantCall__ValueAssignment_1 ) ) ;
     public final void rule__ConstantCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5115:1: ( ( ( rule__ConstantCall__ValueAssignment_1 ) ) )
-            // InternalQLS.g:5116:1: ( ( rule__ConstantCall__ValueAssignment_1 ) )
+            // InternalQLS.g:5142:1: ( ( ( rule__ConstantCall__ValueAssignment_1 ) ) )
+            // InternalQLS.g:5143:1: ( ( rule__ConstantCall__ValueAssignment_1 ) )
             {
-            // InternalQLS.g:5116:1: ( ( rule__ConstantCall__ValueAssignment_1 ) )
-            // InternalQLS.g:5117:2: ( rule__ConstantCall__ValueAssignment_1 )
+            // InternalQLS.g:5143:1: ( ( rule__ConstantCall__ValueAssignment_1 ) )
+            // InternalQLS.g:5144:2: ( rule__ConstantCall__ValueAssignment_1 )
             {
              before(grammarAccess.getConstantCallAccess().getValueAssignment_1()); 
-            // InternalQLS.g:5118:2: ( rule__ConstantCall__ValueAssignment_1 )
-            // InternalQLS.g:5118:3: rule__ConstantCall__ValueAssignment_1
+            // InternalQLS.g:5145:2: ( rule__ConstantCall__ValueAssignment_1 )
+            // InternalQLS.g:5145:3: rule__ConstantCall__ValueAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ConstantCall__ValueAssignment_1();
@@ -15930,16 +16015,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__0"
-    // InternalQLS.g:5127:1: rule__QuestionCall__Group__0 : rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1 ;
+    // InternalQLS.g:5154:1: rule__QuestionCall__Group__0 : rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1 ;
     public final void rule__QuestionCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5131:1: ( rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1 )
-            // InternalQLS.g:5132:2: rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1
+            // InternalQLS.g:5158:1: ( rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1 )
+            // InternalQLS.g:5159:2: rule__QuestionCall__Group__0__Impl rule__QuestionCall__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__QuestionCall__Group__0__Impl();
 
             state._fsp--;
@@ -15968,21 +16053,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__0__Impl"
-    // InternalQLS.g:5139:1: rule__QuestionCall__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:5166:1: rule__QuestionCall__Group__0__Impl : ( () ) ;
     public final void rule__QuestionCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5143:1: ( ( () ) )
-            // InternalQLS.g:5144:1: ( () )
+            // InternalQLS.g:5170:1: ( ( () ) )
+            // InternalQLS.g:5171:1: ( () )
             {
-            // InternalQLS.g:5144:1: ( () )
-            // InternalQLS.g:5145:2: ()
+            // InternalQLS.g:5171:1: ( () )
+            // InternalQLS.g:5172:2: ()
             {
              before(grammarAccess.getQuestionCallAccess().getQuestionCallAction_0()); 
-            // InternalQLS.g:5146:2: ()
-            // InternalQLS.g:5146:3: 
+            // InternalQLS.g:5173:2: ()
+            // InternalQLS.g:5173:3: 
             {
             }
 
@@ -16005,14 +16090,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__1"
-    // InternalQLS.g:5154:1: rule__QuestionCall__Group__1 : rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2 ;
+    // InternalQLS.g:5181:1: rule__QuestionCall__Group__1 : rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2 ;
     public final void rule__QuestionCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5158:1: ( rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2 )
-            // InternalQLS.g:5159:2: rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2
+            // InternalQLS.g:5185:1: ( rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2 )
+            // InternalQLS.g:5186:2: rule__QuestionCall__Group__1__Impl rule__QuestionCall__Group__2
             {
             pushFollow(FOLLOW_51);
             rule__QuestionCall__Group__1__Impl();
@@ -16043,21 +16128,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__1__Impl"
-    // InternalQLS.g:5166:1: rule__QuestionCall__Group__1__Impl : ( ( rule__QuestionCall__QuestionAssignment_1 ) ) ;
+    // InternalQLS.g:5193:1: rule__QuestionCall__Group__1__Impl : ( ( rule__QuestionCall__QuestionAssignment_1 ) ) ;
     public final void rule__QuestionCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5170:1: ( ( ( rule__QuestionCall__QuestionAssignment_1 ) ) )
-            // InternalQLS.g:5171:1: ( ( rule__QuestionCall__QuestionAssignment_1 ) )
+            // InternalQLS.g:5197:1: ( ( ( rule__QuestionCall__QuestionAssignment_1 ) ) )
+            // InternalQLS.g:5198:1: ( ( rule__QuestionCall__QuestionAssignment_1 ) )
             {
-            // InternalQLS.g:5171:1: ( ( rule__QuestionCall__QuestionAssignment_1 ) )
-            // InternalQLS.g:5172:2: ( rule__QuestionCall__QuestionAssignment_1 )
+            // InternalQLS.g:5198:1: ( ( rule__QuestionCall__QuestionAssignment_1 ) )
+            // InternalQLS.g:5199:2: ( rule__QuestionCall__QuestionAssignment_1 )
             {
              before(grammarAccess.getQuestionCallAccess().getQuestionAssignment_1()); 
-            // InternalQLS.g:5173:2: ( rule__QuestionCall__QuestionAssignment_1 )
-            // InternalQLS.g:5173:3: rule__QuestionCall__QuestionAssignment_1
+            // InternalQLS.g:5200:2: ( rule__QuestionCall__QuestionAssignment_1 )
+            // InternalQLS.g:5200:3: rule__QuestionCall__QuestionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionCall__QuestionAssignment_1();
@@ -16090,14 +16175,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__2"
-    // InternalQLS.g:5181:1: rule__QuestionCall__Group__2 : rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3 ;
+    // InternalQLS.g:5208:1: rule__QuestionCall__Group__2 : rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3 ;
     public final void rule__QuestionCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5185:1: ( rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3 )
-            // InternalQLS.g:5186:2: rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3
+            // InternalQLS.g:5212:1: ( rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3 )
+            // InternalQLS.g:5213:2: rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3
             {
             pushFollow(FOLLOW_25);
             rule__QuestionCall__Group__2__Impl();
@@ -16128,17 +16213,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__2__Impl"
-    // InternalQLS.g:5193:1: rule__QuestionCall__Group__2__Impl : ( '(' ) ;
+    // InternalQLS.g:5220:1: rule__QuestionCall__Group__2__Impl : ( '(' ) ;
     public final void rule__QuestionCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5197:1: ( ( '(' ) )
-            // InternalQLS.g:5198:1: ( '(' )
+            // InternalQLS.g:5224:1: ( ( '(' ) )
+            // InternalQLS.g:5225:1: ( '(' )
             {
-            // InternalQLS.g:5198:1: ( '(' )
-            // InternalQLS.g:5199:2: '('
+            // InternalQLS.g:5225:1: ( '(' )
+            // InternalQLS.g:5226:2: '('
             {
              before(grammarAccess.getQuestionCallAccess().getLeftParenthesisKeyword_2()); 
             match(input,57,FOLLOW_2); 
@@ -16165,14 +16250,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__3"
-    // InternalQLS.g:5208:1: rule__QuestionCall__Group__3 : rule__QuestionCall__Group__3__Impl ;
+    // InternalQLS.g:5235:1: rule__QuestionCall__Group__3 : rule__QuestionCall__Group__3__Impl ;
     public final void rule__QuestionCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5212:1: ( rule__QuestionCall__Group__3__Impl )
-            // InternalQLS.g:5213:2: rule__QuestionCall__Group__3__Impl
+            // InternalQLS.g:5239:1: ( rule__QuestionCall__Group__3__Impl )
+            // InternalQLS.g:5240:2: rule__QuestionCall__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionCall__Group__3__Impl();
@@ -16198,17 +16283,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__Group__3__Impl"
-    // InternalQLS.g:5219:1: rule__QuestionCall__Group__3__Impl : ( ')' ) ;
+    // InternalQLS.g:5246:1: rule__QuestionCall__Group__3__Impl : ( ')' ) ;
     public final void rule__QuestionCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5223:1: ( ( ')' ) )
-            // InternalQLS.g:5224:1: ( ')' )
+            // InternalQLS.g:5250:1: ( ( ')' ) )
+            // InternalQLS.g:5251:1: ( ')' )
             {
-            // InternalQLS.g:5224:1: ( ')' )
-            // InternalQLS.g:5225:2: ')'
+            // InternalQLS.g:5251:1: ( ')' )
+            // InternalQLS.g:5252:2: ')'
             {
              before(grammarAccess.getQuestionCallAccess().getRightParenthesisKeyword_3()); 
             match(input,58,FOLLOW_2); 
@@ -16235,14 +16320,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__0"
-    // InternalQLS.g:5235:1: rule__BooleanValueType__Group__0 : rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1 ;
+    // InternalQLS.g:5262:1: rule__BooleanValueType__Group__0 : rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1 ;
     public final void rule__BooleanValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5239:1: ( rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1 )
-            // InternalQLS.g:5240:2: rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1
+            // InternalQLS.g:5266:1: ( rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1 )
+            // InternalQLS.g:5267:2: rule__BooleanValueType__Group__0__Impl rule__BooleanValueType__Group__1
             {
             pushFollow(FOLLOW_52);
             rule__BooleanValueType__Group__0__Impl();
@@ -16273,21 +16358,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__0__Impl"
-    // InternalQLS.g:5247:1: rule__BooleanValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:5274:1: rule__BooleanValueType__Group__0__Impl : ( () ) ;
     public final void rule__BooleanValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5251:1: ( ( () ) )
-            // InternalQLS.g:5252:1: ( () )
+            // InternalQLS.g:5278:1: ( ( () ) )
+            // InternalQLS.g:5279:1: ( () )
             {
-            // InternalQLS.g:5252:1: ( () )
-            // InternalQLS.g:5253:2: ()
+            // InternalQLS.g:5279:1: ( () )
+            // InternalQLS.g:5280:2: ()
             {
              before(grammarAccess.getBooleanValueTypeAccess().getBooleanValueTypeAction_0()); 
-            // InternalQLS.g:5254:2: ()
-            // InternalQLS.g:5254:3: 
+            // InternalQLS.g:5281:2: ()
+            // InternalQLS.g:5281:3: 
             {
             }
 
@@ -16310,16 +16395,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__1"
-    // InternalQLS.g:5262:1: rule__BooleanValueType__Group__1 : rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2 ;
+    // InternalQLS.g:5289:1: rule__BooleanValueType__Group__1 : rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2 ;
     public final void rule__BooleanValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5266:1: ( rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2 )
-            // InternalQLS.g:5267:2: rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2
+            // InternalQLS.g:5293:1: ( rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2 )
+            // InternalQLS.g:5294:2: rule__BooleanValueType__Group__1__Impl rule__BooleanValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__BooleanValueType__Group__1__Impl();
 
             state._fsp--;
@@ -16348,17 +16433,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__1__Impl"
-    // InternalQLS.g:5274:1: rule__BooleanValueType__Group__1__Impl : ( 'booleanType' ) ;
+    // InternalQLS.g:5301:1: rule__BooleanValueType__Group__1__Impl : ( 'booleanType' ) ;
     public final void rule__BooleanValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5278:1: ( ( 'booleanType' ) )
-            // InternalQLS.g:5279:1: ( 'booleanType' )
+            // InternalQLS.g:5305:1: ( ( 'booleanType' ) )
+            // InternalQLS.g:5306:1: ( 'booleanType' )
             {
-            // InternalQLS.g:5279:1: ( 'booleanType' )
-            // InternalQLS.g:5280:2: 'booleanType'
+            // InternalQLS.g:5306:1: ( 'booleanType' )
+            // InternalQLS.g:5307:2: 'booleanType'
             {
              before(grammarAccess.getBooleanValueTypeAccess().getBooleanTypeKeyword_1()); 
             match(input,65,FOLLOW_2); 
@@ -16385,16 +16470,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__2"
-    // InternalQLS.g:5289:1: rule__BooleanValueType__Group__2 : rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3 ;
+    // InternalQLS.g:5316:1: rule__BooleanValueType__Group__2 : rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3 ;
     public final void rule__BooleanValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5293:1: ( rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3 )
-            // InternalQLS.g:5294:2: rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3
+            // InternalQLS.g:5320:1: ( rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3 )
+            // InternalQLS.g:5321:2: rule__BooleanValueType__Group__2__Impl rule__BooleanValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__BooleanValueType__Group__2__Impl();
 
             state._fsp--;
@@ -16423,21 +16508,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__2__Impl"
-    // InternalQLS.g:5301:1: rule__BooleanValueType__Group__2__Impl : ( ( rule__BooleanValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:5328:1: rule__BooleanValueType__Group__2__Impl : ( ( rule__BooleanValueType__NameAssignment_2 ) ) ;
     public final void rule__BooleanValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5305:1: ( ( ( rule__BooleanValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:5306:1: ( ( rule__BooleanValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5332:1: ( ( ( rule__BooleanValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:5333:1: ( ( rule__BooleanValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:5306:1: ( ( rule__BooleanValueType__NameAssignment_2 ) )
-            // InternalQLS.g:5307:2: ( rule__BooleanValueType__NameAssignment_2 )
+            // InternalQLS.g:5333:1: ( ( rule__BooleanValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5334:2: ( rule__BooleanValueType__NameAssignment_2 )
             {
              before(grammarAccess.getBooleanValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:5308:2: ( rule__BooleanValueType__NameAssignment_2 )
-            // InternalQLS.g:5308:3: rule__BooleanValueType__NameAssignment_2
+            // InternalQLS.g:5335:2: ( rule__BooleanValueType__NameAssignment_2 )
+            // InternalQLS.g:5335:3: rule__BooleanValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValueType__NameAssignment_2();
@@ -16470,14 +16555,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__3"
-    // InternalQLS.g:5316:1: rule__BooleanValueType__Group__3 : rule__BooleanValueType__Group__3__Impl ;
+    // InternalQLS.g:5343:1: rule__BooleanValueType__Group__3 : rule__BooleanValueType__Group__3__Impl ;
     public final void rule__BooleanValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5320:1: ( rule__BooleanValueType__Group__3__Impl )
-            // InternalQLS.g:5321:2: rule__BooleanValueType__Group__3__Impl
+            // InternalQLS.g:5347:1: ( rule__BooleanValueType__Group__3__Impl )
+            // InternalQLS.g:5348:2: rule__BooleanValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValueType__Group__3__Impl();
@@ -16503,20 +16588,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group__3__Impl"
-    // InternalQLS.g:5327:1: rule__BooleanValueType__Group__3__Impl : ( ( rule__BooleanValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:5354:1: rule__BooleanValueType__Group__3__Impl : ( ( rule__BooleanValueType__Group_3__0 )? ) ;
     public final void rule__BooleanValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5331:1: ( ( ( rule__BooleanValueType__Group_3__0 )? ) )
-            // InternalQLS.g:5332:1: ( ( rule__BooleanValueType__Group_3__0 )? )
+            // InternalQLS.g:5358:1: ( ( ( rule__BooleanValueType__Group_3__0 )? ) )
+            // InternalQLS.g:5359:1: ( ( rule__BooleanValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:5332:1: ( ( rule__BooleanValueType__Group_3__0 )? )
-            // InternalQLS.g:5333:2: ( rule__BooleanValueType__Group_3__0 )?
+            // InternalQLS.g:5359:1: ( ( rule__BooleanValueType__Group_3__0 )? )
+            // InternalQLS.g:5360:2: ( rule__BooleanValueType__Group_3__0 )?
             {
              before(grammarAccess.getBooleanValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:5334:2: ( rule__BooleanValueType__Group_3__0 )?
+            // InternalQLS.g:5361:2: ( rule__BooleanValueType__Group_3__0 )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -16525,7 +16610,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt40) {
                 case 1 :
-                    // InternalQLS.g:5334:3: rule__BooleanValueType__Group_3__0
+                    // InternalQLS.g:5361:3: rule__BooleanValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BooleanValueType__Group_3__0();
@@ -16561,14 +16646,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__0"
-    // InternalQLS.g:5343:1: rule__BooleanValueType__Group_3__0 : rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1 ;
+    // InternalQLS.g:5370:1: rule__BooleanValueType__Group_3__0 : rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1 ;
     public final void rule__BooleanValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5347:1: ( rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1 )
-            // InternalQLS.g:5348:2: rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1
+            // InternalQLS.g:5374:1: ( rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1 )
+            // InternalQLS.g:5375:2: rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1
             {
             pushFollow(FOLLOW_48);
             rule__BooleanValueType__Group_3__0__Impl();
@@ -16599,17 +16684,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__0__Impl"
-    // InternalQLS.g:5355:1: rule__BooleanValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:5382:1: rule__BooleanValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__BooleanValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5359:1: ( ( '{' ) )
-            // InternalQLS.g:5360:1: ( '{' )
+            // InternalQLS.g:5386:1: ( ( '{' ) )
+            // InternalQLS.g:5387:1: ( '{' )
             {
-            // InternalQLS.g:5360:1: ( '{' )
-            // InternalQLS.g:5361:2: '{'
+            // InternalQLS.g:5387:1: ( '{' )
+            // InternalQLS.g:5388:2: '{'
             {
              before(grammarAccess.getBooleanValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -16636,14 +16721,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__1"
-    // InternalQLS.g:5370:1: rule__BooleanValueType__Group_3__1 : rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2 ;
+    // InternalQLS.g:5397:1: rule__BooleanValueType__Group_3__1 : rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2 ;
     public final void rule__BooleanValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5374:1: ( rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2 )
-            // InternalQLS.g:5375:2: rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2
+            // InternalQLS.g:5401:1: ( rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2 )
+            // InternalQLS.g:5402:2: rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2
             {
             pushFollow(FOLLOW_48);
             rule__BooleanValueType__Group_3__1__Impl();
@@ -16674,20 +16759,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__1__Impl"
-    // InternalQLS.g:5382:1: rule__BooleanValueType__Group_3__1__Impl : ( ( rule__BooleanValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:5409:1: rule__BooleanValueType__Group_3__1__Impl : ( ( rule__BooleanValueType__Group_3_1__0 )? ) ;
     public final void rule__BooleanValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5386:1: ( ( ( rule__BooleanValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:5387:1: ( ( rule__BooleanValueType__Group_3_1__0 )? )
+            // InternalQLS.g:5413:1: ( ( ( rule__BooleanValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:5414:1: ( ( rule__BooleanValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:5387:1: ( ( rule__BooleanValueType__Group_3_1__0 )? )
-            // InternalQLS.g:5388:2: ( rule__BooleanValueType__Group_3_1__0 )?
+            // InternalQLS.g:5414:1: ( ( rule__BooleanValueType__Group_3_1__0 )? )
+            // InternalQLS.g:5415:2: ( rule__BooleanValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getBooleanValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:5389:2: ( rule__BooleanValueType__Group_3_1__0 )?
+            // InternalQLS.g:5416:2: ( rule__BooleanValueType__Group_3_1__0 )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -16696,7 +16781,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt41) {
                 case 1 :
-                    // InternalQLS.g:5389:3: rule__BooleanValueType__Group_3_1__0
+                    // InternalQLS.g:5416:3: rule__BooleanValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BooleanValueType__Group_3_1__0();
@@ -16732,14 +16817,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__2"
-    // InternalQLS.g:5397:1: rule__BooleanValueType__Group_3__2 : rule__BooleanValueType__Group_3__2__Impl ;
+    // InternalQLS.g:5424:1: rule__BooleanValueType__Group_3__2 : rule__BooleanValueType__Group_3__2__Impl ;
     public final void rule__BooleanValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5401:1: ( rule__BooleanValueType__Group_3__2__Impl )
-            // InternalQLS.g:5402:2: rule__BooleanValueType__Group_3__2__Impl
+            // InternalQLS.g:5428:1: ( rule__BooleanValueType__Group_3__2__Impl )
+            // InternalQLS.g:5429:2: rule__BooleanValueType__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValueType__Group_3__2__Impl();
@@ -16765,17 +16850,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3__2__Impl"
-    // InternalQLS.g:5408:1: rule__BooleanValueType__Group_3__2__Impl : ( '}' ) ;
+    // InternalQLS.g:5435:1: rule__BooleanValueType__Group_3__2__Impl : ( '}' ) ;
     public final void rule__BooleanValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5412:1: ( ( '}' ) )
-            // InternalQLS.g:5413:1: ( '}' )
+            // InternalQLS.g:5439:1: ( ( '}' ) )
+            // InternalQLS.g:5440:1: ( '}' )
             {
-            // InternalQLS.g:5413:1: ( '}' )
-            // InternalQLS.g:5414:2: '}'
+            // InternalQLS.g:5440:1: ( '}' )
+            // InternalQLS.g:5441:2: '}'
             {
              before(grammarAccess.getBooleanValueTypeAccess().getRightCurlyBracketKeyword_3_2()); 
             match(input,46,FOLLOW_2); 
@@ -16802,14 +16887,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3_1__0"
-    // InternalQLS.g:5424:1: rule__BooleanValueType__Group_3_1__0 : rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1 ;
+    // InternalQLS.g:5451:1: rule__BooleanValueType__Group_3_1__0 : rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1 ;
     public final void rule__BooleanValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5428:1: ( rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1 )
-            // InternalQLS.g:5429:2: rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1
+            // InternalQLS.g:5455:1: ( rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1 )
+            // InternalQLS.g:5456:2: rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__BooleanValueType__Group_3_1__0__Impl();
@@ -16840,17 +16925,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:5436:1: rule__BooleanValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:5463:1: rule__BooleanValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__BooleanValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5440:1: ( ( 'unit' ) )
-            // InternalQLS.g:5441:1: ( 'unit' )
+            // InternalQLS.g:5467:1: ( ( 'unit' ) )
+            // InternalQLS.g:5468:1: ( 'unit' )
             {
-            // InternalQLS.g:5441:1: ( 'unit' )
-            // InternalQLS.g:5442:2: 'unit'
+            // InternalQLS.g:5468:1: ( 'unit' )
+            // InternalQLS.g:5469:2: 'unit'
             {
              before(grammarAccess.getBooleanValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -16877,14 +16962,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3_1__1"
-    // InternalQLS.g:5451:1: rule__BooleanValueType__Group_3_1__1 : rule__BooleanValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:5478:1: rule__BooleanValueType__Group_3_1__1 : rule__BooleanValueType__Group_3_1__1__Impl ;
     public final void rule__BooleanValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5455:1: ( rule__BooleanValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:5456:2: rule__BooleanValueType__Group_3_1__1__Impl
+            // InternalQLS.g:5482:1: ( rule__BooleanValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:5483:2: rule__BooleanValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValueType__Group_3_1__1__Impl();
@@ -16910,21 +16995,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:5462:1: rule__BooleanValueType__Group_3_1__1__Impl : ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:5489:1: rule__BooleanValueType__Group_3_1__1__Impl : ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__BooleanValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5466:1: ( ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:5467:1: ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:5493:1: ( ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:5494:1: ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:5467:1: ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:5468:2: ( rule__BooleanValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:5494:1: ( ( rule__BooleanValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:5495:2: ( rule__BooleanValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getBooleanValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:5469:2: ( rule__BooleanValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:5469:3: rule__BooleanValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:5496:2: ( rule__BooleanValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:5496:3: rule__BooleanValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValueType__UnitAssignment_3_1_1();
@@ -16957,14 +17042,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__0"
-    // InternalQLS.g:5478:1: rule__IntegerValueType__Group__0 : rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1 ;
+    // InternalQLS.g:5505:1: rule__IntegerValueType__Group__0 : rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1 ;
     public final void rule__IntegerValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5482:1: ( rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1 )
-            // InternalQLS.g:5483:2: rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1
+            // InternalQLS.g:5509:1: ( rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1 )
+            // InternalQLS.g:5510:2: rule__IntegerValueType__Group__0__Impl rule__IntegerValueType__Group__1
             {
             pushFollow(FOLLOW_53);
             rule__IntegerValueType__Group__0__Impl();
@@ -16995,21 +17080,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__0__Impl"
-    // InternalQLS.g:5490:1: rule__IntegerValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:5517:1: rule__IntegerValueType__Group__0__Impl : ( () ) ;
     public final void rule__IntegerValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5494:1: ( ( () ) )
-            // InternalQLS.g:5495:1: ( () )
+            // InternalQLS.g:5521:1: ( ( () ) )
+            // InternalQLS.g:5522:1: ( () )
             {
-            // InternalQLS.g:5495:1: ( () )
-            // InternalQLS.g:5496:2: ()
+            // InternalQLS.g:5522:1: ( () )
+            // InternalQLS.g:5523:2: ()
             {
              before(grammarAccess.getIntegerValueTypeAccess().getIntegerValueTypeAction_0()); 
-            // InternalQLS.g:5497:2: ()
-            // InternalQLS.g:5497:3: 
+            // InternalQLS.g:5524:2: ()
+            // InternalQLS.g:5524:3: 
             {
             }
 
@@ -17032,16 +17117,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__1"
-    // InternalQLS.g:5505:1: rule__IntegerValueType__Group__1 : rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2 ;
+    // InternalQLS.g:5532:1: rule__IntegerValueType__Group__1 : rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2 ;
     public final void rule__IntegerValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5509:1: ( rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2 )
-            // InternalQLS.g:5510:2: rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2
+            // InternalQLS.g:5536:1: ( rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2 )
+            // InternalQLS.g:5537:2: rule__IntegerValueType__Group__1__Impl rule__IntegerValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__IntegerValueType__Group__1__Impl();
 
             state._fsp--;
@@ -17070,17 +17155,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__1__Impl"
-    // InternalQLS.g:5517:1: rule__IntegerValueType__Group__1__Impl : ( 'integerType' ) ;
+    // InternalQLS.g:5544:1: rule__IntegerValueType__Group__1__Impl : ( 'integerType' ) ;
     public final void rule__IntegerValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5521:1: ( ( 'integerType' ) )
-            // InternalQLS.g:5522:1: ( 'integerType' )
+            // InternalQLS.g:5548:1: ( ( 'integerType' ) )
+            // InternalQLS.g:5549:1: ( 'integerType' )
             {
-            // InternalQLS.g:5522:1: ( 'integerType' )
-            // InternalQLS.g:5523:2: 'integerType'
+            // InternalQLS.g:5549:1: ( 'integerType' )
+            // InternalQLS.g:5550:2: 'integerType'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getIntegerTypeKeyword_1()); 
             match(input,66,FOLLOW_2); 
@@ -17107,16 +17192,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__2"
-    // InternalQLS.g:5532:1: rule__IntegerValueType__Group__2 : rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3 ;
+    // InternalQLS.g:5559:1: rule__IntegerValueType__Group__2 : rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3 ;
     public final void rule__IntegerValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5536:1: ( rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3 )
-            // InternalQLS.g:5537:2: rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3
+            // InternalQLS.g:5563:1: ( rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3 )
+            // InternalQLS.g:5564:2: rule__IntegerValueType__Group__2__Impl rule__IntegerValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__IntegerValueType__Group__2__Impl();
 
             state._fsp--;
@@ -17145,21 +17230,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__2__Impl"
-    // InternalQLS.g:5544:1: rule__IntegerValueType__Group__2__Impl : ( ( rule__IntegerValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:5571:1: rule__IntegerValueType__Group__2__Impl : ( ( rule__IntegerValueType__NameAssignment_2 ) ) ;
     public final void rule__IntegerValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5548:1: ( ( ( rule__IntegerValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:5549:1: ( ( rule__IntegerValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5575:1: ( ( ( rule__IntegerValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:5576:1: ( ( rule__IntegerValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:5549:1: ( ( rule__IntegerValueType__NameAssignment_2 ) )
-            // InternalQLS.g:5550:2: ( rule__IntegerValueType__NameAssignment_2 )
+            // InternalQLS.g:5576:1: ( ( rule__IntegerValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5577:2: ( rule__IntegerValueType__NameAssignment_2 )
             {
              before(grammarAccess.getIntegerValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:5551:2: ( rule__IntegerValueType__NameAssignment_2 )
-            // InternalQLS.g:5551:3: rule__IntegerValueType__NameAssignment_2
+            // InternalQLS.g:5578:2: ( rule__IntegerValueType__NameAssignment_2 )
+            // InternalQLS.g:5578:3: rule__IntegerValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__NameAssignment_2();
@@ -17192,14 +17277,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__3"
-    // InternalQLS.g:5559:1: rule__IntegerValueType__Group__3 : rule__IntegerValueType__Group__3__Impl ;
+    // InternalQLS.g:5586:1: rule__IntegerValueType__Group__3 : rule__IntegerValueType__Group__3__Impl ;
     public final void rule__IntegerValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5563:1: ( rule__IntegerValueType__Group__3__Impl )
-            // InternalQLS.g:5564:2: rule__IntegerValueType__Group__3__Impl
+            // InternalQLS.g:5590:1: ( rule__IntegerValueType__Group__3__Impl )
+            // InternalQLS.g:5591:2: rule__IntegerValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__Group__3__Impl();
@@ -17225,20 +17310,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group__3__Impl"
-    // InternalQLS.g:5570:1: rule__IntegerValueType__Group__3__Impl : ( ( rule__IntegerValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:5597:1: rule__IntegerValueType__Group__3__Impl : ( ( rule__IntegerValueType__Group_3__0 )? ) ;
     public final void rule__IntegerValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5574:1: ( ( ( rule__IntegerValueType__Group_3__0 )? ) )
-            // InternalQLS.g:5575:1: ( ( rule__IntegerValueType__Group_3__0 )? )
+            // InternalQLS.g:5601:1: ( ( ( rule__IntegerValueType__Group_3__0 )? ) )
+            // InternalQLS.g:5602:1: ( ( rule__IntegerValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:5575:1: ( ( rule__IntegerValueType__Group_3__0 )? )
-            // InternalQLS.g:5576:2: ( rule__IntegerValueType__Group_3__0 )?
+            // InternalQLS.g:5602:1: ( ( rule__IntegerValueType__Group_3__0 )? )
+            // InternalQLS.g:5603:2: ( rule__IntegerValueType__Group_3__0 )?
             {
              before(grammarAccess.getIntegerValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:5577:2: ( rule__IntegerValueType__Group_3__0 )?
+            // InternalQLS.g:5604:2: ( rule__IntegerValueType__Group_3__0 )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -17247,7 +17332,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt42) {
                 case 1 :
-                    // InternalQLS.g:5577:3: rule__IntegerValueType__Group_3__0
+                    // InternalQLS.g:5604:3: rule__IntegerValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IntegerValueType__Group_3__0();
@@ -17283,14 +17368,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__0"
-    // InternalQLS.g:5586:1: rule__IntegerValueType__Group_3__0 : rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1 ;
+    // InternalQLS.g:5613:1: rule__IntegerValueType__Group_3__0 : rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1 ;
     public final void rule__IntegerValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5590:1: ( rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1 )
-            // InternalQLS.g:5591:2: rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1
+            // InternalQLS.g:5617:1: ( rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1 )
+            // InternalQLS.g:5618:2: rule__IntegerValueType__Group_3__0__Impl rule__IntegerValueType__Group_3__1
             {
             pushFollow(FOLLOW_54);
             rule__IntegerValueType__Group_3__0__Impl();
@@ -17321,17 +17406,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__0__Impl"
-    // InternalQLS.g:5598:1: rule__IntegerValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:5625:1: rule__IntegerValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__IntegerValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5602:1: ( ( '{' ) )
-            // InternalQLS.g:5603:1: ( '{' )
+            // InternalQLS.g:5629:1: ( ( '{' ) )
+            // InternalQLS.g:5630:1: ( '{' )
             {
-            // InternalQLS.g:5603:1: ( '{' )
-            // InternalQLS.g:5604:2: '{'
+            // InternalQLS.g:5630:1: ( '{' )
+            // InternalQLS.g:5631:2: '{'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -17358,14 +17443,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__1"
-    // InternalQLS.g:5613:1: rule__IntegerValueType__Group_3__1 : rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2 ;
+    // InternalQLS.g:5640:1: rule__IntegerValueType__Group_3__1 : rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2 ;
     public final void rule__IntegerValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5617:1: ( rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2 )
-            // InternalQLS.g:5618:2: rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2
+            // InternalQLS.g:5644:1: ( rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2 )
+            // InternalQLS.g:5645:2: rule__IntegerValueType__Group_3__1__Impl rule__IntegerValueType__Group_3__2
             {
             pushFollow(FOLLOW_54);
             rule__IntegerValueType__Group_3__1__Impl();
@@ -17396,20 +17481,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__1__Impl"
-    // InternalQLS.g:5625:1: rule__IntegerValueType__Group_3__1__Impl : ( ( rule__IntegerValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:5652:1: rule__IntegerValueType__Group_3__1__Impl : ( ( rule__IntegerValueType__Group_3_1__0 )? ) ;
     public final void rule__IntegerValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5629:1: ( ( ( rule__IntegerValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:5630:1: ( ( rule__IntegerValueType__Group_3_1__0 )? )
+            // InternalQLS.g:5656:1: ( ( ( rule__IntegerValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:5657:1: ( ( rule__IntegerValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:5630:1: ( ( rule__IntegerValueType__Group_3_1__0 )? )
-            // InternalQLS.g:5631:2: ( rule__IntegerValueType__Group_3_1__0 )?
+            // InternalQLS.g:5657:1: ( ( rule__IntegerValueType__Group_3_1__0 )? )
+            // InternalQLS.g:5658:2: ( rule__IntegerValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getIntegerValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:5632:2: ( rule__IntegerValueType__Group_3_1__0 )?
+            // InternalQLS.g:5659:2: ( rule__IntegerValueType__Group_3_1__0 )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -17418,7 +17503,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt43) {
                 case 1 :
-                    // InternalQLS.g:5632:3: rule__IntegerValueType__Group_3_1__0
+                    // InternalQLS.g:5659:3: rule__IntegerValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IntegerValueType__Group_3_1__0();
@@ -17454,14 +17539,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__2"
-    // InternalQLS.g:5640:1: rule__IntegerValueType__Group_3__2 : rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3 ;
+    // InternalQLS.g:5667:1: rule__IntegerValueType__Group_3__2 : rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3 ;
     public final void rule__IntegerValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5644:1: ( rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3 )
-            // InternalQLS.g:5645:2: rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3
+            // InternalQLS.g:5671:1: ( rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3 )
+            // InternalQLS.g:5672:2: rule__IntegerValueType__Group_3__2__Impl rule__IntegerValueType__Group_3__3
             {
             pushFollow(FOLLOW_54);
             rule__IntegerValueType__Group_3__2__Impl();
@@ -17492,20 +17577,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__2__Impl"
-    // InternalQLS.g:5652:1: rule__IntegerValueType__Group_3__2__Impl : ( ( rule__IntegerValueType__Group_3_2__0 )? ) ;
+    // InternalQLS.g:5679:1: rule__IntegerValueType__Group_3__2__Impl : ( ( rule__IntegerValueType__Group_3_2__0 )? ) ;
     public final void rule__IntegerValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5656:1: ( ( ( rule__IntegerValueType__Group_3_2__0 )? ) )
-            // InternalQLS.g:5657:1: ( ( rule__IntegerValueType__Group_3_2__0 )? )
+            // InternalQLS.g:5683:1: ( ( ( rule__IntegerValueType__Group_3_2__0 )? ) )
+            // InternalQLS.g:5684:1: ( ( rule__IntegerValueType__Group_3_2__0 )? )
             {
-            // InternalQLS.g:5657:1: ( ( rule__IntegerValueType__Group_3_2__0 )? )
-            // InternalQLS.g:5658:2: ( rule__IntegerValueType__Group_3_2__0 )?
+            // InternalQLS.g:5684:1: ( ( rule__IntegerValueType__Group_3_2__0 )? )
+            // InternalQLS.g:5685:2: ( rule__IntegerValueType__Group_3_2__0 )?
             {
              before(grammarAccess.getIntegerValueTypeAccess().getGroup_3_2()); 
-            // InternalQLS.g:5659:2: ( rule__IntegerValueType__Group_3_2__0 )?
+            // InternalQLS.g:5686:2: ( rule__IntegerValueType__Group_3_2__0 )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -17514,7 +17599,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt44) {
                 case 1 :
-                    // InternalQLS.g:5659:3: rule__IntegerValueType__Group_3_2__0
+                    // InternalQLS.g:5686:3: rule__IntegerValueType__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IntegerValueType__Group_3_2__0();
@@ -17550,14 +17635,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__3"
-    // InternalQLS.g:5667:1: rule__IntegerValueType__Group_3__3 : rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4 ;
+    // InternalQLS.g:5694:1: rule__IntegerValueType__Group_3__3 : rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4 ;
     public final void rule__IntegerValueType__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5671:1: ( rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4 )
-            // InternalQLS.g:5672:2: rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4
+            // InternalQLS.g:5698:1: ( rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4 )
+            // InternalQLS.g:5699:2: rule__IntegerValueType__Group_3__3__Impl rule__IntegerValueType__Group_3__4
             {
             pushFollow(FOLLOW_54);
             rule__IntegerValueType__Group_3__3__Impl();
@@ -17588,20 +17673,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__3__Impl"
-    // InternalQLS.g:5679:1: rule__IntegerValueType__Group_3__3__Impl : ( ( rule__IntegerValueType__Group_3_3__0 )? ) ;
+    // InternalQLS.g:5706:1: rule__IntegerValueType__Group_3__3__Impl : ( ( rule__IntegerValueType__Group_3_3__0 )? ) ;
     public final void rule__IntegerValueType__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5683:1: ( ( ( rule__IntegerValueType__Group_3_3__0 )? ) )
-            // InternalQLS.g:5684:1: ( ( rule__IntegerValueType__Group_3_3__0 )? )
+            // InternalQLS.g:5710:1: ( ( ( rule__IntegerValueType__Group_3_3__0 )? ) )
+            // InternalQLS.g:5711:1: ( ( rule__IntegerValueType__Group_3_3__0 )? )
             {
-            // InternalQLS.g:5684:1: ( ( rule__IntegerValueType__Group_3_3__0 )? )
-            // InternalQLS.g:5685:2: ( rule__IntegerValueType__Group_3_3__0 )?
+            // InternalQLS.g:5711:1: ( ( rule__IntegerValueType__Group_3_3__0 )? )
+            // InternalQLS.g:5712:2: ( rule__IntegerValueType__Group_3_3__0 )?
             {
              before(grammarAccess.getIntegerValueTypeAccess().getGroup_3_3()); 
-            // InternalQLS.g:5686:2: ( rule__IntegerValueType__Group_3_3__0 )?
+            // InternalQLS.g:5713:2: ( rule__IntegerValueType__Group_3_3__0 )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
@@ -17610,7 +17695,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt45) {
                 case 1 :
-                    // InternalQLS.g:5686:3: rule__IntegerValueType__Group_3_3__0
+                    // InternalQLS.g:5713:3: rule__IntegerValueType__Group_3_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__IntegerValueType__Group_3_3__0();
@@ -17646,14 +17731,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__4"
-    // InternalQLS.g:5694:1: rule__IntegerValueType__Group_3__4 : rule__IntegerValueType__Group_3__4__Impl ;
+    // InternalQLS.g:5721:1: rule__IntegerValueType__Group_3__4 : rule__IntegerValueType__Group_3__4__Impl ;
     public final void rule__IntegerValueType__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5698:1: ( rule__IntegerValueType__Group_3__4__Impl )
-            // InternalQLS.g:5699:2: rule__IntegerValueType__Group_3__4__Impl
+            // InternalQLS.g:5725:1: ( rule__IntegerValueType__Group_3__4__Impl )
+            // InternalQLS.g:5726:2: rule__IntegerValueType__Group_3__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__Group_3__4__Impl();
@@ -17679,17 +17764,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3__4__Impl"
-    // InternalQLS.g:5705:1: rule__IntegerValueType__Group_3__4__Impl : ( '}' ) ;
+    // InternalQLS.g:5732:1: rule__IntegerValueType__Group_3__4__Impl : ( '}' ) ;
     public final void rule__IntegerValueType__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5709:1: ( ( '}' ) )
-            // InternalQLS.g:5710:1: ( '}' )
+            // InternalQLS.g:5736:1: ( ( '}' ) )
+            // InternalQLS.g:5737:1: ( '}' )
             {
-            // InternalQLS.g:5710:1: ( '}' )
-            // InternalQLS.g:5711:2: '}'
+            // InternalQLS.g:5737:1: ( '}' )
+            // InternalQLS.g:5738:2: '}'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getRightCurlyBracketKeyword_3_4()); 
             match(input,46,FOLLOW_2); 
@@ -17716,14 +17801,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_1__0"
-    // InternalQLS.g:5721:1: rule__IntegerValueType__Group_3_1__0 : rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1 ;
+    // InternalQLS.g:5748:1: rule__IntegerValueType__Group_3_1__0 : rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1 ;
     public final void rule__IntegerValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5725:1: ( rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1 )
-            // InternalQLS.g:5726:2: rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1
+            // InternalQLS.g:5752:1: ( rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1 )
+            // InternalQLS.g:5753:2: rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__IntegerValueType__Group_3_1__0__Impl();
@@ -17754,17 +17839,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:5733:1: rule__IntegerValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:5760:1: rule__IntegerValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__IntegerValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5737:1: ( ( 'unit' ) )
-            // InternalQLS.g:5738:1: ( 'unit' )
+            // InternalQLS.g:5764:1: ( ( 'unit' ) )
+            // InternalQLS.g:5765:1: ( 'unit' )
             {
-            // InternalQLS.g:5738:1: ( 'unit' )
-            // InternalQLS.g:5739:2: 'unit'
+            // InternalQLS.g:5765:1: ( 'unit' )
+            // InternalQLS.g:5766:2: 'unit'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -17791,14 +17876,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_1__1"
-    // InternalQLS.g:5748:1: rule__IntegerValueType__Group_3_1__1 : rule__IntegerValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:5775:1: rule__IntegerValueType__Group_3_1__1 : rule__IntegerValueType__Group_3_1__1__Impl ;
     public final void rule__IntegerValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5752:1: ( rule__IntegerValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:5753:2: rule__IntegerValueType__Group_3_1__1__Impl
+            // InternalQLS.g:5779:1: ( rule__IntegerValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:5780:2: rule__IntegerValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__Group_3_1__1__Impl();
@@ -17824,21 +17909,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:5759:1: rule__IntegerValueType__Group_3_1__1__Impl : ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:5786:1: rule__IntegerValueType__Group_3_1__1__Impl : ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__IntegerValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5763:1: ( ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:5764:1: ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:5790:1: ( ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:5791:1: ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:5764:1: ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:5765:2: ( rule__IntegerValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:5791:1: ( ( rule__IntegerValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:5792:2: ( rule__IntegerValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getIntegerValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:5766:2: ( rule__IntegerValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:5766:3: rule__IntegerValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:5793:2: ( rule__IntegerValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:5793:3: rule__IntegerValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__UnitAssignment_3_1_1();
@@ -17871,14 +17956,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_2__0"
-    // InternalQLS.g:5775:1: rule__IntegerValueType__Group_3_2__0 : rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1 ;
+    // InternalQLS.g:5802:1: rule__IntegerValueType__Group_3_2__0 : rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1 ;
     public final void rule__IntegerValueType__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5779:1: ( rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1 )
-            // InternalQLS.g:5780:2: rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1
+            // InternalQLS.g:5806:1: ( rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1 )
+            // InternalQLS.g:5807:2: rule__IntegerValueType__Group_3_2__0__Impl rule__IntegerValueType__Group_3_2__1
             {
             pushFollow(FOLLOW_55);
             rule__IntegerValueType__Group_3_2__0__Impl();
@@ -17909,17 +17994,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_2__0__Impl"
-    // InternalQLS.g:5787:1: rule__IntegerValueType__Group_3_2__0__Impl : ( 'min' ) ;
+    // InternalQLS.g:5814:1: rule__IntegerValueType__Group_3_2__0__Impl : ( 'min' ) ;
     public final void rule__IntegerValueType__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5791:1: ( ( 'min' ) )
-            // InternalQLS.g:5792:1: ( 'min' )
+            // InternalQLS.g:5818:1: ( ( 'min' ) )
+            // InternalQLS.g:5819:1: ( 'min' )
             {
-            // InternalQLS.g:5792:1: ( 'min' )
-            // InternalQLS.g:5793:2: 'min'
+            // InternalQLS.g:5819:1: ( 'min' )
+            // InternalQLS.g:5820:2: 'min'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMinKeyword_3_2_0()); 
             match(input,67,FOLLOW_2); 
@@ -17946,14 +18031,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_2__1"
-    // InternalQLS.g:5802:1: rule__IntegerValueType__Group_3_2__1 : rule__IntegerValueType__Group_3_2__1__Impl ;
+    // InternalQLS.g:5829:1: rule__IntegerValueType__Group_3_2__1 : rule__IntegerValueType__Group_3_2__1__Impl ;
     public final void rule__IntegerValueType__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5806:1: ( rule__IntegerValueType__Group_3_2__1__Impl )
-            // InternalQLS.g:5807:2: rule__IntegerValueType__Group_3_2__1__Impl
+            // InternalQLS.g:5833:1: ( rule__IntegerValueType__Group_3_2__1__Impl )
+            // InternalQLS.g:5834:2: rule__IntegerValueType__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__Group_3_2__1__Impl();
@@ -17979,21 +18064,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_2__1__Impl"
-    // InternalQLS.g:5813:1: rule__IntegerValueType__Group_3_2__1__Impl : ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) ) ;
+    // InternalQLS.g:5840:1: rule__IntegerValueType__Group_3_2__1__Impl : ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) ) ;
     public final void rule__IntegerValueType__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5817:1: ( ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) ) )
-            // InternalQLS.g:5818:1: ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) )
+            // InternalQLS.g:5844:1: ( ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) ) )
+            // InternalQLS.g:5845:1: ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) )
             {
-            // InternalQLS.g:5818:1: ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) )
-            // InternalQLS.g:5819:2: ( rule__IntegerValueType__MinAssignment_3_2_1 )
+            // InternalQLS.g:5845:1: ( ( rule__IntegerValueType__MinAssignment_3_2_1 ) )
+            // InternalQLS.g:5846:2: ( rule__IntegerValueType__MinAssignment_3_2_1 )
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMinAssignment_3_2_1()); 
-            // InternalQLS.g:5820:2: ( rule__IntegerValueType__MinAssignment_3_2_1 )
-            // InternalQLS.g:5820:3: rule__IntegerValueType__MinAssignment_3_2_1
+            // InternalQLS.g:5847:2: ( rule__IntegerValueType__MinAssignment_3_2_1 )
+            // InternalQLS.g:5847:3: rule__IntegerValueType__MinAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__MinAssignment_3_2_1();
@@ -18026,14 +18111,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_3__0"
-    // InternalQLS.g:5829:1: rule__IntegerValueType__Group_3_3__0 : rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1 ;
+    // InternalQLS.g:5856:1: rule__IntegerValueType__Group_3_3__0 : rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1 ;
     public final void rule__IntegerValueType__Group_3_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5833:1: ( rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1 )
-            // InternalQLS.g:5834:2: rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1
+            // InternalQLS.g:5860:1: ( rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1 )
+            // InternalQLS.g:5861:2: rule__IntegerValueType__Group_3_3__0__Impl rule__IntegerValueType__Group_3_3__1
             {
             pushFollow(FOLLOW_55);
             rule__IntegerValueType__Group_3_3__0__Impl();
@@ -18064,17 +18149,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_3__0__Impl"
-    // InternalQLS.g:5841:1: rule__IntegerValueType__Group_3_3__0__Impl : ( 'max' ) ;
+    // InternalQLS.g:5868:1: rule__IntegerValueType__Group_3_3__0__Impl : ( 'max' ) ;
     public final void rule__IntegerValueType__Group_3_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5845:1: ( ( 'max' ) )
-            // InternalQLS.g:5846:1: ( 'max' )
+            // InternalQLS.g:5872:1: ( ( 'max' ) )
+            // InternalQLS.g:5873:1: ( 'max' )
             {
-            // InternalQLS.g:5846:1: ( 'max' )
-            // InternalQLS.g:5847:2: 'max'
+            // InternalQLS.g:5873:1: ( 'max' )
+            // InternalQLS.g:5874:2: 'max'
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMaxKeyword_3_3_0()); 
             match(input,68,FOLLOW_2); 
@@ -18101,14 +18186,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_3__1"
-    // InternalQLS.g:5856:1: rule__IntegerValueType__Group_3_3__1 : rule__IntegerValueType__Group_3_3__1__Impl ;
+    // InternalQLS.g:5883:1: rule__IntegerValueType__Group_3_3__1 : rule__IntegerValueType__Group_3_3__1__Impl ;
     public final void rule__IntegerValueType__Group_3_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5860:1: ( rule__IntegerValueType__Group_3_3__1__Impl )
-            // InternalQLS.g:5861:2: rule__IntegerValueType__Group_3_3__1__Impl
+            // InternalQLS.g:5887:1: ( rule__IntegerValueType__Group_3_3__1__Impl )
+            // InternalQLS.g:5888:2: rule__IntegerValueType__Group_3_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__Group_3_3__1__Impl();
@@ -18134,21 +18219,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__Group_3_3__1__Impl"
-    // InternalQLS.g:5867:1: rule__IntegerValueType__Group_3_3__1__Impl : ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) ) ;
+    // InternalQLS.g:5894:1: rule__IntegerValueType__Group_3_3__1__Impl : ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) ) ;
     public final void rule__IntegerValueType__Group_3_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5871:1: ( ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) ) )
-            // InternalQLS.g:5872:1: ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) )
+            // InternalQLS.g:5898:1: ( ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) ) )
+            // InternalQLS.g:5899:1: ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) )
             {
-            // InternalQLS.g:5872:1: ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) )
-            // InternalQLS.g:5873:2: ( rule__IntegerValueType__MaxAssignment_3_3_1 )
+            // InternalQLS.g:5899:1: ( ( rule__IntegerValueType__MaxAssignment_3_3_1 ) )
+            // InternalQLS.g:5900:2: ( rule__IntegerValueType__MaxAssignment_3_3_1 )
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMaxAssignment_3_3_1()); 
-            // InternalQLS.g:5874:2: ( rule__IntegerValueType__MaxAssignment_3_3_1 )
-            // InternalQLS.g:5874:3: rule__IntegerValueType__MaxAssignment_3_3_1
+            // InternalQLS.g:5901:2: ( rule__IntegerValueType__MaxAssignment_3_3_1 )
+            // InternalQLS.g:5901:3: rule__IntegerValueType__MaxAssignment_3_3_1
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValueType__MaxAssignment_3_3_1();
@@ -18181,14 +18266,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__0"
-    // InternalQLS.g:5883:1: rule__DecimalValueType__Group__0 : rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1 ;
+    // InternalQLS.g:5910:1: rule__DecimalValueType__Group__0 : rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1 ;
     public final void rule__DecimalValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5887:1: ( rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1 )
-            // InternalQLS.g:5888:2: rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1
+            // InternalQLS.g:5914:1: ( rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1 )
+            // InternalQLS.g:5915:2: rule__DecimalValueType__Group__0__Impl rule__DecimalValueType__Group__1
             {
             pushFollow(FOLLOW_56);
             rule__DecimalValueType__Group__0__Impl();
@@ -18219,21 +18304,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__0__Impl"
-    // InternalQLS.g:5895:1: rule__DecimalValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:5922:1: rule__DecimalValueType__Group__0__Impl : ( () ) ;
     public final void rule__DecimalValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5899:1: ( ( () ) )
-            // InternalQLS.g:5900:1: ( () )
+            // InternalQLS.g:5926:1: ( ( () ) )
+            // InternalQLS.g:5927:1: ( () )
             {
-            // InternalQLS.g:5900:1: ( () )
-            // InternalQLS.g:5901:2: ()
+            // InternalQLS.g:5927:1: ( () )
+            // InternalQLS.g:5928:2: ()
             {
              before(grammarAccess.getDecimalValueTypeAccess().getDecimalValueTypeAction_0()); 
-            // InternalQLS.g:5902:2: ()
-            // InternalQLS.g:5902:3: 
+            // InternalQLS.g:5929:2: ()
+            // InternalQLS.g:5929:3: 
             {
             }
 
@@ -18256,16 +18341,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__1"
-    // InternalQLS.g:5910:1: rule__DecimalValueType__Group__1 : rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2 ;
+    // InternalQLS.g:5937:1: rule__DecimalValueType__Group__1 : rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2 ;
     public final void rule__DecimalValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5914:1: ( rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2 )
-            // InternalQLS.g:5915:2: rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2
+            // InternalQLS.g:5941:1: ( rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2 )
+            // InternalQLS.g:5942:2: rule__DecimalValueType__Group__1__Impl rule__DecimalValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__DecimalValueType__Group__1__Impl();
 
             state._fsp--;
@@ -18294,17 +18379,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__1__Impl"
-    // InternalQLS.g:5922:1: rule__DecimalValueType__Group__1__Impl : ( 'decimalType' ) ;
+    // InternalQLS.g:5949:1: rule__DecimalValueType__Group__1__Impl : ( 'decimalType' ) ;
     public final void rule__DecimalValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5926:1: ( ( 'decimalType' ) )
-            // InternalQLS.g:5927:1: ( 'decimalType' )
+            // InternalQLS.g:5953:1: ( ( 'decimalType' ) )
+            // InternalQLS.g:5954:1: ( 'decimalType' )
             {
-            // InternalQLS.g:5927:1: ( 'decimalType' )
-            // InternalQLS.g:5928:2: 'decimalType'
+            // InternalQLS.g:5954:1: ( 'decimalType' )
+            // InternalQLS.g:5955:2: 'decimalType'
             {
              before(grammarAccess.getDecimalValueTypeAccess().getDecimalTypeKeyword_1()); 
             match(input,69,FOLLOW_2); 
@@ -18331,16 +18416,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__2"
-    // InternalQLS.g:5937:1: rule__DecimalValueType__Group__2 : rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3 ;
+    // InternalQLS.g:5964:1: rule__DecimalValueType__Group__2 : rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3 ;
     public final void rule__DecimalValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5941:1: ( rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3 )
-            // InternalQLS.g:5942:2: rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3
+            // InternalQLS.g:5968:1: ( rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3 )
+            // InternalQLS.g:5969:2: rule__DecimalValueType__Group__2__Impl rule__DecimalValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__DecimalValueType__Group__2__Impl();
 
             state._fsp--;
@@ -18369,21 +18454,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__2__Impl"
-    // InternalQLS.g:5949:1: rule__DecimalValueType__Group__2__Impl : ( ( rule__DecimalValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:5976:1: rule__DecimalValueType__Group__2__Impl : ( ( rule__DecimalValueType__NameAssignment_2 ) ) ;
     public final void rule__DecimalValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5953:1: ( ( ( rule__DecimalValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:5954:1: ( ( rule__DecimalValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5980:1: ( ( ( rule__DecimalValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:5981:1: ( ( rule__DecimalValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:5954:1: ( ( rule__DecimalValueType__NameAssignment_2 ) )
-            // InternalQLS.g:5955:2: ( rule__DecimalValueType__NameAssignment_2 )
+            // InternalQLS.g:5981:1: ( ( rule__DecimalValueType__NameAssignment_2 ) )
+            // InternalQLS.g:5982:2: ( rule__DecimalValueType__NameAssignment_2 )
             {
              before(grammarAccess.getDecimalValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:5956:2: ( rule__DecimalValueType__NameAssignment_2 )
-            // InternalQLS.g:5956:3: rule__DecimalValueType__NameAssignment_2
+            // InternalQLS.g:5983:2: ( rule__DecimalValueType__NameAssignment_2 )
+            // InternalQLS.g:5983:3: rule__DecimalValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValueType__NameAssignment_2();
@@ -18416,14 +18501,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__3"
-    // InternalQLS.g:5964:1: rule__DecimalValueType__Group__3 : rule__DecimalValueType__Group__3__Impl ;
+    // InternalQLS.g:5991:1: rule__DecimalValueType__Group__3 : rule__DecimalValueType__Group__3__Impl ;
     public final void rule__DecimalValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5968:1: ( rule__DecimalValueType__Group__3__Impl )
-            // InternalQLS.g:5969:2: rule__DecimalValueType__Group__3__Impl
+            // InternalQLS.g:5995:1: ( rule__DecimalValueType__Group__3__Impl )
+            // InternalQLS.g:5996:2: rule__DecimalValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValueType__Group__3__Impl();
@@ -18449,20 +18534,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group__3__Impl"
-    // InternalQLS.g:5975:1: rule__DecimalValueType__Group__3__Impl : ( ( rule__DecimalValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:6002:1: rule__DecimalValueType__Group__3__Impl : ( ( rule__DecimalValueType__Group_3__0 )? ) ;
     public final void rule__DecimalValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5979:1: ( ( ( rule__DecimalValueType__Group_3__0 )? ) )
-            // InternalQLS.g:5980:1: ( ( rule__DecimalValueType__Group_3__0 )? )
+            // InternalQLS.g:6006:1: ( ( ( rule__DecimalValueType__Group_3__0 )? ) )
+            // InternalQLS.g:6007:1: ( ( rule__DecimalValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:5980:1: ( ( rule__DecimalValueType__Group_3__0 )? )
-            // InternalQLS.g:5981:2: ( rule__DecimalValueType__Group_3__0 )?
+            // InternalQLS.g:6007:1: ( ( rule__DecimalValueType__Group_3__0 )? )
+            // InternalQLS.g:6008:2: ( rule__DecimalValueType__Group_3__0 )?
             {
              before(grammarAccess.getDecimalValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:5982:2: ( rule__DecimalValueType__Group_3__0 )?
+            // InternalQLS.g:6009:2: ( rule__DecimalValueType__Group_3__0 )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -18471,7 +18556,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt46) {
                 case 1 :
-                    // InternalQLS.g:5982:3: rule__DecimalValueType__Group_3__0
+                    // InternalQLS.g:6009:3: rule__DecimalValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DecimalValueType__Group_3__0();
@@ -18507,14 +18592,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__0"
-    // InternalQLS.g:5991:1: rule__DecimalValueType__Group_3__0 : rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1 ;
+    // InternalQLS.g:6018:1: rule__DecimalValueType__Group_3__0 : rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1 ;
     public final void rule__DecimalValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:5995:1: ( rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1 )
-            // InternalQLS.g:5996:2: rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1
+            // InternalQLS.g:6022:1: ( rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1 )
+            // InternalQLS.g:6023:2: rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1
             {
             pushFollow(FOLLOW_48);
             rule__DecimalValueType__Group_3__0__Impl();
@@ -18545,17 +18630,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__0__Impl"
-    // InternalQLS.g:6003:1: rule__DecimalValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:6030:1: rule__DecimalValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__DecimalValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6007:1: ( ( '{' ) )
-            // InternalQLS.g:6008:1: ( '{' )
+            // InternalQLS.g:6034:1: ( ( '{' ) )
+            // InternalQLS.g:6035:1: ( '{' )
             {
-            // InternalQLS.g:6008:1: ( '{' )
-            // InternalQLS.g:6009:2: '{'
+            // InternalQLS.g:6035:1: ( '{' )
+            // InternalQLS.g:6036:2: '{'
             {
              before(grammarAccess.getDecimalValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -18582,14 +18667,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__1"
-    // InternalQLS.g:6018:1: rule__DecimalValueType__Group_3__1 : rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2 ;
+    // InternalQLS.g:6045:1: rule__DecimalValueType__Group_3__1 : rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2 ;
     public final void rule__DecimalValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6022:1: ( rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2 )
-            // InternalQLS.g:6023:2: rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2
+            // InternalQLS.g:6049:1: ( rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2 )
+            // InternalQLS.g:6050:2: rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2
             {
             pushFollow(FOLLOW_48);
             rule__DecimalValueType__Group_3__1__Impl();
@@ -18620,20 +18705,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__1__Impl"
-    // InternalQLS.g:6030:1: rule__DecimalValueType__Group_3__1__Impl : ( ( rule__DecimalValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:6057:1: rule__DecimalValueType__Group_3__1__Impl : ( ( rule__DecimalValueType__Group_3_1__0 )? ) ;
     public final void rule__DecimalValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6034:1: ( ( ( rule__DecimalValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:6035:1: ( ( rule__DecimalValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6061:1: ( ( ( rule__DecimalValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:6062:1: ( ( rule__DecimalValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:6035:1: ( ( rule__DecimalValueType__Group_3_1__0 )? )
-            // InternalQLS.g:6036:2: ( rule__DecimalValueType__Group_3_1__0 )?
+            // InternalQLS.g:6062:1: ( ( rule__DecimalValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6063:2: ( rule__DecimalValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getDecimalValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:6037:2: ( rule__DecimalValueType__Group_3_1__0 )?
+            // InternalQLS.g:6064:2: ( rule__DecimalValueType__Group_3_1__0 )?
             int alt47=2;
             int LA47_0 = input.LA(1);
 
@@ -18642,7 +18727,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt47) {
                 case 1 :
-                    // InternalQLS.g:6037:3: rule__DecimalValueType__Group_3_1__0
+                    // InternalQLS.g:6064:3: rule__DecimalValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DecimalValueType__Group_3_1__0();
@@ -18678,14 +18763,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__2"
-    // InternalQLS.g:6045:1: rule__DecimalValueType__Group_3__2 : rule__DecimalValueType__Group_3__2__Impl ;
+    // InternalQLS.g:6072:1: rule__DecimalValueType__Group_3__2 : rule__DecimalValueType__Group_3__2__Impl ;
     public final void rule__DecimalValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6049:1: ( rule__DecimalValueType__Group_3__2__Impl )
-            // InternalQLS.g:6050:2: rule__DecimalValueType__Group_3__2__Impl
+            // InternalQLS.g:6076:1: ( rule__DecimalValueType__Group_3__2__Impl )
+            // InternalQLS.g:6077:2: rule__DecimalValueType__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValueType__Group_3__2__Impl();
@@ -18711,17 +18796,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3__2__Impl"
-    // InternalQLS.g:6056:1: rule__DecimalValueType__Group_3__2__Impl : ( '}' ) ;
+    // InternalQLS.g:6083:1: rule__DecimalValueType__Group_3__2__Impl : ( '}' ) ;
     public final void rule__DecimalValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6060:1: ( ( '}' ) )
-            // InternalQLS.g:6061:1: ( '}' )
+            // InternalQLS.g:6087:1: ( ( '}' ) )
+            // InternalQLS.g:6088:1: ( '}' )
             {
-            // InternalQLS.g:6061:1: ( '}' )
-            // InternalQLS.g:6062:2: '}'
+            // InternalQLS.g:6088:1: ( '}' )
+            // InternalQLS.g:6089:2: '}'
             {
              before(grammarAccess.getDecimalValueTypeAccess().getRightCurlyBracketKeyword_3_2()); 
             match(input,46,FOLLOW_2); 
@@ -18748,14 +18833,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3_1__0"
-    // InternalQLS.g:6072:1: rule__DecimalValueType__Group_3_1__0 : rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1 ;
+    // InternalQLS.g:6099:1: rule__DecimalValueType__Group_3_1__0 : rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1 ;
     public final void rule__DecimalValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6076:1: ( rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1 )
-            // InternalQLS.g:6077:2: rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1
+            // InternalQLS.g:6103:1: ( rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1 )
+            // InternalQLS.g:6104:2: rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__DecimalValueType__Group_3_1__0__Impl();
@@ -18786,17 +18871,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:6084:1: rule__DecimalValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:6111:1: rule__DecimalValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__DecimalValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6088:1: ( ( 'unit' ) )
-            // InternalQLS.g:6089:1: ( 'unit' )
+            // InternalQLS.g:6115:1: ( ( 'unit' ) )
+            // InternalQLS.g:6116:1: ( 'unit' )
             {
-            // InternalQLS.g:6089:1: ( 'unit' )
-            // InternalQLS.g:6090:2: 'unit'
+            // InternalQLS.g:6116:1: ( 'unit' )
+            // InternalQLS.g:6117:2: 'unit'
             {
              before(grammarAccess.getDecimalValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -18823,14 +18908,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3_1__1"
-    // InternalQLS.g:6099:1: rule__DecimalValueType__Group_3_1__1 : rule__DecimalValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:6126:1: rule__DecimalValueType__Group_3_1__1 : rule__DecimalValueType__Group_3_1__1__Impl ;
     public final void rule__DecimalValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6103:1: ( rule__DecimalValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:6104:2: rule__DecimalValueType__Group_3_1__1__Impl
+            // InternalQLS.g:6130:1: ( rule__DecimalValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:6131:2: rule__DecimalValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValueType__Group_3_1__1__Impl();
@@ -18856,21 +18941,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:6110:1: rule__DecimalValueType__Group_3_1__1__Impl : ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:6137:1: rule__DecimalValueType__Group_3_1__1__Impl : ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__DecimalValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6114:1: ( ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:6115:1: ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6141:1: ( ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:6142:1: ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:6115:1: ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:6116:2: ( rule__DecimalValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6142:1: ( ( rule__DecimalValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6143:2: ( rule__DecimalValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getDecimalValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:6117:2: ( rule__DecimalValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:6117:3: rule__DecimalValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:6144:2: ( rule__DecimalValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6144:3: rule__DecimalValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValueType__UnitAssignment_3_1_1();
@@ -18903,14 +18988,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__0"
-    // InternalQLS.g:6126:1: rule__DateValueType__Group__0 : rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1 ;
+    // InternalQLS.g:6153:1: rule__DateValueType__Group__0 : rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1 ;
     public final void rule__DateValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6130:1: ( rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1 )
-            // InternalQLS.g:6131:2: rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1
+            // InternalQLS.g:6157:1: ( rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1 )
+            // InternalQLS.g:6158:2: rule__DateValueType__Group__0__Impl rule__DateValueType__Group__1
             {
             pushFollow(FOLLOW_57);
             rule__DateValueType__Group__0__Impl();
@@ -18941,21 +19026,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__0__Impl"
-    // InternalQLS.g:6138:1: rule__DateValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:6165:1: rule__DateValueType__Group__0__Impl : ( () ) ;
     public final void rule__DateValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6142:1: ( ( () ) )
-            // InternalQLS.g:6143:1: ( () )
+            // InternalQLS.g:6169:1: ( ( () ) )
+            // InternalQLS.g:6170:1: ( () )
             {
-            // InternalQLS.g:6143:1: ( () )
-            // InternalQLS.g:6144:2: ()
+            // InternalQLS.g:6170:1: ( () )
+            // InternalQLS.g:6171:2: ()
             {
              before(grammarAccess.getDateValueTypeAccess().getDateValueTypeAction_0()); 
-            // InternalQLS.g:6145:2: ()
-            // InternalQLS.g:6145:3: 
+            // InternalQLS.g:6172:2: ()
+            // InternalQLS.g:6172:3: 
             {
             }
 
@@ -18978,16 +19063,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__1"
-    // InternalQLS.g:6153:1: rule__DateValueType__Group__1 : rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2 ;
+    // InternalQLS.g:6180:1: rule__DateValueType__Group__1 : rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2 ;
     public final void rule__DateValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6157:1: ( rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2 )
-            // InternalQLS.g:6158:2: rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2
+            // InternalQLS.g:6184:1: ( rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2 )
+            // InternalQLS.g:6185:2: rule__DateValueType__Group__1__Impl rule__DateValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__DateValueType__Group__1__Impl();
 
             state._fsp--;
@@ -19016,17 +19101,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__1__Impl"
-    // InternalQLS.g:6165:1: rule__DateValueType__Group__1__Impl : ( 'dateType' ) ;
+    // InternalQLS.g:6192:1: rule__DateValueType__Group__1__Impl : ( 'dateType' ) ;
     public final void rule__DateValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6169:1: ( ( 'dateType' ) )
-            // InternalQLS.g:6170:1: ( 'dateType' )
+            // InternalQLS.g:6196:1: ( ( 'dateType' ) )
+            // InternalQLS.g:6197:1: ( 'dateType' )
             {
-            // InternalQLS.g:6170:1: ( 'dateType' )
-            // InternalQLS.g:6171:2: 'dateType'
+            // InternalQLS.g:6197:1: ( 'dateType' )
+            // InternalQLS.g:6198:2: 'dateType'
             {
              before(grammarAccess.getDateValueTypeAccess().getDateTypeKeyword_1()); 
             match(input,70,FOLLOW_2); 
@@ -19053,16 +19138,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__2"
-    // InternalQLS.g:6180:1: rule__DateValueType__Group__2 : rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3 ;
+    // InternalQLS.g:6207:1: rule__DateValueType__Group__2 : rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3 ;
     public final void rule__DateValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6184:1: ( rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3 )
-            // InternalQLS.g:6185:2: rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3
+            // InternalQLS.g:6211:1: ( rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3 )
+            // InternalQLS.g:6212:2: rule__DateValueType__Group__2__Impl rule__DateValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__DateValueType__Group__2__Impl();
 
             state._fsp--;
@@ -19091,21 +19176,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__2__Impl"
-    // InternalQLS.g:6192:1: rule__DateValueType__Group__2__Impl : ( ( rule__DateValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:6219:1: rule__DateValueType__Group__2__Impl : ( ( rule__DateValueType__NameAssignment_2 ) ) ;
     public final void rule__DateValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6196:1: ( ( ( rule__DateValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:6197:1: ( ( rule__DateValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6223:1: ( ( ( rule__DateValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:6224:1: ( ( rule__DateValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:6197:1: ( ( rule__DateValueType__NameAssignment_2 ) )
-            // InternalQLS.g:6198:2: ( rule__DateValueType__NameAssignment_2 )
+            // InternalQLS.g:6224:1: ( ( rule__DateValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6225:2: ( rule__DateValueType__NameAssignment_2 )
             {
              before(grammarAccess.getDateValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:6199:2: ( rule__DateValueType__NameAssignment_2 )
-            // InternalQLS.g:6199:3: rule__DateValueType__NameAssignment_2
+            // InternalQLS.g:6226:2: ( rule__DateValueType__NameAssignment_2 )
+            // InternalQLS.g:6226:3: rule__DateValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__DateValueType__NameAssignment_2();
@@ -19138,14 +19223,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__3"
-    // InternalQLS.g:6207:1: rule__DateValueType__Group__3 : rule__DateValueType__Group__3__Impl ;
+    // InternalQLS.g:6234:1: rule__DateValueType__Group__3 : rule__DateValueType__Group__3__Impl ;
     public final void rule__DateValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6211:1: ( rule__DateValueType__Group__3__Impl )
-            // InternalQLS.g:6212:2: rule__DateValueType__Group__3__Impl
+            // InternalQLS.g:6238:1: ( rule__DateValueType__Group__3__Impl )
+            // InternalQLS.g:6239:2: rule__DateValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DateValueType__Group__3__Impl();
@@ -19171,20 +19256,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group__3__Impl"
-    // InternalQLS.g:6218:1: rule__DateValueType__Group__3__Impl : ( ( rule__DateValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:6245:1: rule__DateValueType__Group__3__Impl : ( ( rule__DateValueType__Group_3__0 )? ) ;
     public final void rule__DateValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6222:1: ( ( ( rule__DateValueType__Group_3__0 )? ) )
-            // InternalQLS.g:6223:1: ( ( rule__DateValueType__Group_3__0 )? )
+            // InternalQLS.g:6249:1: ( ( ( rule__DateValueType__Group_3__0 )? ) )
+            // InternalQLS.g:6250:1: ( ( rule__DateValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:6223:1: ( ( rule__DateValueType__Group_3__0 )? )
-            // InternalQLS.g:6224:2: ( rule__DateValueType__Group_3__0 )?
+            // InternalQLS.g:6250:1: ( ( rule__DateValueType__Group_3__0 )? )
+            // InternalQLS.g:6251:2: ( rule__DateValueType__Group_3__0 )?
             {
              before(grammarAccess.getDateValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:6225:2: ( rule__DateValueType__Group_3__0 )?
+            // InternalQLS.g:6252:2: ( rule__DateValueType__Group_3__0 )?
             int alt48=2;
             int LA48_0 = input.LA(1);
 
@@ -19193,7 +19278,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt48) {
                 case 1 :
-                    // InternalQLS.g:6225:3: rule__DateValueType__Group_3__0
+                    // InternalQLS.g:6252:3: rule__DateValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DateValueType__Group_3__0();
@@ -19229,14 +19314,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__0"
-    // InternalQLS.g:6234:1: rule__DateValueType__Group_3__0 : rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1 ;
+    // InternalQLS.g:6261:1: rule__DateValueType__Group_3__0 : rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1 ;
     public final void rule__DateValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6238:1: ( rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1 )
-            // InternalQLS.g:6239:2: rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1
+            // InternalQLS.g:6265:1: ( rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1 )
+            // InternalQLS.g:6266:2: rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1
             {
             pushFollow(FOLLOW_48);
             rule__DateValueType__Group_3__0__Impl();
@@ -19267,17 +19352,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__0__Impl"
-    // InternalQLS.g:6246:1: rule__DateValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:6273:1: rule__DateValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__DateValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6250:1: ( ( '{' ) )
-            // InternalQLS.g:6251:1: ( '{' )
+            // InternalQLS.g:6277:1: ( ( '{' ) )
+            // InternalQLS.g:6278:1: ( '{' )
             {
-            // InternalQLS.g:6251:1: ( '{' )
-            // InternalQLS.g:6252:2: '{'
+            // InternalQLS.g:6278:1: ( '{' )
+            // InternalQLS.g:6279:2: '{'
             {
              before(grammarAccess.getDateValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -19304,14 +19389,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__1"
-    // InternalQLS.g:6261:1: rule__DateValueType__Group_3__1 : rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2 ;
+    // InternalQLS.g:6288:1: rule__DateValueType__Group_3__1 : rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2 ;
     public final void rule__DateValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6265:1: ( rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2 )
-            // InternalQLS.g:6266:2: rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2
+            // InternalQLS.g:6292:1: ( rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2 )
+            // InternalQLS.g:6293:2: rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2
             {
             pushFollow(FOLLOW_48);
             rule__DateValueType__Group_3__1__Impl();
@@ -19342,20 +19427,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__1__Impl"
-    // InternalQLS.g:6273:1: rule__DateValueType__Group_3__1__Impl : ( ( rule__DateValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:6300:1: rule__DateValueType__Group_3__1__Impl : ( ( rule__DateValueType__Group_3_1__0 )? ) ;
     public final void rule__DateValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6277:1: ( ( ( rule__DateValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:6278:1: ( ( rule__DateValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6304:1: ( ( ( rule__DateValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:6305:1: ( ( rule__DateValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:6278:1: ( ( rule__DateValueType__Group_3_1__0 )? )
-            // InternalQLS.g:6279:2: ( rule__DateValueType__Group_3_1__0 )?
+            // InternalQLS.g:6305:1: ( ( rule__DateValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6306:2: ( rule__DateValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getDateValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:6280:2: ( rule__DateValueType__Group_3_1__0 )?
+            // InternalQLS.g:6307:2: ( rule__DateValueType__Group_3_1__0 )?
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -19364,7 +19449,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt49) {
                 case 1 :
-                    // InternalQLS.g:6280:3: rule__DateValueType__Group_3_1__0
+                    // InternalQLS.g:6307:3: rule__DateValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DateValueType__Group_3_1__0();
@@ -19400,14 +19485,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__2"
-    // InternalQLS.g:6288:1: rule__DateValueType__Group_3__2 : rule__DateValueType__Group_3__2__Impl ;
+    // InternalQLS.g:6315:1: rule__DateValueType__Group_3__2 : rule__DateValueType__Group_3__2__Impl ;
     public final void rule__DateValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6292:1: ( rule__DateValueType__Group_3__2__Impl )
-            // InternalQLS.g:6293:2: rule__DateValueType__Group_3__2__Impl
+            // InternalQLS.g:6319:1: ( rule__DateValueType__Group_3__2__Impl )
+            // InternalQLS.g:6320:2: rule__DateValueType__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DateValueType__Group_3__2__Impl();
@@ -19433,17 +19518,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3__2__Impl"
-    // InternalQLS.g:6299:1: rule__DateValueType__Group_3__2__Impl : ( '}' ) ;
+    // InternalQLS.g:6326:1: rule__DateValueType__Group_3__2__Impl : ( '}' ) ;
     public final void rule__DateValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6303:1: ( ( '}' ) )
-            // InternalQLS.g:6304:1: ( '}' )
+            // InternalQLS.g:6330:1: ( ( '}' ) )
+            // InternalQLS.g:6331:1: ( '}' )
             {
-            // InternalQLS.g:6304:1: ( '}' )
-            // InternalQLS.g:6305:2: '}'
+            // InternalQLS.g:6331:1: ( '}' )
+            // InternalQLS.g:6332:2: '}'
             {
              before(grammarAccess.getDateValueTypeAccess().getRightCurlyBracketKeyword_3_2()); 
             match(input,46,FOLLOW_2); 
@@ -19470,14 +19555,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3_1__0"
-    // InternalQLS.g:6315:1: rule__DateValueType__Group_3_1__0 : rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1 ;
+    // InternalQLS.g:6342:1: rule__DateValueType__Group_3_1__0 : rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1 ;
     public final void rule__DateValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6319:1: ( rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1 )
-            // InternalQLS.g:6320:2: rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1
+            // InternalQLS.g:6346:1: ( rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1 )
+            // InternalQLS.g:6347:2: rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__DateValueType__Group_3_1__0__Impl();
@@ -19508,17 +19593,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:6327:1: rule__DateValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:6354:1: rule__DateValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__DateValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6331:1: ( ( 'unit' ) )
-            // InternalQLS.g:6332:1: ( 'unit' )
+            // InternalQLS.g:6358:1: ( ( 'unit' ) )
+            // InternalQLS.g:6359:1: ( 'unit' )
             {
-            // InternalQLS.g:6332:1: ( 'unit' )
-            // InternalQLS.g:6333:2: 'unit'
+            // InternalQLS.g:6359:1: ( 'unit' )
+            // InternalQLS.g:6360:2: 'unit'
             {
              before(grammarAccess.getDateValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -19545,14 +19630,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3_1__1"
-    // InternalQLS.g:6342:1: rule__DateValueType__Group_3_1__1 : rule__DateValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:6369:1: rule__DateValueType__Group_3_1__1 : rule__DateValueType__Group_3_1__1__Impl ;
     public final void rule__DateValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6346:1: ( rule__DateValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:6347:2: rule__DateValueType__Group_3_1__1__Impl
+            // InternalQLS.g:6373:1: ( rule__DateValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:6374:2: rule__DateValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DateValueType__Group_3_1__1__Impl();
@@ -19578,21 +19663,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:6353:1: rule__DateValueType__Group_3_1__1__Impl : ( ( rule__DateValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:6380:1: rule__DateValueType__Group_3_1__1__Impl : ( ( rule__DateValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__DateValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6357:1: ( ( ( rule__DateValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:6358:1: ( ( rule__DateValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6384:1: ( ( ( rule__DateValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:6385:1: ( ( rule__DateValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:6358:1: ( ( rule__DateValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:6359:2: ( rule__DateValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6385:1: ( ( rule__DateValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6386:2: ( rule__DateValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getDateValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:6360:2: ( rule__DateValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:6360:3: rule__DateValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:6387:2: ( rule__DateValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6387:3: rule__DateValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__DateValueType__UnitAssignment_3_1_1();
@@ -19625,14 +19710,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__0"
-    // InternalQLS.g:6369:1: rule__EnumerationValueType__Group__0 : rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1 ;
+    // InternalQLS.g:6396:1: rule__EnumerationValueType__Group__0 : rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1 ;
     public final void rule__EnumerationValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6373:1: ( rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1 )
-            // InternalQLS.g:6374:2: rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1
+            // InternalQLS.g:6400:1: ( rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1 )
+            // InternalQLS.g:6401:2: rule__EnumerationValueType__Group__0__Impl rule__EnumerationValueType__Group__1
             {
             pushFollow(FOLLOW_58);
             rule__EnumerationValueType__Group__0__Impl();
@@ -19663,21 +19748,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__0__Impl"
-    // InternalQLS.g:6381:1: rule__EnumerationValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:6408:1: rule__EnumerationValueType__Group__0__Impl : ( () ) ;
     public final void rule__EnumerationValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6385:1: ( ( () ) )
-            // InternalQLS.g:6386:1: ( () )
+            // InternalQLS.g:6412:1: ( ( () ) )
+            // InternalQLS.g:6413:1: ( () )
             {
-            // InternalQLS.g:6386:1: ( () )
-            // InternalQLS.g:6387:2: ()
+            // InternalQLS.g:6413:1: ( () )
+            // InternalQLS.g:6414:2: ()
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationValueTypeAction_0()); 
-            // InternalQLS.g:6388:2: ()
-            // InternalQLS.g:6388:3: 
+            // InternalQLS.g:6415:2: ()
+            // InternalQLS.g:6415:3: 
             {
             }
 
@@ -19700,16 +19785,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__1"
-    // InternalQLS.g:6396:1: rule__EnumerationValueType__Group__1 : rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2 ;
+    // InternalQLS.g:6423:1: rule__EnumerationValueType__Group__1 : rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2 ;
     public final void rule__EnumerationValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6400:1: ( rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2 )
-            // InternalQLS.g:6401:2: rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2
+            // InternalQLS.g:6427:1: ( rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2 )
+            // InternalQLS.g:6428:2: rule__EnumerationValueType__Group__1__Impl rule__EnumerationValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__EnumerationValueType__Group__1__Impl();
 
             state._fsp--;
@@ -19738,17 +19823,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__1__Impl"
-    // InternalQLS.g:6408:1: rule__EnumerationValueType__Group__1__Impl : ( 'enumerationType' ) ;
+    // InternalQLS.g:6435:1: rule__EnumerationValueType__Group__1__Impl : ( 'enumerationType' ) ;
     public final void rule__EnumerationValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6412:1: ( ( 'enumerationType' ) )
-            // InternalQLS.g:6413:1: ( 'enumerationType' )
+            // InternalQLS.g:6439:1: ( ( 'enumerationType' ) )
+            // InternalQLS.g:6440:1: ( 'enumerationType' )
             {
-            // InternalQLS.g:6413:1: ( 'enumerationType' )
-            // InternalQLS.g:6414:2: 'enumerationType'
+            // InternalQLS.g:6440:1: ( 'enumerationType' )
+            // InternalQLS.g:6441:2: 'enumerationType'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationTypeKeyword_1()); 
             match(input,71,FOLLOW_2); 
@@ -19775,16 +19860,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__2"
-    // InternalQLS.g:6423:1: rule__EnumerationValueType__Group__2 : rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3 ;
+    // InternalQLS.g:6450:1: rule__EnumerationValueType__Group__2 : rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3 ;
     public final void rule__EnumerationValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6427:1: ( rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3 )
-            // InternalQLS.g:6428:2: rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3
+            // InternalQLS.g:6454:1: ( rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3 )
+            // InternalQLS.g:6455:2: rule__EnumerationValueType__Group__2__Impl rule__EnumerationValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__EnumerationValueType__Group__2__Impl();
 
             state._fsp--;
@@ -19813,21 +19898,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__2__Impl"
-    // InternalQLS.g:6435:1: rule__EnumerationValueType__Group__2__Impl : ( ( rule__EnumerationValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:6462:1: rule__EnumerationValueType__Group__2__Impl : ( ( rule__EnumerationValueType__NameAssignment_2 ) ) ;
     public final void rule__EnumerationValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6439:1: ( ( ( rule__EnumerationValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:6440:1: ( ( rule__EnumerationValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6466:1: ( ( ( rule__EnumerationValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:6467:1: ( ( rule__EnumerationValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:6440:1: ( ( rule__EnumerationValueType__NameAssignment_2 ) )
-            // InternalQLS.g:6441:2: ( rule__EnumerationValueType__NameAssignment_2 )
+            // InternalQLS.g:6467:1: ( ( rule__EnumerationValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6468:2: ( rule__EnumerationValueType__NameAssignment_2 )
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:6442:2: ( rule__EnumerationValueType__NameAssignment_2 )
-            // InternalQLS.g:6442:3: rule__EnumerationValueType__NameAssignment_2
+            // InternalQLS.g:6469:2: ( rule__EnumerationValueType__NameAssignment_2 )
+            // InternalQLS.g:6469:3: rule__EnumerationValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__NameAssignment_2();
@@ -19860,14 +19945,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__3"
-    // InternalQLS.g:6450:1: rule__EnumerationValueType__Group__3 : rule__EnumerationValueType__Group__3__Impl ;
+    // InternalQLS.g:6477:1: rule__EnumerationValueType__Group__3 : rule__EnumerationValueType__Group__3__Impl ;
     public final void rule__EnumerationValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6454:1: ( rule__EnumerationValueType__Group__3__Impl )
-            // InternalQLS.g:6455:2: rule__EnumerationValueType__Group__3__Impl
+            // InternalQLS.g:6481:1: ( rule__EnumerationValueType__Group__3__Impl )
+            // InternalQLS.g:6482:2: rule__EnumerationValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__Group__3__Impl();
@@ -19893,20 +19978,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group__3__Impl"
-    // InternalQLS.g:6461:1: rule__EnumerationValueType__Group__3__Impl : ( ( rule__EnumerationValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:6488:1: rule__EnumerationValueType__Group__3__Impl : ( ( rule__EnumerationValueType__Group_3__0 )? ) ;
     public final void rule__EnumerationValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6465:1: ( ( ( rule__EnumerationValueType__Group_3__0 )? ) )
-            // InternalQLS.g:6466:1: ( ( rule__EnumerationValueType__Group_3__0 )? )
+            // InternalQLS.g:6492:1: ( ( ( rule__EnumerationValueType__Group_3__0 )? ) )
+            // InternalQLS.g:6493:1: ( ( rule__EnumerationValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:6466:1: ( ( rule__EnumerationValueType__Group_3__0 )? )
-            // InternalQLS.g:6467:2: ( rule__EnumerationValueType__Group_3__0 )?
+            // InternalQLS.g:6493:1: ( ( rule__EnumerationValueType__Group_3__0 )? )
+            // InternalQLS.g:6494:2: ( rule__EnumerationValueType__Group_3__0 )?
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:6468:2: ( rule__EnumerationValueType__Group_3__0 )?
+            // InternalQLS.g:6495:2: ( rule__EnumerationValueType__Group_3__0 )?
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -19915,7 +20000,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt50) {
                 case 1 :
-                    // InternalQLS.g:6468:3: rule__EnumerationValueType__Group_3__0
+                    // InternalQLS.g:6495:3: rule__EnumerationValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EnumerationValueType__Group_3__0();
@@ -19951,14 +20036,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__0"
-    // InternalQLS.g:6477:1: rule__EnumerationValueType__Group_3__0 : rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1 ;
+    // InternalQLS.g:6504:1: rule__EnumerationValueType__Group_3__0 : rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1 ;
     public final void rule__EnumerationValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6481:1: ( rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1 )
-            // InternalQLS.g:6482:2: rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1
+            // InternalQLS.g:6508:1: ( rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1 )
+            // InternalQLS.g:6509:2: rule__EnumerationValueType__Group_3__0__Impl rule__EnumerationValueType__Group_3__1
             {
             pushFollow(FOLLOW_59);
             rule__EnumerationValueType__Group_3__0__Impl();
@@ -19989,17 +20074,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__0__Impl"
-    // InternalQLS.g:6489:1: rule__EnumerationValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:6516:1: rule__EnumerationValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__EnumerationValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6493:1: ( ( '{' ) )
-            // InternalQLS.g:6494:1: ( '{' )
+            // InternalQLS.g:6520:1: ( ( '{' ) )
+            // InternalQLS.g:6521:1: ( '{' )
             {
-            // InternalQLS.g:6494:1: ( '{' )
-            // InternalQLS.g:6495:2: '{'
+            // InternalQLS.g:6521:1: ( '{' )
+            // InternalQLS.g:6522:2: '{'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -20026,14 +20111,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__1"
-    // InternalQLS.g:6504:1: rule__EnumerationValueType__Group_3__1 : rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2 ;
+    // InternalQLS.g:6531:1: rule__EnumerationValueType__Group_3__1 : rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2 ;
     public final void rule__EnumerationValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6508:1: ( rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2 )
-            // InternalQLS.g:6509:2: rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2
+            // InternalQLS.g:6535:1: ( rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2 )
+            // InternalQLS.g:6536:2: rule__EnumerationValueType__Group_3__1__Impl rule__EnumerationValueType__Group_3__2
             {
             pushFollow(FOLLOW_59);
             rule__EnumerationValueType__Group_3__1__Impl();
@@ -20064,20 +20149,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__1__Impl"
-    // InternalQLS.g:6516:1: rule__EnumerationValueType__Group_3__1__Impl : ( ( rule__EnumerationValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:6543:1: rule__EnumerationValueType__Group_3__1__Impl : ( ( rule__EnumerationValueType__Group_3_1__0 )? ) ;
     public final void rule__EnumerationValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6520:1: ( ( ( rule__EnumerationValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:6521:1: ( ( rule__EnumerationValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6547:1: ( ( ( rule__EnumerationValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:6548:1: ( ( rule__EnumerationValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:6521:1: ( ( rule__EnumerationValueType__Group_3_1__0 )? )
-            // InternalQLS.g:6522:2: ( rule__EnumerationValueType__Group_3_1__0 )?
+            // InternalQLS.g:6548:1: ( ( rule__EnumerationValueType__Group_3_1__0 )? )
+            // InternalQLS.g:6549:2: ( rule__EnumerationValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:6523:2: ( rule__EnumerationValueType__Group_3_1__0 )?
+            // InternalQLS.g:6550:2: ( rule__EnumerationValueType__Group_3_1__0 )?
             int alt51=2;
             int LA51_0 = input.LA(1);
 
@@ -20086,7 +20171,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt51) {
                 case 1 :
-                    // InternalQLS.g:6523:3: rule__EnumerationValueType__Group_3_1__0
+                    // InternalQLS.g:6550:3: rule__EnumerationValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EnumerationValueType__Group_3_1__0();
@@ -20122,14 +20207,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__2"
-    // InternalQLS.g:6531:1: rule__EnumerationValueType__Group_3__2 : rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3 ;
+    // InternalQLS.g:6558:1: rule__EnumerationValueType__Group_3__2 : rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3 ;
     public final void rule__EnumerationValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6535:1: ( rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3 )
-            // InternalQLS.g:6536:2: rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3
+            // InternalQLS.g:6562:1: ( rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3 )
+            // InternalQLS.g:6563:2: rule__EnumerationValueType__Group_3__2__Impl rule__EnumerationValueType__Group_3__3
             {
             pushFollow(FOLLOW_59);
             rule__EnumerationValueType__Group_3__2__Impl();
@@ -20160,20 +20245,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__2__Impl"
-    // InternalQLS.g:6543:1: rule__EnumerationValueType__Group_3__2__Impl : ( ( rule__EnumerationValueType__Group_3_2__0 )? ) ;
+    // InternalQLS.g:6570:1: rule__EnumerationValueType__Group_3__2__Impl : ( ( rule__EnumerationValueType__Group_3_2__0 )? ) ;
     public final void rule__EnumerationValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6547:1: ( ( ( rule__EnumerationValueType__Group_3_2__0 )? ) )
-            // InternalQLS.g:6548:1: ( ( rule__EnumerationValueType__Group_3_2__0 )? )
+            // InternalQLS.g:6574:1: ( ( ( rule__EnumerationValueType__Group_3_2__0 )? ) )
+            // InternalQLS.g:6575:1: ( ( rule__EnumerationValueType__Group_3_2__0 )? )
             {
-            // InternalQLS.g:6548:1: ( ( rule__EnumerationValueType__Group_3_2__0 )? )
-            // InternalQLS.g:6549:2: ( rule__EnumerationValueType__Group_3_2__0 )?
+            // InternalQLS.g:6575:1: ( ( rule__EnumerationValueType__Group_3_2__0 )? )
+            // InternalQLS.g:6576:2: ( rule__EnumerationValueType__Group_3_2__0 )?
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getGroup_3_2()); 
-            // InternalQLS.g:6550:2: ( rule__EnumerationValueType__Group_3_2__0 )?
+            // InternalQLS.g:6577:2: ( rule__EnumerationValueType__Group_3_2__0 )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -20182,7 +20267,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt52) {
                 case 1 :
-                    // InternalQLS.g:6550:3: rule__EnumerationValueType__Group_3_2__0
+                    // InternalQLS.g:6577:3: rule__EnumerationValueType__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EnumerationValueType__Group_3_2__0();
@@ -20218,14 +20303,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__3"
-    // InternalQLS.g:6558:1: rule__EnumerationValueType__Group_3__3 : rule__EnumerationValueType__Group_3__3__Impl ;
+    // InternalQLS.g:6585:1: rule__EnumerationValueType__Group_3__3 : rule__EnumerationValueType__Group_3__3__Impl ;
     public final void rule__EnumerationValueType__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6562:1: ( rule__EnumerationValueType__Group_3__3__Impl )
-            // InternalQLS.g:6563:2: rule__EnumerationValueType__Group_3__3__Impl
+            // InternalQLS.g:6589:1: ( rule__EnumerationValueType__Group_3__3__Impl )
+            // InternalQLS.g:6590:2: rule__EnumerationValueType__Group_3__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__Group_3__3__Impl();
@@ -20251,17 +20336,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3__3__Impl"
-    // InternalQLS.g:6569:1: rule__EnumerationValueType__Group_3__3__Impl : ( '}' ) ;
+    // InternalQLS.g:6596:1: rule__EnumerationValueType__Group_3__3__Impl : ( '}' ) ;
     public final void rule__EnumerationValueType__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6573:1: ( ( '}' ) )
-            // InternalQLS.g:6574:1: ( '}' )
+            // InternalQLS.g:6600:1: ( ( '}' ) )
+            // InternalQLS.g:6601:1: ( '}' )
             {
-            // InternalQLS.g:6574:1: ( '}' )
-            // InternalQLS.g:6575:2: '}'
+            // InternalQLS.g:6601:1: ( '}' )
+            // InternalQLS.g:6602:2: '}'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_3_3()); 
             match(input,46,FOLLOW_2); 
@@ -20288,14 +20373,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_1__0"
-    // InternalQLS.g:6585:1: rule__EnumerationValueType__Group_3_1__0 : rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1 ;
+    // InternalQLS.g:6612:1: rule__EnumerationValueType__Group_3_1__0 : rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1 ;
     public final void rule__EnumerationValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6589:1: ( rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1 )
-            // InternalQLS.g:6590:2: rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1
+            // InternalQLS.g:6616:1: ( rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1 )
+            // InternalQLS.g:6617:2: rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__EnumerationValueType__Group_3_1__0__Impl();
@@ -20326,17 +20411,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:6597:1: rule__EnumerationValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:6624:1: rule__EnumerationValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__EnumerationValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6601:1: ( ( 'unit' ) )
-            // InternalQLS.g:6602:1: ( 'unit' )
+            // InternalQLS.g:6628:1: ( ( 'unit' ) )
+            // InternalQLS.g:6629:1: ( 'unit' )
             {
-            // InternalQLS.g:6602:1: ( 'unit' )
-            // InternalQLS.g:6603:2: 'unit'
+            // InternalQLS.g:6629:1: ( 'unit' )
+            // InternalQLS.g:6630:2: 'unit'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -20363,14 +20448,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_1__1"
-    // InternalQLS.g:6612:1: rule__EnumerationValueType__Group_3_1__1 : rule__EnumerationValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:6639:1: rule__EnumerationValueType__Group_3_1__1 : rule__EnumerationValueType__Group_3_1__1__Impl ;
     public final void rule__EnumerationValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6616:1: ( rule__EnumerationValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:6617:2: rule__EnumerationValueType__Group_3_1__1__Impl
+            // InternalQLS.g:6643:1: ( rule__EnumerationValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:6644:2: rule__EnumerationValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__Group_3_1__1__Impl();
@@ -20396,21 +20481,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:6623:1: rule__EnumerationValueType__Group_3_1__1__Impl : ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:6650:1: rule__EnumerationValueType__Group_3_1__1__Impl : ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__EnumerationValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6627:1: ( ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:6628:1: ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6654:1: ( ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:6655:1: ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:6628:1: ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:6629:2: ( rule__EnumerationValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6655:1: ( ( rule__EnumerationValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:6656:2: ( rule__EnumerationValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:6630:2: ( rule__EnumerationValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:6630:3: rule__EnumerationValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:6657:2: ( rule__EnumerationValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:6657:3: rule__EnumerationValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__UnitAssignment_3_1_1();
@@ -20443,16 +20528,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__0"
-    // InternalQLS.g:6639:1: rule__EnumerationValueType__Group_3_2__0 : rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1 ;
+    // InternalQLS.g:6666:1: rule__EnumerationValueType__Group_3_2__0 : rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1 ;
     public final void rule__EnumerationValueType__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6643:1: ( rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1 )
-            // InternalQLS.g:6644:2: rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1
+            // InternalQLS.g:6670:1: ( rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1 )
+            // InternalQLS.g:6671:2: rule__EnumerationValueType__Group_3_2__0__Impl rule__EnumerationValueType__Group_3_2__1
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__EnumerationValueType__Group_3_2__0__Impl();
 
             state._fsp--;
@@ -20481,17 +20566,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__0__Impl"
-    // InternalQLS.g:6651:1: rule__EnumerationValueType__Group_3_2__0__Impl : ( 'literals' ) ;
+    // InternalQLS.g:6678:1: rule__EnumerationValueType__Group_3_2__0__Impl : ( 'literals' ) ;
     public final void rule__EnumerationValueType__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6655:1: ( ( 'literals' ) )
-            // InternalQLS.g:6656:1: ( 'literals' )
+            // InternalQLS.g:6682:1: ( ( 'literals' ) )
+            // InternalQLS.g:6683:1: ( 'literals' )
             {
-            // InternalQLS.g:6656:1: ( 'literals' )
-            // InternalQLS.g:6657:2: 'literals'
+            // InternalQLS.g:6683:1: ( 'literals' )
+            // InternalQLS.g:6684:2: 'literals'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getLiteralsKeyword_3_2_0()); 
             match(input,72,FOLLOW_2); 
@@ -20518,16 +20603,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__1"
-    // InternalQLS.g:6666:1: rule__EnumerationValueType__Group_3_2__1 : rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2 ;
+    // InternalQLS.g:6693:1: rule__EnumerationValueType__Group_3_2__1 : rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2 ;
     public final void rule__EnumerationValueType__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6670:1: ( rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2 )
-            // InternalQLS.g:6671:2: rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2
+            // InternalQLS.g:6697:1: ( rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2 )
+            // InternalQLS.g:6698:2: rule__EnumerationValueType__Group_3_2__1__Impl rule__EnumerationValueType__Group_3_2__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__EnumerationValueType__Group_3_2__1__Impl();
 
             state._fsp--;
@@ -20556,17 +20641,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__1__Impl"
-    // InternalQLS.g:6678:1: rule__EnumerationValueType__Group_3_2__1__Impl : ( '{' ) ;
+    // InternalQLS.g:6705:1: rule__EnumerationValueType__Group_3_2__1__Impl : ( '{' ) ;
     public final void rule__EnumerationValueType__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6682:1: ( ( '{' ) )
-            // InternalQLS.g:6683:1: ( '{' )
+            // InternalQLS.g:6709:1: ( ( '{' ) )
+            // InternalQLS.g:6710:1: ( '{' )
             {
-            // InternalQLS.g:6683:1: ( '{' )
-            // InternalQLS.g:6684:2: '{'
+            // InternalQLS.g:6710:1: ( '{' )
+            // InternalQLS.g:6711:2: '{'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getLeftCurlyBracketKeyword_3_2_1()); 
             match(input,44,FOLLOW_2); 
@@ -20593,14 +20678,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__2"
-    // InternalQLS.g:6693:1: rule__EnumerationValueType__Group_3_2__2 : rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3 ;
+    // InternalQLS.g:6720:1: rule__EnumerationValueType__Group_3_2__2 : rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3 ;
     public final void rule__EnumerationValueType__Group_3_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6697:1: ( rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3 )
-            // InternalQLS.g:6698:2: rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3
+            // InternalQLS.g:6724:1: ( rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3 )
+            // InternalQLS.g:6725:2: rule__EnumerationValueType__Group_3_2__2__Impl rule__EnumerationValueType__Group_3_2__3
             {
             pushFollow(FOLLOW_60);
             rule__EnumerationValueType__Group_3_2__2__Impl();
@@ -20631,21 +20716,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__2__Impl"
-    // InternalQLS.g:6705:1: rule__EnumerationValueType__Group_3_2__2__Impl : ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) ) ;
+    // InternalQLS.g:6732:1: rule__EnumerationValueType__Group_3_2__2__Impl : ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) ) ;
     public final void rule__EnumerationValueType__Group_3_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6709:1: ( ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) ) )
-            // InternalQLS.g:6710:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) )
+            // InternalQLS.g:6736:1: ( ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) ) )
+            // InternalQLS.g:6737:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) )
             {
-            // InternalQLS.g:6710:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) )
-            // InternalQLS.g:6711:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 )
+            // InternalQLS.g:6737:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 ) )
+            // InternalQLS.g:6738:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 )
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsAssignment_3_2_2()); 
-            // InternalQLS.g:6712:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 )
-            // InternalQLS.g:6712:3: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2
+            // InternalQLS.g:6739:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 )
+            // InternalQLS.g:6739:3: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2();
@@ -20678,14 +20763,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__3"
-    // InternalQLS.g:6720:1: rule__EnumerationValueType__Group_3_2__3 : rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4 ;
+    // InternalQLS.g:6747:1: rule__EnumerationValueType__Group_3_2__3 : rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4 ;
     public final void rule__EnumerationValueType__Group_3_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6724:1: ( rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4 )
-            // InternalQLS.g:6725:2: rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4
+            // InternalQLS.g:6751:1: ( rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4 )
+            // InternalQLS.g:6752:2: rule__EnumerationValueType__Group_3_2__3__Impl rule__EnumerationValueType__Group_3_2__4
             {
             pushFollow(FOLLOW_60);
             rule__EnumerationValueType__Group_3_2__3__Impl();
@@ -20716,20 +20801,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__3__Impl"
-    // InternalQLS.g:6732:1: rule__EnumerationValueType__Group_3_2__3__Impl : ( ( rule__EnumerationValueType__Group_3_2_3__0 )* ) ;
+    // InternalQLS.g:6759:1: rule__EnumerationValueType__Group_3_2__3__Impl : ( ( rule__EnumerationValueType__Group_3_2_3__0 )* ) ;
     public final void rule__EnumerationValueType__Group_3_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6736:1: ( ( ( rule__EnumerationValueType__Group_3_2_3__0 )* ) )
-            // InternalQLS.g:6737:1: ( ( rule__EnumerationValueType__Group_3_2_3__0 )* )
+            // InternalQLS.g:6763:1: ( ( ( rule__EnumerationValueType__Group_3_2_3__0 )* ) )
+            // InternalQLS.g:6764:1: ( ( rule__EnumerationValueType__Group_3_2_3__0 )* )
             {
-            // InternalQLS.g:6737:1: ( ( rule__EnumerationValueType__Group_3_2_3__0 )* )
-            // InternalQLS.g:6738:2: ( rule__EnumerationValueType__Group_3_2_3__0 )*
+            // InternalQLS.g:6764:1: ( ( rule__EnumerationValueType__Group_3_2_3__0 )* )
+            // InternalQLS.g:6765:2: ( rule__EnumerationValueType__Group_3_2_3__0 )*
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getGroup_3_2_3()); 
-            // InternalQLS.g:6739:2: ( rule__EnumerationValueType__Group_3_2_3__0 )*
+            // InternalQLS.g:6766:2: ( rule__EnumerationValueType__Group_3_2_3__0 )*
             loop53:
             do {
                 int alt53=2;
@@ -20742,7 +20827,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt53) {
             	case 1 :
-            	    // InternalQLS.g:6739:3: rule__EnumerationValueType__Group_3_2_3__0
+            	    // InternalQLS.g:6766:3: rule__EnumerationValueType__Group_3_2_3__0
             	    {
             	    pushFollow(FOLLOW_61);
             	    rule__EnumerationValueType__Group_3_2_3__0();
@@ -20781,14 +20866,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__4"
-    // InternalQLS.g:6747:1: rule__EnumerationValueType__Group_3_2__4 : rule__EnumerationValueType__Group_3_2__4__Impl ;
+    // InternalQLS.g:6774:1: rule__EnumerationValueType__Group_3_2__4 : rule__EnumerationValueType__Group_3_2__4__Impl ;
     public final void rule__EnumerationValueType__Group_3_2__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6751:1: ( rule__EnumerationValueType__Group_3_2__4__Impl )
-            // InternalQLS.g:6752:2: rule__EnumerationValueType__Group_3_2__4__Impl
+            // InternalQLS.g:6778:1: ( rule__EnumerationValueType__Group_3_2__4__Impl )
+            // InternalQLS.g:6779:2: rule__EnumerationValueType__Group_3_2__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__Group_3_2__4__Impl();
@@ -20814,17 +20899,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2__4__Impl"
-    // InternalQLS.g:6758:1: rule__EnumerationValueType__Group_3_2__4__Impl : ( '}' ) ;
+    // InternalQLS.g:6785:1: rule__EnumerationValueType__Group_3_2__4__Impl : ( '}' ) ;
     public final void rule__EnumerationValueType__Group_3_2__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6762:1: ( ( '}' ) )
-            // InternalQLS.g:6763:1: ( '}' )
+            // InternalQLS.g:6789:1: ( ( '}' ) )
+            // InternalQLS.g:6790:1: ( '}' )
             {
-            // InternalQLS.g:6763:1: ( '}' )
-            // InternalQLS.g:6764:2: '}'
+            // InternalQLS.g:6790:1: ( '}' )
+            // InternalQLS.g:6791:2: '}'
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getRightCurlyBracketKeyword_3_2_4()); 
             match(input,46,FOLLOW_2); 
@@ -20851,16 +20936,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2_3__0"
-    // InternalQLS.g:6774:1: rule__EnumerationValueType__Group_3_2_3__0 : rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1 ;
+    // InternalQLS.g:6801:1: rule__EnumerationValueType__Group_3_2_3__0 : rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1 ;
     public final void rule__EnumerationValueType__Group_3_2_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6778:1: ( rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1 )
-            // InternalQLS.g:6779:2: rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1
+            // InternalQLS.g:6805:1: ( rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1 )
+            // InternalQLS.g:6806:2: rule__EnumerationValueType__Group_3_2_3__0__Impl rule__EnumerationValueType__Group_3_2_3__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__EnumerationValueType__Group_3_2_3__0__Impl();
 
             state._fsp--;
@@ -20889,17 +20974,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2_3__0__Impl"
-    // InternalQLS.g:6786:1: rule__EnumerationValueType__Group_3_2_3__0__Impl : ( ',' ) ;
+    // InternalQLS.g:6813:1: rule__EnumerationValueType__Group_3_2_3__0__Impl : ( ',' ) ;
     public final void rule__EnumerationValueType__Group_3_2_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6790:1: ( ( ',' ) )
-            // InternalQLS.g:6791:1: ( ',' )
+            // InternalQLS.g:6817:1: ( ( ',' ) )
+            // InternalQLS.g:6818:1: ( ',' )
             {
-            // InternalQLS.g:6791:1: ( ',' )
-            // InternalQLS.g:6792:2: ','
+            // InternalQLS.g:6818:1: ( ',' )
+            // InternalQLS.g:6819:2: ','
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getCommaKeyword_3_2_3_0()); 
             match(input,73,FOLLOW_2); 
@@ -20926,14 +21011,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2_3__1"
-    // InternalQLS.g:6801:1: rule__EnumerationValueType__Group_3_2_3__1 : rule__EnumerationValueType__Group_3_2_3__1__Impl ;
+    // InternalQLS.g:6828:1: rule__EnumerationValueType__Group_3_2_3__1 : rule__EnumerationValueType__Group_3_2_3__1__Impl ;
     public final void rule__EnumerationValueType__Group_3_2_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6805:1: ( rule__EnumerationValueType__Group_3_2_3__1__Impl )
-            // InternalQLS.g:6806:2: rule__EnumerationValueType__Group_3_2_3__1__Impl
+            // InternalQLS.g:6832:1: ( rule__EnumerationValueType__Group_3_2_3__1__Impl )
+            // InternalQLS.g:6833:2: rule__EnumerationValueType__Group_3_2_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__Group_3_2_3__1__Impl();
@@ -20959,21 +21044,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__Group_3_2_3__1__Impl"
-    // InternalQLS.g:6812:1: rule__EnumerationValueType__Group_3_2_3__1__Impl : ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) ) ;
+    // InternalQLS.g:6839:1: rule__EnumerationValueType__Group_3_2_3__1__Impl : ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) ) ;
     public final void rule__EnumerationValueType__Group_3_2_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6816:1: ( ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) ) )
-            // InternalQLS.g:6817:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) )
+            // InternalQLS.g:6843:1: ( ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) ) )
+            // InternalQLS.g:6844:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) )
             {
-            // InternalQLS.g:6817:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) )
-            // InternalQLS.g:6818:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 )
+            // InternalQLS.g:6844:1: ( ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 ) )
+            // InternalQLS.g:6845:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 )
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsAssignment_3_2_3_1()); 
-            // InternalQLS.g:6819:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 )
-            // InternalQLS.g:6819:3: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1
+            // InternalQLS.g:6846:2: ( rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 )
+            // InternalQLS.g:6846:3: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1();
@@ -21006,14 +21091,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__0"
-    // InternalQLS.g:6828:1: rule__StringValueType__Group__0 : rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1 ;
+    // InternalQLS.g:6855:1: rule__StringValueType__Group__0 : rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1 ;
     public final void rule__StringValueType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6832:1: ( rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1 )
-            // InternalQLS.g:6833:2: rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1
+            // InternalQLS.g:6859:1: ( rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1 )
+            // InternalQLS.g:6860:2: rule__StringValueType__Group__0__Impl rule__StringValueType__Group__1
             {
             pushFollow(FOLLOW_62);
             rule__StringValueType__Group__0__Impl();
@@ -21044,21 +21129,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__0__Impl"
-    // InternalQLS.g:6840:1: rule__StringValueType__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:6867:1: rule__StringValueType__Group__0__Impl : ( () ) ;
     public final void rule__StringValueType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6844:1: ( ( () ) )
-            // InternalQLS.g:6845:1: ( () )
+            // InternalQLS.g:6871:1: ( ( () ) )
+            // InternalQLS.g:6872:1: ( () )
             {
-            // InternalQLS.g:6845:1: ( () )
-            // InternalQLS.g:6846:2: ()
+            // InternalQLS.g:6872:1: ( () )
+            // InternalQLS.g:6873:2: ()
             {
              before(grammarAccess.getStringValueTypeAccess().getStringValueTypeAction_0()); 
-            // InternalQLS.g:6847:2: ()
-            // InternalQLS.g:6847:3: 
+            // InternalQLS.g:6874:2: ()
+            // InternalQLS.g:6874:3: 
             {
             }
 
@@ -21081,16 +21166,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__1"
-    // InternalQLS.g:6855:1: rule__StringValueType__Group__1 : rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2 ;
+    // InternalQLS.g:6882:1: rule__StringValueType__Group__1 : rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2 ;
     public final void rule__StringValueType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6859:1: ( rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2 )
-            // InternalQLS.g:6860:2: rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2
+            // InternalQLS.g:6886:1: ( rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2 )
+            // InternalQLS.g:6887:2: rule__StringValueType__Group__1__Impl rule__StringValueType__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__StringValueType__Group__1__Impl();
 
             state._fsp--;
@@ -21119,17 +21204,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__1__Impl"
-    // InternalQLS.g:6867:1: rule__StringValueType__Group__1__Impl : ( 'StringType' ) ;
+    // InternalQLS.g:6894:1: rule__StringValueType__Group__1__Impl : ( 'StringType' ) ;
     public final void rule__StringValueType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6871:1: ( ( 'StringType' ) )
-            // InternalQLS.g:6872:1: ( 'StringType' )
+            // InternalQLS.g:6898:1: ( ( 'StringType' ) )
+            // InternalQLS.g:6899:1: ( 'StringType' )
             {
-            // InternalQLS.g:6872:1: ( 'StringType' )
-            // InternalQLS.g:6873:2: 'StringType'
+            // InternalQLS.g:6899:1: ( 'StringType' )
+            // InternalQLS.g:6900:2: 'StringType'
             {
              before(grammarAccess.getStringValueTypeAccess().getStringTypeKeyword_1()); 
             match(input,74,FOLLOW_2); 
@@ -21156,16 +21241,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__2"
-    // InternalQLS.g:6882:1: rule__StringValueType__Group__2 : rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3 ;
+    // InternalQLS.g:6909:1: rule__StringValueType__Group__2 : rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3 ;
     public final void rule__StringValueType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6886:1: ( rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3 )
-            // InternalQLS.g:6887:2: rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3
+            // InternalQLS.g:6913:1: ( rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3 )
+            // InternalQLS.g:6914:2: rule__StringValueType__Group__2__Impl rule__StringValueType__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__StringValueType__Group__2__Impl();
 
             state._fsp--;
@@ -21194,21 +21279,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__2__Impl"
-    // InternalQLS.g:6894:1: rule__StringValueType__Group__2__Impl : ( ( rule__StringValueType__NameAssignment_2 ) ) ;
+    // InternalQLS.g:6921:1: rule__StringValueType__Group__2__Impl : ( ( rule__StringValueType__NameAssignment_2 ) ) ;
     public final void rule__StringValueType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6898:1: ( ( ( rule__StringValueType__NameAssignment_2 ) ) )
-            // InternalQLS.g:6899:1: ( ( rule__StringValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6925:1: ( ( ( rule__StringValueType__NameAssignment_2 ) ) )
+            // InternalQLS.g:6926:1: ( ( rule__StringValueType__NameAssignment_2 ) )
             {
-            // InternalQLS.g:6899:1: ( ( rule__StringValueType__NameAssignment_2 ) )
-            // InternalQLS.g:6900:2: ( rule__StringValueType__NameAssignment_2 )
+            // InternalQLS.g:6926:1: ( ( rule__StringValueType__NameAssignment_2 ) )
+            // InternalQLS.g:6927:2: ( rule__StringValueType__NameAssignment_2 )
             {
              before(grammarAccess.getStringValueTypeAccess().getNameAssignment_2()); 
-            // InternalQLS.g:6901:2: ( rule__StringValueType__NameAssignment_2 )
-            // InternalQLS.g:6901:3: rule__StringValueType__NameAssignment_2
+            // InternalQLS.g:6928:2: ( rule__StringValueType__NameAssignment_2 )
+            // InternalQLS.g:6928:3: rule__StringValueType__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__StringValueType__NameAssignment_2();
@@ -21241,14 +21326,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__3"
-    // InternalQLS.g:6909:1: rule__StringValueType__Group__3 : rule__StringValueType__Group__3__Impl ;
+    // InternalQLS.g:6936:1: rule__StringValueType__Group__3 : rule__StringValueType__Group__3__Impl ;
     public final void rule__StringValueType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6913:1: ( rule__StringValueType__Group__3__Impl )
-            // InternalQLS.g:6914:2: rule__StringValueType__Group__3__Impl
+            // InternalQLS.g:6940:1: ( rule__StringValueType__Group__3__Impl )
+            // InternalQLS.g:6941:2: rule__StringValueType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringValueType__Group__3__Impl();
@@ -21274,20 +21359,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group__3__Impl"
-    // InternalQLS.g:6920:1: rule__StringValueType__Group__3__Impl : ( ( rule__StringValueType__Group_3__0 )? ) ;
+    // InternalQLS.g:6947:1: rule__StringValueType__Group__3__Impl : ( ( rule__StringValueType__Group_3__0 )? ) ;
     public final void rule__StringValueType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6924:1: ( ( ( rule__StringValueType__Group_3__0 )? ) )
-            // InternalQLS.g:6925:1: ( ( rule__StringValueType__Group_3__0 )? )
+            // InternalQLS.g:6951:1: ( ( ( rule__StringValueType__Group_3__0 )? ) )
+            // InternalQLS.g:6952:1: ( ( rule__StringValueType__Group_3__0 )? )
             {
-            // InternalQLS.g:6925:1: ( ( rule__StringValueType__Group_3__0 )? )
-            // InternalQLS.g:6926:2: ( rule__StringValueType__Group_3__0 )?
+            // InternalQLS.g:6952:1: ( ( rule__StringValueType__Group_3__0 )? )
+            // InternalQLS.g:6953:2: ( rule__StringValueType__Group_3__0 )?
             {
              before(grammarAccess.getStringValueTypeAccess().getGroup_3()); 
-            // InternalQLS.g:6927:2: ( rule__StringValueType__Group_3__0 )?
+            // InternalQLS.g:6954:2: ( rule__StringValueType__Group_3__0 )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -21296,7 +21381,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt54) {
                 case 1 :
-                    // InternalQLS.g:6927:3: rule__StringValueType__Group_3__0
+                    // InternalQLS.g:6954:3: rule__StringValueType__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__StringValueType__Group_3__0();
@@ -21332,14 +21417,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__0"
-    // InternalQLS.g:6936:1: rule__StringValueType__Group_3__0 : rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1 ;
+    // InternalQLS.g:6963:1: rule__StringValueType__Group_3__0 : rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1 ;
     public final void rule__StringValueType__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6940:1: ( rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1 )
-            // InternalQLS.g:6941:2: rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1
+            // InternalQLS.g:6967:1: ( rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1 )
+            // InternalQLS.g:6968:2: rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1
             {
             pushFollow(FOLLOW_48);
             rule__StringValueType__Group_3__0__Impl();
@@ -21370,17 +21455,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__0__Impl"
-    // InternalQLS.g:6948:1: rule__StringValueType__Group_3__0__Impl : ( '{' ) ;
+    // InternalQLS.g:6975:1: rule__StringValueType__Group_3__0__Impl : ( '{' ) ;
     public final void rule__StringValueType__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6952:1: ( ( '{' ) )
-            // InternalQLS.g:6953:1: ( '{' )
+            // InternalQLS.g:6979:1: ( ( '{' ) )
+            // InternalQLS.g:6980:1: ( '{' )
             {
-            // InternalQLS.g:6953:1: ( '{' )
-            // InternalQLS.g:6954:2: '{'
+            // InternalQLS.g:6980:1: ( '{' )
+            // InternalQLS.g:6981:2: '{'
             {
              before(grammarAccess.getStringValueTypeAccess().getLeftCurlyBracketKeyword_3_0()); 
             match(input,44,FOLLOW_2); 
@@ -21407,14 +21492,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__1"
-    // InternalQLS.g:6963:1: rule__StringValueType__Group_3__1 : rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2 ;
+    // InternalQLS.g:6990:1: rule__StringValueType__Group_3__1 : rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2 ;
     public final void rule__StringValueType__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6967:1: ( rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2 )
-            // InternalQLS.g:6968:2: rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2
+            // InternalQLS.g:6994:1: ( rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2 )
+            // InternalQLS.g:6995:2: rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2
             {
             pushFollow(FOLLOW_48);
             rule__StringValueType__Group_3__1__Impl();
@@ -21445,20 +21530,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__1__Impl"
-    // InternalQLS.g:6975:1: rule__StringValueType__Group_3__1__Impl : ( ( rule__StringValueType__Group_3_1__0 )? ) ;
+    // InternalQLS.g:7002:1: rule__StringValueType__Group_3__1__Impl : ( ( rule__StringValueType__Group_3_1__0 )? ) ;
     public final void rule__StringValueType__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6979:1: ( ( ( rule__StringValueType__Group_3_1__0 )? ) )
-            // InternalQLS.g:6980:1: ( ( rule__StringValueType__Group_3_1__0 )? )
+            // InternalQLS.g:7006:1: ( ( ( rule__StringValueType__Group_3_1__0 )? ) )
+            // InternalQLS.g:7007:1: ( ( rule__StringValueType__Group_3_1__0 )? )
             {
-            // InternalQLS.g:6980:1: ( ( rule__StringValueType__Group_3_1__0 )? )
-            // InternalQLS.g:6981:2: ( rule__StringValueType__Group_3_1__0 )?
+            // InternalQLS.g:7007:1: ( ( rule__StringValueType__Group_3_1__0 )? )
+            // InternalQLS.g:7008:2: ( rule__StringValueType__Group_3_1__0 )?
             {
              before(grammarAccess.getStringValueTypeAccess().getGroup_3_1()); 
-            // InternalQLS.g:6982:2: ( rule__StringValueType__Group_3_1__0 )?
+            // InternalQLS.g:7009:2: ( rule__StringValueType__Group_3_1__0 )?
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -21467,7 +21552,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt55) {
                 case 1 :
-                    // InternalQLS.g:6982:3: rule__StringValueType__Group_3_1__0
+                    // InternalQLS.g:7009:3: rule__StringValueType__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__StringValueType__Group_3_1__0();
@@ -21503,14 +21588,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__2"
-    // InternalQLS.g:6990:1: rule__StringValueType__Group_3__2 : rule__StringValueType__Group_3__2__Impl ;
+    // InternalQLS.g:7017:1: rule__StringValueType__Group_3__2 : rule__StringValueType__Group_3__2__Impl ;
     public final void rule__StringValueType__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:6994:1: ( rule__StringValueType__Group_3__2__Impl )
-            // InternalQLS.g:6995:2: rule__StringValueType__Group_3__2__Impl
+            // InternalQLS.g:7021:1: ( rule__StringValueType__Group_3__2__Impl )
+            // InternalQLS.g:7022:2: rule__StringValueType__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringValueType__Group_3__2__Impl();
@@ -21536,17 +21621,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3__2__Impl"
-    // InternalQLS.g:7001:1: rule__StringValueType__Group_3__2__Impl : ( '}' ) ;
+    // InternalQLS.g:7028:1: rule__StringValueType__Group_3__2__Impl : ( '}' ) ;
     public final void rule__StringValueType__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7005:1: ( ( '}' ) )
-            // InternalQLS.g:7006:1: ( '}' )
+            // InternalQLS.g:7032:1: ( ( '}' ) )
+            // InternalQLS.g:7033:1: ( '}' )
             {
-            // InternalQLS.g:7006:1: ( '}' )
-            // InternalQLS.g:7007:2: '}'
+            // InternalQLS.g:7033:1: ( '}' )
+            // InternalQLS.g:7034:2: '}'
             {
              before(grammarAccess.getStringValueTypeAccess().getRightCurlyBracketKeyword_3_2()); 
             match(input,46,FOLLOW_2); 
@@ -21573,14 +21658,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3_1__0"
-    // InternalQLS.g:7017:1: rule__StringValueType__Group_3_1__0 : rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1 ;
+    // InternalQLS.g:7044:1: rule__StringValueType__Group_3_1__0 : rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1 ;
     public final void rule__StringValueType__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7021:1: ( rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1 )
-            // InternalQLS.g:7022:2: rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1
+            // InternalQLS.g:7048:1: ( rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1 )
+            // InternalQLS.g:7049:2: rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1
             {
             pushFollow(FOLLOW_49);
             rule__StringValueType__Group_3_1__0__Impl();
@@ -21611,17 +21696,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3_1__0__Impl"
-    // InternalQLS.g:7029:1: rule__StringValueType__Group_3_1__0__Impl : ( 'unit' ) ;
+    // InternalQLS.g:7056:1: rule__StringValueType__Group_3_1__0__Impl : ( 'unit' ) ;
     public final void rule__StringValueType__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7033:1: ( ( 'unit' ) )
-            // InternalQLS.g:7034:1: ( 'unit' )
+            // InternalQLS.g:7060:1: ( ( 'unit' ) )
+            // InternalQLS.g:7061:1: ( 'unit' )
             {
-            // InternalQLS.g:7034:1: ( 'unit' )
-            // InternalQLS.g:7035:2: 'unit'
+            // InternalQLS.g:7061:1: ( 'unit' )
+            // InternalQLS.g:7062:2: 'unit'
             {
              before(grammarAccess.getStringValueTypeAccess().getUnitKeyword_3_1_0()); 
             match(input,64,FOLLOW_2); 
@@ -21648,14 +21733,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3_1__1"
-    // InternalQLS.g:7044:1: rule__StringValueType__Group_3_1__1 : rule__StringValueType__Group_3_1__1__Impl ;
+    // InternalQLS.g:7071:1: rule__StringValueType__Group_3_1__1 : rule__StringValueType__Group_3_1__1__Impl ;
     public final void rule__StringValueType__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7048:1: ( rule__StringValueType__Group_3_1__1__Impl )
-            // InternalQLS.g:7049:2: rule__StringValueType__Group_3_1__1__Impl
+            // InternalQLS.g:7075:1: ( rule__StringValueType__Group_3_1__1__Impl )
+            // InternalQLS.g:7076:2: rule__StringValueType__Group_3_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringValueType__Group_3_1__1__Impl();
@@ -21681,21 +21766,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__Group_3_1__1__Impl"
-    // InternalQLS.g:7055:1: rule__StringValueType__Group_3_1__1__Impl : ( ( rule__StringValueType__UnitAssignment_3_1_1 ) ) ;
+    // InternalQLS.g:7082:1: rule__StringValueType__Group_3_1__1__Impl : ( ( rule__StringValueType__UnitAssignment_3_1_1 ) ) ;
     public final void rule__StringValueType__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7059:1: ( ( ( rule__StringValueType__UnitAssignment_3_1_1 ) ) )
-            // InternalQLS.g:7060:1: ( ( rule__StringValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:7086:1: ( ( ( rule__StringValueType__UnitAssignment_3_1_1 ) ) )
+            // InternalQLS.g:7087:1: ( ( rule__StringValueType__UnitAssignment_3_1_1 ) )
             {
-            // InternalQLS.g:7060:1: ( ( rule__StringValueType__UnitAssignment_3_1_1 ) )
-            // InternalQLS.g:7061:2: ( rule__StringValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:7087:1: ( ( rule__StringValueType__UnitAssignment_3_1_1 ) )
+            // InternalQLS.g:7088:2: ( rule__StringValueType__UnitAssignment_3_1_1 )
             {
              before(grammarAccess.getStringValueTypeAccess().getUnitAssignment_3_1_1()); 
-            // InternalQLS.g:7062:2: ( rule__StringValueType__UnitAssignment_3_1_1 )
-            // InternalQLS.g:7062:3: rule__StringValueType__UnitAssignment_3_1_1
+            // InternalQLS.g:7089:2: ( rule__StringValueType__UnitAssignment_3_1_1 )
+            // InternalQLS.g:7089:3: rule__StringValueType__UnitAssignment_3_1_1
             {
             pushFollow(FOLLOW_2);
             rule__StringValueType__UnitAssignment_3_1_1();
@@ -21728,16 +21813,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__Group__0"
-    // InternalQLS.g:7071:1: rule__EnumerationLiteral__Group__0 : rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1 ;
+    // InternalQLS.g:7098:1: rule__EnumerationLiteral__Group__0 : rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1 ;
     public final void rule__EnumerationLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7075:1: ( rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1 )
-            // InternalQLS.g:7076:2: rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1
+            // InternalQLS.g:7102:1: ( rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1 )
+            // InternalQLS.g:7103:2: rule__EnumerationLiteral__Group__0__Impl rule__EnumerationLiteral__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__EnumerationLiteral__Group__0__Impl();
 
             state._fsp--;
@@ -21766,21 +21851,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__Group__0__Impl"
-    // InternalQLS.g:7083:1: rule__EnumerationLiteral__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7110:1: rule__EnumerationLiteral__Group__0__Impl : ( () ) ;
     public final void rule__EnumerationLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7087:1: ( ( () ) )
-            // InternalQLS.g:7088:1: ( () )
+            // InternalQLS.g:7114:1: ( ( () ) )
+            // InternalQLS.g:7115:1: ( () )
             {
-            // InternalQLS.g:7088:1: ( () )
-            // InternalQLS.g:7089:2: ()
+            // InternalQLS.g:7115:1: ( () )
+            // InternalQLS.g:7116:2: ()
             {
              before(grammarAccess.getEnumerationLiteralAccess().getEnumerationLiteralAction_0()); 
-            // InternalQLS.g:7090:2: ()
-            // InternalQLS.g:7090:3: 
+            // InternalQLS.g:7117:2: ()
+            // InternalQLS.g:7117:3: 
             {
             }
 
@@ -21803,14 +21888,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__Group__1"
-    // InternalQLS.g:7098:1: rule__EnumerationLiteral__Group__1 : rule__EnumerationLiteral__Group__1__Impl ;
+    // InternalQLS.g:7125:1: rule__EnumerationLiteral__Group__1 : rule__EnumerationLiteral__Group__1__Impl ;
     public final void rule__EnumerationLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7102:1: ( rule__EnumerationLiteral__Group__1__Impl )
-            // InternalQLS.g:7103:2: rule__EnumerationLiteral__Group__1__Impl
+            // InternalQLS.g:7129:1: ( rule__EnumerationLiteral__Group__1__Impl )
+            // InternalQLS.g:7130:2: rule__EnumerationLiteral__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationLiteral__Group__1__Impl();
@@ -21836,21 +21921,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__Group__1__Impl"
-    // InternalQLS.g:7109:1: rule__EnumerationLiteral__Group__1__Impl : ( ( rule__EnumerationLiteral__NameAssignment_1 ) ) ;
+    // InternalQLS.g:7136:1: rule__EnumerationLiteral__Group__1__Impl : ( ( rule__EnumerationLiteral__NameAssignment_1 ) ) ;
     public final void rule__EnumerationLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7113:1: ( ( ( rule__EnumerationLiteral__NameAssignment_1 ) ) )
-            // InternalQLS.g:7114:1: ( ( rule__EnumerationLiteral__NameAssignment_1 ) )
+            // InternalQLS.g:7140:1: ( ( ( rule__EnumerationLiteral__NameAssignment_1 ) ) )
+            // InternalQLS.g:7141:1: ( ( rule__EnumerationLiteral__NameAssignment_1 ) )
             {
-            // InternalQLS.g:7114:1: ( ( rule__EnumerationLiteral__NameAssignment_1 ) )
-            // InternalQLS.g:7115:2: ( rule__EnumerationLiteral__NameAssignment_1 )
+            // InternalQLS.g:7141:1: ( ( rule__EnumerationLiteral__NameAssignment_1 ) )
+            // InternalQLS.g:7142:2: ( rule__EnumerationLiteral__NameAssignment_1 )
             {
              before(grammarAccess.getEnumerationLiteralAccess().getNameAssignment_1()); 
-            // InternalQLS.g:7116:2: ( rule__EnumerationLiteral__NameAssignment_1 )
-            // InternalQLS.g:7116:3: rule__EnumerationLiteral__NameAssignment_1
+            // InternalQLS.g:7143:2: ( rule__EnumerationLiteral__NameAssignment_1 )
+            // InternalQLS.g:7143:3: rule__EnumerationLiteral__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationLiteral__NameAssignment_1();
@@ -21883,14 +21968,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValue__Group__0"
-    // InternalQLS.g:7125:1: rule__IntegerValue__Group__0 : rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1 ;
+    // InternalQLS.g:7152:1: rule__IntegerValue__Group__0 : rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1 ;
     public final void rule__IntegerValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7129:1: ( rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1 )
-            // InternalQLS.g:7130:2: rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1
+            // InternalQLS.g:7156:1: ( rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1 )
+            // InternalQLS.g:7157:2: rule__IntegerValue__Group__0__Impl rule__IntegerValue__Group__1
             {
             pushFollow(FOLLOW_55);
             rule__IntegerValue__Group__0__Impl();
@@ -21921,21 +22006,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValue__Group__0__Impl"
-    // InternalQLS.g:7137:1: rule__IntegerValue__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7164:1: rule__IntegerValue__Group__0__Impl : ( () ) ;
     public final void rule__IntegerValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7141:1: ( ( () ) )
-            // InternalQLS.g:7142:1: ( () )
+            // InternalQLS.g:7168:1: ( ( () ) )
+            // InternalQLS.g:7169:1: ( () )
             {
-            // InternalQLS.g:7142:1: ( () )
-            // InternalQLS.g:7143:2: ()
+            // InternalQLS.g:7169:1: ( () )
+            // InternalQLS.g:7170:2: ()
             {
              before(grammarAccess.getIntegerValueAccess().getIntegerValueAction_0()); 
-            // InternalQLS.g:7144:2: ()
-            // InternalQLS.g:7144:3: 
+            // InternalQLS.g:7171:2: ()
+            // InternalQLS.g:7171:3: 
             {
             }
 
@@ -21958,14 +22043,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValue__Group__1"
-    // InternalQLS.g:7152:1: rule__IntegerValue__Group__1 : rule__IntegerValue__Group__1__Impl ;
+    // InternalQLS.g:7179:1: rule__IntegerValue__Group__1 : rule__IntegerValue__Group__1__Impl ;
     public final void rule__IntegerValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7156:1: ( rule__IntegerValue__Group__1__Impl )
-            // InternalQLS.g:7157:2: rule__IntegerValue__Group__1__Impl
+            // InternalQLS.g:7183:1: ( rule__IntegerValue__Group__1__Impl )
+            // InternalQLS.g:7184:2: rule__IntegerValue__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValue__Group__1__Impl();
@@ -21991,21 +22076,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValue__Group__1__Impl"
-    // InternalQLS.g:7163:1: rule__IntegerValue__Group__1__Impl : ( ( rule__IntegerValue__IntValueAssignment_1 ) ) ;
+    // InternalQLS.g:7190:1: rule__IntegerValue__Group__1__Impl : ( ( rule__IntegerValue__IntValueAssignment_1 ) ) ;
     public final void rule__IntegerValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7167:1: ( ( ( rule__IntegerValue__IntValueAssignment_1 ) ) )
-            // InternalQLS.g:7168:1: ( ( rule__IntegerValue__IntValueAssignment_1 ) )
+            // InternalQLS.g:7194:1: ( ( ( rule__IntegerValue__IntValueAssignment_1 ) ) )
+            // InternalQLS.g:7195:1: ( ( rule__IntegerValue__IntValueAssignment_1 ) )
             {
-            // InternalQLS.g:7168:1: ( ( rule__IntegerValue__IntValueAssignment_1 ) )
-            // InternalQLS.g:7169:2: ( rule__IntegerValue__IntValueAssignment_1 )
+            // InternalQLS.g:7195:1: ( ( rule__IntegerValue__IntValueAssignment_1 ) )
+            // InternalQLS.g:7196:2: ( rule__IntegerValue__IntValueAssignment_1 )
             {
              before(grammarAccess.getIntegerValueAccess().getIntValueAssignment_1()); 
-            // InternalQLS.g:7170:2: ( rule__IntegerValue__IntValueAssignment_1 )
-            // InternalQLS.g:7170:3: rule__IntegerValue__IntValueAssignment_1
+            // InternalQLS.g:7197:2: ( rule__IntegerValue__IntValueAssignment_1 )
+            // InternalQLS.g:7197:3: rule__IntegerValue__IntValueAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__IntegerValue__IntValueAssignment_1();
@@ -22038,16 +22123,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__Group__0"
-    // InternalQLS.g:7179:1: rule__StringValue__Group__0 : rule__StringValue__Group__0__Impl rule__StringValue__Group__1 ;
+    // InternalQLS.g:7206:1: rule__StringValue__Group__0 : rule__StringValue__Group__0__Impl rule__StringValue__Group__1 ;
     public final void rule__StringValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7183:1: ( rule__StringValue__Group__0__Impl rule__StringValue__Group__1 )
-            // InternalQLS.g:7184:2: rule__StringValue__Group__0__Impl rule__StringValue__Group__1
+            // InternalQLS.g:7210:1: ( rule__StringValue__Group__0__Impl rule__StringValue__Group__1 )
+            // InternalQLS.g:7211:2: rule__StringValue__Group__0__Impl rule__StringValue__Group__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__StringValue__Group__0__Impl();
 
             state._fsp--;
@@ -22076,21 +22161,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__Group__0__Impl"
-    // InternalQLS.g:7191:1: rule__StringValue__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7218:1: rule__StringValue__Group__0__Impl : ( () ) ;
     public final void rule__StringValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7195:1: ( ( () ) )
-            // InternalQLS.g:7196:1: ( () )
+            // InternalQLS.g:7222:1: ( ( () ) )
+            // InternalQLS.g:7223:1: ( () )
             {
-            // InternalQLS.g:7196:1: ( () )
-            // InternalQLS.g:7197:2: ()
+            // InternalQLS.g:7223:1: ( () )
+            // InternalQLS.g:7224:2: ()
             {
              before(grammarAccess.getStringValueAccess().getStringValueAction_0()); 
-            // InternalQLS.g:7198:2: ()
-            // InternalQLS.g:7198:3: 
+            // InternalQLS.g:7225:2: ()
+            // InternalQLS.g:7225:3: 
             {
             }
 
@@ -22113,14 +22198,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__Group__1"
-    // InternalQLS.g:7206:1: rule__StringValue__Group__1 : rule__StringValue__Group__1__Impl ;
+    // InternalQLS.g:7233:1: rule__StringValue__Group__1 : rule__StringValue__Group__1__Impl ;
     public final void rule__StringValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7210:1: ( rule__StringValue__Group__1__Impl )
-            // InternalQLS.g:7211:2: rule__StringValue__Group__1__Impl
+            // InternalQLS.g:7237:1: ( rule__StringValue__Group__1__Impl )
+            // InternalQLS.g:7238:2: rule__StringValue__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringValue__Group__1__Impl();
@@ -22146,21 +22231,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__Group__1__Impl"
-    // InternalQLS.g:7217:1: rule__StringValue__Group__1__Impl : ( ( rule__StringValue__StringValueAssignment_1 ) ) ;
+    // InternalQLS.g:7244:1: rule__StringValue__Group__1__Impl : ( ( rule__StringValue__StringValueAssignment_1 ) ) ;
     public final void rule__StringValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7221:1: ( ( ( rule__StringValue__StringValueAssignment_1 ) ) )
-            // InternalQLS.g:7222:1: ( ( rule__StringValue__StringValueAssignment_1 ) )
+            // InternalQLS.g:7248:1: ( ( ( rule__StringValue__StringValueAssignment_1 ) ) )
+            // InternalQLS.g:7249:1: ( ( rule__StringValue__StringValueAssignment_1 ) )
             {
-            // InternalQLS.g:7222:1: ( ( rule__StringValue__StringValueAssignment_1 ) )
-            // InternalQLS.g:7223:2: ( rule__StringValue__StringValueAssignment_1 )
+            // InternalQLS.g:7249:1: ( ( rule__StringValue__StringValueAssignment_1 ) )
+            // InternalQLS.g:7250:2: ( rule__StringValue__StringValueAssignment_1 )
             {
              before(grammarAccess.getStringValueAccess().getStringValueAssignment_1()); 
-            // InternalQLS.g:7224:2: ( rule__StringValue__StringValueAssignment_1 )
-            // InternalQLS.g:7224:3: rule__StringValue__StringValueAssignment_1
+            // InternalQLS.g:7251:2: ( rule__StringValue__StringValueAssignment_1 )
+            // InternalQLS.g:7251:3: rule__StringValue__StringValueAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__StringValue__StringValueAssignment_1();
@@ -22193,14 +22278,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValue__Group__0"
-    // InternalQLS.g:7233:1: rule__BooleanValue__Group__0 : rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1 ;
+    // InternalQLS.g:7260:1: rule__BooleanValue__Group__0 : rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1 ;
     public final void rule__BooleanValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7237:1: ( rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1 )
-            // InternalQLS.g:7238:2: rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1
+            // InternalQLS.g:7264:1: ( rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1 )
+            // InternalQLS.g:7265:2: rule__BooleanValue__Group__0__Impl rule__BooleanValue__Group__1
             {
             pushFollow(FOLLOW_63);
             rule__BooleanValue__Group__0__Impl();
@@ -22231,21 +22316,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValue__Group__0__Impl"
-    // InternalQLS.g:7245:1: rule__BooleanValue__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7272:1: rule__BooleanValue__Group__0__Impl : ( () ) ;
     public final void rule__BooleanValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7249:1: ( ( () ) )
-            // InternalQLS.g:7250:1: ( () )
+            // InternalQLS.g:7276:1: ( ( () ) )
+            // InternalQLS.g:7277:1: ( () )
             {
-            // InternalQLS.g:7250:1: ( () )
-            // InternalQLS.g:7251:2: ()
+            // InternalQLS.g:7277:1: ( () )
+            // InternalQLS.g:7278:2: ()
             {
              before(grammarAccess.getBooleanValueAccess().getBooleanValueAction_0()); 
-            // InternalQLS.g:7252:2: ()
-            // InternalQLS.g:7252:3: 
+            // InternalQLS.g:7279:2: ()
+            // InternalQLS.g:7279:3: 
             {
             }
 
@@ -22268,14 +22353,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValue__Group__1"
-    // InternalQLS.g:7260:1: rule__BooleanValue__Group__1 : rule__BooleanValue__Group__1__Impl ;
+    // InternalQLS.g:7287:1: rule__BooleanValue__Group__1 : rule__BooleanValue__Group__1__Impl ;
     public final void rule__BooleanValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7264:1: ( rule__BooleanValue__Group__1__Impl )
-            // InternalQLS.g:7265:2: rule__BooleanValue__Group__1__Impl
+            // InternalQLS.g:7291:1: ( rule__BooleanValue__Group__1__Impl )
+            // InternalQLS.g:7292:2: rule__BooleanValue__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValue__Group__1__Impl();
@@ -22301,21 +22386,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValue__Group__1__Impl"
-    // InternalQLS.g:7271:1: rule__BooleanValue__Group__1__Impl : ( ( rule__BooleanValue__BooleanValueAssignment_1 ) ) ;
+    // InternalQLS.g:7298:1: rule__BooleanValue__Group__1__Impl : ( ( rule__BooleanValue__BooleanValueAssignment_1 ) ) ;
     public final void rule__BooleanValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7275:1: ( ( ( rule__BooleanValue__BooleanValueAssignment_1 ) ) )
-            // InternalQLS.g:7276:1: ( ( rule__BooleanValue__BooleanValueAssignment_1 ) )
+            // InternalQLS.g:7302:1: ( ( ( rule__BooleanValue__BooleanValueAssignment_1 ) ) )
+            // InternalQLS.g:7303:1: ( ( rule__BooleanValue__BooleanValueAssignment_1 ) )
             {
-            // InternalQLS.g:7276:1: ( ( rule__BooleanValue__BooleanValueAssignment_1 ) )
-            // InternalQLS.g:7277:2: ( rule__BooleanValue__BooleanValueAssignment_1 )
+            // InternalQLS.g:7303:1: ( ( rule__BooleanValue__BooleanValueAssignment_1 ) )
+            // InternalQLS.g:7304:2: ( rule__BooleanValue__BooleanValueAssignment_1 )
             {
              before(grammarAccess.getBooleanValueAccess().getBooleanValueAssignment_1()); 
-            // InternalQLS.g:7278:2: ( rule__BooleanValue__BooleanValueAssignment_1 )
-            // InternalQLS.g:7278:3: rule__BooleanValue__BooleanValueAssignment_1
+            // InternalQLS.g:7305:2: ( rule__BooleanValue__BooleanValueAssignment_1 )
+            // InternalQLS.g:7305:3: rule__BooleanValue__BooleanValueAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__BooleanValue__BooleanValueAssignment_1();
@@ -22348,14 +22433,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationCall__Group__0"
-    // InternalQLS.g:7287:1: rule__EnumerationCall__Group__0 : rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 ;
+    // InternalQLS.g:7314:1: rule__EnumerationCall__Group__0 : rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 ;
     public final void rule__EnumerationCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7291:1: ( rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 )
-            // InternalQLS.g:7292:2: rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1
+            // InternalQLS.g:7318:1: ( rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1 )
+            // InternalQLS.g:7319:2: rule__EnumerationCall__Group__0__Impl rule__EnumerationCall__Group__1
             {
             pushFollow(FOLLOW_64);
             rule__EnumerationCall__Group__0__Impl();
@@ -22386,21 +22471,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationCall__Group__0__Impl"
-    // InternalQLS.g:7299:1: rule__EnumerationCall__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7326:1: rule__EnumerationCall__Group__0__Impl : ( () ) ;
     public final void rule__EnumerationCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7303:1: ( ( () ) )
-            // InternalQLS.g:7304:1: ( () )
+            // InternalQLS.g:7330:1: ( ( () ) )
+            // InternalQLS.g:7331:1: ( () )
             {
-            // InternalQLS.g:7304:1: ( () )
-            // InternalQLS.g:7305:2: ()
+            // InternalQLS.g:7331:1: ( () )
+            // InternalQLS.g:7332:2: ()
             {
              before(grammarAccess.getEnumerationCallAccess().getEnumerationCallAction_0()); 
-            // InternalQLS.g:7306:2: ()
-            // InternalQLS.g:7306:3: 
+            // InternalQLS.g:7333:2: ()
+            // InternalQLS.g:7333:3: 
             {
             }
 
@@ -22423,14 +22508,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationCall__Group__1"
-    // InternalQLS.g:7314:1: rule__EnumerationCall__Group__1 : rule__EnumerationCall__Group__1__Impl ;
+    // InternalQLS.g:7341:1: rule__EnumerationCall__Group__1 : rule__EnumerationCall__Group__1__Impl ;
     public final void rule__EnumerationCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7318:1: ( rule__EnumerationCall__Group__1__Impl )
-            // InternalQLS.g:7319:2: rule__EnumerationCall__Group__1__Impl
+            // InternalQLS.g:7345:1: ( rule__EnumerationCall__Group__1__Impl )
+            // InternalQLS.g:7346:2: rule__EnumerationCall__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationCall__Group__1__Impl();
@@ -22456,21 +22541,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationCall__Group__1__Impl"
-    // InternalQLS.g:7325:1: rule__EnumerationCall__Group__1__Impl : ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) ;
+    // InternalQLS.g:7352:1: rule__EnumerationCall__Group__1__Impl : ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) ;
     public final void rule__EnumerationCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7329:1: ( ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) )
-            // InternalQLS.g:7330:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
+            // InternalQLS.g:7356:1: ( ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) ) )
+            // InternalQLS.g:7357:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
             {
-            // InternalQLS.g:7330:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
-            // InternalQLS.g:7331:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
+            // InternalQLS.g:7357:1: ( ( rule__EnumerationCall__EnumerationLiteralAssignment_1 ) )
+            // InternalQLS.g:7358:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
             {
              before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralAssignment_1()); 
-            // InternalQLS.g:7332:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
-            // InternalQLS.g:7332:3: rule__EnumerationCall__EnumerationLiteralAssignment_1
+            // InternalQLS.g:7359:2: ( rule__EnumerationCall__EnumerationLiteralAssignment_1 )
+            // InternalQLS.g:7359:3: rule__EnumerationCall__EnumerationLiteralAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumerationCall__EnumerationLiteralAssignment_1();
@@ -22503,14 +22588,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__0"
-    // InternalQLS.g:7341:1: rule__DateValue__Group__0 : rule__DateValue__Group__0__Impl rule__DateValue__Group__1 ;
+    // InternalQLS.g:7368:1: rule__DateValue__Group__0 : rule__DateValue__Group__0__Impl rule__DateValue__Group__1 ;
     public final void rule__DateValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7345:1: ( rule__DateValue__Group__0__Impl rule__DateValue__Group__1 )
-            // InternalQLS.g:7346:2: rule__DateValue__Group__0__Impl rule__DateValue__Group__1
+            // InternalQLS.g:7372:1: ( rule__DateValue__Group__0__Impl rule__DateValue__Group__1 )
+            // InternalQLS.g:7373:2: rule__DateValue__Group__0__Impl rule__DateValue__Group__1
             {
             pushFollow(FOLLOW_65);
             rule__DateValue__Group__0__Impl();
@@ -22541,21 +22626,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__0__Impl"
-    // InternalQLS.g:7353:1: rule__DateValue__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7380:1: rule__DateValue__Group__0__Impl : ( () ) ;
     public final void rule__DateValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7357:1: ( ( () ) )
-            // InternalQLS.g:7358:1: ( () )
+            // InternalQLS.g:7384:1: ( ( () ) )
+            // InternalQLS.g:7385:1: ( () )
             {
-            // InternalQLS.g:7358:1: ( () )
-            // InternalQLS.g:7359:2: ()
+            // InternalQLS.g:7385:1: ( () )
+            // InternalQLS.g:7386:2: ()
             {
              before(grammarAccess.getDateValueAccess().getDateValueAction_0()); 
-            // InternalQLS.g:7360:2: ()
-            // InternalQLS.g:7360:3: 
+            // InternalQLS.g:7387:2: ()
+            // InternalQLS.g:7387:3: 
             {
             }
 
@@ -22578,16 +22663,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__1"
-    // InternalQLS.g:7368:1: rule__DateValue__Group__1 : rule__DateValue__Group__1__Impl rule__DateValue__Group__2 ;
+    // InternalQLS.g:7395:1: rule__DateValue__Group__1 : rule__DateValue__Group__1__Impl rule__DateValue__Group__2 ;
     public final void rule__DateValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7372:1: ( rule__DateValue__Group__1__Impl rule__DateValue__Group__2 )
-            // InternalQLS.g:7373:2: rule__DateValue__Group__1__Impl rule__DateValue__Group__2
+            // InternalQLS.g:7399:1: ( rule__DateValue__Group__1__Impl rule__DateValue__Group__2 )
+            // InternalQLS.g:7400:2: rule__DateValue__Group__1__Impl rule__DateValue__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_6);
             rule__DateValue__Group__1__Impl();
 
             state._fsp--;
@@ -22616,17 +22701,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__1__Impl"
-    // InternalQLS.g:7380:1: rule__DateValue__Group__1__Impl : ( 'DateValue' ) ;
+    // InternalQLS.g:7407:1: rule__DateValue__Group__1__Impl : ( 'DateValue' ) ;
     public final void rule__DateValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7384:1: ( ( 'DateValue' ) )
-            // InternalQLS.g:7385:1: ( 'DateValue' )
+            // InternalQLS.g:7411:1: ( ( 'DateValue' ) )
+            // InternalQLS.g:7412:1: ( 'DateValue' )
             {
-            // InternalQLS.g:7385:1: ( 'DateValue' )
-            // InternalQLS.g:7386:2: 'DateValue'
+            // InternalQLS.g:7412:1: ( 'DateValue' )
+            // InternalQLS.g:7413:2: 'DateValue'
             {
              before(grammarAccess.getDateValueAccess().getDateValueKeyword_1()); 
             match(input,75,FOLLOW_2); 
@@ -22653,14 +22738,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__2"
-    // InternalQLS.g:7395:1: rule__DateValue__Group__2 : rule__DateValue__Group__2__Impl rule__DateValue__Group__3 ;
+    // InternalQLS.g:7422:1: rule__DateValue__Group__2 : rule__DateValue__Group__2__Impl rule__DateValue__Group__3 ;
     public final void rule__DateValue__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7399:1: ( rule__DateValue__Group__2__Impl rule__DateValue__Group__3 )
-            // InternalQLS.g:7400:2: rule__DateValue__Group__2__Impl rule__DateValue__Group__3
+            // InternalQLS.g:7426:1: ( rule__DateValue__Group__2__Impl rule__DateValue__Group__3 )
+            // InternalQLS.g:7427:2: rule__DateValue__Group__2__Impl rule__DateValue__Group__3
             {
             pushFollow(FOLLOW_66);
             rule__DateValue__Group__2__Impl();
@@ -22691,17 +22776,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__2__Impl"
-    // InternalQLS.g:7407:1: rule__DateValue__Group__2__Impl : ( '{' ) ;
+    // InternalQLS.g:7434:1: rule__DateValue__Group__2__Impl : ( '{' ) ;
     public final void rule__DateValue__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7411:1: ( ( '{' ) )
-            // InternalQLS.g:7412:1: ( '{' )
+            // InternalQLS.g:7438:1: ( ( '{' ) )
+            // InternalQLS.g:7439:1: ( '{' )
             {
-            // InternalQLS.g:7412:1: ( '{' )
-            // InternalQLS.g:7413:2: '{'
+            // InternalQLS.g:7439:1: ( '{' )
+            // InternalQLS.g:7440:2: '{'
             {
              before(grammarAccess.getDateValueAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,44,FOLLOW_2); 
@@ -22728,14 +22813,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__3"
-    // InternalQLS.g:7422:1: rule__DateValue__Group__3 : rule__DateValue__Group__3__Impl rule__DateValue__Group__4 ;
+    // InternalQLS.g:7449:1: rule__DateValue__Group__3 : rule__DateValue__Group__3__Impl rule__DateValue__Group__4 ;
     public final void rule__DateValue__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7426:1: ( rule__DateValue__Group__3__Impl rule__DateValue__Group__4 )
-            // InternalQLS.g:7427:2: rule__DateValue__Group__3__Impl rule__DateValue__Group__4
+            // InternalQLS.g:7453:1: ( rule__DateValue__Group__3__Impl rule__DateValue__Group__4 )
+            // InternalQLS.g:7454:2: rule__DateValue__Group__3__Impl rule__DateValue__Group__4
             {
             pushFollow(FOLLOW_66);
             rule__DateValue__Group__3__Impl();
@@ -22766,20 +22851,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__3__Impl"
-    // InternalQLS.g:7434:1: rule__DateValue__Group__3__Impl : ( ( rule__DateValue__Group_3__0 )? ) ;
+    // InternalQLS.g:7461:1: rule__DateValue__Group__3__Impl : ( ( rule__DateValue__Group_3__0 )? ) ;
     public final void rule__DateValue__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7438:1: ( ( ( rule__DateValue__Group_3__0 )? ) )
-            // InternalQLS.g:7439:1: ( ( rule__DateValue__Group_3__0 )? )
+            // InternalQLS.g:7465:1: ( ( ( rule__DateValue__Group_3__0 )? ) )
+            // InternalQLS.g:7466:1: ( ( rule__DateValue__Group_3__0 )? )
             {
-            // InternalQLS.g:7439:1: ( ( rule__DateValue__Group_3__0 )? )
-            // InternalQLS.g:7440:2: ( rule__DateValue__Group_3__0 )?
+            // InternalQLS.g:7466:1: ( ( rule__DateValue__Group_3__0 )? )
+            // InternalQLS.g:7467:2: ( rule__DateValue__Group_3__0 )?
             {
              before(grammarAccess.getDateValueAccess().getGroup_3()); 
-            // InternalQLS.g:7441:2: ( rule__DateValue__Group_3__0 )?
+            // InternalQLS.g:7468:2: ( rule__DateValue__Group_3__0 )?
             int alt56=2;
             int LA56_0 = input.LA(1);
 
@@ -22788,7 +22873,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt56) {
                 case 1 :
-                    // InternalQLS.g:7441:3: rule__DateValue__Group_3__0
+                    // InternalQLS.g:7468:3: rule__DateValue__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DateValue__Group_3__0();
@@ -22824,14 +22909,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__4"
-    // InternalQLS.g:7449:1: rule__DateValue__Group__4 : rule__DateValue__Group__4__Impl ;
+    // InternalQLS.g:7476:1: rule__DateValue__Group__4 : rule__DateValue__Group__4__Impl ;
     public final void rule__DateValue__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7453:1: ( rule__DateValue__Group__4__Impl )
-            // InternalQLS.g:7454:2: rule__DateValue__Group__4__Impl
+            // InternalQLS.g:7480:1: ( rule__DateValue__Group__4__Impl )
+            // InternalQLS.g:7481:2: rule__DateValue__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DateValue__Group__4__Impl();
@@ -22857,17 +22942,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group__4__Impl"
-    // InternalQLS.g:7460:1: rule__DateValue__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:7487:1: rule__DateValue__Group__4__Impl : ( '}' ) ;
     public final void rule__DateValue__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7464:1: ( ( '}' ) )
-            // InternalQLS.g:7465:1: ( '}' )
+            // InternalQLS.g:7491:1: ( ( '}' ) )
+            // InternalQLS.g:7492:1: ( '}' )
             {
-            // InternalQLS.g:7465:1: ( '}' )
-            // InternalQLS.g:7466:2: '}'
+            // InternalQLS.g:7492:1: ( '}' )
+            // InternalQLS.g:7493:2: '}'
             {
              before(grammarAccess.getDateValueAccess().getRightCurlyBracketKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -22894,14 +22979,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group_3__0"
-    // InternalQLS.g:7476:1: rule__DateValue__Group_3__0 : rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1 ;
+    // InternalQLS.g:7503:1: rule__DateValue__Group_3__0 : rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1 ;
     public final void rule__DateValue__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7480:1: ( rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1 )
-            // InternalQLS.g:7481:2: rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1
+            // InternalQLS.g:7507:1: ( rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1 )
+            // InternalQLS.g:7508:2: rule__DateValue__Group_3__0__Impl rule__DateValue__Group_3__1
             {
             pushFollow(FOLLOW_67);
             rule__DateValue__Group_3__0__Impl();
@@ -22932,17 +23017,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group_3__0__Impl"
-    // InternalQLS.g:7488:1: rule__DateValue__Group_3__0__Impl : ( 'dateValue' ) ;
+    // InternalQLS.g:7515:1: rule__DateValue__Group_3__0__Impl : ( 'dateValue' ) ;
     public final void rule__DateValue__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7492:1: ( ( 'dateValue' ) )
-            // InternalQLS.g:7493:1: ( 'dateValue' )
+            // InternalQLS.g:7519:1: ( ( 'dateValue' ) )
+            // InternalQLS.g:7520:1: ( 'dateValue' )
             {
-            // InternalQLS.g:7493:1: ( 'dateValue' )
-            // InternalQLS.g:7494:2: 'dateValue'
+            // InternalQLS.g:7520:1: ( 'dateValue' )
+            // InternalQLS.g:7521:2: 'dateValue'
             {
              before(grammarAccess.getDateValueAccess().getDateValueKeyword_3_0()); 
             match(input,76,FOLLOW_2); 
@@ -22969,14 +23054,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group_3__1"
-    // InternalQLS.g:7503:1: rule__DateValue__Group_3__1 : rule__DateValue__Group_3__1__Impl ;
+    // InternalQLS.g:7530:1: rule__DateValue__Group_3__1 : rule__DateValue__Group_3__1__Impl ;
     public final void rule__DateValue__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7507:1: ( rule__DateValue__Group_3__1__Impl )
-            // InternalQLS.g:7508:2: rule__DateValue__Group_3__1__Impl
+            // InternalQLS.g:7534:1: ( rule__DateValue__Group_3__1__Impl )
+            // InternalQLS.g:7535:2: rule__DateValue__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DateValue__Group_3__1__Impl();
@@ -23002,21 +23087,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__Group_3__1__Impl"
-    // InternalQLS.g:7514:1: rule__DateValue__Group_3__1__Impl : ( ( rule__DateValue__DateValueAssignment_3_1 ) ) ;
+    // InternalQLS.g:7541:1: rule__DateValue__Group_3__1__Impl : ( ( rule__DateValue__DateValueAssignment_3_1 ) ) ;
     public final void rule__DateValue__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7518:1: ( ( ( rule__DateValue__DateValueAssignment_3_1 ) ) )
-            // InternalQLS.g:7519:1: ( ( rule__DateValue__DateValueAssignment_3_1 ) )
+            // InternalQLS.g:7545:1: ( ( ( rule__DateValue__DateValueAssignment_3_1 ) ) )
+            // InternalQLS.g:7546:1: ( ( rule__DateValue__DateValueAssignment_3_1 ) )
             {
-            // InternalQLS.g:7519:1: ( ( rule__DateValue__DateValueAssignment_3_1 ) )
-            // InternalQLS.g:7520:2: ( rule__DateValue__DateValueAssignment_3_1 )
+            // InternalQLS.g:7546:1: ( ( rule__DateValue__DateValueAssignment_3_1 ) )
+            // InternalQLS.g:7547:2: ( rule__DateValue__DateValueAssignment_3_1 )
             {
              before(grammarAccess.getDateValueAccess().getDateValueAssignment_3_1()); 
-            // InternalQLS.g:7521:2: ( rule__DateValue__DateValueAssignment_3_1 )
-            // InternalQLS.g:7521:3: rule__DateValue__DateValueAssignment_3_1
+            // InternalQLS.g:7548:2: ( rule__DateValue__DateValueAssignment_3_1 )
+            // InternalQLS.g:7548:3: rule__DateValue__DateValueAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__DateValue__DateValueAssignment_3_1();
@@ -23049,14 +23134,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__Group__0"
-    // InternalQLS.g:7530:1: rule__DecimalValue__Group__0 : rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1 ;
+    // InternalQLS.g:7557:1: rule__DecimalValue__Group__0 : rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1 ;
     public final void rule__DecimalValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7534:1: ( rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1 )
-            // InternalQLS.g:7535:2: rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1
+            // InternalQLS.g:7561:1: ( rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1 )
+            // InternalQLS.g:7562:2: rule__DecimalValue__Group__0__Impl rule__DecimalValue__Group__1
             {
             pushFollow(FOLLOW_50);
             rule__DecimalValue__Group__0__Impl();
@@ -23087,21 +23172,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__Group__0__Impl"
-    // InternalQLS.g:7542:1: rule__DecimalValue__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:7569:1: rule__DecimalValue__Group__0__Impl : ( () ) ;
     public final void rule__DecimalValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7546:1: ( ( () ) )
-            // InternalQLS.g:7547:1: ( () )
+            // InternalQLS.g:7573:1: ( ( () ) )
+            // InternalQLS.g:7574:1: ( () )
             {
-            // InternalQLS.g:7547:1: ( () )
-            // InternalQLS.g:7548:2: ()
+            // InternalQLS.g:7574:1: ( () )
+            // InternalQLS.g:7575:2: ()
             {
              before(grammarAccess.getDecimalValueAccess().getDecimalValueAction_0()); 
-            // InternalQLS.g:7549:2: ()
-            // InternalQLS.g:7549:3: 
+            // InternalQLS.g:7576:2: ()
+            // InternalQLS.g:7576:3: 
             {
             }
 
@@ -23124,14 +23209,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__Group__1"
-    // InternalQLS.g:7557:1: rule__DecimalValue__Group__1 : rule__DecimalValue__Group__1__Impl ;
+    // InternalQLS.g:7584:1: rule__DecimalValue__Group__1 : rule__DecimalValue__Group__1__Impl ;
     public final void rule__DecimalValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7561:1: ( rule__DecimalValue__Group__1__Impl )
-            // InternalQLS.g:7562:2: rule__DecimalValue__Group__1__Impl
+            // InternalQLS.g:7588:1: ( rule__DecimalValue__Group__1__Impl )
+            // InternalQLS.g:7589:2: rule__DecimalValue__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValue__Group__1__Impl();
@@ -23157,21 +23242,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__Group__1__Impl"
-    // InternalQLS.g:7568:1: rule__DecimalValue__Group__1__Impl : ( ( rule__DecimalValue__DecimalValueAssignment_1 ) ) ;
+    // InternalQLS.g:7595:1: rule__DecimalValue__Group__1__Impl : ( ( rule__DecimalValue__DecimalValueAssignment_1 ) ) ;
     public final void rule__DecimalValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7572:1: ( ( ( rule__DecimalValue__DecimalValueAssignment_1 ) ) )
-            // InternalQLS.g:7573:1: ( ( rule__DecimalValue__DecimalValueAssignment_1 ) )
+            // InternalQLS.g:7599:1: ( ( ( rule__DecimalValue__DecimalValueAssignment_1 ) ) )
+            // InternalQLS.g:7600:1: ( ( rule__DecimalValue__DecimalValueAssignment_1 ) )
             {
-            // InternalQLS.g:7573:1: ( ( rule__DecimalValue__DecimalValueAssignment_1 ) )
-            // InternalQLS.g:7574:2: ( rule__DecimalValue__DecimalValueAssignment_1 )
+            // InternalQLS.g:7600:1: ( ( rule__DecimalValue__DecimalValueAssignment_1 ) )
+            // InternalQLS.g:7601:2: ( rule__DecimalValue__DecimalValueAssignment_1 )
             {
              before(grammarAccess.getDecimalValueAccess().getDecimalValueAssignment_1()); 
-            // InternalQLS.g:7575:2: ( rule__DecimalValue__DecimalValueAssignment_1 )
-            // InternalQLS.g:7575:3: rule__DecimalValue__DecimalValueAssignment_1
+            // InternalQLS.g:7602:2: ( rule__DecimalValue__DecimalValueAssignment_1 )
+            // InternalQLS.g:7602:3: rule__DecimalValue__DecimalValueAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__DecimalValue__DecimalValueAssignment_1();
@@ -23204,14 +23289,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__0"
-    // InternalQLS.g:7584:1: rule__EDouble__Group__0 : rule__EDouble__Group__0__Impl rule__EDouble__Group__1 ;
+    // InternalQLS.g:7611:1: rule__EDouble__Group__0 : rule__EDouble__Group__0__Impl rule__EDouble__Group__1 ;
     public final void rule__EDouble__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7588:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
-            // InternalQLS.g:7589:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
+            // InternalQLS.g:7615:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
+            // InternalQLS.g:7616:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__EDouble__Group__0__Impl();
@@ -23242,20 +23327,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__0__Impl"
-    // InternalQLS.g:7596:1: rule__EDouble__Group__0__Impl : ( ( RULE_INT )? ) ;
+    // InternalQLS.g:7623:1: rule__EDouble__Group__0__Impl : ( ( RULE_INT )? ) ;
     public final void rule__EDouble__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7600:1: ( ( ( RULE_INT )? ) )
-            // InternalQLS.g:7601:1: ( ( RULE_INT )? )
+            // InternalQLS.g:7627:1: ( ( ( RULE_INT )? ) )
+            // InternalQLS.g:7628:1: ( ( RULE_INT )? )
             {
-            // InternalQLS.g:7601:1: ( ( RULE_INT )? )
-            // InternalQLS.g:7602:2: ( RULE_INT )?
+            // InternalQLS.g:7628:1: ( ( RULE_INT )? )
+            // InternalQLS.g:7629:2: ( RULE_INT )?
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_0()); 
-            // InternalQLS.g:7603:2: ( RULE_INT )?
+            // InternalQLS.g:7630:2: ( RULE_INT )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -23264,7 +23349,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt57) {
                 case 1 :
-                    // InternalQLS.g:7603:3: RULE_INT
+                    // InternalQLS.g:7630:3: RULE_INT
                     {
                     match(input,RULE_INT,FOLLOW_2); 
 
@@ -23296,14 +23381,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__1"
-    // InternalQLS.g:7611:1: rule__EDouble__Group__1 : rule__EDouble__Group__1__Impl rule__EDouble__Group__2 ;
+    // InternalQLS.g:7638:1: rule__EDouble__Group__1 : rule__EDouble__Group__1__Impl rule__EDouble__Group__2 ;
     public final void rule__EDouble__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7615:1: ( rule__EDouble__Group__1__Impl rule__EDouble__Group__2 )
-            // InternalQLS.g:7616:2: rule__EDouble__Group__1__Impl rule__EDouble__Group__2
+            // InternalQLS.g:7642:1: ( rule__EDouble__Group__1__Impl rule__EDouble__Group__2 )
+            // InternalQLS.g:7643:2: rule__EDouble__Group__1__Impl rule__EDouble__Group__2
             {
             pushFollow(FOLLOW_55);
             rule__EDouble__Group__1__Impl();
@@ -23334,17 +23419,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__1__Impl"
-    // InternalQLS.g:7623:1: rule__EDouble__Group__1__Impl : ( '.' ) ;
+    // InternalQLS.g:7650:1: rule__EDouble__Group__1__Impl : ( '.' ) ;
     public final void rule__EDouble__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7627:1: ( ( '.' ) )
-            // InternalQLS.g:7628:1: ( '.' )
+            // InternalQLS.g:7654:1: ( ( '.' ) )
+            // InternalQLS.g:7655:1: ( '.' )
             {
-            // InternalQLS.g:7628:1: ( '.' )
-            // InternalQLS.g:7629:2: '.'
+            // InternalQLS.g:7655:1: ( '.' )
+            // InternalQLS.g:7656:2: '.'
             {
              before(grammarAccess.getEDoubleAccess().getFullStopKeyword_1()); 
             match(input,77,FOLLOW_2); 
@@ -23371,14 +23456,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__2"
-    // InternalQLS.g:7638:1: rule__EDouble__Group__2 : rule__EDouble__Group__2__Impl rule__EDouble__Group__3 ;
+    // InternalQLS.g:7665:1: rule__EDouble__Group__2 : rule__EDouble__Group__2__Impl rule__EDouble__Group__3 ;
     public final void rule__EDouble__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7642:1: ( rule__EDouble__Group__2__Impl rule__EDouble__Group__3 )
-            // InternalQLS.g:7643:2: rule__EDouble__Group__2__Impl rule__EDouble__Group__3
+            // InternalQLS.g:7669:1: ( rule__EDouble__Group__2__Impl rule__EDouble__Group__3 )
+            // InternalQLS.g:7670:2: rule__EDouble__Group__2__Impl rule__EDouble__Group__3
             {
             pushFollow(FOLLOW_68);
             rule__EDouble__Group__2__Impl();
@@ -23409,17 +23494,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__2__Impl"
-    // InternalQLS.g:7650:1: rule__EDouble__Group__2__Impl : ( RULE_INT ) ;
+    // InternalQLS.g:7677:1: rule__EDouble__Group__2__Impl : ( RULE_INT ) ;
     public final void rule__EDouble__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7654:1: ( ( RULE_INT ) )
-            // InternalQLS.g:7655:1: ( RULE_INT )
+            // InternalQLS.g:7681:1: ( ( RULE_INT ) )
+            // InternalQLS.g:7682:1: ( RULE_INT )
             {
-            // InternalQLS.g:7655:1: ( RULE_INT )
-            // InternalQLS.g:7656:2: RULE_INT
+            // InternalQLS.g:7682:1: ( RULE_INT )
+            // InternalQLS.g:7683:2: RULE_INT
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -23446,14 +23531,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__3"
-    // InternalQLS.g:7665:1: rule__EDouble__Group__3 : rule__EDouble__Group__3__Impl ;
+    // InternalQLS.g:7692:1: rule__EDouble__Group__3 : rule__EDouble__Group__3__Impl ;
     public final void rule__EDouble__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7669:1: ( rule__EDouble__Group__3__Impl )
-            // InternalQLS.g:7670:2: rule__EDouble__Group__3__Impl
+            // InternalQLS.g:7696:1: ( rule__EDouble__Group__3__Impl )
+            // InternalQLS.g:7697:2: rule__EDouble__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Group__3__Impl();
@@ -23479,20 +23564,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group__3__Impl"
-    // InternalQLS.g:7676:1: rule__EDouble__Group__3__Impl : ( ( rule__EDouble__Group_3__0 )? ) ;
+    // InternalQLS.g:7703:1: rule__EDouble__Group__3__Impl : ( ( rule__EDouble__Group_3__0 )? ) ;
     public final void rule__EDouble__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7680:1: ( ( ( rule__EDouble__Group_3__0 )? ) )
-            // InternalQLS.g:7681:1: ( ( rule__EDouble__Group_3__0 )? )
+            // InternalQLS.g:7707:1: ( ( ( rule__EDouble__Group_3__0 )? ) )
+            // InternalQLS.g:7708:1: ( ( rule__EDouble__Group_3__0 )? )
             {
-            // InternalQLS.g:7681:1: ( ( rule__EDouble__Group_3__0 )? )
-            // InternalQLS.g:7682:2: ( rule__EDouble__Group_3__0 )?
+            // InternalQLS.g:7708:1: ( ( rule__EDouble__Group_3__0 )? )
+            // InternalQLS.g:7709:2: ( rule__EDouble__Group_3__0 )?
             {
              before(grammarAccess.getEDoubleAccess().getGroup_3()); 
-            // InternalQLS.g:7683:2: ( rule__EDouble__Group_3__0 )?
+            // InternalQLS.g:7710:2: ( rule__EDouble__Group_3__0 )?
             int alt58=2;
             int LA58_0 = input.LA(1);
 
@@ -23501,7 +23586,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt58) {
                 case 1 :
-                    // InternalQLS.g:7683:3: rule__EDouble__Group_3__0
+                    // InternalQLS.g:7710:3: rule__EDouble__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EDouble__Group_3__0();
@@ -23537,14 +23622,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__0"
-    // InternalQLS.g:7692:1: rule__EDouble__Group_3__0 : rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 ;
+    // InternalQLS.g:7719:1: rule__EDouble__Group_3__0 : rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 ;
     public final void rule__EDouble__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7696:1: ( rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 )
-            // InternalQLS.g:7697:2: rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1
+            // InternalQLS.g:7723:1: ( rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1 )
+            // InternalQLS.g:7724:2: rule__EDouble__Group_3__0__Impl rule__EDouble__Group_3__1
             {
             pushFollow(FOLLOW_69);
             rule__EDouble__Group_3__0__Impl();
@@ -23575,21 +23660,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__0__Impl"
-    // InternalQLS.g:7704:1: rule__EDouble__Group_3__0__Impl : ( ( rule__EDouble__Alternatives_3_0 ) ) ;
+    // InternalQLS.g:7731:1: rule__EDouble__Group_3__0__Impl : ( ( rule__EDouble__Alternatives_3_0 ) ) ;
     public final void rule__EDouble__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7708:1: ( ( ( rule__EDouble__Alternatives_3_0 ) ) )
-            // InternalQLS.g:7709:1: ( ( rule__EDouble__Alternatives_3_0 ) )
+            // InternalQLS.g:7735:1: ( ( ( rule__EDouble__Alternatives_3_0 ) ) )
+            // InternalQLS.g:7736:1: ( ( rule__EDouble__Alternatives_3_0 ) )
             {
-            // InternalQLS.g:7709:1: ( ( rule__EDouble__Alternatives_3_0 ) )
-            // InternalQLS.g:7710:2: ( rule__EDouble__Alternatives_3_0 )
+            // InternalQLS.g:7736:1: ( ( rule__EDouble__Alternatives_3_0 ) )
+            // InternalQLS.g:7737:2: ( rule__EDouble__Alternatives_3_0 )
             {
              before(grammarAccess.getEDoubleAccess().getAlternatives_3_0()); 
-            // InternalQLS.g:7711:2: ( rule__EDouble__Alternatives_3_0 )
-            // InternalQLS.g:7711:3: rule__EDouble__Alternatives_3_0
+            // InternalQLS.g:7738:2: ( rule__EDouble__Alternatives_3_0 )
+            // InternalQLS.g:7738:3: rule__EDouble__Alternatives_3_0
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Alternatives_3_0();
@@ -23622,14 +23707,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__1"
-    // InternalQLS.g:7719:1: rule__EDouble__Group_3__1 : rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 ;
+    // InternalQLS.g:7746:1: rule__EDouble__Group_3__1 : rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 ;
     public final void rule__EDouble__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7723:1: ( rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 )
-            // InternalQLS.g:7724:2: rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2
+            // InternalQLS.g:7750:1: ( rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2 )
+            // InternalQLS.g:7751:2: rule__EDouble__Group_3__1__Impl rule__EDouble__Group_3__2
             {
             pushFollow(FOLLOW_69);
             rule__EDouble__Group_3__1__Impl();
@@ -23660,20 +23745,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__1__Impl"
-    // InternalQLS.g:7731:1: rule__EDouble__Group_3__1__Impl : ( ( '-' )? ) ;
+    // InternalQLS.g:7758:1: rule__EDouble__Group_3__1__Impl : ( ( '-' )? ) ;
     public final void rule__EDouble__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7735:1: ( ( ( '-' )? ) )
-            // InternalQLS.g:7736:1: ( ( '-' )? )
+            // InternalQLS.g:7762:1: ( ( ( '-' )? ) )
+            // InternalQLS.g:7763:1: ( ( '-' )? )
             {
-            // InternalQLS.g:7736:1: ( ( '-' )? )
-            // InternalQLS.g:7737:2: ( '-' )?
+            // InternalQLS.g:7763:1: ( ( '-' )? )
+            // InternalQLS.g:7764:2: ( '-' )?
             {
              before(grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_3_1()); 
-            // InternalQLS.g:7738:2: ( '-' )?
+            // InternalQLS.g:7765:2: ( '-' )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -23682,7 +23767,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt59) {
                 case 1 :
-                    // InternalQLS.g:7738:3: '-'
+                    // InternalQLS.g:7765:3: '-'
                     {
                     match(input,34,FOLLOW_2); 
 
@@ -23714,14 +23799,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__2"
-    // InternalQLS.g:7746:1: rule__EDouble__Group_3__2 : rule__EDouble__Group_3__2__Impl ;
+    // InternalQLS.g:7773:1: rule__EDouble__Group_3__2 : rule__EDouble__Group_3__2__Impl ;
     public final void rule__EDouble__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7750:1: ( rule__EDouble__Group_3__2__Impl )
-            // InternalQLS.g:7751:2: rule__EDouble__Group_3__2__Impl
+            // InternalQLS.g:7777:1: ( rule__EDouble__Group_3__2__Impl )
+            // InternalQLS.g:7778:2: rule__EDouble__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Group_3__2__Impl();
@@ -23747,17 +23832,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EDouble__Group_3__2__Impl"
-    // InternalQLS.g:7757:1: rule__EDouble__Group_3__2__Impl : ( RULE_INT ) ;
+    // InternalQLS.g:7784:1: rule__EDouble__Group_3__2__Impl : ( RULE_INT ) ;
     public final void rule__EDouble__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7761:1: ( ( RULE_INT ) )
-            // InternalQLS.g:7762:1: ( RULE_INT )
+            // InternalQLS.g:7788:1: ( ( RULE_INT ) )
+            // InternalQLS.g:7789:1: ( RULE_INT )
             {
-            // InternalQLS.g:7762:1: ( RULE_INT )
-            // InternalQLS.g:7763:2: RULE_INT
+            // InternalQLS.g:7789:1: ( RULE_INT )
+            // InternalQLS.g:7790:2: RULE_INT
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -23784,14 +23869,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__0"
-    // InternalQLS.g:7773:1: rule__QuestionDefinition__Group__0 : rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1 ;
+    // InternalQLS.g:7800:1: rule__QuestionDefinition__Group__0 : rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1 ;
     public final void rule__QuestionDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7777:1: ( rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1 )
-            // InternalQLS.g:7778:2: rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1
+            // InternalQLS.g:7804:1: ( rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1 )
+            // InternalQLS.g:7805:2: rule__QuestionDefinition__Group__0__Impl rule__QuestionDefinition__Group__1
             {
             pushFollow(FOLLOW_70);
             rule__QuestionDefinition__Group__0__Impl();
@@ -23822,20 +23907,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__0__Impl"
-    // InternalQLS.g:7785:1: rule__QuestionDefinition__Group__0__Impl : ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? ) ;
+    // InternalQLS.g:7812:1: rule__QuestionDefinition__Group__0__Impl : ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? ) ;
     public final void rule__QuestionDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7789:1: ( ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? ) )
-            // InternalQLS.g:7790:1: ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? )
+            // InternalQLS.g:7816:1: ( ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? ) )
+            // InternalQLS.g:7817:1: ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? )
             {
-            // InternalQLS.g:7790:1: ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? )
-            // InternalQLS.g:7791:2: ( rule__QuestionDefinition__IsMandatoryAssignment_0 )?
+            // InternalQLS.g:7817:1: ( ( rule__QuestionDefinition__IsMandatoryAssignment_0 )? )
+            // InternalQLS.g:7818:2: ( rule__QuestionDefinition__IsMandatoryAssignment_0 )?
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsMandatoryAssignment_0()); 
-            // InternalQLS.g:7792:2: ( rule__QuestionDefinition__IsMandatoryAssignment_0 )?
+            // InternalQLS.g:7819:2: ( rule__QuestionDefinition__IsMandatoryAssignment_0 )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -23844,7 +23929,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt60) {
                 case 1 :
-                    // InternalQLS.g:7792:3: rule__QuestionDefinition__IsMandatoryAssignment_0
+                    // InternalQLS.g:7819:3: rule__QuestionDefinition__IsMandatoryAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionDefinition__IsMandatoryAssignment_0();
@@ -23880,14 +23965,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__1"
-    // InternalQLS.g:7800:1: rule__QuestionDefinition__Group__1 : rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2 ;
+    // InternalQLS.g:7827:1: rule__QuestionDefinition__Group__1 : rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2 ;
     public final void rule__QuestionDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7804:1: ( rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2 )
-            // InternalQLS.g:7805:2: rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2
+            // InternalQLS.g:7831:1: ( rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2 )
+            // InternalQLS.g:7832:2: rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2
             {
             pushFollow(FOLLOW_49);
             rule__QuestionDefinition__Group__1__Impl();
@@ -23918,17 +24003,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__1__Impl"
-    // InternalQLS.g:7812:1: rule__QuestionDefinition__Group__1__Impl : ( 'question' ) ;
+    // InternalQLS.g:7839:1: rule__QuestionDefinition__Group__1__Impl : ( 'question' ) ;
     public final void rule__QuestionDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7816:1: ( ( 'question' ) )
-            // InternalQLS.g:7817:1: ( 'question' )
+            // InternalQLS.g:7843:1: ( ( 'question' ) )
+            // InternalQLS.g:7844:1: ( 'question' )
             {
-            // InternalQLS.g:7817:1: ( 'question' )
-            // InternalQLS.g:7818:2: 'question'
+            // InternalQLS.g:7844:1: ( 'question' )
+            // InternalQLS.g:7845:2: 'question'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getQuestionKeyword_1()); 
             match(input,78,FOLLOW_2); 
@@ -23955,14 +24040,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__2"
-    // InternalQLS.g:7827:1: rule__QuestionDefinition__Group__2 : rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3 ;
+    // InternalQLS.g:7854:1: rule__QuestionDefinition__Group__2 : rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3 ;
     public final void rule__QuestionDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7831:1: ( rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3 )
-            // InternalQLS.g:7832:2: rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3
+            // InternalQLS.g:7858:1: ( rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3 )
+            // InternalQLS.g:7859:2: rule__QuestionDefinition__Group__2__Impl rule__QuestionDefinition__Group__3
             {
             pushFollow(FOLLOW_71);
             rule__QuestionDefinition__Group__2__Impl();
@@ -23993,21 +24078,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__2__Impl"
-    // InternalQLS.g:7839:1: rule__QuestionDefinition__Group__2__Impl : ( ( rule__QuestionDefinition__NameAssignment_2 ) ) ;
+    // InternalQLS.g:7866:1: rule__QuestionDefinition__Group__2__Impl : ( ( rule__QuestionDefinition__NameAssignment_2 ) ) ;
     public final void rule__QuestionDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7843:1: ( ( ( rule__QuestionDefinition__NameAssignment_2 ) ) )
-            // InternalQLS.g:7844:1: ( ( rule__QuestionDefinition__NameAssignment_2 ) )
+            // InternalQLS.g:7870:1: ( ( ( rule__QuestionDefinition__NameAssignment_2 ) ) )
+            // InternalQLS.g:7871:1: ( ( rule__QuestionDefinition__NameAssignment_2 ) )
             {
-            // InternalQLS.g:7844:1: ( ( rule__QuestionDefinition__NameAssignment_2 ) )
-            // InternalQLS.g:7845:2: ( rule__QuestionDefinition__NameAssignment_2 )
+            // InternalQLS.g:7871:1: ( ( rule__QuestionDefinition__NameAssignment_2 ) )
+            // InternalQLS.g:7872:2: ( rule__QuestionDefinition__NameAssignment_2 )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getNameAssignment_2()); 
-            // InternalQLS.g:7846:2: ( rule__QuestionDefinition__NameAssignment_2 )
-            // InternalQLS.g:7846:3: rule__QuestionDefinition__NameAssignment_2
+            // InternalQLS.g:7873:2: ( rule__QuestionDefinition__NameAssignment_2 )
+            // InternalQLS.g:7873:3: rule__QuestionDefinition__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__NameAssignment_2();
@@ -24040,14 +24125,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__3"
-    // InternalQLS.g:7854:1: rule__QuestionDefinition__Group__3 : rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4 ;
+    // InternalQLS.g:7881:1: rule__QuestionDefinition__Group__3 : rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4 ;
     public final void rule__QuestionDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7858:1: ( rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4 )
-            // InternalQLS.g:7859:2: rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4
+            // InternalQLS.g:7885:1: ( rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4 )
+            // InternalQLS.g:7886:2: rule__QuestionDefinition__Group__3__Impl rule__QuestionDefinition__Group__4
             {
             pushFollow(FOLLOW_71);
             rule__QuestionDefinition__Group__3__Impl();
@@ -24078,20 +24163,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__3__Impl"
-    // InternalQLS.g:7866:1: rule__QuestionDefinition__Group__3__Impl : ( ( rule__QuestionDefinition__Group_3__0 )? ) ;
+    // InternalQLS.g:7893:1: rule__QuestionDefinition__Group__3__Impl : ( ( rule__QuestionDefinition__Group_3__0 )? ) ;
     public final void rule__QuestionDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7870:1: ( ( ( rule__QuestionDefinition__Group_3__0 )? ) )
-            // InternalQLS.g:7871:1: ( ( rule__QuestionDefinition__Group_3__0 )? )
+            // InternalQLS.g:7897:1: ( ( ( rule__QuestionDefinition__Group_3__0 )? ) )
+            // InternalQLS.g:7898:1: ( ( rule__QuestionDefinition__Group_3__0 )? )
             {
-            // InternalQLS.g:7871:1: ( ( rule__QuestionDefinition__Group_3__0 )? )
-            // InternalQLS.g:7872:2: ( rule__QuestionDefinition__Group_3__0 )?
+            // InternalQLS.g:7898:1: ( ( rule__QuestionDefinition__Group_3__0 )? )
+            // InternalQLS.g:7899:2: ( rule__QuestionDefinition__Group_3__0 )?
             {
              before(grammarAccess.getQuestionDefinitionAccess().getGroup_3()); 
-            // InternalQLS.g:7873:2: ( rule__QuestionDefinition__Group_3__0 )?
+            // InternalQLS.g:7900:2: ( rule__QuestionDefinition__Group_3__0 )?
             int alt61=2;
             int LA61_0 = input.LA(1);
 
@@ -24100,7 +24185,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt61) {
                 case 1 :
-                    // InternalQLS.g:7873:3: rule__QuestionDefinition__Group_3__0
+                    // InternalQLS.g:7900:3: rule__QuestionDefinition__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionDefinition__Group_3__0();
@@ -24136,14 +24221,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__4"
-    // InternalQLS.g:7881:1: rule__QuestionDefinition__Group__4 : rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5 ;
+    // InternalQLS.g:7908:1: rule__QuestionDefinition__Group__4 : rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5 ;
     public final void rule__QuestionDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7885:1: ( rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5 )
-            // InternalQLS.g:7886:2: rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5
+            // InternalQLS.g:7912:1: ( rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5 )
+            // InternalQLS.g:7913:2: rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5
             {
             pushFollow(FOLLOW_49);
             rule__QuestionDefinition__Group__4__Impl();
@@ -24174,17 +24259,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__4__Impl"
-    // InternalQLS.g:7893:1: rule__QuestionDefinition__Group__4__Impl : ( ':' ) ;
+    // InternalQLS.g:7920:1: rule__QuestionDefinition__Group__4__Impl : ( ':' ) ;
     public final void rule__QuestionDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7897:1: ( ( ':' ) )
-            // InternalQLS.g:7898:1: ( ':' )
+            // InternalQLS.g:7924:1: ( ( ':' ) )
+            // InternalQLS.g:7925:1: ( ':' )
             {
-            // InternalQLS.g:7898:1: ( ':' )
-            // InternalQLS.g:7899:2: ':'
+            // InternalQLS.g:7925:1: ( ':' )
+            // InternalQLS.g:7926:2: ':'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getColonKeyword_4()); 
             match(input,79,FOLLOW_2); 
@@ -24211,14 +24296,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__5"
-    // InternalQLS.g:7908:1: rule__QuestionDefinition__Group__5 : rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6 ;
+    // InternalQLS.g:7935:1: rule__QuestionDefinition__Group__5 : rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6 ;
     public final void rule__QuestionDefinition__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7912:1: ( rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6 )
-            // InternalQLS.g:7913:2: rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6
+            // InternalQLS.g:7939:1: ( rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6 )
+            // InternalQLS.g:7940:2: rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6
             {
             pushFollow(FOLLOW_49);
             rule__QuestionDefinition__Group__5__Impl();
@@ -24249,21 +24334,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__5__Impl"
-    // InternalQLS.g:7920:1: rule__QuestionDefinition__Group__5__Impl : ( ( rule__QuestionDefinition__LabelAssignment_5 ) ) ;
+    // InternalQLS.g:7947:1: rule__QuestionDefinition__Group__5__Impl : ( ( rule__QuestionDefinition__LabelAssignment_5 ) ) ;
     public final void rule__QuestionDefinition__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7924:1: ( ( ( rule__QuestionDefinition__LabelAssignment_5 ) ) )
-            // InternalQLS.g:7925:1: ( ( rule__QuestionDefinition__LabelAssignment_5 ) )
+            // InternalQLS.g:7951:1: ( ( ( rule__QuestionDefinition__LabelAssignment_5 ) ) )
+            // InternalQLS.g:7952:1: ( ( rule__QuestionDefinition__LabelAssignment_5 ) )
             {
-            // InternalQLS.g:7925:1: ( ( rule__QuestionDefinition__LabelAssignment_5 ) )
-            // InternalQLS.g:7926:2: ( rule__QuestionDefinition__LabelAssignment_5 )
+            // InternalQLS.g:7952:1: ( ( rule__QuestionDefinition__LabelAssignment_5 ) )
+            // InternalQLS.g:7953:2: ( rule__QuestionDefinition__LabelAssignment_5 )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getLabelAssignment_5()); 
-            // InternalQLS.g:7927:2: ( rule__QuestionDefinition__LabelAssignment_5 )
-            // InternalQLS.g:7927:3: rule__QuestionDefinition__LabelAssignment_5
+            // InternalQLS.g:7954:2: ( rule__QuestionDefinition__LabelAssignment_5 )
+            // InternalQLS.g:7954:3: rule__QuestionDefinition__LabelAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__LabelAssignment_5();
@@ -24296,14 +24381,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__6"
-    // InternalQLS.g:7935:1: rule__QuestionDefinition__Group__6 : rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7 ;
+    // InternalQLS.g:7962:1: rule__QuestionDefinition__Group__6 : rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7 ;
     public final void rule__QuestionDefinition__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7939:1: ( rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7 )
-            // InternalQLS.g:7940:2: rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7
+            // InternalQLS.g:7966:1: ( rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7 )
+            // InternalQLS.g:7967:2: rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7
             {
             pushFollow(FOLLOW_34);
             rule__QuestionDefinition__Group__6__Impl();
@@ -24334,21 +24419,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__6__Impl"
-    // InternalQLS.g:7947:1: rule__QuestionDefinition__Group__6__Impl : ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) ) ;
+    // InternalQLS.g:7974:1: rule__QuestionDefinition__Group__6__Impl : ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) ) ;
     public final void rule__QuestionDefinition__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7951:1: ( ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) ) )
-            // InternalQLS.g:7952:1: ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) )
+            // InternalQLS.g:7978:1: ( ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) ) )
+            // InternalQLS.g:7979:1: ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) )
             {
-            // InternalQLS.g:7952:1: ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) )
-            // InternalQLS.g:7953:2: ( rule__QuestionDefinition__DataTypeAssignment_6 )
+            // InternalQLS.g:7979:1: ( ( rule__QuestionDefinition__DataTypeAssignment_6 ) )
+            // InternalQLS.g:7980:2: ( rule__QuestionDefinition__DataTypeAssignment_6 )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getDataTypeAssignment_6()); 
-            // InternalQLS.g:7954:2: ( rule__QuestionDefinition__DataTypeAssignment_6 )
-            // InternalQLS.g:7954:3: rule__QuestionDefinition__DataTypeAssignment_6
+            // InternalQLS.g:7981:2: ( rule__QuestionDefinition__DataTypeAssignment_6 )
+            // InternalQLS.g:7981:3: rule__QuestionDefinition__DataTypeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__DataTypeAssignment_6();
@@ -24381,14 +24466,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__7"
-    // InternalQLS.g:7962:1: rule__QuestionDefinition__Group__7 : rule__QuestionDefinition__Group__7__Impl ;
+    // InternalQLS.g:7989:1: rule__QuestionDefinition__Group__7 : rule__QuestionDefinition__Group__7__Impl ;
     public final void rule__QuestionDefinition__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7966:1: ( rule__QuestionDefinition__Group__7__Impl )
-            // InternalQLS.g:7967:2: rule__QuestionDefinition__Group__7__Impl
+            // InternalQLS.g:7993:1: ( rule__QuestionDefinition__Group__7__Impl )
+            // InternalQLS.g:7994:2: rule__QuestionDefinition__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__Group__7__Impl();
@@ -24414,20 +24499,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group__7__Impl"
-    // InternalQLS.g:7973:1: rule__QuestionDefinition__Group__7__Impl : ( ( rule__QuestionDefinition__Group_7__0 )? ) ;
+    // InternalQLS.g:8000:1: rule__QuestionDefinition__Group__7__Impl : ( ( rule__QuestionDefinition__Group_7__0 )? ) ;
     public final void rule__QuestionDefinition__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7977:1: ( ( ( rule__QuestionDefinition__Group_7__0 )? ) )
-            // InternalQLS.g:7978:1: ( ( rule__QuestionDefinition__Group_7__0 )? )
+            // InternalQLS.g:8004:1: ( ( ( rule__QuestionDefinition__Group_7__0 )? ) )
+            // InternalQLS.g:8005:1: ( ( rule__QuestionDefinition__Group_7__0 )? )
             {
-            // InternalQLS.g:7978:1: ( ( rule__QuestionDefinition__Group_7__0 )? )
-            // InternalQLS.g:7979:2: ( rule__QuestionDefinition__Group_7__0 )?
+            // InternalQLS.g:8005:1: ( ( rule__QuestionDefinition__Group_7__0 )? )
+            // InternalQLS.g:8006:2: ( rule__QuestionDefinition__Group_7__0 )?
             {
              before(grammarAccess.getQuestionDefinitionAccess().getGroup_7()); 
-            // InternalQLS.g:7980:2: ( rule__QuestionDefinition__Group_7__0 )?
+            // InternalQLS.g:8007:2: ( rule__QuestionDefinition__Group_7__0 )?
             int alt62=2;
             int LA62_0 = input.LA(1);
 
@@ -24436,7 +24521,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt62) {
                 case 1 :
-                    // InternalQLS.g:7980:3: rule__QuestionDefinition__Group_7__0
+                    // InternalQLS.g:8007:3: rule__QuestionDefinition__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionDefinition__Group_7__0();
@@ -24472,14 +24557,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__0"
-    // InternalQLS.g:7989:1: rule__QuestionDefinition__Group_3__0 : rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1 ;
+    // InternalQLS.g:8016:1: rule__QuestionDefinition__Group_3__0 : rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1 ;
     public final void rule__QuestionDefinition__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:7993:1: ( rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1 )
-            // InternalQLS.g:7994:2: rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1
+            // InternalQLS.g:8020:1: ( rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1 )
+            // InternalQLS.g:8021:2: rule__QuestionDefinition__Group_3__0__Impl rule__QuestionDefinition__Group_3__1
             {
             pushFollow(FOLLOW_72);
             rule__QuestionDefinition__Group_3__0__Impl();
@@ -24510,17 +24595,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__0__Impl"
-    // InternalQLS.g:8001:1: rule__QuestionDefinition__Group_3__0__Impl : ( '(' ) ;
+    // InternalQLS.g:8028:1: rule__QuestionDefinition__Group_3__0__Impl : ( '(' ) ;
     public final void rule__QuestionDefinition__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8005:1: ( ( '(' ) )
-            // InternalQLS.g:8006:1: ( '(' )
+            // InternalQLS.g:8032:1: ( ( '(' ) )
+            // InternalQLS.g:8033:1: ( '(' )
             {
-            // InternalQLS.g:8006:1: ( '(' )
-            // InternalQLS.g:8007:2: '('
+            // InternalQLS.g:8033:1: ( '(' )
+            // InternalQLS.g:8034:2: '('
             {
              before(grammarAccess.getQuestionDefinitionAccess().getLeftParenthesisKeyword_3_0()); 
             match(input,57,FOLLOW_2); 
@@ -24547,14 +24632,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__1"
-    // InternalQLS.g:8016:1: rule__QuestionDefinition__Group_3__1 : rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2 ;
+    // InternalQLS.g:8043:1: rule__QuestionDefinition__Group_3__1 : rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2 ;
     public final void rule__QuestionDefinition__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8020:1: ( rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2 )
-            // InternalQLS.g:8021:2: rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2
+            // InternalQLS.g:8047:1: ( rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2 )
+            // InternalQLS.g:8048:2: rule__QuestionDefinition__Group_3__1__Impl rule__QuestionDefinition__Group_3__2
             {
             pushFollow(FOLLOW_72);
             rule__QuestionDefinition__Group_3__1__Impl();
@@ -24585,20 +24670,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__1__Impl"
-    // InternalQLS.g:8028:1: rule__QuestionDefinition__Group_3__1__Impl : ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? ) ;
+    // InternalQLS.g:8055:1: rule__QuestionDefinition__Group_3__1__Impl : ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? ) ;
     public final void rule__QuestionDefinition__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8032:1: ( ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? ) )
-            // InternalQLS.g:8033:1: ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? )
+            // InternalQLS.g:8059:1: ( ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? ) )
+            // InternalQLS.g:8060:1: ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? )
             {
-            // InternalQLS.g:8033:1: ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? )
-            // InternalQLS.g:8034:2: ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )?
+            // InternalQLS.g:8060:1: ( ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )? )
+            // InternalQLS.g:8061:2: ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )?
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsDisplayedAssignment_3_1()); 
-            // InternalQLS.g:8035:2: ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )?
+            // InternalQLS.g:8062:2: ( rule__QuestionDefinition__IsDisplayedAssignment_3_1 )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -24607,7 +24692,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt63) {
                 case 1 :
-                    // InternalQLS.g:8035:3: rule__QuestionDefinition__IsDisplayedAssignment_3_1
+                    // InternalQLS.g:8062:3: rule__QuestionDefinition__IsDisplayedAssignment_3_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionDefinition__IsDisplayedAssignment_3_1();
@@ -24643,14 +24728,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__2"
-    // InternalQLS.g:8043:1: rule__QuestionDefinition__Group_3__2 : rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3 ;
+    // InternalQLS.g:8070:1: rule__QuestionDefinition__Group_3__2 : rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3 ;
     public final void rule__QuestionDefinition__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8047:1: ( rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3 )
-            // InternalQLS.g:8048:2: rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3
+            // InternalQLS.g:8074:1: ( rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3 )
+            // InternalQLS.g:8075:2: rule__QuestionDefinition__Group_3__2__Impl rule__QuestionDefinition__Group_3__3
             {
             pushFollow(FOLLOW_72);
             rule__QuestionDefinition__Group_3__2__Impl();
@@ -24681,20 +24766,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__2__Impl"
-    // InternalQLS.g:8055:1: rule__QuestionDefinition__Group_3__2__Impl : ( ( rule__QuestionDefinition__Group_3_2__0 )? ) ;
+    // InternalQLS.g:8082:1: rule__QuestionDefinition__Group_3__2__Impl : ( ( rule__QuestionDefinition__Group_3_2__0 )? ) ;
     public final void rule__QuestionDefinition__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8059:1: ( ( ( rule__QuestionDefinition__Group_3_2__0 )? ) )
-            // InternalQLS.g:8060:1: ( ( rule__QuestionDefinition__Group_3_2__0 )? )
+            // InternalQLS.g:8086:1: ( ( ( rule__QuestionDefinition__Group_3_2__0 )? ) )
+            // InternalQLS.g:8087:1: ( ( rule__QuestionDefinition__Group_3_2__0 )? )
             {
-            // InternalQLS.g:8060:1: ( ( rule__QuestionDefinition__Group_3_2__0 )? )
-            // InternalQLS.g:8061:2: ( rule__QuestionDefinition__Group_3_2__0 )?
+            // InternalQLS.g:8087:1: ( ( rule__QuestionDefinition__Group_3_2__0 )? )
+            // InternalQLS.g:8088:2: ( rule__QuestionDefinition__Group_3_2__0 )?
             {
              before(grammarAccess.getQuestionDefinitionAccess().getGroup_3_2()); 
-            // InternalQLS.g:8062:2: ( rule__QuestionDefinition__Group_3_2__0 )?
+            // InternalQLS.g:8089:2: ( rule__QuestionDefinition__Group_3_2__0 )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -24703,7 +24788,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             }
             switch (alt64) {
                 case 1 :
-                    // InternalQLS.g:8062:3: rule__QuestionDefinition__Group_3_2__0
+                    // InternalQLS.g:8089:3: rule__QuestionDefinition__Group_3_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__QuestionDefinition__Group_3_2__0();
@@ -24739,14 +24824,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__3"
-    // InternalQLS.g:8070:1: rule__QuestionDefinition__Group_3__3 : rule__QuestionDefinition__Group_3__3__Impl ;
+    // InternalQLS.g:8097:1: rule__QuestionDefinition__Group_3__3 : rule__QuestionDefinition__Group_3__3__Impl ;
     public final void rule__QuestionDefinition__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8074:1: ( rule__QuestionDefinition__Group_3__3__Impl )
-            // InternalQLS.g:8075:2: rule__QuestionDefinition__Group_3__3__Impl
+            // InternalQLS.g:8101:1: ( rule__QuestionDefinition__Group_3__3__Impl )
+            // InternalQLS.g:8102:2: rule__QuestionDefinition__Group_3__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__Group_3__3__Impl();
@@ -24772,17 +24857,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3__3__Impl"
-    // InternalQLS.g:8081:1: rule__QuestionDefinition__Group_3__3__Impl : ( ')' ) ;
+    // InternalQLS.g:8108:1: rule__QuestionDefinition__Group_3__3__Impl : ( ')' ) ;
     public final void rule__QuestionDefinition__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8085:1: ( ( ')' ) )
-            // InternalQLS.g:8086:1: ( ')' )
+            // InternalQLS.g:8112:1: ( ( ')' ) )
+            // InternalQLS.g:8113:1: ( ')' )
             {
-            // InternalQLS.g:8086:1: ( ')' )
-            // InternalQLS.g:8087:2: ')'
+            // InternalQLS.g:8113:1: ( ')' )
+            // InternalQLS.g:8114:2: ')'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getRightParenthesisKeyword_3_3()); 
             match(input,58,FOLLOW_2); 
@@ -24809,14 +24894,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3_2__0"
-    // InternalQLS.g:8097:1: rule__QuestionDefinition__Group_3_2__0 : rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1 ;
+    // InternalQLS.g:8124:1: rule__QuestionDefinition__Group_3_2__0 : rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1 ;
     public final void rule__QuestionDefinition__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8101:1: ( rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1 )
-            // InternalQLS.g:8102:2: rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1
+            // InternalQLS.g:8128:1: ( rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1 )
+            // InternalQLS.g:8129:2: rule__QuestionDefinition__Group_3_2__0__Impl rule__QuestionDefinition__Group_3_2__1
             {
             pushFollow(FOLLOW_73);
             rule__QuestionDefinition__Group_3_2__0__Impl();
@@ -24847,17 +24932,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3_2__0__Impl"
-    // InternalQLS.g:8109:1: rule__QuestionDefinition__Group_3_2__0__Impl : ( 'currentValue' ) ;
+    // InternalQLS.g:8136:1: rule__QuestionDefinition__Group_3_2__0__Impl : ( 'currentValue' ) ;
     public final void rule__QuestionDefinition__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8113:1: ( ( 'currentValue' ) )
-            // InternalQLS.g:8114:1: ( 'currentValue' )
+            // InternalQLS.g:8140:1: ( ( 'currentValue' ) )
+            // InternalQLS.g:8141:1: ( 'currentValue' )
             {
-            // InternalQLS.g:8114:1: ( 'currentValue' )
-            // InternalQLS.g:8115:2: 'currentValue'
+            // InternalQLS.g:8141:1: ( 'currentValue' )
+            // InternalQLS.g:8142:2: 'currentValue'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getCurrentValueKeyword_3_2_0()); 
             match(input,80,FOLLOW_2); 
@@ -24884,14 +24969,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3_2__1"
-    // InternalQLS.g:8124:1: rule__QuestionDefinition__Group_3_2__1 : rule__QuestionDefinition__Group_3_2__1__Impl ;
+    // InternalQLS.g:8151:1: rule__QuestionDefinition__Group_3_2__1 : rule__QuestionDefinition__Group_3_2__1__Impl ;
     public final void rule__QuestionDefinition__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8128:1: ( rule__QuestionDefinition__Group_3_2__1__Impl )
-            // InternalQLS.g:8129:2: rule__QuestionDefinition__Group_3_2__1__Impl
+            // InternalQLS.g:8155:1: ( rule__QuestionDefinition__Group_3_2__1__Impl )
+            // InternalQLS.g:8156:2: rule__QuestionDefinition__Group_3_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__Group_3_2__1__Impl();
@@ -24917,21 +25002,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_3_2__1__Impl"
-    // InternalQLS.g:8135:1: rule__QuestionDefinition__Group_3_2__1__Impl : ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) ) ;
+    // InternalQLS.g:8162:1: rule__QuestionDefinition__Group_3_2__1__Impl : ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) ) ;
     public final void rule__QuestionDefinition__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8139:1: ( ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) ) )
-            // InternalQLS.g:8140:1: ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) )
+            // InternalQLS.g:8166:1: ( ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) ) )
+            // InternalQLS.g:8167:1: ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) )
             {
-            // InternalQLS.g:8140:1: ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) )
-            // InternalQLS.g:8141:2: ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 )
+            // InternalQLS.g:8167:1: ( ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 ) )
+            // InternalQLS.g:8168:2: ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getCurrentValueAssignment_3_2_1()); 
-            // InternalQLS.g:8142:2: ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 )
-            // InternalQLS.g:8142:3: rule__QuestionDefinition__CurrentValueAssignment_3_2_1
+            // InternalQLS.g:8169:2: ( rule__QuestionDefinition__CurrentValueAssignment_3_2_1 )
+            // InternalQLS.g:8169:3: rule__QuestionDefinition__CurrentValueAssignment_3_2_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__CurrentValueAssignment_3_2_1();
@@ -24964,14 +25049,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__0"
-    // InternalQLS.g:8151:1: rule__QuestionDefinition__Group_7__0 : rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1 ;
+    // InternalQLS.g:8178:1: rule__QuestionDefinition__Group_7__0 : rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1 ;
     public final void rule__QuestionDefinition__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8155:1: ( rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1 )
-            // InternalQLS.g:8156:2: rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1
+            // InternalQLS.g:8182:1: ( rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1 )
+            // InternalQLS.g:8183:2: rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1
             {
             pushFollow(FOLLOW_24);
             rule__QuestionDefinition__Group_7__0__Impl();
@@ -25002,17 +25087,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__0__Impl"
-    // InternalQLS.g:8163:1: rule__QuestionDefinition__Group_7__0__Impl : ( '=' ) ;
+    // InternalQLS.g:8190:1: rule__QuestionDefinition__Group_7__0__Impl : ( '=' ) ;
     public final void rule__QuestionDefinition__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8167:1: ( ( '=' ) )
-            // InternalQLS.g:8168:1: ( '=' )
+            // InternalQLS.g:8194:1: ( ( '=' ) )
+            // InternalQLS.g:8195:1: ( '=' )
             {
-            // InternalQLS.g:8168:1: ( '=' )
-            // InternalQLS.g:8169:2: '='
+            // InternalQLS.g:8195:1: ( '=' )
+            // InternalQLS.g:8196:2: '='
             {
              before(grammarAccess.getQuestionDefinitionAccess().getEqualsSignKeyword_7_0()); 
             match(input,12,FOLLOW_2); 
@@ -25039,14 +25124,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__1"
-    // InternalQLS.g:8178:1: rule__QuestionDefinition__Group_7__1 : rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2 ;
+    // InternalQLS.g:8205:1: rule__QuestionDefinition__Group_7__1 : rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2 ;
     public final void rule__QuestionDefinition__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8182:1: ( rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2 )
-            // InternalQLS.g:8183:2: rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2
+            // InternalQLS.g:8209:1: ( rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2 )
+            // InternalQLS.g:8210:2: rule__QuestionDefinition__Group_7__1__Impl rule__QuestionDefinition__Group_7__2
             {
             pushFollow(FOLLOW_74);
             rule__QuestionDefinition__Group_7__1__Impl();
@@ -25077,21 +25162,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__1__Impl"
-    // InternalQLS.g:8190:1: rule__QuestionDefinition__Group_7__1__Impl : ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) ) ;
+    // InternalQLS.g:8217:1: rule__QuestionDefinition__Group_7__1__Impl : ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) ) ;
     public final void rule__QuestionDefinition__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8194:1: ( ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) ) )
-            // InternalQLS.g:8195:1: ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) )
+            // InternalQLS.g:8221:1: ( ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) ) )
+            // InternalQLS.g:8222:1: ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) )
             {
-            // InternalQLS.g:8195:1: ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) )
-            // InternalQLS.g:8196:2: ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 )
+            // InternalQLS.g:8222:1: ( ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 ) )
+            // InternalQLS.g:8223:2: ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionAssignment_7_1()); 
-            // InternalQLS.g:8197:2: ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 )
-            // InternalQLS.g:8197:3: rule__QuestionDefinition__ComputedExpressionAssignment_7_1
+            // InternalQLS.g:8224:2: ( rule__QuestionDefinition__ComputedExpressionAssignment_7_1 )
+            // InternalQLS.g:8224:3: rule__QuestionDefinition__ComputedExpressionAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__ComputedExpressionAssignment_7_1();
@@ -25124,14 +25209,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__2"
-    // InternalQLS.g:8205:1: rule__QuestionDefinition__Group_7__2 : rule__QuestionDefinition__Group_7__2__Impl ;
+    // InternalQLS.g:8232:1: rule__QuestionDefinition__Group_7__2 : rule__QuestionDefinition__Group_7__2__Impl ;
     public final void rule__QuestionDefinition__Group_7__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8209:1: ( rule__QuestionDefinition__Group_7__2__Impl )
-            // InternalQLS.g:8210:2: rule__QuestionDefinition__Group_7__2__Impl
+            // InternalQLS.g:8236:1: ( rule__QuestionDefinition__Group_7__2__Impl )
+            // InternalQLS.g:8237:2: rule__QuestionDefinition__Group_7__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QuestionDefinition__Group_7__2__Impl();
@@ -25157,17 +25242,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__Group_7__2__Impl"
-    // InternalQLS.g:8216:1: rule__QuestionDefinition__Group_7__2__Impl : ( ';' ) ;
+    // InternalQLS.g:8243:1: rule__QuestionDefinition__Group_7__2__Impl : ( ';' ) ;
     public final void rule__QuestionDefinition__Group_7__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8220:1: ( ( ';' ) )
-            // InternalQLS.g:8221:1: ( ';' )
+            // InternalQLS.g:8247:1: ( ( ';' ) )
+            // InternalQLS.g:8248:1: ( ';' )
             {
-            // InternalQLS.g:8221:1: ( ';' )
-            // InternalQLS.g:8222:2: ';'
+            // InternalQLS.g:8248:1: ( ';' )
+            // InternalQLS.g:8249:2: ';'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getSemicolonKeyword_7_2()); 
             match(input,81,FOLLOW_2); 
@@ -25194,14 +25279,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalQLS.g:8232:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalQLS.g:8259:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8236:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalQLS.g:8237:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalQLS.g:8263:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalQLS.g:8264:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_75);
             rule__QualifiedName__Group__0__Impl();
@@ -25232,17 +25317,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalQLS.g:8244:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalQLS.g:8271:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8248:1: ( ( RULE_ID ) )
-            // InternalQLS.g:8249:1: ( RULE_ID )
+            // InternalQLS.g:8275:1: ( ( RULE_ID ) )
+            // InternalQLS.g:8276:1: ( RULE_ID )
             {
-            // InternalQLS.g:8249:1: ( RULE_ID )
-            // InternalQLS.g:8250:2: RULE_ID
+            // InternalQLS.g:8276:1: ( RULE_ID )
+            // InternalQLS.g:8277:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25269,14 +25354,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalQLS.g:8259:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalQLS.g:8286:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8263:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalQLS.g:8264:2: rule__QualifiedName__Group__1__Impl
+            // InternalQLS.g:8290:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalQLS.g:8291:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -25302,20 +25387,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalQLS.g:8270:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalQLS.g:8297:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8274:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalQLS.g:8275:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalQLS.g:8301:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalQLS.g:8302:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalQLS.g:8275:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalQLS.g:8276:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalQLS.g:8302:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalQLS.g:8303:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalQLS.g:8277:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalQLS.g:8304:2: ( rule__QualifiedName__Group_1__0 )*
             loop65:
             do {
                 int alt65=2;
@@ -25328,7 +25413,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
                 switch (alt65) {
             	case 1 :
-            	    // InternalQLS.g:8277:3: rule__QualifiedName__Group_1__0
+            	    // InternalQLS.g:8304:3: rule__QualifiedName__Group_1__0
             	    {
             	    pushFollow(FOLLOW_76);
             	    rule__QualifiedName__Group_1__0();
@@ -25367,16 +25452,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalQLS.g:8286:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalQLS.g:8313:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8290:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalQLS.g:8291:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalQLS.g:8317:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalQLS.g:8318:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_5);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
@@ -25405,17 +25490,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalQLS.g:8298:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalQLS.g:8325:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8302:1: ( ( '.' ) )
-            // InternalQLS.g:8303:1: ( '.' )
+            // InternalQLS.g:8329:1: ( ( '.' ) )
+            // InternalQLS.g:8330:1: ( '.' )
             {
-            // InternalQLS.g:8303:1: ( '.' )
-            // InternalQLS.g:8304:2: '.'
+            // InternalQLS.g:8330:1: ( '.' )
+            // InternalQLS.g:8331:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             match(input,77,FOLLOW_2); 
@@ -25442,14 +25527,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalQLS.g:8313:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalQLS.g:8340:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8317:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalQLS.g:8318:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalQLS.g:8344:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalQLS.g:8345:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -25475,17 +25560,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalQLS.g:8324:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalQLS.g:8351:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8328:1: ( ( RULE_ID ) )
-            // InternalQLS.g:8329:1: ( RULE_ID )
+            // InternalQLS.g:8355:1: ( ( RULE_ID ) )
+            // InternalQLS.g:8356:1: ( RULE_ID )
             {
-            // InternalQLS.g:8329:1: ( RULE_ID )
-            // InternalQLS.g:8330:2: RULE_ID
+            // InternalQLS.g:8356:1: ( RULE_ID )
+            // InternalQLS.g:8357:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -25512,17 +25597,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QLSModel__ImportsAssignment_1"
-    // InternalQLS.g:8340:1: rule__QLSModel__ImportsAssignment_1 : ( ruleImport ) ;
+    // InternalQLS.g:8367:1: rule__QLSModel__ImportsAssignment_1 : ( ruleImport ) ;
     public final void rule__QLSModel__ImportsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8344:1: ( ( ruleImport ) )
-            // InternalQLS.g:8345:2: ( ruleImport )
+            // InternalQLS.g:8371:1: ( ( ruleImport ) )
+            // InternalQLS.g:8372:2: ( ruleImport )
             {
-            // InternalQLS.g:8345:2: ( ruleImport )
-            // InternalQLS.g:8346:3: ruleImport
+            // InternalQLS.g:8372:2: ( ruleImport )
+            // InternalQLS.g:8373:3: ruleImport
             {
              before(grammarAccess.getQLSModelAccess().getImportsImportParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25552,26 +25637,34 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__QLSModel__ImportsAssignment_1"
 
 
-    // $ANTLR start "rule__QLSModel__QuestionStylesAssignment_6"
-    // InternalQLS.g:8355:1: rule__QLSModel__QuestionStylesAssignment_6 : ( ruleQuestionStyle ) ;
-    public final void rule__QLSModel__QuestionStylesAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__QLSModel__StyledQLModelAssignment_3"
+    // InternalQLS.g:8382:1: rule__QLSModel__StyledQLModelAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__QLSModel__StyledQLModelAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8359:1: ( ( ruleQuestionStyle ) )
-            // InternalQLS.g:8360:2: ( ruleQuestionStyle )
+            // InternalQLS.g:8386:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalQLS.g:8387:2: ( ( ruleQualifiedName ) )
             {
-            // InternalQLS.g:8360:2: ( ruleQuestionStyle )
-            // InternalQLS.g:8361:3: ruleQuestionStyle
+            // InternalQLS.g:8387:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8388:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0()); 
+             before(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelCrossReference_3_0()); 
+            // InternalQLS.g:8389:3: ( ruleQualifiedName )
+            // InternalQLS.g:8390:4: ruleQualifiedName
+            {
+             before(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1()); 
             pushFollow(FOLLOW_2);
-            ruleQuestionStyle();
+            ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_6_0()); 
+             after(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelQualifiedNameParserRuleCall_3_0_1()); 
+
+            }
+
+             after(grammarAccess.getQLSModelAccess().getStyledQLModelQLModelCrossReference_3_0()); 
 
             }
 
@@ -25590,21 +25683,62 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__QLSModel__QuestionStylesAssignment_6"
+    // $ANTLR end "rule__QLSModel__StyledQLModelAssignment_3"
+
+
+    // $ANTLR start "rule__QLSModel__QuestionStylesAssignment_7"
+    // InternalQLS.g:8401:1: rule__QLSModel__QuestionStylesAssignment_7 : ( ruleQuestionStyle ) ;
+    public final void rule__QLSModel__QuestionStylesAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:8405:1: ( ( ruleQuestionStyle ) )
+            // InternalQLS.g:8406:2: ( ruleQuestionStyle )
+            {
+            // InternalQLS.g:8406:2: ( ruleQuestionStyle )
+            // InternalQLS.g:8407:3: ruleQuestionStyle
+            {
+             before(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_7_0()); 
+            pushFollow(FOLLOW_2);
+            ruleQuestionStyle();
+
+            state._fsp--;
+
+             after(grammarAccess.getQLSModelAccess().getQuestionStylesQuestionStyleParserRuleCall_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QLSModel__QuestionStylesAssignment_7"
 
 
     // $ANTLR start "rule__Import__ImportURIAssignment_2"
-    // InternalQLS.g:8370:1: rule__Import__ImportURIAssignment_2 : ( RULE_STRING ) ;
+    // InternalQLS.g:8416:1: rule__Import__ImportURIAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Import__ImportURIAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8374:1: ( ( RULE_STRING ) )
-            // InternalQLS.g:8375:2: ( RULE_STRING )
+            // InternalQLS.g:8420:1: ( ( RULE_STRING ) )
+            // InternalQLS.g:8421:2: ( RULE_STRING )
             {
-            // InternalQLS.g:8375:2: ( RULE_STRING )
-            // InternalQLS.g:8376:3: RULE_STRING
+            // InternalQLS.g:8421:2: ( RULE_STRING )
+            // InternalQLS.g:8422:3: RULE_STRING
             {
              before(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -25631,21 +25765,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__StyledQuestionAssignment_1"
-    // InternalQLS.g:8385:1: rule__QuestionStyle__StyledQuestionAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalQLS.g:8431:1: rule__QuestionStyle__StyledQuestionAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__QuestionStyle__StyledQuestionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8389:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalQLS.g:8390:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8435:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalQLS.g:8436:2: ( ( ruleQualifiedName ) )
             {
-            // InternalQLS.g:8390:2: ( ( ruleQualifiedName ) )
-            // InternalQLS.g:8391:3: ( ruleQualifiedName )
+            // InternalQLS.g:8436:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8437:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getQuestionStyleAccess().getStyledQuestionQuestionDefinitionCrossReference_1_0()); 
-            // InternalQLS.g:8392:3: ( ruleQualifiedName )
-            // InternalQLS.g:8393:4: ruleQualifiedName
+            // InternalQLS.g:8438:3: ( ruleQualifiedName )
+            // InternalQLS.g:8439:4: ruleQualifiedName
             {
              before(grammarAccess.getQuestionStyleAccess().getStyledQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -25680,17 +25814,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__LabelStyleAssignment_3_1"
-    // InternalQLS.g:8404:1: rule__QuestionStyle__LabelStyleAssignment_3_1 : ( ruleLabelStyle ) ;
+    // InternalQLS.g:8450:1: rule__QuestionStyle__LabelStyleAssignment_3_1 : ( ruleLabelStyle ) ;
     public final void rule__QuestionStyle__LabelStyleAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8408:1: ( ( ruleLabelStyle ) )
-            // InternalQLS.g:8409:2: ( ruleLabelStyle )
+            // InternalQLS.g:8454:1: ( ( ruleLabelStyle ) )
+            // InternalQLS.g:8455:2: ( ruleLabelStyle )
             {
-            // InternalQLS.g:8409:2: ( ruleLabelStyle )
-            // InternalQLS.g:8410:3: ruleLabelStyle
+            // InternalQLS.g:8455:2: ( ruleLabelStyle )
+            // InternalQLS.g:8456:3: ruleLabelStyle
             {
              before(grammarAccess.getQuestionStyleAccess().getLabelStyleLabelStyleParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25721,17 +25855,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionStyle__TypeStyleAssignment_4_1"
-    // InternalQLS.g:8419:1: rule__QuestionStyle__TypeStyleAssignment_4_1 : ( ruleTypeStyle ) ;
+    // InternalQLS.g:8465:1: rule__QuestionStyle__TypeStyleAssignment_4_1 : ( ruleTypeStyle ) ;
     public final void rule__QuestionStyle__TypeStyleAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8423:1: ( ( ruleTypeStyle ) )
-            // InternalQLS.g:8424:2: ( ruleTypeStyle )
+            // InternalQLS.g:8469:1: ( ( ruleTypeStyle ) )
+            // InternalQLS.g:8470:2: ( ruleTypeStyle )
             {
-            // InternalQLS.g:8424:2: ( ruleTypeStyle )
-            // InternalQLS.g:8425:3: ruleTypeStyle
+            // InternalQLS.g:8470:2: ( ruleTypeStyle )
+            // InternalQLS.g:8471:3: ruleTypeStyle
             {
              before(grammarAccess.getQuestionStyleAccess().getTypeStyleTypeStyleParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25762,21 +25896,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__ItalicAssignment_2"
-    // InternalQLS.g:8434:1: rule__LabelStyle__ItalicAssignment_2 : ( ( 'italic' ) ) ;
+    // InternalQLS.g:8480:1: rule__LabelStyle__ItalicAssignment_2 : ( ( 'italic' ) ) ;
     public final void rule__LabelStyle__ItalicAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8438:1: ( ( ( 'italic' ) ) )
-            // InternalQLS.g:8439:2: ( ( 'italic' ) )
+            // InternalQLS.g:8484:1: ( ( ( 'italic' ) ) )
+            // InternalQLS.g:8485:2: ( ( 'italic' ) )
             {
-            // InternalQLS.g:8439:2: ( ( 'italic' ) )
-            // InternalQLS.g:8440:3: ( 'italic' )
+            // InternalQLS.g:8485:2: ( ( 'italic' ) )
+            // InternalQLS.g:8486:3: ( 'italic' )
             {
              before(grammarAccess.getLabelStyleAccess().getItalicItalicKeyword_2_0()); 
-            // InternalQLS.g:8441:3: ( 'italic' )
-            // InternalQLS.g:8442:4: 'italic'
+            // InternalQLS.g:8487:3: ( 'italic' )
+            // InternalQLS.g:8488:4: 'italic'
             {
              before(grammarAccess.getLabelStyleAccess().getItalicItalicKeyword_2_0()); 
             match(input,82,FOLLOW_2); 
@@ -25807,21 +25941,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LabelStyle__BoldAssignment_3"
-    // InternalQLS.g:8453:1: rule__LabelStyle__BoldAssignment_3 : ( ( 'bold' ) ) ;
+    // InternalQLS.g:8499:1: rule__LabelStyle__BoldAssignment_3 : ( ( 'bold' ) ) ;
     public final void rule__LabelStyle__BoldAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8457:1: ( ( ( 'bold' ) ) )
-            // InternalQLS.g:8458:2: ( ( 'bold' ) )
+            // InternalQLS.g:8503:1: ( ( ( 'bold' ) ) )
+            // InternalQLS.g:8504:2: ( ( 'bold' ) )
             {
-            // InternalQLS.g:8458:2: ( ( 'bold' ) )
-            // InternalQLS.g:8459:3: ( 'bold' )
+            // InternalQLS.g:8504:2: ( ( 'bold' ) )
+            // InternalQLS.g:8505:3: ( 'bold' )
             {
              before(grammarAccess.getLabelStyleAccess().getBoldBoldKeyword_3_0()); 
-            // InternalQLS.g:8460:3: ( 'bold' )
-            // InternalQLS.g:8461:4: 'bold'
+            // InternalQLS.g:8506:3: ( 'bold' )
+            // InternalQLS.g:8507:4: 'bold'
             {
              before(grammarAccess.getLabelStyleAccess().getBoldBoldKeyword_3_0()); 
             match(input,83,FOLLOW_2); 
@@ -25852,17 +25986,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__BooleanStyleKindAssignment_2"
-    // InternalQLS.g:8472:1: rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 : ( ruleBooleanStyleKind ) ;
+    // InternalQLS.g:8518:1: rule__BooleanTypeStyle__BooleanStyleKindAssignment_2 : ( ruleBooleanStyleKind ) ;
     public final void rule__BooleanTypeStyle__BooleanStyleKindAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8476:1: ( ( ruleBooleanStyleKind ) )
-            // InternalQLS.g:8477:2: ( ruleBooleanStyleKind )
+            // InternalQLS.g:8522:1: ( ( ruleBooleanStyleKind ) )
+            // InternalQLS.g:8523:2: ( ruleBooleanStyleKind )
             {
-            // InternalQLS.g:8477:2: ( ruleBooleanStyleKind )
-            // InternalQLS.g:8478:3: ruleBooleanStyleKind
+            // InternalQLS.g:8523:2: ( ruleBooleanStyleKind )
+            // InternalQLS.g:8524:3: ruleBooleanStyleKind
             {
              before(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKindBooleanStyleKindEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -25893,17 +26027,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__StepAssignment_4_1"
-    // InternalQLS.g:8487:1: rule__NumericTypeTextFieldStyle__StepAssignment_4_1 : ( ruleEDouble ) ;
+    // InternalQLS.g:8533:1: rule__NumericTypeTextFieldStyle__StepAssignment_4_1 : ( ruleEDouble ) ;
     public final void rule__NumericTypeTextFieldStyle__StepAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8491:1: ( ( ruleEDouble ) )
-            // InternalQLS.g:8492:2: ( ruleEDouble )
+            // InternalQLS.g:8537:1: ( ( ruleEDouble ) )
+            // InternalQLS.g:8538:2: ( ruleEDouble )
             {
-            // InternalQLS.g:8492:2: ( ruleEDouble )
-            // InternalQLS.g:8493:3: ruleEDouble
+            // InternalQLS.g:8538:2: ( ruleEDouble )
+            // InternalQLS.g:8539:3: ruleEDouble
             {
              before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepEDoubleParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -25934,21 +26068,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__MultilineAssignment_3"
-    // InternalQLS.g:8502:1: rule__TextTypeStyle__MultilineAssignment_3 : ( ( 'multiline' ) ) ;
+    // InternalQLS.g:8548:1: rule__TextTypeStyle__MultilineAssignment_3 : ( ( 'multiline' ) ) ;
     public final void rule__TextTypeStyle__MultilineAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8506:1: ( ( ( 'multiline' ) ) )
-            // InternalQLS.g:8507:2: ( ( 'multiline' ) )
+            // InternalQLS.g:8552:1: ( ( ( 'multiline' ) ) )
+            // InternalQLS.g:8553:2: ( ( 'multiline' ) )
             {
-            // InternalQLS.g:8507:2: ( ( 'multiline' ) )
-            // InternalQLS.g:8508:3: ( 'multiline' )
+            // InternalQLS.g:8553:2: ( ( 'multiline' ) )
+            // InternalQLS.g:8554:3: ( 'multiline' )
             {
              before(grammarAccess.getTextTypeStyleAccess().getMultilineMultilineKeyword_3_0()); 
-            // InternalQLS.g:8509:3: ( 'multiline' )
-            // InternalQLS.g:8510:4: 'multiline'
+            // InternalQLS.g:8555:3: ( 'multiline' )
+            // InternalQLS.g:8556:4: 'multiline'
             {
              before(grammarAccess.getTextTypeStyleAccess().getMultilineMultilineKeyword_3_0()); 
             match(input,84,FOLLOW_2); 
@@ -25979,17 +26113,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__OperatorAssignment_1"
-    // InternalQLS.g:8521:1: rule__UnaryExpression__OperatorAssignment_1 : ( ruleUnaryOperatorKind ) ;
+    // InternalQLS.g:8567:1: rule__UnaryExpression__OperatorAssignment_1 : ( ruleUnaryOperatorKind ) ;
     public final void rule__UnaryExpression__OperatorAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8525:1: ( ( ruleUnaryOperatorKind ) )
-            // InternalQLS.g:8526:2: ( ruleUnaryOperatorKind )
+            // InternalQLS.g:8571:1: ( ( ruleUnaryOperatorKind ) )
+            // InternalQLS.g:8572:2: ( ruleUnaryOperatorKind )
             {
-            // InternalQLS.g:8526:2: ( ruleUnaryOperatorKind )
-            // InternalQLS.g:8527:3: ruleUnaryOperatorKind
+            // InternalQLS.g:8572:2: ( ruleUnaryOperatorKind )
+            // InternalQLS.g:8573:3: ruleUnaryOperatorKind
             {
              before(grammarAccess.getUnaryExpressionAccess().getOperatorUnaryOperatorKindEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26020,17 +26154,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpression__OperandAssignment_2"
-    // InternalQLS.g:8536:1: rule__UnaryExpression__OperandAssignment_2 : ( ruleUnaryOrPrimaryExpression ) ;
+    // InternalQLS.g:8582:1: rule__UnaryExpression__OperandAssignment_2 : ( ruleUnaryOrPrimaryExpression ) ;
     public final void rule__UnaryExpression__OperandAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8540:1: ( ( ruleUnaryOrPrimaryExpression ) )
-            // InternalQLS.g:8541:2: ( ruleUnaryOrPrimaryExpression )
+            // InternalQLS.g:8586:1: ( ( ruleUnaryOrPrimaryExpression ) )
+            // InternalQLS.g:8587:2: ( ruleUnaryOrPrimaryExpression )
             {
-            // InternalQLS.g:8541:2: ( ruleUnaryOrPrimaryExpression )
-            // InternalQLS.g:8542:3: ruleUnaryOrPrimaryExpression
+            // InternalQLS.g:8587:2: ( ruleUnaryOrPrimaryExpression )
+            // InternalQLS.g:8588:3: ruleUnaryOrPrimaryExpression
             {
              before(grammarAccess.getUnaryExpressionAccess().getOperandUnaryOrPrimaryExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26061,17 +26195,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__ConditionAssignment_2"
-    // InternalQLS.g:8551:1: rule__IfExpression__ConditionAssignment_2 : ( ruleExpression ) ;
+    // InternalQLS.g:8597:1: rule__IfExpression__ConditionAssignment_2 : ( ruleExpression ) ;
     public final void rule__IfExpression__ConditionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8555:1: ( ( ruleExpression ) )
-            // InternalQLS.g:8556:2: ( ruleExpression )
+            // InternalQLS.g:8601:1: ( ( ruleExpression ) )
+            // InternalQLS.g:8602:2: ( ruleExpression )
             {
-            // InternalQLS.g:8556:2: ( ruleExpression )
-            // InternalQLS.g:8557:3: ruleExpression
+            // InternalQLS.g:8602:2: ( ruleExpression )
+            // InternalQLS.g:8603:3: ruleExpression
             {
              before(grammarAccess.getIfExpressionAccess().getConditionExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26102,17 +26236,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__ThenExpressionAssignment_4"
-    // InternalQLS.g:8566:1: rule__IfExpression__ThenExpressionAssignment_4 : ( ruleExpression ) ;
+    // InternalQLS.g:8612:1: rule__IfExpression__ThenExpressionAssignment_4 : ( ruleExpression ) ;
     public final void rule__IfExpression__ThenExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8570:1: ( ( ruleExpression ) )
-            // InternalQLS.g:8571:2: ( ruleExpression )
+            // InternalQLS.g:8616:1: ( ( ruleExpression ) )
+            // InternalQLS.g:8617:2: ( ruleExpression )
             {
-            // InternalQLS.g:8571:2: ( ruleExpression )
-            // InternalQLS.g:8572:3: ruleExpression
+            // InternalQLS.g:8617:2: ( ruleExpression )
+            // InternalQLS.g:8618:3: ruleExpression
             {
              before(grammarAccess.getIfExpressionAccess().getThenExpressionExpressionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -26143,17 +26277,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IfExpression__ElseExpressionAssignment_5_1"
-    // InternalQLS.g:8581:1: rule__IfExpression__ElseExpressionAssignment_5_1 : ( ruleExpression ) ;
+    // InternalQLS.g:8627:1: rule__IfExpression__ElseExpressionAssignment_5_1 : ( ruleExpression ) ;
     public final void rule__IfExpression__ElseExpressionAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8585:1: ( ( ruleExpression ) )
-            // InternalQLS.g:8586:2: ( ruleExpression )
+            // InternalQLS.g:8631:1: ( ( ruleExpression ) )
+            // InternalQLS.g:8632:2: ( ruleExpression )
             {
-            // InternalQLS.g:8586:2: ( ruleExpression )
-            // InternalQLS.g:8587:3: ruleExpression
+            // InternalQLS.g:8632:2: ( ruleExpression )
+            // InternalQLS.g:8633:3: ruleExpression
             {
              before(grammarAccess.getIfExpressionAccess().getElseExpressionExpressionParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26184,17 +26318,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8596:1: rule__OrExpression__OperatorAssignment_1_1 : ( ruleOrOperatorKind ) ;
+    // InternalQLS.g:8642:1: rule__OrExpression__OperatorAssignment_1_1 : ( ruleOrOperatorKind ) ;
     public final void rule__OrExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8600:1: ( ( ruleOrOperatorKind ) )
-            // InternalQLS.g:8601:2: ( ruleOrOperatorKind )
+            // InternalQLS.g:8646:1: ( ( ruleOrOperatorKind ) )
+            // InternalQLS.g:8647:2: ( ruleOrOperatorKind )
             {
-            // InternalQLS.g:8601:2: ( ruleOrOperatorKind )
-            // InternalQLS.g:8602:3: ruleOrOperatorKind
+            // InternalQLS.g:8647:2: ( ruleOrOperatorKind )
+            // InternalQLS.g:8648:3: ruleOrOperatorKind
             {
              before(grammarAccess.getOrExpressionAccess().getOperatorOrOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26225,17 +26359,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8611:1: rule__OrExpression__RhsOperandAssignment_1_2 : ( ruleAndExpression ) ;
+    // InternalQLS.g:8657:1: rule__OrExpression__RhsOperandAssignment_1_2 : ( ruleAndExpression ) ;
     public final void rule__OrExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8615:1: ( ( ruleAndExpression ) )
-            // InternalQLS.g:8616:2: ( ruleAndExpression )
+            // InternalQLS.g:8661:1: ( ( ruleAndExpression ) )
+            // InternalQLS.g:8662:2: ( ruleAndExpression )
             {
-            // InternalQLS.g:8616:2: ( ruleAndExpression )
-            // InternalQLS.g:8617:3: ruleAndExpression
+            // InternalQLS.g:8662:2: ( ruleAndExpression )
+            // InternalQLS.g:8663:3: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getRhsOperandAndExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26266,17 +26400,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8626:1: rule__AndExpression__OperatorAssignment_1_1 : ( ruleAndOperatorKind ) ;
+    // InternalQLS.g:8672:1: rule__AndExpression__OperatorAssignment_1_1 : ( ruleAndOperatorKind ) ;
     public final void rule__AndExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8630:1: ( ( ruleAndOperatorKind ) )
-            // InternalQLS.g:8631:2: ( ruleAndOperatorKind )
+            // InternalQLS.g:8676:1: ( ( ruleAndOperatorKind ) )
+            // InternalQLS.g:8677:2: ( ruleAndOperatorKind )
             {
-            // InternalQLS.g:8631:2: ( ruleAndOperatorKind )
-            // InternalQLS.g:8632:3: ruleAndOperatorKind
+            // InternalQLS.g:8677:2: ( ruleAndOperatorKind )
+            // InternalQLS.g:8678:3: ruleAndOperatorKind
             {
              before(grammarAccess.getAndExpressionAccess().getOperatorAndOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26307,17 +26441,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8641:1: rule__AndExpression__RhsOperandAssignment_1_2 : ( ruleEqualExpression ) ;
+    // InternalQLS.g:8687:1: rule__AndExpression__RhsOperandAssignment_1_2 : ( ruleEqualExpression ) ;
     public final void rule__AndExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8645:1: ( ( ruleEqualExpression ) )
-            // InternalQLS.g:8646:2: ( ruleEqualExpression )
+            // InternalQLS.g:8691:1: ( ( ruleEqualExpression ) )
+            // InternalQLS.g:8692:2: ( ruleEqualExpression )
             {
-            // InternalQLS.g:8646:2: ( ruleEqualExpression )
-            // InternalQLS.g:8647:3: ruleEqualExpression
+            // InternalQLS.g:8692:2: ( ruleEqualExpression )
+            // InternalQLS.g:8693:3: ruleEqualExpression
             {
              before(grammarAccess.getAndExpressionAccess().getRhsOperandEqualExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26348,17 +26482,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8656:1: rule__EqualExpression__OperatorAssignment_1_1 : ( ruleEqualOperatorKind ) ;
+    // InternalQLS.g:8702:1: rule__EqualExpression__OperatorAssignment_1_1 : ( ruleEqualOperatorKind ) ;
     public final void rule__EqualExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8660:1: ( ( ruleEqualOperatorKind ) )
-            // InternalQLS.g:8661:2: ( ruleEqualOperatorKind )
+            // InternalQLS.g:8706:1: ( ( ruleEqualOperatorKind ) )
+            // InternalQLS.g:8707:2: ( ruleEqualOperatorKind )
             {
-            // InternalQLS.g:8661:2: ( ruleEqualOperatorKind )
-            // InternalQLS.g:8662:3: ruleEqualOperatorKind
+            // InternalQLS.g:8707:2: ( ruleEqualOperatorKind )
+            // InternalQLS.g:8708:3: ruleEqualOperatorKind
             {
              before(grammarAccess.getEqualExpressionAccess().getOperatorEqualOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26389,17 +26523,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EqualExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8671:1: rule__EqualExpression__RhsOperandAssignment_1_2 : ( ruleComparisionExpression ) ;
+    // InternalQLS.g:8717:1: rule__EqualExpression__RhsOperandAssignment_1_2 : ( ruleComparisionExpression ) ;
     public final void rule__EqualExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8675:1: ( ( ruleComparisionExpression ) )
-            // InternalQLS.g:8676:2: ( ruleComparisionExpression )
+            // InternalQLS.g:8721:1: ( ( ruleComparisionExpression ) )
+            // InternalQLS.g:8722:2: ( ruleComparisionExpression )
             {
-            // InternalQLS.g:8676:2: ( ruleComparisionExpression )
-            // InternalQLS.g:8677:3: ruleComparisionExpression
+            // InternalQLS.g:8722:2: ( ruleComparisionExpression )
+            // InternalQLS.g:8723:3: ruleComparisionExpression
             {
              before(grammarAccess.getEqualExpressionAccess().getRhsOperandComparisionExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26430,17 +26564,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8686:1: rule__ComparisionExpression__OperatorAssignment_1_1 : ( ruleComparisionOperatorKind ) ;
+    // InternalQLS.g:8732:1: rule__ComparisionExpression__OperatorAssignment_1_1 : ( ruleComparisionOperatorKind ) ;
     public final void rule__ComparisionExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8690:1: ( ( ruleComparisionOperatorKind ) )
-            // InternalQLS.g:8691:2: ( ruleComparisionOperatorKind )
+            // InternalQLS.g:8736:1: ( ( ruleComparisionOperatorKind ) )
+            // InternalQLS.g:8737:2: ( ruleComparisionOperatorKind )
             {
-            // InternalQLS.g:8691:2: ( ruleComparisionOperatorKind )
-            // InternalQLS.g:8692:3: ruleComparisionOperatorKind
+            // InternalQLS.g:8737:2: ( ruleComparisionOperatorKind )
+            // InternalQLS.g:8738:3: ruleComparisionOperatorKind
             {
              before(grammarAccess.getComparisionExpressionAccess().getOperatorComparisionOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26471,17 +26605,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisionExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8701:1: rule__ComparisionExpression__RhsOperandAssignment_1_2 : ( ruleAdditionExpression ) ;
+    // InternalQLS.g:8747:1: rule__ComparisionExpression__RhsOperandAssignment_1_2 : ( ruleAdditionExpression ) ;
     public final void rule__ComparisionExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8705:1: ( ( ruleAdditionExpression ) )
-            // InternalQLS.g:8706:2: ( ruleAdditionExpression )
+            // InternalQLS.g:8751:1: ( ( ruleAdditionExpression ) )
+            // InternalQLS.g:8752:2: ( ruleAdditionExpression )
             {
-            // InternalQLS.g:8706:2: ( ruleAdditionExpression )
-            // InternalQLS.g:8707:3: ruleAdditionExpression
+            // InternalQLS.g:8752:2: ( ruleAdditionExpression )
+            // InternalQLS.g:8753:3: ruleAdditionExpression
             {
              before(grammarAccess.getComparisionExpressionAccess().getRhsOperandAdditionExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26512,17 +26646,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8716:1: rule__AdditionExpression__OperatorAssignment_1_1 : ( ruleAdditionOperatorKind ) ;
+    // InternalQLS.g:8762:1: rule__AdditionExpression__OperatorAssignment_1_1 : ( ruleAdditionOperatorKind ) ;
     public final void rule__AdditionExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8720:1: ( ( ruleAdditionOperatorKind ) )
-            // InternalQLS.g:8721:2: ( ruleAdditionOperatorKind )
+            // InternalQLS.g:8766:1: ( ( ruleAdditionOperatorKind ) )
+            // InternalQLS.g:8767:2: ( ruleAdditionOperatorKind )
             {
-            // InternalQLS.g:8721:2: ( ruleAdditionOperatorKind )
-            // InternalQLS.g:8722:3: ruleAdditionOperatorKind
+            // InternalQLS.g:8767:2: ( ruleAdditionOperatorKind )
+            // InternalQLS.g:8768:3: ruleAdditionOperatorKind
             {
              before(grammarAccess.getAdditionExpressionAccess().getOperatorAdditionOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26553,17 +26687,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AdditionExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8731:1: rule__AdditionExpression__RhsOperandAssignment_1_2 : ( ruleMultiplicationExpression ) ;
+    // InternalQLS.g:8777:1: rule__AdditionExpression__RhsOperandAssignment_1_2 : ( ruleMultiplicationExpression ) ;
     public final void rule__AdditionExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8735:1: ( ( ruleMultiplicationExpression ) )
-            // InternalQLS.g:8736:2: ( ruleMultiplicationExpression )
+            // InternalQLS.g:8781:1: ( ( ruleMultiplicationExpression ) )
+            // InternalQLS.g:8782:2: ( ruleMultiplicationExpression )
             {
-            // InternalQLS.g:8736:2: ( ruleMultiplicationExpression )
-            // InternalQLS.g:8737:3: ruleMultiplicationExpression
+            // InternalQLS.g:8782:2: ( ruleMultiplicationExpression )
+            // InternalQLS.g:8783:3: ruleMultiplicationExpression
             {
              before(grammarAccess.getAdditionExpressionAccess().getRhsOperandMultiplicationExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26594,17 +26728,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__OperatorAssignment_1_1"
-    // InternalQLS.g:8746:1: rule__MultiplicationExpression__OperatorAssignment_1_1 : ( ruleMultiplicationOperatorKind ) ;
+    // InternalQLS.g:8792:1: rule__MultiplicationExpression__OperatorAssignment_1_1 : ( ruleMultiplicationOperatorKind ) ;
     public final void rule__MultiplicationExpression__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8750:1: ( ( ruleMultiplicationOperatorKind ) )
-            // InternalQLS.g:8751:2: ( ruleMultiplicationOperatorKind )
+            // InternalQLS.g:8796:1: ( ( ruleMultiplicationOperatorKind ) )
+            // InternalQLS.g:8797:2: ( ruleMultiplicationOperatorKind )
             {
-            // InternalQLS.g:8751:2: ( ruleMultiplicationOperatorKind )
-            // InternalQLS.g:8752:3: ruleMultiplicationOperatorKind
+            // InternalQLS.g:8797:2: ( ruleMultiplicationOperatorKind )
+            // InternalQLS.g:8798:3: ruleMultiplicationOperatorKind
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getOperatorMultiplicationOperatorKindEnumRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26635,17 +26769,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicationExpression__RhsOperandAssignment_1_2"
-    // InternalQLS.g:8761:1: rule__MultiplicationExpression__RhsOperandAssignment_1_2 : ( ruleUnaryOrPrimaryExpression ) ;
+    // InternalQLS.g:8807:1: rule__MultiplicationExpression__RhsOperandAssignment_1_2 : ( ruleUnaryOrPrimaryExpression ) ;
     public final void rule__MultiplicationExpression__RhsOperandAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8765:1: ( ( ruleUnaryOrPrimaryExpression ) )
-            // InternalQLS.g:8766:2: ( ruleUnaryOrPrimaryExpression )
+            // InternalQLS.g:8811:1: ( ( ruleUnaryOrPrimaryExpression ) )
+            // InternalQLS.g:8812:2: ( ruleUnaryOrPrimaryExpression )
             {
-            // InternalQLS.g:8766:2: ( ruleUnaryOrPrimaryExpression )
-            // InternalQLS.g:8767:3: ruleUnaryOrPrimaryExpression
+            // InternalQLS.g:8812:2: ( ruleUnaryOrPrimaryExpression )
+            // InternalQLS.g:8813:3: ruleUnaryOrPrimaryExpression
             {
              before(grammarAccess.getMultiplicationExpressionAccess().getRhsOperandUnaryOrPrimaryExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -26676,17 +26810,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__QuestionDefinitionsAssignment_2_0"
-    // InternalQLS.g:8776:1: rule__DefinitionGroup__QuestionDefinitionsAssignment_2_0 : ( ruleQuestionDefinition ) ;
+    // InternalQLS.g:8822:1: rule__DefinitionGroup__QuestionDefinitionsAssignment_2_0 : ( ruleQuestionDefinition ) ;
     public final void rule__DefinitionGroup__QuestionDefinitionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8780:1: ( ( ruleQuestionDefinition ) )
-            // InternalQLS.g:8781:2: ( ruleQuestionDefinition )
+            // InternalQLS.g:8826:1: ( ( ruleQuestionDefinition ) )
+            // InternalQLS.g:8827:2: ( ruleQuestionDefinition )
             {
-            // InternalQLS.g:8781:2: ( ruleQuestionDefinition )
-            // InternalQLS.g:8782:3: ruleQuestionDefinition
+            // InternalQLS.g:8827:2: ( ruleQuestionDefinition )
+            // InternalQLS.g:8828:3: ruleQuestionDefinition
             {
              before(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsQuestionDefinitionParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -26717,17 +26851,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionGroup__DataTypesAssignment_2_1"
-    // InternalQLS.g:8791:1: rule__DefinitionGroup__DataTypesAssignment_2_1 : ( ruleValueType ) ;
+    // InternalQLS.g:8837:1: rule__DefinitionGroup__DataTypesAssignment_2_1 : ( ruleValueType ) ;
     public final void rule__DefinitionGroup__DataTypesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8795:1: ( ( ruleValueType ) )
-            // InternalQLS.g:8796:2: ( ruleValueType )
+            // InternalQLS.g:8841:1: ( ( ruleValueType ) )
+            // InternalQLS.g:8842:2: ( ruleValueType )
             {
-            // InternalQLS.g:8796:2: ( ruleValueType )
-            // InternalQLS.g:8797:3: ruleValueType
+            // InternalQLS.g:8842:2: ( ruleValueType )
+            // InternalQLS.g:8843:3: ruleValueType
             {
              before(grammarAccess.getDefinitionGroupAccess().getDataTypesValueTypeParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26758,17 +26892,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__GuardAssignment_1_1"
-    // InternalQLS.g:8806:1: rule__QuestionGroup__GuardAssignment_1_1 : ( ruleExpression ) ;
+    // InternalQLS.g:8852:1: rule__QuestionGroup__GuardAssignment_1_1 : ( ruleExpression ) ;
     public final void rule__QuestionGroup__GuardAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8810:1: ( ( ruleExpression ) )
-            // InternalQLS.g:8811:2: ( ruleExpression )
+            // InternalQLS.g:8856:1: ( ( ruleExpression ) )
+            // InternalQLS.g:8857:2: ( ruleExpression )
             {
-            // InternalQLS.g:8811:2: ( ruleExpression )
-            // InternalQLS.g:8812:3: ruleExpression
+            // InternalQLS.g:8857:2: ( ruleExpression )
+            // InternalQLS.g:8858:3: ruleExpression
             {
              before(grammarAccess.getQuestionGroupAccess().getGuardExpressionParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26799,17 +26933,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__QuestionGroupsAssignment_3_0"
-    // InternalQLS.g:8821:1: rule__QuestionGroup__QuestionGroupsAssignment_3_0 : ( ruleQuestionGroup ) ;
+    // InternalQLS.g:8867:1: rule__QuestionGroup__QuestionGroupsAssignment_3_0 : ( ruleQuestionGroup ) ;
     public final void rule__QuestionGroup__QuestionGroupsAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8825:1: ( ( ruleQuestionGroup ) )
-            // InternalQLS.g:8826:2: ( ruleQuestionGroup )
+            // InternalQLS.g:8871:1: ( ( ruleQuestionGroup ) )
+            // InternalQLS.g:8872:2: ( ruleQuestionGroup )
             {
-            // InternalQLS.g:8826:2: ( ruleQuestionGroup )
-            // InternalQLS.g:8827:3: ruleQuestionGroup
+            // InternalQLS.g:8872:2: ( ruleQuestionGroup )
+            // InternalQLS.g:8873:3: ruleQuestionGroup
             {
              before(grammarAccess.getQuestionGroupAccess().getQuestionGroupsQuestionGroupParserRuleCall_3_0_0()); 
             pushFollow(FOLLOW_2);
@@ -26840,17 +26974,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionGroup__QuestionsAssignment_3_1"
-    // InternalQLS.g:8836:1: rule__QuestionGroup__QuestionsAssignment_3_1 : ( ruleQuestion ) ;
+    // InternalQLS.g:8882:1: rule__QuestionGroup__QuestionsAssignment_3_1 : ( ruleQuestion ) ;
     public final void rule__QuestionGroup__QuestionsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8840:1: ( ( ruleQuestion ) )
-            // InternalQLS.g:8841:2: ( ruleQuestion )
+            // InternalQLS.g:8886:1: ( ( ruleQuestion ) )
+            // InternalQLS.g:8887:2: ( ruleQuestion )
             {
-            // InternalQLS.g:8841:2: ( ruleQuestion )
-            // InternalQLS.g:8842:3: ruleQuestion
+            // InternalQLS.g:8887:2: ( ruleQuestion )
+            // InternalQLS.g:8888:3: ruleQuestion
             {
              before(grammarAccess.getQuestionGroupAccess().getQuestionsQuestionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -26881,21 +27015,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Question__QuestionDefinitionAssignment"
-    // InternalQLS.g:8851:1: rule__Question__QuestionDefinitionAssignment : ( ( ruleQualifiedName ) ) ;
+    // InternalQLS.g:8897:1: rule__Question__QuestionDefinitionAssignment : ( ( ruleQualifiedName ) ) ;
     public final void rule__Question__QuestionDefinitionAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8855:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalQLS.g:8856:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8901:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalQLS.g:8902:2: ( ( ruleQualifiedName ) )
             {
-            // InternalQLS.g:8856:2: ( ( ruleQualifiedName ) )
-            // InternalQLS.g:8857:3: ( ruleQualifiedName )
+            // InternalQLS.g:8902:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8903:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionCrossReference_0()); 
-            // InternalQLS.g:8858:3: ( ruleQualifiedName )
-            // InternalQLS.g:8859:4: ruleQualifiedName
+            // InternalQLS.g:8904:3: ( ruleQualifiedName )
+            // InternalQLS.g:8905:4: ruleQualifiedName
             {
              before(grammarAccess.getQuestionAccess().getQuestionDefinitionQuestionDefinitionQualifiedNameParserRuleCall_0_1()); 
             pushFollow(FOLLOW_2);
@@ -26930,17 +27064,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__NameAssignment_2"
-    // InternalQLS.g:8870:1: rule__ValueType_Impl__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:8916:1: rule__ValueType_Impl__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__ValueType_Impl__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8874:1: ( ( RULE_ID ) )
-            // InternalQLS.g:8875:2: ( RULE_ID )
+            // InternalQLS.g:8920:1: ( ( RULE_ID ) )
+            // InternalQLS.g:8921:2: ( RULE_ID )
             {
-            // InternalQLS.g:8875:2: ( RULE_ID )
-            // InternalQLS.g:8876:3: RULE_ID
+            // InternalQLS.g:8921:2: ( RULE_ID )
+            // InternalQLS.g:8922:3: RULE_ID
             {
              before(grammarAccess.getValueType_ImplAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -26967,17 +27101,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ValueType_Impl__UnitAssignment_4_1"
-    // InternalQLS.g:8885:1: rule__ValueType_Impl__UnitAssignment_4_1 : ( ruleEString ) ;
+    // InternalQLS.g:8931:1: rule__ValueType_Impl__UnitAssignment_4_1 : ( ruleEString ) ;
     public final void rule__ValueType_Impl__UnitAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8889:1: ( ( ruleEString ) )
-            // InternalQLS.g:8890:2: ( ruleEString )
+            // InternalQLS.g:8935:1: ( ( ruleEString ) )
+            // InternalQLS.g:8936:2: ( ruleEString )
             {
-            // InternalQLS.g:8890:2: ( ruleEString )
-            // InternalQLS.g:8891:3: ruleEString
+            // InternalQLS.g:8936:2: ( ruleEString )
+            // InternalQLS.g:8937:3: ruleEString
             {
              before(grammarAccess.getValueType_ImplAccess().getUnitEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27008,21 +27142,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstantCall__ValueAssignment_1"
-    // InternalQLS.g:8900:1: rule__ConstantCall__ValueAssignment_1 : ( ( rule__ConstantCall__ValueAlternatives_1_0 ) ) ;
+    // InternalQLS.g:8946:1: rule__ConstantCall__ValueAssignment_1 : ( ( rule__ConstantCall__ValueAlternatives_1_0 ) ) ;
     public final void rule__ConstantCall__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8904:1: ( ( ( rule__ConstantCall__ValueAlternatives_1_0 ) ) )
-            // InternalQLS.g:8905:2: ( ( rule__ConstantCall__ValueAlternatives_1_0 ) )
+            // InternalQLS.g:8950:1: ( ( ( rule__ConstantCall__ValueAlternatives_1_0 ) ) )
+            // InternalQLS.g:8951:2: ( ( rule__ConstantCall__ValueAlternatives_1_0 ) )
             {
-            // InternalQLS.g:8905:2: ( ( rule__ConstantCall__ValueAlternatives_1_0 ) )
-            // InternalQLS.g:8906:3: ( rule__ConstantCall__ValueAlternatives_1_0 )
+            // InternalQLS.g:8951:2: ( ( rule__ConstantCall__ValueAlternatives_1_0 ) )
+            // InternalQLS.g:8952:3: ( rule__ConstantCall__ValueAlternatives_1_0 )
             {
              before(grammarAccess.getConstantCallAccess().getValueAlternatives_1_0()); 
-            // InternalQLS.g:8907:3: ( rule__ConstantCall__ValueAlternatives_1_0 )
-            // InternalQLS.g:8907:4: rule__ConstantCall__ValueAlternatives_1_0
+            // InternalQLS.g:8953:3: ( rule__ConstantCall__ValueAlternatives_1_0 )
+            // InternalQLS.g:8953:4: rule__ConstantCall__ValueAlternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__ConstantCall__ValueAlternatives_1_0();
@@ -27055,21 +27189,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionCall__QuestionAssignment_1"
-    // InternalQLS.g:8915:1: rule__QuestionCall__QuestionAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalQLS.g:8961:1: rule__QuestionCall__QuestionAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__QuestionCall__QuestionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8919:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalQLS.g:8920:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8965:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalQLS.g:8966:2: ( ( ruleQualifiedName ) )
             {
-            // InternalQLS.g:8920:2: ( ( ruleQualifiedName ) )
-            // InternalQLS.g:8921:3: ( ruleQualifiedName )
+            // InternalQLS.g:8966:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:8967:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionCrossReference_1_0()); 
-            // InternalQLS.g:8922:3: ( ruleQualifiedName )
-            // InternalQLS.g:8923:4: ruleQualifiedName
+            // InternalQLS.g:8968:3: ( ruleQualifiedName )
+            // InternalQLS.g:8969:4: ruleQualifiedName
             {
              before(grammarAccess.getQuestionCallAccess().getQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -27104,17 +27238,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__NameAssignment_2"
-    // InternalQLS.g:8934:1: rule__BooleanValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:8980:1: rule__BooleanValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__BooleanValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8938:1: ( ( RULE_ID ) )
-            // InternalQLS.g:8939:2: ( RULE_ID )
+            // InternalQLS.g:8984:1: ( ( RULE_ID ) )
+            // InternalQLS.g:8985:2: ( RULE_ID )
             {
-            // InternalQLS.g:8939:2: ( RULE_ID )
-            // InternalQLS.g:8940:3: RULE_ID
+            // InternalQLS.g:8985:2: ( RULE_ID )
+            // InternalQLS.g:8986:3: RULE_ID
             {
              before(grammarAccess.getBooleanValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27141,17 +27275,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:8949:1: rule__BooleanValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:8995:1: rule__BooleanValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__BooleanValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8953:1: ( ( ruleEString ) )
-            // InternalQLS.g:8954:2: ( ruleEString )
+            // InternalQLS.g:8999:1: ( ( ruleEString ) )
+            // InternalQLS.g:9000:2: ( ruleEString )
             {
-            // InternalQLS.g:8954:2: ( ruleEString )
-            // InternalQLS.g:8955:3: ruleEString
+            // InternalQLS.g:9000:2: ( ruleEString )
+            // InternalQLS.g:9001:3: ruleEString
             {
              before(grammarAccess.getBooleanValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27182,17 +27316,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__NameAssignment_2"
-    // InternalQLS.g:8964:1: rule__IntegerValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:9010:1: rule__IntegerValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__IntegerValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8968:1: ( ( RULE_ID ) )
-            // InternalQLS.g:8969:2: ( RULE_ID )
+            // InternalQLS.g:9014:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9015:2: ( RULE_ID )
             {
-            // InternalQLS.g:8969:2: ( RULE_ID )
-            // InternalQLS.g:8970:3: RULE_ID
+            // InternalQLS.g:9015:2: ( RULE_ID )
+            // InternalQLS.g:9016:3: RULE_ID
             {
              before(grammarAccess.getIntegerValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27219,17 +27353,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:8979:1: rule__IntegerValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:9025:1: rule__IntegerValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__IntegerValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8983:1: ( ( ruleEString ) )
-            // InternalQLS.g:8984:2: ( ruleEString )
+            // InternalQLS.g:9029:1: ( ( ruleEString ) )
+            // InternalQLS.g:9030:2: ( ruleEString )
             {
-            // InternalQLS.g:8984:2: ( ruleEString )
-            // InternalQLS.g:8985:3: ruleEString
+            // InternalQLS.g:9030:2: ( ruleEString )
+            // InternalQLS.g:9031:3: ruleEString
             {
              before(grammarAccess.getIntegerValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27260,17 +27394,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__MinAssignment_3_2_1"
-    // InternalQLS.g:8994:1: rule__IntegerValueType__MinAssignment_3_2_1 : ( ruleEInt ) ;
+    // InternalQLS.g:9040:1: rule__IntegerValueType__MinAssignment_3_2_1 : ( ruleEInt ) ;
     public final void rule__IntegerValueType__MinAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8998:1: ( ( ruleEInt ) )
-            // InternalQLS.g:8999:2: ( ruleEInt )
+            // InternalQLS.g:9044:1: ( ( ruleEInt ) )
+            // InternalQLS.g:9045:2: ( ruleEInt )
             {
-            // InternalQLS.g:8999:2: ( ruleEInt )
-            // InternalQLS.g:9000:3: ruleEInt
+            // InternalQLS.g:9045:2: ( ruleEInt )
+            // InternalQLS.g:9046:3: ruleEInt
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMinEIntParserRuleCall_3_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27301,17 +27435,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValueType__MaxAssignment_3_3_1"
-    // InternalQLS.g:9009:1: rule__IntegerValueType__MaxAssignment_3_3_1 : ( ruleEInt ) ;
+    // InternalQLS.g:9055:1: rule__IntegerValueType__MaxAssignment_3_3_1 : ( ruleEInt ) ;
     public final void rule__IntegerValueType__MaxAssignment_3_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9013:1: ( ( ruleEInt ) )
-            // InternalQLS.g:9014:2: ( ruleEInt )
+            // InternalQLS.g:9059:1: ( ( ruleEInt ) )
+            // InternalQLS.g:9060:2: ( ruleEInt )
             {
-            // InternalQLS.g:9014:2: ( ruleEInt )
-            // InternalQLS.g:9015:3: ruleEInt
+            // InternalQLS.g:9060:2: ( ruleEInt )
+            // InternalQLS.g:9061:3: ruleEInt
             {
              before(grammarAccess.getIntegerValueTypeAccess().getMaxEIntParserRuleCall_3_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27342,17 +27476,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__NameAssignment_2"
-    // InternalQLS.g:9024:1: rule__DecimalValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:9070:1: rule__DecimalValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__DecimalValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9028:1: ( ( RULE_ID ) )
-            // InternalQLS.g:9029:2: ( RULE_ID )
+            // InternalQLS.g:9074:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9075:2: ( RULE_ID )
             {
-            // InternalQLS.g:9029:2: ( RULE_ID )
-            // InternalQLS.g:9030:3: RULE_ID
+            // InternalQLS.g:9075:2: ( RULE_ID )
+            // InternalQLS.g:9076:3: RULE_ID
             {
              before(grammarAccess.getDecimalValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27379,17 +27513,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:9039:1: rule__DecimalValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:9085:1: rule__DecimalValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__DecimalValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9043:1: ( ( ruleEString ) )
-            // InternalQLS.g:9044:2: ( ruleEString )
+            // InternalQLS.g:9089:1: ( ( ruleEString ) )
+            // InternalQLS.g:9090:2: ( ruleEString )
             {
-            // InternalQLS.g:9044:2: ( ruleEString )
-            // InternalQLS.g:9045:3: ruleEString
+            // InternalQLS.g:9090:2: ( ruleEString )
+            // InternalQLS.g:9091:3: ruleEString
             {
              before(grammarAccess.getDecimalValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27420,17 +27554,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__NameAssignment_2"
-    // InternalQLS.g:9054:1: rule__DateValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:9100:1: rule__DateValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__DateValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9058:1: ( ( RULE_ID ) )
-            // InternalQLS.g:9059:2: ( RULE_ID )
+            // InternalQLS.g:9104:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9105:2: ( RULE_ID )
             {
-            // InternalQLS.g:9059:2: ( RULE_ID )
-            // InternalQLS.g:9060:3: RULE_ID
+            // InternalQLS.g:9105:2: ( RULE_ID )
+            // InternalQLS.g:9106:3: RULE_ID
             {
              before(grammarAccess.getDateValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27457,17 +27591,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:9069:1: rule__DateValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:9115:1: rule__DateValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__DateValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9073:1: ( ( ruleEString ) )
-            // InternalQLS.g:9074:2: ( ruleEString )
+            // InternalQLS.g:9119:1: ( ( ruleEString ) )
+            // InternalQLS.g:9120:2: ( ruleEString )
             {
-            // InternalQLS.g:9074:2: ( ruleEString )
-            // InternalQLS.g:9075:3: ruleEString
+            // InternalQLS.g:9120:2: ( ruleEString )
+            // InternalQLS.g:9121:3: ruleEString
             {
              before(grammarAccess.getDateValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27498,17 +27632,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__NameAssignment_2"
-    // InternalQLS.g:9084:1: rule__EnumerationValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:9130:1: rule__EnumerationValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__EnumerationValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9088:1: ( ( RULE_ID ) )
-            // InternalQLS.g:9089:2: ( RULE_ID )
+            // InternalQLS.g:9134:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9135:2: ( RULE_ID )
             {
-            // InternalQLS.g:9089:2: ( RULE_ID )
-            // InternalQLS.g:9090:3: RULE_ID
+            // InternalQLS.g:9135:2: ( RULE_ID )
+            // InternalQLS.g:9136:3: RULE_ID
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27535,17 +27669,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:9099:1: rule__EnumerationValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:9145:1: rule__EnumerationValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__EnumerationValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9103:1: ( ( ruleEString ) )
-            // InternalQLS.g:9104:2: ( ruleEString )
+            // InternalQLS.g:9149:1: ( ( ruleEString ) )
+            // InternalQLS.g:9150:2: ( ruleEString )
             {
-            // InternalQLS.g:9104:2: ( ruleEString )
-            // InternalQLS.g:9105:3: ruleEString
+            // InternalQLS.g:9150:2: ( ruleEString )
+            // InternalQLS.g:9151:3: ruleEString
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27576,17 +27710,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2"
-    // InternalQLS.g:9114:1: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 : ( ruleEnumerationLiteral ) ;
+    // InternalQLS.g:9160:1: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2 : ( ruleEnumerationLiteral ) ;
     public final void rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9118:1: ( ( ruleEnumerationLiteral ) )
-            // InternalQLS.g:9119:2: ( ruleEnumerationLiteral )
+            // InternalQLS.g:9164:1: ( ( ruleEnumerationLiteral ) )
+            // InternalQLS.g:9165:2: ( ruleEnumerationLiteral )
             {
-            // InternalQLS.g:9119:2: ( ruleEnumerationLiteral )
-            // InternalQLS.g:9120:3: ruleEnumerationLiteral
+            // InternalQLS.g:9165:2: ( ruleEnumerationLiteral )
+            // InternalQLS.g:9166:3: ruleEnumerationLiteral
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_3_2_2_0()); 
             pushFollow(FOLLOW_2);
@@ -27617,17 +27751,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1"
-    // InternalQLS.g:9129:1: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 : ( ruleEnumerationLiteral ) ;
+    // InternalQLS.g:9175:1: rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1 : ( ruleEnumerationLiteral ) ;
     public final void rule__EnumerationValueType__EnumerationLiteralsAssignment_3_2_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9133:1: ( ( ruleEnumerationLiteral ) )
-            // InternalQLS.g:9134:2: ( ruleEnumerationLiteral )
+            // InternalQLS.g:9179:1: ( ( ruleEnumerationLiteral ) )
+            // InternalQLS.g:9180:2: ( ruleEnumerationLiteral )
             {
-            // InternalQLS.g:9134:2: ( ruleEnumerationLiteral )
-            // InternalQLS.g:9135:3: ruleEnumerationLiteral
+            // InternalQLS.g:9180:2: ( ruleEnumerationLiteral )
+            // InternalQLS.g:9181:3: ruleEnumerationLiteral
             {
              before(grammarAccess.getEnumerationValueTypeAccess().getEnumerationLiteralsEnumerationLiteralParserRuleCall_3_2_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27658,17 +27792,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__NameAssignment_2"
-    // InternalQLS.g:9144:1: rule__StringValueType__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalQLS.g:9190:1: rule__StringValueType__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__StringValueType__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9148:1: ( ( RULE_ID ) )
-            // InternalQLS.g:9149:2: ( RULE_ID )
+            // InternalQLS.g:9194:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9195:2: ( RULE_ID )
             {
-            // InternalQLS.g:9149:2: ( RULE_ID )
-            // InternalQLS.g:9150:3: RULE_ID
+            // InternalQLS.g:9195:2: ( RULE_ID )
+            // InternalQLS.g:9196:3: RULE_ID
             {
              before(grammarAccess.getStringValueTypeAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27695,17 +27829,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValueType__UnitAssignment_3_1_1"
-    // InternalQLS.g:9159:1: rule__StringValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
+    // InternalQLS.g:9205:1: rule__StringValueType__UnitAssignment_3_1_1 : ( ruleEString ) ;
     public final void rule__StringValueType__UnitAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9163:1: ( ( ruleEString ) )
-            // InternalQLS.g:9164:2: ( ruleEString )
+            // InternalQLS.g:9209:1: ( ( ruleEString ) )
+            // InternalQLS.g:9210:2: ( ruleEString )
             {
-            // InternalQLS.g:9164:2: ( ruleEString )
-            // InternalQLS.g:9165:3: ruleEString
+            // InternalQLS.g:9210:2: ( ruleEString )
+            // InternalQLS.g:9211:3: ruleEString
             {
              before(grammarAccess.getStringValueTypeAccess().getUnitEStringParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27736,17 +27870,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationLiteral__NameAssignment_1"
-    // InternalQLS.g:9174:1: rule__EnumerationLiteral__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalQLS.g:9220:1: rule__EnumerationLiteral__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EnumerationLiteral__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9178:1: ( ( RULE_ID ) )
-            // InternalQLS.g:9179:2: ( RULE_ID )
+            // InternalQLS.g:9224:1: ( ( RULE_ID ) )
+            // InternalQLS.g:9225:2: ( RULE_ID )
             {
-            // InternalQLS.g:9179:2: ( RULE_ID )
-            // InternalQLS.g:9180:3: RULE_ID
+            // InternalQLS.g:9225:2: ( RULE_ID )
+            // InternalQLS.g:9226:3: RULE_ID
             {
              before(grammarAccess.getEnumerationLiteralAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -27773,17 +27907,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntegerValue__IntValueAssignment_1"
-    // InternalQLS.g:9189:1: rule__IntegerValue__IntValueAssignment_1 : ( ruleEInt ) ;
+    // InternalQLS.g:9235:1: rule__IntegerValue__IntValueAssignment_1 : ( ruleEInt ) ;
     public final void rule__IntegerValue__IntValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9193:1: ( ( ruleEInt ) )
-            // InternalQLS.g:9194:2: ( ruleEInt )
+            // InternalQLS.g:9239:1: ( ( ruleEInt ) )
+            // InternalQLS.g:9240:2: ( ruleEInt )
             {
-            // InternalQLS.g:9194:2: ( ruleEInt )
-            // InternalQLS.g:9195:3: ruleEInt
+            // InternalQLS.g:9240:2: ( ruleEInt )
+            // InternalQLS.g:9241:3: ruleEInt
             {
              before(grammarAccess.getIntegerValueAccess().getIntValueEIntParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27814,17 +27948,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__StringValueAssignment_1"
-    // InternalQLS.g:9204:1: rule__StringValue__StringValueAssignment_1 : ( RULE_STRING ) ;
+    // InternalQLS.g:9250:1: rule__StringValue__StringValueAssignment_1 : ( RULE_STRING ) ;
     public final void rule__StringValue__StringValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9208:1: ( ( RULE_STRING ) )
-            // InternalQLS.g:9209:2: ( RULE_STRING )
+            // InternalQLS.g:9254:1: ( ( RULE_STRING ) )
+            // InternalQLS.g:9255:2: ( RULE_STRING )
             {
-            // InternalQLS.g:9209:2: ( RULE_STRING )
-            // InternalQLS.g:9210:3: RULE_STRING
+            // InternalQLS.g:9255:2: ( RULE_STRING )
+            // InternalQLS.g:9256:3: RULE_STRING
             {
              before(grammarAccess.getStringValueAccess().getStringValueSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -27851,17 +27985,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanValue__BooleanValueAssignment_1"
-    // InternalQLS.g:9219:1: rule__BooleanValue__BooleanValueAssignment_1 : ( ruleEBoolean ) ;
+    // InternalQLS.g:9265:1: rule__BooleanValue__BooleanValueAssignment_1 : ( ruleEBoolean ) ;
     public final void rule__BooleanValue__BooleanValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9223:1: ( ( ruleEBoolean ) )
-            // InternalQLS.g:9224:2: ( ruleEBoolean )
+            // InternalQLS.g:9269:1: ( ( ruleEBoolean ) )
+            // InternalQLS.g:9270:2: ( ruleEBoolean )
             {
-            // InternalQLS.g:9224:2: ( ruleEBoolean )
-            // InternalQLS.g:9225:3: ruleEBoolean
+            // InternalQLS.g:9270:2: ( ruleEBoolean )
+            // InternalQLS.g:9271:3: ruleEBoolean
             {
              before(grammarAccess.getBooleanValueAccess().getBooleanValueEBooleanParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27892,21 +28026,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EnumerationCall__EnumerationLiteralAssignment_1"
-    // InternalQLS.g:9234:1: rule__EnumerationCall__EnumerationLiteralAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalQLS.g:9280:1: rule__EnumerationCall__EnumerationLiteralAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__EnumerationCall__EnumerationLiteralAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9238:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalQLS.g:9239:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:9284:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalQLS.g:9285:2: ( ( ruleQualifiedName ) )
             {
-            // InternalQLS.g:9239:2: ( ( ruleQualifiedName ) )
-            // InternalQLS.g:9240:3: ( ruleQualifiedName )
+            // InternalQLS.g:9285:2: ( ( ruleQualifiedName ) )
+            // InternalQLS.g:9286:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralCrossReference_1_0()); 
-            // InternalQLS.g:9241:3: ( ruleQualifiedName )
-            // InternalQLS.g:9242:4: ruleQualifiedName
+            // InternalQLS.g:9287:3: ( ruleQualifiedName )
+            // InternalQLS.g:9288:4: ruleQualifiedName
             {
              before(grammarAccess.getEnumerationCallAccess().getEnumerationLiteralEnumerationLiteralQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -27941,17 +28075,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DateValue__DateValueAssignment_3_1"
-    // InternalQLS.g:9253:1: rule__DateValue__DateValueAssignment_3_1 : ( ruleEDate ) ;
+    // InternalQLS.g:9299:1: rule__DateValue__DateValueAssignment_3_1 : ( ruleEDate ) ;
     public final void rule__DateValue__DateValueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9257:1: ( ( ruleEDate ) )
-            // InternalQLS.g:9258:2: ( ruleEDate )
+            // InternalQLS.g:9303:1: ( ( ruleEDate ) )
+            // InternalQLS.g:9304:2: ( ruleEDate )
             {
-            // InternalQLS.g:9258:2: ( ruleEDate )
-            // InternalQLS.g:9259:3: ruleEDate
+            // InternalQLS.g:9304:2: ( ruleEDate )
+            // InternalQLS.g:9305:3: ruleEDate
             {
              before(grammarAccess.getDateValueAccess().getDateValueEDateParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -27982,17 +28116,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DecimalValue__DecimalValueAssignment_1"
-    // InternalQLS.g:9268:1: rule__DecimalValue__DecimalValueAssignment_1 : ( ruleEDouble ) ;
+    // InternalQLS.g:9314:1: rule__DecimalValue__DecimalValueAssignment_1 : ( ruleEDouble ) ;
     public final void rule__DecimalValue__DecimalValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9272:1: ( ( ruleEDouble ) )
-            // InternalQLS.g:9273:2: ( ruleEDouble )
+            // InternalQLS.g:9318:1: ( ( ruleEDouble ) )
+            // InternalQLS.g:9319:2: ( ruleEDouble )
             {
-            // InternalQLS.g:9273:2: ( ruleEDouble )
-            // InternalQLS.g:9274:3: ruleEDouble
+            // InternalQLS.g:9319:2: ( ruleEDouble )
+            // InternalQLS.g:9320:3: ruleEDouble
             {
              before(grammarAccess.getDecimalValueAccess().getDecimalValueEDoubleParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -28023,21 +28157,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__IsMandatoryAssignment_0"
-    // InternalQLS.g:9283:1: rule__QuestionDefinition__IsMandatoryAssignment_0 : ( ( 'mandatory' ) ) ;
+    // InternalQLS.g:9329:1: rule__QuestionDefinition__IsMandatoryAssignment_0 : ( ( 'mandatory' ) ) ;
     public final void rule__QuestionDefinition__IsMandatoryAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9287:1: ( ( ( 'mandatory' ) ) )
-            // InternalQLS.g:9288:2: ( ( 'mandatory' ) )
+            // InternalQLS.g:9333:1: ( ( ( 'mandatory' ) ) )
+            // InternalQLS.g:9334:2: ( ( 'mandatory' ) )
             {
-            // InternalQLS.g:9288:2: ( ( 'mandatory' ) )
-            // InternalQLS.g:9289:3: ( 'mandatory' )
+            // InternalQLS.g:9334:2: ( ( 'mandatory' ) )
+            // InternalQLS.g:9335:3: ( 'mandatory' )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsMandatoryMandatoryKeyword_0_0()); 
-            // InternalQLS.g:9290:3: ( 'mandatory' )
-            // InternalQLS.g:9291:4: 'mandatory'
+            // InternalQLS.g:9336:3: ( 'mandatory' )
+            // InternalQLS.g:9337:4: 'mandatory'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsMandatoryMandatoryKeyword_0_0()); 
             match(input,85,FOLLOW_2); 
@@ -28068,17 +28202,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__NameAssignment_2"
-    // InternalQLS.g:9302:1: rule__QuestionDefinition__NameAssignment_2 : ( ruleEString ) ;
+    // InternalQLS.g:9348:1: rule__QuestionDefinition__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__QuestionDefinition__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9306:1: ( ( ruleEString ) )
-            // InternalQLS.g:9307:2: ( ruleEString )
+            // InternalQLS.g:9352:1: ( ( ruleEString ) )
+            // InternalQLS.g:9353:2: ( ruleEString )
             {
-            // InternalQLS.g:9307:2: ( ruleEString )
-            // InternalQLS.g:9308:3: ruleEString
+            // InternalQLS.g:9353:2: ( ruleEString )
+            // InternalQLS.g:9354:3: ruleEString
             {
              before(grammarAccess.getQuestionDefinitionAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -28109,21 +28243,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__IsDisplayedAssignment_3_1"
-    // InternalQLS.g:9317:1: rule__QuestionDefinition__IsDisplayedAssignment_3_1 : ( ( 'isDisplayed' ) ) ;
+    // InternalQLS.g:9363:1: rule__QuestionDefinition__IsDisplayedAssignment_3_1 : ( ( 'isDisplayed' ) ) ;
     public final void rule__QuestionDefinition__IsDisplayedAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9321:1: ( ( ( 'isDisplayed' ) ) )
-            // InternalQLS.g:9322:2: ( ( 'isDisplayed' ) )
+            // InternalQLS.g:9367:1: ( ( ( 'isDisplayed' ) ) )
+            // InternalQLS.g:9368:2: ( ( 'isDisplayed' ) )
             {
-            // InternalQLS.g:9322:2: ( ( 'isDisplayed' ) )
-            // InternalQLS.g:9323:3: ( 'isDisplayed' )
+            // InternalQLS.g:9368:2: ( ( 'isDisplayed' ) )
+            // InternalQLS.g:9369:3: ( 'isDisplayed' )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsDisplayedIsDisplayedKeyword_3_1_0()); 
-            // InternalQLS.g:9324:3: ( 'isDisplayed' )
-            // InternalQLS.g:9325:4: 'isDisplayed'
+            // InternalQLS.g:9370:3: ( 'isDisplayed' )
+            // InternalQLS.g:9371:4: 'isDisplayed'
             {
              before(grammarAccess.getQuestionDefinitionAccess().getIsDisplayedIsDisplayedKeyword_3_1_0()); 
             match(input,86,FOLLOW_2); 
@@ -28154,17 +28288,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__CurrentValueAssignment_3_2_1"
-    // InternalQLS.g:9336:1: rule__QuestionDefinition__CurrentValueAssignment_3_2_1 : ( ruleValue ) ;
+    // InternalQLS.g:9382:1: rule__QuestionDefinition__CurrentValueAssignment_3_2_1 : ( ruleValue ) ;
     public final void rule__QuestionDefinition__CurrentValueAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9340:1: ( ( ruleValue ) )
-            // InternalQLS.g:9341:2: ( ruleValue )
+            // InternalQLS.g:9386:1: ( ( ruleValue ) )
+            // InternalQLS.g:9387:2: ( ruleValue )
             {
-            // InternalQLS.g:9341:2: ( ruleValue )
-            // InternalQLS.g:9342:3: ruleValue
+            // InternalQLS.g:9387:2: ( ruleValue )
+            // InternalQLS.g:9388:3: ruleValue
             {
              before(grammarAccess.getQuestionDefinitionAccess().getCurrentValueValueParserRuleCall_3_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -28195,17 +28329,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__LabelAssignment_5"
-    // InternalQLS.g:9351:1: rule__QuestionDefinition__LabelAssignment_5 : ( ruleEString ) ;
+    // InternalQLS.g:9397:1: rule__QuestionDefinition__LabelAssignment_5 : ( ruleEString ) ;
     public final void rule__QuestionDefinition__LabelAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9355:1: ( ( ruleEString ) )
-            // InternalQLS.g:9356:2: ( ruleEString )
+            // InternalQLS.g:9401:1: ( ( ruleEString ) )
+            // InternalQLS.g:9402:2: ( ruleEString )
             {
-            // InternalQLS.g:9356:2: ( ruleEString )
-            // InternalQLS.g:9357:3: ruleEString
+            // InternalQLS.g:9402:2: ( ruleEString )
+            // InternalQLS.g:9403:3: ruleEString
             {
              before(grammarAccess.getQuestionDefinitionAccess().getLabelEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -28236,21 +28370,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__DataTypeAssignment_6"
-    // InternalQLS.g:9366:1: rule__QuestionDefinition__DataTypeAssignment_6 : ( ( ruleEString ) ) ;
+    // InternalQLS.g:9412:1: rule__QuestionDefinition__DataTypeAssignment_6 : ( ( ruleEString ) ) ;
     public final void rule__QuestionDefinition__DataTypeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9370:1: ( ( ( ruleEString ) ) )
-            // InternalQLS.g:9371:2: ( ( ruleEString ) )
+            // InternalQLS.g:9416:1: ( ( ( ruleEString ) ) )
+            // InternalQLS.g:9417:2: ( ( ruleEString ) )
             {
-            // InternalQLS.g:9371:2: ( ( ruleEString ) )
-            // InternalQLS.g:9372:3: ( ruleEString )
+            // InternalQLS.g:9417:2: ( ( ruleEString ) )
+            // InternalQLS.g:9418:3: ( ruleEString )
             {
              before(grammarAccess.getQuestionDefinitionAccess().getDataTypeValueTypeCrossReference_6_0()); 
-            // InternalQLS.g:9373:3: ( ruleEString )
-            // InternalQLS.g:9374:4: ruleEString
+            // InternalQLS.g:9419:3: ( ruleEString )
+            // InternalQLS.g:9420:4: ruleEString
             {
              before(grammarAccess.getQuestionDefinitionAccess().getDataTypeValueTypeEStringParserRuleCall_6_0_1()); 
             pushFollow(FOLLOW_2);
@@ -28285,17 +28419,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QuestionDefinition__ComputedExpressionAssignment_7_1"
-    // InternalQLS.g:9385:1: rule__QuestionDefinition__ComputedExpressionAssignment_7_1 : ( ruleExpression ) ;
+    // InternalQLS.g:9431:1: rule__QuestionDefinition__ComputedExpressionAssignment_7_1 : ( ruleExpression ) ;
     public final void rule__QuestionDefinition__ComputedExpressionAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:9389:1: ( ( ruleExpression ) )
-            // InternalQLS.g:9390:2: ( ruleExpression )
+            // InternalQLS.g:9435:1: ( ( ruleExpression ) )
+            // InternalQLS.g:9436:2: ( ruleExpression )
             {
-            // InternalQLS.g:9390:2: ( ruleExpression )
-            // InternalQLS.g:9391:3: ruleExpression
+            // InternalQLS.g:9436:2: ( ruleExpression )
+            // InternalQLS.g:9437:3: ruleExpression
             {
              before(grammarAccess.getQuestionDefinitionAccess().getComputedExpressionExpressionParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -28329,19 +28463,19 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
     protected DFA7 dfa7 = new DFA7(this);
     static final String dfa_1s = "\7\uffff";
-    static final String dfa_2s = "\2\uffff\1\4\3\uffff\1\4";
+    static final String dfa_2s = "\2\uffff\1\5\3\uffff\1\5";
     static final String dfa_3s = "\1\4\1\uffff\1\14\1\6\2\uffff\1\14";
     static final String dfa_4s = "\1\115\1\uffff\1\121\1\6\2\uffff\1\121";
-    static final String dfa_5s = "\1\uffff\1\1\2\uffff\1\3\1\2\1\uffff";
+    static final String dfa_5s = "\1\uffff\1\1\2\uffff\1\2\1\3\1\uffff";
     static final String dfa_6s = "\7\uffff}>";
     static final String[] dfa_7s = {
             "\2\1\1\2\10\uffff\2\1\74\uffff\1\1",
             "",
-            "\3\4\23\uffff\1\4\1\uffff\7\4\1\uffff\1\4\14\uffff\1\5\1\4\1\uffff\3\4\16\uffff\1\3\3\uffff\1\4",
+            "\3\5\23\uffff\1\5\1\uffff\7\5\1\uffff\1\5\14\uffff\1\4\1\5\1\uffff\3\5\16\uffff\1\3\3\uffff\1\5",
             "\1\6",
             "",
             "",
-            "\3\4\23\uffff\1\4\1\uffff\7\4\1\uffff\1\4\14\uffff\1\5\1\4\1\uffff\3\4\16\uffff\1\3\3\uffff\1\4"
+            "\3\5\23\uffff\1\5\1\uffff\7\5\1\uffff\1\5\14\uffff\1\4\1\5\1\uffff\3\5\16\uffff\1\3\3\uffff\1\5"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -28375,14 +28509,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000880000000000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0001400000000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0001400000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0006400000000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0118000000000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000400000000000L,0x00000000000C0000L});

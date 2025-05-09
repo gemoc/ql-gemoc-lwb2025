@@ -135,7 +135,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getQLSModelAccess().getImportsAssignment_1(), "rule__QLSModel__ImportsAssignment_1");
-			builder.put(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_6(), "rule__QLSModel__QuestionStylesAssignment_6");
+			builder.put(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3(), "rule__QLSModel__StyledQLModelAssignment_3");
+			builder.put(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7(), "rule__QLSModel__QuestionStylesAssignment_7");
 			builder.put(grammarAccess.getImportAccess().getImportURIAssignment_2(), "rule__Import__ImportURIAssignment_2");
 			builder.put(grammarAccess.getQuestionStyleAccess().getStyledQuestionAssignment_1(), "rule__QuestionStyle__StyledQuestionAssignment_1");
 			builder.put(grammarAccess.getQuestionStyleAccess().getLabelStyleAssignment_3_1(), "rule__QuestionStyle__LabelStyleAssignment_3_1");

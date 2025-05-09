@@ -304,7 +304,7 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 *     QLSModel returns QLSModel
 	 *
 	 * Constraint:
-	 *     (imports+=Import* questionStyles+=QuestionStyle*)
+	 *     (imports+=Import* styledQLModel=[QLModel|QualifiedName] questionStyles+=QuestionStyle*)
 	 * </pre>
 	 */
 	protected void sequence_QLSModel(ISerializationContext context, QLSModel semanticObject) {

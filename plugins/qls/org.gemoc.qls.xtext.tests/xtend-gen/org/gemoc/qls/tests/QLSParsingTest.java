@@ -31,7 +31,7 @@ public class QLSParsingTest {
       _builder.append("import \"challengeHouseOwningQuestionnaire.ql\"");
       _builder.newLine();
       _builder.newLine();
-      _builder.append("QLSModel { ");
+      _builder.append("QLSModel HouseOwningQuestionnaire { ");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("questionStyles { ");

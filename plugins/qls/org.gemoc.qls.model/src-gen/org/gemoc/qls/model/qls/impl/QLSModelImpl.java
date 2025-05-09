@@ -4,6 +4,7 @@ package org.gemoc.qls.model.qls.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,11 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
@@ -31,6 +34,7 @@ import org.gemoc.qls.model.qls.QuestionStyle;
  * <ul>
  *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getQuestionStyles <em>Question Styles</em>}</li>
+ *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getStyledQLModel <em>Styled QL Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +59,16 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 	 * @ordered
 	 */
 	protected EList<QuestionStyle> questionStyles;
+
+	/**
+	 * The cached value of the '{@link #getStyledQLModel() <em>Styled QL Model</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStyledQLModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected QLModel styledQLModel;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +122,48 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 	 * @generated
 	 */
 	@Override
+	public QLModel getStyledQLModel() {
+		if (styledQLModel != null && styledQLModel.eIsProxy()) {
+			InternalEObject oldStyledQLModel = (InternalEObject) styledQLModel;
+			styledQLModel = (QLModel) eResolveProxy(oldStyledQLModel);
+			if (styledQLModel != oldStyledQLModel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QlsPackage.QLS_MODEL__STYLED_QL_MODEL,
+							oldStyledQLModel, styledQLModel));
+			}
+		}
+		return styledQLModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QLModel basicGetStyledQLModel() {
+		return styledQLModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStyledQLModel(QLModel newStyledQLModel) {
+		QLModel oldStyledQLModel = styledQLModel;
+		styledQLModel = newStyledQLModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QlsPackage.QLS_MODEL__STYLED_QL_MODEL,
+					oldStyledQLModel, styledQLModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlsPackage.QLS_MODEL__IMPORTS:
@@ -130,6 +186,10 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 			return getImports();
 		case QlsPackage.QLS_MODEL__QUESTION_STYLES:
 			return getQuestionStyles();
+		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
+			if (resolve)
+				return getStyledQLModel();
+			return basicGetStyledQLModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,6 +211,9 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 			getQuestionStyles().clear();
 			getQuestionStyles().addAll((Collection<? extends QuestionStyle>) newValue);
 			return;
+		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
+			setStyledQLModel((QLModel) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,6 +232,9 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 		case QlsPackage.QLS_MODEL__QUESTION_STYLES:
 			getQuestionStyles().clear();
 			return;
+		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
+			setStyledQLModel((QLModel) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -185,6 +251,8 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 			return imports != null && !imports.isEmpty();
 		case QlsPackage.QLS_MODEL__QUESTION_STYLES:
 			return questionStyles != null && !questionStyles.isEmpty();
+		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
+			return styledQLModel != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,7 +1,7 @@
 
 import "challengeHouseOwningQuestionnaire.ql"
 
-QLSModel { 
+QLSModel HouseOwning { 
 	questionStyles { 
 		styledQuestion HouseOwning.hasBoughtHouse {labelStyle { bold }}
 		styledQuestion HouseOwning.valueResidue { labelStyle {italic}}
