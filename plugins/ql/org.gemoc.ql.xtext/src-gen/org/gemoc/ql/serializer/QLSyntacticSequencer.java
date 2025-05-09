@@ -196,9 +196,9 @@ public class QLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('(' ')')?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     name=ID (ambiguity) '{' 'definitions' definitionGroup+=DefinitionGroup
+	 *     name=ID (ambiguity) '{' 'displayableQuestions' questionGroups+=QuestionGroup
 	 *     name=ID (ambiguity) '{' '}' (rule end)
-	 *     name=ID (ambiguity) '{' definitionGroup+=DefinitionGroup
-	 *     name=ID (ambiguity) '{' questionGroups+=QuestionGroup
 	 
 	 * </pre>
 	 */

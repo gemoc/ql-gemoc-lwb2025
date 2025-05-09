@@ -12,16 +12,15 @@ QLModel HouseOwning {
 		question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
 	} 
 	
-	{
+	displayableQuestions {
 		hasSoldHouse
 		hasBoughtHouse
 		hasMaintLoan
-		
-	}
-	if (hasSoldHouse()) {
-		sellingPrice
-		privateDebt
-		valueResidue
+		if (hasSoldHouse()) {
+			sellingPrice
+			privateDebt
+			valueResidue
+		}
 	}
 	
 }

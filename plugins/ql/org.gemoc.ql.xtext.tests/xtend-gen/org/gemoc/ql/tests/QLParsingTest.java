@@ -67,7 +67,7 @@ public class QLParsingTest {
       _builder.append("} ");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("{");
+      _builder.append("displayableQuestions {");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{");
@@ -173,7 +173,7 @@ public class QLParsingTest {
       _builder.append("}");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("{");
+      _builder.append("displayableQuestions {");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{");
@@ -323,7 +323,7 @@ public class QLParsingTest {
       _builder.append("\t");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("{");
+      _builder.append("displayableQuestions {");
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("{ // Core Project Elements (Always Present)");

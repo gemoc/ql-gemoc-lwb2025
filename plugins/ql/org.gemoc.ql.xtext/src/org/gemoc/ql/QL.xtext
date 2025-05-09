@@ -10,7 +10,7 @@ QLModel returns QLModel:
 	'QLModel' name=ID
 	('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 	'{'
-		(definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)* 
+		( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))* 
 	'}';
 
 
@@ -96,7 +96,6 @@ Value returns Value:
 
 DefinitionGroup returns DefinitionGroup:
 	{DefinitionGroup}
-	'definitions'
 	'{'
 		( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
 	'}';

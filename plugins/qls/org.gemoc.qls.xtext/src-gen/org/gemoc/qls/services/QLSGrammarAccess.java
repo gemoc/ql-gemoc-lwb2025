@@ -701,7 +701,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'QLModel' name=ID
 	//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 	//    '{'
-	//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+	//        ( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))*
 	//    '}';
 	public QLGrammarAccess.QLModelElements getQLModelAccess() {
 		return gaQL.getQLModelAccess();
@@ -892,7 +892,6 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//DefinitionGroup returns DefinitionGroup:
 	//    {DefinitionGroup}
-	//    'definitions'
 	//    '{'
 	//        ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
 	//    '}';

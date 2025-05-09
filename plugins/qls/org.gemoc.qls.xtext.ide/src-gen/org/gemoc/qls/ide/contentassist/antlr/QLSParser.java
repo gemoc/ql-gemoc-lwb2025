@@ -40,7 +40,7 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryExpressionAccess().getAlternatives_2_1(), "rule__PrimaryExpression__Alternatives_2_1");
 			builder.put(grammarAccess.getCallAccess().getAlternatives(), "rule__Call__Alternatives");
 			builder.put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
-			builder.put(grammarAccess.getDefinitionGroupAccess().getAlternatives_3(), "rule__DefinitionGroup__Alternatives_3");
+			builder.put(grammarAccess.getDefinitionGroupAccess().getAlternatives_2(), "rule__DefinitionGroup__Alternatives_2");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getQuestionGroupAccess().getAlternatives_3(), "rule__QuestionGroup__Alternatives_3");
@@ -66,6 +66,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQLModelAccess().getGroup(), "rule__QLModel__Group__0");
 			builder.put(grammarAccess.getQLModelAccess().getGroup_3(), "rule__QLModel__Group_3__0");
 			builder.put(grammarAccess.getQLModelAccess().getGroup_3_2(), "rule__QLModel__Group_3_2__0");
+			builder.put(grammarAccess.getQLModelAccess().getGroup_5_0(), "rule__QLModel__Group_5_0__0");
+			builder.put(grammarAccess.getQLModelAccess().getGroup_5_1(), "rule__QLModel__Group_5_1__0");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getGroup(), "rule__UnaryExpression__Group__0");
 			builder.put(grammarAccess.getPrimaryExpressionAccess().getGroup_2(), "rule__PrimaryExpression__Group_2__0");
 			builder.put(grammarAccess.getIfExpressionAccess().getGroup(), "rule__IfExpression__Group__0");
@@ -146,8 +148,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQLModelAccess().getNameAssignment_2(), "rule__QLModel__NameAssignment_2");
 			builder.put(grammarAccess.getQLModelAccess().getCanSubmitAssignment_3_1(), "rule__QLModel__CanSubmitAssignment_3_1");
 			builder.put(grammarAccess.getQLModelAccess().getSubmitDateAssignment_3_2_1(), "rule__QLModel__SubmitDateAssignment_3_2_1");
-			builder.put(grammarAccess.getQLModelAccess().getDefinitionGroupAssignment_5_0(), "rule__QLModel__DefinitionGroupAssignment_5_0");
-			builder.put(grammarAccess.getQLModelAccess().getQuestionGroupsAssignment_5_1(), "rule__QLModel__QuestionGroupsAssignment_5_1");
+			builder.put(grammarAccess.getQLModelAccess().getDefinitionGroupAssignment_5_0_1(), "rule__QLModel__DefinitionGroupAssignment_5_0_1");
+			builder.put(grammarAccess.getQLModelAccess().getQuestionGroupsAssignment_5_1_1(), "rule__QLModel__QuestionGroupsAssignment_5_1_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperatorAssignment_1(), "rule__UnaryExpression__OperatorAssignment_1");
 			builder.put(grammarAccess.getUnaryExpressionAccess().getOperandAssignment_2(), "rule__UnaryExpression__OperandAssignment_2");
 			builder.put(grammarAccess.getIfExpressionAccess().getConditionAssignment_2(), "rule__IfExpression__ConditionAssignment_2");
@@ -165,8 +167,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAdditionExpressionAccess().getRhsOperandAssignment_1_2(), "rule__AdditionExpression__RhsOperandAssignment_1_2");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getOperatorAssignment_1_1(), "rule__MultiplicationExpression__OperatorAssignment_1_1");
 			builder.put(grammarAccess.getMultiplicationExpressionAccess().getRhsOperandAssignment_1_2(), "rule__MultiplicationExpression__RhsOperandAssignment_1_2");
-			builder.put(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsAssignment_3_0(), "rule__DefinitionGroup__QuestionDefinitionsAssignment_3_0");
-			builder.put(grammarAccess.getDefinitionGroupAccess().getDataTypesAssignment_3_1(), "rule__DefinitionGroup__DataTypesAssignment_3_1");
+			builder.put(grammarAccess.getDefinitionGroupAccess().getQuestionDefinitionsAssignment_2_0(), "rule__DefinitionGroup__QuestionDefinitionsAssignment_2_0");
+			builder.put(grammarAccess.getDefinitionGroupAccess().getDataTypesAssignment_2_1(), "rule__DefinitionGroup__DataTypesAssignment_2_1");
 			builder.put(grammarAccess.getQuestionGroupAccess().getGuardAssignment_1_1(), "rule__QuestionGroup__GuardAssignment_1_1");
 			builder.put(grammarAccess.getQuestionGroupAccess().getQuestionGroupsAssignment_3_0(), "rule__QuestionGroup__QuestionGroupsAssignment_3_0");
 			builder.put(grammarAccess.getQuestionGroupAccess().getQuestionsAssignment_3_1(), "rule__QuestionGroup__QuestionsAssignment_3_1");

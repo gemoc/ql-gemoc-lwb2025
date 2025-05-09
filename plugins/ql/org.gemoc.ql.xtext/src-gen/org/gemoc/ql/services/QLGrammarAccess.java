@@ -44,10 +44,14 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final Keyword cRightParenthesisKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
-		private final Assignment cDefinitionGroupAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
-		private final RuleCall cDefinitionGroupDefinitionGroupParserRuleCall_5_0_0 = (RuleCall)cDefinitionGroupAssignment_5_0.eContents().get(0);
-		private final Assignment cQuestionGroupsAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
-		private final RuleCall cQuestionGroupsQuestionGroupParserRuleCall_5_1_0 = (RuleCall)cQuestionGroupsAssignment_5_1.eContents().get(0);
+		private final Group cGroup_5_0 = (Group)cAlternatives_5.eContents().get(0);
+		private final Keyword cDefinitionsKeyword_5_0_0 = (Keyword)cGroup_5_0.eContents().get(0);
+		private final Assignment cDefinitionGroupAssignment_5_0_1 = (Assignment)cGroup_5_0.eContents().get(1);
+		private final RuleCall cDefinitionGroupDefinitionGroupParserRuleCall_5_0_1_0 = (RuleCall)cDefinitionGroupAssignment_5_0_1.eContents().get(0);
+		private final Group cGroup_5_1 = (Group)cAlternatives_5.eContents().get(1);
+		private final Keyword cDisplayableQuestionsKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
+		private final Assignment cQuestionGroupsAssignment_5_1_1 = (Assignment)cGroup_5_1.eContents().get(1);
+		private final RuleCall cQuestionGroupsQuestionGroupParserRuleCall_5_1_1_0 = (RuleCall)cQuestionGroupsAssignment_5_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//QLModel returns QLModel:
@@ -55,7 +59,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//    'QLModel' name=ID
 		//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 		//    '{'
-		//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+		//        ( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -63,7 +67,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'QLModel' name=ID
 		//('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 		//'{'
-		//    (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+		//    ( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -109,20 +113,32 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//(definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+		//( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))*
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
+		//'definitions' definitionGroup+=DefinitionGroup
+		public Group getGroup_5_0() { return cGroup_5_0; }
+		
+		//'definitions'
+		public Keyword getDefinitionsKeyword_5_0_0() { return cDefinitionsKeyword_5_0_0; }
+		
 		//definitionGroup+=DefinitionGroup
-		public Assignment getDefinitionGroupAssignment_5_0() { return cDefinitionGroupAssignment_5_0; }
+		public Assignment getDefinitionGroupAssignment_5_0_1() { return cDefinitionGroupAssignment_5_0_1; }
 		
 		//DefinitionGroup
-		public RuleCall getDefinitionGroupDefinitionGroupParserRuleCall_5_0_0() { return cDefinitionGroupDefinitionGroupParserRuleCall_5_0_0; }
+		public RuleCall getDefinitionGroupDefinitionGroupParserRuleCall_5_0_1_0() { return cDefinitionGroupDefinitionGroupParserRuleCall_5_0_1_0; }
+		
+		//( 'displayableQuestions' questionGroups+=QuestionGroup)
+		public Group getGroup_5_1() { return cGroup_5_1; }
+		
+		//'displayableQuestions'
+		public Keyword getDisplayableQuestionsKeyword_5_1_0() { return cDisplayableQuestionsKeyword_5_1_0; }
 		
 		//questionGroups+=QuestionGroup
-		public Assignment getQuestionGroupsAssignment_5_1() { return cQuestionGroupsAssignment_5_1; }
+		public Assignment getQuestionGroupsAssignment_5_1_1() { return cQuestionGroupsAssignment_5_1_1; }
 		
 		//QuestionGroup
-		public RuleCall getQuestionGroupsQuestionGroupParserRuleCall_5_1_0() { return cQuestionGroupsQuestionGroupParserRuleCall_5_1_0; }
+		public RuleCall getQuestionGroupsQuestionGroupParserRuleCall_5_1_1_0() { return cQuestionGroupsQuestionGroupParserRuleCall_5_1_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -713,25 +729,22 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.DefinitionGroup");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDefinitionGroupAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDefinitionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cQuestionDefinitionsAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final RuleCall cQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0 = (RuleCall)cQuestionDefinitionsAssignment_3_0.eContents().get(0);
-		private final Assignment cDataTypesAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cDataTypesValueTypeParserRuleCall_3_1_0 = (RuleCall)cDataTypesAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cQuestionDefinitionsAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cQuestionDefinitionsQuestionDefinitionParserRuleCall_2_0_0 = (RuleCall)cQuestionDefinitionsAssignment_2_0.eContents().get(0);
+		private final Assignment cDataTypesAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cDataTypesValueTypeParserRuleCall_2_1_0 = (RuleCall)cDataTypesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//DefinitionGroup returns DefinitionGroup:
 		//    {DefinitionGroup}
-		//    'definitions'
 		//    '{'
 		//        ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{DefinitionGroup}
-		//'definitions'
 		//'{'
 		//    ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
 		//'}'
@@ -740,29 +753,26 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 		//{DefinitionGroup}
 		public Action getDefinitionGroupAction_0() { return cDefinitionGroupAction_0; }
 		
-		//'definitions'
-		public Keyword getDefinitionsKeyword_1() { return cDefinitionsKeyword_1; }
-		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//questionDefinitions+=QuestionDefinition
-		public Assignment getQuestionDefinitionsAssignment_3_0() { return cQuestionDefinitionsAssignment_3_0; }
+		public Assignment getQuestionDefinitionsAssignment_2_0() { return cQuestionDefinitionsAssignment_2_0; }
 		
 		//QuestionDefinition
-		public RuleCall getQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0() { return cQuestionDefinitionsQuestionDefinitionParserRuleCall_3_0_0; }
+		public RuleCall getQuestionDefinitionsQuestionDefinitionParserRuleCall_2_0_0() { return cQuestionDefinitionsQuestionDefinitionParserRuleCall_2_0_0; }
 		
 		//dataTypes+=ValueType
-		public Assignment getDataTypesAssignment_3_1() { return cDataTypesAssignment_3_1; }
+		public Assignment getDataTypesAssignment_2_1() { return cDataTypesAssignment_2_1; }
 		
 		//ValueType
-		public RuleCall getDataTypesValueTypeParserRuleCall_3_1_0() { return cDataTypesValueTypeParserRuleCall_3_1_0; }
+		public RuleCall getDataTypesValueTypeParserRuleCall_2_1_0() { return cDataTypesValueTypeParserRuleCall_2_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.ql.QL.EBoolean");
@@ -2549,7 +2559,7 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	//    'QLModel' name=ID
 	//    ('(' (canSubmit?='canSubmit')? ('submitDate' submitDate=EDate)? ')')?
 	//    '{'
-	//        (definitionGroup+=DefinitionGroup | questionGroups+=QuestionGroup)*
+	//        ( 'definitions' definitionGroup+=DefinitionGroup | ( 'displayableQuestions' questionGroups+=QuestionGroup))*
 	//    '}';
 	public QLModelElements getQLModelAccess() {
 		return pQLModel;
@@ -2740,7 +2750,6 @@ public class QLGrammarAccess extends AbstractElementFinder.AbstractGrammarElemen
 	
 	//DefinitionGroup returns DefinitionGroup:
 	//    {DefinitionGroup}
-	//    'definitions'
 	//    '{'
 	//        ( questionDefinitions+=QuestionDefinition | dataTypes+=ValueType )*
 	//    '}';

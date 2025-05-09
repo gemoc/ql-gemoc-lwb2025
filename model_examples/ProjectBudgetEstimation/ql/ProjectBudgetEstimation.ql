@@ -37,7 +37,7 @@ QLModel ProjectBudgetEstimation {
 		;
 	}	
 	
-	{
+	displayableQuestions {
 		{ // Core Project Elements (Always Present)
 			estimatedPersonHourForDev
 			hourlyRateForDev

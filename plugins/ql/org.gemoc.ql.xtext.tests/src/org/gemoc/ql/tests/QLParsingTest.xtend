@@ -34,7 +34,7 @@ class QLParsingTest {
 					mandatory question privateDebt: "Private debts for the sold house:"  money
 					question valueResidue: "Value residue:"  money = (sellingPrice() - privateDebt());
 				} 
-				{
+				displayableQuestions {
 					{
 						hasSoldHouse
 						hasBoughtHouse
@@ -73,7 +73,7 @@ class QLParsingTest {
 					question isFemale : "Is your person a female?" yesNo
 					question personGender : "Your person is a " gender = if ( (isMale() = yesNo.Yes) or (isFemale() = yesNo.No)) then (gender.Male) endif;
 				}
-				{
+				displayableQuestions {
 					{
 						isMale
 						isFemale
@@ -128,7 +128,7 @@ class QLParsingTest {
 					);
 				}	
 				
-				{
+				displayableQuestions {
 					{ // Core Project Elements (Always Present)
 						estimatedPersonHourForDev
 						hourlyRateForDev

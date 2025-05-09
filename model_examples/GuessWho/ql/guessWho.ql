@@ -1,4 +1,4 @@
-QLModel {
+QLModel GuessWho {
 	definitions {
 		booleanType boolean
 		enumerationType yesNo  { literals {Unknown, Yes , No} }
@@ -112,7 +112,7 @@ QLModel {
 //Samuel: Male, Red hair, Mustache, No glasses, No hat, green eyes
 //Tara: Female, Grey hair, None, Yes glasses, No hat, brown eyes.
 	}
-	Form GuessWho {
+	displayableQuestions {
 		{
 			isMale
 			isFemale
