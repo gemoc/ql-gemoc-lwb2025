@@ -1,6 +1,7 @@
 package org.gemoc.ql.k3ql.k3dsa.qls
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.Main
 import org.gemoc.qls.model.qls.QLSModel
 import org.gemoc.qls.model.qls.Import
 import org.gemoc.qls.model.qls.TypeStyle
@@ -13,6 +14,12 @@ import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle
 import org.gemoc.qls.model.qls.TextTypeStyle
 import org.gemoc.qls.model.qls.NumericSpinnerStyle
 
+import fr.inria.diverse.k3.al.annotationprocessor.Step
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+import org.eclipse.emf.common.util.EList
+
+
+import static extension org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.QLSModelAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.ImportAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.TypeStyleAspect.*
@@ -25,9 +32,23 @@ import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeSpinnerStyleAspec
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.TextTypeStyleAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericSpinnerStyleAspect.*
 
+import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
+
 @Aspect(className=QLSModel)
 class QLSModelAspect {
-
+	@Step 												
+	@InitializeModel									
+	def void initializeModel(EList<String> input){
+		// forward entry point to styled QLModel 
+		_self.styledQLModel.initializeModel(input)
+	}
+	
+	@Step
+	@Main
+	def void main() {
+		// forward entry point to styled QLModel 
+		_self.styledQLModel.main()
+	}
 }
 
 @Aspect(className=Import)

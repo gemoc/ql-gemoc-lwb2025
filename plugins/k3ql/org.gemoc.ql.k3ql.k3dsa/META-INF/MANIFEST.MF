@@ -22,5 +22,7 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.gemoc.ql.aspects,
+ org.gemoc.ql.k3ql.k3dsa,
+ org.gemoc.ql.k3ql.k3dsa.ecore,
  org.gemoc.ql.k3ql.k3dsa.ql,
- org.gemoc.ql.k3ql.k3dsa.ecore
+ org.gemoc.ql.k3ql.k3dsa.qls

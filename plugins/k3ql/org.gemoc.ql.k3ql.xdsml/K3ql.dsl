@@ -28,7 +28,8 @@ k3 = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.ConditionnalElementAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect,    \
 	 org.gemoc.ql.k3ql.k3dsa.ql.DefinitionGroupAspect,    \
-	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect
+	 org.gemoc.ql.k3ql.k3dsa.ql.QuestionCallAspect, \
+	 org.gemoc.ql.k3ql.k3dsa.qls.QLSModelAspect
 metaprog = org.eclipse.gemoc.metaprog.kermeta3
 
 xtext = /org.gemoc.ql.xtext/bin/org/gemoc/ql/QL.xtext
