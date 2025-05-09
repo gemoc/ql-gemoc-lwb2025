@@ -34,6 +34,7 @@ Workflow {
 			name = "org.gemoc.qls.QLS"
 			fileExtensions = "qls"
 			referencedResource = "platform:/resource/org.gemoc.ql.model/model/ql.genmodel"
+			referencedResource = "platform:/resource/org.gemoc.qls.model/model/qls.genmodel"
 			
 			serializer = {
 				generateStub = false

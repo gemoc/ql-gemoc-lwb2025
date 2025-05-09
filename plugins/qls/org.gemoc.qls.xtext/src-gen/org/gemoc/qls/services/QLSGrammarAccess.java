@@ -42,6 +42,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
+		////generate qLS "http://www.gemoc.org/qls/QLS"
 		//QLSModel returns QLSModel:
 		//    {QLSModel}
 		//    imports+=Import*
@@ -558,6 +559,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 
 	
+	////generate qLS "http://www.gemoc.org/qls/QLS"
 	//QLSModel returns QLSModel:
 	//    {QLSModel}
 	//    imports+=Import*

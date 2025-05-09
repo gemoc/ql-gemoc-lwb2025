@@ -39,15 +39,15 @@ import org.gemoc.ql.model.ql.StringValue;
 import org.gemoc.ql.model.ql.StringValueType;
 import org.gemoc.ql.model.ql.ValueType;
 import org.gemoc.ql.serializer.QLSemanticSequencer;
-import org.gemoc.qls.qLS.BooleanTypeStyle;
-import org.gemoc.qls.qLS.Import;
-import org.gemoc.qls.qLS.LabelStyle;
-import org.gemoc.qls.qLS.NumericSpinnerStyle;
-import org.gemoc.qls.qLS.NumericTypeTextFieldStyle;
-import org.gemoc.qls.qLS.QLSModel;
-import org.gemoc.qls.qLS.QLSPackage;
-import org.gemoc.qls.qLS.QuestionStyle;
-import org.gemoc.qls.qLS.TextTypeStyle;
+import org.gemoc.qls.model.qls.BooleanTypeStyle;
+import org.gemoc.qls.model.qls.Import;
+import org.gemoc.qls.model.qls.LabelStyle;
+import org.gemoc.qls.model.qls.NumericSpinnerStyle;
+import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
+import org.gemoc.qls.model.qls.QLSModel;
+import org.gemoc.qls.model.qls.QlsPackage;
+import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.TextTypeStyle;
 import org.gemoc.qls.services.QLSGrammarAccess;
 
 @SuppressWarnings("all")
@@ -62,34 +62,7 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == QLSPackage.eINSTANCE)
-			switch (semanticObject.eClass().getClassifierID()) {
-			case QLSPackage.BOOLEAN_TYPE_STYLE:
-				sequence_BooleanTypeStyle(context, (BooleanTypeStyle) semanticObject); 
-				return; 
-			case QLSPackage.IMPORT:
-				sequence_Import(context, (Import) semanticObject); 
-				return; 
-			case QLSPackage.LABEL_STYLE:
-				sequence_LabelStyle(context, (LabelStyle) semanticObject); 
-				return; 
-			case QLSPackage.NUMERIC_SPINNER_STYLE:
-				sequence_NumericTypeSpinnerStyle(context, (NumericSpinnerStyle) semanticObject); 
-				return; 
-			case QLSPackage.NUMERIC_TYPE_TEXT_FIELD_STYLE:
-				sequence_NumericTypeTextFieldStyle(context, (NumericTypeTextFieldStyle) semanticObject); 
-				return; 
-			case QLSPackage.QLS_MODEL:
-				sequence_QLSModel(context, (QLSModel) semanticObject); 
-				return; 
-			case QLSPackage.QUESTION_STYLE:
-				sequence_QuestionStyle(context, (QuestionStyle) semanticObject); 
-				return; 
-			case QLSPackage.TEXT_TYPE_STYLE:
-				sequence_TextTypeStyle(context, (TextTypeStyle) semanticObject); 
-				return; 
-			}
-		else if (epackage == QlPackage.eINSTANCE)
+		if (epackage == QlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case QlPackage.BASIC_BINARY_EXPRESSION:
 				if (rule == grammarAccess.getExpressionRule()
@@ -207,6 +180,33 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 				sequence_ValueType_Impl(context, (ValueType) semanticObject); 
 				return; 
 			}
+		else if (epackage == QlsPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case QlsPackage.BOOLEAN_TYPE_STYLE:
+				sequence_BooleanTypeStyle(context, (BooleanTypeStyle) semanticObject); 
+				return; 
+			case QlsPackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
+				return; 
+			case QlsPackage.LABEL_STYLE:
+				sequence_LabelStyle(context, (LabelStyle) semanticObject); 
+				return; 
+			case QlsPackage.NUMERIC_SPINNER_STYLE:
+				sequence_NumericTypeSpinnerStyle(context, (NumericSpinnerStyle) semanticObject); 
+				return; 
+			case QlsPackage.NUMERIC_TYPE_TEXT_FIELD_STYLE:
+				sequence_NumericTypeTextFieldStyle(context, (NumericTypeTextFieldStyle) semanticObject); 
+				return; 
+			case QlsPackage.QLS_MODEL:
+				sequence_QLSModel(context, (QLSModel) semanticObject); 
+				return; 
+			case QlsPackage.QUESTION_STYLE:
+				sequence_QuestionStyle(context, (QuestionStyle) semanticObject); 
+				return; 
+			case QlsPackage.TEXT_TYPE_STYLE:
+				sequence_TextTypeStyle(context, (TextTypeStyle) semanticObject); 
+				return; 
+			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -223,8 +223,8 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 */
 	protected void sequence_BooleanTypeStyle(ISerializationContext context, BooleanTypeStyle semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, QLSPackage.Literals.BOOLEAN_TYPE_STYLE__BOOLEAN_STYLE_KIND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QLSPackage.Literals.BOOLEAN_TYPE_STYLE__BOOLEAN_STYLE_KIND));
+			if (transientValues.isValueTransient(semanticObject, QlsPackage.Literals.BOOLEAN_TYPE_STYLE__BOOLEAN_STYLE_KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlsPackage.Literals.BOOLEAN_TYPE_STYLE__BOOLEAN_STYLE_KIND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKindBooleanStyleKindEnumRuleCall_2_0(), semanticObject.getBooleanStyleKind());
@@ -243,8 +243,8 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 */
 	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, QLSPackage.Literals.IMPORT__IMPORT_URI) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QLSPackage.Literals.IMPORT__IMPORT_URI));
+			if (transientValues.isValueTransient(semanticObject, QlsPackage.Literals.IMPORT__IMPORT_URI) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlsPackage.Literals.IMPORT__IMPORT_URI));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImportAccess().getImportURISTRINGTerminalRuleCall_2_0(), semanticObject.getImportURI());

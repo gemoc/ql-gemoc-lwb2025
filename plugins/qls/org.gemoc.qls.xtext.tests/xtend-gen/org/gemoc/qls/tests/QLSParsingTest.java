@@ -12,7 +12,7 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.eclipse.xtext.testing.util.ParseHelper;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.gemoc.qls.qLS.QLSModel;
+import org.gemoc.qls.model.qls.QLSModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,7 +28,24 @@ public class QLSParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
+      _builder.append("import \"challengeHouseOwningQuestionnaire.ql\"");
+      _builder.newLine();
+      _builder.newLine();
+      _builder.append("QLSModel { ");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("questionStyles { ");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("styledQuestion HouseOwning.hasBoughtHouse {labelStyle { bold }}");
+      _builder.newLine();
+      _builder.append("\t\t");
+      _builder.append("styledQuestion HouseOwning.valueResidue { labelStyle {italic}}");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("}");
+      _builder.newLine();
+      _builder.append("}");
       _builder.newLine();
       final QLSModel result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);

@@ -13,7 +13,7 @@ public abstract class AbstractQLSValidator extends QLValidator {
 	@Override
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>(super.getEPackages());
-		result.add(org.gemoc.qls.qLS.QLSPackage.eINSTANCE);
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.gemoc.org/qls"));
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.gemoc.org/ql"));
 		return result;
 	}

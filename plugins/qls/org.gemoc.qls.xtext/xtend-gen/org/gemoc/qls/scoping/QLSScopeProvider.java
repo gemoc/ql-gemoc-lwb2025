@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.scoping.IScope;
-import org.gemoc.qls.qLS.QLSPackage;
+import org.gemoc.qls.model.qls.QlsPackage;
 
 /**
  * This class contains custom scoping description.
@@ -25,7 +25,7 @@ public class QLSScopeProvider extends AbstractQLSScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
     boolean _matched = false;
-    if (Objects.equal(reference, QLSPackage.Literals.QUESTION_STYLE__STYLED_QUESTION)) {
+    if (Objects.equal(reference, QlsPackage.Literals.QUESTION_STYLE__STYLED_QUESTION)) {
       _matched=true;
       return super.getScope(context, reference);
     }

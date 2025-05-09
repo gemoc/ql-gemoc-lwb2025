@@ -12,8 +12,12 @@
 	</parent>
 
 	<modules>
+		<module>org.gemoc.qls.model</module>
+		<module>org.gemoc.qls.model.edit</module>
+		<module>org.gemoc.qls.model.editor</module>
 		<module>org.gemoc.qls.xtext</module>
 		<module>org.gemoc.qls.xtext.ide</module>
+		<module>org.gemoc.qls.xtext.tests</module>
 		<module>org.gemoc.qls.xtext.ui</module>
 	</modules>
 

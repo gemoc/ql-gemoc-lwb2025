@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated qls -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.gemoc.qls.model.qls.presentation.QlsModelWizardID"
+            name="%_UI_QlsModelWizard_label"
+            class="org.gemoc.qls.model.qls.presentation.QlsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/QlsModelFile.gif">
+         <description>%_UI_QlsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated qls -->
+      <editor
+            id="org.gemoc.qls.model.qls.presentation.QlsEditorID"
+            name="%_UI_QlsEditor_label"
+            icon="icons/full/obj16/QlsModelFile.gif"
+            extensions="qls"
+            class="org.gemoc.qls.model.qls.presentation.QlsEditor"
+            contributorClass="org.gemoc.qls.model.qls.presentation.QlsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.gemoc.qls.model/src-gen" creationIcons="false"
+    editDirectory="/org.gemoc.qls.model.edit/src-gen" editorDirectory="/org.gemoc.qls.model.editor/src-gen"
+    modelPluginID="org.gemoc.qls.model" modelName="Qls" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0"
+    copyrightFields="false" usedGenPackages="../../org.gemoc.ql.model/model/ql.genmodel#//ql"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>qls.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Qls" basePackage="org.gemoc.qls.model" disposableProviderFactory="true"
+      ecorePackage="qls.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="qls.ecore#//BooleanStyleKind">
+      <genEnumLiterals ecoreEnumLiteral="qls.ecore#//BooleanStyleKind/CHECKBOX"/>
+      <genEnumLiterals ecoreEnumLiteral="qls.ecore#//BooleanStyleKind/TWO_RADIO"/>
+      <genEnumLiterals ecoreEnumLiteral="qls.ecore#//BooleanStyleKind/DROPDOWN"/>
+    </genEnums>
+    <genClasses ecoreClass="qls.ecore#//QLSModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QLSModel/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QLSModel/questionStyles"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//Import/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//TypeStyle"/>
+    <genClasses ecoreClass="qls.ecore#//NumericTypeStyle"/>
+    <genClasses ecoreClass="qls.ecore#//QuestionStyle">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference qls.ecore#//QuestionStyle/styledQuestion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QuestionStyle/labelStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QuestionStyle/typeStyle"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//LabelStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//LabelStyle/italic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//LabelStyle/bold"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//BooleanTypeStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//BooleanTypeStyle/booleanStyleKind"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//NumericTypeTextFieldStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//NumericTypeTextFieldStyle/step"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//NumericTypeSpinnerStyle"/>
+    <genClasses ecoreClass="qls.ecore#//TextTypeStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//TextTypeStyle/multiline"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//NumericSpinnerStyle"/>
+  </genPackages>
+</genmodel:GenModel>

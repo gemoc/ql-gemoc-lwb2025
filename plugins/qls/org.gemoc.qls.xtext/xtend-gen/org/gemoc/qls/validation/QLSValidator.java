@@ -5,8 +5,8 @@ package org.gemoc.qls.validation;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.xtext.validation.Check;
-import org.gemoc.qls.qLS.Import;
-import org.gemoc.qls.qLS.QLSPackage;
+import org.gemoc.qls.model.qls.Import;
+import org.gemoc.qls.model.qls.QlsPackage;
 import org.gemoc.qls.utils.QLSUtils;
 
 /**
@@ -29,14 +29,14 @@ public class QLSValidator extends AbstractQLSValidator {
         String _plus = ("Invalid URI format " + _importURI_1);
         String _plus_1 = (_plus + ", maybe \"platform:\" prefix is missing");
         this.error(_plus_1, imp, 
-          imp.eClass().getEStructuralFeature(QLSPackage.IMPORT__IMPORT_URI), QLSValidator.INVALID_URI);
+          imp.eClass().getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI), QLSValidator.INVALID_URI);
       }
       final URI uri = QLSUtils.resolveImportURI(imp.getImportURI(), imp.eResource());
       boolean _exists = imp.eResource().getResourceSet().getURIConverter().exists(uri, null);
       boolean _not = (!_exists);
       if (_not) {
         this.error((("File " + uri) + " not found"), imp, 
-          imp.eClass().getEStructuralFeature(QLSPackage.IMPORT__IMPORT_URI));
+          imp.eClass().getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI));
       }
     }
   }

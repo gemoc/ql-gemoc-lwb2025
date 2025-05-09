@@ -7,7 +7,7 @@ import com.google.inject.Inject
 import org.eclipse.xtext.scoping.IGlobalScopeProvider
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import org.gemoc.qls.qLS.QLSPackage
+import org.gemoc.qls.model.qls.QlsPackage
 
 /**
  * This class contains custom scoping description.
@@ -20,7 +20,7 @@ class QLSScopeProvider extends AbstractQLSScopeProvider {
 
 	override getScope(EObject context, EReference reference) {
 		switch (reference) {
-			case QLSPackage.Literals.QUESTION_STYLE__STYLED_QUESTION: {
+			case QlsPackage.Literals.QUESTION_STYLE__STYLED_QUESTION: {
 				return super.getScope(context, reference)
 			}
 			default: {

@@ -3,10 +3,10 @@
  */
 package org.gemoc.qls.validation
 
-import org.gemoc.qls.qLS.Import
 import org.eclipse.xtext.validation.Check
 import org.gemoc.qls.utils.QLSUtils
-import org.gemoc.qls.qLS.QLSPackage
+import org.gemoc.qls.model.qls.QlsPackage
+import org.gemoc.qls.model.qls.Import
 
 /**
  * This class contains custom validation rules. 
@@ -23,12 +23,12 @@ class QLSValidator extends AbstractQLSValidator {
 		if (imp.importURI !== null) {
 			if (imp.importURI.startsWith("/")) {
 				error("Invalid URI format " + imp.importURI + ", maybe \"platform:\" prefix is missing", imp,
-					imp.eClass.getEStructuralFeature(QLSPackage.IMPORT__IMPORT_URI), INVALID_URI)
+					imp.eClass.getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI), INVALID_URI)
 			}
 			val uri = QLSUtils.resolveImportURI(imp.importURI, imp.eResource)
 			if (!imp.eResource.resourceSet.URIConverter.exists(uri, null)) {
 				error("File " + uri + " not found", imp,
-					imp.eClass.getEStructuralFeature(QLSPackage.IMPORT__IMPORT_URI))
+					imp.eClass.getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI))
 			}
 		}
 
