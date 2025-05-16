@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -27,6 +28,7 @@ import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.Question;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.qls.model.qls.QLSModel;
 
 public class QLFormBrowserViewAddon implements IEngineAddon {
 
@@ -64,8 +66,10 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 		IEngineAddon.super.aboutToExecuteStep(engine, stepToExecute);
 		try {
 			Resource res = engine.getExecutionContext().getResourceModel();
-			if (res.getContents().get(0) instanceof QLModel) {
-				QLModel rooQLModel = (QLModel) res.getContents().get(0);
+			EObject rootEObject = res.getContents().get(0);
+			if (rootEObject instanceof QLModel || rootEObject instanceof QLSModel) {
+				
+				QLModel rooQLModel = (rootEObject instanceof QLModel) ? (QLModel) rootEObject : ((QLSModel)rootEObject).getStyledQLModel();
 				
 				if (stepToExecute.getMseoccurrence() != null && stepToExecute.getMseoccurrence().getMse() != null) {
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof Question
