@@ -1716,10 +1716,10 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3842:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalQLS.g:3842:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalQLS.g:3841:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalQLS.g:3841:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalQLS.g:3842:11: ( '^' )?
+            // InternalQLS.g:3841:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1728,7 +1728,7 @@ public class InternalQLSLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalQLS.g:3842:11: '^'
+                    // InternalQLS.g:3841:11: '^'
                     {
                     match('^'); 
 
@@ -1746,7 +1746,7 @@ public class InternalQLSLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalQLS.g:3842:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalQLS.g:3841:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1795,10 +1795,10 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3844:10: ( ( '0' .. '9' )+ )
-            // InternalQLS.g:3844:12: ( '0' .. '9' )+
+            // InternalQLS.g:3843:10: ( ( '0' .. '9' )+ )
+            // InternalQLS.g:3843:12: ( '0' .. '9' )+
             {
-            // InternalQLS.g:3844:12: ( '0' .. '9' )+
+            // InternalQLS.g:3843:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1812,7 +1812,7 @@ public class InternalQLSLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalQLS.g:3844:13: '0' .. '9'
+            	    // InternalQLS.g:3843:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1844,10 +1844,10 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3846:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalQLS.g:3846:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalQLS.g:3845:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalQLS.g:3845:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalQLS.g:3846:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalQLS.g:3845:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1865,10 +1865,10 @@ public class InternalQLSLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalQLS.g:3846:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalQLS.g:3845:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalQLS.g:3846:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalQLS.g:3845:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1884,7 +1884,7 @@ public class InternalQLSLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalQLS.g:3846:21: '\\\\' .
+                    	    // InternalQLS.g:3845:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1892,7 +1892,7 @@ public class InternalQLSLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalQLS.g:3846:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalQLS.g:3845:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1917,10 +1917,10 @@ public class InternalQLSLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalQLS.g:3846:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalQLS.g:3845:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalQLS.g:3846:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalQLS.g:3845:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1936,7 +1936,7 @@ public class InternalQLSLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalQLS.g:3846:54: '\\\\' .
+                    	    // InternalQLS.g:3845:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1944,7 +1944,7 @@ public class InternalQLSLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalQLS.g:3846:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalQLS.g:3845:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1987,12 +1987,12 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3848:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalQLS.g:3848:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalQLS.g:3847:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalQLS.g:3847:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalQLS.g:3848:24: ( options {greedy=false; } : . )*
+            // InternalQLS.g:3847:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -2017,7 +2017,7 @@ public class InternalQLSLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalQLS.g:3848:52: .
+            	    // InternalQLS.g:3847:52: .
             	    {
             	    matchAny(); 
 
@@ -2047,12 +2047,12 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3850:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalQLS.g:3850:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalQLS.g:3849:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalQLS.g:3849:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalQLS.g:3850:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalQLS.g:3849:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -2065,7 +2065,7 @@ public class InternalQLSLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalQLS.g:3850:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalQLS.g:3849:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2085,7 +2085,7 @@ public class InternalQLSLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalQLS.g:3850:40: ( ( '\\r' )? '\\n' )?
+            // InternalQLS.g:3849:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2094,9 +2094,9 @@ public class InternalQLSLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalQLS.g:3850:41: ( '\\r' )? '\\n'
+                    // InternalQLS.g:3849:41: ( '\\r' )? '\\n'
                     {
-                    // InternalQLS.g:3850:41: ( '\\r' )?
+                    // InternalQLS.g:3849:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2105,7 +2105,7 @@ public class InternalQLSLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalQLS.g:3850:41: '\\r'
+                            // InternalQLS.g:3849:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2137,10 +2137,10 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3852:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalQLS.g:3852:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalQLS.g:3851:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalQLS.g:3851:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalQLS.g:3852:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalQLS.g:3851:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2194,8 +2194,8 @@ public class InternalQLSLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalQLS.g:3854:16: ( . )
-            // InternalQLS.g:3854:18: .
+            // InternalQLS.g:3853:16: ( . )
+            // InternalQLS.g:3853:18: .
             {
             matchAny(); 
 

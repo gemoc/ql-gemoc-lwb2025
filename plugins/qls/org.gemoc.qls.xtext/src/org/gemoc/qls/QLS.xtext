@@ -22,7 +22,7 @@ Import returns Import:
 	
 Section returns Section:
 	{Section}
-	'section' title=EString '{'
+	'section' title=STRING '{'
 		(sectionContents+=SectionContent)*
 		 
 	'}'

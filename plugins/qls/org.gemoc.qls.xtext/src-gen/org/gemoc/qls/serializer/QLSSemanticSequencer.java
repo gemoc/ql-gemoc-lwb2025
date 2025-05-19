@@ -362,7 +362,7 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 *     SectionContent returns Section
 	 *
 	 * Constraint:
-	 *     (title=EString sectionContents+=SectionContent*)
+	 *     (title=STRING sectionContents+=SectionContent*)
 	 * </pre>
 	 */
 	protected void sequence_Section(ISerializationContext context, Section semanticObject) {

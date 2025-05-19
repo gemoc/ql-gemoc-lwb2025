@@ -1,13 +1,18 @@
 package org.gemoc.ql.k3ql.k3dsa.ql;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import java.util.function.Consumer;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+import org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect;
 import org.gemoc.ql.model.ql.QLModel;
 import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.qls.model.qls.QLSModel;
+import org.gemoc.qls.model.qls.QuestionReference;
+import org.gemoc.qls.model.qls.Section;
 
 /**
  * Aspects used by HTML Form presentation
@@ -56,14 +61,27 @@ public class QLModelHtmlAspect {
 
   protected static String _privk3_htmlStyledDiv(final QLModelHtmlAspectQLModelAspectProperties _self_, final QLModel _self, final QLSModel qlsModel) {
     final StringBuffer sb = new StringBuffer();
-    final Function1<QuestionDefinition, Boolean> _function = (QuestionDefinition qd) -> {
-      return Boolean.valueOf(qd.isIsDisplayed());
-    };
-    final Procedure1<QuestionDefinition> _function_1 = (QuestionDefinition qd) -> {
-      sb.append(QuestionDefinitionHtmlAspect.htmlStyledField(qd, qlsModel));
+    final Consumer<Section> _function = (Section s) -> {
+      sb.append(SectionHtmlAspect.htmlStyledDiv(s));
       sb.append("\n");
     };
-    IteratorExtensions.<QuestionDefinition>forEach(IteratorExtensions.<QuestionDefinition>filter(Iterators.<QuestionDefinition>filter(_self.eAllContents(), QuestionDefinition.class), _function), _function_1);
+    qlsModel.getSections().forEach(_function);
+    final Function1<QuestionDefinition, Boolean> _function_1 = (QuestionDefinition qd) -> {
+      return Boolean.valueOf(qd.isIsDisplayed());
+    };
+    final Procedure1<QuestionDefinition> _function_2 = (QuestionDefinition qd) -> {
+      final Function1<QuestionReference, Boolean> _function_3 = (QuestionReference qs) -> {
+        QuestionDefinition _question = qs.getQuestion();
+        return Boolean.valueOf(Objects.equal(_question, qd));
+      };
+      boolean _exists = IteratorExtensions.<QuestionReference>exists(Iterators.<QuestionReference>filter(qlsModel.eAllContents(), QuestionReference.class), _function_3);
+      boolean _not = (!_exists);
+      if (_not) {
+        sb.append(QuestionDefinitionHtmlAspect.htmlStyledField(qd, qlsModel));
+        sb.append("\n");
+      }
+    };
+    IteratorExtensions.<QuestionDefinition>forEach(IteratorExtensions.<QuestionDefinition>filter(Iterators.<QuestionDefinition>filter(_self.eAllContents(), QuestionDefinition.class), _function_1), _function_2);
     return sb.toString();
   }
 }

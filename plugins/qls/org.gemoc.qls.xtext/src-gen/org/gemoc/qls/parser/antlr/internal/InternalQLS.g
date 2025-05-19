@@ -261,20 +261,19 @@ ruleSection returns [EObject current=null]
 		}
 		(
 			(
+				lv_title_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0());
+					newLeafNode(lv_title_2_0, grammarAccess.getSectionAccess().getTitleSTRINGTerminalRuleCall_2_0());
 				}
-				lv_title_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSectionRule());
+						$current = createModelElement(grammarAccess.getSectionRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"title",
 						lv_title_2_0,
-						"org.gemoc.ql.QL.EString");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

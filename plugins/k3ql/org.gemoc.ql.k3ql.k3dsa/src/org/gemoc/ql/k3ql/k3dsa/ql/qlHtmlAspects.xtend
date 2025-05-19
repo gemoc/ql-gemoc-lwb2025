@@ -16,6 +16,7 @@ import org.gemoc.ql.k3ql.k3dsa.NotImplementedException
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionHtmlAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.ValueAspect.*
+import static extension org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
 import org.gemoc.ql.model.ql.QLModel
 import org.gemoc.qls.model.qls.QLSModel
@@ -29,6 +30,9 @@ import org.gemoc.qls.model.qls.EnumerationStyleKind
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle
 import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle
 import org.gemoc.qls.model.qls.BooleanTypeStyle
+import org.gemoc.qls.model.qls.Section
+import org.gemoc.qls.model.qls.QuestionReference
+import org.gemoc.qls.model.qls.SectionContent
 
 /* Aspects used by HTML Form presentation */
 
@@ -54,14 +58,25 @@ class QLModelHtmlAspect {
 	 */
 	def String htmlStyledDiv( QLSModel qlsModel) {
 		val sb = new StringBuffer
-		_self.eAllContents.filter(QuestionDefinition).filter[qd | qd.isDisplayed].forEach[ qd |
-			sb.append(qd.htmlStyledField(qlsModel))
+		
+		qlsModel.sections.forEach[ s |
+			sb.append(s.htmlStyledDiv)
 			sb.append("\n")
+		]
+		
+		// also show questions that are not present in a section
+		_self.eAllContents.filter(QuestionDefinition).filter[qd | qd.isDisplayed].forEach[ qd |
+			if(!qlsModel.eAllContents.filter(QuestionReference).exists[qs | qs.question == qd]) {
+				sb.append(qd.htmlStyledField(qlsModel))
+				sb.append("\n")
+			}
 		]
 		
 		return sb.toString()
 	}
 }
+
+
 
 @Aspect(className=QuestionDefinition)
 class QuestionDefinitionHtmlAspect extends NamedElementAspect {

@@ -1,0 +1,10 @@
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.qls.SectionContentHtmlAspect#String htmlStyledDiv() from org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect
+		if (_self instanceof org.gemoc.qls.model.qls.Section){
+			result = org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect.htmlStyledDiv((org.gemoc.qls.model.qls.Section)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.qls.SectionContentHtmlAspect#String htmlStyledDiv() from org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect
+	// BeginInjectInto org.gemoc.ql.k3ql.k3dsa.qls.SectionContentHtmlAspect#String htmlStyledDiv() from org.gemoc.ql.k3ql.k3dsa.qls.QuestionReferenceHtmlAspect
+		if (_self instanceof org.gemoc.qls.model.qls.QuestionReference){
+			result = org.gemoc.ql.k3ql.k3dsa.qls.QuestionReferenceHtmlAspect.htmlStyledDiv((org.gemoc.qls.model.qls.QuestionReference)_self);
+		} else
+		// EndInjectInto org.gemoc.ql.k3ql.k3dsa.qls.SectionContentHtmlAspect#String htmlStyledDiv() from org.gemoc.ql.k3ql.k3dsa.qls.QuestionReferenceHtmlAspect

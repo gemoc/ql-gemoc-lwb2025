@@ -8236,7 +8236,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2527:1: ( rule__Section__Group__1__Impl rule__Section__Group__2 )
             // InternalQLS.g:2528:2: rule__Section__Group__1__Impl rule__Section__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_13);
             rule__Section__Group__1__Impl();
 
             state._fsp--;
@@ -8396,7 +8396,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2581:1: ( rule__Section__Group__3__Impl rule__Section__Group__4 )
             // InternalQLS.g:2582:2: rule__Section__Group__3__Impl rule__Section__Group__4
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__Section__Group__3__Impl();
 
             state._fsp--;
@@ -8471,7 +8471,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2608:1: ( rule__Section__Group__4__Impl rule__Section__Group__5 )
             // InternalQLS.g:2609:2: rule__Section__Group__4__Impl rule__Section__Group__5
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__Section__Group__4__Impl();
 
             state._fsp--;
@@ -8528,7 +8528,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:2623:3: rule__Section__SectionContentsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_17);
+            	    pushFollow(FOLLOW_16);
             	    rule__Section__SectionContentsAssignment_4();
 
             	    state._fsp--;
@@ -8644,7 +8644,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2662:1: ( rule__QuestionReference__Group__0__Impl rule__QuestionReference__Group__1 )
             // InternalQLS.g:2663:2: rule__QuestionReference__Group__0__Impl rule__QuestionReference__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__QuestionReference__Group__0__Impl();
 
             state._fsp--;
@@ -8959,7 +8959,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2770:1: ( rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3 )
             // InternalQLS.g:2771:2: rule__QuestionStyle__Group__2__Impl rule__QuestionStyle__Group__3
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__QuestionStyle__Group__2__Impl();
 
             state._fsp--;
@@ -9034,7 +9034,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2797:1: ( rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4 )
             // InternalQLS.g:2798:2: rule__QuestionStyle__Group__3__Impl rule__QuestionStyle__Group__4
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__QuestionStyle__Group__3__Impl();
 
             state._fsp--;
@@ -9130,7 +9130,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2824:1: ( rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5 )
             // InternalQLS.g:2825:2: rule__QuestionStyle__Group__4__Impl rule__QuestionStyle__Group__5
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__QuestionStyle__Group__4__Impl();
 
             state._fsp--;
@@ -9451,7 +9451,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2932:1: ( rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1 )
             // InternalQLS.g:2933:2: rule__QuestionStyle__Group_4__0__Impl rule__QuestionStyle__Group_4__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__QuestionStyle__Group_4__0__Impl();
 
             state._fsp--;
@@ -9681,7 +9681,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3013:1: ( rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2 )
             // InternalQLS.g:3014:2: rule__LabelStyle__Group__1__Impl rule__LabelStyle__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__LabelStyle__Group__1__Impl();
 
             state._fsp--;
@@ -9756,7 +9756,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3040:1: ( rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3 )
             // InternalQLS.g:3041:2: rule__LabelStyle__Group__2__Impl rule__LabelStyle__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__LabelStyle__Group__2__Impl();
 
             state._fsp--;
@@ -9852,7 +9852,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3067:1: ( rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4 )
             // InternalQLS.g:3068:2: rule__LabelStyle__Group__3__Impl rule__LabelStyle__Group__4
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__LabelStyle__Group__3__Impl();
 
             state._fsp--;
@@ -10093,7 +10093,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3148:1: ( rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2 )
             // InternalQLS.g:3149:2: rule__BooleanTypeStyle__Group__1__Impl rule__BooleanTypeStyle__Group__2
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__BooleanTypeStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10168,7 +10168,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3175:1: ( rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3 )
             // InternalQLS.g:3176:2: rule__BooleanTypeStyle__Group__2__Impl rule__BooleanTypeStyle__Group__3
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__BooleanTypeStyle__Group__2__Impl();
 
             state._fsp--;
@@ -10323,7 +10323,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3229:1: ( rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1 )
             // InternalQLS.g:3230:2: rule__NumericTypeTextFieldStyle__Group__0__Impl rule__NumericTypeTextFieldStyle__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__NumericTypeTextFieldStyle__Group__0__Impl();
 
             state._fsp--;
@@ -10398,7 +10398,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3256:1: ( rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 )
             // InternalQLS.g:3257:2: rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_24);
             rule__NumericTypeTextFieldStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10548,7 +10548,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3310:1: ( rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 )
             // InternalQLS.g:3311:2: rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_22);
             rule__NumericTypeTextFieldStyle__Group__3__Impl();
 
             state._fsp--;
@@ -10693,7 +10693,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3364:1: ( rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 )
             // InternalQLS.g:3365:2: rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_23);
             rule__NumericTypeSpinnerStyle__Group__0__Impl();
 
             state._fsp--;
@@ -10768,7 +10768,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3391:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
             // InternalQLS.g:3392:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_25);
             rule__NumericTypeSpinnerStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10918,7 +10918,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3445:1: ( rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 )
             // InternalQLS.g:3446:2: rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__NumericTypeSpinnerStyle__Group__3__Impl();
 
             state._fsp--;
@@ -10993,7 +10993,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3472:1: ( rule__NumericTypeSpinnerStyle__Group__4__Impl rule__NumericTypeSpinnerStyle__Group__5 )
             // InternalQLS.g:3473:2: rule__NumericTypeSpinnerStyle__Group__4__Impl rule__NumericTypeSpinnerStyle__Group__5
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_26);
             rule__NumericTypeSpinnerStyle__Group__4__Impl();
 
             state._fsp--;
@@ -11159,7 +11159,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3526:1: ( rule__NumericTypeSpinnerStyle__Group_4__0__Impl rule__NumericTypeSpinnerStyle__Group_4__1 )
             // InternalQLS.g:3527:2: rule__NumericTypeSpinnerStyle__Group_4__0__Impl rule__NumericTypeSpinnerStyle__Group_4__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__NumericTypeSpinnerStyle__Group_4__0__Impl();
 
             state._fsp--;
@@ -11314,7 +11314,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3580:1: ( rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1 )
             // InternalQLS.g:3581:2: rule__TextTypeStyle__Group__0__Impl rule__TextTypeStyle__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__TextTypeStyle__Group__0__Impl();
 
             state._fsp--;
@@ -11464,7 +11464,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3634:1: ( rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3 )
             // InternalQLS.g:3635:2: rule__TextTypeStyle__Group__2__Impl rule__TextTypeStyle__Group__3
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__TextTypeStyle__Group__2__Impl();
 
             state._fsp--;
@@ -11539,7 +11539,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3661:1: ( rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4 )
             // InternalQLS.g:3662:2: rule__TextTypeStyle__Group__3__Impl rule__TextTypeStyle__Group__4
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_28);
             rule__TextTypeStyle__Group__3__Impl();
 
             state._fsp--;
@@ -11705,7 +11705,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3715:1: ( rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1 )
             // InternalQLS.g:3716:2: rule__UnaryExpression__Group__0__Impl rule__UnaryExpression__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_29);
             rule__UnaryExpression__Group__0__Impl();
 
             state._fsp--;
@@ -11780,7 +11780,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3742:1: ( rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2 )
             // InternalQLS.g:3743:2: rule__UnaryExpression__Group__1__Impl rule__UnaryExpression__Group__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__UnaryExpression__Group__1__Impl();
 
             state._fsp--;
@@ -11945,7 +11945,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3796:1: ( rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1 )
             // InternalQLS.g:3797:2: rule__PrimaryExpression__Group_2__0__Impl rule__PrimaryExpression__Group_2__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__PrimaryExpression__Group_2__0__Impl();
 
             state._fsp--;
@@ -12020,7 +12020,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3823:1: ( rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2 )
             // InternalQLS.g:3824:2: rule__PrimaryExpression__Group_2__1__Impl rule__PrimaryExpression__Group_2__2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__PrimaryExpression__Group_2__1__Impl();
 
             state._fsp--;
@@ -12175,7 +12175,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3877:1: ( rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1 )
             // InternalQLS.g:3878:2: rule__IfExpression__Group__0__Impl rule__IfExpression__Group__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_32);
             rule__IfExpression__Group__0__Impl();
 
             state._fsp--;
@@ -12250,7 +12250,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3904:1: ( rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2 )
             // InternalQLS.g:3905:2: rule__IfExpression__Group__1__Impl rule__IfExpression__Group__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__IfExpression__Group__1__Impl();
 
             state._fsp--;
@@ -12325,7 +12325,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3931:1: ( rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3 )
             // InternalQLS.g:3932:2: rule__IfExpression__Group__2__Impl rule__IfExpression__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_33);
             rule__IfExpression__Group__2__Impl();
 
             state._fsp--;
@@ -12410,7 +12410,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3958:1: ( rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4 )
             // InternalQLS.g:3959:2: rule__IfExpression__Group__3__Impl rule__IfExpression__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__IfExpression__Group__3__Impl();
 
             state._fsp--;
@@ -12485,7 +12485,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3985:1: ( rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5 )
             // InternalQLS.g:3986:2: rule__IfExpression__Group__4__Impl rule__IfExpression__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__IfExpression__Group__4__Impl();
 
             state._fsp--;
@@ -12570,7 +12570,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4012:1: ( rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6 )
             // InternalQLS.g:4013:2: rule__IfExpression__Group__5__Impl rule__IfExpression__Group__6
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             rule__IfExpression__Group__5__Impl();
 
             state._fsp--;
@@ -12736,7 +12736,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4066:1: ( rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1 )
             // InternalQLS.g:4067:2: rule__IfExpression__Group_5__0__Impl rule__IfExpression__Group_5__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__IfExpression__Group_5__0__Impl();
 
             state._fsp--;
@@ -12891,7 +12891,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4120:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
             // InternalQLS.g:4121:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__OrExpression__Group__0__Impl();
 
             state._fsp--;
@@ -13022,7 +13022,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4161:3: rule__OrExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_37);
+            	    pushFollow(FOLLOW_36);
             	    rule__OrExpression__Group_1__0();
 
             	    state._fsp--;
@@ -13068,7 +13068,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4174:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
             // InternalQLS.g:4175:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__OrExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -13143,7 +13143,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4201:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
             // InternalQLS.g:4202:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__OrExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -13308,7 +13308,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4255:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
             // InternalQLS.g:4256:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_38);
             rule__AndExpression__Group__0__Impl();
 
             state._fsp--;
@@ -13439,7 +13439,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4296:3: rule__AndExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_40);
+            	    pushFollow(FOLLOW_39);
             	    rule__AndExpression__Group_1__0();
 
             	    state._fsp--;
@@ -13485,7 +13485,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4309:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
             // InternalQLS.g:4310:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_38);
             rule__AndExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -13560,7 +13560,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4336:1: ( rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 )
             // InternalQLS.g:4337:2: rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__AndExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -13725,7 +13725,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4390:1: ( rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1 )
             // InternalQLS.g:4391:2: rule__EqualExpression__Group__0__Impl rule__EqualExpression__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__EqualExpression__Group__0__Impl();
 
             state._fsp--;
@@ -13856,7 +13856,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4431:3: rule__EqualExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_41);
             	    rule__EqualExpression__Group_1__0();
 
             	    state._fsp--;
@@ -13902,7 +13902,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4444:1: ( rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1 )
             // InternalQLS.g:4445:2: rule__EqualExpression__Group_1__0__Impl rule__EqualExpression__Group_1__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__EqualExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -13977,7 +13977,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4471:1: ( rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2 )
             // InternalQLS.g:4472:2: rule__EqualExpression__Group_1__1__Impl rule__EqualExpression__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__EqualExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -14142,7 +14142,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4525:1: ( rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1 )
             // InternalQLS.g:4526:2: rule__ComparisionExpression__Group__0__Impl rule__ComparisionExpression__Group__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__ComparisionExpression__Group__0__Impl();
 
             state._fsp--;
@@ -14273,7 +14273,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4566:3: rule__ComparisionExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_44);
+            	    pushFollow(FOLLOW_43);
             	    rule__ComparisionExpression__Group_1__0();
 
             	    state._fsp--;
@@ -14319,7 +14319,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4579:1: ( rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1 )
             // InternalQLS.g:4580:2: rule__ComparisionExpression__Group_1__0__Impl rule__ComparisionExpression__Group_1__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_42);
             rule__ComparisionExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -14394,7 +14394,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4606:1: ( rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2 )
             // InternalQLS.g:4607:2: rule__ComparisionExpression__Group_1__1__Impl rule__ComparisionExpression__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__ComparisionExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -14559,7 +14559,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4660:1: ( rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1 )
             // InternalQLS.g:4661:2: rule__AdditionExpression__Group__0__Impl rule__AdditionExpression__Group__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_44);
             rule__AdditionExpression__Group__0__Impl();
 
             state._fsp--;
@@ -14690,7 +14690,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4701:3: rule__AdditionExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_45);
             	    rule__AdditionExpression__Group_1__0();
 
             	    state._fsp--;
@@ -14736,7 +14736,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4714:1: ( rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1 )
             // InternalQLS.g:4715:2: rule__AdditionExpression__Group_1__0__Impl rule__AdditionExpression__Group_1__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_44);
             rule__AdditionExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -14811,7 +14811,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4741:1: ( rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2 )
             // InternalQLS.g:4742:2: rule__AdditionExpression__Group_1__1__Impl rule__AdditionExpression__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_37);
             rule__AdditionExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -14976,7 +14976,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4795:1: ( rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1 )
             // InternalQLS.g:4796:2: rule__MultiplicationExpression__Group__0__Impl rule__MultiplicationExpression__Group__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__MultiplicationExpression__Group__0__Impl();
 
             state._fsp--;
@@ -15107,7 +15107,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4836:3: rule__MultiplicationExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_47);
             	    rule__MultiplicationExpression__Group_1__0();
 
             	    state._fsp--;
@@ -15153,7 +15153,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4849:1: ( rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1 )
             // InternalQLS.g:4850:2: rule__MultiplicationExpression__Group_1__0__Impl rule__MultiplicationExpression__Group_1__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_46);
             rule__MultiplicationExpression__Group_1__0__Impl();
 
             state._fsp--;
@@ -15228,7 +15228,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4876:1: ( rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2 )
             // InternalQLS.g:4877:2: rule__MultiplicationExpression__Group_1__1__Impl rule__MultiplicationExpression__Group_1__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__MultiplicationExpression__Group_1__1__Impl();
 
             state._fsp--;
@@ -15468,7 +15468,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4957:1: ( rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2 )
             // InternalQLS.g:4958:2: rule__DefinitionGroup__Group__1__Impl rule__DefinitionGroup__Group__2
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_48);
             rule__DefinitionGroup__Group__1__Impl();
 
             state._fsp--;
@@ -15543,7 +15543,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:4984:1: ( rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3 )
             // InternalQLS.g:4985:2: rule__DefinitionGroup__Group__2__Impl rule__DefinitionGroup__Group__3
             {
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_48);
             rule__DefinitionGroup__Group__2__Impl();
 
             state._fsp--;
@@ -15600,7 +15600,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:4999:3: rule__DefinitionGroup__Alternatives_2
             	    {
-            	    pushFollow(FOLLOW_50);
+            	    pushFollow(FOLLOW_49);
             	    rule__DefinitionGroup__Alternatives_2();
 
             	    state._fsp--;
@@ -15716,7 +15716,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5038:1: ( rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1 )
             // InternalQLS.g:5039:2: rule__QuestionGroup__Group__0__Impl rule__QuestionGroup__Group__1
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_50);
             rule__QuestionGroup__Group__0__Impl();
 
             state._fsp--;
@@ -15791,7 +15791,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5065:1: ( rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2 )
             // InternalQLS.g:5066:2: rule__QuestionGroup__Group__1__Impl rule__QuestionGroup__Group__2
             {
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_50);
             rule__QuestionGroup__Group__1__Impl();
 
             state._fsp--;
@@ -15887,7 +15887,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5092:1: ( rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3 )
             // InternalQLS.g:5093:2: rule__QuestionGroup__Group__2__Impl rule__QuestionGroup__Group__3
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_51);
             rule__QuestionGroup__Group__2__Impl();
 
             state._fsp--;
@@ -15962,7 +15962,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5119:1: ( rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4 )
             // InternalQLS.g:5120:2: rule__QuestionGroup__Group__3__Impl rule__QuestionGroup__Group__4
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_51);
             rule__QuestionGroup__Group__3__Impl();
 
             state._fsp--;
@@ -16019,7 +16019,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // InternalQLS.g:5134:3: rule__QuestionGroup__Alternatives_3
             	    {
-            	    pushFollow(FOLLOW_53);
+            	    pushFollow(FOLLOW_52);
             	    rule__QuestionGroup__Alternatives_3();
 
             	    state._fsp--;
@@ -16135,7 +16135,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5173:1: ( rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1 )
             // InternalQLS.g:5174:2: rule__QuestionGroup__Group_1__0__Impl rule__QuestionGroup__Group_1__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__QuestionGroup__Group_1__0__Impl();
 
             state._fsp--;
@@ -16290,7 +16290,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5227:1: ( rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1 )
             // InternalQLS.g:5228:2: rule__ValueType_Impl__Group__0__Impl rule__ValueType_Impl__Group__1
             {
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_53);
             rule__ValueType_Impl__Group__0__Impl();
 
             state._fsp--;
@@ -16525,7 +16525,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5308:1: ( rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4 )
             // InternalQLS.g:5309:2: rule__ValueType_Impl__Group__3__Impl rule__ValueType_Impl__Group__4
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__ValueType_Impl__Group__3__Impl();
 
             state._fsp--;
@@ -16600,7 +16600,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5335:1: ( rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5 )
             // InternalQLS.g:5336:2: rule__ValueType_Impl__Group__4__Impl rule__ValueType_Impl__Group__5
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__ValueType_Impl__Group__4__Impl();
 
             state._fsp--;
@@ -16766,7 +16766,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5389:1: ( rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1 )
             // InternalQLS.g:5390:2: rule__ValueType_Impl__Group_4__0__Impl rule__ValueType_Impl__Group_4__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__ValueType_Impl__Group_4__0__Impl();
 
             state._fsp--;
@@ -17236,7 +17236,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5551:1: ( rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3 )
             // InternalQLS.g:5552:2: rule__QuestionCall__Group__2__Impl rule__QuestionCall__Group__3
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_31);
             rule__QuestionCall__Group__2__Impl();
 
             state._fsp--;
@@ -17707,7 +17707,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5713:1: ( rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1 )
             // InternalQLS.g:5714:2: rule__BooleanValueType__Group_3__0__Impl rule__BooleanValueType__Group_3__1
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__BooleanValueType__Group_3__0__Impl();
 
             state._fsp--;
@@ -17782,7 +17782,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5740:1: ( rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2 )
             // InternalQLS.g:5741:2: rule__BooleanValueType__Group_3__1__Impl rule__BooleanValueType__Group_3__2
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__BooleanValueType__Group_3__1__Impl();
 
             state._fsp--;
@@ -17948,7 +17948,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:5794:1: ( rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1 )
             // InternalQLS.g:5795:2: rule__BooleanValueType__Group_3_1__0__Impl rule__BooleanValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__BooleanValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -18862,7 +18862,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6091:1: ( rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1 )
             // InternalQLS.g:6092:2: rule__IntegerValueType__Group_3_1__0__Impl rule__IntegerValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__IntegerValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -19653,7 +19653,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6361:1: ( rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1 )
             // InternalQLS.g:6362:2: rule__DecimalValueType__Group_3__0__Impl rule__DecimalValueType__Group_3__1
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__DecimalValueType__Group_3__0__Impl();
 
             state._fsp--;
@@ -19728,7 +19728,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6388:1: ( rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2 )
             // InternalQLS.g:6389:2: rule__DecimalValueType__Group_3__1__Impl rule__DecimalValueType__Group_3__2
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__DecimalValueType__Group_3__1__Impl();
 
             state._fsp--;
@@ -19894,7 +19894,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6442:1: ( rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1 )
             // InternalQLS.g:6443:2: rule__DecimalValueType__Group_3_1__0__Impl rule__DecimalValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__DecimalValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -20375,7 +20375,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6604:1: ( rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1 )
             // InternalQLS.g:6605:2: rule__DateValueType__Group_3__0__Impl rule__DateValueType__Group_3__1
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__DateValueType__Group_3__0__Impl();
 
             state._fsp--;
@@ -20450,7 +20450,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6631:1: ( rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2 )
             // InternalQLS.g:6632:2: rule__DateValueType__Group_3__1__Impl rule__DateValueType__Group_3__2
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__DateValueType__Group_3__1__Impl();
 
             state._fsp--;
@@ -20616,7 +20616,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6685:1: ( rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1 )
             // InternalQLS.g:6686:2: rule__DateValueType__Group_3_1__0__Impl rule__DateValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__DateValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -21434,7 +21434,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:6955:1: ( rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1 )
             // InternalQLS.g:6956:2: rule__EnumerationValueType__Group_3_1__0__Impl rule__EnumerationValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__EnumerationValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -22478,7 +22478,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:7306:1: ( rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1 )
             // InternalQLS.g:7307:2: rule__StringValueType__Group_3__0__Impl rule__StringValueType__Group_3__1
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__StringValueType__Group_3__0__Impl();
 
             state._fsp--;
@@ -22553,7 +22553,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:7333:1: ( rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2 )
             // InternalQLS.g:7334:2: rule__StringValueType__Group_3__1__Impl rule__StringValueType__Group_3__2
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_54);
             rule__StringValueType__Group_3__1__Impl();
 
             state._fsp--;
@@ -22719,7 +22719,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:7387:1: ( rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1 )
             // InternalQLS.g:7388:2: rule__StringValueType__Group_3_1__0__Impl rule__StringValueType__Group_3_1__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__StringValueType__Group_3_1__0__Impl();
 
             state._fsp--;
@@ -24350,7 +24350,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:7954:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
             // InternalQLS.g:7955:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__EDouble__Group__0__Impl();
 
             state._fsp--;
@@ -25026,7 +25026,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8170:1: ( rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2 )
             // InternalQLS.g:8171:2: rule__QuestionDefinition__Group__1__Impl rule__QuestionDefinition__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__QuestionDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -25282,7 +25282,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8251:1: ( rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5 )
             // InternalQLS.g:8252:2: rule__QuestionDefinition__Group__4__Impl rule__QuestionDefinition__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__QuestionDefinition__Group__4__Impl();
 
             state._fsp--;
@@ -25357,7 +25357,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8278:1: ( rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6 )
             // InternalQLS.g:8279:2: rule__QuestionDefinition__Group__5__Impl rule__QuestionDefinition__Group__6
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_55);
             rule__QuestionDefinition__Group__5__Impl();
 
             state._fsp--;
@@ -25442,7 +25442,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8305:1: ( rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7 )
             // InternalQLS.g:8306:2: rule__QuestionDefinition__Group__6__Impl rule__QuestionDefinition__Group__7
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_40);
             rule__QuestionDefinition__Group__6__Impl();
 
             state._fsp--;
@@ -26110,7 +26110,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8521:1: ( rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1 )
             // InternalQLS.g:8522:2: rule__QuestionDefinition__Group_7__0__Impl rule__QuestionDefinition__Group_7__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__QuestionDefinition__Group_7__0__Impl();
 
             state._fsp--;
@@ -26858,25 +26858,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Section__TitleAssignment_2"
-    // InternalQLS.g:8785:1: rule__Section__TitleAssignment_2 : ( ruleEString ) ;
+    // InternalQLS.g:8785:1: rule__Section__TitleAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Section__TitleAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:8789:1: ( ( ruleEString ) )
-            // InternalQLS.g:8790:2: ( ruleEString )
+            // InternalQLS.g:8789:1: ( ( RULE_STRING ) )
+            // InternalQLS.g:8790:2: ( RULE_STRING )
             {
-            // InternalQLS.g:8790:2: ( ruleEString )
-            // InternalQLS.g:8791:3: ruleEString
+            // InternalQLS.g:8790:2: ( RULE_STRING )
+            // InternalQLS.g:8791:3: RULE_STRING
             {
-             before(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEString();
-
-            state._fsp--;
-
-             after(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0()); 
+             before(grammarAccess.getSectionAccess().getTitleSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getSectionAccess().getTitleSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -29743,47 +29739,47 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0001400000000040L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0001000000000042L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0001000000000040L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000C400000000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0230000000000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000400000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000380000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0100400000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000010L,0x0000000000004000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000400000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000C00000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x1400000C00018070L,0x0000000000004000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0xC000000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x1400000000018070L,0x0000000000004000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000002002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000078000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000078000000002L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000001400000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000001400000002L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000006000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000006000000002L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000400000000000L,0x00000000004089CDL});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000002L,0x00000000004089CDL});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x1000100000000000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x1000500000000040L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x1000100000000042L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000400000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0001400000000040L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0001000000000042L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0001000000000040L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x000C400000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0230000000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000400000000000L,0x0000000000180000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000380000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0100400000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000010L,0x0000000000004000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000400000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000C00000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1400000C00018070L,0x0000000000004000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0xC000000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x1400000000018070L,0x0000000000004000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000078000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000078000000002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000001400000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000001400000002L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000006000000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000006000000002L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000400000000000L,0x00000000004089CDL});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000002L,0x00000000004089CDL});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x1000100000000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x1000500000000040L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x1000100000000042L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000400000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000000060L});
     public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000018030L,0x0000000000004000L});
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0400000000000000L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});

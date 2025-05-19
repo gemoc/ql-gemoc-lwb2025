@@ -8788,9 +8788,9 @@ rule__Section__TitleAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0()); }
-		ruleEString
-		{ after(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0()); }
+		{ before(grammarAccess.getSectionAccess().getTitleSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSectionAccess().getTitleSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

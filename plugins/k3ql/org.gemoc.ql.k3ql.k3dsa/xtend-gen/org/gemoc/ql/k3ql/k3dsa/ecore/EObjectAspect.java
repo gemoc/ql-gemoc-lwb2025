@@ -75,4 +75,18 @@ public class EObjectAspect {
     }
     return sb.toString();
   }
+
+  public static <T extends EObject> T getContainerOfType(final EObject eObject, final Class containerType) {
+    EObject current = eObject.eContainer();
+    while ((current != null)) {
+      {
+        boolean _isInstance = containerType.isInstance(current);
+        if (_isInstance) {
+          return ((T) current);
+        }
+        current = current.eContainer();
+      }
+    }
+    return null;
+  }
 }

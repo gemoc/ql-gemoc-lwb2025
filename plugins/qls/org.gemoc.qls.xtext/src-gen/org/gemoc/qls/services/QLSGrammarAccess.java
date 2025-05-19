@@ -153,7 +153,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Action cSectionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTitleAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTitleEStringParserRuleCall_2_0 = (RuleCall)cTitleAssignment_2.eContents().get(0);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_2_0 = (RuleCall)cTitleAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cSectionContentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cSectionContentsSectionContentParserRuleCall_4_0 = (RuleCall)cSectionContentsAssignment_4.eContents().get(0);
@@ -161,14 +161,14 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//Section returns Section:
 		//    {Section}
-		//    'section' title=EString '{'
+		//    'section' title=STRING '{'
 		//        (sectionContents+=SectionContent)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Section}
-		//'section' title=EString '{'
+		//'section' title=STRING '{'
 		//    (sectionContents+=SectionContent)*
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -179,11 +179,11 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'section'
 		public Keyword getSectionKeyword_1() { return cSectionKeyword_1; }
 		
-		//title=EString
+		//title=STRING
 		public Assignment getTitleAssignment_2() { return cTitleAssignment_2; }
 		
-		//EString
-		public RuleCall getTitleEStringParserRuleCall_2_0() { return cTitleEStringParserRuleCall_2_0; }
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_2_0() { return cTitleSTRINGTerminalRuleCall_2_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -719,7 +719,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//Section returns Section:
 	//    {Section}
-	//    'section' title=EString '{'
+	//    'section' title=STRING '{'
 	//        (sectionContents+=SectionContent)*
 	//    '}'
 	//;

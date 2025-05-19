@@ -5,6 +5,7 @@ import org.eclipse.gemoc.commons.eclipse.messagingsystem.api.MessagingSystem
 import org.gemoc.ql.k3ql.k3dsa.Activator
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.EAttribute
+import org.eclipse.emf.ecore.EClass
 
 class EObjectAspect {
 	
@@ -60,6 +61,17 @@ class EObjectAspect {
 		}
 		return sb.toString();
 		
+	}
+	
+	def static <T extends EObject> T getContainerOfType(EObject eObject, Class containerType) {
+		var current = eObject.eContainer
+		while (current !== null) {
+			if (containerType.isInstance(current)) {
+		    	return current as T
+		    }
+		    current = current.eContainer
+		}
+	  	return null
 	}
 	
 }
