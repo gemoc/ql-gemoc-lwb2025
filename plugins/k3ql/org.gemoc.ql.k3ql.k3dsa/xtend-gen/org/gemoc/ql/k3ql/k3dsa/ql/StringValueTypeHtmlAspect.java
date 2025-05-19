@@ -37,31 +37,29 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
     }
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div>");
-    _builder.newLine();
-    _builder.append("\t\t      ");
-    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-    _builder.append(_htmlLabel, "\t\t      ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t      ");
-    _builder.append("<input type=\"text\" id=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" name=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\"  value=\"");
-    _builder.append(value, "\t\t      ");
-    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\"");
-    {
-      if (readonly) {
-        _builder.append(" readonly");
-      }
+    if (readonly) {
+      return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
+    } else {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("<div>");
+      _builder.newLine();
+      _builder.append("\t\t      ");
+      String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+      _builder.append(_htmlLabel, "\t\t      ");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t      ");
+      _builder.append("<input type=\"text\" id=\"");
+      _builder.append(id, "\t\t      ");
+      _builder.append("\" name=\"");
+      _builder.append(id, "\t\t      ");
+      _builder.append("\"  value=\"");
+      _builder.append(value, "\t\t      ");
+      _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t    ");
+      _builder.append("</div>");
+      return _builder.toString();
     }
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t    ");
-    _builder.append("</div>");
-    return _builder.toString();
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final StringValueTypeHtmlAspectStringValueTypeAspectProperties _self_, final StringValueType _self) {

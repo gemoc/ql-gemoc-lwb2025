@@ -40,47 +40,51 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
     }
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div>");
-    _builder.newLine();
-    _builder.append("\t\t      ");
-    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-    _builder.append(_htmlLabel, "\t\t      ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t      ");
-    _builder.append("<select id=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" name=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" onchange=\"onChange()\">");
-    _builder.newLineIfNotEmpty();
-    {
-      EList<EnumerationLiteral> _enumerationLiterals = _self.getEnumerationLiterals();
-      for(final EnumerationLiteral lit : _enumerationLiterals) {
-        _builder.append("\t\t      ");
-        _builder.append("<option value=\"");
-        String _name = lit.getName();
-        _builder.append(_name, "\t\t      ");
-        _builder.append("\" ");
-        {
-          boolean _equals = lit.getName().equals(value);
-          if (_equals) {
-            _builder.append(" selected");
+    if (readonly) {
+      return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
+    } else {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("<div>");
+      _builder.newLine();
+      _builder.append("\t\t\t      ");
+      String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+      _builder.append(_htmlLabel, "\t\t\t      ");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t\t      ");
+      _builder.append("<select id=\"");
+      _builder.append(id, "\t\t\t      ");
+      _builder.append("\" name=\"");
+      _builder.append(id, "\t\t\t      ");
+      _builder.append("\" onchange=\"onChange()\">");
+      _builder.newLineIfNotEmpty();
+      {
+        EList<EnumerationLiteral> _enumerationLiterals = _self.getEnumerationLiterals();
+        for(final EnumerationLiteral lit : _enumerationLiterals) {
+          _builder.append("\t\t\t      ");
+          _builder.append("<option value=\"");
+          String _name = lit.getName();
+          _builder.append(_name, "\t\t\t      ");
+          _builder.append("\" ");
+          {
+            boolean _equals = lit.getName().equals(value);
+            if (_equals) {
+              _builder.append(" selected");
+            }
           }
+          _builder.append(">");
+          String _name_1 = lit.getName();
+          _builder.append(_name_1, "\t\t\t      ");
+          _builder.append("</option>");
+          _builder.newLineIfNotEmpty();
         }
-        _builder.append(">");
-        String _name_1 = lit.getName();
-        _builder.append(_name_1, "\t\t      ");
-        _builder.append("</option>");
-        _builder.newLineIfNotEmpty();
       }
+      _builder.append("\t\t\t      ");
+      _builder.append("</select>");
+      _builder.newLine();
+      _builder.append("\t\t\t    ");
+      _builder.append("</div>");
+      return _builder.toString();
     }
-    _builder.append("\t\t      ");
-    _builder.append("</select>");
-    _builder.newLine();
-    _builder.append("\t\t    ");
-    _builder.append("</div>");
-    return _builder.toString();
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self) {

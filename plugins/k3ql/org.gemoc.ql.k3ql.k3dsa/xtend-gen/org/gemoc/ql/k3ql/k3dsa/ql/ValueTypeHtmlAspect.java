@@ -64,6 +64,16 @@ public class ValueTypeHtmlAspect {
     return (java.lang.String)result;
   }
 
+  public static String htmlReadonlyField(final ValueType _self, final String id, final String label, final String value, final QuestionStyle qStyle) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspectValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspectValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# String htmlReadonlyField(String,String,String,QuestionStyle)
+    if (_self instanceof org.gemoc.ql.model.ql.ValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspect._privk3_htmlReadonlyField(_self_, (org.gemoc.ql.model.ql.ValueType)_self,id,label,value,qStyle);
+    };
+    return (java.lang.String)result;
+  }
+
   public static TypeStyle createDefaultTypeStyle(final ValueType _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspectValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.ValueTypeHtmlAspectValueTypeAspectContext.getSelf(_self);
     Object result = null;
@@ -145,6 +155,22 @@ public class ValueTypeHtmlAspect {
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+
+  protected static String _privk3_htmlReadonlyField(final ValueTypeHtmlAspectValueTypeAspectProperties _self_, final ValueType _self, final String id, final String label, final String value, final QuestionStyle qStyle) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<div>");
+    _builder.newLine();
+    _builder.append("\t\t      ");
+    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+    _builder.append(_htmlLabel, "\t\t      ");
+    _builder.append(" ");
+    _builder.append(value, "\t\t      ");
+    _builder.append(" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t    ");
+    _builder.append("</div>");
+    return _builder.toString();
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final ValueTypeHtmlAspectValueTypeAspectProperties _self_, final ValueType _self) {

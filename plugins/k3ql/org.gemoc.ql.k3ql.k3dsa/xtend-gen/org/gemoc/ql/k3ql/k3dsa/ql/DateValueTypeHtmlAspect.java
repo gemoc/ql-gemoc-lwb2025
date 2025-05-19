@@ -33,29 +33,31 @@ public class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlField(final DateValueTypeHtmlAspectDateValueTypeAspectProperties _self_, final DateValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div>");
-    _builder.newLine();
-    _builder.append("\t\t      ");
-    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-    _builder.append(_htmlLabel, "\t\t      ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t      ");
-    _builder.append("<input type=\"date\" id=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" name=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\"");
-    {
-      if (readonly) {
-        _builder.append(" readonly");
-      }
+    String value = "";
+    if ((currentValue != null)) {
+      value = ValueAspect.valueToString(currentValue);
     }
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t    ");
-    _builder.append("</div>");
-    return _builder.toString();
+    if (readonly) {
+      return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
+    } else {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("<div>");
+      _builder.newLine();
+      _builder.append("\t\t      ");
+      String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+      _builder.append(_htmlLabel, "\t\t      ");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t      ");
+      _builder.append("<input type=\"date\" id=\"");
+      _builder.append(id, "\t\t      ");
+      _builder.append("\" name=\"");
+      _builder.append(id, "\t\t      ");
+      _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t    ");
+      _builder.append("</div>");
+      return _builder.toString();
+    }
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final DateValueTypeHtmlAspectDateValueTypeAspectProperties _self_, final DateValueType _self) {

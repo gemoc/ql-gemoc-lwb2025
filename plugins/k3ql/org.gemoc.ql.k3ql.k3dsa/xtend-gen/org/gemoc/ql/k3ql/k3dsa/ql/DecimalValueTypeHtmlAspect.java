@@ -37,31 +37,29 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
     }
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-    _builder.append(_htmlLabel, "\t\t\t\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t        ");
-    _builder.append("<input type=\"number\" id=\"");
-    _builder.append(id, "\t\t        ");
-    _builder.append("\" name=\"");
-    _builder.append(id, "\t\t        ");
-    _builder.append("\" min=\"0\" step=\"0.1\" value=\"");
-    _builder.append(value, "\t\t        ");
-    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\"");
-    {
-      if (readonly) {
-        _builder.append(" readonly");
-      }
+    if (readonly) {
+      return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
+    } else {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("<div>");
+      _builder.newLine();
+      _builder.append("\t\t\t\t");
+      String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+      _builder.append(_htmlLabel, "\t\t\t\t");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t        ");
+      _builder.append("<input type=\"number\" id=\"");
+      _builder.append(id, "\t\t        ");
+      _builder.append("\" name=\"");
+      _builder.append(id, "\t\t        ");
+      _builder.append("\" min=\"0\" step=\"0.1\" value=\"");
+      _builder.append(value, "\t\t        ");
+      _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t\t    ");
+      _builder.append("</div>");
+      return _builder.toString();
     }
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t    ");
-    _builder.append("</div>");
-    return _builder.toString();
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self) {

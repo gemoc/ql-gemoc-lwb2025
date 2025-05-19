@@ -158,35 +158,36 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("updateCurrentValueFromUI")) {
 						// only when the readUserInput() function is executed on a QuestionDefinition
 						QuestionDefinition qd = (QuestionDefinition) stepToExecute.getMseoccurrence().getMse().getCaller();
-						
-						Display.getDefault().syncExec(new Runnable() {
-							@Override
-							public void run() {
-								try {
-									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-											.getActivePage();
-									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-									if (viewPart instanceof QLFormBrowserView) {
-										String newValue=((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
-										QLFormBrowserViewAddon.this.applyInModel(rooQLModel, () -> {
-											if(newValue != null ) {
-												if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
-													// same value, do not change it
+						if(qd.getComputedExpression() == null) {
+							Display.getDefault().syncExec(new Runnable() {
+								@Override
+								public void run() {
+									try {
+										IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+												.getActivePage();
+										IViewPart viewPart = page.findView(QLFormBrowserView.ID);
+										if (viewPart instanceof QLFormBrowserView) {
+											String newValue=((QLFormBrowserView) viewPart).getFieldValueAsString(qd.getName());
+											QLFormBrowserViewAddon.this.applyInModel(rooQLModel, () -> {
+												if(newValue != null ) {
+													if(qd.getCurrentValue() != null && (ValueAspect.valueToString(qd.getCurrentValue()).equals(newValue))) {
+														// same value, do not change it
+													} else {
+														Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
+														qd.setCurrentValue(value);
+													}
 												} else {
-													Value value = ValueTypeAspect.createValue(qd.getDataType(), newValue);
-													qd.setCurrentValue(value);
+													Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
 												}
-											} else {
-												Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
-											}
-										});
+											});
+										}
+									} catch (Exception e) {
+										Activator.error(e.getMessage(), e);
 									}
-								} catch (Exception e) {
-									Activator.error(e.getMessage(), e);
 								}
-							}
-
-						});
+	
+							});
+						}
 					}
 				}
 			}

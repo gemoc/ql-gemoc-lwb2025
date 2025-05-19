@@ -109,6 +109,12 @@ class ValueTypeHtmlAspect  {
 		throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
 	}
 	
+	def String htmlReadonlyField(String id, String label, String value, QuestionStyle qStyle) {
+		
+			return '''<div>
+		      «_self.htmlLabel(id, label, qStyle.labelStyle)» «value» 
+		    </div>'''
+	}
 	def TypeStyle createDefaultTypeStyle() {
 		
 		_self.devError('not implemented, please ask language designer to implement createDefaultTypeStyle() for '+_self);
@@ -143,10 +149,14 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
-		return '''<div>
+		if (readonly) {
+			return _self.htmlReadonlyField(id, label, value, qStyle)
+		} else {
+			return '''<div>
 		    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      	<input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
+		      	<input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
+		}
 	}
 	
 	def TypeStyle createDefaultTypeStyle() {
@@ -163,10 +173,14 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
-		return '''<div>
+		if (readonly) {
+			return _self.htmlReadonlyField(id, label, value, qStyle)
+		} else {
+			return '''<div>
 				«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
+		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
+		}
 	}
 	def TypeStyle createDefaultTypeStyle() {
 		val typeStype = QlsFactory.eINSTANCE.createNumericTypeTextFieldStyle;
@@ -181,10 +195,14 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
-		return '''<div>
+		if (readonly) {
+			return _self.htmlReadonlyField(id, label, value, qStyle)
+		} else {
+			return '''<div>
 		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
-		    </div>''';
+		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInput()" onchange="onChange()">
+		    </div>''';   
+		 }
 	}
 	def TypeStyle createDefaultTypeStyle() {
 		val typeStype = QlsFactory.eINSTANCE.createTextTypeStyle;
@@ -196,11 +214,20 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 @Aspect(className=DateValueType)
 class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
-		// TODO set currentValue
-		return '''<div>
+		
+		var String value = ""
+		if(currentValue !== null) {
+			value = currentValue.valueToString
+		}
+		if (readonly) {
+			return _self.htmlReadonlyField(id, label, value, qStyle)
+		} else {
+			// TODO set currentValue
+			return '''<div>
 		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="date" id="«id»" name="«id»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
+		      <input type="date" id="«id»" name="«id»" oninput="onInput()" onchange="onChange()">
 		    </div>''';
+		 }
 	}
 	def TypeStyle createDefaultTypeStyle() {
 		val typeStype = QlsFactory.eINSTANCE.createDateTypeStyle;
@@ -216,14 +243,18 @@ class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
-		return '''<div>
-		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <select id="«id»" name="«id»" onchange="onChange()">
-		      «FOR lit : _self.enumerationLiterals»
-		      	<option value="«lit.name»" «IF lit.name.equals(value)» selected«ENDIF»>«lit.name»</option>
-		       «ENDFOR»
-		      </select>
-		    </div>'''
+		if (readonly) {
+			return _self.htmlReadonlyField(id, label, value, qStyle)
+		} else {
+			return '''<div>
+			      «_self.htmlLabel(id, label,qStyle.labelStyle)»
+			      <select id="«id»" name="«id»" onchange="onChange()">
+			      «FOR lit : _self.enumerationLiterals»
+			      	<option value="«lit.name»" «IF lit.name.equals(value)» selected«ENDIF»>«lit.name»</option>
+			       «ENDFOR»
+			      </select>
+			    </div>'''    
+		}
 	}
 	
 	def TypeStyle createDefaultTypeStyle() {
