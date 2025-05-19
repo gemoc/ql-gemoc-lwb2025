@@ -12,12 +12,12 @@ import org.gemoc.qls.model.qls.TypeStyle;
 @Aspect(className = StringValueType.class)
 @SuppressWarnings("all")
 public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final StringValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  public static String htmlField(final StringValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     final org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspectStringValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspectStringValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle,boolean)
     if (_self instanceof org.gemoc.ql.model.ql.StringValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.StringValueType)_self,id,label,currentValue,qStyle);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.StringValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.StringValueType)_self,id,label,currentValue,qStyle,readonly);
     };
     return (java.lang.String)result;
   }
@@ -32,7 +32,7 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     return (org.gemoc.qls.model.qls.TypeStyle)result;
   }
 
-  protected static String _privk3_htmlField(final StringValueTypeHtmlAspectStringValueTypeAspectProperties _self_, final StringValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  protected static String _privk3_htmlField(final StringValueTypeHtmlAspectStringValueTypeAspectProperties _self_, final StringValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     String value = "";
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
@@ -51,7 +51,13 @@ public class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\"  value=\"");
     _builder.append(value, "\t\t      ");
-    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\"");
+    {
+      if (readonly) {
+        _builder.append(" readonly");
+      }
+    }
+    _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");

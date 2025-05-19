@@ -14,12 +14,12 @@ import org.gemoc.qls.model.qls.TypeStyle;
 @Aspect(className = BooleanValueType.class)
 @SuppressWarnings("all")
 public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  public static String htmlField(final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle,boolean)
     if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self,id,label,currentValue,qStyle);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self,id,label,currentValue,qStyle,readonly);
     };
     return (java.lang.String)result;
   }
@@ -34,7 +34,7 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     return (org.gemoc.qls.model.qls.TypeStyle)result;
   }
 
-  protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     String checked = "";
     if ((currentValue != null)) {
       boolean _isBooleanValue = ((BooleanValue) currentValue).isBooleanValue();
@@ -56,7 +56,13 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t      ");
     _builder.append("\" ");
     _builder.append(checked, "\t\t      ");
-    _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\">");
+    _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
+    {
+      if (readonly) {
+        _builder.append(" readonly");
+      }
+    }
+    _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");

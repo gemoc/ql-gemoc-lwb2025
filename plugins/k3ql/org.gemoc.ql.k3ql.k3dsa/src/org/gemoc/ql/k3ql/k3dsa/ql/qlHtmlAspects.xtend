@@ -72,7 +72,7 @@ class QuestionDefinitionHtmlAspect extends NamedElementAspect {
 			_self.appliedStyle.labelStyle = QlsFactory.eINSTANCE.createLabelStyle
 			_self.appliedStyle.typeStyle = _self.dataType.createDefaultTypeStyle
 		}
-		return _self.dataType.htmlField(_self.name, _self.label, _self.currentValue, _self.appliedStyle);
+		return _self.dataType.htmlField(_self.name, _self.label, _self.currentValue, _self.appliedStyle, _self.computedExpression !== null);
 	}
 	
 	/**
@@ -92,7 +92,7 @@ class QuestionDefinitionHtmlAspect extends NamedElementAspect {
 				_self.appliedStyle.typeStyle = _self.dataType.createDefaultTypeStyle
 			}
 		}
-		return _self.dataType.htmlField(_self.name, _self.label, _self.currentValue, _self.appliedStyle);
+		return _self.dataType.htmlField(_self.name, _self.label, _self.currentValue, _self.appliedStyle, _self.computedExpression !== null);
 	}
 }
 
@@ -103,7 +103,7 @@ class ValueTypeHtmlAspect  {
 		return '''«IF style.bold»<b>«ENDIF»«IF style.italic»<i>«ENDIF»<label for="«id»">«label»</label>«IF style.italic»</i>«ENDIF»«IF style.bold»</b>«ENDIF»'''
 	}
 	
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		
 		_self.devError('not implemented, please ask language designer to implement evaluate() for '+_self);
 		throw new NotImplementedException('not implemented, please implement evaluate() for '+_self);
@@ -118,14 +118,14 @@ class ValueTypeHtmlAspect  {
 
 @Aspect(className=BooleanValueType)
 class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		var String checked = ""
 		if(currentValue !== null) {
 			if((currentValue as BooleanValue).isBooleanValue) checked = "checked";
 		}
 		return '''<div>
 		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="checkbox" id="«id»" name="«id»" «checked» oninput="onInput()" onchange="onChange()">
+		      <input type="checkbox" id="«id»" name="«id»" «checked» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
 		    </div>''';
 	}
 	
@@ -138,14 +138,14 @@ class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=IntegerValueType)
 class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		var String value = ""
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
 		return '''<div>
 		    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      	<input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()">
+		      	<input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
 		    </div>''';
 	}
 	
@@ -158,14 +158,14 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=DecimalValueType)
 class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		var String value = ""
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
 		return '''<div>
 				«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()">
+		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
 		    </div>''';
 	}
 	def TypeStyle createDefaultTypeStyle() {
@@ -176,14 +176,14 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 }
 @Aspect(className=StringValueType)
 class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		var String value = ""
 		if(currentValue !== null) {
 			value = currentValue.valueToString
 		}
 		return '''<div>
 		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInput()" onchange="onChange()">
+		      <input type="text" id="«id»" name="«id»"  value="«value»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
 		    </div>''';
 	}
 	def TypeStyle createDefaultTypeStyle() {
@@ -195,11 +195,11 @@ class StringValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=DateValueType)
 class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		// TODO set currentValue
 		return '''<div>
 		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="date" id="«id»" name="«id»" oninput="onInput()" onchange="onChange()">
+		      <input type="date" id="«id»" name="«id»" oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
 		    </div>''';
 	}
 	def TypeStyle createDefaultTypeStyle() {
@@ -211,7 +211,7 @@ class DateValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
 @Aspect(className=EnumerationValueType)
 class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle){
+	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
 		var String value = ""
 		if(currentValue !== null) {
 			value = currentValue.valueToString

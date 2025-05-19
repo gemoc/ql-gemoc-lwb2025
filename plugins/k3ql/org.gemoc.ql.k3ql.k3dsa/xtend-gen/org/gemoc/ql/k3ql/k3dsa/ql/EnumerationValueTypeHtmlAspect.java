@@ -15,12 +15,12 @@ import org.gemoc.qls.model.qls.TypeStyle;
 @Aspect(className = EnumerationValueType.class)
 @SuppressWarnings("all")
 public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  public static String htmlField(final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle,boolean)
     if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label,currentValue,qStyle);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label,currentValue,qStyle,readonly);
     };
     return (java.lang.String)result;
   }
@@ -35,7 +35,7 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     return (org.gemoc.qls.model.qls.TypeStyle)result;
   }
 
-  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     String value = "";
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);

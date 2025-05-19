@@ -12,12 +12,12 @@ import org.gemoc.qls.model.qls.TypeStyle;
 @Aspect(className = DecimalValueType.class)
 @SuppressWarnings("all")
 public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  public static String htmlField(final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle,boolean)
     if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label,currentValue,qStyle);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label,currentValue,qStyle,readonly);
     };
     return (java.lang.String)result;
   }
@@ -32,7 +32,7 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     return (org.gemoc.qls.model.qls.TypeStyle)result;
   }
 
-  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
+  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
     String value = "";
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
@@ -51,7 +51,13 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append(id, "\t\t        ");
     _builder.append("\" min=\"0\" step=\"0.1\" value=\"");
     _builder.append(value, "\t\t        ");
-    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+    _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\"");
+    {
+      if (readonly) {
+        _builder.append(" readonly");
+      }
+    }
+    _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t    ");
     _builder.append("</div>");

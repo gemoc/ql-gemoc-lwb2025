@@ -5,7 +5,10 @@ import com.google.common.collect.Iterators;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.gemoc.ql.model.ql.Expression;
 import org.gemoc.ql.model.ql.QuestionDefinition;
+import org.gemoc.ql.model.ql.Value;
+import org.gemoc.ql.model.ql.ValueType;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsFactory;
 import org.gemoc.qls.model.qls.QuestionStyle;
@@ -61,7 +64,14 @@ public class QuestionDefinitionHtmlAspect extends NamedElementAspect {
       QuestionStyle _appliedStyle_2 = QuestionDefinitionHtmlAspect.appliedStyle(_self);
       _appliedStyle_2.setTypeStyle(ValueTypeHtmlAspect.createDefaultTypeStyle(_self.getDataType()));
     }
-    return ValueTypeHtmlAspect.htmlField(_self.getDataType(), _self.getName(), _self.getLabel(), _self.getCurrentValue(), QuestionDefinitionHtmlAspect.appliedStyle(_self));
+    ValueType _dataType = _self.getDataType();
+    String _name = _self.getName();
+    String _label = _self.getLabel();
+    Value _currentValue = _self.getCurrentValue();
+    QuestionStyle _appliedStyle_3 = QuestionDefinitionHtmlAspect.appliedStyle(_self);
+    Expression _computedExpression = _self.getComputedExpression();
+    boolean _tripleNotEquals = (_computedExpression != null);
+    return ValueTypeHtmlAspect.htmlField(_dataType, _name, _label, _currentValue, _appliedStyle_3, _tripleNotEquals);
   }
 
   protected static String _privk3_htmlStyledField(final QuestionDefinitionHtmlAspectQuestionDefinitionAspectProperties _self_, final QuestionDefinition _self, final QLSModel qlsModel) {
@@ -83,7 +93,14 @@ public class QuestionDefinitionHtmlAspect extends NamedElementAspect {
         _appliedStyle_2.setTypeStyle(ValueTypeHtmlAspect.createDefaultTypeStyle(_self.getDataType()));
       }
     }
-    return ValueTypeHtmlAspect.htmlField(_self.getDataType(), _self.getName(), _self.getLabel(), _self.getCurrentValue(), QuestionDefinitionHtmlAspect.appliedStyle(_self));
+    ValueType _dataType = _self.getDataType();
+    String _name = _self.getName();
+    String _label = _self.getLabel();
+    Value _currentValue = _self.getCurrentValue();
+    QuestionStyle _appliedStyle_3 = QuestionDefinitionHtmlAspect.appliedStyle(_self);
+    Expression _computedExpression = _self.getComputedExpression();
+    boolean _tripleNotEquals = (_computedExpression != null);
+    return ValueTypeHtmlAspect.htmlField(_dataType, _name, _label, _currentValue, _appliedStyle_3, _tripleNotEquals);
   }
 
   protected static QuestionStyle _privk3_appliedStyle(final QuestionDefinitionHtmlAspectQuestionDefinitionAspectProperties _self_, final QuestionDefinition _self) {
