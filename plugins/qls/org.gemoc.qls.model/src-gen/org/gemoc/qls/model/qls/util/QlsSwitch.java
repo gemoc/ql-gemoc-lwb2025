@@ -150,19 +150,6 @@ public class QlsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case QlsPackage.NUMERIC_SPINNER_STYLE: {
-			NumericSpinnerStyle numericSpinnerStyle = (NumericSpinnerStyle) theEObject;
-			T result = caseNumericSpinnerStyle(numericSpinnerStyle);
-			if (result == null)
-				result = caseNumericTypeSpinnerStyle(numericSpinnerStyle);
-			if (result == null)
-				result = caseNumericTypeStyle(numericSpinnerStyle);
-			if (result == null)
-				result = caseTypeStyle(numericSpinnerStyle);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case QlsPackage.ENUMERATION_TYPE_STYLE: {
 			EnumerationTypeStyle enumerationTypeStyle = (EnumerationTypeStyle) theEObject;
 			T result = caseEnumerationTypeStyle(enumerationTypeStyle);
@@ -333,21 +320,6 @@ public class QlsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTextTypeStyle(TextTypeStyle object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Numeric Spinner Style</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Numeric Spinner Style</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNumericSpinnerStyle(NumericSpinnerStyle object) {
 		return null;
 	}
 

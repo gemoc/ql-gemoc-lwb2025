@@ -42,7 +42,7 @@ import org.gemoc.ql.serializer.QLSemanticSequencer;
 import org.gemoc.qls.model.qls.BooleanTypeStyle;
 import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.LabelStyle;
-import org.gemoc.qls.model.qls.NumericSpinnerStyle;
+import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle;
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
@@ -191,8 +191,8 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 			case QlsPackage.LABEL_STYLE:
 				sequence_LabelStyle(context, (LabelStyle) semanticObject); 
 				return; 
-			case QlsPackage.NUMERIC_SPINNER_STYLE:
-				sequence_NumericTypeSpinnerStyle(context, (NumericSpinnerStyle) semanticObject); 
+			case QlsPackage.NUMERIC_TYPE_SPINNER_STYLE:
+				sequence_NumericTypeSpinnerStyle(context, (NumericTypeSpinnerStyle) semanticObject); 
 				return; 
 			case QlsPackage.NUMERIC_TYPE_TEXT_FIELD_STYLE:
 				sequence_NumericTypeTextFieldStyle(context, (NumericTypeTextFieldStyle) semanticObject); 
@@ -269,15 +269,15 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     TypeStyle returns NumericSpinnerStyle
-	 *     NumericTypeStyle returns NumericSpinnerStyle
-	 *     NumericTypeSpinnerStyle returns NumericSpinnerStyle
+	 *     TypeStyle returns NumericTypeSpinnerStyle
+	 *     NumericTypeStyle returns NumericTypeSpinnerStyle
+	 *     NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle
 	 *
 	 * Constraint:
-	 *     {NumericSpinnerStyle}
+	 *     step=EDouble?
 	 * </pre>
 	 */
-	protected void sequence_NumericTypeSpinnerStyle(ISerializationContext context, NumericSpinnerStyle semanticObject) {
+	protected void sequence_NumericTypeSpinnerStyle(ISerializationContext context, NumericTypeSpinnerStyle semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -290,7 +290,7 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 *     NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle
 	 *
 	 * Constraint:
-	 *     step=EDouble?
+	 *     {NumericTypeTextFieldStyle}
 	 * </pre>
 	 */
 	protected void sequence_NumericTypeTextFieldStyle(ISerializationContext context, NumericTypeTextFieldStyle semanticObject) {

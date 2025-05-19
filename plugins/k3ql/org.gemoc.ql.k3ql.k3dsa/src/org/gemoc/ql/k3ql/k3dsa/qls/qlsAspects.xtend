@@ -12,7 +12,6 @@ import org.gemoc.qls.model.qls.BooleanTypeStyle
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle
 import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle
 import org.gemoc.qls.model.qls.TextTypeStyle
-import org.gemoc.qls.model.qls.NumericSpinnerStyle
 
 import fr.inria.diverse.k3.al.annotationprocessor.Step
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
@@ -30,7 +29,6 @@ import static extension org.gemoc.ql.k3ql.k3dsa.qls.BooleanTypeStyleAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeTextFieldStyleAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeSpinnerStyleAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.TextTypeStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericSpinnerStyleAspect.*
 
 import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
 
@@ -96,10 +94,6 @@ class TextTypeStyleAspect extends TypeStyleAspect {
 
 }
 
-@Aspect(className=NumericSpinnerStyle)
-class NumericSpinnerStyleAspect extends NumericTypeSpinnerStyleAspect {
-
-}
 
 
 

@@ -191,9 +191,6 @@ public class QuestionStyleItemProvider extends ItemProviderAdapter implements IE
 				QlsFactory.eINSTANCE.createTextTypeStyle()));
 
 		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QUESTION_STYLE__TYPE_STYLE,
-				QlsFactory.eINSTANCE.createNumericSpinnerStyle()));
-
-		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QUESTION_STYLE__TYPE_STYLE,
 				QlsFactory.eINSTANCE.createEnumerationTypeStyle()));
 
 		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QUESTION_STYLE__TYPE_STYLE,

@@ -112,15 +112,6 @@ public interface QlsFactory extends EFactory {
 	TextTypeStyle createTextTypeStyle();
 
 	/**
-	 * Returns a new object of class '<em>Numeric Spinner Style</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Numeric Spinner Style</em>'.
-	 * @generated
-	 */
-	NumericSpinnerStyle createNumericSpinnerStyle();
-
-	/**
 	 * Returns a new object of class '<em>Enumeration Type Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

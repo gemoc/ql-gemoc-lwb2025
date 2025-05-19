@@ -52,13 +52,12 @@ BooleanTypeStyle returns BooleanTypeStyle:
 NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle:
 	{NumericTypeTextFieldStyle} 
 	'NumericStyle' 'textField'
-	'{'
-		('step' step=EDouble)?
-	'}';
+	'{'	'}';
 
 NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
-	{NumericSpinnerStyle}
-	'NumericStyle' 'spinner' '{' '}'
+	{NumericTypeSpinnerStyle}
+	'NumericStyle' 'spinner' '{'
+		('step' step=EDouble)?'}'
 	;
 
 TextTypeStyle returns TextTypeStyle:

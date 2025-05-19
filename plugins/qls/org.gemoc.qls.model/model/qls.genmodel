@@ -42,14 +42,13 @@
     <genClasses ecoreClass="qls.ecore#//BooleanTypeStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//BooleanTypeStyle/booleanStyleKind"/>
     </genClasses>
-    <genClasses ecoreClass="qls.ecore#//NumericTypeTextFieldStyle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//NumericTypeTextFieldStyle/step"/>
+    <genClasses ecoreClass="qls.ecore#//NumericTypeTextFieldStyle"/>
+    <genClasses ecoreClass="qls.ecore#//NumericTypeSpinnerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//NumericTypeSpinnerStyle/step"/>
     </genClasses>
-    <genClasses ecoreClass="qls.ecore#//NumericTypeSpinnerStyle"/>
     <genClasses ecoreClass="qls.ecore#//TextTypeStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//TextTypeStyle/multiline"/>
     </genClasses>
-    <genClasses ecoreClass="qls.ecore#//NumericSpinnerStyle"/>
     <genClasses ecoreClass="qls.ecore#//EnumerationTypeStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//EnumerationTypeStyle/enumerationStyleKing"/>
     </genClasses>

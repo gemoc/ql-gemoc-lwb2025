@@ -60,8 +60,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLabelStyleAccess().getGroup(), "rule__LabelStyle__Group__0");
 			builder.put(grammarAccess.getBooleanTypeStyleAccess().getGroup(), "rule__BooleanTypeStyle__Group__0");
 			builder.put(grammarAccess.getNumericTypeTextFieldStyleAccess().getGroup(), "rule__NumericTypeTextFieldStyle__Group__0");
-			builder.put(grammarAccess.getNumericTypeTextFieldStyleAccess().getGroup_4(), "rule__NumericTypeTextFieldStyle__Group_4__0");
 			builder.put(grammarAccess.getNumericTypeSpinnerStyleAccess().getGroup(), "rule__NumericTypeSpinnerStyle__Group__0");
+			builder.put(grammarAccess.getNumericTypeSpinnerStyleAccess().getGroup_4(), "rule__NumericTypeSpinnerStyle__Group_4__0");
 			builder.put(grammarAccess.getTextTypeStyleAccess().getGroup(), "rule__TextTypeStyle__Group__0");
 			builder.put(grammarAccess.getQLModelAccess().getGroup(), "rule__QLModel__Group__0");
 			builder.put(grammarAccess.getQLModelAccess().getGroup_3(), "rule__QLModel__Group_3__0");
@@ -144,7 +144,7 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLabelStyleAccess().getItalicAssignment_2(), "rule__LabelStyle__ItalicAssignment_2");
 			builder.put(grammarAccess.getLabelStyleAccess().getBoldAssignment_3(), "rule__LabelStyle__BoldAssignment_3");
 			builder.put(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKindAssignment_2(), "rule__BooleanTypeStyle__BooleanStyleKindAssignment_2");
-			builder.put(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepAssignment_4_1(), "rule__NumericTypeTextFieldStyle__StepAssignment_4_1");
+			builder.put(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepAssignment_4_1(), "rule__NumericTypeSpinnerStyle__StepAssignment_4_1");
 			builder.put(grammarAccess.getTextTypeStyleAccess().getMultilineAssignment_3(), "rule__TextTypeStyle__MultilineAssignment_3");
 			builder.put(grammarAccess.getQLModelAccess().getNameAssignment_2(), "rule__QLModel__NameAssignment_2");
 			builder.put(grammarAccess.getQLModelAccess().getCanSubmitAssignment_3_1(), "rule__QLModel__CanSubmitAssignment_3_1");

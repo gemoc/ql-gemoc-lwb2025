@@ -4,6 +4,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.IntegerValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle;
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
 import org.gemoc.qls.model.qls.QlsFactory;
 import org.gemoc.qls.model.qls.QuestionStyle;
@@ -40,23 +41,49 @@ public class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if (readonly) {
       return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
     } else {
+      boolean _matched = false;
+      if (qStyle instanceof NumericTypeSpinnerStyle) {
+        _matched=true;
+        final double step = ((NumericTypeSpinnerStyle) qStyle).getStep();
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("<div>");
+        _builder.newLine();
+        _builder.append("\t\t\t\t    \t");
+        String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+        _builder.append(_htmlLabel, "\t\t\t\t    \t");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t      \t");
+        _builder.append("<input type=\"number\" id=\"");
+        _builder.append(id, "\t\t\t\t      \t");
+        _builder.append("\" name=\"");
+        _builder.append(id, "\t\t\t\t      \t");
+        _builder.append("\" step=\"");
+        _builder.append(step, "\t\t\t\t      \t");
+        _builder.append("\" value=\"");
+        _builder.append(value, "\t\t\t\t      \t");
+        _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t    ");
+        _builder.append("</div>");
+        return _builder.toString();
+      }
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("<div>");
       _builder.newLine();
-      _builder.append("\t\t    \t");
+      _builder.append("\t\t\t\t    \t");
       String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-      _builder.append(_htmlLabel, "\t\t    \t");
+      _builder.append(_htmlLabel, "\t\t\t\t    \t");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t\t      \t");
-      _builder.append("<input type=\"number\" id=\"");
-      _builder.append(id, "\t\t      \t");
+      _builder.append("\t\t\t\t      \t");
+      _builder.append("<input type=\"text\" id=\"");
+      _builder.append(id, "\t\t\t\t      \t");
       _builder.append("\" name=\"");
-      _builder.append(id, "\t\t      \t");
-      _builder.append("\" min=\"0\" step=\"1\" value=\"");
-      _builder.append(value, "\t\t      \t");
+      _builder.append(id, "\t\t\t\t      \t");
+      _builder.append("\" value=\"");
+      _builder.append(value, "\t\t\t\t      \t");
       _builder.append("\" oninput=\"onInput()\" onchange=\"onChange()\">");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t\t    ");
+      _builder.append("\t\t\t\t    ");
       _builder.append("</div>");
       return _builder.toString();
     }
@@ -64,7 +91,6 @@ public class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final IntegerValueTypeHtmlAspectIntegerValueTypeAspectProperties _self_, final IntegerValueType _self) {
     final NumericTypeTextFieldStyle typeStype = QlsFactory.eINSTANCE.createNumericTypeTextFieldStyle();
-    typeStype.setStep(0);
     return typeStype;
   }
 }

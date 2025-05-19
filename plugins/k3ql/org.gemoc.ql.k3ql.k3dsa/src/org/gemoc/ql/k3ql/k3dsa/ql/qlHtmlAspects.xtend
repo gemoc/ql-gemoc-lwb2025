@@ -26,6 +26,8 @@ import org.gemoc.qls.model.qls.TypeStyle
 import org.gemoc.qls.model.qls.LabelStyle
 import org.gemoc.qls.model.qls.BooleanStyleKind
 import org.gemoc.qls.model.qls.EnumerationStyleKind
+import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle
+import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle
 
 /* Aspects used by HTML Form presentation */
 
@@ -152,16 +154,26 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			return '''<div>
-		    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      	<input type="number" id="«id»" name="«id»" min="0" step="1" value="«value»" oninput="onInput()" onchange="onChange()">
-		    </div>''';
+			switch qStyle {
+				NumericTypeSpinnerStyle: {
+					val step =( qStyle as NumericTypeSpinnerStyle).step;
+					return '''<div>
+				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
+				      	<input type="number" id="«id»" name="«id»" step="«step»" value="«value»" oninput="onInput()" onchange="onChange()">
+				    </div>'''
+				    
+				   }
+		    	default :
+					return '''<div>
+				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
+				      	<input type="text" id="«id»" name="«id»" value="«value»" oninput="onInput()" onchange="onChange()">
+				    </div>'''
+		    }
 		}
 	}
 	
 	def TypeStyle createDefaultTypeStyle() {
 		val typeStype = QlsFactory.eINSTANCE.createNumericTypeTextFieldStyle;
-		typeStype.step = 0
 		return typeStype;
 	}
 }
@@ -176,15 +188,25 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			return '''<div>
-				«_self.htmlLabel(id, label,qStyle.labelStyle)»
-		        <input type="number" id="«id»" name="«id»" min="0" step="0.1" value="«value»" oninput="onInput()" onchange="onChange()">
-		    </div>''';
+			switch qStyle {
+				NumericTypeSpinnerStyle: {
+					val step =( qStyle as NumericTypeSpinnerStyle).step;
+					return '''<div>
+				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
+				      	<input type="number" id="«id»" name="«id»" step="«step»" value="«value»" oninput="onInput()" onchange="onChange()">
+				    </div>'''
+				    
+				   }
+		    	default :
+					return '''<div>
+				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
+				      	<input type="text" id="«id»" name="«id»" value="«value»" oninput="onInput()" onchange="onChange()">
+				    </div>'''
+		    }    
 		}
 	}
 	def TypeStyle createDefaultTypeStyle() {
 		val typeStype = QlsFactory.eINSTANCE.createNumericTypeTextFieldStyle;
-		typeStype.step = 0
 		return typeStype;
 	}
 }

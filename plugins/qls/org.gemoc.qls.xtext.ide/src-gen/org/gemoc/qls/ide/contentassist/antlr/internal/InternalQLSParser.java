@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalQLSParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'='", "'and'", "'or'", "'true'", "'false'", "'E'", "'e'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'-'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'BooleanStyle'", "'NumericStyle'", "'textField'", "'step'", "'spinner'", "'TextStyle'", "'('", "')'", "'if'", "'then'", "'endif'", "'else'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'question'", "':'", "'currentValue'", "';'", "'italic'", "'bold'", "'multiline'", "'mandatory'", "'isDisplayed'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'='", "'and'", "'or'", "'true'", "'false'", "'E'", "'e'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'-'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'BooleanStyle'", "'NumericStyle'", "'textField'", "'spinner'", "'step'", "'TextStyle'", "'('", "')'", "'if'", "'then'", "'endif'", "'else'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'question'", "':'", "'currentValue'", "';'", "'italic'", "'bold'", "'multiline'", "'mandatory'", "'isDisplayed'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -4500,7 +4500,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             if ( (LA2_0==52) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==55) ) {
+                if ( (LA2_1==54) ) {
                     alt2=2;
                 }
                 else if ( (LA2_1==53) ) {
@@ -9496,7 +9496,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:2971:1: ( rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4 )
             // InternalQLS.g:2972:2: rule__NumericTypeTextFieldStyle__Group__3__Impl rule__NumericTypeTextFieldStyle__Group__4
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_10);
             rule__NumericTypeTextFieldStyle__Group__3__Impl();
 
             state._fsp--;
@@ -9562,22 +9562,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__4"
-    // InternalQLS.g:2994:1: rule__NumericTypeTextFieldStyle__Group__4 : rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 ;
+    // InternalQLS.g:2994:1: rule__NumericTypeTextFieldStyle__Group__4 : rule__NumericTypeTextFieldStyle__Group__4__Impl ;
     public final void rule__NumericTypeTextFieldStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:2998:1: ( rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5 )
-            // InternalQLS.g:2999:2: rule__NumericTypeTextFieldStyle__Group__4__Impl rule__NumericTypeTextFieldStyle__Group__5
+            // InternalQLS.g:2998:1: ( rule__NumericTypeTextFieldStyle__Group__4__Impl )
+            // InternalQLS.g:2999:2: rule__NumericTypeTextFieldStyle__Group__4__Impl
             {
-            pushFollow(FOLLOW_19);
-            rule__NumericTypeTextFieldStyle__Group__4__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__NumericTypeTextFieldStyle__Group__5();
+            rule__NumericTypeTextFieldStyle__Group__4__Impl();
 
             state._fsp--;
 
@@ -9600,42 +9595,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__4__Impl"
-    // InternalQLS.g:3006:1: rule__NumericTypeTextFieldStyle__Group__4__Impl : ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) ;
+    // InternalQLS.g:3005:1: rule__NumericTypeTextFieldStyle__Group__4__Impl : ( '}' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3010:1: ( ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? ) )
-            // InternalQLS.g:3011:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
+            // InternalQLS.g:3009:1: ( ( '}' ) )
+            // InternalQLS.g:3010:1: ( '}' )
             {
-            // InternalQLS.g:3011:1: ( ( rule__NumericTypeTextFieldStyle__Group_4__0 )? )
-            // InternalQLS.g:3012:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
+            // InternalQLS.g:3010:1: ( '}' )
+            // InternalQLS.g:3011:2: '}'
             {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getGroup_4()); 
-            // InternalQLS.g:3013:2: ( rule__NumericTypeTextFieldStyle__Group_4__0 )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
-
-            if ( (LA27_0==54) ) {
-                alt27=1;
-            }
-            switch (alt27) {
-                case 1 :
-                    // InternalQLS.g:3013:3: rule__NumericTypeTextFieldStyle__Group_4__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__NumericTypeTextFieldStyle__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getGroup_4()); 
+             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_4()); 
+            match(input,46,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -9657,240 +9631,15 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__NumericTypeTextFieldStyle__Group__4__Impl"
 
 
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__5"
-    // InternalQLS.g:3021:1: rule__NumericTypeTextFieldStyle__Group__5 : rule__NumericTypeTextFieldStyle__Group__5__Impl ;
-    public final void rule__NumericTypeTextFieldStyle__Group__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3025:1: ( rule__NumericTypeTextFieldStyle__Group__5__Impl )
-            // InternalQLS.g:3026:2: rule__NumericTypeTextFieldStyle__Group__5__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__NumericTypeTextFieldStyle__Group__5__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group__5"
-
-
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__5__Impl"
-    // InternalQLS.g:3032:1: rule__NumericTypeTextFieldStyle__Group__5__Impl : ( '}' ) ;
-    public final void rule__NumericTypeTextFieldStyle__Group__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3036:1: ( ( '}' ) )
-            // InternalQLS.g:3037:1: ( '}' )
-            {
-            // InternalQLS.g:3037:1: ( '}' )
-            // InternalQLS.g:3038:2: '}'
-            {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,46,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group__5__Impl"
-
-
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__0"
-    // InternalQLS.g:3048:1: rule__NumericTypeTextFieldStyle__Group_4__0 : rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 ;
-    public final void rule__NumericTypeTextFieldStyle__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3052:1: ( rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1 )
-            // InternalQLS.g:3053:2: rule__NumericTypeTextFieldStyle__Group_4__0__Impl rule__NumericTypeTextFieldStyle__Group_4__1
-            {
-            pushFollow(FOLLOW_20);
-            rule__NumericTypeTextFieldStyle__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__NumericTypeTextFieldStyle__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group_4__0"
-
-
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__0__Impl"
-    // InternalQLS.g:3060:1: rule__NumericTypeTextFieldStyle__Group_4__0__Impl : ( 'step' ) ;
-    public final void rule__NumericTypeTextFieldStyle__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3064:1: ( ( 'step' ) )
-            // InternalQLS.g:3065:1: ( 'step' )
-            {
-            // InternalQLS.g:3065:1: ( 'step' )
-            // InternalQLS.g:3066:2: 'step'
-            {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepKeyword_4_0()); 
-            match(input,54,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__1"
-    // InternalQLS.g:3075:1: rule__NumericTypeTextFieldStyle__Group_4__1 : rule__NumericTypeTextFieldStyle__Group_4__1__Impl ;
-    public final void rule__NumericTypeTextFieldStyle__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3079:1: ( rule__NumericTypeTextFieldStyle__Group_4__1__Impl )
-            // InternalQLS.g:3080:2: rule__NumericTypeTextFieldStyle__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__NumericTypeTextFieldStyle__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group_4__1"
-
-
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__Group_4__1__Impl"
-    // InternalQLS.g:3086:1: rule__NumericTypeTextFieldStyle__Group_4__1__Impl : ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) ;
-    public final void rule__NumericTypeTextFieldStyle__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalQLS.g:3090:1: ( ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) ) )
-            // InternalQLS.g:3091:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
-            {
-            // InternalQLS.g:3091:1: ( ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 ) )
-            // InternalQLS.g:3092:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
-            {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepAssignment_4_1()); 
-            // InternalQLS.g:3093:2: ( rule__NumericTypeTextFieldStyle__StepAssignment_4_1 )
-            // InternalQLS.g:3093:3: rule__NumericTypeTextFieldStyle__StepAssignment_4_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__NumericTypeTextFieldStyle__StepAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepAssignment_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__0"
-    // InternalQLS.g:3102:1: rule__NumericTypeSpinnerStyle__Group__0 : rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 ;
+    // InternalQLS.g:3021:1: rule__NumericTypeSpinnerStyle__Group__0 : rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 ;
     public final void rule__NumericTypeSpinnerStyle__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3106:1: ( rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 )
-            // InternalQLS.g:3107:2: rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1
+            // InternalQLS.g:3025:1: ( rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1 )
+            // InternalQLS.g:3026:2: rule__NumericTypeSpinnerStyle__Group__0__Impl rule__NumericTypeSpinnerStyle__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__NumericTypeSpinnerStyle__Group__0__Impl();
@@ -9921,25 +9670,25 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__0__Impl"
-    // InternalQLS.g:3114:1: rule__NumericTypeSpinnerStyle__Group__0__Impl : ( () ) ;
+    // InternalQLS.g:3033:1: rule__NumericTypeSpinnerStyle__Group__0__Impl : ( () ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3118:1: ( ( () ) )
-            // InternalQLS.g:3119:1: ( () )
+            // InternalQLS.g:3037:1: ( ( () ) )
+            // InternalQLS.g:3038:1: ( () )
             {
-            // InternalQLS.g:3119:1: ( () )
-            // InternalQLS.g:3120:2: ()
+            // InternalQLS.g:3038:1: ( () )
+            // InternalQLS.g:3039:2: ()
             {
-             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericSpinnerStyleAction_0()); 
-            // InternalQLS.g:3121:2: ()
-            // InternalQLS.g:3121:3: 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericTypeSpinnerStyleAction_0()); 
+            // InternalQLS.g:3040:2: ()
+            // InternalQLS.g:3040:3: 
             {
             }
 
-             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericSpinnerStyleAction_0()); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericTypeSpinnerStyleAction_0()); 
 
             }
 
@@ -9958,16 +9707,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__1"
-    // InternalQLS.g:3129:1: rule__NumericTypeSpinnerStyle__Group__1 : rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 ;
+    // InternalQLS.g:3048:1: rule__NumericTypeSpinnerStyle__Group__1 : rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 ;
     public final void rule__NumericTypeSpinnerStyle__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3133:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
-            // InternalQLS.g:3134:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
+            // InternalQLS.g:3052:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
+            // InternalQLS.g:3053:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_19);
             rule__NumericTypeSpinnerStyle__Group__1__Impl();
 
             state._fsp--;
@@ -9996,17 +9745,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__1__Impl"
-    // InternalQLS.g:3141:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'NumericStyle' ) ;
+    // InternalQLS.g:3060:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'NumericStyle' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3145:1: ( ( 'NumericStyle' ) )
-            // InternalQLS.g:3146:1: ( 'NumericStyle' )
+            // InternalQLS.g:3064:1: ( ( 'NumericStyle' ) )
+            // InternalQLS.g:3065:1: ( 'NumericStyle' )
             {
-            // InternalQLS.g:3146:1: ( 'NumericStyle' )
-            // InternalQLS.g:3147:2: 'NumericStyle'
+            // InternalQLS.g:3065:1: ( 'NumericStyle' )
+            // InternalQLS.g:3066:2: 'NumericStyle'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1()); 
             match(input,52,FOLLOW_2); 
@@ -10033,14 +9782,14 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__2"
-    // InternalQLS.g:3156:1: rule__NumericTypeSpinnerStyle__Group__2 : rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 ;
+    // InternalQLS.g:3075:1: rule__NumericTypeSpinnerStyle__Group__2 : rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 ;
     public final void rule__NumericTypeSpinnerStyle__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3160:1: ( rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 )
-            // InternalQLS.g:3161:2: rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3
+            // InternalQLS.g:3079:1: ( rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 )
+            // InternalQLS.g:3080:2: rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__NumericTypeSpinnerStyle__Group__2__Impl();
@@ -10071,20 +9820,20 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__2__Impl"
-    // InternalQLS.g:3168:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( 'spinner' ) ;
+    // InternalQLS.g:3087:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( 'spinner' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3172:1: ( ( 'spinner' ) )
-            // InternalQLS.g:3173:1: ( 'spinner' )
+            // InternalQLS.g:3091:1: ( ( 'spinner' ) )
+            // InternalQLS.g:3092:1: ( 'spinner' )
             {
-            // InternalQLS.g:3173:1: ( 'spinner' )
-            // InternalQLS.g:3174:2: 'spinner'
+            // InternalQLS.g:3092:1: ( 'spinner' )
+            // InternalQLS.g:3093:2: 'spinner'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2()); 
-            match(input,55,FOLLOW_2); 
+            match(input,54,FOLLOW_2); 
              after(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2()); 
 
             }
@@ -10108,16 +9857,16 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__3"
-    // InternalQLS.g:3183:1: rule__NumericTypeSpinnerStyle__Group__3 : rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 ;
+    // InternalQLS.g:3102:1: rule__NumericTypeSpinnerStyle__Group__3 : rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 ;
     public final void rule__NumericTypeSpinnerStyle__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3187:1: ( rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 )
-            // InternalQLS.g:3188:2: rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4
+            // InternalQLS.g:3106:1: ( rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4 )
+            // InternalQLS.g:3107:2: rule__NumericTypeSpinnerStyle__Group__3__Impl rule__NumericTypeSpinnerStyle__Group__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_20);
             rule__NumericTypeSpinnerStyle__Group__3__Impl();
 
             state._fsp--;
@@ -10146,17 +9895,17 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__3__Impl"
-    // InternalQLS.g:3195:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:3114:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( '{' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3199:1: ( ( '{' ) )
-            // InternalQLS.g:3200:1: ( '{' )
+            // InternalQLS.g:3118:1: ( ( '{' ) )
+            // InternalQLS.g:3119:1: ( '{' )
             {
-            // InternalQLS.g:3200:1: ( '{' )
-            // InternalQLS.g:3201:2: '{'
+            // InternalQLS.g:3119:1: ( '{' )
+            // InternalQLS.g:3120:2: '{'
             {
              before(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,44,FOLLOW_2); 
@@ -10183,17 +9932,22 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__4"
-    // InternalQLS.g:3210:1: rule__NumericTypeSpinnerStyle__Group__4 : rule__NumericTypeSpinnerStyle__Group__4__Impl ;
+    // InternalQLS.g:3129:1: rule__NumericTypeSpinnerStyle__Group__4 : rule__NumericTypeSpinnerStyle__Group__4__Impl rule__NumericTypeSpinnerStyle__Group__5 ;
     public final void rule__NumericTypeSpinnerStyle__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3214:1: ( rule__NumericTypeSpinnerStyle__Group__4__Impl )
-            // InternalQLS.g:3215:2: rule__NumericTypeSpinnerStyle__Group__4__Impl
+            // InternalQLS.g:3133:1: ( rule__NumericTypeSpinnerStyle__Group__4__Impl rule__NumericTypeSpinnerStyle__Group__5 )
+            // InternalQLS.g:3134:2: rule__NumericTypeSpinnerStyle__Group__4__Impl rule__NumericTypeSpinnerStyle__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_20);
             rule__NumericTypeSpinnerStyle__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NumericTypeSpinnerStyle__Group__5();
 
             state._fsp--;
 
@@ -10216,21 +9970,42 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__4__Impl"
-    // InternalQLS.g:3221:1: rule__NumericTypeSpinnerStyle__Group__4__Impl : ( '}' ) ;
+    // InternalQLS.g:3141:1: rule__NumericTypeSpinnerStyle__Group__4__Impl : ( ( rule__NumericTypeSpinnerStyle__Group_4__0 )? ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3225:1: ( ( '}' ) )
-            // InternalQLS.g:3226:1: ( '}' )
+            // InternalQLS.g:3145:1: ( ( ( rule__NumericTypeSpinnerStyle__Group_4__0 )? ) )
+            // InternalQLS.g:3146:1: ( ( rule__NumericTypeSpinnerStyle__Group_4__0 )? )
             {
-            // InternalQLS.g:3226:1: ( '}' )
-            // InternalQLS.g:3227:2: '}'
+            // InternalQLS.g:3146:1: ( ( rule__NumericTypeSpinnerStyle__Group_4__0 )? )
+            // InternalQLS.g:3147:2: ( rule__NumericTypeSpinnerStyle__Group_4__0 )?
             {
-             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,46,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_4()); 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getGroup_4()); 
+            // InternalQLS.g:3148:2: ( rule__NumericTypeSpinnerStyle__Group_4__0 )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
+
+            if ( (LA27_0==55) ) {
+                alt27=1;
+            }
+            switch (alt27) {
+                case 1 :
+                    // InternalQLS.g:3148:3: rule__NumericTypeSpinnerStyle__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__NumericTypeSpinnerStyle__Group_4__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getGroup_4()); 
 
             }
 
@@ -10250,6 +10025,231 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__NumericTypeSpinnerStyle__Group__4__Impl"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__5"
+    // InternalQLS.g:3156:1: rule__NumericTypeSpinnerStyle__Group__5 : rule__NumericTypeSpinnerStyle__Group__5__Impl ;
+    public final void rule__NumericTypeSpinnerStyle__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3160:1: ( rule__NumericTypeSpinnerStyle__Group__5__Impl )
+            // InternalQLS.g:3161:2: rule__NumericTypeSpinnerStyle__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NumericTypeSpinnerStyle__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group__5"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__5__Impl"
+    // InternalQLS.g:3167:1: rule__NumericTypeSpinnerStyle__Group__5__Impl : ( '}' ) ;
+    public final void rule__NumericTypeSpinnerStyle__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3171:1: ( ( '}' ) )
+            // InternalQLS.g:3172:1: ( '}' )
+            {
+            // InternalQLS.g:3172:1: ( '}' )
+            // InternalQLS.g:3173:2: '}'
+            {
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_5()); 
+            match(input,46,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group__5__Impl"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group_4__0"
+    // InternalQLS.g:3183:1: rule__NumericTypeSpinnerStyle__Group_4__0 : rule__NumericTypeSpinnerStyle__Group_4__0__Impl rule__NumericTypeSpinnerStyle__Group_4__1 ;
+    public final void rule__NumericTypeSpinnerStyle__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3187:1: ( rule__NumericTypeSpinnerStyle__Group_4__0__Impl rule__NumericTypeSpinnerStyle__Group_4__1 )
+            // InternalQLS.g:3188:2: rule__NumericTypeSpinnerStyle__Group_4__0__Impl rule__NumericTypeSpinnerStyle__Group_4__1
+            {
+            pushFollow(FOLLOW_21);
+            rule__NumericTypeSpinnerStyle__Group_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NumericTypeSpinnerStyle__Group_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group_4__0"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group_4__0__Impl"
+    // InternalQLS.g:3195:1: rule__NumericTypeSpinnerStyle__Group_4__0__Impl : ( 'step' ) ;
+    public final void rule__NumericTypeSpinnerStyle__Group_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3199:1: ( ( 'step' ) )
+            // InternalQLS.g:3200:1: ( 'step' )
+            {
+            // InternalQLS.g:3200:1: ( 'step' )
+            // InternalQLS.g:3201:2: 'step'
+            {
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepKeyword_4_0()); 
+            match(input,55,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepKeyword_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group_4__0__Impl"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group_4__1"
+    // InternalQLS.g:3210:1: rule__NumericTypeSpinnerStyle__Group_4__1 : rule__NumericTypeSpinnerStyle__Group_4__1__Impl ;
+    public final void rule__NumericTypeSpinnerStyle__Group_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3214:1: ( rule__NumericTypeSpinnerStyle__Group_4__1__Impl )
+            // InternalQLS.g:3215:2: rule__NumericTypeSpinnerStyle__Group_4__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NumericTypeSpinnerStyle__Group_4__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group_4__1"
+
+
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__Group_4__1__Impl"
+    // InternalQLS.g:3221:1: rule__NumericTypeSpinnerStyle__Group_4__1__Impl : ( ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 ) ) ;
+    public final void rule__NumericTypeSpinnerStyle__Group_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalQLS.g:3225:1: ( ( ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 ) ) )
+            // InternalQLS.g:3226:1: ( ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 ) )
+            {
+            // InternalQLS.g:3226:1: ( ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 ) )
+            // InternalQLS.g:3227:2: ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 )
+            {
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepAssignment_4_1()); 
+            // InternalQLS.g:3228:2: ( rule__NumericTypeSpinnerStyle__StepAssignment_4_1 )
+            // InternalQLS.g:3228:3: rule__NumericTypeSpinnerStyle__StepAssignment_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__NumericTypeSpinnerStyle__StepAssignment_4_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepAssignment_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__Group_4__1__Impl"
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__0"
@@ -23298,7 +23298,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:7615:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
             // InternalQLS.g:7616:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__EDouble__Group__0__Impl();
 
             state._fsp--;
@@ -26026,9 +26026,9 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__BooleanTypeStyle__BooleanStyleKindAssignment_2"
 
 
-    // $ANTLR start "rule__NumericTypeTextFieldStyle__StepAssignment_4_1"
-    // InternalQLS.g:8533:1: rule__NumericTypeTextFieldStyle__StepAssignment_4_1 : ( ruleEDouble ) ;
-    public final void rule__NumericTypeTextFieldStyle__StepAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__NumericTypeSpinnerStyle__StepAssignment_4_1"
+    // InternalQLS.g:8533:1: rule__NumericTypeSpinnerStyle__StepAssignment_4_1 : ( ruleEDouble ) ;
+    public final void rule__NumericTypeSpinnerStyle__StepAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -26039,13 +26039,13 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:8538:2: ( ruleEDouble )
             // InternalQLS.g:8539:3: ruleEDouble
             {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepEDoubleParserRuleCall_4_1_0()); 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepEDoubleParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEDouble();
 
             state._fsp--;
 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepEDoubleParserRuleCall_4_1_0()); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepEDoubleParserRuleCall_4_1_0()); 
 
             }
 
@@ -26064,7 +26064,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__NumericTypeTextFieldStyle__StepAssignment_4_1"
+    // $ANTLR end "rule__NumericTypeSpinnerStyle__StepAssignment_4_1"
 
 
     // $ANTLR start "rule__TextTypeStyle__MultilineAssignment_3"
@@ -28523,9 +28523,9 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000380000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0010000000000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0040400000000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000010L,0x0000000000002000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0080400000000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000010L,0x0000000000002000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000400000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000C00000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0A00000C00018070L,0x0000000000002000L});

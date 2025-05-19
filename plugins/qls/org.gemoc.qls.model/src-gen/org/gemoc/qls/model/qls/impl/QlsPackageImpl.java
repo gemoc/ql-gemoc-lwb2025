@@ -19,7 +19,6 @@ import org.gemoc.qls.model.qls.EnumerationStyleKind;
 import org.gemoc.qls.model.qls.EnumerationTypeStyle;
 import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.LabelStyle;
-import org.gemoc.qls.model.qls.NumericSpinnerStyle;
 import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle;
 import org.gemoc.qls.model.qls.NumericTypeStyle;
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
@@ -106,13 +105,6 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	private EClass textTypeStyleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass numericSpinnerStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -395,8 +387,8 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNumericTypeTextFieldStyle_Step() {
-		return (EAttribute) numericTypeTextFieldStyleEClass.getEStructuralFeatures().get(0);
+	public EClass getNumericTypeSpinnerStyle() {
+		return numericTypeSpinnerStyleEClass;
 	}
 
 	/**
@@ -405,8 +397,8 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNumericTypeSpinnerStyle() {
-		return numericTypeSpinnerStyleEClass;
+	public EAttribute getNumericTypeSpinnerStyle_Step() {
+		return (EAttribute) numericTypeSpinnerStyleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -427,16 +419,6 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	@Override
 	public EAttribute getTextTypeStyle_Multiline() {
 		return (EAttribute) textTypeStyleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getNumericSpinnerStyle() {
-		return numericSpinnerStyleEClass;
 	}
 
 	/**
@@ -544,14 +526,12 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		createEAttribute(booleanTypeStyleEClass, BOOLEAN_TYPE_STYLE__BOOLEAN_STYLE_KIND);
 
 		numericTypeTextFieldStyleEClass = createEClass(NUMERIC_TYPE_TEXT_FIELD_STYLE);
-		createEAttribute(numericTypeTextFieldStyleEClass, NUMERIC_TYPE_TEXT_FIELD_STYLE__STEP);
 
 		numericTypeSpinnerStyleEClass = createEClass(NUMERIC_TYPE_SPINNER_STYLE);
+		createEAttribute(numericTypeSpinnerStyleEClass, NUMERIC_TYPE_SPINNER_STYLE__STEP);
 
 		textTypeStyleEClass = createEClass(TEXT_TYPE_STYLE);
 		createEAttribute(textTypeStyleEClass, TEXT_TYPE_STYLE__MULTILINE);
-
-		numericSpinnerStyleEClass = createEClass(NUMERIC_SPINNER_STYLE);
 
 		enumerationTypeStyleEClass = createEClass(ENUMERATION_TYPE_STYLE);
 		createEAttribute(enumerationTypeStyleEClass, ENUMERATION_TYPE_STYLE__ENUMERATION_STYLE_KING);
@@ -600,7 +580,6 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		numericTypeTextFieldStyleEClass.getESuperTypes().add(this.getNumericTypeStyle());
 		numericTypeSpinnerStyleEClass.getESuperTypes().add(this.getNumericTypeStyle());
 		textTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
-		numericSpinnerStyleEClass.getESuperTypes().add(this.getNumericTypeSpinnerStyle());
 		enumerationTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 		dateTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 
@@ -654,21 +633,18 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 
 		initEClass(numericTypeTextFieldStyleEClass, NumericTypeTextFieldStyle.class, "NumericTypeTextFieldStyle",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumericTypeTextFieldStyle_Step(), ecorePackage.getEDouble(), "step", null, 0, 1,
-				NumericTypeTextFieldStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(numericTypeSpinnerStyleEClass, NumericTypeSpinnerStyle.class, "NumericTypeSpinnerStyle",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumericTypeSpinnerStyle_Step(), ecorePackage.getEDouble(), "step", null, 0, 1,
+				NumericTypeSpinnerStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textTypeStyleEClass, TextTypeStyle.class, "TextTypeStyle", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTextTypeStyle_Multiline(), ecorePackage.getEBoolean(), "multiline", null, 0, 1,
 				TextTypeStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(numericSpinnerStyleEClass, NumericSpinnerStyle.class, "NumericSpinnerStyle", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(enumerationTypeStyleEClass, EnumerationTypeStyle.class, "EnumerationTypeStyle", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

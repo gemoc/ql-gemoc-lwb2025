@@ -303,29 +303,6 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.NumericSpinnerStyle} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NumericSpinnerStyleItemProvider numericSpinnerStyleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.NumericSpinnerStyle}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNumericSpinnerStyleAdapter() {
-		if (numericSpinnerStyleItemProvider == null) {
-			numericSpinnerStyleItemProvider = new NumericSpinnerStyleItemProvider(this);
-		}
-
-		return numericSpinnerStyleItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.EnumerationTypeStyle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,8 +473,6 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 			numericTypeSpinnerStyleItemProvider.dispose();
 		if (textTypeStyleItemProvider != null)
 			textTypeStyleItemProvider.dispose();
-		if (numericSpinnerStyleItemProvider != null)
-			numericSpinnerStyleItemProvider.dispose();
 		if (enumerationTypeStyleItemProvider != null)
 			enumerationTypeStyleItemProvider.dispose();
 		if (dateTypeStyleItemProvider != null)

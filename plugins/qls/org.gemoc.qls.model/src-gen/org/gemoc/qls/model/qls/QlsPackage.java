@@ -354,22 +354,13 @@ public interface QlsPackage extends EPackage {
 	int NUMERIC_TYPE_TEXT_FIELD_STYLE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_TYPE_TEXT_FIELD_STYLE__STEP = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Numeric Type Text Field Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE_TEXT_FIELD_STYLE_FEATURE_COUNT = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 1;
+	int NUMERIC_TYPE_TEXT_FIELD_STYLE_FEATURE_COUNT = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Numeric Type Text Field Style</em>' class.
@@ -391,13 +382,22 @@ public interface QlsPackage extends EPackage {
 	int NUMERIC_TYPE_SPINNER_STYLE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Step</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_TYPE_SPINNER_STYLE__STEP = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Numeric Type Spinner Style</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_TYPE_SPINNER_STYLE_FEATURE_COUNT = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 0;
+	int NUMERIC_TYPE_SPINNER_STYLE_FEATURE_COUNT = NUMERIC_TYPE_STYLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Numeric Type Spinner Style</em>' class.
@@ -446,34 +446,6 @@ public interface QlsPackage extends EPackage {
 	int TEXT_TYPE_STYLE_OPERATION_COUNT = TYPE_STYLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.NumericSpinnerStyleImpl <em>Numeric Spinner Style</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.gemoc.qls.model.qls.impl.NumericSpinnerStyleImpl
-	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getNumericSpinnerStyle()
-	 * @generated
-	 */
-	int NUMERIC_SPINNER_STYLE = 10;
-
-	/**
-	 * The number of structural features of the '<em>Numeric Spinner Style</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_SPINNER_STYLE_FEATURE_COUNT = NUMERIC_TYPE_SPINNER_STYLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Numeric Spinner Style</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_SPINNER_STYLE_OPERATION_COUNT = NUMERIC_TYPE_SPINNER_STYLE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl <em>Enumeration Type Style</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,7 +453,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationTypeStyle()
 	 * @generated
 	 */
-	int ENUMERATION_TYPE_STYLE = 11;
+	int ENUMERATION_TYPE_STYLE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Enumeration Style King</b></em>' attribute.
@@ -518,7 +490,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getDateTypeStyle()
 	 * @generated
 	 */
-	int DATE_TYPE_STYLE = 12;
+	int DATE_TYPE_STYLE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Date Type Style</em>' class.
@@ -546,7 +518,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getBooleanStyleKind()
 	 * @generated
 	 */
-	int BOOLEAN_STYLE_KIND = 13;
+	int BOOLEAN_STYLE_KIND = 12;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.qls.model.qls.EnumerationStyleKind <em>Enumeration Style Kind</em>}' enum.
@@ -556,7 +528,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationStyleKind()
 	 * @generated
 	 */
-	int ENUMERATION_STYLE_KIND = 14;
+	int ENUMERATION_STYLE_KIND = 13;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.QLSModel <em>QLS Model</em>}'.
@@ -749,17 +721,6 @@ public interface QlsPackage extends EPackage {
 	EClass getNumericTypeTextFieldStyle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.gemoc.qls.model.qls.NumericTypeTextFieldStyle#getStep <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Step</em>'.
-	 * @see org.gemoc.qls.model.qls.NumericTypeTextFieldStyle#getStep()
-	 * @see #getNumericTypeTextFieldStyle()
-	 * @generated
-	 */
-	EAttribute getNumericTypeTextFieldStyle_Step();
-
-	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.NumericTypeSpinnerStyle <em>Numeric Type Spinner Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -768,6 +729,17 @@ public interface QlsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNumericTypeSpinnerStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.qls.model.qls.NumericTypeSpinnerStyle#getStep <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Step</em>'.
+	 * @see org.gemoc.qls.model.qls.NumericTypeSpinnerStyle#getStep()
+	 * @see #getNumericTypeSpinnerStyle()
+	 * @generated
+	 */
+	EAttribute getNumericTypeSpinnerStyle_Step();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.TextTypeStyle <em>Text Type Style</em>}'.
@@ -789,16 +761,6 @@ public interface QlsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTextTypeStyle_Multiline();
-
-	/**
-	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.NumericSpinnerStyle <em>Numeric Spinner Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Numeric Spinner Style</em>'.
-	 * @see org.gemoc.qls.model.qls.NumericSpinnerStyle
-	 * @generated
-	 */
-	EClass getNumericSpinnerStyle();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.EnumerationTypeStyle <em>Enumeration Type Style</em>}'.
@@ -1035,14 +997,6 @@ public interface QlsPackage extends EPackage {
 		EClass NUMERIC_TYPE_TEXT_FIELD_STYLE = eINSTANCE.getNumericTypeTextFieldStyle();
 
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NUMERIC_TYPE_TEXT_FIELD_STYLE__STEP = eINSTANCE.getNumericTypeTextFieldStyle_Step();
-
-		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.NumericTypeSpinnerStyleImpl <em>Numeric Type Spinner Style</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1051,6 +1005,14 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NUMERIC_TYPE_SPINNER_STYLE = eINSTANCE.getNumericTypeSpinnerStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Step</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_TYPE_SPINNER_STYLE__STEP = eINSTANCE.getNumericTypeSpinnerStyle_Step();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.TextTypeStyleImpl <em>Text Type Style</em>}' class.
@@ -1069,16 +1031,6 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TEXT_TYPE_STYLE__MULTILINE = eINSTANCE.getTextTypeStyle_Multiline();
-
-		/**
-		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.NumericSpinnerStyleImpl <em>Numeric Spinner Style</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.gemoc.qls.model.qls.impl.NumericSpinnerStyleImpl
-		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getNumericSpinnerStyle()
-		 * @generated
-		 */
-		EClass NUMERIC_SPINNER_STYLE = eINSTANCE.getNumericSpinnerStyle();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl <em>Enumeration Type Style</em>}' class.

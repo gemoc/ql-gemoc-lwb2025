@@ -347,25 +347,17 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cNumericStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cTextFieldKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cStepKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cStepAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cStepEDoubleParserRuleCall_4_1_0 = (RuleCall)cStepAssignment_4_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle:
 		//    {NumericTypeTextFieldStyle}
 		//    'NumericStyle' 'textField'
-		//    '{'
-		//        ('step' step=EDouble)?
-		//    '}';
+		//    '{'    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{NumericTypeTextFieldStyle}
 		//'NumericStyle' 'textField'
-		//'{'
-		//    ('step' step=EDouble)?
-		//'}'
+		//'{'    '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{NumericTypeTextFieldStyle}
@@ -376,6 +368,46 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'textField'
 		public Keyword getTextFieldKeyword_2() { return cTextFieldKeyword_2; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class NumericTypeSpinnerStyleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.NumericTypeSpinnerStyle");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cNumericTypeSpinnerStyleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cNumericStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cSpinnerKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cStepKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cStepAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cStepEDoubleParserRuleCall_4_1_0 = (RuleCall)cStepAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
+		//    {NumericTypeSpinnerStyle}
+		//    'NumericStyle' 'spinner' '{'
+		//        ('step' step=EDouble)?'}'
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{NumericTypeSpinnerStyle}
+		//'NumericStyle' 'spinner' '{'
+		//    ('step' step=EDouble)?'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{NumericTypeSpinnerStyle}
+		public Action getNumericTypeSpinnerStyleAction_0() { return cNumericTypeSpinnerStyleAction_0; }
+		
+		//'NumericStyle'
+		public Keyword getNumericStyleKeyword_1() { return cNumericStyleKeyword_1; }
+		
+		//'spinner'
+		public Keyword getSpinnerKeyword_2() { return cSpinnerKeyword_2; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -394,40 +426,6 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class NumericTypeSpinnerStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.NumericTypeSpinnerStyle");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cNumericSpinnerStyleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cNumericStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cSpinnerKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
-		//    {NumericSpinnerStyle}
-		//    'NumericStyle' 'spinner' '{' '}'
-		//    ;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{NumericSpinnerStyle}
-		//'NumericStyle' 'spinner' '{' '}'
-		public Group getGroup() { return cGroup; }
-		
-		//{NumericSpinnerStyle}
-		public Action getNumericSpinnerStyleAction_0() { return cNumericSpinnerStyleAction_0; }
-		
-		//'NumericStyle'
-		public Keyword getNumericStyleKeyword_1() { return cNumericStyleKeyword_1; }
-		
-		//'spinner'
-		public Keyword getSpinnerKeyword_2() { return cSpinnerKeyword_2; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class TextTypeStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.TextTypeStyle");
@@ -668,9 +666,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle:
 	//    {NumericTypeTextFieldStyle}
 	//    'NumericStyle' 'textField'
-	//    '{'
-	//        ('step' step=EDouble)?
-	//    '}';
+	//    '{'    '}';
 	public NumericTypeTextFieldStyleElements getNumericTypeTextFieldStyleAccess() {
 		return pNumericTypeTextFieldStyle;
 	}
@@ -680,8 +676,9 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
-	//    {NumericSpinnerStyle}
-	//    'NumericStyle' 'spinner' '{' '}'
+	//    {NumericTypeSpinnerStyle}
+	//    'NumericStyle' 'spinner' '{'
+	//        ('step' step=EDouble)?'}'
 	//    ;
 	public NumericTypeSpinnerStyleElements getNumericTypeSpinnerStyleAccess() {
 		return pNumericTypeSpinnerStyle;

@@ -538,34 +538,9 @@ ruleNumericTypeTextFieldStyle returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3());
 		}
-		(
-			otherlv_4='step'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getNumericTypeTextFieldStyleAccess().getStepKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getNumericTypeTextFieldStyleAccess().getStepEDoubleParserRuleCall_4_1_0());
-					}
-					lv_step_5_0=ruleEDouble
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getNumericTypeTextFieldStyleRule());
-						}
-						set(
-							$current,
-							"step",
-							lv_step_5_0,
-							"org.gemoc.ql.QL.EDouble");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_6='}'
+		otherlv_4='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getNumericTypeTextFieldStyleAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -589,7 +564,7 @@ ruleNumericTypeSpinnerStyle returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericSpinnerStyleAction_0(),
+					grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericTypeSpinnerStyleAction_0(),
 					$current);
 			}
 		)
@@ -605,9 +580,34 @@ ruleNumericTypeSpinnerStyle returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_4='}'
+		(
+			otherlv_4='step'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getNumericTypeSpinnerStyleAccess().getStepKeyword_4_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getNumericTypeSpinnerStyleAccess().getStepEDoubleParserRuleCall_4_1_0());
+					}
+					lv_step_5_0=ruleEDouble
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getNumericTypeSpinnerStyleRule());
+						}
+						set(
+							$current,
+							"step",
+							lv_step_5_0,
+							"org.gemoc.ql.QL.EDouble");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getNumericTypeSpinnerStyleAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;

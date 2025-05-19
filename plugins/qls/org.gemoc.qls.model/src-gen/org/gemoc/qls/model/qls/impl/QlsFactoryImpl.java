@@ -76,8 +76,6 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 			return createNumericTypeSpinnerStyle();
 		case QlsPackage.TEXT_TYPE_STYLE:
 			return createTextTypeStyle();
-		case QlsPackage.NUMERIC_SPINNER_STYLE:
-			return createNumericSpinnerStyle();
 		case QlsPackage.ENUMERATION_TYPE_STYLE:
 			return createEnumerationTypeStyle();
 		case QlsPackage.DATE_TYPE_STYLE:
@@ -229,17 +227,6 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 	public TextTypeStyle createTextTypeStyle() {
 		TextTypeStyleImpl textTypeStyle = new TextTypeStyleImpl();
 		return textTypeStyle;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NumericSpinnerStyle createNumericSpinnerStyle() {
-		NumericSpinnerStyleImpl numericSpinnerStyle = new NumericSpinnerStyleImpl();
-		return numericSpinnerStyle;
 	}
 
 	/**
