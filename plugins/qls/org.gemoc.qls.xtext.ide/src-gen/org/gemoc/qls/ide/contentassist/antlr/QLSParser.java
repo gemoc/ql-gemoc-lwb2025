@@ -31,6 +31,7 @@ public class QLSParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, QLSGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getSectionContentAccess().getAlternatives(), "rule__SectionContent__Alternatives");
 			builder.put(grammarAccess.getTypeStyleAccess().getAlternatives(), "rule__TypeStyle__Alternatives");
 			builder.put(grammarAccess.getNumericTypeStyleAccess().getAlternatives(), "rule__NumericTypeStyle__Alternatives");
 			builder.put(grammarAccess.getQLModelAccess().getAlternatives_5(), "rule__QLModel__Alternatives_5");
@@ -54,6 +55,8 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComparisionOperatorKindAccess().getAlternatives(), "rule__ComparisionOperatorKind__Alternatives");
 			builder.put(grammarAccess.getQLSModelAccess().getGroup(), "rule__QLSModel__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+			builder.put(grammarAccess.getSectionAccess().getGroup(), "rule__Section__Group__0");
+			builder.put(grammarAccess.getQuestionReferenceAccess().getGroup(), "rule__QuestionReference__Group__0");
 			builder.put(grammarAccess.getQuestionStyleAccess().getGroup(), "rule__QuestionStyle__Group__0");
 			builder.put(grammarAccess.getQuestionStyleAccess().getGroup_3(), "rule__QuestionStyle__Group_3__0");
 			builder.put(grammarAccess.getQuestionStyleAccess().getGroup_4(), "rule__QuestionStyle__Group_4__0");
@@ -137,7 +140,11 @@ public class QLSParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQLSModelAccess().getImportsAssignment_1(), "rule__QLSModel__ImportsAssignment_1");
 			builder.put(grammarAccess.getQLSModelAccess().getStyledQLModelAssignment_3(), "rule__QLSModel__StyledQLModelAssignment_3");
 			builder.put(grammarAccess.getQLSModelAccess().getQuestionStylesAssignment_7(), "rule__QLSModel__QuestionStylesAssignment_7");
+			builder.put(grammarAccess.getQLSModelAccess().getSectionsAssignment_9(), "rule__QLSModel__SectionsAssignment_9");
 			builder.put(grammarAccess.getImportAccess().getImportURIAssignment_2(), "rule__Import__ImportURIAssignment_2");
+			builder.put(grammarAccess.getSectionAccess().getTitleAssignment_2(), "rule__Section__TitleAssignment_2");
+			builder.put(grammarAccess.getSectionAccess().getSectionContentsAssignment_4(), "rule__Section__SectionContentsAssignment_4");
+			builder.put(grammarAccess.getQuestionReferenceAccess().getQuestionAssignment_1(), "rule__QuestionReference__QuestionAssignment_1");
 			builder.put(grammarAccess.getQuestionStyleAccess().getStyledQuestionAssignment_1(), "rule__QuestionStyle__StyledQuestionAssignment_1");
 			builder.put(grammarAccess.getQuestionStyleAccess().getLabelStyleAssignment_3_1(), "rule__QuestionStyle__LabelStyleAssignment_3_1");
 			builder.put(grammarAccess.getQuestionStyleAccess().getTypeStyleAssignment_4_1(), "rule__QuestionStyle__TypeStyleAssignment_4_1");

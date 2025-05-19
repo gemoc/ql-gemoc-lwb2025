@@ -7,40 +7,31 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsFactory;
 import org.gemoc.qls.model.qls.QlsPackage;
+import org.gemoc.qls.model.qls.Section;
 
 /**
- * This is the item provider adapter for a {@link org.gemoc.qls.model.qls.QLSModel} object.
+ * This is the item provider adapter for a {@link org.gemoc.qls.model.qls.Section} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class QLSModelItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SectionItemProvider extends SectionContentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public QLSModelItemProvider(AdapterFactory adapterFactory) {
+	public SectionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,24 +46,25 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addStyledQLModelPropertyDescriptor(object);
+			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Styled QL Model feature.
+	 * This adds a property descriptor for the Title feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStyledQLModelPropertyDescriptor(Object object) {
+	protected void addTitlePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_QLSModel_styledQLModel_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_QLSModel_styledQLModel_feature",
-								"_UI_QLSModel_type"),
-						QlsPackage.Literals.QLS_MODEL__STYLED_QL_MODEL, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Section_title_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Section_title_feature",
+								"_UI_Section_type"),
+						QlsPackage.Literals.SECTION__TITLE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -87,9 +79,7 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QlsPackage.Literals.QLS_MODEL__IMPORTS);
-			childrenFeatures.add(QlsPackage.Literals.QLS_MODEL__QUESTION_STYLES);
-			childrenFeatures.add(QlsPackage.Literals.QLS_MODEL__SECTIONS);
+			childrenFeatures.add(QlsPackage.Literals.SECTION__SECTION_CONTENTS);
 		}
 		return childrenFeatures;
 	}
@@ -108,14 +98,14 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This returns QLSModel.gif.
+	 * This returns Section.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/QLSModel"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Section"));
 	}
 
 	/**
@@ -136,7 +126,9 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_QLSModel_type");
+		String label = ((Section) object).getTitle();
+		return label == null || label.length() == 0 ? getString("_UI_Section_type")
+				: getString("_UI_Section_type") + " " + label;
 	}
 
 	/**
@@ -150,10 +142,11 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QLSModel.class)) {
-		case QlsPackage.QLS_MODEL__IMPORTS:
-		case QlsPackage.QLS_MODEL__QUESTION_STYLES:
-		case QlsPackage.QLS_MODEL__SECTIONS:
+		switch (notification.getFeatureID(Section.class)) {
+		case QlsPackage.SECTION__TITLE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case QlsPackage.SECTION__SECTION_CONTENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -171,25 +164,11 @@ public class QLSModelItemProvider extends ItemProviderAdapter implements IEditin
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(QlsPackage.Literals.QLS_MODEL__IMPORTS, QlsFactory.eINSTANCE.createImport()));
+		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.SECTION__SECTION_CONTENTS,
+				QlsFactory.eINSTANCE.createSection()));
 
-		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.QLS_MODEL__QUESTION_STYLES,
-				QlsFactory.eINSTANCE.createQuestionStyle()));
-
-		newChildDescriptors.add(
-				createChildParameter(QlsPackage.Literals.QLS_MODEL__SECTIONS, QlsFactory.eINSTANCE.createSection()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return QlsEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(QlsPackage.Literals.SECTION__SECTION_CONTENTS,
+				QlsFactory.eINSTANCE.createQuestionReference()));
 	}
 
 }

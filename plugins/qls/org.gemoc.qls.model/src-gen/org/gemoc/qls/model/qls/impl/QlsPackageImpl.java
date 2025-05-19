@@ -25,7 +25,10 @@ import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsFactory;
 import org.gemoc.qls.model.qls.QlsPackage;
+import org.gemoc.qls.model.qls.QuestionReference;
 import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.Section;
+import org.gemoc.qls.model.qls.SectionContent;
 import org.gemoc.qls.model.qls.TextTypeStyle;
 import org.gemoc.qls.model.qls.TypeStyle;
 
@@ -119,6 +122,27 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	private EClass dateTypeStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sectionContentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass questionReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -239,6 +263,16 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	@Override
 	public EReference getQLSModel_StyledQLModel() {
 		return (EReference) qlsModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQLSModel_Sections() {
+		return (EReference) qlsModelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -457,6 +491,66 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getSection() {
+		return sectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSection_Title() {
+		return (EAttribute) sectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSection_SectionContents() {
+		return (EReference) sectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSectionContent() {
+		return sectionContentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQuestionReference() {
+		return questionReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQuestionReference_Question() {
+		return (EReference) questionReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBooleanStyleKind() {
 		return booleanStyleKindEEnum;
 	}
@@ -505,6 +599,7 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		createEReference(qlsModelEClass, QLS_MODEL__IMPORTS);
 		createEReference(qlsModelEClass, QLS_MODEL__QUESTION_STYLES);
 		createEReference(qlsModelEClass, QLS_MODEL__STYLED_QL_MODEL);
+		createEReference(qlsModelEClass, QLS_MODEL__SECTIONS);
 
 		importEClass = createEClass(IMPORT);
 		createEAttribute(importEClass, IMPORT__IMPORT_URI);
@@ -537,6 +632,15 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		createEAttribute(enumerationTypeStyleEClass, ENUMERATION_TYPE_STYLE__ENUMERATION_STYLE_KING);
 
 		dateTypeStyleEClass = createEClass(DATE_TYPE_STYLE);
+
+		sectionEClass = createEClass(SECTION);
+		createEAttribute(sectionEClass, SECTION__TITLE);
+		createEReference(sectionEClass, SECTION__SECTION_CONTENTS);
+
+		sectionContentEClass = createEClass(SECTION_CONTENT);
+
+		questionReferenceEClass = createEClass(QUESTION_REFERENCE);
+		createEReference(questionReferenceEClass, QUESTION_REFERENCE__QUESTION);
 
 		// Create enums
 		booleanStyleKindEEnum = createEEnum(BOOLEAN_STYLE_KIND);
@@ -582,6 +686,8 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		textTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 		enumerationTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 		dateTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
+		sectionEClass.getESuperTypes().add(this.getSectionContent());
+		questionReferenceEClass.getESuperTypes().add(this.getSectionContent());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlsModelEClass, QLSModel.class, "QLSModel", !IS_ABSTRACT, !IS_INTERFACE,
@@ -595,6 +701,9 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		initEReference(getQLSModel_StyledQLModel(), theQlPackage.getQLModel(), null, "styledQLModel", null, 1, 1,
 				QLSModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getQLSModel_Sections(), this.getSection(), null, "sections", null, 0, -1, QLSModel.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class,
@@ -654,6 +763,22 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 
 		initEClass(dateTypeStyleEClass, DateTypeStyle.class, "DateTypeStyle", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSection_Title(), ecorePackage.getEString(), "title", null, 0, 1, Section.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSection_SectionContents(), this.getSectionContent(), null, "sectionContents", null, 0, -1,
+				Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sectionContentEClass, SectionContent.class, "SectionContent", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(questionReferenceEClass, QuestionReference.class, "QuestionReference", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQuestionReference_Question(), theQlPackage.getQuestionDefinition(), null, "question", null, 1,
+				1, QuestionReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(booleanStyleKindEEnum, BooleanStyleKind.class, "BooleanStyleKind");

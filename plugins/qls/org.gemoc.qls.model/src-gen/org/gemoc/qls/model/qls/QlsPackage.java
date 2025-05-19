@@ -95,13 +95,22 @@ public interface QlsPackage extends EPackage {
 	int QLS_MODEL__STYLED_QL_MODEL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QLS_MODEL__SECTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>QLS Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QLS_MODEL_FEATURE_COUNT = 3;
+	int QLS_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>QLS Model</em>' class.
@@ -511,6 +520,117 @@ public interface QlsPackage extends EPackage {
 	int DATE_TYPE_STYLE_OPERATION_COUNT = TYPE_STYLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.SectionContentImpl <em>Section Content</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.impl.SectionContentImpl
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getSectionContent()
+	 * @generated
+	 */
+	int SECTION_CONTENT = 13;
+
+	/**
+	 * The number of structural features of the '<em>Section Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_CONTENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Section Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_CONTENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.SectionImpl <em>Section</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.impl.SectionImpl
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getSection()
+	 * @generated
+	 */
+	int SECTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__TITLE = SECTION_CONTENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Section Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__SECTION_CONTENTS = SECTION_CONTENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_FEATURE_COUNT = SECTION_CONTENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Section</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION_OPERATION_COUNT = SECTION_CONTENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.QuestionReferenceImpl <em>Question Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.impl.QuestionReferenceImpl
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getQuestionReference()
+	 * @generated
+	 */
+	int QUESTION_REFERENCE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Question</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_REFERENCE__QUESTION = SECTION_CONTENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Question Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_REFERENCE_FEATURE_COUNT = SECTION_CONTENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Question Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QUESTION_REFERENCE_OPERATION_COUNT = SECTION_CONTENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -518,7 +638,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getBooleanStyleKind()
 	 * @generated
 	 */
-	int BOOLEAN_STYLE_KIND = 12;
+	int BOOLEAN_STYLE_KIND = 15;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.qls.model.qls.EnumerationStyleKind <em>Enumeration Style Kind</em>}' enum.
@@ -528,7 +648,7 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationStyleKind()
 	 * @generated
 	 */
-	int ENUMERATION_STYLE_KIND = 13;
+	int ENUMERATION_STYLE_KIND = 16;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.QLSModel <em>QLS Model</em>}'.
@@ -572,6 +692,17 @@ public interface QlsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getQLSModel_StyledQLModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.qls.model.qls.QLSModel#getSections <em>Sections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sections</em>'.
+	 * @see org.gemoc.qls.model.qls.QLSModel#getSections()
+	 * @see #getQLSModel()
+	 * @generated
+	 */
+	EReference getQLSModel_Sections();
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.Import <em>Import</em>}'.
@@ -794,6 +925,69 @@ public interface QlsPackage extends EPackage {
 	EClass getDateTypeStyle();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Section</em>'.
+	 * @see org.gemoc.qls.model.qls.Section
+	 * @generated
+	 */
+	EClass getSection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.qls.model.qls.Section#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see org.gemoc.qls.model.qls.Section#getTitle()
+	 * @see #getSection()
+	 * @generated
+	 */
+	EAttribute getSection_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.gemoc.qls.model.qls.Section#getSectionContents <em>Section Contents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Section Contents</em>'.
+	 * @see org.gemoc.qls.model.qls.Section#getSectionContents()
+	 * @see #getSection()
+	 * @generated
+	 */
+	EReference getSection_SectionContents();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.SectionContent <em>Section Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Section Content</em>'.
+	 * @see org.gemoc.qls.model.qls.SectionContent
+	 * @generated
+	 */
+	EClass getSectionContent();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.QuestionReference <em>Question Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Question Reference</em>'.
+	 * @see org.gemoc.qls.model.qls.QuestionReference
+	 * @generated
+	 */
+	EClass getQuestionReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.qls.model.qls.QuestionReference#getQuestion <em>Question</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Question</em>'.
+	 * @see org.gemoc.qls.model.qls.QuestionReference#getQuestion()
+	 * @see #getQuestionReference()
+	 * @generated
+	 */
+	EReference getQuestionReference_Question();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -869,6 +1063,14 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QLS_MODEL__STYLED_QL_MODEL = eINSTANCE.getQLSModel_StyledQLModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Sections</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QLS_MODEL__SECTIONS = eINSTANCE.getQLSModel_Sections();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.ImportImpl <em>Import</em>}' class.
@@ -1060,6 +1262,60 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DATE_TYPE_STYLE = eINSTANCE.getDateTypeStyle();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.SectionImpl <em>Section</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.impl.SectionImpl
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getSection()
+		 * @generated
+		 */
+		EClass SECTION = eINSTANCE.getSection();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECTION__TITLE = eINSTANCE.getSection_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Section Contents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SECTION__SECTION_CONTENTS = eINSTANCE.getSection_SectionContents();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.SectionContentImpl <em>Section Content</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.impl.SectionContentImpl
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getSectionContent()
+		 * @generated
+		 */
+		EClass SECTION_CONTENT = eINSTANCE.getSectionContent();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.QuestionReferenceImpl <em>Question Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.impl.QuestionReferenceImpl
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getQuestionReference()
+		 * @generated
+		 */
+		EClass QUESTION_REFERENCE = eINSTANCE.getQuestionReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Question</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QUESTION_REFERENCE__QUESTION = eINSTANCE.getQuestionReference_Question();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}' enum.

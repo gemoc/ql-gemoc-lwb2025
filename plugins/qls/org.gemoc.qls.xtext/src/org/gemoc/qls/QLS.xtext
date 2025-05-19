@@ -12,6 +12,7 @@ QLSModel returns QLSModel:
 	styledQLModel=[ql::QLModel|QualifiedName]
 	'{'
 		'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}' 
+		(sections+=Section)*
 	'}';
 
 Import returns Import:
@@ -19,6 +20,23 @@ Import returns Import:
 	'import' importURI=STRING 
 	;
 	
+Section returns Section:
+	{Section}
+	'section' title=EString '{'
+		(sectionContents+=SectionContent)*
+		 
+	'}'
+;
+
+SectionContent returns SectionContent:
+	Section | QuestionReference
+;
+
+QuestionReference returns QuestionReference:
+	{QuestionReference}
+	question=[ql::QuestionDefinition|QualifiedName]
+;
+
 TypeStyle returns TypeStyle:
 	BooleanTypeStyle | NumericTypeStyle | TextTypeStyle;
 

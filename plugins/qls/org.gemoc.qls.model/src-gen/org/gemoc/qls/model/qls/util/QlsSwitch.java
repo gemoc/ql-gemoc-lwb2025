@@ -168,6 +168,31 @@ public class QlsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case QlsPackage.SECTION: {
+			Section section = (Section) theEObject;
+			T result = caseSection(section);
+			if (result == null)
+				result = caseSectionContent(section);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlsPackage.SECTION_CONTENT: {
+			SectionContent sectionContent = (SectionContent) theEObject;
+			T result = caseSectionContent(sectionContent);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlsPackage.QUESTION_REFERENCE: {
+			QuestionReference questionReference = (QuestionReference) theEObject;
+			T result = caseQuestionReference(questionReference);
+			if (result == null)
+				result = caseSectionContent(questionReference);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -350,6 +375,51 @@ public class QlsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDateTypeStyle(DateTypeStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSection(Section object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Section Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Section Content</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSectionContent(SectionContent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Question Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Question Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQuestionReference(QuestionReference object) {
 		return null;
 	}
 

@@ -158,9 +158,28 @@ ruleQLSModel returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_8());
 		}
-		otherlv_9='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getQLSModelAccess().getSectionsSectionParserRuleCall_9_0());
+				}
+				lv_sections_9_0=ruleSection
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getQLSModelRule());
+					}
+					add(
+						$current,
+						"sections",
+						lv_sections_9_0,
+						"org.gemoc.qls.QLS.Section");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getQLSModelAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;
@@ -207,6 +226,160 @@ ruleImport returns [EObject current=null]
 						"importURI",
 						lv_importURI_2_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSection
+entryRuleSection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSectionRule()); }
+	iv_ruleSection=ruleSection
+	{ $current=$iv_ruleSection.current; }
+	EOF;
+
+// Rule Section
+ruleSection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSectionAccess().getSectionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='section'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSectionAccess().getSectionKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSectionAccess().getTitleEStringParserRuleCall_2_0());
+				}
+				lv_title_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSectionRule());
+					}
+					set(
+						$current,
+						"title",
+						lv_title_2_0,
+						"org.gemoc.ql.QL.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSectionAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSectionAccess().getSectionContentsSectionContentParserRuleCall_4_0());
+				}
+				lv_sectionContents_4_0=ruleSectionContent
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSectionRule());
+					}
+					add(
+						$current,
+						"sectionContents",
+						lv_sectionContents_4_0,
+						"org.gemoc.qls.QLS.SectionContent");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSectionAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleSectionContent
+entryRuleSectionContent returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSectionContentRule()); }
+	iv_ruleSectionContent=ruleSectionContent
+	{ $current=$iv_ruleSectionContent.current; }
+	EOF;
+
+// Rule SectionContent
+ruleSectionContent returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSectionContentAccess().getSectionParserRuleCall_0());
+		}
+		this_Section_0=ruleSection
+		{
+			$current = $this_Section_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSectionContentAccess().getQuestionReferenceParserRuleCall_1());
+		}
+		this_QuestionReference_1=ruleQuestionReference
+		{
+			$current = $this_QuestionReference_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleQuestionReference
+entryRuleQuestionReference returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getQuestionReferenceRule()); }
+	iv_ruleQuestionReference=ruleQuestionReference
+	{ $current=$iv_ruleQuestionReference.current; }
+	EOF;
+
+// Rule QuestionReference
+ruleQuestionReference returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getQuestionReferenceAccess().getQuestionReferenceAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getQuestionReferenceRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getQuestionReferenceAccess().getQuestionQuestionDefinitionCrossReference_1_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

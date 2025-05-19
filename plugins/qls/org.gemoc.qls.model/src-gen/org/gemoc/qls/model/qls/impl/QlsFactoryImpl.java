@@ -80,6 +80,10 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 			return createEnumerationTypeStyle();
 		case QlsPackage.DATE_TYPE_STYLE:
 			return createDateTypeStyle();
+		case QlsPackage.SECTION:
+			return createSection();
+		case QlsPackage.QUESTION_REFERENCE:
+			return createQuestionReference();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -249,6 +253,28 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 	public DateTypeStyle createDateTypeStyle() {
 		DateTypeStyleImpl dateTypeStyle = new DateTypeStyleImpl();
 		return dateTypeStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Section createSection() {
+		SectionImpl section = new SectionImpl();
+		return section;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QuestionReference createQuestionReference() {
+		QuestionReferenceImpl questionReference = new QuestionReferenceImpl();
+		return questionReference;
 	}
 
 	/**

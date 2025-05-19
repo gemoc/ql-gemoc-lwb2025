@@ -349,6 +349,52 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.Section} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SectionItemProvider sectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.Section}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSectionAdapter() {
+		if (sectionItemProvider == null) {
+			sectionItemProvider = new SectionItemProvider(this);
+		}
+
+		return sectionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.QuestionReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QuestionReferenceItemProvider questionReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.QuestionReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQuestionReferenceAdapter() {
+		if (questionReferenceItemProvider == null) {
+			questionReferenceItemProvider = new QuestionReferenceItemProvider(this);
+		}
+
+		return questionReferenceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -477,6 +523,10 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 			enumerationTypeStyleItemProvider.dispose();
 		if (dateTypeStyleItemProvider != null)
 			dateTypeStyleItemProvider.dispose();
+		if (sectionItemProvider != null)
+			sectionItemProvider.dispose();
+		if (questionReferenceItemProvider != null)
+			questionReferenceItemProvider.dispose();
 	}
 
 }

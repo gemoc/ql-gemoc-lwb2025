@@ -19,6 +19,7 @@ import org.gemoc.ql.model.ql.QLModel;
  *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getImports <em>Imports</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getQuestionStyles <em>Question Styles</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getStyledQLModel <em>Styled QL Model</em>}</li>
+ *   <li>{@link org.gemoc.qls.model.qls.QLSModel#getSections <em>Sections</em>}</li>
  * </ul>
  *
  * @see org.gemoc.qls.model.qls.QlsPackage#getQLSModel()
@@ -71,5 +72,17 @@ public interface QLSModel extends EObject {
 	 * @generated
 	 */
 	void setStyledQLModel(QLModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
+	 * The list contents are of type {@link org.gemoc.qls.model.qls.Section}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sections</em>' containment reference list.
+	 * @see org.gemoc.qls.model.qls.QlsPackage#getQLSModel_Sections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Section> getSections();
 
 } // QLSModel

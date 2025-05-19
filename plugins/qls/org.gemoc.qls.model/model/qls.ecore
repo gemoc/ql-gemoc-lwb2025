@@ -8,6 +8,8 @@
         eType="#//QuestionStyle" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="styledQLModel" lowerBound="1"
         eType="ecore:EClass ../../org.gemoc.ql.model/model/ql.ecore#//QLModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//Section" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -48,5 +50,15 @@
   <eClassifiers xsi:type="ecore:EEnum" name="EnumerationStyleKind">
     <eLiterals name="DROPDOWN"/>
     <eLiterals name="RADIO" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//SectionContent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sectionContents" upperBound="-1"
+        eType="#//SectionContent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionContent" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="QuestionReference" eSuperTypes="#//SectionContent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="question" lowerBound="1"
+        eType="ecore:EClass ../../org.gemoc.ql.model/model/ql.ecore#//QuestionDefinition"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -43,7 +43,9 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cQuestionStylesAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cQuestionStylesQuestionStyleParserRuleCall_7_0 = (RuleCall)cQuestionStylesAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cSectionsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cSectionsSectionParserRuleCall_9_0 = (RuleCall)cSectionsAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		////generate qLS "http://www.gemoc.org/qls/QLS"
 		//QLSModel returns QLSModel:
@@ -53,6 +55,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    styledQLModel=[ql::QLModel|QualifiedName]
 		//    '{'
 		//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
+		//        (sections+=Section)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -62,6 +65,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//styledQLModel=[ql::QLModel|QualifiedName]
 		//'{'
 		//    'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
+		//    (sections+=Section)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -104,8 +108,14 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 		
+		//(sections+=Section)*
+		public Assignment getSectionsAssignment_9() { return cSectionsAssignment_9; }
+		
+		//Section
+		public RuleCall getSectionsSectionParserRuleCall_9_0() { return cSectionsSectionParserRuleCall_9_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	public class ImportElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.Import");
@@ -136,6 +146,106 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//STRING
 		public RuleCall getImportURISTRINGTerminalRuleCall_2_0() { return cImportURISTRINGTerminalRuleCall_2_0; }
+	}
+	public class SectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.Section");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSectionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cSectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTitleAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTitleEStringParserRuleCall_2_0 = (RuleCall)cTitleAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSectionContentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSectionContentsSectionContentParserRuleCall_4_0 = (RuleCall)cSectionContentsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Section returns Section:
+		//    {Section}
+		//    'section' title=EString '{'
+		//        (sectionContents+=SectionContent)*
+		//    '}'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Section}
+		//'section' title=EString '{'
+		//    (sectionContents+=SectionContent)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//{Section}
+		public Action getSectionAction_0() { return cSectionAction_0; }
+		
+		//'section'
+		public Keyword getSectionKeyword_1() { return cSectionKeyword_1; }
+		
+		//title=EString
+		public Assignment getTitleAssignment_2() { return cTitleAssignment_2; }
+		
+		//EString
+		public RuleCall getTitleEStringParserRuleCall_2_0() { return cTitleEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//(sectionContents+=SectionContent)*
+		public Assignment getSectionContentsAssignment_4() { return cSectionContentsAssignment_4; }
+		
+		//SectionContent
+		public RuleCall getSectionContentsSectionContentParserRuleCall_4_0() { return cSectionContentsSectionContentParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class SectionContentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.SectionContent");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSectionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cQuestionReferenceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SectionContent returns SectionContent:
+		//    Section | QuestionReference
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Section | QuestionReference
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Section
+		public RuleCall getSectionParserRuleCall_0() { return cSectionParserRuleCall_0; }
+		
+		//QuestionReference
+		public RuleCall getQuestionReferenceParserRuleCall_1() { return cQuestionReferenceParserRuleCall_1; }
+	}
+	public class QuestionReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.QuestionReference");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cQuestionReferenceAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cQuestionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cQuestionQuestionDefinitionCrossReference_1_0 = (CrossReference)cQuestionAssignment_1.eContents().get(0);
+		private final RuleCall cQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cQuestionQuestionDefinitionCrossReference_1_0.eContents().get(1);
+		
+		//QuestionReference returns QuestionReference:
+		//    {QuestionReference}
+		//    question=[ql::QuestionDefinition|QualifiedName]
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{QuestionReference}
+		//question=[ql::QuestionDefinition|QualifiedName]
+		public Group getGroup() { return cGroup; }
+		
+		//{QuestionReference}
+		public Action getQuestionReferenceAction_0() { return cQuestionReferenceAction_0; }
+		
+		//question=[ql::QuestionDefinition|QualifiedName]
+		public Assignment getQuestionAssignment_1() { return cQuestionAssignment_1; }
+		
+		//[ql::QuestionDefinition|QualifiedName]
+		public CrossReference getQuestionQuestionDefinitionCrossReference_1_0() { return cQuestionQuestionDefinitionCrossReference_1_0; }
+		
+		//QualifiedName
+		public RuleCall getQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1() { return cQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1; }
 	}
 	public class TypeStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.gemoc.qls.QLS.TypeStyle");
@@ -504,6 +614,9 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	private final QLSModelElements pQLSModel;
 	private final ImportElements pImport;
+	private final SectionElements pSection;
+	private final SectionContentElements pSectionContent;
+	private final QuestionReferenceElements pQuestionReference;
 	private final TypeStyleElements pTypeStyle;
 	private final NumericTypeStyleElements pNumericTypeStyle;
 	private final QuestionStyleElements pQuestionStyle;
@@ -529,6 +642,9 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.gaTerminals = gaTerminals;
 		this.pQLSModel = new QLSModelElements();
 		this.pImport = new ImportElements();
+		this.pSection = new SectionElements();
+		this.pSectionContent = new SectionContentElements();
+		this.pQuestionReference = new QuestionReferenceElements();
 		this.pTypeStyle = new TypeStyleElements();
 		this.pNumericTypeStyle = new NumericTypeStyleElements();
 		this.pQuestionStyle = new QuestionStyleElements();
@@ -579,6 +695,7 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    styledQLModel=[ql::QLModel|QualifiedName]
 	//    '{'
 	//        'questionStyles' '{'  (questionStyles+=QuestionStyle)* '}'
+	//        (sections+=Section)*
 	//    '}';
 	public QLSModelElements getQLSModelAccess() {
 		return pQLSModel;
@@ -598,6 +715,43 @@ public class QLSGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getImportRule() {
 		return getImportAccess().getRule();
+	}
+	
+	//Section returns Section:
+	//    {Section}
+	//    'section' title=EString '{'
+	//        (sectionContents+=SectionContent)*
+	//    '}'
+	//;
+	public SectionElements getSectionAccess() {
+		return pSection;
+	}
+	
+	public ParserRule getSectionRule() {
+		return getSectionAccess().getRule();
+	}
+	
+	//SectionContent returns SectionContent:
+	//    Section | QuestionReference
+	//;
+	public SectionContentElements getSectionContentAccess() {
+		return pSectionContent;
+	}
+	
+	public ParserRule getSectionContentRule() {
+		return getSectionContentAccess().getRule();
+	}
+	
+	//QuestionReference returns QuestionReference:
+	//    {QuestionReference}
+	//    question=[ql::QuestionDefinition|QualifiedName]
+	//;
+	public QuestionReferenceElements getQuestionReferenceAccess() {
+		return pQuestionReference;
+	}
+	
+	public ParserRule getQuestionReferenceRule() {
+		return getQuestionReferenceAccess().getRule();
 	}
 	
 	//TypeStyle returns TypeStyle:

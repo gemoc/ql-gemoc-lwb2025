@@ -46,7 +46,9 @@ import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle;
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
+import org.gemoc.qls.model.qls.QuestionReference;
 import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.Section;
 import org.gemoc.qls.model.qls.TextTypeStyle;
 import org.gemoc.qls.services.QLSGrammarAccess;
 
@@ -200,8 +202,14 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 			case QlsPackage.QLS_MODEL:
 				sequence_QLSModel(context, (QLSModel) semanticObject); 
 				return; 
+			case QlsPackage.QUESTION_REFERENCE:
+				sequence_QuestionReference(context, (QuestionReference) semanticObject); 
+				return; 
 			case QlsPackage.QUESTION_STYLE:
 				sequence_QuestionStyle(context, (QuestionStyle) semanticObject); 
+				return; 
+			case QlsPackage.SECTION:
+				sequence_Section(context, (Section) semanticObject); 
 				return; 
 			case QlsPackage.TEXT_TYPE_STYLE:
 				sequence_TextTypeStyle(context, (TextTypeStyle) semanticObject); 
@@ -304,11 +312,32 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 *     QLSModel returns QLSModel
 	 *
 	 * Constraint:
-	 *     (imports+=Import* styledQLModel=[QLModel|QualifiedName] questionStyles+=QuestionStyle*)
+	 *     (imports+=Import* styledQLModel=[QLModel|QualifiedName] questionStyles+=QuestionStyle* sections+=Section*)
 	 * </pre>
 	 */
 	protected void sequence_QLSModel(ISerializationContext context, QLSModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SectionContent returns QuestionReference
+	 *     QuestionReference returns QuestionReference
+	 *
+	 * Constraint:
+	 *     question=[QuestionDefinition|QualifiedName]
+	 * </pre>
+	 */
+	protected void sequence_QuestionReference(ISerializationContext context, QuestionReference semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, QlsPackage.Literals.QUESTION_REFERENCE__QUESTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, QlsPackage.Literals.QUESTION_REFERENCE__QUESTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getQuestionReferenceAccess().getQuestionQuestionDefinitionQualifiedNameParserRuleCall_1_0_1(), semanticObject.eGet(QlsPackage.Literals.QUESTION_REFERENCE__QUESTION, false));
+		feeder.finish();
 	}
 	
 	
@@ -322,6 +351,21 @@ public class QLSSemanticSequencer extends QLSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_QuestionStyle(ISerializationContext context, QuestionStyle semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Section returns Section
+	 *     SectionContent returns Section
+	 *
+	 * Constraint:
+	 *     (title=EString sectionContents+=SectionContent*)
+	 * </pre>
+	 */
+	protected void sequence_Section(ISerializationContext context, Section semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

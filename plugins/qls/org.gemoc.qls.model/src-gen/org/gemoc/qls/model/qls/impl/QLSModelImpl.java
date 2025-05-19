@@ -23,6 +23,7 @@ import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
 import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.Section;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +36,7 @@ import org.gemoc.qls.model.qls.QuestionStyle;
  *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getQuestionStyles <em>Question Styles</em>}</li>
  *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getStyledQLModel <em>Styled QL Model</em>}</li>
+ *   <li>{@link org.gemoc.qls.model.qls.impl.QLSModelImpl#getSections <em>Sections</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +71,16 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 	 * @ordered
 	 */
 	protected QLModel styledQLModel;
+
+	/**
+	 * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Section> sections;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,12 +176,27 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 	 * @generated
 	 */
 	@Override
+	public EList<Section> getSections() {
+		if (sections == null) {
+			sections = new EObjectContainmentEList<Section>(Section.class, this, QlsPackage.QLS_MODEL__SECTIONS);
+		}
+		return sections;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case QlsPackage.QLS_MODEL__IMPORTS:
 			return ((InternalEList<?>) getImports()).basicRemove(otherEnd, msgs);
 		case QlsPackage.QLS_MODEL__QUESTION_STYLES:
 			return ((InternalEList<?>) getQuestionStyles()).basicRemove(otherEnd, msgs);
+		case QlsPackage.QLS_MODEL__SECTIONS:
+			return ((InternalEList<?>) getSections()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,6 +217,8 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 			if (resolve)
 				return getStyledQLModel();
 			return basicGetStyledQLModel();
+		case QlsPackage.QLS_MODEL__SECTIONS:
+			return getSections();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +243,10 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
 			setStyledQLModel((QLModel) newValue);
 			return;
+		case QlsPackage.QLS_MODEL__SECTIONS:
+			getSections().clear();
+			getSections().addAll((Collection<? extends Section>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -235,6 +268,9 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
 			setStyledQLModel((QLModel) null);
 			return;
+		case QlsPackage.QLS_MODEL__SECTIONS:
+			getSections().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,6 +289,8 @@ public class QLSModelImpl extends MinimalEObjectImpl.Container implements QLSMod
 			return questionStyles != null && !questionStyles.isEmpty();
 		case QlsPackage.QLS_MODEL__STYLED_QL_MODEL:
 			return styledQLModel != null;
+		case QlsPackage.QLS_MODEL__SECTIONS:
+			return sections != null && !sections.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

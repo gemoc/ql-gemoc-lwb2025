@@ -8,4 +8,10 @@ QLSModel HouseOwning {
 		styledQuestion HouseOwning.privateDebt {typeStyle NumericStyle spinner { step 100.0 }}
 		styledQuestion HouseOwning.valueResidue { labelStyle {italic}}
 	}
+	section "Selling Section" {
+		HouseOwning.hasSoldHouse
+		HouseOwning.sellingPrice
+		HouseOwning.privateDebt
+		HouseOwning.valueResidue
+	}
 }

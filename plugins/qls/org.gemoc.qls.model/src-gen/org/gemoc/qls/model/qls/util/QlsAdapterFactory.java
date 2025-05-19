@@ -127,6 +127,21 @@ public class QlsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseSection(Section object) {
+			return createSectionAdapter();
+		}
+
+		@Override
+		public Adapter caseSectionContent(SectionContent object) {
+			return createSectionContentAdapter();
+		}
+
+		@Override
+		public Adapter caseQuestionReference(QuestionReference object) {
+			return createQuestionReferenceAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -310,6 +325,48 @@ public class QlsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDateTypeStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.qls.model.qls.Section <em>Section</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.qls.model.qls.Section
+	 * @generated
+	 */
+	public Adapter createSectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.qls.model.qls.SectionContent <em>Section Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.qls.model.qls.SectionContent
+	 * @generated
+	 */
+	public Adapter createSectionContentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.qls.model.qls.QuestionReference <em>Question Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.qls.model.qls.QuestionReference
+	 * @generated
+	 */
+	public Adapter createQuestionReferenceAdapter() {
 		return null;
 	}
 

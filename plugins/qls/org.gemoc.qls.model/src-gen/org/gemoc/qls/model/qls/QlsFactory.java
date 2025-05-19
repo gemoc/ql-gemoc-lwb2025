@@ -130,6 +130,24 @@ public interface QlsFactory extends EFactory {
 	DateTypeStyle createDateTypeStyle();
 
 	/**
+	 * Returns a new object of class '<em>Section</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Section</em>'.
+	 * @generated
+	 */
+	Section createSection();
+
+	/**
+	 * Returns a new object of class '<em>Question Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Question Reference</em>'.
+	 * @generated
+	 */
+	QuestionReference createQuestionReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
