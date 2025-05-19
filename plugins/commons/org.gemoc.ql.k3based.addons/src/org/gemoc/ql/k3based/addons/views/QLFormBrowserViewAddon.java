@@ -177,7 +177,7 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 														qd.setCurrentValue(value);
 													}
 												} else {
-													Activator.warn("Field "+qd.getName()+ "doesn't returned a String");
+													Activator.warn("Field "+qd.getName()+ " doesn't returned a String");
 												}
 											});
 										}

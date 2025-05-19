@@ -76,16 +76,27 @@ function onSubmit() {
 function getFieldValueAsString(fieldId) {
   const element = document.getElementById(fieldId);
   if (!element) {
+  console.error(`getFieldValueAsString cannot find fieldId="${fieldId}""`);
     return null; // Or throw an error, depending on your needs
   }
 
   document.getElementById("lastAction").innerText = "getFieldValueAsString(\""+fieldId+"\")";
+  console.error(`getFieldValueAsString fieldId="${fieldId}" element.type"${element.type}"`);
   if (element.type === 'checkbox') {
     return element.checked.toString();
   } else  if (element.tagName.toLowerCase() === 'select') {
     return element.value; // For a select-one, the element's value is the selected option's value
   } else if (element.type === 'select-one') {
     return element.options[element.selectedIndex].value;
+  } else if (element.type === 'radio') {
+    // For radio buttons, we need to find the checked button in the group
+    const radioGroup = document.querySelectorAll(`input[name="${element.name}"]`);
+    for (const radio of radioGroup) {
+      if (radio.checked) {
+        return radio.value;
+      }
+    }
+    return "false"//null; // Or perhaps an empty string if no radio button in the group is selected
   } else {
   	console.error(`getFieldValueAsString else for element type "${element.type}" not found.`);
     return element.value;

@@ -54,7 +54,7 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
           _builder.append("\t\t\t\t      \t");
           _builder.append("<input type=\"radio\" id=\"");
           _builder.append(id, "\t\t\t\t      \t");
-          _builder.append("_true\" name=\"");
+          _builder.append("\" name=\"");
           _builder.append(id, "\t\t\t\t      \t");
           _builder.append("\" value=\"true\" ");
           {

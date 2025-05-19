@@ -140,7 +140,7 @@ class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 					}
 					return '''<div>
 				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
-				      	<input type="radio" id="«id»_true" name="«id»" value="true" «IF isChecked»checked«ENDIF» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»> <label for="«id»_true">Yes</label>
+				      	<input type="radio" id="«id»" name="«id»" value="true" «IF isChecked»checked«ENDIF» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»> <label for="«id»_true">Yes</label>
 				      	<input type="radio" id="«id»_false" name="«id»" value="false" «IF !isChecked»checked«ENDIF» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»> <label for="«id»_false">No</label>
 				    </div>'''
 				    
