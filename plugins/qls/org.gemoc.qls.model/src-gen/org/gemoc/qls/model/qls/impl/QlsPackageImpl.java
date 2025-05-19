@@ -14,6 +14,9 @@ import org.gemoc.ql.model.ql.QlPackage;
 
 import org.gemoc.qls.model.qls.BooleanStyleKind;
 import org.gemoc.qls.model.qls.BooleanTypeStyle;
+import org.gemoc.qls.model.qls.DateTypeStyle;
+import org.gemoc.qls.model.qls.EnumerationStyleKind;
+import org.gemoc.qls.model.qls.EnumerationTypeStyle;
 import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.LabelStyle;
 import org.gemoc.qls.model.qls.NumericSpinnerStyle;
@@ -116,7 +119,28 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass enumerationTypeStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateTypeStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum booleanStyleKindEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum enumerationStyleKindEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -421,8 +445,48 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEnumerationTypeStyle() {
+		return enumerationTypeStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnumerationTypeStyle_EnumerationStyleKing() {
+		return (EAttribute) enumerationTypeStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDateTypeStyle() {
+		return dateTypeStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBooleanStyleKind() {
 		return booleanStyleKindEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getEnumerationStyleKind() {
+		return enumerationStyleKindEEnum;
 	}
 
 	/**
@@ -489,8 +553,14 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 
 		numericSpinnerStyleEClass = createEClass(NUMERIC_SPINNER_STYLE);
 
+		enumerationTypeStyleEClass = createEClass(ENUMERATION_TYPE_STYLE);
+		createEAttribute(enumerationTypeStyleEClass, ENUMERATION_TYPE_STYLE__ENUMERATION_STYLE_KING);
+
+		dateTypeStyleEClass = createEClass(DATE_TYPE_STYLE);
+
 		// Create enums
 		booleanStyleKindEEnum = createEEnum(BOOLEAN_STYLE_KIND);
+		enumerationStyleKindEEnum = createEEnum(ENUMERATION_STYLE_KIND);
 	}
 
 	/**
@@ -531,6 +601,8 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		numericTypeSpinnerStyleEClass.getESuperTypes().add(this.getNumericTypeStyle());
 		textTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 		numericSpinnerStyleEClass.getESuperTypes().add(this.getNumericTypeSpinnerStyle());
+		enumerationTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
+		dateTypeStyleEClass.getESuperTypes().add(this.getTypeStyle());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(qlsModelEClass, QLSModel.class, "QLSModel", !IS_ABSTRACT, !IS_INTERFACE,
@@ -598,11 +670,24 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		initEClass(numericSpinnerStyleEClass, NumericSpinnerStyle.class, "NumericSpinnerStyle", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(enumerationTypeStyleEClass, EnumerationTypeStyle.class, "EnumerationTypeStyle", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumerationTypeStyle_EnumerationStyleKing(), this.getEnumerationStyleKind(),
+				"enumerationStyleKing", null, 1, 1, EnumerationTypeStyle.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dateTypeStyleEClass, DateTypeStyle.class, "DateTypeStyle", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
 		// Initialize enums and add enum literals
 		initEEnum(booleanStyleKindEEnum, BooleanStyleKind.class, "BooleanStyleKind");
 		addEEnumLiteral(booleanStyleKindEEnum, BooleanStyleKind.CHECKBOX);
 		addEEnumLiteral(booleanStyleKindEEnum, BooleanStyleKind.TWO_RADIO);
 		addEEnumLiteral(booleanStyleKindEEnum, BooleanStyleKind.DROPDOWN);
+
+		initEEnum(enumerationStyleKindEEnum, EnumerationStyleKind.class, "EnumerationStyleKind");
+		addEEnumLiteral(enumerationStyleKindEEnum, EnumerationStyleKind.DROPDOWN);
+		addEEnumLiteral(enumerationStyleKindEEnum, EnumerationStyleKind.RADIO);
 
 		// Create resource
 		createResource(eNS_URI);

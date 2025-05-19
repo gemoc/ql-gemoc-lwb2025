@@ -41,4 +41,13 @@
     <eLiterals name="DROPDOWN" value="2" literal="DROPDOWN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NumericSpinnerStyle" eSuperTypes="#//NumericTypeSpinnerStyle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationTypeStyle" eSuperTypes="#//TypeStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumerationStyleKing" lowerBound="1"
+        eType="#//EnumerationStyleKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTypeStyle" eSuperTypes="#//TypeStyle"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumerationStyleKind">
+    <eLiterals name="DROPDOWN"/>
+    <eLiterals name="RADIO" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>

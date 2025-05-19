@@ -474,6 +474,71 @@ public interface QlsPackage extends EPackage {
 	int NUMERIC_SPINNER_STYLE_OPERATION_COUNT = NUMERIC_TYPE_SPINNER_STYLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl <em>Enumeration Type Style</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationTypeStyle()
+	 * @generated
+	 */
+	int ENUMERATION_TYPE_STYLE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Enumeration Style King</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE_STYLE__ENUMERATION_STYLE_KING = TYPE_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Enumeration Type Style</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE_STYLE_FEATURE_COUNT = TYPE_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Enumeration Type Style</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_TYPE_STYLE_OPERATION_COUNT = TYPE_STYLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.impl.DateTypeStyleImpl <em>Date Type Style</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.impl.DateTypeStyleImpl
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getDateTypeStyle()
+	 * @generated
+	 */
+	int DATE_TYPE_STYLE = 12;
+
+	/**
+	 * The number of structural features of the '<em>Date Type Style</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TYPE_STYLE_FEATURE_COUNT = TYPE_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Date Type Style</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_TYPE_STYLE_OPERATION_COUNT = TYPE_STYLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,7 +546,17 @@ public interface QlsPackage extends EPackage {
 	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getBooleanStyleKind()
 	 * @generated
 	 */
-	int BOOLEAN_STYLE_KIND = 11;
+	int BOOLEAN_STYLE_KIND = 13;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.qls.model.qls.EnumerationStyleKind <em>Enumeration Style Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.qls.model.qls.EnumerationStyleKind
+	 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationStyleKind()
+	 * @generated
+	 */
+	int ENUMERATION_STYLE_KIND = 14;
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.QLSModel <em>QLS Model</em>}'.
@@ -726,6 +801,37 @@ public interface QlsPackage extends EPackage {
 	EClass getNumericSpinnerStyle();
 
 	/**
+	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.EnumerationTypeStyle <em>Enumeration Type Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enumeration Type Style</em>'.
+	 * @see org.gemoc.qls.model.qls.EnumerationTypeStyle
+	 * @generated
+	 */
+	EClass getEnumerationTypeStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.gemoc.qls.model.qls.EnumerationTypeStyle#getEnumerationStyleKing <em>Enumeration Style King</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enumeration Style King</em>'.
+	 * @see org.gemoc.qls.model.qls.EnumerationTypeStyle#getEnumerationStyleKing()
+	 * @see #getEnumerationTypeStyle()
+	 * @generated
+	 */
+	EAttribute getEnumerationTypeStyle_EnumerationStyleKing();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.qls.model.qls.DateTypeStyle <em>Date Type Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Date Type Style</em>'.
+	 * @see org.gemoc.qls.model.qls.DateTypeStyle
+	 * @generated
+	 */
+	EClass getDateTypeStyle();
+
+	/**
 	 * Returns the meta object for enum '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -734,6 +840,16 @@ public interface QlsPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getBooleanStyleKind();
+
+	/**
+	 * Returns the meta object for enum '{@link org.gemoc.qls.model.qls.EnumerationStyleKind <em>Enumeration Style Kind</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Enumeration Style Kind</em>'.
+	 * @see org.gemoc.qls.model.qls.EnumerationStyleKind
+	 * @generated
+	 */
+	EEnum getEnumerationStyleKind();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -965,6 +1081,35 @@ public interface QlsPackage extends EPackage {
 		EClass NUMERIC_SPINNER_STYLE = eINSTANCE.getNumericSpinnerStyle();
 
 		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl <em>Enumeration Type Style</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.impl.EnumerationTypeStyleImpl
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationTypeStyle()
+		 * @generated
+		 */
+		EClass ENUMERATION_TYPE_STYLE = eINSTANCE.getEnumerationTypeStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Enumeration Style King</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUMERATION_TYPE_STYLE__ENUMERATION_STYLE_KING = eINSTANCE
+				.getEnumerationTypeStyle_EnumerationStyleKing();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.impl.DateTypeStyleImpl <em>Date Type Style</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.impl.DateTypeStyleImpl
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getDateTypeStyle()
+		 * @generated
+		 */
+		EClass DATE_TYPE_STYLE = eINSTANCE.getDateTypeStyle();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.BooleanStyleKind <em>Boolean Style Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -973,6 +1118,16 @@ public interface QlsPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum BOOLEAN_STYLE_KIND = eINSTANCE.getBooleanStyleKind();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.qls.model.qls.EnumerationStyleKind <em>Enumeration Style Kind</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.qls.model.qls.EnumerationStyleKind
+		 * @see org.gemoc.qls.model.qls.impl.QlsPackageImpl#getEnumerationStyleKind()
+		 * @generated
+		 */
+		EEnum ENUMERATION_STYLE_KIND = eINSTANCE.getEnumerationStyleKind();
 
 	}
 

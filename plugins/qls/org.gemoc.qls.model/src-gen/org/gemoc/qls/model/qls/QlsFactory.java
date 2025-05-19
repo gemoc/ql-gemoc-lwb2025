@@ -121,6 +121,24 @@ public interface QlsFactory extends EFactory {
 	NumericSpinnerStyle createNumericSpinnerStyle();
 
 	/**
+	 * Returns a new object of class '<em>Enumeration Type Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enumeration Type Style</em>'.
+	 * @generated
+	 */
+	EnumerationTypeStyle createEnumerationTypeStyle();
+
+	/**
+	 * Returns a new object of class '<em>Date Type Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Type Style</em>'.
+	 * @generated
+	 */
+	DateTypeStyle createDateTypeStyle();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

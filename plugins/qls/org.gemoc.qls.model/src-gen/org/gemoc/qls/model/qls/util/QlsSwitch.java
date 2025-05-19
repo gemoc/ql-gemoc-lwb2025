@@ -163,6 +163,24 @@ public class QlsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case QlsPackage.ENUMERATION_TYPE_STYLE: {
+			EnumerationTypeStyle enumerationTypeStyle = (EnumerationTypeStyle) theEObject;
+			T result = caseEnumerationTypeStyle(enumerationTypeStyle);
+			if (result == null)
+				result = caseTypeStyle(enumerationTypeStyle);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case QlsPackage.DATE_TYPE_STYLE: {
+			DateTypeStyle dateTypeStyle = (DateTypeStyle) theEObject;
+			T result = caseDateTypeStyle(dateTypeStyle);
+			if (result == null)
+				result = caseTypeStyle(dateTypeStyle);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -330,6 +348,36 @@ public class QlsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNumericSpinnerStyle(NumericSpinnerStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Type Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Type Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationTypeStyle(EnumerationTypeStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Date Type Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Date Type Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDateTypeStyle(DateTypeStyle object) {
 		return null;
 	}
 

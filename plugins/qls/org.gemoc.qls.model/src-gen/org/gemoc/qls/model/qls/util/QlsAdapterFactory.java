@@ -122,6 +122,16 @@ public class QlsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEnumerationTypeStyle(EnumerationTypeStyle object) {
+			return createEnumerationTypeStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseDateTypeStyle(DateTypeStyle object) {
+			return createDateTypeStyleAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -291,6 +301,34 @@ public class QlsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNumericSpinnerStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.qls.model.qls.EnumerationTypeStyle <em>Enumeration Type Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.qls.model.qls.EnumerationTypeStyle
+	 * @generated
+	 */
+	public Adapter createEnumerationTypeStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.gemoc.qls.model.qls.DateTypeStyle <em>Date Type Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.gemoc.qls.model.qls.DateTypeStyle
+	 * @generated
+	 */
+	public Adapter createDateTypeStyleAdapter() {
 		return null;
 	}
 

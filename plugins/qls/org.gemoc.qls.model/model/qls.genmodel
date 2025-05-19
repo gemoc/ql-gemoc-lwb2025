@@ -16,6 +16,10 @@
       <genEnumLiterals ecoreEnumLiteral="qls.ecore#//BooleanStyleKind/TWO_RADIO"/>
       <genEnumLiterals ecoreEnumLiteral="qls.ecore#//BooleanStyleKind/DROPDOWN"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="qls.ecore#//EnumerationStyleKind">
+      <genEnumLiterals ecoreEnumLiteral="qls.ecore#//EnumerationStyleKind/DROPDOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="qls.ecore#//EnumerationStyleKind/RADIO"/>
+    </genEnums>
     <genClasses ecoreClass="qls.ecore#//QLSModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QLSModel/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qls.ecore#//QLSModel/questionStyles"/>
@@ -46,5 +50,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//TextTypeStyle/multiline"/>
     </genClasses>
     <genClasses ecoreClass="qls.ecore#//NumericSpinnerStyle"/>
+    <genClasses ecoreClass="qls.ecore#//EnumerationTypeStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qls.ecore#//EnumerationTypeStyle/enumerationStyleKing"/>
+    </genClasses>
+    <genClasses ecoreClass="qls.ecore#//DateTypeStyle"/>
   </genPackages>
 </genmodel:GenModel>

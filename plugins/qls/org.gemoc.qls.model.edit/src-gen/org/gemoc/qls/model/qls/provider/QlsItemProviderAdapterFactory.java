@@ -326,6 +326,52 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.EnumerationTypeStyle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnumerationTypeStyleItemProvider enumerationTypeStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.EnumerationTypeStyle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnumerationTypeStyleAdapter() {
+		if (enumerationTypeStyleItemProvider == null) {
+			enumerationTypeStyleItemProvider = new EnumerationTypeStyleItemProvider(this);
+		}
+
+		return enumerationTypeStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.DateTypeStyle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateTypeStyleItemProvider dateTypeStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.DateTypeStyle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateTypeStyleAdapter() {
+		if (dateTypeStyleItemProvider == null) {
+			dateTypeStyleItemProvider = new DateTypeStyleItemProvider(this);
+		}
+
+		return dateTypeStyleItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -452,6 +498,10 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 			textTypeStyleItemProvider.dispose();
 		if (numericSpinnerStyleItemProvider != null)
 			numericSpinnerStyleItemProvider.dispose();
+		if (enumerationTypeStyleItemProvider != null)
+			enumerationTypeStyleItemProvider.dispose();
+		if (dateTypeStyleItemProvider != null)
+			dateTypeStyleItemProvider.dispose();
 	}
 
 }

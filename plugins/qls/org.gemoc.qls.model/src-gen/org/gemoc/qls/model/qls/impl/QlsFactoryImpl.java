@@ -78,6 +78,10 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 			return createTextTypeStyle();
 		case QlsPackage.NUMERIC_SPINNER_STYLE:
 			return createNumericSpinnerStyle();
+		case QlsPackage.ENUMERATION_TYPE_STYLE:
+			return createEnumerationTypeStyle();
+		case QlsPackage.DATE_TYPE_STYLE:
+			return createDateTypeStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +97,8 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 		switch (eDataType.getClassifierID()) {
 		case QlsPackage.BOOLEAN_STYLE_KIND:
 			return createBooleanStyleKindFromString(eDataType, initialValue);
+		case QlsPackage.ENUMERATION_STYLE_KIND:
+			return createEnumerationStyleKindFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,6 +114,8 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 		switch (eDataType.getClassifierID()) {
 		case QlsPackage.BOOLEAN_STYLE_KIND:
 			return convertBooleanStyleKindToString(eDataType, instanceValue);
+		case QlsPackage.ENUMERATION_STYLE_KIND:
+			return convertEnumerationStyleKindToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -239,6 +247,28 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EnumerationTypeStyle createEnumerationTypeStyle() {
+		EnumerationTypeStyleImpl enumerationTypeStyle = new EnumerationTypeStyleImpl();
+		return enumerationTypeStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DateTypeStyle createDateTypeStyle() {
+		DateTypeStyleImpl dateTypeStyle = new DateTypeStyleImpl();
+		return dateTypeStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BooleanStyleKind createBooleanStyleKindFromString(EDataType eDataType, String initialValue) {
 		BooleanStyleKind result = BooleanStyleKind.get(initialValue);
 		if (result == null)
@@ -253,6 +283,28 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 	 * @generated
 	 */
 	public String convertBooleanStyleKindToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumerationStyleKind createEnumerationStyleKindFromString(EDataType eDataType, String initialValue) {
+		EnumerationStyleKind result = EnumerationStyleKind.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEnumerationStyleKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
