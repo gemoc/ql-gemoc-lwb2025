@@ -115,16 +115,28 @@ public class ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlLabel(final ValueTypeHtmlAspectValueTypeAspectProperties _self_, final ValueType _self, final String id, final String label, final LabelStyle style) {
+    boolean _xifexpression = false;
+    if ((style != null)) {
+      _xifexpression = style.isBold();
+    } else {
+      _xifexpression = false;
+    }
+    final boolean bold = _xifexpression;
+    boolean _xifexpression_1 = false;
+    if ((style != null)) {
+      _xifexpression_1 = style.isItalic();
+    } else {
+      _xifexpression_1 = false;
+    }
+    final boolean italic = _xifexpression_1;
     StringConcatenation _builder = new StringConcatenation();
     {
-      boolean _isBold = style.isBold();
-      if (_isBold) {
+      if (bold) {
         _builder.append("<b>");
       }
     }
     {
-      boolean _isItalic = style.isItalic();
-      if (_isItalic) {
+      if (italic) {
         _builder.append("<i>");
       }
     }
@@ -134,14 +146,12 @@ public class ValueTypeHtmlAspect {
     _builder.append(label);
     _builder.append("</label>");
     {
-      boolean _isItalic_1 = style.isItalic();
-      if (_isItalic_1) {
+      if (italic) {
         _builder.append("</i>");
       }
     }
     {
-      boolean _isBold_1 = style.isBold();
-      if (_isBold_1) {
+      if (bold) {
         _builder.append("</b>");
       }
     }

@@ -35,38 +35,139 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
-    String checked = "";
-    if ((currentValue != null)) {
-      boolean _isBooleanValue = ((BooleanValue) currentValue).isBooleanValue();
-      if (_isBooleanValue) {
-        checked = "checked";
+    TypeStyle _typeStyle = qStyle.getTypeStyle();
+    final BooleanStyleKind booleanStyleKind = ((BooleanTypeStyle) _typeStyle).getBooleanStyleKind();
+    if (booleanStyleKind != null) {
+      switch (booleanStyleKind) {
+        case TWO_RADIO:
+          boolean isChecked = false;
+          if ((currentValue != null)) {
+            isChecked = ((BooleanValue) currentValue).isBooleanValue();
+          }
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("<div>");
+          _builder.newLine();
+          _builder.append("\t\t\t\t    \t");
+          String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+          _builder.append(_htmlLabel, "\t\t\t\t    \t");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t\t\t      \t");
+          _builder.append("<input type=\"radio\" id=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("_true\" name=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("\" value=\"true\" ");
+          {
+            if (isChecked) {
+              _builder.append("checked");
+            }
+          }
+          _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
+          {
+            if (readonly) {
+              _builder.append(" readonly");
+            }
+          }
+          _builder.append("> <label for=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("_true\">Yes</label>");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t\t\t      \t");
+          _builder.append("<input type=\"radio\" id=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("_false\" name=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("\" value=\"false\" ");
+          {
+            if ((!isChecked)) {
+              _builder.append("checked");
+            }
+          }
+          _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
+          {
+            if (readonly) {
+              _builder.append(" readonly");
+            }
+          }
+          _builder.append("> <label for=\"");
+          _builder.append(id, "\t\t\t\t      \t");
+          _builder.append("_false\">No</label>");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t\t\t\t    ");
+          _builder.append("</div>");
+          return _builder.toString();
+        default:
+          {
+            String checked = "";
+            if ((currentValue != null)) {
+              boolean _isBooleanValue = ((BooleanValue) currentValue).isBooleanValue();
+              if (_isBooleanValue) {
+                checked = "checked";
+              }
+            }
+            StringConcatenation _builder_1 = new StringConcatenation();
+            _builder_1.append("<div>");
+            _builder_1.newLine();
+            _builder_1.append("\t\t\t\t\t      ");
+            String _htmlLabel_1 = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+            _builder_1.append(_htmlLabel_1, "\t\t\t\t\t      ");
+            _builder_1.newLineIfNotEmpty();
+            _builder_1.append("\t\t\t\t\t      ");
+            _builder_1.append("<input type=\"checkbox\" id=\"");
+            _builder_1.append(id, "\t\t\t\t\t      ");
+            _builder_1.append("\" name=\"");
+            _builder_1.append(id, "\t\t\t\t\t      ");
+            _builder_1.append("\" ");
+            _builder_1.append(checked, "\t\t\t\t\t      ");
+            _builder_1.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
+            {
+              if (readonly) {
+                _builder_1.append(" readonly");
+              }
+            }
+            _builder_1.append(">");
+            _builder_1.newLineIfNotEmpty();
+            _builder_1.append("\t\t\t\t\t    ");
+            _builder_1.append("</div>");
+            return _builder_1.toString();
+          }
+      }
+    } else {
+      {
+        String checked = "";
+        if ((currentValue != null)) {
+          boolean _isBooleanValue = ((BooleanValue) currentValue).isBooleanValue();
+          if (_isBooleanValue) {
+            checked = "checked";
+          }
+        }
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("<div>");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t      ");
+        String _htmlLabel_1 = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+        _builder_1.append(_htmlLabel_1, "\t\t\t\t\t      ");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("\t\t\t\t\t      ");
+        _builder_1.append("<input type=\"checkbox\" id=\"");
+        _builder_1.append(id, "\t\t\t\t\t      ");
+        _builder_1.append("\" name=\"");
+        _builder_1.append(id, "\t\t\t\t\t      ");
+        _builder_1.append("\" ");
+        _builder_1.append(checked, "\t\t\t\t\t      ");
+        _builder_1.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
+        {
+          if (readonly) {
+            _builder_1.append(" readonly");
+          }
+        }
+        _builder_1.append(">");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("\t\t\t\t\t    ");
+        _builder_1.append("</div>");
+        return _builder_1.toString();
       }
     }
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div>");
-    _builder.newLine();
-    _builder.append("\t\t      ");
-    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
-    _builder.append(_htmlLabel, "\t\t      ");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t      ");
-    _builder.append("<input type=\"checkbox\" id=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" name=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\" ");
-    _builder.append(checked, "\t\t      ");
-    _builder.append(" oninput=\"onInput()\" onchange=\"onChange()\"");
-    {
-      if (readonly) {
-        _builder.append(" readonly");
-      }
-    }
-    _builder.append(">");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t    ");
-    _builder.append("</div>");
-    return _builder.toString();
   }
 
   protected static TypeStyle _privk3_createDefaultTypeStyle(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self) {

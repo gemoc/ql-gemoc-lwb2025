@@ -41,10 +41,11 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if (readonly) {
       return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
     } else {
+      final TypeStyle typeStyle = qStyle.getTypeStyle();
       boolean _matched = false;
-      if (qStyle instanceof NumericTypeSpinnerStyle) {
+      if (typeStyle instanceof NumericTypeSpinnerStyle) {
         _matched=true;
-        final double step = ((NumericTypeSpinnerStyle) qStyle).getStep();
+        final double step = ((NumericTypeSpinnerStyle)typeStyle).getStep();
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("<div>");
         _builder.newLine();

@@ -28,6 +28,7 @@ import org.gemoc.qls.model.qls.BooleanStyleKind
 import org.gemoc.qls.model.qls.EnumerationStyleKind
 import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle
 import org.gemoc.qls.model.qls.NumericTypeSpinnerStyle
+import org.gemoc.qls.model.qls.BooleanTypeStyle
 
 /* Aspects used by HTML Form presentation */
 
@@ -102,7 +103,10 @@ class QuestionDefinitionHtmlAspect extends NamedElementAspect {
 @Aspect(className=ValueType)
 class ValueTypeHtmlAspect  {
 	def String htmlLabel(String id, String label, LabelStyle style) {
-		return '''«IF style.bold»<b>«ENDIF»«IF style.italic»<i>«ENDIF»<label for="«id»">«label»</label>«IF style.italic»</i>«ENDIF»«IF style.bold»</b>«ENDIF»'''
+		// labelStyl may be null
+		val bold = style !== null ? style.bold : false;
+		val italic = style !== null ? style.italic : false;
+		return '''«IF bold»<b>«ENDIF»«IF italic»<i>«ENDIF»<label for="«id»">«label»</label>«IF italic»</i>«ENDIF»«IF bold»</b>«ENDIF»'''
 	}
 	
 	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
@@ -127,14 +131,33 @@ class ValueTypeHtmlAspect  {
 @Aspect(className=BooleanValueType)
 class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
-		var String checked = ""
-		if(currentValue !== null) {
-			if((currentValue as BooleanValue).isBooleanValue) checked = "checked";
+		val booleanStyleKind = (qStyle.typeStyle as BooleanTypeStyle).booleanStyleKind
+		switch booleanStyleKind {
+				case TWO_RADIO: {
+					var isChecked = false;
+					if(currentValue !== null) {
+						isChecked = (currentValue as BooleanValue).isBooleanValue
+					}
+					return '''<div>
+				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
+				      	<input type="radio" id="«id»_true" name="«id»" value="true" «IF isChecked»checked«ENDIF» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»> <label for="«id»_true">Yes</label>
+				      	<input type="radio" id="«id»_false" name="«id»" value="false" «IF !isChecked»checked«ENDIF» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»> <label for="«id»_false">No</label>
+				    </div>'''
+				    
+				   }
+		    	default : {
+		    		var String checked = ""
+					if(currentValue !== null) {
+						if((currentValue as BooleanValue).isBooleanValue) 
+						checked = "checked";
+					}
+					return '''<div>
+					      «_self.htmlLabel(id, label,qStyle.labelStyle)»
+					      <input type="checkbox" id="«id»" name="«id»" «checked» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
+					    </div>'''
+					    
+				}			
 		}
-		return '''<div>
-		      «_self.htmlLabel(id, label,qStyle.labelStyle)»
-		      <input type="checkbox" id="«id»" name="«id»" «checked» oninput="onInput()" onchange="onChange()"«IF readonly» readonly«ENDIF»>
-		    </div>''';
 	}
 	
 	def TypeStyle createDefaultTypeStyle() {
@@ -154,9 +177,10 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			switch qStyle {
+			val typeStyle = qStyle.typeStyle
+			switch typeStyle {
 				NumericTypeSpinnerStyle: {
-					val step =( qStyle as NumericTypeSpinnerStyle).step;
+					val step = typeStyle.step;
 					return '''<div>
 				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
 				      	<input type="number" id="«id»" name="«id»" step="«step»" value="«value»" oninput="onInput()" onchange="onChange()">
@@ -188,9 +212,10 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			switch qStyle {
+			val typeStyle = qStyle.typeStyle
+			switch typeStyle {
 				NumericTypeSpinnerStyle: {
-					val step =( qStyle as NumericTypeSpinnerStyle).step;
+					val step = typeStyle.step;
 					return '''<div>
 				    	«_self.htmlLabel(id, label,qStyle.labelStyle)»
 				      	<input type="number" id="«id»" name="«id»" step="«step»" value="«value»" oninput="onInput()" onchange="onChange()">
