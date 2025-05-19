@@ -4,21 +4,35 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.DecimalValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.qls.model.qls.NumericTypeTextFieldStyle;
+import org.gemoc.qls.model.qls.QlsFactory;
+import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.TypeStyle;
 
 @Aspect(className = DecimalValueType.class)
 @SuppressWarnings("all")
 public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final DecimalValueType _self, final String id, final String label, final Value currentValue) {
+  public static String htmlField(final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
     if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label,currentValue);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self,id,label,currentValue,qStyle);
     };
     return (java.lang.String)result;
   }
 
-  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label, final Value currentValue) {
+  public static TypeStyle createDefaultTypeStyle(final DecimalValueType _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspectDecimalValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# TypeStyle createDefaultTypeStyle()
+    if (_self instanceof org.gemoc.ql.model.ql.DecimalValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.DecimalValueTypeHtmlAspect._privk3_createDefaultTypeStyle(_self_, (org.gemoc.ql.model.ql.DecimalValueType)_self);
+    };
+    return (org.gemoc.qls.model.qls.TypeStyle)result;
+  }
+
+  protected static String _privk3_htmlField(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     String value = "";
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
@@ -26,12 +40,9 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
     _builder.newLine();
-    _builder.append("\t\t        ");
-    _builder.append("<label for=\"");
-    _builder.append(id, "\t\t        ");
-    _builder.append("\">");
-    _builder.append(label, "\t\t        ");
-    _builder.append("</label>");
+    _builder.append("\t\t\t\t");
+    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+    _builder.append(_htmlLabel, "\t\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t        ");
     _builder.append("<input type=\"number\" id=\"");
@@ -45,5 +56,11 @@ public class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append("\t\t    ");
     _builder.append("</div>");
     return _builder.toString();
+  }
+
+  protected static TypeStyle _privk3_createDefaultTypeStyle(final DecimalValueTypeHtmlAspectDecimalValueTypeAspectProperties _self_, final DecimalValueType _self) {
+    final NumericTypeTextFieldStyle typeStype = QlsFactory.eINSTANCE.createNumericTypeTextFieldStyle();
+    typeStype.setStep(0);
+    return typeStype;
   }
 }

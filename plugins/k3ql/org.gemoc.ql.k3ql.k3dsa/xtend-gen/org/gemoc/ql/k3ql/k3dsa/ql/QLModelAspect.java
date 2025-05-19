@@ -106,24 +106,31 @@ public class QLModelAspect {
     };
   }
 
-  /**
-   * step captured by the Engine Addon to flush the display, so we can add the field again according to their newly isDisplayed status
-   * it waits for change
-   */
-  @Step
   public static void resetIsDisplayed(final QLModel _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
     // #DispatchPointCut_before# void resetIsDisplayed()
     if (_self instanceof org.gemoc.ql.model.ql.QLModel){
+    	org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_resetIsDisplayed(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    };
+  }
+
+  /**
+   * Recompute which questions must be displayed
+   */
+  @Step
+  public static void updateIsDisplayed(final QLModel _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspectQLModelAspectContext.getSelf(_self);
+    // #DispatchPointCut_before# void updateIsDisplayed()
+    if (_self instanceof org.gemoc.ql.model.ql.QLModel){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
     		@Override
     		public void execute() {
-    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_resetIsDisplayed(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
+    			org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect._privk3_updateIsDisplayed(_self_, (org.gemoc.ql.model.ql.QLModel)_self);
     		}
     	};
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     	if (stepManager != null) {
-    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "resetIsDisplayed");
+    		stepManager.executeStep(_self, new Object[] {}, command, "QLModel", "updateIsDisplayed");
     	} else {
     		command.execute();
     	}
@@ -132,7 +139,7 @@ public class QLModelAspect {
   }
 
   /**
-   * REcompute which question must be displayed and trigger a show of the relevant question
+   * step captured by the Engine Addon to flush the display and render the questions that are marked as isDisplayed = True
    */
   @Step
   public static void renderQuestions(final QLModel _self) {
@@ -292,6 +299,7 @@ public class QLModelAspect {
         EObjectAspect.devInfo(_self, "-> main() ");
         while ((_self.getSubmitDate() == null)) {
           {
+            QLModelAspect.updateIsDisplayed(_self);
             QLModelAspect.renderQuestions(_self);
             final Function1<DefinitionGroup, EList<QuestionDefinition>> _function = (DefinitionGroup f) -> {
               return f.getQuestionDefinitions();
@@ -321,6 +329,7 @@ public class QLModelAspect {
             };
             allDisplayedQuestion.forEach(_function_5);
             QLModelAspect.readSubmitButtonStatus(_self);
+            QLModelAspect.updateIsDisplayed(_self);
             QLModelAspect.renderQuestions(_self);
             QLModelAspect.updateAllComputedQuestions(_self);
           }
@@ -348,14 +357,24 @@ public class QLModelAspect {
   }
 
   protected static void _privk3_resetIsDisplayed(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+    EList<DefinitionGroup> _definitionGroup = _self.getDefinitionGroup();
+    for (final DefinitionGroup g : _definitionGroup) {
+      EList<QuestionDefinition> _questionDefinitions = g.getQuestionDefinitions();
+      for (final QuestionDefinition qd : _questionDefinitions) {
+        qd.setIsDisplayed(false);
+      }
+    }
   }
 
-  protected static void _privk3_renderQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
+  protected static void _privk3_updateIsDisplayed(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
     QLModelAspect.resetIsDisplayed(_self);
     EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();
     for (final QuestionGroup qg : _questionGroups) {
-      QuestionGroupAspect.render(qg);
+      QuestionGroupAspect.updateIsDisplayed(qg);
     }
+  }
+
+  protected static void _privk3_renderQuestions(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {
   }
 
   protected static void _privk3_updateSubmitButtonStatus(final QLModelAspectQLModelAspectProperties _self_, final QLModel _self) {

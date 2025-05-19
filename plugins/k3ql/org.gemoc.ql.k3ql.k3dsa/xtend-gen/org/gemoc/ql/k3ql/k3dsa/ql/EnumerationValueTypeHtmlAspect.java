@@ -6,21 +6,36 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.EnumerationLiteral;
 import org.gemoc.ql.model.ql.EnumerationValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.qls.model.qls.EnumerationStyleKind;
+import org.gemoc.qls.model.qls.EnumerationTypeStyle;
+import org.gemoc.qls.model.qls.QlsFactory;
+import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.TypeStyle;
 
 @Aspect(className = EnumerationValueType.class)
 @SuppressWarnings("all")
 public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final EnumerationValueType _self, final String id, final String label, final Value currentValue) {
+  public static String htmlField(final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
     if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label,currentValue);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self,id,label,currentValue,qStyle);
     };
     return (java.lang.String)result;
   }
 
-  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue) {
+  public static TypeStyle createDefaultTypeStyle(final EnumerationValueType _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# TypeStyle createDefaultTypeStyle()
+    if (_self instanceof org.gemoc.ql.model.ql.EnumerationValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.EnumerationValueTypeHtmlAspect._privk3_createDefaultTypeStyle(_self_, (org.gemoc.ql.model.ql.EnumerationValueType)_self);
+    };
+    return (org.gemoc.qls.model.qls.TypeStyle)result;
+  }
+
+  protected static String _privk3_htmlField(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     String value = "";
     if ((currentValue != null)) {
       value = ValueAspect.valueToString(currentValue);
@@ -29,11 +44,8 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append("<div>");
     _builder.newLine();
     _builder.append("\t\t      ");
-    _builder.append("<label for=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\">");
-    _builder.append(label, "\t\t      ");
-    _builder.append("</label>");
+    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+    _builder.append(_htmlLabel, "\t\t      ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t      ");
     _builder.append("<select id=\"");
@@ -69,5 +81,11 @@ public class EnumerationValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append("\t\t    ");
     _builder.append("</div>");
     return _builder.toString();
+  }
+
+  protected static TypeStyle _privk3_createDefaultTypeStyle(final EnumerationValueTypeHtmlAspectEnumerationValueTypeAspectProperties _self_, final EnumerationValueType _self) {
+    final EnumerationTypeStyle typeStype = QlsFactory.eINSTANCE.createEnumerationTypeStyle();
+    typeStype.setEnumerationStyleKing(EnumerationStyleKind.DROPDOWN);
+    return typeStype;
   }
 }

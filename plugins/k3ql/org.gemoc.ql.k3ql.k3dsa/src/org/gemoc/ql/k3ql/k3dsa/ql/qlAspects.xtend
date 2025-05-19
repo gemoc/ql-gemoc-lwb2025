@@ -109,6 +109,7 @@ class QLModelAspect {
 			
 			while(_self.submitDate === null) {
 				// recompute which questions must be displayed
+				_self.updateIsDisplayed();
 				_self.renderQuestions();
 				
 				// refresh canSubmit
@@ -125,6 +126,8 @@ class QLModelAspect {
 				_self.readSubmitButtonStatus();
 				
 				// recompute which questions must be displayed now as the user input may enable some computed question
+				
+				_self.updateIsDisplayed();
 				_self.renderQuestions();
 				
 				// recompute all computedQuestions
@@ -152,27 +155,36 @@ class QLModelAspect {
 		
 	}
 	
-	/** step captured by the Engine Addon to flush the display, so we can add the field again according to their newly isDisplayed status
-	 * it waits for change
+	/** 
 	 */
-	@Step
 	def void resetIsDisplayed() {
-//		for( g : _self.definitionGroup) {
-//			for (qd : g.questionDefinitions) {
-//				qd.isDisplayed = false
-//			}
-//		}	
+		for( g : _self.definitionGroup) {
+			for (qd : g.questionDefinitions) {
+				qd.isDisplayed = false
+			}
+		}	
 	}
 	
+	
 	/**
-	 * REcompute which question must be displayed and trigger a show of the relevant question
+	 * Recompute which questions must be displayed
+	 */
+	@Step 
+	def void updateIsDisplayed() {
+		_self.resetIsDisplayed();
+		for( qg : _self.questionGroups) {
+			qg.updateIsDisplayed();
+		}
+	}
+	/**
+	 * step captured by the Engine Addon to flush the display and render the questions that are marked as isDisplayed = True
 	 */
 	@Step 
 	def void renderQuestions() {
-		_self.resetIsDisplayed();
-		for( qg : _self.questionGroups) {
-			qg.render();
-		}
+//		_self.resetIsDisplayed();
+//		for( qg : _self.questionGroups) {
+//			qg.render();
+//		}
 	}
 	
 	/** step captured by the Engine Addon to update the submit button according to the model status
@@ -1174,16 +1186,15 @@ abstract class ConditionnalElementAspect {
 @Aspect(className=QuestionGroup)
 class QuestionGroupAspect extends ConditionnalElementAspect {
 	@Step
-	def void render() {
+	def void updateIsDisplayed() {
 		_self.devInfo('QuestionGroupAspect guard='+_self.guard);
 		try{
 			if(_self.guard === null  || _self.guard.evaluateAsBoolean().booleanValue) {
 				for( question : _self.questions) {
 					question.questionDefinition.isDisplayed = true;
-					question.show();
 				}
 				for(subGroup : _self.questionGroups) {
-					subGroup.render();	
+					subGroup.updateIsDisplayed();	
 				}
 			} else {
 				for( question : _self.questions) {

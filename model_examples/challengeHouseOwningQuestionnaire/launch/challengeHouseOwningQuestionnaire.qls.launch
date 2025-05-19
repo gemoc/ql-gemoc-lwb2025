@@ -11,7 +11,7 @@
     <booleanAttribute key="Generic MultiDimensional Data Trace" value="false"/>
     <stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void org.gemoc.ql.k3ql.k3dsa.qls.QLSModelAspect.main(org.gemoc.qls.model.qls.QLSModel)"/>
     <stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
-    <booleanAttribute key="QL Form Browser View" value="false"/>
+    <booleanAttribute key="QL Form Browser View" value="true"/>
     <stringAttribute key="Resource" value="/challengeHouseOwningQuestionnaire/ql/challengeHouseOwningQuestionnaire.qls"/>
     <stringAttribute key="airdResource" value="/challengeHouseOwningQuestionnaire/ql/challengeHouseOwningQuestionnaire.ql.aird"/>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>

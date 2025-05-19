@@ -15,19 +15,19 @@ import org.gemoc.ql.model.ql.QuestionGroup;
 @SuppressWarnings("all")
 public class QuestionGroupAspect extends ConditionnalElementAspect {
   @Step
-  public static void render(final QuestionGroup _self) {
+  public static void updateIsDisplayed(final QuestionGroup _self) {
     final org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspectQuestionGroupAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspectQuestionGroupAspectContext.getSelf(_self);
-    // #DispatchPointCut_before# void render()
+    // #DispatchPointCut_before# void updateIsDisplayed()
     if (_self instanceof org.gemoc.ql.model.ql.QuestionGroup){
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
     		@Override
     		public void execute() {
-    			org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect._privk3_render(_self_, (org.gemoc.ql.model.ql.QuestionGroup)_self);
+    			org.gemoc.ql.k3ql.k3dsa.ql.QuestionGroupAspect._privk3_updateIsDisplayed(_self_, (org.gemoc.ql.model.ql.QuestionGroup)_self);
     		}
     	};
     	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
     	if (stepManager != null) {
-    		stepManager.executeStep(_self, new Object[] {}, command, "QuestionGroup", "render");
+    		stepManager.executeStep(_self, new Object[] {}, command, "QuestionGroup", "updateIsDisplayed");
     	} else {
     		command.execute();
     	}
@@ -35,7 +35,7 @@ public class QuestionGroupAspect extends ConditionnalElementAspect {
     };
   }
 
-  protected static void _privk3_render(final QuestionGroupAspectQuestionGroupAspectProperties _self_, final QuestionGroup _self) {
+  protected static void _privk3_updateIsDisplayed(final QuestionGroupAspectQuestionGroupAspectProperties _self_, final QuestionGroup _self) {
     try {
       Expression _guard = _self.getGuard();
       String _plus = ("QuestionGroupAspect guard=" + _guard);
@@ -44,21 +44,18 @@ public class QuestionGroupAspect extends ConditionnalElementAspect {
         if (((_self.getGuard() == null) || Boolean.valueOf(ExpressionAspect.evaluateAsBoolean(_self.getGuard())).booleanValue())) {
           EList<Question> _questions = _self.getQuestions();
           for (final Question question : _questions) {
-            {
-              QuestionDefinition _questionDefinition = question.getQuestionDefinition();
-              _questionDefinition.setIsDisplayed(true);
-              QuestionAspect.show(question);
-            }
+            QuestionDefinition _questionDefinition = question.getQuestionDefinition();
+            _questionDefinition.setIsDisplayed(true);
           }
           EList<QuestionGroup> _questionGroups = _self.getQuestionGroups();
           for (final QuestionGroup subGroup : _questionGroups) {
-            QuestionGroupAspect.render(subGroup);
+            QuestionGroupAspect.updateIsDisplayed(subGroup);
           }
         } else {
           EList<Question> _questions_1 = _self.getQuestions();
           for (final Question question_1 : _questions_1) {
-            QuestionDefinition _questionDefinition = question_1.getQuestionDefinition();
-            _questionDefinition.setIsDisplayed(false);
+            QuestionDefinition _questionDefinition_1 = question_1.getQuestionDefinition();
+            _questionDefinition_1.setIsDisplayed(false);
           }
         }
       } catch (final Throwable _t) {

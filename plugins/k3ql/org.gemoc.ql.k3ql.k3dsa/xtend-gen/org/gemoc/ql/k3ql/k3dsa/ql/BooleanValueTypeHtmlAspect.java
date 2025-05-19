@@ -5,21 +5,36 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.gemoc.ql.model.ql.BooleanValue;
 import org.gemoc.ql.model.ql.BooleanValueType;
 import org.gemoc.ql.model.ql.Value;
+import org.gemoc.qls.model.qls.BooleanStyleKind;
+import org.gemoc.qls.model.qls.BooleanTypeStyle;
+import org.gemoc.qls.model.qls.QlsFactory;
+import org.gemoc.qls.model.qls.QuestionStyle;
+import org.gemoc.qls.model.qls.TypeStyle;
 
 @Aspect(className = BooleanValueType.class)
 @SuppressWarnings("all")
 public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
-  public static String htmlField(final BooleanValueType _self, final String id, final String label, final Value currentValue) {
+  public static String htmlField(final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectContext.getSelf(_self);
     Object result = null;
-    // #DispatchPointCut_before# String htmlField(String,String,Value)
+    // #DispatchPointCut_before# String htmlField(String,String,Value,QuestionStyle)
     if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
-    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self,id,label,currentValue);
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect._privk3_htmlField(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self,id,label,currentValue,qStyle);
     };
     return (java.lang.String)result;
   }
 
-  protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue) {
+  public static TypeStyle createDefaultTypeStyle(final BooleanValueType _self) {
+    final org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_ = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspectBooleanValueTypeAspectContext.getSelf(_self);
+    Object result = null;
+    // #DispatchPointCut_before# TypeStyle createDefaultTypeStyle()
+    if (_self instanceof org.gemoc.ql.model.ql.BooleanValueType){
+    	result = org.gemoc.ql.k3ql.k3dsa.ql.BooleanValueTypeHtmlAspect._privk3_createDefaultTypeStyle(_self_, (org.gemoc.ql.model.ql.BooleanValueType)_self);
+    };
+    return (org.gemoc.qls.model.qls.TypeStyle)result;
+  }
+
+  protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle) {
     String checked = "";
     if ((currentValue != null)) {
       boolean _isBooleanValue = ((BooleanValue) currentValue).isBooleanValue();
@@ -31,11 +46,8 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append("<div>");
     _builder.newLine();
     _builder.append("\t\t      ");
-    _builder.append("<label for=\"");
-    _builder.append(id, "\t\t      ");
-    _builder.append("\">");
-    _builder.append(label, "\t\t      ");
-    _builder.append("</label>");
+    String _htmlLabel = ValueTypeHtmlAspect.htmlLabel(_self, id, label, qStyle.getLabelStyle());
+    _builder.append(_htmlLabel, "\t\t      ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t      ");
     _builder.append("<input type=\"checkbox\" id=\"");
@@ -49,5 +61,11 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     _builder.append("\t\t    ");
     _builder.append("</div>");
     return _builder.toString();
+  }
+
+  protected static TypeStyle _privk3_createDefaultTypeStyle(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self) {
+    final BooleanTypeStyle typeStype = QlsFactory.eINSTANCE.createBooleanTypeStyle();
+    typeStype.setBooleanStyleKind(BooleanStyleKind.CHECKBOX);
+    return typeStype;
   }
 }
