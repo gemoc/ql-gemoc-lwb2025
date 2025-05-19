@@ -73,52 +73,8 @@ public class QLFormBrowserViewAddon implements IEngineAddon {
 				QLModel rooQLModel = (rootEObject instanceof QLModel) ? (QLModel) rootEObject : ((QLSModel)rootEObject).getStyledQLModel();
 				
 				if (stepToExecute.getMseoccurrence() != null && stepToExecute.getMseoccurrence().getMse() != null) {
-//					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof Question
-//							&& stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("show")) {
-//						// only when the show() function is executed on a Question
-//						Display.getDefault().syncExec(new Runnable() {
-//							@Override
-//							public void run() {
-//								try {
-//									IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-//											.getActivePage();
-//									IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-//									if (viewPart instanceof QLFormBrowserView) {
-//										Question question = (Question) stepToExecute.getMseoccurrence().getMse()
-//												.getCaller();
-//										String html = QuestionDefinitionHtmlAspect.htmlField(question.getQuestionDefinition()).replace("\"", "\\\"").replace("\n", "\\\n");
-//										//Activator.error("injecting "+html);
-//										((QLFormBrowserView) viewPart).appendQLForm(html);
-//									}
-//								} catch (Exception e) {
-//									Activator.error(e.getMessage(), e);
-//								}
-//							}
-//
-//						});
-//					}
 					if (stepToExecute.getMseoccurrence().getMse().getCaller() instanceof QLModel) {
 						QLModel qlModel = (QLModel)stepToExecute.getMseoccurrence().getMse().getCaller();
-//						if(stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("resetIsDisplayed")) {
-//							// only when the resetIsDisplayed() function is executed on a QLModel
-//							Display.getDefault().syncExec(new Runnable() {
-//								@Override
-//								public void run() {
-//									try {
-//										IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
-//												.getActivePage();
-//										IViewPart viewPart = page.findView(QLFormBrowserView.ID);
-//										if (viewPart instanceof QLFormBrowserView) {
-//											// reset the QLForm so we can add the field according to their new isDisplayed status
-//											((QLFormBrowserView) viewPart).setQLForm("");
-//										}
-//									} catch (Exception e) {
-//										Activator.error(e.getMessage(), e);
-//									}
-//								}
-//
-//							});
-//						}
 						if(stepToExecute.getMseoccurrence().getMse().getAction().getName().equals("renderQuestions")) {
 							// only when the resetIsDisplayed() function is executed on a QLModel
 							Display.getDefault().syncExec(new Runnable() {
