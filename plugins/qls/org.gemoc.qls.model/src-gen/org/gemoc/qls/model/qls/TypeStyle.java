@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see org.gemoc.qls.model.qls.QlsPackage#getTypeStyle()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface TypeStyle extends EObject {

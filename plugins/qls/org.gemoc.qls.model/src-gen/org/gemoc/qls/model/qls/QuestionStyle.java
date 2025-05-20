@@ -32,7 +32,7 @@ public interface QuestionStyle extends EObject {
 	 * @return the value of the '<em>Styled Question</em>' reference.
 	 * @see #setStyledQuestion(QuestionDefinition)
 	 * @see org.gemoc.qls.model.qls.QlsPackage#getQuestionStyle_StyledQuestion()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	QuestionDefinition getStyledQuestion();

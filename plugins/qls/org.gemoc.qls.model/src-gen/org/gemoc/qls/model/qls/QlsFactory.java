@@ -40,15 +40,6 @@ public interface QlsFactory extends EFactory {
 	Import createImport();
 
 	/**
-	 * Returns a new object of class '<em>Type Style</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Type Style</em>'.
-	 * @generated
-	 */
-	TypeStyle createTypeStyle();
-
-	/**
 	 * Returns a new object of class '<em>Numeric Type Style</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

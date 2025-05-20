@@ -16,7 +16,7 @@ import org.gemoc.qls.model.qls.TypeStyle;
  *
  * @generated
  */
-public class TypeStyleImpl extends MinimalEObjectImpl.Container implements TypeStyle {
+public abstract class TypeStyleImpl extends MinimalEObjectImpl.Container implements TypeStyle {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

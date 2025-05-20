@@ -709,7 +709,7 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeStyleEClass, TypeStyle.class, "TypeStyle", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(typeStyleEClass, TypeStyle.class, "TypeStyle", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(numericTypeStyleEClass, NumericTypeStyle.class, "NumericTypeStyle", !IS_ABSTRACT, !IS_INTERFACE,
@@ -718,7 +718,7 @@ public class QlsPackageImpl extends EPackageImpl implements QlsPackage {
 		initEClass(questionStyleEClass, QuestionStyle.class, "QuestionStyle", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuestionStyle_StyledQuestion(), theQlPackage.getQuestionDefinition(), null, "styledQuestion",
-				null, 0, 1, QuestionStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				null, 1, 1, QuestionStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuestionStyle_LabelStyle(), this.getLabelStyle(), null, "labelStyle", null, 0, 1,
 				QuestionStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,

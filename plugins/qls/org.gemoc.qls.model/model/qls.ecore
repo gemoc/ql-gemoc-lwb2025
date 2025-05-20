@@ -14,10 +14,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TypeStyle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeStyle" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericTypeStyle" eSuperTypes="#//TypeStyle"/>
   <eClassifiers xsi:type="ecore:EClass" name="QuestionStyle">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="styledQuestion" eType="ecore:EClass ../../org.gemoc.ql.model/model/ql.ecore#//QuestionDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styledQuestion" lowerBound="1"
+        eType="ecore:EClass ../../org.gemoc.ql.model/model/ql.ecore#//QuestionDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//LabelStyle"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeStyle" eType="#//TypeStyle"

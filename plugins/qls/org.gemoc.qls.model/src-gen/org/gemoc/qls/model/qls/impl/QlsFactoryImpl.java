@@ -60,8 +60,6 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 			return createQLSModel();
 		case QlsPackage.IMPORT:
 			return createImport();
-		case QlsPackage.TYPE_STYLE:
-			return createTypeStyle();
 		case QlsPackage.NUMERIC_TYPE_STYLE:
 			return createNumericTypeStyle();
 		case QlsPackage.QUESTION_STYLE:
@@ -143,17 +141,6 @@ public class QlsFactoryImpl extends EFactoryImpl implements QlsFactory {
 	public Import createImport() {
 		ImportImpl import_ = new ImportImpl();
 		return import_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TypeStyle createTypeStyle() {
-		TypeStyleImpl typeStyle = new TypeStyleImpl();
-		return typeStyle;
 	}
 
 	/**

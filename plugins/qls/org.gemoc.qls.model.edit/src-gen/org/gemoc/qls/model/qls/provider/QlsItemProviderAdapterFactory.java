@@ -119,29 +119,6 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.TypeStyle} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TypeStyleItemProvider typeStyleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.gemoc.qls.model.qls.TypeStyle}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTypeStyleAdapter() {
-		if (typeStyleItemProvider == null) {
-			typeStyleItemProvider = new TypeStyleItemProvider(this);
-		}
-
-		return typeStyleItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.gemoc.qls.model.qls.NumericTypeStyle} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,8 +480,6 @@ public class QlsItemProviderAdapterFactory extends QlsAdapterFactory
 			qlsModelItemProvider.dispose();
 		if (importItemProvider != null)
 			importItemProvider.dispose();
-		if (typeStyleItemProvider != null)
-			typeStyleItemProvider.dispose();
 		if (numericTypeStyleItemProvider != null)
 			numericTypeStyleItemProvider.dispose();
 		if (questionStyleItemProvider != null)
