@@ -3,9 +3,10 @@ import "challengeHouseOwningQuestionnaire.ql"
 
 QLSModel HouseOwning { 
 	questionStyles { 
-		styledQuestion HouseOwning.hasBoughtHouse {labelStyle { bold } typeStyle BooleanStyle { TWO_RADIO}}
-		styledQuestion HouseOwning.sellingPrice {typeStyle NumericStyle spinner { step 100.0 }}
-		styledQuestion HouseOwning.privateDebt {typeStyle NumericStyle spinner { step 100.0 }}
+		styledQuestion HouseOwning.hasBoughtHouse {typeStyle boolean { TWO_RADIO}}
+		styledQuestion HouseOwning.hasSoldHouse { labelStyle { bold}}
+		styledQuestion HouseOwning.sellingPrice {typeStyle numeric  {spinner step 100.0 }}
+		styledQuestion HouseOwning.privateDebt {typeStyle numeric  { spinner step 100.0 }}
 		styledQuestion HouseOwning.valueResidue { labelStyle {italic}}
 	}
 	section "Selling Section" {
@@ -13,5 +14,6 @@ QLSModel HouseOwning {
 		HouseOwning.sellingPrice
 		HouseOwning.privateDebt
 		HouseOwning.valueResidue
+		
 	}
 }

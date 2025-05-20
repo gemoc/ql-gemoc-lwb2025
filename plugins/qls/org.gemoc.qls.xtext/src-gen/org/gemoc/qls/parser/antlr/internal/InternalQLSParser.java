@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalQLSParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'section'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'italic'", "'bold'", "'BooleanStyle'", "'NumericStyle'", "'textField'", "'spinner'", "'step'", "'TextStyle'", "'multiline'", "'('", "')'", "'if'", "'then'", "'else'", "'endif'", "'true'", "'false'", "'EDate'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'E'", "'e'", "'-'", "'mandatory'", "'question'", "'isDisplayed'", "'currentValue'", "':'", "'='", "';'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'and'", "'or'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'section'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'italic'", "'bold'", "'boolean'", "'numeric'", "'textField'", "'spinner'", "'step'", "'text'", "'multiline'", "'('", "')'", "'if'", "'then'", "'else'", "'endif'", "'true'", "'false'", "'EDate'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'E'", "'e'", "'-'", "'mandatory'", "'question'", "'isDisplayed'", "'currentValue'", "':'", "'='", "';'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'and'", "'or'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1197,11 +1197,21 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
             if ( (LA7_0==23) ) {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==25) ) {
-                    alt7=2;
-                }
-                else if ( (LA7_1==24) ) {
-                    alt7=1;
+                if ( (LA7_1==12) ) {
+                    int LA7_2 = input.LA(3);
+
+                    if ( (LA7_2==25) ) {
+                        alt7=2;
+                    }
+                    else if ( (LA7_2==24) ) {
+                        alt7=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 7, 2, input);
+
+                        throw nvae;
+                    }
                 }
                 else {
                     NoViableAltException nvae =
@@ -1702,7 +1712,7 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanTypeStyle"
-    // InternalQLS.g:636:1: ruleBooleanTypeStyle returns [EObject current=null] : (otherlv_0= 'BooleanStyle' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' ) ;
+    // InternalQLS.g:636:1: ruleBooleanTypeStyle returns [EObject current=null] : (otherlv_0= 'boolean' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' ) ;
     public final EObject ruleBooleanTypeStyle() throws RecognitionException {
         EObject current = null;
 
@@ -1716,15 +1726,15 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalQLS.g:642:2: ( (otherlv_0= 'BooleanStyle' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' ) )
-            // InternalQLS.g:643:2: (otherlv_0= 'BooleanStyle' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' )
+            // InternalQLS.g:642:2: ( (otherlv_0= 'boolean' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' ) )
+            // InternalQLS.g:643:2: (otherlv_0= 'boolean' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' )
             {
-            // InternalQLS.g:643:2: (otherlv_0= 'BooleanStyle' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' )
-            // InternalQLS.g:644:3: otherlv_0= 'BooleanStyle' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}'
+            // InternalQLS.g:643:2: (otherlv_0= 'boolean' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}' )
+            // InternalQLS.g:644:3: otherlv_0= 'boolean' otherlv_1= '{' ( (lv_booleanStyleKind_2_0= ruleBooleanStyleKind ) ) otherlv_3= '}'
             {
             otherlv_0=(Token)match(input,22,FOLLOW_5); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getBooleanTypeStyleAccess().getBooleanKeyword_0());
             		
             otherlv_1=(Token)match(input,12,FOLLOW_17); 
 
@@ -1824,7 +1834,7 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericTypeTextFieldStyle"
-    // InternalQLS.g:686:1: ruleNumericTypeTextFieldStyle returns [EObject current=null] : ( () otherlv_1= 'NumericStyle' otherlv_2= 'textField' otherlv_3= '{' otherlv_4= '}' ) ;
+    // InternalQLS.g:686:1: ruleNumericTypeTextFieldStyle returns [EObject current=null] : ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'textField' otherlv_4= '}' ) ;
     public final EObject ruleNumericTypeTextFieldStyle() throws RecognitionException {
         EObject current = null;
 
@@ -1837,11 +1847,11 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalQLS.g:692:2: ( ( () otherlv_1= 'NumericStyle' otherlv_2= 'textField' otherlv_3= '{' otherlv_4= '}' ) )
-            // InternalQLS.g:693:2: ( () otherlv_1= 'NumericStyle' otherlv_2= 'textField' otherlv_3= '{' otherlv_4= '}' )
+            // InternalQLS.g:692:2: ( ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'textField' otherlv_4= '}' ) )
+            // InternalQLS.g:693:2: ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'textField' otherlv_4= '}' )
             {
-            // InternalQLS.g:693:2: ( () otherlv_1= 'NumericStyle' otherlv_2= 'textField' otherlv_3= '{' otherlv_4= '}' )
-            // InternalQLS.g:694:3: () otherlv_1= 'NumericStyle' otherlv_2= 'textField' otherlv_3= '{' otherlv_4= '}'
+            // InternalQLS.g:693:2: ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'textField' otherlv_4= '}' )
+            // InternalQLS.g:694:3: () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'textField' otherlv_4= '}'
             {
             // InternalQLS.g:694:3: ()
             // InternalQLS.g:695:4: 
@@ -1854,17 +1864,17 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_18); 
+            otherlv_1=(Token)match(input,23,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericStyleKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericKeyword_1());
             		
-            otherlv_2=(Token)match(input,24,FOLLOW_5); 
+            otherlv_2=(Token)match(input,12,FOLLOW_18); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,12,FOLLOW_14); 
+            otherlv_3=(Token)match(input,24,FOLLOW_14); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_3());
             		
             otherlv_4=(Token)match(input,14,FOLLOW_2); 
 
@@ -1929,7 +1939,7 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericTypeSpinnerStyle"
-    // InternalQLS.g:728:1: ruleNumericTypeSpinnerStyle returns [EObject current=null] : ( () otherlv_1= 'NumericStyle' otherlv_2= 'spinner' otherlv_3= '{' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' ) ;
+    // InternalQLS.g:728:1: ruleNumericTypeSpinnerStyle returns [EObject current=null] : ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'spinner' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' ) ;
     public final EObject ruleNumericTypeSpinnerStyle() throws RecognitionException {
         EObject current = null;
 
@@ -1945,11 +1955,11 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalQLS.g:734:2: ( ( () otherlv_1= 'NumericStyle' otherlv_2= 'spinner' otherlv_3= '{' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' ) )
-            // InternalQLS.g:735:2: ( () otherlv_1= 'NumericStyle' otherlv_2= 'spinner' otherlv_3= '{' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' )
+            // InternalQLS.g:734:2: ( ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'spinner' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' ) )
+            // InternalQLS.g:735:2: ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'spinner' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' )
             {
-            // InternalQLS.g:735:2: ( () otherlv_1= 'NumericStyle' otherlv_2= 'spinner' otherlv_3= '{' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' )
-            // InternalQLS.g:736:3: () otherlv_1= 'NumericStyle' otherlv_2= 'spinner' otherlv_3= '{' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}'
+            // InternalQLS.g:735:2: ( () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'spinner' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}' )
+            // InternalQLS.g:736:3: () otherlv_1= 'numeric' otherlv_2= '{' otherlv_3= 'spinner' (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )? otherlv_6= '}'
             {
             // InternalQLS.g:736:3: ()
             // InternalQLS.g:737:4: 
@@ -1962,17 +1972,17 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_19); 
+            otherlv_1=(Token)match(input,23,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_5); 
+            otherlv_2=(Token)match(input,12,FOLLOW_19); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_3=(Token)match(input,12,FOLLOW_20); 
+            otherlv_3=(Token)match(input,25,FOLLOW_20); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_3());
             		
             // InternalQLS.g:755:3: (otherlv_4= 'step' ( (lv_step_5_0= ruleEDouble ) ) )?
             int alt12=2;
@@ -2089,7 +2099,7 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextTypeStyle"
-    // InternalQLS.g:795:1: ruleTextTypeStyle returns [EObject current=null] : ( () otherlv_1= 'TextStyle' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' ) ;
+    // InternalQLS.g:795:1: ruleTextTypeStyle returns [EObject current=null] : ( () otherlv_1= 'text' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' ) ;
     public final EObject ruleTextTypeStyle() throws RecognitionException {
         EObject current = null;
 
@@ -2102,11 +2112,11 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalQLS.g:801:2: ( ( () otherlv_1= 'TextStyle' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' ) )
-            // InternalQLS.g:802:2: ( () otherlv_1= 'TextStyle' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' )
+            // InternalQLS.g:801:2: ( ( () otherlv_1= 'text' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' ) )
+            // InternalQLS.g:802:2: ( () otherlv_1= 'text' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' )
             {
-            // InternalQLS.g:802:2: ( () otherlv_1= 'TextStyle' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' )
-            // InternalQLS.g:803:3: () otherlv_1= 'TextStyle' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}'
+            // InternalQLS.g:802:2: ( () otherlv_1= 'text' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}' )
+            // InternalQLS.g:803:3: () otherlv_1= 'text' otherlv_2= '{' ( (lv_multiline_3_0= 'multiline' ) )? otherlv_4= '}'
             {
             // InternalQLS.g:803:3: ()
             // InternalQLS.g:804:4: 
@@ -2121,7 +2131,7 @@ public class InternalQLSParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,27,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getTextTypeStyleAccess().getTextKeyword_1());
             		
             otherlv_2=(Token)match(input,12,FOLLOW_22); 
 

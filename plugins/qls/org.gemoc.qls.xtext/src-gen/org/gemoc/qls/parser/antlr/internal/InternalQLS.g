@@ -641,9 +641,9 @@ ruleBooleanTypeStyle returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='BooleanStyle'
+		otherlv_0='boolean'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getBooleanTypeStyleAccess().getBooleanKeyword_0());
 		}
 		otherlv_1='{'
 		{
@@ -698,17 +698,17 @@ ruleNumericTypeTextFieldStyle returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='NumericStyle'
+		otherlv_1='numeric'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericStyleKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericKeyword_1());
 		}
-		otherlv_2='textField'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_3='{'
+		otherlv_3='textField'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_3());
 		}
 		otherlv_4='}'
 		{
@@ -740,17 +740,17 @@ ruleNumericTypeSpinnerStyle returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='NumericStyle'
+		otherlv_1='numeric'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericKeyword_1());
 		}
-		otherlv_2='spinner'
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_3='{'
+		otherlv_3='spinner'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_3());
 		}
 		(
 			otherlv_4='step'
@@ -807,9 +807,9 @@ ruleTextTypeStyle returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='TextStyle'
+		otherlv_1='text'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getTextTypeStyleAccess().getTextKeyword_1());
 		}
 		otherlv_2='{'
 		{

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalQLSParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'='", "'and'", "'or'", "'true'", "'false'", "'E'", "'e'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'-'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'section'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'BooleanStyle'", "'NumericStyle'", "'textField'", "'spinner'", "'step'", "'TextStyle'", "'('", "')'", "'if'", "'then'", "'endif'", "'else'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'question'", "':'", "'currentValue'", "';'", "'italic'", "'bold'", "'multiline'", "'mandatory'", "'isDisplayed'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'EDate'", "'='", "'and'", "'or'", "'true'", "'false'", "'E'", "'e'", "'CHECKBOX'", "'TWO_RADIO'", "'DROPDOWN'", "'PLUS'", "'MINUS'", "'MULT'", "'DIV'", "'EQUAL'", "'NOTEQUAL'", "'GREATER'", "'LOWER'", "'GREATEROREQUAL'", "'LOWEROREQUAL'", "'AND'", "'OR'", "'-'", "'not'", "'+'", "'*'", "'/'", "'>'", "'<'", "'>='", "'<='", "'QLSModel'", "'{'", "'questionStyles'", "'}'", "'import'", "'section'", "'styledQuestion'", "'labelStyle'", "'typeStyle'", "'boolean'", "'numeric'", "'textField'", "'spinner'", "'step'", "'text'", "'('", "')'", "'if'", "'then'", "'endif'", "'else'", "'ValueType'", "'unit'", "'booleanType'", "'integerType'", "'min'", "'max'", "'decimalType'", "'dateType'", "'enumerationType'", "'literals'", "','", "'StringType'", "'DateValue'", "'dateValue'", "'.'", "'question'", "':'", "'currentValue'", "';'", "'italic'", "'bold'", "'multiline'", "'mandatory'", "'isDisplayed'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -4811,11 +4811,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             if ( (LA3_0==53) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( (LA3_1==55) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==54) ) {
-                    alt3=1;
+                if ( (LA3_1==44) ) {
+                    int LA3_2 = input.LA(3);
+
+                    if ( (LA3_2==54) ) {
+                        alt3=1;
+                    }
+                    else if ( (LA3_2==55) ) {
+                        alt3=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 3, 2, input);
+
+                        throw nvae;
+                    }
                 }
                 else {
                     NoViableAltException nvae =
@@ -10047,21 +10057,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BooleanTypeStyle__Group__0__Impl"
-    // InternalQLS.g:3129:1: rule__BooleanTypeStyle__Group__0__Impl : ( 'BooleanStyle' ) ;
+    // InternalQLS.g:3129:1: rule__BooleanTypeStyle__Group__0__Impl : ( 'boolean' ) ;
     public final void rule__BooleanTypeStyle__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3133:1: ( ( 'BooleanStyle' ) )
-            // InternalQLS.g:3134:1: ( 'BooleanStyle' )
+            // InternalQLS.g:3133:1: ( ( 'boolean' ) )
+            // InternalQLS.g:3134:1: ( 'boolean' )
             {
-            // InternalQLS.g:3134:1: ( 'BooleanStyle' )
-            // InternalQLS.g:3135:2: 'BooleanStyle'
+            // InternalQLS.g:3134:1: ( 'boolean' )
+            // InternalQLS.g:3135:2: 'boolean'
             {
-             before(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKeyword_0()); 
+             before(grammarAccess.getBooleanTypeStyleAccess().getBooleanKeyword_0()); 
             match(input,52,FOLLOW_2); 
-             after(grammarAccess.getBooleanTypeStyleAccess().getBooleanStyleKeyword_0()); 
+             after(grammarAccess.getBooleanTypeStyleAccess().getBooleanKeyword_0()); 
 
             }
 
@@ -10398,7 +10408,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3256:1: ( rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2 )
             // InternalQLS.g:3257:2: rule__NumericTypeTextFieldStyle__Group__1__Impl rule__NumericTypeTextFieldStyle__Group__2
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_6);
             rule__NumericTypeTextFieldStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10427,21 +10437,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__1__Impl"
-    // InternalQLS.g:3264:1: rule__NumericTypeTextFieldStyle__Group__1__Impl : ( 'NumericStyle' ) ;
+    // InternalQLS.g:3264:1: rule__NumericTypeTextFieldStyle__Group__1__Impl : ( 'numeric' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3268:1: ( ( 'NumericStyle' ) )
-            // InternalQLS.g:3269:1: ( 'NumericStyle' )
+            // InternalQLS.g:3268:1: ( ( 'numeric' ) )
+            // InternalQLS.g:3269:1: ( 'numeric' )
             {
-            // InternalQLS.g:3269:1: ( 'NumericStyle' )
-            // InternalQLS.g:3270:2: 'NumericStyle'
+            // InternalQLS.g:3269:1: ( 'numeric' )
+            // InternalQLS.g:3270:2: 'numeric'
             {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericStyleKeyword_1()); 
+             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericKeyword_1()); 
             match(input,53,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericStyleKeyword_1()); 
+             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getNumericKeyword_1()); 
 
             }
 
@@ -10473,7 +10483,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3283:1: ( rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3 )
             // InternalQLS.g:3284:2: rule__NumericTypeTextFieldStyle__Group__2__Impl rule__NumericTypeTextFieldStyle__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_24);
             rule__NumericTypeTextFieldStyle__Group__2__Impl();
 
             state._fsp--;
@@ -10502,21 +10512,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__2__Impl"
-    // InternalQLS.g:3291:1: rule__NumericTypeTextFieldStyle__Group__2__Impl : ( 'textField' ) ;
+    // InternalQLS.g:3291:1: rule__NumericTypeTextFieldStyle__Group__2__Impl : ( '{' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3295:1: ( ( 'textField' ) )
-            // InternalQLS.g:3296:1: ( 'textField' )
+            // InternalQLS.g:3295:1: ( ( '{' ) )
+            // InternalQLS.g:3296:1: ( '{' )
             {
-            // InternalQLS.g:3296:1: ( 'textField' )
-            // InternalQLS.g:3297:2: 'textField'
+            // InternalQLS.g:3296:1: ( '{' )
+            // InternalQLS.g:3297:2: '{'
             {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_2()); 
-            match(input,54,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_2()); 
+             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,44,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -10577,21 +10587,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeTextFieldStyle__Group__3__Impl"
-    // InternalQLS.g:3318:1: rule__NumericTypeTextFieldStyle__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:3318:1: rule__NumericTypeTextFieldStyle__Group__3__Impl : ( 'textField' ) ;
     public final void rule__NumericTypeTextFieldStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3322:1: ( ( '{' ) )
-            // InternalQLS.g:3323:1: ( '{' )
+            // InternalQLS.g:3322:1: ( ( 'textField' ) )
+            // InternalQLS.g:3323:1: ( 'textField' )
             {
-            // InternalQLS.g:3323:1: ( '{' )
-            // InternalQLS.g:3324:2: '{'
+            // InternalQLS.g:3323:1: ( 'textField' )
+            // InternalQLS.g:3324:2: 'textField'
             {
-             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_3()); 
+            match(input,54,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeTextFieldStyleAccess().getTextFieldKeyword_3()); 
 
             }
 
@@ -10768,7 +10778,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3391:1: ( rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2 )
             // InternalQLS.g:3392:2: rule__NumericTypeSpinnerStyle__Group__1__Impl rule__NumericTypeSpinnerStyle__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_6);
             rule__NumericTypeSpinnerStyle__Group__1__Impl();
 
             state._fsp--;
@@ -10797,21 +10807,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__1__Impl"
-    // InternalQLS.g:3399:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'NumericStyle' ) ;
+    // InternalQLS.g:3399:1: rule__NumericTypeSpinnerStyle__Group__1__Impl : ( 'numeric' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3403:1: ( ( 'NumericStyle' ) )
-            // InternalQLS.g:3404:1: ( 'NumericStyle' )
+            // InternalQLS.g:3403:1: ( ( 'numeric' ) )
+            // InternalQLS.g:3404:1: ( 'numeric' )
             {
-            // InternalQLS.g:3404:1: ( 'NumericStyle' )
-            // InternalQLS.g:3405:2: 'NumericStyle'
+            // InternalQLS.g:3404:1: ( 'numeric' )
+            // InternalQLS.g:3405:2: 'numeric'
             {
-             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1()); 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericKeyword_1()); 
             match(input,53,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericStyleKeyword_1()); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getNumericKeyword_1()); 
 
             }
 
@@ -10843,7 +10853,7 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
             // InternalQLS.g:3418:1: ( rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3 )
             // InternalQLS.g:3419:2: rule__NumericTypeSpinnerStyle__Group__2__Impl rule__NumericTypeSpinnerStyle__Group__3
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_25);
             rule__NumericTypeSpinnerStyle__Group__2__Impl();
 
             state._fsp--;
@@ -10872,21 +10882,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__2__Impl"
-    // InternalQLS.g:3426:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( 'spinner' ) ;
+    // InternalQLS.g:3426:1: rule__NumericTypeSpinnerStyle__Group__2__Impl : ( '{' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3430:1: ( ( 'spinner' ) )
-            // InternalQLS.g:3431:1: ( 'spinner' )
+            // InternalQLS.g:3430:1: ( ( '{' ) )
+            // InternalQLS.g:3431:1: ( '{' )
             {
-            // InternalQLS.g:3431:1: ( 'spinner' )
-            // InternalQLS.g:3432:2: 'spinner'
+            // InternalQLS.g:3431:1: ( '{' )
+            // InternalQLS.g:3432:2: '{'
             {
-             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2()); 
-            match(input,55,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_2()); 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,44,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -10947,21 +10957,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericTypeSpinnerStyle__Group__3__Impl"
-    // InternalQLS.g:3453:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( '{' ) ;
+    // InternalQLS.g:3453:1: rule__NumericTypeSpinnerStyle__Group__3__Impl : ( 'spinner' ) ;
     public final void rule__NumericTypeSpinnerStyle__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3457:1: ( ( '{' ) )
-            // InternalQLS.g:3458:1: ( '{' )
+            // InternalQLS.g:3457:1: ( ( 'spinner' ) )
+            // InternalQLS.g:3458:1: ( 'spinner' )
             {
-            // InternalQLS.g:3458:1: ( '{' )
-            // InternalQLS.g:3459:2: '{'
+            // InternalQLS.g:3458:1: ( 'spinner' )
+            // InternalQLS.g:3459:2: 'spinner'
             {
-             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getLeftCurlyBracketKeyword_3()); 
+             before(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_3()); 
+            match(input,55,FOLLOW_2); 
+             after(grammarAccess.getNumericTypeSpinnerStyleAccess().getSpinnerKeyword_3()); 
 
             }
 
@@ -11418,21 +11428,21 @@ public class InternalQLSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextTypeStyle__Group__1__Impl"
-    // InternalQLS.g:3615:1: rule__TextTypeStyle__Group__1__Impl : ( 'TextStyle' ) ;
+    // InternalQLS.g:3615:1: rule__TextTypeStyle__Group__1__Impl : ( 'text' ) ;
     public final void rule__TextTypeStyle__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalQLS.g:3619:1: ( ( 'TextStyle' ) )
-            // InternalQLS.g:3620:1: ( 'TextStyle' )
+            // InternalQLS.g:3619:1: ( ( 'text' ) )
+            // InternalQLS.g:3620:1: ( 'text' )
             {
-            // InternalQLS.g:3620:1: ( 'TextStyle' )
-            // InternalQLS.g:3621:2: 'TextStyle'
+            // InternalQLS.g:3620:1: ( 'text' )
+            // InternalQLS.g:3621:2: 'text'
             {
-             before(grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1()); 
+             before(grammarAccess.getTextTypeStyleAccess().getTextKeyword_1()); 
             match(input,57,FOLLOW_2); 
-             after(grammarAccess.getTextTypeStyleAccess().getTextStyleKeyword_1()); 
+             after(grammarAccess.getTextTypeStyleAccess().getTextKeyword_1()); 
 
             }
 

@@ -62,26 +62,27 @@ LabelStyle returns LabelStyle:
 	;
 
 BooleanTypeStyle returns BooleanTypeStyle:
-	'BooleanStyle'
+	'boolean'
 	'{'
 		booleanStyleKind=BooleanStyleKind
 	'}';
 
 NumericTypeTextFieldStyle returns NumericTypeTextFieldStyle:
 	{NumericTypeTextFieldStyle} 
-	'NumericStyle' 'textField'
-	'{'	'}';
+	'numeric' 
+	'{' 'textField'	'}';
 
 NumericTypeSpinnerStyle returns NumericTypeSpinnerStyle:
 	{NumericTypeSpinnerStyle}
-	'NumericStyle' 'spinner' '{'
+	'numeric'  '{'
+		'spinner'
 		('step' step=EDouble)?'}'
 	;
 
 TextTypeStyle returns TextTypeStyle:
 	{TextTypeStyle}
 	
-	'TextStyle' '{' (multiline?='multiline')? '}'
+	'text' '{' (multiline?='multiline')? '}'
 	;
 
 enum BooleanStyleKind returns BooleanStyleKind:

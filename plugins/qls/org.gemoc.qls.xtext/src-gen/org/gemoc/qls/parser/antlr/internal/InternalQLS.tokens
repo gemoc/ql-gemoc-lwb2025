@@ -14,7 +14,6 @@
 '>'=82
 '>='=84
 'AND'=76
-'BooleanStyle'=22
 'CHECKBOX'=63
 'DIV'=69
 'DROPDOWN'=65
@@ -29,16 +28,15 @@
 'MINUS'=67
 'MULT'=68
 'NOTEQUAL'=71
-'NumericStyle'=23
 'OR'=77
 'PLUS'=66
 'QLSModel'=11
 'StringType'=49
 'TWO_RADIO'=64
-'TextStyle'=27
 'ValueType'=38
 'and'=86
 'bold'=21
+'boolean'=22
 'booleanType'=40
 'currentValue'=59
 'dateType'=45
@@ -61,6 +59,7 @@
 'min'=42
 'multiline'=28
 'not'=78
+'numeric'=23
 'or'=87
 'question'=57
 'questionStyles'=13
@@ -68,6 +67,7 @@
 'spinner'=25
 'step'=26
 'styledQuestion'=17
+'text'=27
 'textField'=24
 'then'=32
 'true'=35
