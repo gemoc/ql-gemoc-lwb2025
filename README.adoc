@@ -366,7 +366,7 @@ image::../../plugins/qls/org.gemoc.qls.model/model/img/qls.jpg[QLS main class di
 
 The figure <<#img-qls-main-class-diagram>> shows the reference from QLS to QL model elements.
 
-A `QLSModel`` decorates a `QLModel`. It specifies `Section`s that contains ordered content (other sub-sections or references to `QuestionDefinition`). These information are to organise the order and grouping of questions on the view. The actual visibility of a question remains a responsability of the QL model.
+A `QLSModel` decorates a `QLModel`. It specifies `Section`s that contains ordered content (other sub-sections or references to `QuestionDefinition`). These information are to organise the order and grouping of questions on the view. The actual visibility of a question remains a responsability of the QL model.
 
 `QuestionStyle` decorates a `QuestionDefinition` to provide some visual customisation on the label or on the question type.
 
