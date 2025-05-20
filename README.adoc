@@ -166,6 +166,10 @@ image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor open
 .Modeling Workbench textual editor with typechecker in actionn
 image::mwb_houseOwning_textual_editor_type_check.png[Modeling Workbench textual editor with typechecker in action]
 
+.Modeling Workbench textual editors with optional QLS in action
+image::mwb_houseOwning_textual_editor_optional_qls.png[Modeling Workbench textual editor with optional QLS in action]
+
+
 * Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
 
 .Modeling Workbench graphical editor opened on the HouseOwning example
@@ -178,7 +182,7 @@ So edition within Sirius views is currently limited to its property view.
 ====
 
 
-=== Model Executionn
+=== Model Execution
 
 To execute a model (i.e., to start a questionnaire):
 
@@ -198,7 +202,7 @@ Several preconfigured launch configuration are provided, they illustrates variou
 - starting from a `.ql` file without styling
 - starting from a `.qls` styling file
 - activating the Sirius animation
-- activating trace/timeline options (which are actually more relevant when starting the launch configuration in debug mode.)
+- activating trace/timeline options (these options are actually more relevant when starting the launch configuration in debug mode.)
 ====
 
 [IMPORTANT]
@@ -211,7 +215,7 @@ The Sirius-based graphical animation offers a complementary visualization of the
 - The visual appearance of questions (such as color changes) is updated in real time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
 
 .Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution
-image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution]
+image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution, (no QLS styling used in this screenshot)]
 
 === Model Debugging
 
