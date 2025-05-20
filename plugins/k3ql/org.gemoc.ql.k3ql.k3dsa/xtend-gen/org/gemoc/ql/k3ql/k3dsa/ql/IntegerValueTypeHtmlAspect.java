@@ -41,7 +41,13 @@ public class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
     if (readonly) {
       return ValueTypeHtmlAspect.htmlReadonlyField(_self, id, label, value, qStyle);
     } else {
-      final TypeStyle typeStyle = qStyle.getTypeStyle();
+      TypeStyle _xifexpression = null;
+      if (((qStyle != null) && (qStyle.getTypeStyle() != null))) {
+        _xifexpression = qStyle.getTypeStyle();
+      } else {
+        _xifexpression = null;
+      }
+      final TypeStyle typeStyle = _xifexpression;
       boolean _matched = false;
       if (typeStyle instanceof NumericTypeSpinnerStyle) {
         _matched=true;

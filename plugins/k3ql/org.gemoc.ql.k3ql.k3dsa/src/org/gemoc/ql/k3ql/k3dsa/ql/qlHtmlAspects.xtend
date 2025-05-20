@@ -146,7 +146,7 @@ class ValueTypeHtmlAspect  {
 @Aspect(className=BooleanValueType)
 class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 	def String htmlField(String id, String label, Value currentValue, QuestionStyle qStyle, boolean readonly){
-		val booleanStyleKind = (qStyle.typeStyle as BooleanTypeStyle).booleanStyleKind
+		val booleanStyleKind = qStyle !== null && qStyle.typeStyle !== null? (qStyle.typeStyle as BooleanTypeStyle).booleanStyleKind : BooleanStyleKind.CHECKBOX
 		switch booleanStyleKind {
 				case TWO_RADIO: {
 					var isChecked = false;
@@ -192,7 +192,7 @@ class IntegerValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			val typeStyle = qStyle.typeStyle
+			val typeStyle = qStyle !== null && qStyle.typeStyle !== null ? qStyle.typeStyle : null
 			switch typeStyle {
 				NumericTypeSpinnerStyle: {
 					val step = typeStyle.step;
@@ -227,7 +227,7 @@ class DecimalValueTypeHtmlAspect extends ValueTypeHtmlAspect {
 		if (readonly) {
 			return _self.htmlReadonlyField(id, label, value, qStyle)
 		} else {
-			val typeStyle = qStyle.typeStyle
+			val typeStyle = qStyle !== null && qStyle.typeStyle !== null ? qStyle.typeStyle : null;
 			switch typeStyle {
 				NumericTypeSpinnerStyle: {
 					val step = typeStyle.step;

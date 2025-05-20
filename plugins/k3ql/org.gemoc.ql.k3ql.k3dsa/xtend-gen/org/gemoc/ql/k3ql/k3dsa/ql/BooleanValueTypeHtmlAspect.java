@@ -35,8 +35,14 @@ public class BooleanValueTypeHtmlAspect extends ValueTypeHtmlAspect {
   }
 
   protected static String _privk3_htmlField(final BooleanValueTypeHtmlAspectBooleanValueTypeAspectProperties _self_, final BooleanValueType _self, final String id, final String label, final Value currentValue, final QuestionStyle qStyle, final boolean readonly) {
-    TypeStyle _typeStyle = qStyle.getTypeStyle();
-    final BooleanStyleKind booleanStyleKind = ((BooleanTypeStyle) _typeStyle).getBooleanStyleKind();
+    BooleanStyleKind _xifexpression = null;
+    if (((qStyle != null) && (qStyle.getTypeStyle() != null))) {
+      TypeStyle _typeStyle = qStyle.getTypeStyle();
+      _xifexpression = ((BooleanTypeStyle) _typeStyle).getBooleanStyleKind();
+    } else {
+      _xifexpression = BooleanStyleKind.CHECKBOX;
+    }
+    final BooleanStyleKind booleanStyleKind = _xifexpression;
     if (booleanStyleKind != null) {
       switch (booleanStyleKind) {
         case TWO_RADIO:
