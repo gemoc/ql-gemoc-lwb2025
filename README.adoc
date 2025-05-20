@@ -9,7 +9,7 @@
 Authors:
 Didier Vojtisek <didier.vojtisek@inria.fr>,
 Benoit Combemale <benoit.combemal@irisa.fr> --
-v1.0, 2025-04-30
+v1.1, 2025-05-20
 
 Questionnaire Language DSL implemented using the GEMOC Studio as a solution for the Language Workbench Challenge 2025 (LWB2025)
 
@@ -78,6 +78,7 @@ The repository is organized as follows:
 *** `commons/`: Utility projects intended for reuse across multiple engine implementations. This reflects an initial design goal to support alternative execution approaches (e.g., MoCCML, coordination-based engines) in addition to the current K3-based implementation.
 *** `k3ql/`: Projects defining the behavioral semantics of the Questionnaire Language using the K3 framework (GEMOC Sequential Engine).
 *** `ql/`: Projects defining the structural (metamodels) and syntactical (editors) aspects of the Questionnaire Language (including Xtext grammar and Sirius diagrams).
+*** `qls/`: Projects defining the structural (metamodels) and syntactical (editors) aspects of the Questionnaire Layout and Styling (including Xtext grammar).
 
 [NOTE]
 ====
@@ -86,7 +87,7 @@ Each of these folders contains **multiple Eclipse plug-in projects** that must b
 
 * `model_examples/`
 ** Example models conforming to the Questionnaire Language.
-** Includes both textual models (`.ql`) and corresponding graphical representations (`.aird`).
+** Includes textual models (`.ql`), corresponding graphical representations (`.aird`) and associated Layout and Styling models (`.qls`)..
 
 * `docs/`
 ** `.xlsx` files for the QL, LWB, and MW feature tables applied for the GEMOC Studio and this implementation.
@@ -131,7 +132,8 @@ NOTE: In this context, we refer to this initial workspace as the *Language Workb
 * Import all projects contained in the following folders of the cloned repository:
   - `plugins/commons/`
   - `plugins/k3ql/`
-  - `plugins/ql/`
+  - `plugins/ql/  
+  - `plugins/qls/`
 
 TIP: In GEMOC Studio, use _File_ > _Import..._ > _General_ > _Existing Projects into Workspace_, then select each folder above to import all contained projects at once.
 
@@ -156,12 +158,12 @@ See: https://download.eclipse.org/gemoc/docs/releases/3.6.0/userguide-lw-deploy-
 
 === Model Editing
 
-* Edit the provided models using the textual editor (`*.ql` files).
+* Edit the provided models using the textual editor (`*.ql` and `*.qls` files).
 
 .Modeling Workbench textual editor opened on the HouseOwning example
 image::mwb_houseOwning_textual_editor.png[Modeling Workbench textual editor opened on the HouseOwning example]
 
-.Modeling Workbench textual editor with typechecker in action
+.Modeling Workbench textual editor with typechecker in actionn
 image::mwb_houseOwning_textual_editor_type_check.png[Modeling Workbench textual editor with typechecker in action]
 
 * Visualize models using the graphical editor by opening the corresponding `*.aird` files associated with the `.ql` files.
@@ -175,17 +177,34 @@ For the challenge, we haven't implemented Sirius edition tool (palette) except i
 So edition within Sirius views is currently limited to its property view.
 ====
 
-=== Model Execution
+
+=== Model Executionn
 
 To execute a model (i.e., to start a questionnaire):
 
 * Open the view `QL Form Browser View`:
+
+
   - Menu _Window_ > _Show View_ > _Other_ > _Questionnaire Language_ > _QL Form Browser View_.
 * Start the model execution:
   - Menu _Run_ > _Run Configurations..._ > _Executable GEMOC with Java engine_.
   - Use one of the predefined launch configurations for the provided models, or create your own (make sure to activate the `QL Form Browser View` addon in the Engine Addons tab).
 
 This launches the questionnaire execution inside the `QL Form Browser View` and, if available, also triggers graphical animation of the model with Sirius.
+
+[NOTE]
+====
+Several preconfigured launch configuration are provided, they illustrates various options such as:
+- starting from a `.ql` file without styling
+- starting from a `.qls` styling file
+- activating the Sirius animation
+- activating trace/timeline options (which are actually more relevant when starting the launch configuration in debug mode.)
+====
+
+[IMPORTANT]
+====
+In order to have a functionnal launch configuration, the `org.gemoc.ql.k3based.addons.views.QLFormBrowserView` in the addon tab must be activated. Otherwise the execution will take no input from the user (see discussion about this implementation later in this document)
+====
 
 The Sirius-based graphical animation offers a complementary visualization of the running questionnaire by displaying runtime information directly on the model:
 - The current value of each question is dynamically displayed.
