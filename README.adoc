@@ -217,6 +217,17 @@ The Sirius-based graphical animation offers a complementary visualization of the
 .Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution
 image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution, (no QLS styling used in this screenshot)]
 
+The use of an optional QLS model allows to illustrate one extension technique supported by the GEMOC Studio by adding layout and styling support to the questionnaire language. The lower rigth part of Figures <<#img-mwb-houseowning-without-qls>> and <<#img-mwb-houseowning-without-qls>> shows the effects on the form view.
+
+.Execution of a questionnaire without QLS
+[#img-mwb-houseowning-without-qls]
+image::mwb_houseOwning_run_without_qls.png[Execution of a quesionnaire without QLS]
+
+.Execution of a questionnaire with QLS
+[#img-mwb-houseowning-without-qls]
+image::mwb_houseOwning_run_with_qls.png[Execution of a quesionnaire with QLS]
+
+
 === Model Debugging
 
 To debug a model (i.e., to start a questionnaire in debug mode):
@@ -294,7 +305,9 @@ The resulting language and its associated tooling support are named **K3QL**.
 
 === Abstract Syntax
 
-The abstract syntax of the QL language is capture using an Ecore metamodel that is defined in the `org.gemoc.ql.model` plugin.
+==== QL Abstract Syntax
+
+The abstract syntax of the QL language is captured using an Ecore metamodel that is defined in the `org.gemoc.ql.model` plugin.
 
 It is organized as follow:
 
@@ -341,6 +354,24 @@ Some techniques exist to define these runtime data separately from the QL.ecore:
 * by creating a separate metamodel that references the elements in QL.ecore, as a counter part, the code for the behavior would have been a bit less readable.
 ====
 
+==== QLS Abstract Syntax
+
+The abstract syntax of the QLS  (layout and styling) language is captured using an Ecore metamodel that is defined in the `org.gemoc.qls.model` plugin that depends on `org.gemoc.ql.model` plugin.
+
+It is organized as follow:
+
+.QLS main class diagram
+[#img-qls-main-class-diagram]
+image::../../plugins/qls/org.gemoc.qls.model/model/img/qls.jpg[QLS main class diagram,1024]
+
+The figure <<#img-qls-main-class-diagram>> shows the reference from QLS to QL model elements.
+
+A `QLSModel`` decorates a `QLModel`. It specifies `Section`s that contains ordered content (other sub-sections or references to `QuestionDefinition`). These information are to organise the order and grouping of questions on the view. The actual visibility of a question remains a responsability of the QL model.
+
+`QuestionStyle` decorates a `QuestionDefinition` to provide some visual customisation on the label or on the question type.
+
+
+NOTE: The `Import` coming from xText allows to have simple and precise reference to imported models. It is used to reference the resource containing the QL model with textual syntax.
 
 
 === Concrete Syntax
@@ -348,30 +379,36 @@ Some techniques exist to define these runtime data separately from the QL.ecore:
 Three editors are provided: the EMF tree editor, the XText textual editor, and the Sirius graphical editor
 
 
-==== EMF tree editor
-It was not modified much from its initial generation except for some minor enhancement  about the model element labels and icons.
+==== EMF Tree Editors
+It was not modified much from its initial generation except for some minor enhancement about the model element labels and icons.
 
-It is composed of the plugins: `org.gemoc.ql.model.edit` and `org.gemoc.ql.model.editor`
+It is composed of the plugins: 
 
-TIP: `org.gemoc.ql.model.edit` is actually reused in several other editors and Eclipse views, such as the Sirius editor and the outline view.
+* `org.gemoc.ql.model.edit` and `org.gemoc.ql.model.editor` for QL
+* `org.gemoc.qls.model.edit` and `org.gemoc.qls.model.editor` for QLS
 
-==== XText textual editor
+TIP: `org.gemoc.ql.model.edit` and `org.gemoc.qls.model.edit` are actually reused in several other editors and Eclipse views, such as the Sirius editor and the outline view.
 
-It is composed of the plugins: `org.gemoc.ql.xtext`, `org.gemoc.ql.xtext.ide`, and `org.gemoc.ql.xtext.ui`.
+==== XText Textual Editors
 
-The `QL.xtext` file defines a user friendly grammar allowing support of qualified names, expressions, ...
+It is composed of the plugins: 
 
-It provides a modern textual editor with syntax coloring, code completion, error reporting, ...
+* `org.gemoc.ql.xtext`, `org.gemoc.ql.xtext.ide`, and `org.gemoc.ql.xtext.ui` for QL
+* `org.gemoc.qls.xtext`, `org.gemoc.qls.xtext.ide`, and `org.gemoc.qls.xtext.ui` for QLS
 
-It also provides a framework for quick fixes, validation, renaming, hovering, ...  A more complete list of feature is available in this https://eclipse.dev/Xtext/documentation/310_eclipse_support.html[XText documentation section].
+The `QL.xtext` and `QLS.xtext` files define a user friendly grammar allowing support of qualified names, expressions, ...
+
+They provide modern textual editors with syntax coloring, code completion, error reporting, ...
+
+They also provide a framework for quick fixes, validation, renaming, hovering, ...  A more complete list of feature is available in this https://eclipse.dev/Xtext/documentation/310_eclipse_support.html[XText documentation section].
 
 For the challenge, in addition to the grammar, we also have:
 
-* customized the formatting support.
-* implemented the type checking of expressions.
+* customized the formatting support (QL).
+* implemented the type checking of expressions (QL).
 
 
-==== Sirius Graphical editor
+==== Sirius Graphical Editor
 
 It is composed of the plugin: `org.gemoc.ql.design`.
 
@@ -391,6 +428,9 @@ The `Debug` layer has been generated by GEMOC. It allows to set/remove breakpoin
 It also proposes an `Animation` layer. It is activated during model execution. It changes the color of the `Question` and `QuestionDefinition` to grey is they aren't displayed and add fields to display the current value of the questions.
 
 TIP: Sirius provides several kind of representations. In the challenge, we used the Diagram representation, but other might be useful too see https://eclipse.dev/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual]
+
+For the challenge, we have provided Sirius graphical editor only for QL.
+
 
 [#section-behavioral-semantics]
 === Behavioral Semantics
@@ -412,7 +452,10 @@ The GEMOC sequential engines uses methods annotated with *@Main* as entry points
 
 Additionally, a function annotated with *@InitializeModel* will be used to capture any argument passed by the launcher in order to initialize the runtime data if necessary.
 
-For the challenge, the entry point is a `QLModel` element.
+For the challenge, there are two possible entry points:
+
+* a `QLModel` element when run without styling
+* a `QLSModel` element when run with styling support.
 
 
 The logic in QL implementation is as follow:
@@ -422,9 +465,10 @@ The logic in QL implementation is as follow:
 
 Question rendering requests ensures via guard evaluation that only `Question` in group where the guard is true will be rendered.
 
-The concrete rendering in the UI is handled by an engine addon that captures the events `Question.show()` and the event `QLModel.updateSubmitButtonStatus()`.
+The concrete rendering in the UI is handled by an engine addon that captures the events `QLModel.renderQuestions()` and the event `QLModel.updateSubmitButtonStatus()`.
 Similarly, the wait for user input is also handled by the engine addon that captures the event `QLModel.waitUserInput()`. It pauses the execution until the UI has some event.
 The events `QLModel.readSubmitButtonStatus()` and  `QuestionDefinition.updateCurrentValueFromUI()` are also captured by the addon. They modify the runtime data in the model.
+
 
 [NOTE]
 ====
@@ -436,7 +480,6 @@ uThe approach allows to reuse the same code in other validation frameworks such 
 
 ==== UI 
 
-TODO: Separation of the UI/Addon
 In order to provide separation of the core execution semantics and the UI, the UI has been defined as an engine addon in the `org.gemoc.ql.k3based.addons` plugin.
 
 When activated in the launch configuration, addons listen for the engine events. 
@@ -469,7 +512,12 @@ https://download.eclipse.org/gemoc/docs/nightly/_contributing.html#_controling_c
 
 As a concrete UI, the implementation provides an html web form  that is embedded in an Eclipse view. Data exchange between Eclipse and the web page is achieved using the `swt.Browser` class as it allows to call javascript methods in the page or react to javascript call.
 
-The rendering of the QL form is then performed by writing in an html div when then `Question.show()` event is received. The same principle applies for the other events tha must interact with the UI. 
+The rendering of the QL form is then performed by writing in an html div when then `QLModel.renderQuestions()` event is received. The same principle applies for the other events that must interact with the UI. 
+
+
+
+As the addon has complete access to the models it can determine if the model runs with or without styling support. 
+It uses methods in `qlHtmlAspects.xtend` and `qlAspects.xtend` to organise the code and simplify the navigation within the model while producing the UI specific code.
 
 
 [TIP]
@@ -689,13 +737,13 @@ Further Resources:
 | Value
 
 | Development period
-| ~1 month (part-time)
+| ~6 weeks (part-time)
 
 | Number of metaclasses (combined across all Ecore models)
-| 32
+| 46
 
 | Total source lines of code (SLOC) 
-| 7,804
+| 12,011
 
 | Number of Sirius viewpoints/diagrams
 | 2
@@ -719,16 +767,16 @@ Detailled SLOC
 |===
 | Language / Format | Files | SLOC
 
-| XML (e.g., Sirius models, workflows, configurations) | 44 | 4,976
-| Xtend (behavioral semantics) | 7 | 1,486
-| Java (engine addons, utilities) | 26 | 848
-| Properties (config files) | 14 | 231
-| Maven (build configuration) | 4 | 142
-| JavaScript (UI customization) | 1 | 97
-| INI and other small formats | 4 | 23
+| XML (e.g., Sirius models, workflows, configurations) | 70 | 8577
+| Xtend (behavioral semantics) | 13 | 1,847
+| Java (engine addons, utilities) | 37 | 922
+| Properties (config files) | 18 | 342
+| Maven (build configuration) | 5 | 188
+| JavaScript (UI customization) | 1 | 107
+| INI and other small formats | 5 | 27
 | SVG (placeholder or icon) | 1 | 1
 
-| *Total* | *101* | *7,804*
+| *Total* | *150* | *12,011*
 |===
 
 
