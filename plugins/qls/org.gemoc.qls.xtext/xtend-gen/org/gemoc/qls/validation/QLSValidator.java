@@ -3,10 +3,19 @@
  */
 package org.gemoc.qls.validation;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterators;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect;
+import org.gemoc.ql.model.ql.QuestionDefinition;
 import org.gemoc.qls.model.qls.Import;
+import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
+import org.gemoc.qls.model.qls.QuestionReference;
 import org.gemoc.qls.utils.QLSUtils;
 
 /**
@@ -17,6 +26,8 @@ import org.gemoc.qls.utils.QLSUtils;
 @SuppressWarnings("all")
 public class QLSValidator extends AbstractQLSValidator {
   public static final String INVALID_URI = "invalidURI";
+
+  public static final String FORBIDDEN_MULTIPLE_USE = "forbiddenMultipleUse";
 
   @Check
   public void checkImport(final Import imp) {
@@ -38,6 +49,20 @@ public class QLSValidator extends AbstractQLSValidator {
         this.error((("File " + uri) + " not found"), imp, 
           imp.eClass().getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI));
       }
+    }
+  }
+
+  @Check
+  public void checkQuestionReference(final QuestionReference qRef) {
+    final Function1<QuestionReference, Boolean> _function = (QuestionReference qr) -> {
+      QuestionDefinition _question = qr.getQuestion();
+      QuestionDefinition _question_1 = qRef.getQuestion();
+      return Boolean.valueOf(Objects.equal(_question, _question_1));
+    };
+    int _size = IteratorExtensions.size(IteratorExtensions.<QuestionReference>filter(Iterators.<QuestionReference>filter(EObjectAspect.<EObject>getContainerOfType(qRef, QLSModel.class).eAllContents(), QuestionReference.class), _function));
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error("Cannot use question more than once in QLS sections", qRef, qRef.eClass().getEStructuralFeature(QlsPackage.QUESTION_REFERENCE__QUESTION), QLSValidator.FORBIDDEN_MULTIPLE_USE);
     }
   }
 }

@@ -7,7 +7,11 @@ import org.eclipse.xtext.validation.Check
 import org.gemoc.qls.utils.QLSUtils
 import org.gemoc.qls.model.qls.QlsPackage
 import org.gemoc.qls.model.qls.Import
+import org.gemoc.qls.model.qls.QuestionReference
+import org.gemoc.qls.model.qls.QLSModel
 
+
+import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
 /**
  * This class contains custom validation rules. 
  * 
@@ -16,6 +20,7 @@ import org.gemoc.qls.model.qls.Import
 class QLSValidator extends AbstractQLSValidator {
 
 	public static final String INVALID_URI = "invalidURI";
+	public static final String FORBIDDEN_MULTIPLE_USE = "forbiddenMultipleUse";
 
 	@Check
 	def checkImport(Import imp) {
@@ -31,7 +36,13 @@ class QLSValidator extends AbstractQLSValidator {
 					imp.eClass.getEStructuralFeature(QlsPackage.IMPORT__IMPORT_URI))
 			}
 		}
-
+	}
+	
+	@Check
+	def checkQuestionReference(QuestionReference qRef) {
+		if(qRef.getContainerOfType(QLSModel).eAllContents.filter(QuestionReference).filter[qr | qr.question == qRef.question].size > 1) {
+			error("Cannot use question more than once in QLS sections", qRef, qRef.eClass.getEStructuralFeature(QlsPackage.QUESTION_REFERENCE__QUESTION), FORBIDDEN_MULTIPLE_USE)
+		}
 	}
 
 }
