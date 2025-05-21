@@ -303,29 +303,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.ValueType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ValueTypeItemProvider valueTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.gemoc.ql.model.ql.ValueType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createValueTypeAdapter() {
-		if (valueTypeItemProvider == null) {
-			valueTypeItemProvider = new ValueTypeItemProvider(this);
-		}
-
-		return valueTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.gemoc.ql.model.ql.BooleanValueType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -749,8 +726,6 @@ public class QlItemProviderAdapterFactory extends QlAdapterFactory
 			dateValueItemProvider.dispose();
 		if (decimalValueItemProvider != null)
 			decimalValueItemProvider.dispose();
-		if (valueTypeItemProvider != null)
-			valueTypeItemProvider.dispose();
 		if (booleanValueTypeItemProvider != null)
 			booleanValueTypeItemProvider.dispose();
 		if (integerValueTypeItemProvider != null)

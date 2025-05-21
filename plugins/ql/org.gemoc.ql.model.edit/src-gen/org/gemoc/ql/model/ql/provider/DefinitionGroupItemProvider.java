@@ -153,9 +153,6 @@ public class DefinitionGroupItemProvider extends ItemProviderAdapter implements 
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
-				QlFactory.eINSTANCE.createValueType()));
-
-		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,
 				QlFactory.eINSTANCE.createBooleanValueType()));
 
 		newChildDescriptors.add(createChildParameter(QlPackage.Literals.DEFINITION_GROUP__DATA_TYPES,

@@ -112,15 +112,6 @@ public interface QlFactory extends EFactory {
 	DecimalValue createDecimalValue();
 
 	/**
-	 * Returns a new object of class '<em>Value Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Value Type</em>'.
-	 * @generated
-	 */
-	ValueType createValueType();
-
-	/**
 	 * Returns a new object of class '<em>Boolean Value Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

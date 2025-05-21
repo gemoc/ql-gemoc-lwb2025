@@ -76,8 +76,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 			return createDateValue();
 		case QlPackage.DECIMAL_VALUE:
 			return createDecimalValue();
-		case QlPackage.VALUE_TYPE:
-			return createValueType();
 		case QlPackage.BOOLEAN_VALUE_TYPE:
 			return createBooleanValueType();
 		case QlPackage.INTEGER_VALUE_TYPE:
@@ -251,17 +249,6 @@ public class QlFactoryImpl extends EFactoryImpl implements QlFactory {
 	public DecimalValue createDecimalValue() {
 		DecimalValueImpl decimalValue = new DecimalValueImpl();
 		return decimalValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ValueType createValueType() {
-		ValueTypeImpl valueType = new ValueTypeImpl();
-		return valueType;
 	}
 
 	/**
