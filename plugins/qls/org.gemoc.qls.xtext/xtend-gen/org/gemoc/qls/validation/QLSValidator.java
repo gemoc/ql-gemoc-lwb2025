@@ -16,6 +16,7 @@ import org.gemoc.qls.model.qls.Import;
 import org.gemoc.qls.model.qls.QLSModel;
 import org.gemoc.qls.model.qls.QlsPackage;
 import org.gemoc.qls.model.qls.QuestionReference;
+import org.gemoc.qls.model.qls.QuestionStyle;
 import org.gemoc.qls.utils.QLSUtils;
 
 /**
@@ -63,6 +64,22 @@ public class QLSValidator extends AbstractQLSValidator {
     boolean _greaterThan = (_size > 1);
     if (_greaterThan) {
       this.error("Cannot use question more than once in QLS sections", qRef, qRef.eClass().getEStructuralFeature(QlsPackage.QUESTION_REFERENCE__QUESTION), QLSValidator.FORBIDDEN_MULTIPLE_USE);
+    }
+  }
+
+  @Check
+  public void checkQuestionStyle(final QuestionStyle qStyle) {
+    final Function1<QuestionStyle, Boolean> _function = (QuestionStyle qs) -> {
+      QuestionDefinition _styledQuestion = qs.getStyledQuestion();
+      QuestionDefinition _styledQuestion_1 = qStyle.getStyledQuestion();
+      return Boolean.valueOf(Objects.equal(_styledQuestion, _styledQuestion_1));
+    };
+    int _size = IteratorExtensions.size(IteratorExtensions.<QuestionStyle>filter(Iterators.<QuestionStyle>filter(EObjectAspect.<EObject>getContainerOfType(qStyle, QLSModel.class).eAllContents(), QuestionStyle.class), _function));
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      String _name = qStyle.getStyledQuestion().getName();
+      String _plus = ("Multiple styles provided for question " + _name);
+      this.error(_plus, qStyle, qStyle.eClass().getEStructuralFeature(QlsPackage.QUESTION_STYLE__STYLED_QUESTION), QLSValidator.FORBIDDEN_MULTIPLE_USE);
     }
   }
 }

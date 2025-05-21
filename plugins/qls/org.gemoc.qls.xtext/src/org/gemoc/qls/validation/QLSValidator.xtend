@@ -12,6 +12,8 @@ import org.gemoc.qls.model.qls.QLSModel
 
 
 import static extension org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect.*
+import org.gemoc.qls.model.qls.QuestionStyle
+
 /**
  * This class contains custom validation rules. 
  * 
@@ -42,6 +44,13 @@ class QLSValidator extends AbstractQLSValidator {
 	def checkQuestionReference(QuestionReference qRef) {
 		if(qRef.getContainerOfType(QLSModel).eAllContents.filter(QuestionReference).filter[qr | qr.question == qRef.question].size > 1) {
 			error("Cannot use question more than once in QLS sections", qRef, qRef.eClass.getEStructuralFeature(QlsPackage.QUESTION_REFERENCE__QUESTION), FORBIDDEN_MULTIPLE_USE)
+		}
+	}
+
+	@Check
+	def checkQuestionStyle(QuestionStyle qStyle) {
+		if(qStyle.getContainerOfType(QLSModel).eAllContents.filter(QuestionStyle).filter[qs | qs.styledQuestion == qStyle.styledQuestion].size > 1) {
+			error("Multiple styles provided for question "+qStyle.styledQuestion.name, qStyle, qStyle.eClass.getEStructuralFeature(QlsPackage.QUESTION_STYLE__STYLED_QUESTION), FORBIDDEN_MULTIPLE_USE)
 		}
 	}
 
