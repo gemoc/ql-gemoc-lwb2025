@@ -1,0 +1,40 @@
+import	 "ProjectBudgetEstimation.ql"
+QLSModel ProjectBudgetEstimation {
+	questionStyles {
+		styledQuestion ProjectBudgetEstimation.subtotalProjectCostDesignUX { labelStyle {italic}}
+		styledQuestion ProjectBudgetEstimation.subtotalProjectCostTesting1 { labelStyle {italic}}
+		styledQuestion ProjectBudgetEstimation.subtotalProjectCostTesting2 { labelStyle {italic}}
+		styledQuestion ProjectBudgetEstimation.minimalCost { labelStyle { italic}}
+		styledQuestion ProjectBudgetEstimation.totalProjectCost { labelStyle { italic bold}}
+	}
+	section "Core Project Elements" {
+		ProjectBudgetEstimation.estimatedPersonHourForDev
+		ProjectBudgetEstimation.hourlyRateForDev
+		ProjectBudgetEstimation.estimatedDevCost
+	}
+	section "Design & UI/UX" {
+		ProjectBudgetEstimation.requireDesignAndUX
+		ProjectBudgetEstimation.estimatedPersonHourForDesignUX
+		ProjectBudgetEstimation.hourlyRateForDesignUX
+		ProjectBudgetEstimation.estimatedDesignUXCost
+		ProjectBudgetEstimation.subtotalProjectCostDesignUX
+	}
+	section "Testing & Quality Assurance" {
+		ProjectBudgetEstimation.requireTestingAndQA
+		ProjectBudgetEstimation.estimatedPersonHourForTestingAndQA
+		ProjectBudgetEstimation.hourlyRateForTestingAndQ
+		ProjectBudgetEstimation.estimatedTestingAndQACost
+		ProjectBudgetEstimation.subtotalProjectCostTesting1
+		ProjectBudgetEstimation.subtotalProjectCostTesting2
+	}
+	section "Deployment & Maintenance" {
+		ProjectBudgetEstimation.requireDeploymentAndMaintenance
+		ProjectBudgetEstimation.estimatedDeploymentCost
+		ProjectBudgetEstimation.estimatedMaintenanceCost
+		ProjectBudgetEstimation.estimatedDeploymentAndMaintenanceCost
+	}
+	section "Results" {
+		ProjectBudgetEstimation.minimalCost
+		ProjectBudgetEstimation.totalProjectCost
+	}
+}
