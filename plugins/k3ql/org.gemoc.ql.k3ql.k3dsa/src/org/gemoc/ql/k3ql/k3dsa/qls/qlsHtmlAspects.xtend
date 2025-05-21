@@ -21,15 +21,6 @@ import org.eclipse.emf.common.util.EList
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QLModelAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.ql.QuestionDefinitionHtmlAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.QLSModelAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.ImportAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.TypeStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.QuestionStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.LabelStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.BooleanTypeStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeTextFieldStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.NumericTypeSpinnerStyleAspect.*
-import static extension org.gemoc.ql.k3ql.k3dsa.qls.TextTypeStyleAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.SectionHtmlAspect.*
 import static extension org.gemoc.ql.k3ql.k3dsa.qls.SectionContentHtmlAspect.*
 
@@ -41,67 +32,6 @@ import org.gemoc.ql.k3ql.k3dsa.NotImplementedException
 import org.gemoc.ql.k3ql.k3dsa.ecore.EObjectAspect
 import org.gemoc.ql.model.ql.QLModel
 
-@Aspect(className=QLSModel)
-class QLSModelAspect {
-	@Step 												
-	@InitializeModel									
-	def void initializeModel(EList<String> input){
-		// forward entry point to styled QLModel 
-		_self.styledQLModel.initializeModel(input)
-	}
-	
-	@Step
-	@Main
-	def void main() {
-		// forward entry point to styled QLModel 
-		_self.styledQLModel.main()
-	}
-}
-
-@Aspect(className=Import)
-class ImportAspect {
-
-}
-
-@Aspect(className=TypeStyle)
-class TypeStyleAspect {
-
-}
-
-@Aspect(className=NumericTypeStyle)
-class NumericTypeStyleAspect extends TypeStyleAspect {
-
-}
-
-@Aspect(className=QuestionStyle)
-class QuestionStyleAspect {
-
-}
-
-@Aspect(className=LabelStyle)
-class LabelStyleAspect {
-
-}
-
-@Aspect(className=BooleanTypeStyle)
-class BooleanTypeStyleAspect extends TypeStyleAspect {
-
-}
-
-@Aspect(className=NumericTypeTextFieldStyle)
-class NumericTypeTextFieldStyleAspect extends NumericTypeStyleAspect {
-
-}
-
-@Aspect(className=NumericTypeSpinnerStyle)
-class NumericTypeSpinnerStyleAspect extends NumericTypeStyleAspect {
-
-}
-
-@Aspect(className=TextTypeStyle)
-class TextTypeStyleAspect extends TypeStyleAspect {
-
-}
 
 @Aspect (className=Section)
 class SectionHtmlAspect extends SectionContentHtmlAspect {
@@ -113,7 +43,7 @@ class SectionHtmlAspect extends SectionContentHtmlAspect {
 			  	«FOR sectionContent : _self.sectionContents»«sectionContent.htmlStyledDiv»«ENDFOR»
 			  </div>'''
 		} else {
-			return  '';
+			return  ''
 		}
 	}
 }
@@ -133,7 +63,7 @@ class QuestionReferenceHtmlAspect  extends SectionContentHtmlAspect {
 		if(_self.question.isIsDisplayed)
 			return _self.question.htmlStyledField(_self.getContainerOfType(QLSModel))
 		else 
-		return ''
+			return ''
 	}
 }
 

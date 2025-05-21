@@ -332,7 +332,7 @@ class QLModelAspect {
 		val URI outputUri = URI.createURI(platformFolderPath +"/reports/" + fileName.replaceFirst("\\.([^.]+)$", postfix + ".$1")+".xmi", true);
 		
 		
-		_self.devInfo("Saving to "+outputUri.toString);
+		_self.info("Saving to "+outputUri.toString);
 		val resourceSet = new ResourceSetImpl();
 	    resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
                 "*", new XMIResourceFactoryImpl()
@@ -353,12 +353,7 @@ class QLModelAspect {
 
 @Aspect(className=Question)
 class QuestionAspect {
-	/** this step is captured by the EngineAddons to concretely add the question in the form */
-	@Step
-	def void show(){
-		
-		_self.devInfo('QuestionAspect.show '+_self.questionDefinition.name);
-	}
+
 }
 
 @Aspect(className=QuestionDefinition)
@@ -667,8 +662,6 @@ abstract class ValueAspect {
 class IntegerValueAspect extends ValueAspect {
 
 	def Value evaluate() {
-//		_self.devInfo(_self.eContainerOfType(FCLModel).indentation+
-//			' -> IntegerValue.evaluate '+_self);
 		return _self;
 	}
 	def Value copy() {
@@ -805,7 +798,6 @@ class StringValueAspect extends ValueAspect {
 @Aspect(className=BooleanValue)
 class BooleanValueAspect extends ValueAspect {
 	def Value evaluate() {
-//		_self.devInfo(' -> BooleanValue.evaluate '+_self);
 		return _self;
 	}
 	def Value copy() {
@@ -912,7 +904,6 @@ class DateValueAspect extends ValueAspect {
 @Aspect(className=DecimalValue)
 class DecimalValueAspect extends ValueAspect {
 	def Value evaluate() {
-//		_self.devInfo(' -> BooleanValue.evaluate '+_self);
 		return _self;
 	}
 	def Value copy() {
@@ -1187,7 +1178,6 @@ abstract class ConditionnalElementAspect {
 class QuestionGroupAspect extends ConditionnalElementAspect {
 	@Step
 	def void updateIsDisplayed() {
-		_self.devInfo('QuestionGroupAspect guard='+_self.guard);
 		try{
 			if(_self.guard === null  || _self.guard.evaluateAsBoolean().booleanValue) {
 				for( question : _self.questions) {

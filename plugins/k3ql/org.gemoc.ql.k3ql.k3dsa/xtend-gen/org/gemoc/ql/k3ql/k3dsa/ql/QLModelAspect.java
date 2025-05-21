@@ -579,7 +579,7 @@ public class QLModelAspect {
       final URI outputUri = URI.createURI(_plus_1, true);
       String _string = outputUri.toString();
       String _plus_2 = ("Saving to " + _string);
-      EObjectAspect.devInfo(_self, _plus_2);
+      EObjectAspect.info(_self, _plus_2);
       final ResourceSetImpl resourceSet = new ResourceSetImpl();
       Map<String, Object> _extensionToFactoryMap = resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap();
       XMIResourceFactoryImpl _xMIResourceFactoryImpl = new XMIResourceFactoryImpl();
