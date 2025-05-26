@@ -20,7 +20,7 @@ Questionnaire Language DSL implemented using the GEMOC Studio as a solution for 
 This document presents the implementation of the "Questionnaire Language" proposed in the https://github.com/judithmichael/lwb25[Language Workbench Challenge 2025], using the https://gemoc.org/studio.html[GEMOC Studio] as the target language workbench. This challenge, as a continuation of the Language Workbench Contest initiated in 2013, aims to demonstrate the capabilities of modern language workbenches by modeling and implementing a relatively simple but representative domain-specific language (DSL).
 
 
-The origins of the GEMOC Studio trace back to an initial ANR-funded research project launched in 2011, prior to the formalization of the GEMOC initiative (2013). Initially developed as an academic platform to explore model execution and coordination of heterogeneous modeling languages, the Studio has since evolved through successive research collaborations and open-source contributions. Over time, it has matured into a modular workbench built on Eclipse technologies, primarily used in academic and experimental contexts for designing and executing DSMLs. Today, the GEMOC Studio is hosted as an https://projects.eclipse.org/projects/modeling.gemoc[official project under the Eclipse Foundation], benefiting from a stable and open governance structure within the broader Eclipse Modeling ecosystem.
+The origins of the GEMOC Studio trace back to an initial ANR-funded research project launched in 2011, prior to the formalization of the GEMOC initiative (2013). Initially developed as a research platform to explore model execution and coordination of heterogeneous modeling languages, the Studio has since evolved through successive research collaborations and open-source contributions. Over time, it has matured into a modular workbench built on Eclipse technologies, primarily used in research and transfert contexts for designing and executing DSMLs. Today, the GEMOC Studio is hosted as an https://projects.eclipse.org/projects/modeling.gemoc[official project under the Eclipse Foundation], benefiting from a stable and open governance structure within the broader Eclipse Modeling ecosystem.
 
 The GEMOC Studio aims to offer a comprehensive environment for designing, executing, and coordinating DSMLs, with a particular focus on executable modeling and multi-language system integration.
 
@@ -34,17 +34,17 @@ Readers may refer to the respective official documentation of these tools for de
 
 Beyond this integration, the GEMOC Studio extends these capabilities by providing:
 
-* Several *semantic modeling frameworks* for defining the execution behavior of models (e.g., K3, ALE for sequential semantics; MoCCML for concurrency modeling),
+* Several *semantic modeling frameworks* for defining the execution semantics of DSMLs, i.e., the underlying execution behavior of conforming models to be executed and evaluated accordingly (e.g., K3, ALE for sequential semantics; MoCCML for concurrency modeling),
 * *Execution engines* and *engine addons* that enable advanced runtime services such as model animation, debugging, timeline visualization, state space exploration, and concurrency control,
 * *Coordination mechanisms* for combining multiple models or languages at execution time.
 
-This architecture allows users to not only define the structure and editors of a DSL but also to specify, execute, and debug its operational semantics.
+This architecture allows users to not only define the structure and editors of a DSL but also to specify, execute, and debug its execution semantics.
 
 Given the diversity of capabilities offered by the GEMOC Studio, specific tools and approaches were deliberately chosen to showcase the breadth of GEMOC’s potential. The design decisions made in this implementation aim not only to address the technical requirements of the Questionnaire Language but also to illustrate various features of the GEMOC Studio. In some cases, alternative choices might have been more appropriate for a production-ready language implementation, but demonstrating the versatility of the workbench was prioritized.
 
 === Deliverables
 
-* The git repository : https://github.com/gemoc/ql-gemoc-lwb2025
+* The git repository: https://github.com/gemoc/ql-gemoc-lwb2025
 * The feature tables for this submission:
 ** QL: https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/docs/QLFeatures_Table_Template.xlsx
 ** LWB: https://github.com/gemoc/ql-gemoc-lwb2025/blob/main/docs/LanguageWorkbench_FeatureConfiguration.xlsx
@@ -108,7 +108,7 @@ Each of these folders contains **multiple Eclipse plug-in projects** that must b
 
 This section provides the basic instructions to install the *Language Workbench* with the language definitions for the challenge, and to run the *Modeling Workbench* with example models conforming to the languages.
 
-=== Setting up the Language Workbench with Questionnaire Language Definitions
+=== Setting up the Language Workbench for the design of the Questionnaire Language
 
 Requirements:
 
@@ -198,7 +198,7 @@ This launches the questionnaire execution inside the `QL Form Browser View` and,
 
 [NOTE]
 ====
-Several preconfigured launch configuration are provided, they illustrates various options such as:
+Several preconfigured launch configurations are provided, they illustrate various options such as:
 - starting from a `.ql` file without styling
 - starting from a `.qls` styling file
 - activating the Sirius animation
@@ -207,12 +207,12 @@ Several preconfigured launch configuration are provided, they illustrates variou
 
 [IMPORTANT]
 ====
-In order to have a functionnal launch configuration, the `org.gemoc.ql.k3based.addons.views.QLFormBrowserView` in the addon tab must be activated. Otherwise the execution will take no input from the user (see discussion about this implementation later in this document)
+In order to have a functional launch configuration, the `org.gemoc.ql.k3based.addons.views.QLFormBrowserView` in the addon tab must be activated. Otherwise, the execution will take no input from the user (see discussion about this implementation later in this document)
 ====
 
 The Sirius-based graphical animation offers a complementary visualization of the running questionnaire by displaying runtime information directly on the model:
 - The current value of each question is dynamically displayed.
-- The visual appearance of questions (such as color changes) is updated in real time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
+- The visual appearance of questions (such as color changes) is updated in real-time to reflect their visibility status (e.g., whether a question is currently shown to the user or hidden based on the model's logic).
 
 .Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution
 image::mwb_projectBudget_run.png[Graphical animation of a running questionnaire model in Sirius, showing dynamic updates of question values and visibility states during execution, (no QLS styling used in this screenshot)]
@@ -221,11 +221,11 @@ The use of an optional QLS model allows to illustrate one extension technique su
 
 .Execution of a questionnaire without QLS
 [#img-mwb-houseowning-without-qls]
-image::mwb_houseOwning_run_without_qls.png[Execution of a quesionnaire without QLS]
+image::mwb_houseOwning_run_without_qls.png[Execution of a questionnaire without QLS]
 
 .Execution of a questionnaire with QLS
 [#img-mwb-houseowning-without-qls]
-image::mwb_houseOwning_run_with_qls.png[Execution of a quesionnaire with QLS]
+image::mwb_houseOwning_run_with_qls.png[Execution of a questionnaire with QLS]
 
 
 === Model Debugging
@@ -255,9 +255,9 @@ These capabilities together offer a rich environment for observing, inspecting, 
 image::mwb_houseOwning_debug_paused_when_updating_value_from_ui_hasSoldHouse.png[Modeling Workbench with the HouseOwning example pause after a click on hasSoldHouse and while rendering the questions (only 2 out of the 3 optional questions have been enabled and displayed at this point)]
 
 
-== Selected Tools, Approaches, and Design Rationale
+== Selected Tools, Approaches, and Design Rationales
 
-For this implementation, we selected a combination of GEMOC Studio tools and modeling approaches to illustrate both essential and advanced capabilities of the platform. The choices were guided by a balance between simplicity, modularity, and demonstration value for the challenge.
+For this implementation, we selected a combination of GEMOC Studio tools and modeling approaches to illustrate both basics and advanced capabilities of the platform. The choices were guided by a balance between simplicity, modularity, and demonstration value for the challenge.
 
 === DSL Edition
 
@@ -272,11 +272,11 @@ For this implementation, we selected a combination of GEMOC Studio tools and mod
 In this implementation, the Sirius graphical editors focus on visualization rather than full model editing: edition actions (e.g., palette tools) were not implemented, and editing remains limited to the property view or synchronized editing through the Xtext textual editor.
 ====
 
-=== DSL Semantics
+=== DSL Execution Semantics
 
-* A **K3-based sequential execution engine** defines the operational semantics of the questionnaire models. https://www.kermeta.org/[K3 language] offers a simple yet powerful metaprogramming approach by weaving behavioral aspects directly onto EMF model elements.
+* A **K3-based sequential execution engine** defines the execution semantics of the questionnaire models. https://www.kermeta.org/[K3 language] offers a simple yet powerful metaprogramming approach by weaving behavioral aspects directly onto EMF model elements.
 
-NOTE: As K3 language is actually a set of annotations for the https://eclipse.dev/Xtext/xtend/[Xtend] that compiles to java, for GEMOC this is also refered as GEMOC Java Engine.
+NOTE: As K3 language is actually a set of annotations for the https://eclipse.dev/Xtext/xtend/[Xtend] that compiles to Java, for GEMOC this is also referred to as GEMOC Java Engine.
 
 * **Separation of UI and execution semantics** was emphasized through the use of the GEMOC Engine Addon mechanism:
   - A custom Engine Addon (`QLFormBrowserView`) was developed to handle the display and interaction of the questionnaire UI, without mixing UI concerns into the execution semantics.
@@ -309,7 +309,7 @@ The resulting language and its associated tooling support are named **K3QL**.
 
 The abstract syntax of the QL language is captured using an Ecore metamodel that is defined in the `org.gemoc.ql.model` plugin.
 
-It is organized as follow:
+It is organized as follows:
 
 .QL main class diagram
 [#img-ql-main-class-diagram]
@@ -339,7 +339,7 @@ A `QuestionDefinition` data is typed  by a `ValueType` that can take one of the 
 
 `ValueType` are defined with the Questionnaire (QLModel) and may define a `unit` and additional attributes such as min or max. 
 
-`Expression` allows to support evaluation of `Value` that can come from different kind of expression: `BinaryExpression` for expression having left hand side and right hand side, `UnaryExpression` for operators such as `Not` or `Minus`.
+`Expression` allows the evaluation of `Value` that can come from different kinds of expression: `BinaryExpression` for expression having left hand side and right hand side, `UnaryExpression` for operators such as `Not` or `Minus`.
 
 the `IfExpression` allows to create conditional expression return the evaluation of the `thenExpression` or the `elseExpression` depending on the evaluation of the `condition`.
 
@@ -351,14 +351,14 @@ Some techniques exist to define these runtime data separately from the QL.ecore:
 
 * by weaving ecore models using http://melange.inria.fr[Melange] but this would have made the projects more complex due to the required conversion. (see. https://download.eclipse.org/gemoc/docs/nightly/userguide-lw-create-language-define-syntaxes.html#section-melange-editor and http://melange.inria.fr)
 
-* by creating a separate metamodel that references the elements in QL.ecore, as a counter part, the code for the behavior would have been a bit less readable.
+* by creating a separate metamodel that references the elements in QL.ecore, as a counter-part, the code for the behavior would have been a bit less readable.
 ====
 
 ==== QLS Abstract Syntax
 
 The abstract syntax of the QLS  (layout and styling) language is captured using an Ecore metamodel that is defined in the `org.gemoc.qls.model` plugin that depends on `org.gemoc.ql.model` plugin.
 
-It is organized as follow:
+It is organized as follows:
 
 .QLS main class diagram
 [#img-qls-main-class-diagram]
@@ -366,12 +366,12 @@ image::../../plugins/qls/org.gemoc.qls.model/model/img/qls.jpg[QLS main class di
 
 The figure <<#img-qls-main-class-diagram>> shows the reference from QLS to QL model elements.
 
-A `QLSModel` decorates a `QLModel`. It specifies sections that contains ordered content (other sub-sections or references to `QuestionDefinition`). These information are to organise the order and grouping of questions on the view. The actual visibility of a question remains a responsability of the QL model.
+A `QLSModel` decorates a `QLModel`. It specifies sections that contain ordered content (other sub-sections or references to `QuestionDefinition`). These information are to organise the order and grouping of questions on the view. The actual visibility of a question remains a responsibility of the QL model.
 
-`QuestionStyle` decorates a `QuestionDefinition` to provide some visual customisation on the label or on the question type.
+`QuestionStyle` decorates a `QuestionDefinition` to provide some visual customization on the label, or on the question type.
 
 
-NOTE: The `Import` coming from xText allows to have simple and precise reference to imported models. It is used to reference the resource containing the QL model with textual syntax.
+NOTE: The `Import` coming from xText allows having simple and precise references to imported models. It is used to reference the resource containing the QL model with textual syntax.
 
 
 === Concrete Syntax
@@ -380,9 +380,9 @@ Three editors are provided: the EMF tree editor, the XText textual editor, and t
 
 
 ==== EMF Tree Editors
-It was not modified much from its initial generation except for some minor enhancement about the model element labels and icons.
+It was not modified much from its initial generation except for some minor enhancements on the model element labels and icons.
 
-It is composed of the plugins: 
+It is composed of the following plugins: 
 
 * `org.gemoc.ql.model.edit` and `org.gemoc.ql.model.editor` for QL
 * `org.gemoc.qls.model.edit` and `org.gemoc.qls.model.editor` for QLS
@@ -391,7 +391,7 @@ TIP: `org.gemoc.ql.model.edit` and `org.gemoc.qls.model.edit` are actually reuse
 
 ==== XText Textual Editors
 
-It is composed of the plugins: 
+It is composed of the following plugins: 
 
 * `org.gemoc.ql.xtext`, `org.gemoc.ql.xtext.ide`, and `org.gemoc.ql.xtext.ui` for QL
 * `org.gemoc.qls.xtext`, `org.gemoc.qls.xtext.ide`, and `org.gemoc.qls.xtext.ui` for QLS
@@ -417,17 +417,17 @@ It provides 2 diagrams:
 * A *Basic Object Diagram* was automatically generated using the GEMOC wizard. Inspired by UML Object Diagrams, this view is verbose and generic, but can serve as a starting point for more specialized diagrams.
 * A manually crafted *QLDiagram* was designed to offer a more domain-specific and readable visualization of questionnaires.
 
-Sirius provides a way to define a mapping between visual elements (Node, Edge) and the abstract syntax concepts. Then it interpret this mapping in order to provide
+Sirius provides a way to define a mapping between visual elements (Node, Edge) and the abstract syntax concepts. Then it interprets this mapping in order to provide
   
 Each diagram use the notion of _Layer_ in order to easily switch on or off  some customization.
 
 For example the QLDiagram, proposes a `Typing` layer that shows the link between `Question` and `QuestionDefinition`.
 
-The `Debug` layer has been generated by GEMOC. It allows to set/remove breakpoints, and allow to conditional styling during debug pause (ie. highlight the element in the diagram corresponding to selection in the stack view)
+The `Debug` layer has been generated by GEMOC. It allows to set/remove breakpoints, and allow to conditional styling during debug pause (ie. highlight the element in the diagram corresponding to the selection in the stack view)
 
 It also proposes an `Animation` layer. It is activated during model execution. It changes the color of the `Question` and `QuestionDefinition` to grey is they aren't displayed and add fields to display the current value of the questions.
 
-TIP: Sirius provides several kind of representations. In the challenge, we used the Diagram representation, but other might be useful too see https://eclipse.dev/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual]
+TIP: Sirius provides several kinds of representations. In the challenge, we used the Diagram representation, but others might be useful too see https://eclipse.dev/sirius/doc/specifier/Sirius%20Specifier%20Manual.html[Sirius Specifier Manual]
 
 For the challenge, we have provided Sirius graphical editor only for QL.
 
@@ -444,11 +444,11 @@ Its contents is woven into the metamodel of your executable DSL. In this file, y
 
 *Execution Functions*:
 
-The Execution Functions define how the Execution Data evolve during the execution of the model. Execution Functions can be implemented by defining the body of a method. These methods must be annotated with the *@Step* annotation. Whenever a method with an `@Step` annotation returns, the changes in the model will be applied (via a transaction) to the resource. This means that the changes will be visible from an animator. K3 supports nested `@Step` annotation calls so that changes in the model will be applied when entering and leaving methods having these annotations.
+The Execution Functions define how the Execution Data evolves during the execution of the model. Execution Functions can be implemented by defining the body of a method. These methods must be annotated with the *@Step* annotation. Whenever a method with an `@Step` annotation returns, the changes in the model will be applied (via a transaction) to the resource. This means that the changes will be visible from an animator. K3 supports nested `@Step` annotation calls so that changes in the model will be applied when entering and leaving methods having these annotations.
 
 *Entry Points*:
 
-The GEMOC sequential engines uses methods annotated with *@Main* as entry points to model execution. This annotation must be placed on operations applicable to model elements considered as the model starting point. 
+The GEMOC sequential engines use methods annotated with *@Main* as entry points to model execution. This annotation must be placed on operations applicable to model elements considered as the model starting point. 
 
 Additionally, a function annotated with *@InitializeModel* will be used to capture any argument passed by the launcher in order to initialize the runtime data if necessary.
 
@@ -458,12 +458,12 @@ For the challenge, there are two possible entry points:
 * a `QLSModel` element when run with styling support.
 
 
-The logic in QL implementation is as follow:
+The logic in QL implementation is as follows:
 
 * The main method is simply a loop that alternates question rendering requests, wait for user input, computation of value for computed questions.
 * When the submit button has been pushed, it ends by performing a basic serialization of the whole model, including the runtime data (ie. the answers)
 
-Question rendering requests ensures via guard evaluation that only `Question` in group where the guard is true will be rendered.
+Question rendering requests ensure via guard evaluation that only `Question` in groups where the guard is true will be rendered.
 
 The concrete rendering in the UI is handled by an engine addon that captures the events `QLModel.renderQuestions()` and the event `QLModel.updateSubmitButtonStatus()`.
 Similarly, the wait for user input is also handled by the engine addon that captures the event `QLModel.waitUserInput()`. It pauses the execution until the UI has some event.
@@ -473,8 +473,8 @@ The events `QLModel.readSubmitButtonStatus()` and  `QuestionDefinition.updateCur
 [NOTE]
 ====
 
-The code for the Type checking used by Xtext editor, uses the same approach as the execution semantics: it uses K3 aspects. Xtext validation framework triggers the validation in the editor and then call the aspects for inferring the types and checking compatibility.
-uThe approach allows to reuse the same code in other validation frameworks such as the EMF validation framework or the Sirius internal validation. This can be handy in case we allow edition of the model using other editors than the textual one.
+The code for the Type checking used by Xtext editor, uses the same approach as the execution semantics: it uses K3 aspects. Xtext validation framework triggers the validation in the editor and then calls the aspects for inferring the types and checking compatibility.
+The approach allows to reuse the same code in other validation frameworks such as the EMF validation framework or the Sirius internal validation. This can be handy in case we allow edition of the model using other editors than the textual one.
 
 ====
 
@@ -488,7 +488,7 @@ Thus, the methods in the class `QLFormBrowserViewAddon` will be called on specif
 
 In this implementation, most  of the work is done while capturing the `aboutToExecuteStep` engine event. I.e. before a method annotated with *@Step* is called.
 All addon API methods provide access to the engine, the EMF model including its runtime data if they have been defined using EMF, and details about the event that has been triggered. 
-It is then easy, depending on the event, to read model runtime data in order to do some action in the UI or conversely, apply UI changes to the model runtime data
+It is then easy, depending on the event, to read model runtime data in order to do some action in the UI or conversely, apply UI changes to the model runtime data 
 
 Call the these method is atomic and pauses the execution. This is handy to implement the `QLModel.waitUserInput()` step.
 
