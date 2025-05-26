@@ -417,7 +417,7 @@ It provides 2 diagrams:
 * A *Basic Object Diagram* was automatically generated using the GEMOC wizard. Inspired by UML Object Diagrams, this view is verbose and generic, but can serve as a starting point for more specialized diagrams.
 * A manually crafted *QLDiagram* was designed to offer a more domain-specific and readable visualization of questionnaires.
 
-Sirius provides a way to define a mapping between visual elements (Node, Edge) and the abstract syntax concepts. Then it interprets this mapping in order to provide
+Sirius provides a way to define a mapping between visual elements (Node, Edge) and the abstract syntax concepts. Then it interprets this mapping in order to provide the representation of the model in an editor.
   
 Each diagram use the notion of _Layer_ in order to easily switch on or off  some customization.
 
@@ -490,7 +490,8 @@ In this implementation, most  of the work is done while capturing the `aboutToEx
 All addon API methods provide access to the engine, the EMF model including its runtime data if they have been defined using EMF, and details about the event that has been triggered. 
 It is then easy, depending on the event, to read model runtime data in order to do some action in the UI or conversely, apply UI changes to the model runtime data 
 
-Call the these method is atomic and pauses the execution. This is handy to implement the `QLModel.waitUserInput()` step.
+In the engine, the execution of the addon methods is atomic. The engine ensures that all defined addon methods have been completly executed before continuing to the next step.
+As it pauses the model execution and provide access to runtime data, this is handy to implement the `QLModel.waitUserInput()` step.
 
 
 [TIP]
