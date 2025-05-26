@@ -67,6 +67,8 @@ The remainder of this document is organized as follows:
 
 * *Additional GEMOC Studio features illustrated in other case studies*: Although not directly demonstrated in this implementation, other capabilities of the GEMOC Studio — such as advanced concurrency modeling, state space exploration, live model-execution synchronization, and multi-language coordination — are highlighted through complementary case studies and example languages.
 
+* *Implementation metrics* numbers based on the implementation (e.g., SLOC, time to implement it) 
+
 
 == Repository Structure
 
